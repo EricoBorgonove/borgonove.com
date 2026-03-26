@@ -1,0 +1,411 @@
+{
+  "navbar": {
+    "me": "Me",
+    "roadmaps": "Roadmaps",
+    "blog": "Blog",
+    "utilities": "Utilities",
+    "subjects": "Subjects",
+    "contact": "Contact",
+    "talkToUs": "Talk to us",
+    "search": {
+      "open": "Search",
+      "placeholder": "Search...",
+      "none": "No results found."
+    },
+    "adminArea": "Admin area",
+    "adminAreaSoon": "Admin area coming soon",
+    "menuOpen": "Open menu",
+    "language": "Language",
+    "theme": {
+      "toLight": "Enable light mode",
+      "toDark": "Enable dark mode",
+      "light": "Light mode",
+      "dark": "Dark mode",
+      "darkActive": "Dark mode active",
+      "lightActive": "Light mode active"
+    }
+  },
+  "home": {
+    "hero": {
+      "titleBefore": "Technology with",
+      "titleHighlight": "strategy",
+      "titleAfter": "and performance",
+      "description": "Modern web development and digital solutions built to generate real impact and competitive advantage.",
+      "projects": "View projects",
+      "contact": "Talk to us"
+    },
+    "about": {
+      "title": "About",
+      "description": "Systems Analyst, Web Developer and University Professor focused on building scalable, high-performance digital solutions aligned with business goals.",
+      "stats": {
+        "projects": "Delivered projects",
+        "students": "Students taught",
+        "strategy": "Business vision",
+        "performance": "Results-driven"
+      }
+    },
+    "solutions": {
+      "title": "Innovative and efficient solutions for your business",
+      "description": "Combining a passion for teaching with excellence in technology: with a professor leading the way, we build innovative software that teaches, transforms and connects, not only meeting market needs but also opening new paths for learning and technological progress.",
+      "items": {
+        "innovativeDevelopment": {
+          "title": "Innovative Development",
+          "description": "Projects that solve current needs and prepare the foundation for future business growth."
+        },
+        "educationTechnology": {
+          "title": "Education & Technology",
+          "description": "Integration between teaching and market practice to deliver practical and sustainable solutions."
+        },
+        "smartAutomation": {
+          "title": "Smart Automation",
+          "description": "Digital processes designed to reduce rework, speed up operations and increase predictability."
+        },
+        "strategicProjects": {
+          "title": "Strategic Projects",
+          "description": "Technical planning focused on outcomes, performance and continuous growth."
+        }
+      }
+    },
+    "services": {
+      "title": "Services",
+      "items": {
+        "webDev": {
+          "title": "Web Development",
+          "description": "Institutional websites, landing pages and modern applications."
+        },
+        "customSystems": {
+          "title": "Custom Systems",
+          "description": "Tailored solutions for business-specific demands."
+        },
+        "technicalConsulting": {
+          "title": "Technical Consulting",
+          "description": "Architecture, planning and project structuring."
+        },
+        "dataAnalysis": {
+          "title": "Data Analysis",
+          "description": "Dashboards, KPIs and analytics to support strategic decisions."
+        },
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "Environment, network and service setup focused on stability and security."
+        },
+        "automations": {
+          "title": "Automations",
+          "description": "Routine and process automation to increase productivity and reduce errors."
+        }
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Selected deliveries and digital solutions focused on real impact.",
+      "items": [
+        "Process automation with integrations",
+        "Smart analytics dashboard",
+        "Conversion-focused landing",
+        "Landing page",
+        "Online store",
+        "Institutional platform",
+        "Interactive educational portal",
+        "Institutional portal",
+        "Custom-built system"
+      ],
+      "cardDescription": "Featured project focused on performance, design and outcomes."
+    }
+  },
+  "contactPage": {
+    "title": "Contact",
+    "description": "Send your message and I will reply as soon as possible."
+  },
+  "contactForm": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholderName": "Your name",
+    "placeholderEmail": "your@email.com",
+    "placeholderMessage": "Tell us a bit about what you need",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "errorDefault": "Error while sending.",
+    "errorMap": {
+      "required": "Please fill in all required fields.",
+      "invalidEmail": "Please provide a valid email.",
+      "longMessage": "Message must be at most 2000 characters.",
+      "smtpConfig": "Incomplete email server configuration.",
+      "sendFail": "Unable to send email right now.",
+      "challenge": "Your browser blocked the security validation. Enable cookies and try again.",
+      "fallback": "Sending failed. Please try again."
+    }
+  },
+  "cookieBanner": {
+    "text": "We use cookies and similar technologies to improve your experience in our services, personalize advertising and recommend content of your interest. By using our services, you acknowledge this functionality. We also inform you that we have updated our",
+    "privacyNotice": "Privacy Notice",
+    "accept": "Accept"
+  },
+  "common": {
+    "comingSoon": "Coming soon!"
+  },
+  "roadmaps": {
+    "title": "Roadmaps",
+    "description": "Learning tracks organized by level and objective.",
+    "items": {
+      "backend-apis": {
+        "title": "Back-end and APIs",
+        "description": "API creation, authentication, database integration and architecture organization."
+      },
+      "banco-dados": {
+        "title": "Databases",
+        "description": "Conceptual/logical modeling, SQL, relationships, normalization and queries for real projects."
+      },
+      "ciberseguranca": {
+        "title": "Cybersecurity",
+        "description": "Complete track with fundamentals, offensive and defensive practices, specializations and a portfolio plan."
+      },
+      "git-github": {
+        "title": "Git and GitHub",
+        "description": "Complete versioning flow with branches, pull requests, code review and continuous publishing."
+      },
+      "javascript": {
+        "title": "JavaScript",
+        "description": "Complete language track: fundamentals, async, browser APIs, Node.js, testing and portfolio."
+      },
+      "php": {
+        "title": "PHP",
+        "description": "Practical track for modern PHP, web back-end, frameworks, code quality, and deployment."
+      },
+      "logica-programacao": {
+        "title": "Programming Logic",
+        "description": "Foundation for algorithms, decision and loop structures, problem-solving and computational thinking."
+      },
+      "projetos-portfolio": {
+        "title": "Projects and Portfolio",
+        "description": "Planning and execution of applied projects, documentation and professional portfolio building."
+      }
+    }
+  },
+  "subjects": {
+    "title": "Subjects",
+    "description": "Academic content and learning tracks organized by topic.",
+    "items": {
+      "algoritmos": {
+        "title": "Algorithms",
+        "description": "Logic, fundamentals and practice with graded exercise lists."
+      },
+      "analise-dados": {
+        "title": "Data Analysis",
+        "description": "Statistics, correlation, visualization, and exploratory analysis with practical lists."
+      },
+      "arquitetura-software": {
+        "title": "Software Architecture",
+        "description": "Base track built from the discipline PPT files, organized as a lesson sequence."
+      },
+      "arquitetura-software-techplay": {
+        "title": "Software Architecture: TechPlay Themes",
+        "description": "Complementary subject with the 20 themes used in the TechPlay draw."
+      },
+      "desenvolvimento-web": {
+        "title": "Web Development",
+        "description": "Fundamentals, modern front-end and production best practices."
+      },
+      "git-github": {
+        "title": "Git and GitHub",
+        "description": "Complete versioning: repository, commits, branches, push and pull."
+      },
+      "modelagem-banco-dados": {
+        "title": "Database Modeling",
+        "description": "Conceptual, logical and physical modeling for data projects."
+      },
+      "protocolo-http": {
+        "title": "HTTP Protocol",
+        "description": "Request/response fundamentals, HTTP verbs, and status code interpretation."
+      }
+    }
+  },
+  "utilities": {
+    "title": "Utilities",
+    "categories": {
+      "dev-tools": {
+        "title": "Dev Tools",
+        "description": "Technical resources for development and testing.",
+        "items": {
+          "comparador-textos": {
+            "title": "Text Comparator",
+            "description": "Compare two texts line by line and highlight differences."
+          },
+          "conversor-data-hora": {
+            "title": "Date/Time Converter",
+            "description": "Convert local date/time to UTC and other time zones."
+          },
+          "gerador-qrcode": {
+            "title": "QR Code Generator",
+            "description": "Generate QR codes from text or links and download as PNG."
+          },
+          "gerador-senhas": {
+            "title": "Password Generator",
+            "description": "Build strong passwords with custom size and rules."
+          },
+          "mock-sql-json": {
+            "title": "SQL/JSON Mock Generator",
+            "description": "Generate test datasets in JSON and SQL."
+          },
+          "testador-regex": {
+            "title": "Regex Tester",
+            "description": "Test regular expressions and preview matches."
+          }
+        }
+      },
+      "documentos-financas": {
+        "title": "Documents and Finance",
+        "description": "Daily validations and calculations.",
+        "items": {
+          "busca-cep": {
+            "title": "ZIP Code Lookup",
+            "description": "Find full address from ZIP code with fast response."
+          },
+          "calculadora-juros": {
+            "title": "Interest Calculator",
+            "description": "Compare simple and compound interest with period table."
+          },
+          "imc": {
+            "title": "BMI Calculator",
+            "description": "Calculate body mass index and track history."
+          },
+          "validador-cpf-cnpj": {
+            "title": "CPF/CNPJ Validator",
+            "description": "Validate documents using verification digits."
+          }
+        }
+      },
+      "sorteios": {
+        "title": "Draws",
+        "description": "Tools for drawing comments, numbers and groups.",
+        "items": {
+          "sorteio-instagram": {
+            "title": "Instagram Draw",
+            "description": "Fetch comments via API and draw with suspense."
+          },
+          "sorteio-numeros": {
+            "title": "Number Draw",
+            "description": "Draw numbers by interval with no-repeat continuation."
+          },
+          "sorteio-times": {
+            "title": "Team Draw",
+            "description": "Distribute participants into teams randomly."
+          }
+        }
+      },
+      "tempo-produtividade": {
+        "title": "Time and Productivity",
+        "description": "Clocks and cycles for study, exams and focus.",
+        "items": {
+          "pomodoro": {
+            "title": "Pomodoro Timer",
+            "description": "Manage focus and break cycles with presets."
+          },
+          "timer-prova": {
+            "title": "Exam Timer",
+            "description": "Show current time and countdown for an exam."
+          }
+        }
+      }
+    }
+  },
+  "roadmapPages": {
+    "common": {
+      "backToRoadmaps": "Back to roadmaps",
+      "howToUseTrack": "How to use this track",
+      "howToUseRoadmap": "How to use this roadmap",
+      "topics": "Topics",
+      "practices": "Practice",
+      "deliverable": "Deliverable",
+      "intensive90Days": "90-Day Intensive Plan",
+      "specializations": "Specializations",
+      "stack": "Stack",
+      "certifications": "Certifications",
+      "portfolioProjects": "Portfolio projects",
+      "baseReferencesUsed": "Base references used",
+      "openReference": "Open reference",
+      "commonMistakesToAvoid": "Common mistakes to avoid"
+    },
+    "ciber": {
+      "title": "Cybersecurity Roadmap",
+      "subtitle": "A complete track to start from scratch and evolve to professional cybersecurity practice, focused on fundamentals, guided practice and portfolio.",
+      "filterLabel": "Filter by study profile",
+      "filterHelp": "When selecting a profile, only the most relevant sections will be expanded automatically.",
+      "profiles": {
+        "todos": "All content",
+        "iniciante": "Beginner",
+        "blue-team": "Blue Team / SOC",
+        "red-team": "Red Team / Pentest",
+        "appsec": "AppSec / DevSecOps",
+        "cloud-security": "Cloud Security",
+        "dfir": "DFIR / Forensics",
+        "grc": "GRC / Governance"
+      },
+      "howToUse": [
+        "Follow phases in sequence and do not skip the fundamentals.",
+        "Close each phase with a documented technical deliverable.",
+        "Publish projects on GitHub and keep a clear evolution history.",
+        "Choose a specialization after consolidating offensive and defensive foundations."
+      ],
+      "competencyMatrix": "Competency Matrix (Complete Map)",
+      "toolsStackLayered": "Layered Tools Stack",
+      "labsProgressivePractice": "Labs and Progressive Practice",
+      "domainsAndCareers": "Cybersecurity Domains and Careers",
+      "keySkills": "Key skills",
+      "weeklyPlan": "Suggested weekly plan",
+      "certificationsByTrack": "Track-based certifications",
+      "professionalMaturityMilestones": "Professional maturity milestones"
+    },
+    "logic": {
+      "title": "Programming Logic Roadmap",
+      "subtitle": "Complete track to build logical reasoning, master algorithms and deliver practical projects with a solid foundation for any language.",
+      "howToUse": [
+        "Follow phases in order with daily practice and weekly review.",
+        "Do not move forward without completing validation exercises from each phase.",
+        "Document your full progress on GitHub to consolidate learning.",
+        "Choose an objective track after mastering the logic foundations."
+      ],
+      "competencyMatrix": "Competency Matrix",
+      "goalTracks": "Goal-based tracks",
+      "progressiveChallenges": "Progressive challenges",
+      "highConsistencyRoutine": "High-consistency study routine",
+      "portfolioProjectsExtended": "Portfolio projects (from basic to advanced)",
+      "continuousPracticeLibrary": "Continuous practice library",
+      "levelProgressCriteria": "Criteria to advance levels"
+    },
+    "javascript": {
+      "title": "JavaScript Roadmap",
+      "subtitle": "Complete track to master JavaScript from foundational to professional level, focused on fundamentals, real practice, code quality and portfolio.",
+      "howToUse": [
+        "Follow the phase order to consolidate language fundamentals.",
+        "Close each phase with a concrete deliverable versioned on GitHub.",
+        "Avoid jumping to frameworks too early: prioritize JS core mastery.",
+        "Choose a specialization track after phase 6."
+      ],
+      "competencyMatrix": "Competency Matrix",
+      "toolsStack": "Tools Stack",
+      "suggestedStudyRoutine": "Suggested study routine"
+    }
+  },
+  "footer": {
+    "ctaTitle": "Let's talk?",
+    "ctaText": "Share your idea and let's turn it into a real project.",
+    "ctaButton": "Talk to us",
+    "description": "Digital solutions focused on performance, strategy and real impact.",
+    "privacyNotice": "Privacy Notice",
+    "contact": "Contact",
+    "education": "Technology Education",
+    "educationItems": [
+      "Programming Teaching",
+      "Professional Courses",
+      "Distance Education",
+      "Portfolio Building",
+      "Private Lessons"
+    ],
+    "services": "Services",
+    "serviceItems": ["Websites and landing pages", "Custom systems", "Technical consulting"],
+    "support": "Support:",
+    "supportHours": "Mon–Fri, 09:00 to 18:00"
+  }
+}
