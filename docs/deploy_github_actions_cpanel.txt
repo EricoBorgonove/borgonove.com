@@ -1,0 +1,40 @@
+Deploy automático (Fluxo 2): GitHub Actions -> HostGator cPanel
+
+Objetivo:
+- Fazer push no GitHub e publicar automaticamente no cPanel.
+
+Arquivos criados no projeto:
+- .github/workflows/deploy-cpanel-hostgator.yml
+- public/.htaccess
+
+Como funciona:
+1. Você faz push na branch main.
+2. O GitHub Actions executa build (npm ci + npm run build).
+3. O workflow limpa o diretório remoto de deploy (mantendo .well-known).
+4. O workflow envia os arquivos de dist para o cPanel.
+
+Pré-requisitos:
+- SSH habilitado na HostGator.
+- Credenciais SSH válidas do cPanel.
+- Repositório no GitHub com Actions habilitado.
+
+Secrets necessários no GitHub (Settings -> Secrets and variables -> Actions):
+- CPANEL_HOST: host SSH (ex.: 123.45.67.89 ou seu domínio)
+- CPANEL_USERNAME: usuário SSH/cPanel
+- CPANEL_PORT: porta SSH (normalmente 22)
+- CPANEL_TARGET_DIR: pasta de publicação
+  Exemplo comum: /home/SEU_USUARIO/public_html
+- CPANEL_SSH_PRIVATE_KEY: chave privada SSH completa (BEGIN/END)
+- CPANEL_SSH_PASSPHRASE: passphrase da chave (somente se existir)
+
+Passo a passo rápido:
+1. Suba este projeto no GitHub.
+2. Cadastre os secrets acima.
+3. Confirme no workflow que a branch de deploy é "main".
+4. Faça um commit/push.
+5. Acompanhe em GitHub -> Actions -> "Deploy cPanel HostGator".
+
+Observações:
+- Como o projeto usa BrowserRouter, o arquivo public/.htaccess evita erro 404 em rotas diretas.
+- O deploy apaga arquivos antigos no destino (para evitar assets de build antigos).
+- A pasta .well-known é preservada durante a limpeza remota.
