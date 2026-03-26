@@ -1,0 +1,411 @@
+{
+  "navbar": {
+    "me": "Me",
+    "roadmaps": "Roadmaps",
+    "blog": "Blog",
+    "utilities": "Utilidades",
+    "subjects": "Disciplinas",
+    "contact": "Contato",
+    "talkToUs": "Fale conosco",
+    "search": {
+      "open": "Buscar",
+      "placeholder": "Pesquisar...",
+      "none": "Nenhum resultado encontrado."
+    },
+    "adminArea": "Área administrativa",
+    "adminAreaSoon": "Área administrativa em breve",
+    "menuOpen": "Abrir menu",
+    "language": "Idioma",
+    "theme": {
+      "toLight": "Ativar modo claro",
+      "toDark": "Ativar modo escuro",
+      "light": "Modo claro",
+      "dark": "Modo escuro",
+      "darkActive": "Modo escuro ativo",
+      "lightActive": "Modo claro ativo"
+    }
+  },
+  "home": {
+    "hero": {
+      "titleBefore": "Tecnologia com",
+      "titleHighlight": "estratégia",
+      "titleAfter": "e performance",
+      "description": "Desenvolvimento web e soluções digitais modernas, construídas para gerar impacto real e vantagem competitiva.",
+      "projects": "Ver projetos",
+      "contact": "Fale conosco"
+    },
+    "about": {
+      "title": "Sobre",
+      "description": "Analista de Sistemas, Desenvolvedor Web e Professor Universitário, focado na criação de soluções digitais escaláveis, performáticas e estrategicamente alinhadas ao negócio.",
+      "stats": {
+        "projects": "Projetos entregues",
+        "students": "Alunos formados",
+        "strategy": "Visão de negócio",
+        "performance": "Foco em resultado"
+      }
+    },
+    "solutions": {
+      "title": "Soluções inovadoras e eficientes para o seu negócio",
+      "description": "Unindo a paixão pelo ensino com a excelência em tecnologia: com um professor à frente, desenvolvemos softwares inovadores que ensinam, transformam e conectam, que não apenas atendem às necessidades do mercado, mas abrindo novos caminhos para o aprendizado e o progresso tecnológico.",
+      "items": {
+        "innovativeDevelopment": {
+          "title": "Desenvolvimento Inovador",
+          "description": "Projetos que resolvem necessidades atuais e já preparam a base para evolução futura do negócio."
+        },
+        "educationTechnology": {
+          "title": "Educação & Tecnologia",
+          "description": "Integração entre ensino e prática de mercado para formar soluções aplicáveis e sustentáveis."
+        },
+        "smartAutomation": {
+          "title": "Automação Inteligente",
+          "description": "Processos digitais desenhados para reduzir retrabalho, acelerar operações e aumentar previsibilidade."
+        },
+        "strategicProjects": {
+          "title": "Projetos Estratégicos",
+          "description": "Planejamento técnico com foco em resultado, desempenho e crescimento contínuo das iniciativas."
+        }
+      }
+    },
+    "services": {
+      "title": "Serviços",
+      "items": {
+        "webDev": {
+          "title": "Desenvolvimento Web",
+          "description": "Sites institucionais, landing pages e aplicações modernas."
+        },
+        "customSystems": {
+          "title": "Sistemas Customizados",
+          "description": "Soluções sob medida para demandas empresariais."
+        },
+        "technicalConsulting": {
+          "title": "Consultoria Técnica",
+          "description": "Arquitetura, planejamento e estruturação de projetos."
+        },
+        "dataAnalysis": {
+          "title": "Análise de Dados",
+          "description": "Dashboards, indicadores e análises para apoiar decisões estratégicas."
+        },
+        "infrastructure": {
+          "title": "Infraestrutura",
+          "description": "Estruturação de ambientes, redes e serviços com foco em estabilidade e segurança."
+        },
+        "automations": {
+          "title": "Automações",
+          "description": "Automação de rotinas e processos para ganho de produtividade e redução de erros."
+        }
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Seleção de entregas e soluções digitais com foco em impacto real.",
+      "items": [
+        "Automação de processos com integrações",
+        "Dashboard de análise inteligente",
+        "Landing de conversão",
+        "Landing page",
+        "Loja virtual",
+        "Plataforma institucional",
+        "Portal educacional interativo",
+        "Portal institucional",
+        "Sistema sob medida"
+      ],
+      "cardDescription": "Projeto em destaque com foco em performance, design e resultados."
+    }
+  },
+  "contactPage": {
+    "title": "Contato",
+    "description": "Envie sua mensagem e eu retorno o quanto antes."
+  },
+  "contactForm": {
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "placeholderName": "Seu nome",
+    "placeholderEmail": "seu@email.com",
+    "placeholderMessage": "Conte um pouco sobre o que precisa",
+    "submit": "Enviar mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso.",
+    "errorDefault": "Erro ao enviar.",
+    "errorMap": {
+      "required": "Preencha todos os campos obrigatórios.",
+      "invalidEmail": "Informe um e-mail válido.",
+      "longMessage": "A mensagem deve ter no máximo 2000 caracteres.",
+      "smtpConfig": "Configuração de e-mail incompleta no servidor.",
+      "sendFail": "Não foi possível enviar o e-mail no momento.",
+      "challenge": "Seu navegador bloqueou a validação de segurança. Ative cookies e tente novamente.",
+      "fallback": "Falha no envio. Tente novamente."
+    }
+  },
+  "cookieBanner": {
+    "text": "Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços, personalizar publicidade e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você está ciente dessa funcionalidade. Informamos ainda que atualizamos nosso",
+    "privacyNotice": "Aviso de Privacidade",
+    "accept": "Aceitar"
+  },
+  "common": {
+    "comingSoon": "Em breve!"
+  },
+  "roadmaps": {
+    "title": "Roadmaps",
+    "description": "Trilhas de aprendizado organizadas por nível e objetivo.",
+    "items": {
+      "backend-apis": {
+        "title": "Back-end e APIs",
+        "description": "Criação de APIs, autenticação, integração com banco de dados e organização de arquitetura."
+      },
+      "banco-dados": {
+        "title": "Banco de Dados",
+        "description": "Modelagem conceitual/lógica, SQL, relacionamentos, normalização e consultas para projetos reais."
+      },
+      "ciberseguranca": {
+        "title": "Cibersegurança",
+        "description": "Trilha completa com fundamentos, práticas ofensivas e defensivas, especializações e plano de portfólio."
+      },
+      "git-github": {
+        "title": "Git e GitHub",
+        "description": "Versionamento completo com fluxo de branches, pull requests, revisão de código e publicação contínua."
+      },
+      "javascript": {
+        "title": "JavaScript",
+        "description": "Trilha completa da linguagem: fundamentos, assíncrono, browser APIs, Node.js, testes e portfólio."
+      },
+      "php": {
+        "title": "PHP",
+        "description": "Trilha prática para PHP moderno, back-end web, frameworks, qualidade e deploy."
+      },
+      "logica-programacao": {
+        "title": "Lógica de Programação",
+        "description": "Base para algoritmos, estruturas de decisão e repetição, resolução de problemas e raciocínio computacional."
+      },
+      "projetos-portfolio": {
+        "title": "Projetos e Portfólio",
+        "description": "Planejamento e execução de projetos aplicados, documentação e construção de portfólio profissional."
+      }
+    }
+  },
+  "subjects": {
+    "title": "Disciplinas",
+    "description": "Conteúdos acadêmicos e trilhas de aprendizado organizadas por tema.",
+    "items": {
+      "algoritmos": {
+        "title": "Algoritmos",
+        "description": "Lógica, fundamentos e prática com listas graduais de exercícios."
+      },
+      "analise-dados": {
+        "title": "Análise de Dados",
+        "description": "Estatística, correlação, visualização e análise exploratória com listas práticas."
+      },
+      "arquitetura-software": {
+        "title": "Arquitetura de Software",
+        "description": "Trilha-base construída a partir dos PPTs da disciplina, com aulas estruturadas em sequência."
+      },
+      "arquitetura-software-techplay": {
+        "title": "Arquitetura de Software: Temas TechPlay",
+        "description": "Disciplina complementar com os 20 temas usados no sorteio do TechPlay."
+      },
+      "desenvolvimento-web": {
+        "title": "Desenvolvimento Web",
+        "description": "Fundamentos, front-end moderno e boas práticas para produção."
+      },
+      "git-github": {
+        "title": "Git e GitHub",
+        "description": "Versionamento completo: repositório, commits, branches, push e pull."
+      },
+      "modelagem-banco-dados": {
+        "title": "Modelagem de Banco de Dados",
+        "description": "Modelagem conceitual, lógica e física para projetos de dados."
+      },
+      "protocolo-http": {
+        "title": "Protocolo HTTP",
+        "description": "Fundamentos de requisição/resposta, verbos HTTP e interpretação de status codes."
+      }
+    }
+  },
+  "utilities": {
+    "title": "Utilidades",
+    "categories": {
+      "dev-tools": {
+        "title": "Dev Tools",
+        "description": "Recursos técnicos para desenvolvimento e testes.",
+        "items": {
+          "comparador-textos": {
+            "title": "Comparador de Textos",
+            "description": "Compare dois textos por linha e destaque diferenças."
+          },
+          "conversor-data-hora": {
+            "title": "Conversor de Datas/Horas",
+            "description": "Converta data/hora local para UTC e outros fusos."
+          },
+          "gerador-qrcode": {
+            "title": "Gerador de QR Code",
+            "description": "Crie QR Code de texto ou link e baixe em PNG."
+          },
+          "gerador-senhas": {
+            "title": "Gerador de Senhas",
+            "description": "Monte senhas fortes com tamanho e regras personalizadas."
+          },
+          "mock-sql-json": {
+            "title": "Gerador SQL/JSON Mock",
+            "description": "Gere massa de dados de teste em JSON e SQL."
+          },
+          "testador-regex": {
+            "title": "Corretor de Regex",
+            "description": "Teste expressões regulares e visualize matches."
+          }
+        }
+      },
+      "documentos-financas": {
+        "title": "Documentos e Finanças",
+        "description": "Validações e cálculos do dia a dia.",
+        "items": {
+          "busca-cep": {
+            "title": "Buscador de CEP",
+            "description": "Consulte endereço completo a partir do CEP com retorno rápido."
+          },
+          "calculadora-juros": {
+            "title": "Calculadora de Juros",
+            "description": "Compare juros simples e compostos com tabela por período."
+          },
+          "imc": {
+            "title": "Calculadora de IMC",
+            "description": "Calcule o índice de massa corporal e acompanhe histórico."
+          },
+          "validador-cpf-cnpj": {
+            "title": "Validador CPF/CNPJ",
+            "description": "Valide documentos por dígitos verificadores."
+          }
+        }
+      },
+      "sorteios": {
+        "title": "Sorteios",
+        "description": "Ferramentas para sorteio de comentários, números e grupos.",
+        "items": {
+          "sorteio-instagram": {
+            "title": "Sorteio Instagram",
+            "description": "Busque comentários via API e sorteie com suspense."
+          },
+          "sorteio-numeros": {
+            "title": "Sorteio de Números",
+            "description": "Sorteie números por intervalo, com continuação sem repetição."
+          },
+          "sorteio-times": {
+            "title": "Sorteio de Times",
+            "description": "Distribua participantes em equipes de forma aleatória."
+          }
+        }
+      },
+      "tempo-produtividade": {
+        "title": "Tempo e Produtividade",
+        "description": "Relógios e ciclos para estudo, prova e foco.",
+        "items": {
+          "pomodoro": {
+            "title": "Cronômetro Pomodoro",
+            "description": "Gerencie ciclos de foco e pausa com presets."
+          },
+          "timer-prova": {
+            "title": "Timer de Prova",
+            "description": "Exiba hora atual e contagem regressiva para prova."
+          }
+        }
+      }
+    }
+  },
+  "roadmapPages": {
+    "common": {
+      "backToRoadmaps": "Voltar para roadmaps",
+      "howToUseTrack": "Como usar esta trilha",
+      "howToUseRoadmap": "Como usar este roadmap",
+      "topics": "Tópicos",
+      "practices": "Práticas",
+      "deliverable": "Entregável",
+      "intensive90Days": "Plano Intensivo de 90 dias",
+      "specializations": "Especializações",
+      "stack": "Stack",
+      "certifications": "Certificações",
+      "portfolioProjects": "Projetos para portfólio",
+      "baseReferencesUsed": "Referências base utilizadas",
+      "openReference": "Acessar referência",
+      "commonMistakesToAvoid": "Erros comuns para evitar"
+    },
+    "ciber": {
+      "title": "Roadmap de Cibersegurança",
+      "subtitle": "Trilha completa para sair do zero e evoluir para atuação profissional em cibersegurança, com foco em fundamentos, prática orientada e portfólio.",
+      "filterLabel": "Filtrar por perfil de estudo",
+      "filterHelp": "Ao escolher um perfil, apenas os blocos mais relevantes serão expandidos automaticamente.",
+      "profiles": {
+        "todos": "Todos os conteúdos",
+        "iniciante": "Iniciante",
+        "blue-team": "Blue Team / SOC",
+        "red-team": "Red Team / Pentest",
+        "appsec": "AppSec / DevSecOps",
+        "cloud-security": "Cloud Security",
+        "dfir": "DFIR / Forense",
+        "grc": "GRC / Governança"
+      },
+      "howToUse": [
+        "Siga as fases em sequência e não pule os fundamentos.",
+        "Feche cada fase com entregável técnico documentado.",
+        "Publique os projetos no GitHub e mantenha histórico de evolução.",
+        "Escolha uma especialização após consolidar base ofensiva e defensiva."
+      ],
+      "competencyMatrix": "Matriz de Competências (Mapa Completo)",
+      "toolsStackLayered": "Stack de Ferramentas por Camada",
+      "labsProgressivePractice": "Laboratórios e Prática Progressiva",
+      "domainsAndCareers": "Domínios e Carreiras em Cibersegurança",
+      "keySkills": "Habilidades-chave",
+      "weeklyPlan": "Plano semanal sugerido",
+      "certificationsByTrack": "Certificações por Trilha",
+      "professionalMaturityMilestones": "Marcos de Maturidade Profissional"
+    },
+    "logic": {
+      "title": "Roadmap de Lógica de Programação",
+      "subtitle": "Trilha completa para construir raciocínio lógico, dominar algoritmos e chegar em projetos práticos com base sólida para qualquer linguagem.",
+      "howToUse": [
+        "Siga as fases em ordem, com prática diária e revisão semanal.",
+        "Nunca avance sem fechar exercícios de validação de cada fase.",
+        "Documente toda evolução no GitHub para consolidar aprendizado.",
+        "Escolha uma trilha de objetivo após dominar a base de lógica."
+      ],
+      "competencyMatrix": "Matriz de Competências",
+      "goalTracks": "Trilhas por Objetivo",
+      "progressiveChallenges": "Desafios Progressivos",
+      "highConsistencyRoutine": "Rotina de estudo de alta consistência",
+      "portfolioProjectsExtended": "Projetos de Portfólio (do básico ao avançando)",
+      "continuousPracticeLibrary": "Biblioteca de prática contínua",
+      "levelProgressCriteria": "Critérios para avançar de nível"
+    },
+    "javascript": {
+      "title": "Roadmap de JavaScript",
+      "subtitle": "Trilha completa para dominar JavaScript do nível base ao profissional, com foco em fundamentos, prática real, qualidade de código e portfólio.",
+      "howToUse": [
+        "Siga a ordem das fases para consolidar base da linguagem.",
+        "Feche cada fase com um entregável concreto versionado no GitHub.",
+        "Evite framework cedo demais: priorize domínio de JS puro.",
+        "Escolha trilha de especialização após a fase 6."
+      ],
+      "competencyMatrix": "Matriz de Competências",
+      "toolsStack": "Stack de Ferramentas",
+      "suggestedStudyRoutine": "Rotina de estudo sugerida"
+    }
+  },
+  "footer": {
+    "ctaTitle": "Vamos conversar?",
+    "ctaText": "Conte sua ideia e vamos transformar em um projeto real.",
+    "ctaButton": "Fale conosco",
+    "description": "Soluções digitais com foco em performance, estratégia e impacto real.",
+    "privacyNotice": "Aviso de Privacidade",
+    "contact": "Contato",
+    "education": "Educação Tecnológica",
+    "educationItems": [
+      "Ensino de Programação",
+      "Cursos Profissionalizantes",
+      "Educação a Distância",
+      "Criação de Portfólios",
+      "Aulas Particulares"
+    ],
+    "services": "Serviços",
+    "serviceItems": ["Sites e landing pages", "Sistemas sob medida", "Consultoria técnica"],
+    "support": "Atendimento:",
+    "supportHours": "Seg–Sex, 09h às 18h"
+  }
+}
