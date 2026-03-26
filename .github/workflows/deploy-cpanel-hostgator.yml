@@ -1,0 +1,63 @@
+name: Deploy cPanel HostGator
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel-hostgator
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Clean remote target (keep .well-known)
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          TARGET_DIR: ${{ secrets.CPANEL_TARGET_DIR }}
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          key: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CPANEL_SSH_PASSPHRASE }}
+          port: ${{ secrets.CPANEL_PORT }}
+          script_stop: true
+          envs: TARGET_DIR
+          script: |
+            if [ -z "$TARGET_DIR" ]; then
+              echo "CPANEL_TARGET_DIR não definido."
+              exit 1
+            fi
+            mkdir -p "$TARGET_DIR"
+            find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name ".well-known" -exec rm -rf {} +
+
+      - name: Upload dist to cPanel
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          key: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CPANEL_SSH_PASSPHRASE }}
+          port: ${{ secrets.CPANEL_PORT }}
+          source: |
+            dist/*
+            dist/.htaccess
+          target: ${{ secrets.CPANEL_TARGET_DIR }}
