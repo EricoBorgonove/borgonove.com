@@ -1,0 +1,12 @@
+<?php
+// Copie para "db-config.php" e preencha os dados reais do MySQL.
+// Nao versionar o arquivo final com credenciais.
+
+return [
+  'host' => 'localhost',
+  'port' => '3306',
+  'name' => 'aruana99_meu_site',
+  'user' => 'aruana99_user_1234',
+  'password' => 'SENHA_FORTE_AQUI',
+  'charset' => 'utf8mb4',
+];
