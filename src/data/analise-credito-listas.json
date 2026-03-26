@@ -1,0 +1,533 @@
+[
+  {
+    "numero": 1,
+    "tipo": "Renda e Distribuição",
+    "tipo_en": "Income and Distribution",
+    "titulo": "Estatísticas de renda",
+    "titulo_en": "Income Statistics",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Calcule a renda média dos clientes.",
+        "texto_en": "Calculate the average income of the clients."
+      },
+      {
+        "id": 2,
+        "texto": "Calcule a mediana da renda.",
+        "texto_en": "Calculate the median income."
+      },
+      {
+        "id": 3,
+        "texto": "Calcule o desvio padrão da renda.",
+        "texto_en": "Calculate the standard deviation of income."
+      },
+      {
+        "id": 4,
+        "texto": "Classifique os clientes por faixa de renda.",
+        "texto_en": "Classify clients by income range."
+      },
+      {
+        "id": 5,
+        "texto": "Identifique clientes com renda acima da média.",
+        "texto_en": "Identify clients with income above the average."
+      },
+      {
+        "id": 6,
+        "texto": "Identifique clientes com renda abaixo da média.",
+        "texto_en": "Identify clients with income below the average."
+      },
+      {
+        "id": 7,
+        "texto": "Detecte outliers de renda usando desvio padrão.",
+        "texto_en": "Detect income outliers using standard deviation."
+      },
+      {
+        "id": 8,
+        "texto": "Detecte outliers de renda usando IQR.",
+        "texto_en": "Detect income outliers using IQR."
+      },
+      {
+        "id": 9,
+        "texto": "Analise a distribuição da renda.",
+        "texto_en": "Analyze the income distribution."
+      },
+      {
+        "id": 10,
+        "texto": "Identifique concentração de clientes por faixa de renda.",
+        "texto_en": "Identify client concentration by income range."
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "tipo": "Idade e Faixa Etária",
+    "tipo_en": "Age and Age Groups",
+    "titulo": "Perfil etário e renda",
+    "titulo_en": "Age Profile and Income",
+    "questoes": [
+      {
+        "id": 11,
+        "texto": "Calcule a idade média dos clientes.",
+        "texto_en": "Calculate the average age of the clients."
+      },
+      {
+        "id": 12,
+        "texto": "Calcule a mediana da idade.",
+        "texto_en": "Calculate the median age."
+      },
+      {
+        "id": 13,
+        "texto": "Analise a distribuição etária.",
+        "texto_en": "Analyze the age distribution."
+      },
+      {
+        "id": 14,
+        "texto": "Agrupe clientes por faixa etária.",
+        "texto_en": "Group clients by age range."
+      },
+      {
+        "id": 15,
+        "texto": "Compare renda por faixa etária.",
+        "texto_en": "Compare income by age group."
+      },
+      {
+        "id": 16,
+        "texto": "Identifique faixa etária com maior renda média.",
+        "texto_en": "Identify the age group with the highest average income."
+      },
+      {
+        "id": 17,
+        "texto": "Identifique faixa etária com menor renda média.",
+        "texto_en": "Identify the age group with the lowest average income."
+      },
+      {
+        "id": 18,
+        "texto": "Analise dispersão da idade.",
+        "texto_en": "Analyze age dispersion."
+      },
+      {
+        "id": 19,
+        "texto": "Compare idade com nível de renda.",
+        "texto_en": "Compare age with income level."
+      },
+      {
+        "id": 20,
+        "texto": "Identifique padrões entre idade e renda.",
+        "texto_en": "Identify patterns between age and income."
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "tipo": "Dívidas e Endividamento",
+    "tipo_en": "Debt and Indebtedness",
+    "titulo": "Dívidas da base",
+    "titulo_en": "Debt in the Dataset",
+    "questoes": [
+      {
+        "id": 21,
+        "texto": "Calcule o total de dívidas por cliente.",
+        "texto_en": "Calculate the total debt per client."
+      },
+      {
+        "id": 22,
+        "texto": "Calcule a média de dívida da base.",
+        "texto_en": "Calculate the average debt of the dataset."
+      },
+      {
+        "id": 23,
+        "texto": "Calcule a mediana das dívidas.",
+        "texto_en": "Calculate the median debt."
+      },
+      {
+        "id": 24,
+        "texto": "Calcule o desvio padrão das dívidas.",
+        "texto_en": "Calculate the standard deviation of debt."
+      },
+      {
+        "id": 25,
+        "texto": "Identifique clientes com dívida elevada.",
+        "texto_en": "Identify clients with high debt."
+      },
+      {
+        "id": 26,
+        "texto": "Identifique clientes com dívida baixa.",
+        "texto_en": "Identify clients with low debt."
+      },
+      {
+        "id": 27,
+        "texto": "Detecte outliers de dívida.",
+        "texto_en": "Detect debt outliers."
+      },
+      {
+        "id": 28,
+        "texto": "Analise distribuição das dívidas.",
+        "texto_en": "Analyze the distribution of debts."
+      },
+      {
+        "id": 29,
+        "texto": "Compare dívida por faixa de renda.",
+        "texto_en": "Compare debt by income range."
+      },
+      {
+        "id": 30,
+        "texto": "Compare dívida por faixa etária.",
+        "texto_en": "Compare debt by age group."
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "tipo": "Comprometimento de Renda",
+    "tipo_en": "Income Commitment",
+    "titulo": "Comprometimento financeiro",
+    "titulo_en": "Financial Commitment",
+    "questoes": [
+      {
+        "id": 31,
+        "texto": "Calcule o comprometimento de renda (dívida / renda).",
+        "texto_en": "Calculate income commitment (debt / income)."
+      },
+      {
+        "id": 32,
+        "texto": "Classifique clientes por nível de comprometimento.",
+        "texto_en": "Classify clients by commitment level."
+      },
+      {
+        "id": 33,
+        "texto": "Identifique clientes com comprometimento acima de 30%.",
+        "texto_en": "Identify clients with commitment above 30%."
+      },
+      {
+        "id": 34,
+        "texto": "Identifique clientes com comprometimento acima de 50%.",
+        "texto_en": "Identify clients with commitment above 50%."
+      },
+      {
+        "id": 35,
+        "texto": "Calcule média de comprometimento da base.",
+        "texto_en": "Calculate the average commitment of the dataset."
+      },
+      {
+        "id": 36,
+        "texto": "Compare comprometimento por renda.",
+        "texto_en": "Compare commitment by income."
+      },
+      {
+        "id": 37,
+        "texto": "Compare comprometimento por idade.",
+        "texto_en": "Compare commitment by age."
+      },
+      {
+        "id": 38,
+        "texto": "Analise dispersão do comprometimento.",
+        "texto_en": "Analyze the dispersion of commitment."
+      },
+      {
+        "id": 39,
+        "texto": "Detecte outliers de comprometimento.",
+        "texto_en": "Detect commitment outliers."
+      },
+      {
+        "id": 40,
+        "texto": "Avalie risco baseado no comprometimento.",
+        "texto_en": "Assess risk based on commitment."
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "tipo": "Atrasos e Inadimplência",
+    "tipo_en": "Delays and Default",
+    "titulo": "Atrasos e comportamento de pagamento",
+    "titulo_en": "Delays and Payment Behavior",
+    "questoes": [
+      {
+        "id": 41,
+        "texto": "Calcule a média de atrasos por cliente.",
+        "texto_en": "Calculate the average number of delays per client."
+      },
+      {
+        "id": 42,
+        "texto": "Identifique clientes com histórico de atraso.",
+        "texto_en": "Identify clients with a history of delays."
+      },
+      {
+        "id": 43,
+        "texto": "Classifique clientes por quantidade de atrasos.",
+        "texto_en": "Classify clients by number of delays."
+      },
+      {
+        "id": 44,
+        "texto": "Analise frequência de atraso.",
+        "texto_en": "Analyze the frequency of delays."
+      },
+      {
+        "id": 45,
+        "texto": "Compare atraso por renda.",
+        "texto_en": "Compare delays by income."
+      },
+      {
+        "id": 46,
+        "texto": "Compare atraso por idade.",
+        "texto_en": "Compare delays by age."
+      },
+      {
+        "id": 47,
+        "texto": "Identifique clientes com atraso recorrente.",
+        "texto_en": "Identify clients with recurring delays."
+      },
+      {
+        "id": 48,
+        "texto": "Identifique clientes sem atraso.",
+        "texto_en": "Identify clients with no delays."
+      },
+      {
+        "id": 49,
+        "texto": "Calcule taxa de inadimplência da base.",
+        "texto_en": "Calculate the dataset default rate."
+      },
+      {
+        "id": 50,
+        "texto": "Compare inadimplência entre grupos.",
+        "texto_en": "Compare default rates across groups."
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "tipo": "Score de Crédito",
+    "tipo_en": "Credit Score",
+    "titulo": "Score e ranking de crédito",
+    "titulo_en": "Credit Score and Ranking",
+    "questoes": [
+      {
+        "id": 51,
+        "texto": "Crie um score de crédito baseado em renda, atraso e comprometimento.",
+        "texto_en": "Create a credit score based on income, delays, and commitment."
+      },
+      {
+        "id": 52,
+        "texto": "Normalize os valores das variáveis para o score.",
+        "texto_en": "Normalize the variable values for the score."
+      },
+      {
+        "id": 53,
+        "texto": "Classifique clientes por faixa de score.",
+        "texto_en": "Classify clients by score range."
+      },
+      {
+        "id": 54,
+        "texto": "Identifique clientes com alto score.",
+        "texto_en": "Identify clients with high scores."
+      },
+      {
+        "id": 55,
+        "texto": "Identifique clientes com baixo score.",
+        "texto_en": "Identify clients with low scores."
+      },
+      {
+        "id": 56,
+        "texto": "Compare score por renda.",
+        "texto_en": "Compare score by income."
+      },
+      {
+        "id": 57,
+        "texto": "Compare score por idade.",
+        "texto_en": "Compare score by age."
+      },
+      {
+        "id": 58,
+        "texto": "Compare score por histórico de atraso.",
+        "texto_en": "Compare score by delay history."
+      },
+      {
+        "id": 59,
+        "texto": "Analise distribuição do score.",
+        "texto_en": "Analyze the score distribution."
+      },
+      {
+        "id": 60,
+        "texto": "Crie ranking de clientes por score.",
+        "texto_en": "Create a client ranking by score."
+      }
+    ]
+  },
+  {
+    "numero": 7,
+    "tipo": "Risco e Segmentação",
+    "tipo_en": "Risk and Segmentation",
+    "titulo": "Perfis de risco",
+    "titulo_en": "Risk Profiles",
+    "questoes": [
+      {
+        "id": 61,
+        "texto": "Classifique clientes como baixo, médio e alto risco.",
+        "texto_en": "Classify clients as low, medium, and high risk."
+      },
+      {
+        "id": 62,
+        "texto": "Identifique variáveis mais relevantes para risco.",
+        "texto_en": "Identify the most relevant variables for risk."
+      },
+      {
+        "id": 63,
+        "texto": "Analise relação entre renda e inadimplência.",
+        "texto_en": "Analyze the relationship between income and default."
+      },
+      {
+        "id": 64,
+        "texto": "Analise relação entre comprometimento e inadimplência.",
+        "texto_en": "Analyze the relationship between commitment and default."
+      },
+      {
+        "id": 65,
+        "texto": "Identifique padrões de clientes inadimplentes.",
+        "texto_en": "Identify patterns among defaulting clients."
+      },
+      {
+        "id": 66,
+        "texto": "Compare risco por faixa etária.",
+        "texto_en": "Compare risk by age group."
+      },
+      {
+        "id": 67,
+        "texto": "Compare risco por renda.",
+        "texto_en": "Compare risk by income."
+      },
+      {
+        "id": 68,
+        "texto": "Identifique clusters de clientes por risco.",
+        "texto_en": "Identify client clusters by risk."
+      },
+      {
+        "id": 69,
+        "texto": "Avalie distribuição de risco.",
+        "texto_en": "Evaluate the risk distribution."
+      },
+      {
+        "id": 70,
+        "texto": "Identifique clientes críticos.",
+        "texto_en": "Identify critical clients."
+      }
+    ]
+  },
+  {
+    "numero": 8,
+    "tipo": "Aprovação e Decisão",
+    "tipo_en": "Approval and Decision",
+    "titulo": "Regras de aprovação",
+    "titulo_en": "Approval Rules",
+    "questoes": [
+      {
+        "id": 71,
+        "texto": "Defina regras de aprovação de crédito.",
+        "texto_en": "Define credit approval rules."
+      },
+      {
+        "id": 72,
+        "texto": "Defina regras de reprovação automática.",
+        "texto_en": "Define automatic rejection rules."
+      },
+      {
+        "id": 73,
+        "texto": "Classifique clientes como aprovados ou reprovados.",
+        "texto_en": "Classify clients as approved or rejected."
+      },
+      {
+        "id": 74,
+        "texto": "Calcule taxa de aprovação.",
+        "texto_en": "Calculate the approval rate."
+      },
+      {
+        "id": 75,
+        "texto": "Calcule taxa de reprovação.",
+        "texto_en": "Calculate the rejection rate."
+      },
+      {
+        "id": 76,
+        "texto": "Compare aprovação por grupos.",
+        "texto_en": "Compare approval across groups."
+      },
+      {
+        "id": 77,
+        "texto": "Simule mudança nas regras de aprovação.",
+        "texto_en": "Simulate a change in approval rules."
+      },
+      {
+        "id": 78,
+        "texto": "Analise impacto das regras no risco.",
+        "texto_en": "Analyze the impact of the rules on risk."
+      },
+      {
+        "id": 79,
+        "texto": "Avalie trade-off entre aprovação e inadimplência.",
+        "texto_en": "Evaluate the trade-off between approval and default."
+      },
+      {
+        "id": 80,
+        "texto": "Identifique melhor estratégia de decisão.",
+        "texto_en": "Identify the best decision strategy."
+      }
+    ]
+  },
+  {
+    "numero": 9,
+    "tipo": "Correlação, Simulação e Auditoria",
+    "tipo_en": "Correlation, Simulation, and Auditing",
+    "titulo": "Cenários, consistência e relatório final",
+    "titulo_en": "Scenarios, Consistency, and Final Report",
+    "questoes": [
+      {
+        "id": 81,
+        "texto": "Calcule correlação entre renda e dívida.",
+        "texto_en": "Calculate the correlation between income and debt."
+      },
+      {
+        "id": 82,
+        "texto": "Calcule correlação entre atraso e score.",
+        "texto_en": "Calculate the correlation between delays and score."
+      },
+      {
+        "id": 83,
+        "texto": "Identifique variáveis mais influentes no risco.",
+        "texto_en": "Identify the most influential variables in risk."
+      },
+      {
+        "id": 84,
+        "texto": "Detecte padrões ocultos nos dados.",
+        "texto_en": "Detect hidden patterns in the data."
+      },
+      {
+        "id": 85,
+        "texto": "Simule cenário de queda de renda.",
+        "texto_en": "Simulate an income drop scenario."
+      },
+      {
+        "id": 86,
+        "texto": "Avalie impacto no risco de crédito.",
+        "texto_en": "Assess the impact on credit risk."
+      },
+      {
+        "id": 87,
+        "texto": "Identifique inconsistências nos dados.",
+        "texto_en": "Identify inconsistencies in the data."
+      },
+      {
+        "id": 88,
+        "texto": "Simule fraude (dados incoerentes).",
+        "texto_en": "Simulate fraud (inconsistent data)."
+      },
+      {
+        "id": 89,
+        "texto": "Modele indicador de alerta de risco.",
+        "texto_en": "Model a risk alert indicator."
+      },
+      {
+        "id": 90,
+        "texto": "Produza relatório final com insights e decisão de crédito.",
+        "texto_en": "Produce a final report with insights and a credit decision."
+      }
+    ]
+  }
+]
