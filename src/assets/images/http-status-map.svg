@@ -1,0 +1,39 @@
+<svg width="1200" height="430" viewBox="0 0 1200 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="430" rx="24" fill="#0B1225"/>
+  <text x="600" y="58" fill="#CFE2FF" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" font-weight="700">
+    HTTP STATUS CODE CLASSES
+  </text>
+  <text x="600" y="84" fill="#8EA8CC" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    Grouping by first digit: 1xx to 5xx
+  </text>
+
+  <rect x="70" y="120" width="206" height="240" rx="16" fill="#0E1D36" stroke="#5AAEEC"/>
+  <text x="173" y="172" fill="#8ED9FF" font-family="Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">1xx</text>
+  <text x="173" y="202" fill="#D5ECFF" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Informational</text>
+  <text x="173" y="245" fill="#99B4D8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">100 Continue</text>
+  <text x="173" y="267" fill="#99B4D8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">101 Switching Protocols</text>
+
+  <rect x="296" y="120" width="206" height="240" rx="16" fill="#11271A" stroke="#4AC57B"/>
+  <text x="399" y="172" fill="#8EF1B7" font-family="Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">2xx</text>
+  <text x="399" y="202" fill="#DAFFE8" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Success</text>
+  <text x="399" y="245" fill="#A9DDBB" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">200 OK</text>
+  <text x="399" y="267" fill="#A9DDBB" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">201 Created / 204 No Content</text>
+
+  <rect x="522" y="120" width="206" height="240" rx="16" fill="#2D2514" stroke="#E6B75A"/>
+  <text x="625" y="172" fill="#FFD68E" font-family="Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">3xx</text>
+  <text x="625" y="202" fill="#FFE9C5" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Redirection</text>
+  <text x="625" y="245" fill="#E8CFA3" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">301 Moved Permanently</text>
+  <text x="625" y="267" fill="#E8CFA3" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">302 Found / 304 Not Modified</text>
+
+  <rect x="748" y="120" width="206" height="240" rx="16" fill="#2D1B12" stroke="#E2955A"/>
+  <text x="851" y="172" fill="#FFC08E" font-family="Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">4xx</text>
+  <text x="851" y="202" fill="#FFE0CA" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Client Error</text>
+  <text x="851" y="245" fill="#E8BC9A" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">400 / 401 / 403 / 404</text>
+  <text x="851" y="267" fill="#E8BC9A" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">409 Conflict / 422 Unprocessable</text>
+
+  <rect x="974" y="120" width="156" height="240" rx="16" fill="#32161A" stroke="#E06B7A"/>
+  <text x="1052" y="172" fill="#FFB6C0" font-family="Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">5xx</text>
+  <text x="1052" y="202" fill="#FFD2D8" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">Server Error</text>
+  <text x="1052" y="245" fill="#EFB0B8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">500 Internal Error</text>
+  <text x="1052" y="267" fill="#EFB0B8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">502 / 503</text>
+</svg>
