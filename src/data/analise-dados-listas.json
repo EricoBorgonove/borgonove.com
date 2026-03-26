@@ -1,0 +1,533 @@
+[
+  {
+    "numero": 1,
+    "tipo": "Estatística Descritiva",
+    "tipo_en": "Descriptive Statistics",
+    "titulo": "Medidas centrais e dispersão",
+    "titulo_en": "Central Tendency and Dispersion Measures",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Calcule a média de notas de cada aluno.",
+        "texto_en": "Calculate each student's average grade."
+      },
+      {
+        "id": 2,
+        "texto": "Calcule a mediana das notas de cada aluno.",
+        "texto_en": "Calculate each student's median grade."
+      },
+      {
+        "id": 3,
+        "texto": "Calcule a amplitude das notas de cada aluno.",
+        "texto_en": "Calculate each student's grade range."
+      },
+      {
+        "id": 4,
+        "texto": "Calcule o desvio padrão das notas de cada aluno.",
+        "texto_en": "Calculate each student's grade standard deviation."
+      },
+      {
+        "id": 5,
+        "texto": "Calcule o coeficiente de variação de cada aluno.",
+        "texto_en": "Calculate each student's coefficient of variation."
+      },
+      {
+        "id": 6,
+        "texto": "Calcule a média global das notas.",
+        "texto_en": "Calculate the overall average of the grades."
+      },
+      {
+        "id": 7,
+        "texto": "Calcule a mediana global das notas.",
+        "texto_en": "Calculate the overall median of the grades."
+      },
+      {
+        "id": 8,
+        "texto": "Calcule o desvio padrão global das notas.",
+        "texto_en": "Calculate the overall standard deviation of the grades."
+      },
+      {
+        "id": 9,
+        "texto": "Compare média e mediana global e interprete a distribuição.",
+        "texto_en": "Compare the overall mean and median and interpret the distribution."
+      },
+      {
+        "id": 10,
+        "texto": "Identifique assimetria nos dados (tendência à direita ou esquerda).",
+        "texto_en": "Identify skewness in the data (right- or left-skewed)."
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "tipo": "Distribuição e Frequência",
+    "tipo_en": "Distribution and Frequency",
+    "titulo": "Faixas, classes e concentração",
+    "titulo_en": "Ranges, Classes, and Concentration",
+    "questoes": [
+      {
+        "id": 11,
+        "texto": "Crie a distribuição de frequência das notas.",
+        "texto_en": "Create the frequency distribution of the grades."
+      },
+      {
+        "id": 12,
+        "texto": "Agrupe as notas em classes (0–4, 4–6, 6–8, 8–10).",
+        "texto_en": "Group the grades into classes (0-4, 4-6, 6-8, 8-10)."
+      },
+      {
+        "id": 13,
+        "texto": "Calcule a frequência relativa de cada classe.",
+        "texto_en": "Calculate the relative frequency of each class."
+      },
+      {
+        "id": 14,
+        "texto": "Identifique a classe modal.",
+        "texto_en": "Identify the modal class."
+      },
+      {
+        "id": 15,
+        "texto": "Verifique concentração de alunos em determinada faixa.",
+        "texto_en": "Check whether students are concentrated in a specific range."
+      },
+      {
+        "id": 16,
+        "texto": "Compare distribuição entre turnos.",
+        "texto_en": "Compare distributions across shifts."
+      },
+      {
+        "id": 17,
+        "texto": "Compare distribuição entre períodos.",
+        "texto_en": "Compare distributions across academic periods."
+      },
+      {
+        "id": 18,
+        "texto": "Verifique dispersão das notas por turno.",
+        "texto_en": "Check grade dispersion by shift."
+      },
+      {
+        "id": 19,
+        "texto": "Verifique dispersão das notas por período.",
+        "texto_en": "Check grade dispersion by academic period."
+      },
+      {
+        "id": 20,
+        "texto": "Identifique padrões de concentração de desempenho.",
+        "texto_en": "Identify performance concentration patterns."
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "tipo": "Análise Comparativa",
+    "tipo_en": "Comparative Analysis",
+    "titulo": "Comparações por grupos acadêmicos",
+    "titulo_en": "Comparisons Across Academic Groups",
+    "questoes": [
+      {
+        "id": 21,
+        "texto": "Calcule média por turno.",
+        "texto_en": "Calculate the average by shift."
+      },
+      {
+        "id": 22,
+        "texto": "Calcule média por período.",
+        "texto_en": "Calculate the average by academic period."
+      },
+      {
+        "id": 23,
+        "texto": "Compare médias entre turnos.",
+        "texto_en": "Compare averages across shifts."
+      },
+      {
+        "id": 24,
+        "texto": "Compare médias entre períodos.",
+        "texto_en": "Compare averages across academic periods."
+      },
+      {
+        "id": 25,
+        "texto": "Analise tendência de desempenho ao longo dos períodos.",
+        "texto_en": "Analyze performance trends across academic periods."
+      },
+      {
+        "id": 26,
+        "texto": "Compare desempenho entre períodos iniciais e finais.",
+        "texto_en": "Compare performance between early and late periods."
+      },
+      {
+        "id": 27,
+        "texto": "Verifique qual turno possui melhor desempenho médio.",
+        "texto_en": "Determine which shift has the best average performance."
+      },
+      {
+        "id": 28,
+        "texto": "Verifique qual período possui pior desempenho médio.",
+        "texto_en": "Determine which period has the worst average performance."
+      },
+      {
+        "id": 29,
+        "texto": "Identifique variação de desempenho por grupo.",
+        "texto_en": "Identify performance variation by group."
+      },
+      {
+        "id": 30,
+        "texto": "Analise estabilidade de desempenho por turno.",
+        "texto_en": "Analyze performance stability by shift."
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "tipo": "Outliers e Qualidade",
+    "tipo_en": "Outliers and Data Quality",
+    "titulo": "Valores extremos e consistência do dataset",
+    "titulo_en": "Extreme Values and Dataset Consistency",
+    "questoes": [
+      {
+        "id": 31,
+        "texto": "Identifique outliers usando desvio padrão.",
+        "texto_en": "Identify outliers using standard deviation."
+      },
+      {
+        "id": 32,
+        "texto": "Identifique outliers usando IQR (intervalo interquartil).",
+        "texto_en": "Identify outliers using IQR (interquartile range)."
+      },
+      {
+        "id": 33,
+        "texto": "Compare resultados com e sem outliers.",
+        "texto_en": "Compare results with and without outliers."
+      },
+      {
+        "id": 34,
+        "texto": "Verifique impacto dos outliers na média global.",
+        "texto_en": "Check the impact of outliers on the overall mean."
+      },
+      {
+        "id": 35,
+        "texto": "Verifique impacto dos outliers na mediana.",
+        "texto_en": "Check the impact of outliers on the median."
+      },
+      {
+        "id": 36,
+        "texto": "Identifique alunos com notas extremas.",
+        "texto_en": "Identify students with extreme grades."
+      },
+      {
+        "id": 37,
+        "texto": "Analise distribuição sem outliers.",
+        "texto_en": "Analyze the distribution without outliers."
+      },
+      {
+        "id": 38,
+        "texto": "Compare variância antes e depois da remoção.",
+        "texto_en": "Compare variance before and after removal."
+      },
+      {
+        "id": 39,
+        "texto": "Identifique possíveis erros nos dados.",
+        "texto_en": "Identify possible data errors."
+      },
+      {
+        "id": 40,
+        "texto": "Analise consistência geral do dataset.",
+        "texto_en": "Analyze the overall consistency of the dataset."
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "tipo": "Correlação e Inferência",
+    "tipo_en": "Correlation and Inference",
+    "titulo": "Dependência entre variáveis",
+    "titulo_en": "Dependency Between Variables",
+    "questoes": [
+      {
+        "id": 41,
+        "texto": "Calcule correlação entre período e média.",
+        "texto_en": "Calculate the correlation between academic period and average grade."
+      },
+      {
+        "id": 42,
+        "texto": "Analise correlação entre notas individuais.",
+        "texto_en": "Analyze the correlation between individual grades."
+      },
+      {
+        "id": 43,
+        "texto": "Verifique relação entre nota1 e nota3.",
+        "texto_en": "Check the relationship between grade1 and grade3."
+      },
+      {
+        "id": 44,
+        "texto": "Verifique se há dependência entre avaliações.",
+        "texto_en": "Check whether there is dependence between assessments."
+      },
+      {
+        "id": 45,
+        "texto": "Analise influência do turno no desempenho.",
+        "texto_en": "Analyze the influence of shift on performance."
+      },
+      {
+        "id": 46,
+        "texto": "Compare médias condicionais por turno.",
+        "texto_en": "Compare conditional averages by shift."
+      },
+      {
+        "id": 47,
+        "texto": "Avalie independência entre variáveis.",
+        "texto_en": "Evaluate independence between variables."
+      },
+      {
+        "id": 48,
+        "texto": "Analise relação entre consistência e média.",
+        "texto_en": "Analyze the relationship between consistency and average grade."
+      },
+      {
+        "id": 49,
+        "texto": "Identifique padrões ocultos nos dados.",
+        "texto_en": "Identify hidden patterns in the data."
+      },
+      {
+        "id": 50,
+        "texto": "Teste hipóteses simples (ex: turno afeta desempenho).",
+        "texto_en": "Test simple hypotheses (for example, whether shift affects performance)."
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "tipo": "Rankings",
+    "tipo_en": "Rankings",
+    "titulo": "Posicionamento e comparação de alunos",
+    "titulo_en": "Student Positioning and Comparison",
+    "questoes": [
+      {
+        "id": 51,
+        "texto": "Crie ranking por média.",
+        "texto_en": "Create a ranking by average grade."
+      },
+      {
+        "id": 52,
+        "texto": "Crie ranking por mediana.",
+        "texto_en": "Create a ranking by median grade."
+      },
+      {
+        "id": 53,
+        "texto": "Crie ranking por score ponderado.",
+        "texto_en": "Create a ranking by weighted score."
+      },
+      {
+        "id": 54,
+        "texto": "Compare diferentes rankings.",
+        "texto_en": "Compare different rankings."
+      },
+      {
+        "id": 55,
+        "texto": "Identifique top 10 alunos.",
+        "texto_en": "Identify the top 10 students."
+      },
+      {
+        "id": 56,
+        "texto": "Identifique bottom 10 alunos.",
+        "texto_en": "Identify the bottom 10 students."
+      },
+      {
+        "id": 57,
+        "texto": "Compare rankings por turno.",
+        "texto_en": "Compare rankings by shift."
+      },
+      {
+        "id": 58,
+        "texto": "Compare rankings por período.",
+        "texto_en": "Compare rankings by academic period."
+      },
+      {
+        "id": 59,
+        "texto": "Identifique alunos consistentes no topo.",
+        "texto_en": "Identify students who stay consistently at the top."
+      },
+      {
+        "id": 60,
+        "texto": "Analise discrepâncias entre rankings.",
+        "texto_en": "Analyze discrepancies between rankings."
+      }
+    ]
+  },
+  {
+    "numero": 7,
+    "tipo": "Perfis e Segmentação",
+    "tipo_en": "Profiles and Segmentation",
+    "titulo": "Índices, categorias e clusters",
+    "titulo_en": "Indexes, Categories, and Clusters",
+    "questoes": [
+      {
+        "id": 61,
+        "texto": "Crie índice de desempenho geral.",
+        "texto_en": "Create an overall performance index."
+      },
+      {
+        "id": 62,
+        "texto": "Crie índice de consistência.",
+        "texto_en": "Create a consistency index."
+      },
+      {
+        "id": 63,
+        "texto": "Combine média e consistência em score único.",
+        "texto_en": "Combine average grade and consistency into a single score."
+      },
+      {
+        "id": 64,
+        "texto": "Classifique alunos em categorias (alto, médio, baixo).",
+        "texto_en": "Classify students into categories (high, medium, low)."
+      },
+      {
+        "id": 65,
+        "texto": "Identifique alunos inconsistentes.",
+        "texto_en": "Identify inconsistent students."
+      },
+      {
+        "id": 66,
+        "texto": "Detecte alunos com comportamento anômalo.",
+        "texto_en": "Detect students with anomalous behavior."
+      },
+      {
+        "id": 67,
+        "texto": "Analise perfis de desempenho.",
+        "texto_en": "Analyze performance profiles."
+      },
+      {
+        "id": 68,
+        "texto": "Crie clusters simples de alunos.",
+        "texto_en": "Create simple student clusters."
+      },
+      {
+        "id": 69,
+        "texto": "Compare grupos formados.",
+        "texto_en": "Compare the groups that were formed."
+      },
+      {
+        "id": 70,
+        "texto": "Avalie qualidade dos clusters.",
+        "texto_en": "Evaluate cluster quality."
+      }
+    ]
+  },
+  {
+    "numero": 8,
+    "tipo": "Aprovação e Risco",
+    "tipo_en": "Pass Rates and Risk",
+    "titulo": "Indicadores acadêmicos e simulações",
+    "titulo_en": "Academic Indicators and Simulations",
+    "questoes": [
+      {
+        "id": 71,
+        "texto": "Calcule taxa de aprovação (média ≥ 6).",
+        "texto_en": "Calculate the pass rate (average grade >= 6)."
+      },
+      {
+        "id": 72,
+        "texto": "Calcule taxa de reprovação.",
+        "texto_en": "Calculate the fail rate."
+      },
+      {
+        "id": 73,
+        "texto": "Compare aprovação por turno.",
+        "texto_en": "Compare pass rates by shift."
+      },
+      {
+        "id": 74,
+        "texto": "Compare aprovação por período.",
+        "texto_en": "Compare pass rates by academic period."
+      },
+      {
+        "id": 75,
+        "texto": "Identifique grupo com maior risco.",
+        "texto_en": "Identify the highest-risk group."
+      },
+      {
+        "id": 76,
+        "texto": "Analise distribuição de risco.",
+        "texto_en": "Analyze the risk distribution."
+      },
+      {
+        "id": 77,
+        "texto": "Modele um indicador de risco acadêmico.",
+        "texto_en": "Model an academic risk indicator."
+      },
+      {
+        "id": 78,
+        "texto": "Identifique alunos críticos.",
+        "texto_en": "Identify critical students."
+      },
+      {
+        "id": 79,
+        "texto": "Simule políticas de aprovação.",
+        "texto_en": "Simulate pass/fail policies."
+      },
+      {
+        "id": 80,
+        "texto": "Analise impacto das políticas.",
+        "texto_en": "Analyze the impact of those policies."
+      }
+    ]
+  },
+  {
+    "numero": 9,
+    "tipo": "Pandas e Visualização",
+    "tipo_en": "Pandas and Visualization",
+    "titulo": "DataFrame, gráficos e relatório final",
+    "titulo_en": "DataFrame, Charts, and Final Report",
+    "questoes": [
+      {
+        "id": 81,
+        "texto": "Converta o dicionário em DataFrame (pandas).",
+        "texto_en": "Convert the dictionary into a DataFrame (pandas)."
+      },
+      {
+        "id": 82,
+        "texto": "Gere gráfico de média por turno.",
+        "texto_en": "Generate a chart of average grade by shift."
+      },
+      {
+        "id": 83,
+        "texto": "Gere gráfico de média por período.",
+        "texto_en": "Generate a chart of average grade by academic period."
+      },
+      {
+        "id": 84,
+        "texto": "Gere histograma das notas.",
+        "texto_en": "Generate a histogram of the grades."
+      },
+      {
+        "id": 85,
+        "texto": "Gere boxplot das notas por turno.",
+        "texto_en": "Generate a boxplot of grades by shift."
+      },
+      {
+        "id": 86,
+        "texto": "Visualize dispersão das notas.",
+        "texto_en": "Visualize grade dispersion."
+      },
+      {
+        "id": 87,
+        "texto": "Crie gráfico de correlação.",
+        "texto_en": "Create a correlation chart."
+      },
+      {
+        "id": 88,
+        "texto": "Gere relatório estatístico com pandas.",
+        "texto_en": "Generate a statistical report with pandas."
+      },
+      {
+        "id": 89,
+        "texto": "Crie dashboard simples com múltiplos gráficos.",
+        "texto_en": "Create a simple dashboard with multiple charts."
+      },
+      {
+        "id": 90,
+        "texto": "Produza um relatório final com insights e recomendações.",
+        "texto_en": "Produce a final report with insights and recommendations."
+      }
+    ]
+  }
+]
