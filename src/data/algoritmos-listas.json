@@ -1,0 +1,3182 @@
+[
+  {
+    "numero": 1,
+    "tipo": "Fundamentos",
+    "titulo": "Lista 1 - Fundamentos (I/O simples)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Imprima a mensagem \"Hello, World!\" no console.",
+        "texto_en": "Print the message \"Hello, World!\" in the console."
+      },
+      {
+        "id": 2,
+        "texto": "Crie duas variáveis (nome e idade) e imprima: \"Meu nome é X e tenho Y anos\".",
+        "texto_en": "Create two variables (name and age) and print: \"My name is X and I am Y years old\"."
+      },
+      {
+        "id": 3,
+        "texto": "Leia um número e imprima o dobro dele.",
+        "texto_en": "Read a number and print twice the number."
+      },
+      {
+        "id": 4,
+        "texto": "Leia um número e imprima o triplo dele.",
+        "texto_en": "Read a number and print triple it."
+      },
+      {
+        "id": 5,
+        "texto": "Leia dois números e imprima a soma.",
+        "texto_en": "Read two numbers and print the sum."
+      },
+      {
+        "id": 6,
+        "texto": "Leia dois números e imprima a subtração (primeiro - segundo).",
+        "texto_en": "Read two numbers and print the subtraction (first - second)."
+      },
+      {
+        "id": 7,
+        "texto": "Leia dois números e imprima a multiplicação.",
+        "texto_en": "Read two numbers and print the multiplication."
+      },
+      {
+        "id": 8,
+        "texto": "Leia dois números e imprima a divisão (trate divisão por zero com mensagem).",
+        "texto_en": "Read two numbers and print the division (treat division by zero with message)."
+      },
+      {
+        "id": 9,
+        "texto": "Leia um número e imprima o resto da divisão por 2.",
+        "texto_en": "Read a number and print the remainder of division by 2."
+      },
+      {
+        "id": 10,
+        "texto": "Leia três números e imprima a média aritmética.",
+        "texto_en": "Read three numbers and print the arithmetic mean."
+      },
+      {
+        "id": 11,
+        "texto": "Leia um valor em metros e imprima em centímetros e milímetros.",
+        "texto_en": "Read a value in meters and print it in centimeters and millimeters."
+      },
+      {
+        "id": 12,
+        "texto": "Leia um valor em reais e imprima em centavos.",
+        "texto_en": "Read a value in reais and print it in cents."
+      },
+      {
+        "id": 13,
+        "texto": "Leia a base e a altura de um retângulo e imprima a área.",
+        "texto_en": "Read the base and height of a rectangle and print the area."
+      },
+      {
+        "id": 14,
+        "texto": "Leia o lado de um quadrado e imprima área e perímetro.",
+        "texto_en": "Read the side of a square and print the area and perimeter."
+      },
+      {
+        "id": 15,
+        "texto": "Leia o raio de um círculo e imprima a área (use pi=3.14159).",
+        "texto_en": "Read the radius of a circle and print the area (use pi=3.14159)."
+      },
+      {
+        "id": 16,
+        "texto": "Leia uma temperatura em Celsius e converta para Fahrenheit (F = C*9/5 + 32).",
+        "texto_en": "Read a temperature in Celsius and convert to Fahrenheit (F = C*9/5 + 32)."
+      },
+      {
+        "id": 17,
+        "texto": "Leia uma temperatura em Fahrenheit e converta para Celsius (C = 5/9*(F-32)).",
+        "texto_en": "Read a temperature in Fahrenheit and convert to Celsius (C = 5/9*(F-32))."
+      },
+      {
+        "id": 18,
+        "texto": "Leia um número decimal e imprima ele arredondado para 2 casas decimais (se a linguagem suportar).",
+        "texto_en": "Read a decimal number and print it rounded to 2 decimal places (if the language supports it)."
+      },
+      {
+        "id": 19,
+        "texto": "Leia um número inteiro e imprima seu antecessor e sucessor.",
+        "texto_en": "Read an integer and print its predecessor and successor."
+      },
+      {
+        "id": 20,
+        "texto": "Leia um nome e imprima quantos caracteres ele possui.",
+        "texto_en": "Read a name and print how many characters it has."
+      },
+      {
+        "id": 21,
+        "texto": "Leia duas palavras e imprima a concatenação delas com espaço no meio.",
+        "texto_en": "Read two words and print their concatenation with a space in between."
+      },
+      {
+        "id": 22,
+        "texto": "Leia um número e imprima seu valor absoluto.",
+        "texto_en": "Read a number and print its absolute value."
+      },
+      {
+        "id": 23,
+        "texto": "Leia um número e imprima seu quadrado.",
+        "texto_en": "Read a number and print its square."
+      },
+      {
+        "id": 24,
+        "texto": "Leia um número e imprima sua raiz quadrada (se for negativo, mostre mensagem).",
+        "texto_en": "Read a number and print its square root (if it is negative, show message)."
+      },
+      {
+        "id": 25,
+        "texto": "Leia um valor e imprima o tipo dele (quando a linguagem permitir) ou descreva se é inteiro/decimal/texto conforme entrada.",
+        "texto_en": "Read a value and print its type (when the language allows it) or describe whether it is integer/decimal/text according to the input."
+      },
+      {
+        "id": 26,
+        "texto": "Leia três notas (0 a 10) e imprima a média.",
+        "texto_en": "Read three scores (0 to 10) and print the average."
+      },
+      {
+        "id": 27,
+        "texto": "Leia o preço de um produto e um desconto (%) e imprima o preço final.",
+        "texto_en": "Read the price of a product and a discount (%) and print the final price."
+      },
+      {
+        "id": 28,
+        "texto": "Leia o salário e um aumento (%) e imprima o novo salário.",
+        "texto_en": "Read the salary and a raise (%) and print the new salary."
+      },
+      {
+        "id": 29,
+        "texto": "Leia um valor e imprima se ele é inteiro ou decimal (quando aplicável).",
+        "texto_en": "Read a value and print whether it is integer or decimal (when applicable)."
+      },
+      {
+        "id": 30,
+        "texto": "Leia dois números e imprima os dois resultados: (a+b) e (a*b).",
+        "texto_en": "Read two numbers and print the two results: (a+b) and (a*b)."
+      }
+    ],
+    "tipo_en": "Fundamentals",
+    "titulo_en": "List 1 - Fundamentals (Simple I/O)"
+  },
+  {
+    "numero": 2,
+    "tipo": "Tipos e Conversões",
+    "titulo": "Lista 2 - Tipos, Conversões e Formatação",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia um texto e imprima ele em letras maiúsculas.",
+        "texto_en": "Read a text and print it in capital letters."
+      },
+      {
+        "id": 2,
+        "texto": "Leia um texto e imprima ele em letras minúsculas.",
+        "texto_en": "Read a text and print it in lowercase letters."
+      },
+      {
+        "id": 3,
+        "texto": "Leia um número como texto e converta para número; se não for válido, imprima \"Entrada inválida\".",
+        "texto_en": "Read a number as text and convert to number; if not valid, print \"Invalid entry\"."
+      },
+      {
+        "id": 4,
+        "texto": "Leia um número e imprima ele como moeda (ex.: R$ 10.50) se a linguagem permitir; caso não, imprima com 2 casas.",
+        "texto_en": "Read a number and print it as currency (e.g.: R$ 10.50) if the language allows it; If not, print with 2 spaces."
+      },
+      {
+        "id": 5,
+        "texto": "Leia um nome completo e imprima apenas o primeiro nome.",
+        "texto_en": "Read a full name and print only the first name."
+      },
+      {
+        "id": 6,
+        "texto": "Leia um nome completo e imprima apenas o último sobrenome.",
+        "texto_en": "Read a full name and print only the last name."
+      },
+      {
+        "id": 7,
+        "texto": "Leia um texto e imprima o texto sem espaços no começo e no fim (trim).",
+        "texto_en": "Read a text and print the text without spaces at the beginning and end (trim)."
+      },
+      {
+        "id": 8,
+        "texto": "Leia um texto e substitua todas as ocorrências de \"a\" por \"@\" e imprima.",
+        "texto_en": "Read a text and replace all occurrences of \"a\" with \"@\" and print."
+      },
+      {
+        "id": 9,
+        "texto": "Leia um texto e informe quantas vezes a letra \"e\" aparece (sem diferenciar maiúscula/minúscula).",
+        "texto_en": "Read a text and report how many times the letter \"e\" appears (without distinguishing between uppercase and lowercase)."
+      },
+      {
+        "id": 10,
+        "texto": "Leia um texto e informe se ele contém a palavra \"curso\" (sem diferenciar maiúscula/minúscula).",
+        "texto_en": "Read a text and report whether it contains the word \"course\" (without case differentiation)."
+      },
+      {
+        "id": 11,
+        "texto": "Leia dois números e imprima o maior (sem usar função pronta de máximo, se possível).",
+        "texto_en": "Read two numbers and print the larger one (without using the ready-made maximum function, if possible)."
+      },
+      {
+        "id": 12,
+        "texto": "Leia dois números e imprima o menor (sem usar função pronta de mínimo, se possível).",
+        "texto_en": "Read two numbers and print the smaller one (without using the ready-made minimum function, if possible)."
+      },
+      {
+        "id": 13,
+        "texto": "Leia um número e imprima se ele é par ou ímpar usando resto da divisão.",
+        "texto_en": "Read a number and print whether it is even or odd using the remainder of division."
+      },
+      {
+        "id": 14,
+        "texto": "Leia um número e imprima se ele é múltiplo de 3.",
+        "texto_en": "Read a number and print if it is a multiple of 3."
+      },
+      {
+        "id": 15,
+        "texto": "Leia um número e imprima se ele é múltiplo de 5.",
+        "texto_en": "Read a number and print if it is a multiple of 5."
+      },
+      {
+        "id": 16,
+        "texto": "Leia um texto e imprima o tamanho dele (quantidade de caracteres).",
+        "texto_en": "Read a text and print its size (number of characters)."
+      },
+      {
+        "id": 17,
+        "texto": "Leia um texto e imprima o texto invertido.",
+        "texto_en": "Read a text and print the text reversed."
+      },
+      {
+        "id": 18,
+        "texto": "Leia um número e imprima ele com sinal explícito (ex.: +10, -3) quando possível.",
+        "texto_en": "Read a number and print it with an explicit sign (e.g.: +10, -3) when possible."
+      },
+      {
+        "id": 19,
+        "texto": "Leia uma idade e imprima uma frase com plural correto: \"1 ano\" ou \"X anos\".",
+        "texto_en": "Read an age and print a sentence with the correct plural: \"1 year\" or \"X years\"."
+      },
+      {
+        "id": 20,
+        "texto": "Leia um valor booleano (true/false ou 1/0 conforme padrão definido por você) e imprima o inverso.",
+        "texto_en": "Read a boolean value (true/false or 1/0 according to the pattern defined by you) and print the inverse."
+      },
+      {
+        "id": 21,
+        "texto": "Leia um texto e imprima a primeira letra e a última letra.",
+        "texto_en": "Read a text and print the first letter and the last letter."
+      },
+      {
+        "id": 22,
+        "texto": "Leia um texto e imprima quantas palavras ele tem (considere palavras separadas por espaço).",
+        "texto_en": "Read a text and print how many words it has (consider words separated by spaces)."
+      },
+      {
+        "id": 23,
+        "texto": "Leia um número decimal e imprima apenas a parte inteira (sem arredondar).",
+        "texto_en": "Read a decimal number and print just the whole part (no rounding)."
+      },
+      {
+        "id": 24,
+        "texto": "Leia um número decimal e imprima apenas a parte fracionária (ex.: 12.34 -> 0.34, conforme possível).",
+        "texto_en": "Read a decimal number and print only the fractional part (e.g. 12.34 -> 0.34, as possible)."
+      },
+      {
+        "id": 25,
+        "texto": "Leia dois números e imprima a média com 2 casas decimais.",
+        "texto_en": "Read two numbers and print the average to 2 decimal places."
+      },
+      {
+        "id": 26,
+        "texto": "Leia um valor em segundos e converta para minutos e segundos restantes.",
+        "texto_en": "Read a value in seconds and convert to minutes and seconds remaining."
+      },
+      {
+        "id": 27,
+        "texto": "Leia um valor em minutos e converta para horas e minutos restantes.",
+        "texto_en": "Read a value in minutes and convert to hours and minutes remaining."
+      },
+      {
+        "id": 28,
+        "texto": "Leia dia e mês e calcule quantos dias se passaram no ano considerando meses de 30 dias (ignore bissexto).",
+        "texto_en": "Read day and month and calculate how many days have passed in the year considering 30-day months (ignore leaps)."
+      },
+      {
+        "id": 29,
+        "texto": "Leia um número inteiro e mostre sua representação em binário (se não souber, faça por divisões sucessivas).",
+        "texto_en": "Read an integer and show its representation in binary (if you don't know, do it by successive divisions)."
+      },
+      {
+        "id": 30,
+        "texto": "Leia um número inteiro e mostre sua representação em hexadecimal (se não souber, faça por divisões sucessivas).",
+        "texto_en": "Read an integer and show its representation in hexadecimal (if you don't know, do it by successive divisions)."
+      }
+    ],
+    "tipo_en": "Types and Conversions",
+    "titulo_en": "List 2 - Types, Conversions, and Formatting"
+  },
+  {
+    "numero": 3,
+    "tipo": "Matemática Aplicada",
+    "titulo": "Lista 3 - Matemática Aplicada e Problemas Curtos",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia três valores e imprima a média aritmética e a soma.",
+        "texto_en": "Read three values ​​and print the arithmetic mean and sum."
+      },
+      {
+        "id": 2,
+        "texto": "Leia a distância (km) e o tempo (h) e imprima a velocidade média (km/h).",
+        "texto_en": "Read the distance (km) and time (h) and print the average speed (km/h)."
+      },
+      {
+        "id": 3,
+        "texto": "Leia o consumo (km/l) e a distância (km) e imprima quantos litros serão necessários.",
+        "texto_en": "Read the consumption (km/l) and distance (km) and print how many liters will be needed."
+      },
+      {
+        "id": 4,
+        "texto": "Leia preço e quantidade e imprima total da compra.",
+        "texto_en": "Read price and quantity and print purchase total."
+      },
+      {
+        "id": 5,
+        "texto": "Leia total da compra e percentual de imposto e imprima valor do imposto e total final.",
+        "texto_en": "Read purchase total and tax percentage and print tax amount and final total."
+      },
+      {
+        "id": 6,
+        "texto": "Leia salário fixo, comissão por venda e número de vendas e imprima salário final.",
+        "texto_en": "Read fixed salary, commission per sale and number of sales and print final salary."
+      },
+      {
+        "id": 7,
+        "texto": "Leia valor vendido e comissão (%) e imprima comissão.",
+        "texto_en": "Read value sold and commission (%) and print commission."
+      },
+      {
+        "id": 8,
+        "texto": "Leia principal, taxa (%) e tempo e calcule juros simples e montante.",
+        "texto_en": "Read principal, rate (%) and time and calculate simple interest and amount."
+      },
+      {
+        "id": 9,
+        "texto": "Leia a e b e imprima a^b (use loop se não puder usar potência pronta).",
+        "texto_en": "Read a and b and print a^b (use loop if you can't use ready power)."
+      },
+      {
+        "id": 10,
+        "texto": "Leia um número N e imprima a soma de 1 até N.",
+        "texto_en": "Read a number N and print the sum from 1 to N."
+      },
+      {
+        "id": 11,
+        "texto": "Leia um número N e imprima o produto de 1 até N.",
+        "texto_en": "Read a number N and print the product from 1 to N."
+      },
+      {
+        "id": 12,
+        "texto": "Leia um número e calcule o IMC dado peso (kg) e altura (m): IMC = peso/altura^2.",
+        "texto_en": "Read a number and calculate the BMI given weight (kg) and height (m): BMI = weight/height^2."
+      },
+      {
+        "id": 13,
+        "texto": "Leia 4 notas e imprima média; também imprima maior nota e menor nota.",
+        "texto_en": "Read 4 notes and print average; also print highest note and lowest note."
+      },
+      {
+        "id": 14,
+        "texto": "Leia o custo de fábrica de um carro e calcule o preço final com distribuidor 28% e impostos 45% sobre custo.",
+        "texto_en": "Read the factory cost of a car and calculate the final price with distributor 28% and taxes 45% on cost."
+      },
+      {
+        "id": 15,
+        "texto": "Leia valor em dólares e cotação e imprima valor em reais.",
+        "texto_en": "Read value in dollars and quotation and print value in reais."
+      },
+      {
+        "id": 16,
+        "texto": "Leia três valores e imprima em ordem crescente (sem usar sort pronto, se possível).",
+        "texto_en": "Read three values ​​and print in ascending order (without using ready sort, if possible)."
+      },
+      {
+        "id": 17,
+        "texto": "Leia um número e informe se é quadrado perfeito (inteiro) sem usar sqrt pronta (tente por tentativa).",
+        "texto_en": "Read a number and report whether it is a perfect square (integer) without using ready-made sqrt (try by attempt)."
+      },
+      {
+        "id": 18,
+        "texto": "Leia três lados e imprima se formam triângulo (regra do triângulo).",
+        "texto_en": "Read three sides and print if they form a triangle (triangle rule)."
+      },
+      {
+        "id": 19,
+        "texto": "Leia base e altura e imprima área do triângulo.",
+        "texto_en": "Read base and height and print area of ​​the triangle."
+      },
+      {
+        "id": 20,
+        "texto": "Leia um número inteiro e calcule a soma dos dígitos.",
+        "texto_en": "Read a whole number and calculate the sum of the digits."
+      },
+      {
+        "id": 21,
+        "texto": "Leia um número inteiro e calcule quantos dígitos ele possui.",
+        "texto_en": "Read a whole number and calculate how many digits it has."
+      },
+      {
+        "id": 22,
+        "texto": "Leia N e imprima N primeiros termos de Fibonacci (começando em 1,1).",
+        "texto_en": "Read N and print N first Fibonacci terms (starting from 1.1)."
+      },
+      {
+        "id": 23,
+        "texto": "Leia um número e informe se é primo.",
+        "texto_en": "Read a number and tell if it is prime."
+      },
+      {
+        "id": 24,
+        "texto": "Leia dois números e calcule o MDC (algoritmo de Euclides).",
+        "texto_en": "Read two numbers and calculate the GCD (Euclid's algorithm)."
+      },
+      {
+        "id": 25,
+        "texto": "Leia dois números e calcule o MMC usando MMC(a,b)=|a*b|/MDC(a,b).",
+        "texto_en": "Read two numbers and calculate the MMC using MMC(a,b)=|a*b|/MDC(a,b)."
+      },
+      {
+        "id": 26,
+        "texto": "Leia um número N e calcule N! (fatorial).",
+        "texto_en": "Read a number N and calculate N! (factorial)."
+      },
+      {
+        "id": 27,
+        "texto": "Leia uma lista de 5 números e calcule: soma do 1º com 3º; subtração do 2º com 4º; produto de todos; divisão do 5º pelo 1º (trate zero).",
+        "texto_en": "Read a list of 5 numbers and calculate: sum of the 1st and 3rd; subtraction of the 2nd with 4th; product of all; divide the 5th by the 1st (treat zero)."
+      },
+      {
+        "id": 28,
+        "texto": "Leia um valor em kWh e preço por kWh e imprima o valor da conta.",
+        "texto_en": "Read a value in kWh and price per kWh and print the bill amount."
+      },
+      {
+        "id": 29,
+        "texto": "Leia idade em anos, meses e dias e converta tudo para dias (ano=365, mês=30).",
+        "texto_en": "Read age in years, months and days and convert everything to days (year=365, month=30)."
+      },
+      {
+        "id": 30,
+        "texto": "Leia uma quantidade de sanduíches e calcule kg de queijo, presunto e carne (queijo 2x50g, presunto 1x50g, hambúrguer 100g por sanduíche).",
+        "texto_en": "Read a number of sandwiches and calculate kg of cheese, ham and meat (cheese 2x50g, ham 1x50g, hamburger 100g per sandwich)."
+      }
+    ],
+    "tipo_en": "Applied Mathematics",
+    "titulo_en": "List 3 - Applied Mathematics and Short Problems"
+  },
+  {
+    "numero": 4,
+    "tipo": "Entrada, Validação e Mensagens",
+    "titulo": "Lista 4 - Entrada e Validação (base para qualquer linguagem)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia um número e valide: se não for número, peça novamente até ser válido.",
+        "texto_en": "Read a number and validate: if it is not a number, ask again until it is valid."
+      },
+      {
+        "id": 2,
+        "texto": "Leia um número entre 1 e 10; se estiver fora, peça novamente.",
+        "texto_en": "Read a number between 1 and 10; if it is out, order again."
+      },
+      {
+        "id": 3,
+        "texto": "Leia uma idade (0 a 120); valide e imprima \"ok\" quando válida.",
+        "texto_en": "Read an age (0 to 120); validate and print \"ok\" when valid."
+      },
+      {
+        "id": 4,
+        "texto": "Leia um texto e valide: não pode ser vazio nem só espaços.",
+        "texto_en": "Read a text and confirm: it cannot be empty or just spaces."
+      },
+      {
+        "id": 5,
+        "texto": "Leia um e-mail e valide regras simples: deve conter '@' e '.' após o '@'.",
+        "texto_en": "Read an email and validate simple rules: it must contain '@' and '.' after the '@'."
+      },
+      {
+        "id": 6,
+        "texto": "Leia uma senha e valide: mínimo 8 caracteres, pelo menos 1 número (regras simples).",
+        "texto_en": "Read a password and validate: minimum 8 characters, at least 1 number (simple rules)."
+      },
+      {
+        "id": 7,
+        "texto": "Leia dois números e valide que o segundo não é zero antes de dividir.",
+        "texto_en": "Read two numbers and validate that the second is not zero before dividing."
+      },
+      {
+        "id": 8,
+        "texto": "Crie um menu: 1-Somar, 2-Subtrair, 3-Sair. Leia opção e valide.",
+        "texto_en": "Create a menu: 1-Add, 2-Subtract, 3-Exit. Read option and validate."
+      },
+      {
+        "id": 9,
+        "texto": "Leia um inteiro e valide que é positivo; se não for, peça novamente.",
+        "texto_en": "Read an integer and validate that it is positive; If not, ask again."
+      },
+      {
+        "id": 10,
+        "texto": "Leia um valor monetário e valide que não é negativo.",
+        "texto_en": "Read a monetary value and validate that it is not negative."
+      },
+      {
+        "id": 11,
+        "texto": "Leia 3 notas (0-10) e valide todas; calcule média.",
+        "texto_en": "Read 3 notes (0-10) and validate them all; calculate average."
+      },
+      {
+        "id": 12,
+        "texto": "Leia um nome e valide que tem pelo menos 2 palavras (nome e sobrenome).",
+        "texto_en": "Read a name and validate that it has at least 2 words (first and last name)."
+      },
+      {
+        "id": 13,
+        "texto": "Leia um CPF (apenas números) e valide se tem 11 dígitos (não precisa validar dígitos verificadores).",
+        "texto_en": "Read a CPF (numbers only) and validate that it has 11 digits (no need to validate check digits)."
+      },
+      {
+        "id": 14,
+        "texto": "Leia uma data no formato DD/MM e valide faixas (1-30 para dia, 1-12 para mês).",
+        "texto_en": "Read a date in DD/MM format and validate ranges (1-30 for day, 1-12 for month)."
+      },
+      {
+        "id": 15,
+        "texto": "Leia uma opção (S/N) e valide até receber S ou N.",
+        "texto_en": "Read an option (Y/N) and validate until you receive Y or N."
+      },
+      {
+        "id": 16,
+        "texto": "Leia uma altura (em metros) e valide intervalo 0.5 a 2.5.",
+        "texto_en": "Read a height (in meters) and validate range 0.5 to 2.5."
+      },
+      {
+        "id": 17,
+        "texto": "Leia um texto e valide que não contém números (se contiver, peça novamente).",
+        "texto_en": "Read a text and confirm that it does not contain numbers (if it does, ask again)."
+      },
+      {
+        "id": 18,
+        "texto": "Leia um número e valide que é inteiro (sem parte decimal), se aplicável.",
+        "texto_en": "Read a number and validate that it is integer (no decimal part), if applicable."
+      },
+      {
+        "id": 19,
+        "texto": "Leia N (quantidade) e valide que N>=1; depois leia N números.",
+        "texto_en": "Read N (quantity) and validate that N>=1; then read N numbers."
+      },
+      {
+        "id": 20,
+        "texto": "Leia um preço e uma quantidade e valide ambos; imprima total.",
+        "texto_en": "Read a price and a quantity and validate both; print total."
+      },
+      {
+        "id": 21,
+        "texto": "Leia login e senha e valide que ambos têm pelo menos 4 caracteres.",
+        "texto_en": "Read login and password and confirm that both have at least 4 characters."
+      },
+      {
+        "id": 22,
+        "texto": "Leia um texto e valide que contém pelo menos 10 caracteres.",
+        "texto_en": "Read a text and confirm that it contains at least 10 characters."
+      },
+      {
+        "id": 23,
+        "texto": "Leia um número e valide que é múltiplo de 5; se não for, peça novamente.",
+        "texto_en": "Read a number and confirm that it is a multiple of 5; If not, ask again."
+      },
+      {
+        "id": 24,
+        "texto": "Leia um número e valide que está no intervalo [-100, 100].",
+        "texto_en": "Read a number and validate that it is in the range [-100, 100]."
+      },
+      {
+        "id": 25,
+        "texto": "Leia uma nota e valide; depois imprima uma mensagem padronizada: \"Nota registrada: X\".",
+        "texto_en": "Read a note and validate; then print a standardized message: \"Registered note: X\"."
+      },
+      {
+        "id": 26,
+        "texto": "Leia uma palavra e valide que não tem espaços.",
+        "texto_en": "Read a word and confirm that it has no spaces."
+      },
+      {
+        "id": 27,
+        "texto": "Leia um texto e valide que começa com letra maiúscula (se não, peça novamente).",
+        "texto_en": "Read a text and confirm that it starts with a capital letter (if not, ask again)."
+      },
+      {
+        "id": 28,
+        "texto": "Leia um código de produto e valide formato simples: 3 letras + 3 números (ex.: ABC123).",
+        "texto_en": "Read a product code and validate simple format: 3 letters + 3 numbers (e.g.: ABC123)."
+      },
+      {
+        "id": 29,
+        "texto": "Leia um número e valide que não é NaN/indefinido (conforme linguagem).",
+        "texto_en": "Read a number and validate that it is not NaN/undefined (depending on the language)."
+      },
+      {
+        "id": 30,
+        "texto": "Leia um número e valide que é par; se não, peça novamente.",
+        "texto_en": "Read a number and confirm that it is even; If not, ask again."
+      }
+    ],
+    "tipo_en": "Input, Validation and Messages",
+    "titulo_en": "List 4 - Input and Validation (Foundation for Any Language)"
+  },
+  {
+    "numero": 5,
+    "tipo": "Condicionais",
+    "titulo": "Lista 5 - Condicionais (IF/ELSE)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia um número e imprima se é positivo, negativo ou zero.",
+        "texto_en": "Read a number and print whether it is positive, negative or zero."
+      },
+      {
+        "id": 2,
+        "texto": "Leia um número e imprima se é par ou ímpar.",
+        "texto_en": "Read a number and print whether it is even or odd."
+      },
+      {
+        "id": 3,
+        "texto": "Leia dois números e imprima o maior.",
+        "texto_en": "Read two numbers and print the larger one."
+      },
+      {
+        "id": 4,
+        "texto": "Leia três números e imprima o maior.",
+        "texto_en": "Read three numbers and print the largest."
+      },
+      {
+        "id": 5,
+        "texto": "Leia três números e imprima o menor.",
+        "texto_en": "Read three numbers and print the smallest."
+      },
+      {
+        "id": 6,
+        "texto": "Leia uma idade e imprima se é maior de idade (>=18) ou menor.",
+        "texto_en": "Read an age and print whether you are older (>=18) or younger."
+      },
+      {
+        "id": 7,
+        "texto": "Leia uma idade e imprima se pode votar (>=16) e se voto é obrigatório (18-69) ou facultativo.",
+        "texto_en": "Read an age and print whether you can vote (>=16) and whether voting is mandatory (18-69) or optional."
+      },
+      {
+        "id": 8,
+        "texto": "Leia uma nota (0-10) e imprima: Aprovado (>=7), Recuperação (>=5 e <7), Reprovado (<5).",
+        "texto_en": "Read a grade (0-10) and print: Passed (>=7), Recovery (>=5 and <7), Failed (<5)."
+      },
+      {
+        "id": 9,
+        "texto": "Leia um ano e imprima se é bissexto (div 4 e não div 100, ou div 400).",
+        "texto_en": "Read a year and print if it is a leap year (div 4 and not div 100, or div 400)."
+      },
+      {
+        "id": 10,
+        "texto": "Leia três lados e imprima se formam triângulo; se sim, classifique (equilátero/isósceles/escaleno).",
+        "texto_en": "Read three sides and print if they form a triangle; If yes, classify (equilateral/isosceles/scalene)."
+      },
+      {
+        "id": 11,
+        "texto": "Leia um valor de compra e aplique desconto: >=200 (10%), >=100 (5%), senão 0%.",
+        "texto_en": "Read a purchase price and apply discount: >=200 (10%), >=100 (5%), otherwise 0%."
+      },
+      {
+        "id": 12,
+        "texto": "Leia salário e calcule imposto: até 2000 (0%), 2000-5000 (10%), acima (20%).",
+        "texto_en": "Read salary and calculate tax: up to 2000 (0%), 2000-5000 (10%), above (20%)."
+      },
+      {
+        "id": 13,
+        "texto": "Leia um usuário e senha e valide acesso: usuário='admin' e senha='1234' (exemplo).",
+        "texto_en": "Read a username and password and validate access: username='admin' and password='1234' (example)."
+      },
+      {
+        "id": 14,
+        "texto": "Leia uma temperatura e imprima: frio (<18), agradável (18-26), quente (>26).",
+        "texto_en": "Read a temperature and print: cold (<18), pleasant (18-26), hot (>26)."
+      },
+      {
+        "id": 15,
+        "texto": "Leia um número e imprima se está no intervalo [10,20] ou fora.",
+        "texto_en": "Read a number and print whether it is in the range [10,20] or outside."
+      },
+      {
+        "id": 16,
+        "texto": "Leia um número e imprima se é divisível por 2 e 3 ao mesmo tempo.",
+        "texto_en": "Read a number and print whether it is divisible by 2 and 3 at the same time."
+      },
+      {
+        "id": 17,
+        "texto": "Leia um número e imprima se é múltiplo de 3 e 5 ao mesmo tempo.",
+        "texto_en": "Read a number and print if it is a multiple of 3 and 5 at the same time."
+      },
+      {
+        "id": 18,
+        "texto": "Leia IMC (ou calcule) e classifique em: abaixo (<18.5), normal (18.5-24.9), acima (>=25).",
+        "texto_en": "Read BMI (or calculate) and classify as: below (<18.5), normal (18.5-24.9), above (>=25)."
+      },
+      {
+        "id": 19,
+        "texto": "Leia um número e imprima se é primo.",
+        "texto_en": "Read a number and print if it is prime."
+      },
+      {
+        "id": 20,
+        "texto": "Leia uma palavra e imprima se é palíndromo (ignore maiúscula/minúscula).",
+        "texto_en": "Read a word and print if it is a palindrome (ignore upper/lower case)."
+      },
+      {
+        "id": 21,
+        "texto": "Leia uma senha e imprima se é forte (>=8, 1 número, 1 letra) ou fraca.",
+        "texto_en": "Read a password and print whether it is strong (>=8, 1 number, 1 letter) or weak."
+      },
+      {
+        "id": 22,
+        "texto": "Leia uma altura e idade e imprima se pode entrar no brinquedo (altura>=1.5 e idade>=12).",
+        "texto_en": "Read a height and age and print if you can enter the ride (height>=1.5 and age>=12)."
+      },
+      {
+        "id": 23,
+        "texto": "Leia renda e dívida (sim/não) e imprima se pode obter empréstimo (renda>=1000 e sem dívida).",
+        "texto_en": "Read income and debt (yes/no) and print whether you can get a loan (income>=1000 and no debt)."
+      },
+      {
+        "id": 24,
+        "texto": "Leia idade e tempo de contribuição e imprima se pode se aposentar (>=65 ou contribuição>=30).",
+        "texto_en": "Read age and contribution time and print whether you can retire (>=65 or contribution>=30)."
+      },
+      {
+        "id": 25,
+        "texto": "Leia um valor e um cupom (texto). Se cupom='DESC10', aplique 10%.",
+        "texto_en": "Read a value and a coupon (text). If coupon='DESC10', apply 10%."
+      },
+      {
+        "id": 26,
+        "texto": "Leia um número e imprima se é quadrado perfeito (inteiro).",
+        "texto_en": "Read a number and print if it is a perfect square (integer)."
+      },
+      {
+        "id": 27,
+        "texto": "Leia um número e imprima se é número perfeito (soma dos divisores próprios = número).",
+        "texto_en": "Read a number and print if it is a perfect number (sum of proper divisors = number)."
+      },
+      {
+        "id": 28,
+        "texto": "Leia um número e imprima se é Armstrong (ex.: 153) para 3 dígitos.",
+        "texto_en": "Read a number and print if it is Armstrong (e.g. 153) for 3 digits."
+      },
+      {
+        "id": 29,
+        "texto": "Leia um preço e categoria (A/B/C) e aplique: A=5%, B=10%, C=15%.",
+        "texto_en": "Read a price and category (A/B/C) and apply: A=5%, B=10%, C=15%."
+      },
+      {
+        "id": 30,
+        "texto": "Leia hora (0-23) e imprima: manhã (5-11), tarde (12-17), noite (18-4).",
+        "texto_en": "Read time (0-23) and print: morning (5-11), afternoon (12-17), night (18-4)."
+      }
+    ],
+    "tipo_en": "Conditionals",
+    "titulo_en": "List 5 - Conditionals (IF/ELSE)"
+  },
+  {
+    "numero": 6,
+    "tipo": "Condicionais - Estudos de Caso",
+    "titulo": "Lista 6 - Condicionais com Estudos de Caso",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Você está implementando o caixa de uma loja. O sistema recebe o valor total da compra e o tipo de cliente (COMUM ou PREMIUM). Clientes PREMIUM ganham 8% de desconto; clientes COMUNS ganham 3%. Além disso, se o total da compra for maior ou igual a 300, aplique mais 5% de desconto extra (cumulativo). Exiba o total original, os descontos aplicados e o valor final.",
+        "texto_en": "You are implementing a store's cash register. The system receives the total purchase value and the type of customer (COMMON or PREMIUM). PREMIUM customers get 8% discount; COMMON customers earn 3%. Additionally, if the total purchase is greater than or equal to 300, apply an additional 5% extra discount (cumulative). Display the original total, applied discounts, and final amount."
+      },
+      {
+        "id": 2,
+        "texto": "Um restaurante quer incentivar pagamentos digitais. Leia o valor da conta e a forma de pagamento (PIX, CARTAO ou DINHEIRO). Se for PIX, aplique 5% de desconto; se for DINHEIRO, aplique 3%; se for CARTAO, não há desconto. Mostre o valor original e o valor final.",
+        "texto_en": "A restaurant wants to encourage digital payments. Read the bill amount and the payment method (PIX, CARD or CASH). If it is PIX, apply 5% discount; if it is CASH, apply 3%; if it is CARD, there is no discount. Show the original value and the final value."
+      },
+      {
+        "id": 3,
+        "texto": "Uma escola precisa decidir a situação do aluno. Leia a média (0 a 10), o número de faltas e o total de aulas do período. O aluno só pode ser aprovado se a média for >= 7 e as faltas forem <= 25% do total de aulas. Mostre: percentual de faltas e resultado final (APROVADO/REPROVADO).",
+        "texto_en": "A school needs to decide the student's situation. Read the average (0 to 10), the number of absences and the total number of classes for the period. The student can only be approved if the average is >= 7 and the absences are <= 25% of the total number of classes. Show: percentage of absences and final result (PASS/FAIL)."
+      },
+      {
+        "id": 4,
+        "texto": "No RH, o reajuste anual depende da avaliação de desempenho (1 a 5). Leia o salário atual e a nota de desempenho. Regras: 5 -> +10%, 4 -> +7%, 3 -> +4%, 1 ou 2 -> 0%. Mostre salário antes e depois do reajuste.",
+        "texto_en": "In HR, the annual adjustment depends on the performance evaluation (1 to 5). Read the current salary and performance rating. Rules: 5 -> +10%, 4 -> +7%, 3 -> +4%, 1 or 2 -> 0%. Show salary before and after the adjustment."
+      },
+      {
+        "id": 5,
+        "texto": "Um banco precisa validar um saque. Leia o saldo atual e o valor do saque. Se o saldo for suficiente, autorize e mostre o novo saldo. Caso contrário, negue e informe quanto faltou para permitir o saque.",
+        "texto_en": "A bank needs to validate a withdrawal. Read the current balance and withdrawal amount. If the balance is sufficient, authorize and show the new balance. Otherwise, deny it and inform how much was left to allow the withdrawal."
+      },
+      {
+        "id": 6,
+        "texto": "Uma empresa de transporte cobra por quilômetro e por tipo de veículo. Leia a distância (km) e o tipo (MOTO, CARRO, VAN). Tarifas: MOTO=1.5/km, CARRO=2.5/km, VAN=3.5/km. Se a distância for maior que 20 km, aplique 10% de desconto no valor total. Exiba o cálculo completo.",
+        "texto_en": "A transport company charges per kilometer and per type of vehicle. Read the distance (km) and type (MOTORCYCLE, CAR, VAN). Rates: MOTORBIKE=1.5/km, CAR=2.5/km, VAN=3.5/km. If the distance is greater than 20 km, apply a 10% discount on the total price. View the complete calculation."
+      },
+      {
+        "id": 7,
+        "texto": "No e-commerce, o frete depende do peso e do valor da compra. Leia o peso (kg) do pedido e o valor da compra. Frete: até 1kg = 10; até 5kg = 20; acima de 5kg = 35. Se o valor da compra for >= 200, o frete é grátis. Mostre frete e total final.",
+        "texto_en": "In e-commerce, shipping depends on the weight and value of the purchase. Read the weight (kg) of the order and the purchase value. Shipping: up to 1kg = 10; up to 5kg = 20; over 5kg = 35. If the purchase value is >= 200, shipping is free. Show shipping and final total."
+      },
+      {
+        "id": 8,
+        "texto": "Um hospital faz triagem para atendimento prioritário. Leia a prioridade (1 a 5) e a idade do paciente. Se prioridade >= 4 OU idade >= 65, marque como PRIORITÁRIO; caso contrário, NORMAL. Exiba a classificação.",
+        "texto_en": "A hospital triages for priority care. Read the priority (1 to 5) and the patient's age. If priority >= 4 OR age >= 65, mark as PRIORITY; otherwise, NORMAL. Display the rating."
+      },
+      {
+        "id": 9,
+        "texto": "Um cinema aplica regras de desconto. Leia idade, se é estudante (S/N) e o dia da semana. Regras: segunda-feira, menores de 12 anos não pagam. Estudantes pagam meia entrada em qualquer dia. Se a regra de gratuidade se aplicar, o valor final é 0. Mostre o tipo de ingresso (GRÁTIS/MEIA/INTEIRA).",
+        "texto_en": "A cinema applies discount rules. Read age, whether you are a student (Y/N) and the day of the week. Rules: Monday, children under 12 are free. Students pay half price on any day. If the free rule applies, the final value is 0. Show the ticket type (FREE/HALF/FULL)."
+      },
+      {
+        "id": 10,
+        "texto": "Um estacionamento cobra por faixas de tempo. Leia o número de horas estacionadas e se o veículo é elétrico (S/N). Preços: até 2h=8, até 5h=15, acima de 5h=25. Se for elétrico, aplique 20% de desconto sobre o valor calculado. Exiba o valor final.",
+        "texto_en": "A parking lot charges for time slots. Read the number of hours parked and whether the vehicle is electric (Y/N). Prices: up to 2h=8, up to 5h=15, over 5h=25. If it is electric, apply a 20% discount on the calculated value. Display the final value."
+      },
+      {
+        "id": 11,
+        "texto": "Um hotel cobra por noite e oferece desconto em estadias longas. Leia o número de noites e a categoria do quarto (STANDARD ou LUXO). Standard=150/noite, Luxo=280/noite. Se noites >= 5, aplique 12% de desconto no total. Mostre total e valor final.",
+        "texto_en": "A hotel charges per night and offers a discount for long stays. Read the number of nights and the room category (STANDARD or LUXURY). Standard=150/night, Luxury=280/night. If nights >= 5, apply 12% discount on total. Show total and final value."
+      },
+      {
+        "id": 12,
+        "texto": "Uma operadora tem planos por consumo de internet. Leia o consumo de dados em GB e se o cliente tem fidelidade (S/N). Preços: até 5GB=50, até 15GB=80, acima de 15GB=120. Se fidelidade = S, aplique 5% de desconto. Mostre o valor final.",
+        "texto_en": "An operator has plans for internet consumption. Read the data consumption in GB and whether the customer is loyal (Y/N). Prices: up to 5GB=50, up to 15GB=80, over 15GB=120. If loyalty = S, apply 5% discount. Show the final value."
+      },
+      {
+        "id": 13,
+        "texto": "Uma conta de energia usa tarifa progressiva por faixas. Leia o consumo (kWh). Calcule o custo assim: primeiros 100 kWh a 0.60; de 101 a 300 kWh a 0.75; acima de 300 kWh a 0.90. Mostre o custo de cada faixa e o total.",
+        "texto_en": "An energy bill uses a progressive tariff in bands. Read the consumption (kWh). Calculate the cost like this: first 100 kWh at 0.60; from 101 to 300 kWh at 0.75; above 300 kWh at 0.90. Show the cost of each track and the total."
+      },
+      {
+        "id": 14,
+        "texto": "Uma conta de água tem uma franquia e valores extras por faixa. Leia o consumo em m³. Até 10 m³: taxa fixa de 30. De 11 a 20: somar 3 por m³ extra. Acima de 20: somar 5 por m³ extra. Mostre o total.",
+        "texto_en": "A water bill has a deductible and extra amounts per range. Read the consumption in m³. Up to 10 m³: fixed rate of 30. From 11 to 20: add 3 per extra m³. Above 20: add 5 per extra m³. Show the total."
+      },
+      {
+        "id": 15,
+        "texto": "Uma biblioteca cobra multa por atraso. Leia os dias de atraso e se o aluno é bolsista (S/N). Multa: 1 por dia até 7 dias; após 7 dias, 2 por dia (para os dias além do 7º). Se bolsista, o total da multa tem 50% de desconto. Exiba a multa final.",
+        "texto_en": "A library charges a late fee. Read the days of delay and whether the student is on a scholarship (Y/N). Fine: 1 per day for up to 7 days; after 7 days, 2 per day (for days beyond the 7th). If you have a scholarship, the total fine has a 50% discount. Display the final fine."
+      },
+      {
+        "id": 16,
+        "texto": "Uma academia vende planos: MENSAL=120, TRIMESTRAL=320, ANUAL=1100. Leia o tipo do plano e se o cliente é aluno (S/N). Se for aluno, aplique 10% de desconto. Mostre valor final.",
+        "texto_en": "A gym sells plans: MONTHLY=120, QUARTERLY=320, ANNUAL=1100. Read the type of plan and whether the client is a student (Y/N). If you are a student, apply 10% discount. Show final value."
+      },
+      {
+        "id": 17,
+        "texto": "Um cartão cobra juros por atraso. Leia o valor da fatura e os dias de atraso. Se atraso > 0, acrescente juros simples de 0.3% ao dia sobre o valor da fatura. Mostre total final e o valor de juros.",
+        "texto_en": "A card charges interest for late payment. Read the invoice amount and the days late. If delay > 0, add simple interest of 0.3% per day on the invoice amount. Show final total and interest amount."
+      },
+      {
+        "id": 18,
+        "texto": "Um seguro calcula a taxa conforme a idade do motorista e o valor do veículo. Leia idade e valor do veículo. Taxa: idade < 25 -> 6%; caso contrário -> 4%. Se o veículo for > 100000, acrescente mais 1% (somando na taxa). Calcule e mostre o valor do seguro.",
+        "texto_en": "Insurance calculates the rate according to the driver's age and the value of the vehicle. Read the vehicle's age and value. Rate: age < 25 -> 6%; otherwise -> 4%. If the vehicle is > 100000, add another 1% (adding to the rate). Calculate and show the insurance value."
+      },
+      {
+        "id": 19,
+        "texto": "Um marketplace cobra taxa conforme a avaliação do vendedor (0 a 5). Leia a avaliação e o valor da venda. Taxa: <3 -> 15%, de 3 até <4.5 -> 10%, >=4.5 -> 7%. Calcule e mostre taxa e valor líquido (venda - taxa).",
+        "texto_en": "A marketplace charges a fee based on the seller's rating (0 to 5). Read the appraisal and sales price. Rate: <3 -> 15%, from 3 to <4.5 -> 10%, >=4.5 -> 7%. Calculate and display rate and net value (sale - rate)."
+      },
+      {
+        "id": 20,
+        "texto": "Um evento vende ingressos em lotes. Leia o tipo (INTEIRA ou MEIA) e o lote (1,2,3). Preços INTEIRA: lote1=80, lote2=100, lote3=120. MEIA paga metade. Mostre o preço final.",
+        "texto_en": "An event sells tickets in batches. Read the type (WHOLE or HALF) and the batch (1,2,3). WHOLE prices: lot1=80, lot2=100, lot3=120. HALF pays half. Show the final price."
+      },
+      {
+        "id": 21,
+        "texto": "Um delivery cobra taxa conforme o bairro. Leia bairro (A,B,C) e valor do pedido. Taxas: A=5, B=8, C=12. Se valor do pedido >= 80, taxa é 0. Mostre taxa e total final.",
+        "texto_en": "A delivery charges a fee depending on the neighborhood. Read neighborhood (A,B,C) and order value. Rates: A=5, B=8, C=12. If order value >= 80, fee is 0. Show fee and final total."
+      },
+      {
+        "id": 22,
+        "texto": "Um professor calcula média final com 2 provas e 1 trabalho. Leia nota1, nota2 e trabalho. A média é (nota1+nota2+trabalho)/3. Se a nota do trabalho for 0, o aluno fica REPROVADO automaticamente. Caso contrário, use a média para classificar: >=7 APROVADO, >=5 RECUPERAÇÃO, <5 REPROVADO.",
+        "texto_en": "A teacher calculates the final average with 2 tests and 1 assignment. Read note1, note2 and work. The average is (grade1+grade2+work)/3. If the work grade is 0, the student is automatically FAILED. Otherwise, use the average to classify: >=7 PASS, >=5 RECOVERY, <5 FAIL."
+      },
+      {
+        "id": 23,
+        "texto": "Uma clínica calcula preço final de consulta. Leia o valor base, o tipo (NORMAL ou URGENCIA) e se tem convênio (S/N). Se URGENCIA, acrescente 30%. Se NÃO tem convênio, acrescente 50%. Se ambos se aplicarem, ambos devem ser considerados. Mostre o valor final.",
+        "texto_en": "A clinic calculates the final consultation price. Read the base value, the type (NORMAL or URGENCY) and whether you have an agreement (Y/N). If EMERGENCY, add 30%. If you DO NOT have an agreement, add 50%. If both apply, both should be considered. Show the final value."
+      },
+      {
+        "id": 24,
+        "texto": "Uma loja de roupas calcula imposto por categoria. Leia o preço e a peça (CAMISA, CALCA, JAQUETA). Imposto: camisa 8%, calça 12%, jaqueta 18%. Mostre imposto e preço final.",
+        "texto_en": "A clothing store calculates tax by category. Read the price and the item (SHIRT, PANTS, JACKET). Tax: shirt 8%, pants 12%, jacket 18%. Show tax and final price."
+      },
+      {
+        "id": 25,
+        "texto": "Um estágio exige horas mínimas. Leia horas feitas e horas mínimas. Se horas feitas >= mínimas, imprima 'APTO'. Se não, imprima 'INAPTO' e quantas horas faltam.",
+        "texto_en": "An internship requires minimum hours. Read done hours and minimum hours. If hours worked >= minimum, print 'APTO'. If not, print 'UNFIT' and how many hours remain."
+      },
+      {
+        "id": 26,
+        "texto": "Um concurso precisa desempatar dois candidatos. Leia nome e nota do candidato A, nome e nota do candidato B, e as idades de ambos. Vence quem tiver maior nota; se empatar, vence quem tiver maior idade. Imprima o vencedor.",
+        "texto_en": "A contest needs to break a tie between two candidates. Read the name and grade of candidate A, the name and grade of candidate B, and the ages of both. Whoever has the highest score wins; If there is a tie, whoever is older wins. Print the winner."
+      },
+      {
+        "id": 27,
+        "texto": "Uma empresa de ônibus dá desconto para clientes frequentes. Leia o número de viagens no mês e o valor de uma viagem. Se viagens <= 40, total = viagens * valor. Se viagens > 40, aplique 20% de desconto no total do mês. Mostre o total.",
+        "texto_en": "A bus company gives a discount to frequent customers. Read the number of trips in the month and the cost of a trip. If trips <= 40, total = trips * value. If trips > 40, apply 20% discount to the total for the month. Show the total."
+      },
+      {
+        "id": 28,
+        "texto": "Um evento tem controle de acesso. Leia se o nome está na lista (S/N) e a idade. A pessoa só entra se estiver na lista E tiver idade >= 21. Imprima 'ENTRADA LIBERADA' ou 'ENTRADA NEGADA'.",
+        "texto_en": "An event has access control. Read if the name is on the list (Y/N) and the age. The person only enters if they are on the list AND are aged >= 21. Print 'ENTRY CLEARED' or 'ENTRY DENIED'."
+      },
+      {
+        "id": 29,
+        "texto": "Um caixa calcula troco. Leia o valor da compra e o valor pago. Se pago >= compra, imprima o troco. Se pago < compra, imprima quanto falta para completar.",
+        "texto_en": "A cashier calculates change. Read the purchase price and the amount paid. If paid >= purchase, print the change. If paid < purchase, print how much remains to complete."
+      },
+      {
+        "id": 30,
+        "texto": "Um controle financeiro avalia orçamento doméstico. Leia renda e gastos. Se gastos > renda, imprima 'DÉFICIT' e o valor do déficit. Caso contrário, imprima 'SUPERÁVIT' e o valor do superávit.",
+        "texto_en": "A financial control evaluates the household budget. Read income and expenses. If expenses > income, print 'DEFICIT' and the deficit value. Otherwise, print 'SURPOSE' and the surplus value."
+      }
+    ],
+    "tipo_en": "Conditionals - Case Studies",
+    "titulo_en": "List 6 - Conditionals with Case Studies"
+  },
+  {
+    "numero": 7,
+    "tipo": "Repetição",
+    "titulo": "Lista 7 - Repetição (for/while) Básica",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Imprima os números de 1 a 10.",
+        "texto_en": "Print the numbers 1 to 10."
+      },
+      {
+        "id": 2,
+        "texto": "Imprima os números de 10 a 1.",
+        "texto_en": "Print the numbers from 10 to 1."
+      },
+      {
+        "id": 3,
+        "texto": "Imprima os números pares de 1 a 20.",
+        "texto_en": "Print the even numbers from 1 to 20."
+      },
+      {
+        "id": 4,
+        "texto": "Imprima os números ímpares de 1 a 20.",
+        "texto_en": "Print the odd numbers from 1 to 20."
+      },
+      {
+        "id": 5,
+        "texto": "Calcule a soma de 1 a 100.",
+        "texto_en": "Calculate the sum of 1 to 100."
+      },
+      {
+        "id": 6,
+        "texto": "Calcule o produto de 1 a 10.",
+        "texto_en": "Calculate the product of 1 to 10."
+      },
+      {
+        "id": 7,
+        "texto": "Leia N e imprima de 1 a N.",
+        "texto_en": "Read N and print from 1 to N."
+      },
+      {
+        "id": 8,
+        "texto": "Leia N e imprima de N a 1.",
+        "texto_en": "Read N and print from N to 1."
+      },
+      {
+        "id": 9,
+        "texto": "Leia N e imprima apenas múltiplos de 3 entre 1 e N.",
+        "texto_en": "Read N and only print multiples of 3 between 1 and N."
+      },
+      {
+        "id": 10,
+        "texto": "Imprima a tabuada do 5 (5x1 a 5x10).",
+        "texto_en": "Print the 5 times table (5x1 to 5x10)."
+      },
+      {
+        "id": 11,
+        "texto": "Leia um número e imprima sua tabuada de 1 a 10.",
+        "texto_en": "Read a number and print its multiplication table from 1 to 10."
+      },
+      {
+        "id": 12,
+        "texto": "Leia N e calcule N! (fatorial) usando repetição.",
+        "texto_en": "Read N and calculate N! (factorial) using repetition."
+      },
+      {
+        "id": 13,
+        "texto": "Imprima os 20 primeiros termos de Fibonacci.",
+        "texto_en": "Print the first 20 Fibonacci terms."
+      },
+      {
+        "id": 14,
+        "texto": "Leia N e imprima os N primeiros termos de Fibonacci.",
+        "texto_en": "Read N and print the first N Fibonacci terms."
+      },
+      {
+        "id": 15,
+        "texto": "Imprima todos os primos de 1 a 50.",
+        "texto_en": "Print all primes from 1 to 50."
+      },
+      {
+        "id": 16,
+        "texto": "Leia N e conte quantos números entre 1 e N são pares.",
+        "texto_en": "Read N and count how many numbers between 1 and N are even."
+      },
+      {
+        "id": 17,
+        "texto": "Leia N e conte quantos números entre 1 e N são ímpares.",
+        "texto_en": "Read N and count how many numbers between 1 and N are odd."
+      },
+      {
+        "id": 18,
+        "texto": "Leia N e calcule a soma apenas dos pares de 1 a N.",
+        "texto_en": "Read N and calculate the sum of only the pairs from 1 to N."
+      },
+      {
+        "id": 19,
+        "texto": "Leia N e calcule a soma apenas dos ímpares de 1 a N.",
+        "texto_en": "Read N and calculate the sum of only the odd numbers from 1 to N."
+      },
+      {
+        "id": 20,
+        "texto": "Imprima de 1 a 100 substituindo múltiplos de 3 por \"Fizz\" e de 5 por \"Buzz\" e ambos por \"FizzBuzz\".",
+        "texto_en": "Print from 1 to 100 by replacing multiples of 3 with \"Fizz\" and multiples of 5 with \"Buzz\" and both with \"FizzBuzz\"."
+      },
+      {
+        "id": 21,
+        "texto": "Leia N e imprima os divisores de N.",
+        "texto_en": "Read N and print the divisors of N."
+      },
+      {
+        "id": 22,
+        "texto": "Leia N e verifique se N é primo usando loop.",
+        "texto_en": "Read N and check if N is prime using loop."
+      },
+      {
+        "id": 23,
+        "texto": "Leia 10 números e imprima o maior.",
+        "texto_en": "Read 10 numbers and print the largest."
+      },
+      {
+        "id": 24,
+        "texto": "Leia 10 números e imprima o menor.",
+        "texto_en": "Read 10 numbers and print the smallest."
+      },
+      {
+        "id": 25,
+        "texto": "Leia 10 números e imprima a média.",
+        "texto_en": "Read 10 numbers and print the average."
+      },
+      {
+        "id": 26,
+        "texto": "Leia 10 números e conte quantos são maiores que 8.",
+        "texto_en": "Read 10 numbers and count how many are greater than 8."
+      },
+      {
+        "id": 27,
+        "texto": "Leia 10 números e conte quantos estão entre 0 e 100.",
+        "texto_en": "Read 10 numbers and count how many are between 0 and 100."
+      },
+      {
+        "id": 28,
+        "texto": "Imprima os ímpares entre 100 e 200.",
+        "texto_en": "Print the odd numbers between 100 and 200."
+      },
+      {
+        "id": 29,
+        "texto": "Leia A e B e imprima todos os números entre A e B (inclusive), na ordem correta (crescente ou decrescente conforme A/B).",
+        "texto_en": "Read A and B and print all the numbers between A and B (inclusive), in the correct order (ascending or descending according to A/B)."
+      },
+      {
+        "id": 30,
+        "texto": "Imprima um padrão: 1 linha com 1 '*', depois 2 '*', até 10 '*', uma linha por nível.",
+        "texto_en": "Print a pattern: 1 line with 1 '*', then 2 '*', up to 10 '*', one line per level."
+      }
+    ],
+    "tipo_en": "Loops",
+    "titulo_en": "List 7 - Basic Loops (for/while)"
+  },
+  {
+    "numero": 8,
+    "tipo": "Repetição com Sentinela",
+    "titulo": "Lista 8 - Repetição com Parada (0, negativo, opção)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia números até o usuário digitar 0. Ao final, imprima a soma.",
+        "texto_en": "Read numbers until the user types 0. At the end, print the sum."
+      },
+      {
+        "id": 2,
+        "texto": "Leia números até 0. Ao final, imprima a média.",
+        "texto_en": "Read numbers up to 0. At the end, print the average."
+      },
+      {
+        "id": 3,
+        "texto": "Leia números até 0. Conte quantos são positivos e quantos negativos.",
+        "texto_en": "Read numbers up to 0. Count how many are positive and how many are negative."
+      },
+      {
+        "id": 4,
+        "texto": "Leia números até 0. Ao final, imprima o maior e o menor.",
+        "texto_en": "Read numbers up to 0. At the end, print the largest and smallest."
+      },
+      {
+        "id": 5,
+        "texto": "Leia idades até digitar -1. Ao final, imprima média das idades.",
+        "texto_en": "Read ages until you type -1. At the end, print the average age."
+      },
+      {
+        "id": 6,
+        "texto": "Leia idades até -1. Conte quantos são maiores de idade (>=18).",
+        "texto_en": "Read ages up to -1. Count how many are of legal age (>=18)."
+      },
+      {
+        "id": 7,
+        "texto": "Leia valores de compra até digitar 0. Ao final, imprima total e quantidade de compras.",
+        "texto_en": "Read purchase values ​​until you enter 0. At the end, print the total and quantity of purchases."
+      },
+      {
+        "id": 8,
+        "texto": "Leia notas até -1. Ao final, imprima maior nota e menor nota.",
+        "texto_en": "Read notes up to -1. At the end, print the highest score and the lowest score."
+      },
+      {
+        "id": 9,
+        "texto": "Leia números até 0. Some apenas os pares.",
+        "texto_en": "Read numbers up to 0. Add only the pairs."
+      },
+      {
+        "id": 10,
+        "texto": "Leia números até 0. Some apenas os ímpares.",
+        "texto_en": "Read numbers up to 0. Add only the odd ones."
+      },
+      {
+        "id": 11,
+        "texto": "Leia textos até digitar \"FIM\". Ao final, imprima quantos textos foram digitados.",
+        "texto_en": "Read texts until you type \"END\". At the end, print how many texts were typed."
+      },
+      {
+        "id": 12,
+        "texto": "Leia nomes e idades até nome=\"FIM\". Ao final, imprima o nome da pessoa mais nova.",
+        "texto_en": "Read names and ages until name=\"END\". At the end, print the name of the youngest person."
+      },
+      {
+        "id": 13,
+        "texto": "Leia dois valores reais repetidamente. Pare quando ambos estiverem entre 1 e 100. Ao final, imprima a soma dos últimos dois lidos.",
+        "texto_en": "Read two real values ​​repeatedly. Stop when both are between 1 and 100. At the end, print the sum of the last two readings."
+      },
+      {
+        "id": 14,
+        "texto": "Menu repetitivo: 1-Somar, 2-Subtrair, 3-Multiplicar, 4-Dividir, 0-Sair. Execute até sair.",
+        "texto_en": "Repetitive menu: 1-Add, 2-Subtract, 3-Multiply, 4-Divide, 0-Exit. Run until exit."
+      },
+      {
+        "id": 15,
+        "texto": "Leia números até 0. Ao final, imprima o percentual de positivos e negativos.",
+        "texto_en": "Read numbers up to 0. At the end, print the percentage of positives and negatives."
+      },
+      {
+        "id": 16,
+        "texto": "Leia salários e número de filhos até salário negativo. Ao final, imprima média salarial, média de filhos e maior salário.",
+        "texto_en": "Read salaries and number of children until negative salary. At the end, print average salary, average number of children and highest salary."
+      },
+      {
+        "id": 17,
+        "texto": "Leia números até 0. Conte quantos são múltiplos de 3.",
+        "texto_en": "Read numbers up to 0. Count how many are multiples of 3."
+      },
+      {
+        "id": 18,
+        "texto": "Leia números até 0. Conte quantos são múltiplos de 5.",
+        "texto_en": "Read numbers up to 0. Count how many are multiples of 5."
+      },
+      {
+        "id": 19,
+        "texto": "Leia números até 0. Conte quantos são primos.",
+        "texto_en": "Read numbers up to 0. Count how many are prime."
+      },
+      {
+        "id": 20,
+        "texto": "Leia números até 0. Conte quantos são palíndromos (ex.: 121).",
+        "texto_en": "Read numbers up to 0. Count how many are palindromes (e.g. 121)."
+      },
+      {
+        "id": 21,
+        "texto": "Leia N e depois leia N números. Se N for inválido (<=0), peça novamente.",
+        "texto_en": "Read N and then read N numbers. If N is invalid (<=0), order again."
+      },
+      {
+        "id": 22,
+        "texto": "Leia números até 0. Ao final, imprima o segundo maior (se existir).",
+        "texto_en": "Read numbers up to 0. At the end, print the second largest number (if it exists)."
+      },
+      {
+        "id": 23,
+        "texto": "Leia números até 0. Ao final, imprima quantos valores foram lidos no total.",
+        "texto_en": "Read numbers up to 0. At the end, print how many values ​​were read in total."
+      },
+      {
+        "id": 24,
+        "texto": "Leia notas de 10 alunos (2 notas por aluno) e imprima a média de cada aluno.",
+        "texto_en": "Read scores from 10 students (2 scores per student) and print the average for each student."
+      },
+      {
+        "id": 25,
+        "texto": "Leia 20 alturas e imprima a média das alturas.",
+        "texto_en": "Read 20 heights and print the average of the heights."
+      },
+      {
+        "id": 26,
+        "texto": "Leia sexo de 20 pessoas (apenas M/F). Se inválido, peça novamente. Conte M e F.",
+        "texto_en": "Read sex of 20 people (M/F only). If invalid, please order again. Count M and F."
+      },
+      {
+        "id": 27,
+        "texto": "Leia idades até -1 e calcule percentual por faixas: 0-17, 18-35, 36-50, 51-65, >65.",
+        "texto_en": "Read ages up to -1 and calculate percentage by range: 0-17, 18-35, 36-50, 51-65, >65."
+      },
+      {
+        "id": 28,
+        "texto": "Leia números até 0 e imprima quantos são maiores que a média (calcule média ao final, então faça duas passagens guardando dados).",
+        "texto_en": "Read numbers up to 0 and print how many are greater than the average (calculate average at the end, then make two passes saving data)."
+      },
+      {
+        "id": 29,
+        "texto": "Leia valores de estoque (preço) até digitar 0. Ao final, imprima total e média dos preços.",
+        "texto_en": "Read stock values ​​(price) until you enter 0. Finally, print the total and average prices."
+      },
+      {
+        "id": 30,
+        "texto": "Leia um número N e repita: peça um divisor D. Se D=0, imprima \"VALOR INVÁLIDO\" e peça de novo. Pare quando o usuário escolher sair.",
+        "texto_en": "Read a number N and repeat: order a divisor D. If D=0, print \"INVALID VALUE\" and order again. Stop when the user chooses to exit."
+      }
+    ],
+    "tipo_en": "Sentinel-Controlled Loops",
+    "titulo_en": "List 8 - Sentinel-Controlled Loops (0, negative, option)"
+  },
+  {
+    "numero": 9,
+    "tipo": "Strings",
+    "titulo": "Lista 9 - Strings (manipulação e validação)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Leia uma frase e conte quantas vogais ela tem (a,e,i,o,u).",
+        "texto_en": "Read a sentence and count how many vowels it has (a,e,i,o,u)."
+      },
+      {
+        "id": 2,
+        "texto": "Leia uma frase e conte quantas consoantes ela tem (ignore espaços).",
+        "texto_en": "Read a sentence and count how many consonants it has (ignore spaces)."
+      },
+      {
+        "id": 3,
+        "texto": "Leia uma frase e conte quantas palavras ela possui.",
+        "texto_en": "Read a sentence and count how many words it has."
+      },
+      {
+        "id": 4,
+        "texto": "Leia uma frase e imprima a frase invertida.",
+        "texto_en": "Read a sentence and print the sentence reversed."
+      },
+      {
+        "id": 5,
+        "texto": "Leia uma palavra e verifique se é palíndromo.",
+        "texto_en": "Read a word and check if it is a palindrome."
+      },
+      {
+        "id": 6,
+        "texto": "Leia uma frase e verifique se é palíndromo ignorando espaços e pontuação simples (remova espaços e pontos/vírgulas).",
+        "texto_en": "Read a sentence and check if it is a palindrome by ignoring spaces and single punctuation (remove spaces and periods/commas)."
+      },
+      {
+        "id": 7,
+        "texto": "Leia uma frase e imprima somente as letras (remova números).",
+        "texto_en": "Read a sentence and print only the letters (remove numbers)."
+      },
+      {
+        "id": 8,
+        "texto": "Leia uma frase e substitua espaços por hífen (gerar slug simples).",
+        "texto_en": "Read a sentence and replace spaces with hyphens (generate simple slug)."
+      },
+      {
+        "id": 9,
+        "texto": "Leia um e-mail e valide regras simples (@ e . após @).",
+        "texto_en": "Read an email and validate simple rules (@ and . after @)."
+      },
+      {
+        "id": 10,
+        "texto": "Leia uma senha e valide: >=8, contém letra e número.",
+        "texto_en": "Read a password and validate: >=8, contains letter and number."
+      },
+      {
+        "id": 11,
+        "texto": "Leia uma frase e imprima quantas vezes cada palavra aparece (use estrutura de contagem).",
+        "texto_en": "Read a sentence and print out how many times each word appears (use counting structure)."
+      },
+      {
+        "id": 12,
+        "texto": "Leia uma frase e imprima a palavra mais frequente.",
+        "texto_en": "Read a sentence and print the most frequent word."
+      },
+      {
+        "id": 13,
+        "texto": "Leia uma frase e imprima a maior palavra e a menor palavra (por tamanho).",
+        "texto_en": "Read a sentence and print the largest word and the smallest word (by size)."
+      },
+      {
+        "id": 14,
+        "texto": "Leia um nome completo e gere abreviação (ex.: \"Ana Maria Silva\" -> \"Ana M. Silva\").",
+        "texto_en": "Read a full name and generate an abbreviation (e.g.: \"Ana Maria Silva\" -> \"Ana M. Silva\")."
+      },
+      {
+        "id": 15,
+        "texto": "Leia um texto e um termo e informe quantas vezes o termo aparece.",
+        "texto_en": "Read a text and a term and report how many times the term appears."
+      },
+      {
+        "id": 16,
+        "texto": "Leia um texto e remova todos os espaços duplicados (transforme múltiplos espaços em 1).",
+        "texto_en": "Read a text and remove all duplicate spaces (turn multiple spaces into 1)."
+      },
+      {
+        "id": 17,
+        "texto": "Leia uma frase e capitalize a primeira letra de cada palavra.",
+        "texto_en": "Read a sentence and capitalize the first letter of each word."
+      },
+      {
+        "id": 18,
+        "texto": "Leia um texto e extraia as iniciais de cada palavra (ex.: 'Centro Universitário do Norte' -> 'CUDN').",
+        "texto_en": "Read a text and extract the initials of each word (e.g., 'Northern University Center' -> 'NUC')."
+      },
+      {
+        "id": 19,
+        "texto": "Leia um texto e verifique se ele contém apenas letras e espaços.",
+        "texto_en": "Read a text and check if it only contains letters and spaces."
+      },
+      {
+        "id": 20,
+        "texto": "Leia um texto e conte quantos dígitos numéricos existem nele.",
+        "texto_en": "Read a text and count how many numerical digits there are in it."
+      },
+      {
+        "id": 21,
+        "texto": "Leia uma frase e troque todas as vogais por '*', mantendo as consoantes.",
+        "texto_en": "Read a sentence and replace all the vowels with '*', keeping the consonants."
+      },
+      {
+        "id": 22,
+        "texto": "Leia um texto e verifique se começa com prefixo informado pelo usuário.",
+        "texto_en": "Read a text and check if it starts with a prefix entered by the user."
+      },
+      {
+        "id": 23,
+        "texto": "Leia um texto e verifique se termina com sufixo informado pelo usuário.",
+        "texto_en": "Read a text and check if it ends with a suffix entered by the user."
+      },
+      {
+        "id": 24,
+        "texto": "Leia um texto e imprima as 3 primeiras letras (se tiver menos, imprima o texto todo).",
+        "texto_en": "Read a text and print the first 3 letters (if there are fewer, print the entire text)."
+      },
+      {
+        "id": 25,
+        "texto": "Leia um texto e imprima as 3 últimas letras (se tiver menos, imprima o texto todo).",
+        "texto_en": "Read a text and print the last 3 letters (if there are fewer, print the entire text)."
+      },
+      {
+        "id": 26,
+        "texto": "Leia um texto e substitua uma palavra A por B (ambas informadas).",
+        "texto_en": "Read a text and replace a word A with B (both informed)."
+      },
+      {
+        "id": 27,
+        "texto": "Leia um texto e uma letra e imprima todas as posições (índices) onde a letra aparece.",
+        "texto_en": "Read a text and a letter and print all the positions (indices) where the letter appears."
+      },
+      {
+        "id": 28,
+        "texto": "Leia um texto e remova pontuação simples: . , ; : ! ? (substitua por vazio).",
+        "texto_en": "Read a text and remove simple punctuation: . , ; : ! ? (replace with empty)."
+      },
+      {
+        "id": 29,
+        "texto": "Leia um texto e gere um resumo simples: imprima apenas as 10 primeiras palavras.",
+        "texto_en": "Read a text and generate a simple summary: print just the first 10 words."
+      },
+      {
+        "id": 30,
+        "texto": "Leia uma frase e gere um acróstico usando a primeira letra de cada palavra, um por linha.",
+        "texto_en": "Read a sentence and generate an acrostic using the first letter of each word, one per line."
+      }
+    ],
+    "tipo_en": "Strings",
+    "titulo_en": "List 9 - Strings (Manipulation and Validation)"
+  },
+  {
+    "numero": 10,
+    "tipo": "Strings - Estudos de Caso",
+    "titulo": "Lista 10 - Strings com Estudos de Caso",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Você trabalha no atendimento e recebeu uma mensagem informal de um aluno. Leia o texto e gere uma versão mais formal substituindo abreviações comuns (ex.: 'vc'->'você', 'pq'->'porque', 'tb'->'também', 'q'->'que'). Mostre o texto original e o formal.",
+        "texto_en": "You work in customer service and received an informal message from a student. Read the text and generate a more formal version by replacing common abbreviations (e.g.: 'vc'->'you', 'because'->'why', 'also'->'also', 'q'->'que'). Show the original and formal text."
+      },
+      {
+        "id": 2,
+        "texto": "Você está criando um post de divulgação. Leia um título e gere uma legenda curta no formato: 'Título — saiba mais!' e adicione 3 hashtags ao final (use uma lista fixa, por exemplo: #educacao #tecnologia #carreira).",
+        "texto_en": "You are creating a promotional post. Read a title and generate a short caption in the format: 'Title — learn more!' and add 3 hashtags at the end (use a fixed list, for example: #education #technology #career)."
+      },
+      {
+        "id": 3,
+        "texto": "Um sistema precisa gerar e-mail institucional a partir do nome. Leia um nome completo e gere: primeiro.sobrenome@dominio.com (tudo minúsculo). Se o nome tiver apenas uma palavra, use primeiro.primeiro@dominio.com.",
+        "texto_en": "A system needs to generate institutional email from the name. Read a full name and output: first.lastname@domain.com (all lowercase). If the name is just one word, use first.first@domain.com."
+      },
+      {
+        "id": 4,
+        "texto": "O setor de protocolo gera um código para cada solicitação. Leia o nome do solicitante e gere um código no formato: 3 primeiras letras do nome (sem espaços) + '-' + '2026' + '-' + '001'. Se o nome tiver menos de 3 letras, use o que tiver.",
+        "texto_en": "The protocol sector generates a code for each request. Read the applicant's name and generate a code in the format: first 3 letters of the name (without spaces) + '-' + '2026' + '-' + '001'. If the name is less than 3 letters, use whatever you have."
+      },
+      {
+        "id": 5,
+        "texto": "Um suporte quer classificar pedidos por urgência. Leia a descrição do chamado e verifique se contém termos de falha (ex.: 'erro', 'bug', 'falha'). Se contiver, classifique como 'INCIDENTE'. Caso contrário, 'SOLICITAÇÃO'.",
+        "texto_en": "A support person wants to classify requests by urgency. Read the description of the ticket and check if it contains failure terms (e.g. 'error', 'bug', 'fault'). If it does, classify it as 'INCIDENT'. Otherwise, 'REQUEST'."
+      },
+      {
+        "id": 6,
+        "texto": "Para organizar arquivos, você precisa gerar uma chave de catalogação. Leia o título de um documento e gere uma chave removendo espaços e pontuação simples, e colocando tudo em minúsculo.",
+        "texto_en": "To organize files, you need to generate a cataloging key. Read the title of a document and generate a key by removing spaces and single punctuation, and lowercase everything."
+      },
+      {
+        "id": 7,
+        "texto": "Um recrutador quer identificar tecnologias em um resumo de currículo. Leia um texto e conte quantas vezes aparecem as palavras 'python', 'java' e 'sql' (sem diferenciar maiúsculas/minúsculas). Imprima as contagens.",
+        "texto_en": "A recruiter wants to identify technologies in a resume summary. Read a text and count how many times the words 'python', 'java' and 'sql' appear (not case sensitive). Print the counts."
+      },
+      {
+        "id": 8,
+        "texto": "Um chat precisa reconhecer perguntas. Leia uma frase e classifique como 'PERGUNTA' se terminar com '?', caso contrário 'AFIRMAÇÃO'.",
+        "texto_en": "A chat needs to recognize questions. Read a sentence and classify it as 'QUESTION' if it ends with '?', otherwise ' STATEMENT '."
+      },
+      {
+        "id": 9,
+        "texto": "Um cadastro exige senha forte. Leia a senha e classifique: FRACA (menos de 8), MÉDIA (>=8 mas falta número ou letra maiúscula), FORTE (>=8 com número e letra maiúscula). Imprima a classificação.",
+        "texto_en": "Registration requires a strong password. Read the password and classify: WEAK (less than 8), MEDIUM (>=8 but missing number or capital letter), STRONG (>=8 with number and capital letter). Print the classification."
+      },
+      {
+        "id": 10,
+        "texto": "Um portal aceita apenas certos anexos. Leia um nome de arquivo e valide se a extensão é .pdf, .docx ou .txt. Imprima 'PERMITIDO' ou 'NÃO PERMITIDO'.",
+        "texto_en": "A portal only accepts certain attachments. Read a file name and validate whether the extension is .pdf, .docx, or .txt. Print 'ALLOWED' or 'NOT ALLOWED'."
+      },
+      {
+        "id": 11,
+        "texto": "Em um e-commerce, a descrição curta tem limite de 60 caracteres. Leia uma descrição. Se passar de 60, corte para 57 e adicione '...'. Imprima o resultado.",
+        "texto_en": "In e-commerce, the short description has a limit of 60 characters. Read a description. If it goes over 60, cut to 57 and add '...'. Print the result."
+      },
+      {
+        "id": 12,
+        "texto": "Um professor recebeu uma lista de presença em uma linha: nomes separados por vírgula. Leia a string e informe quantos nomes existem (desconsiderando espaços extras).",
+        "texto_en": "A teacher received a one-line attendance list: names separated by commas. Read the string and report how many names there are (ignoring extra spaces)."
+      },
+      {
+        "id": 13,
+        "texto": "Para estimar tamanho de texto, você quer contar frases. Leia um comunicado e estime quantas frases há considerando '.' como delimitador. Ignore pontos finais vazios.",
+        "texto_en": "To estimate text size, you want to count sentences. Read a statement and estimate how many sentences there are considering '.' as a delimiter. Ignore empty full stops."
+      },
+      {
+        "id": 14,
+        "texto": "Uma auditoria quer detectar possíveis contatos em mensagens. Leia um texto e identifique se existe uma sequência de 8 ou 9 dígitos consecutivos (regra simples). Se existir, imprima 'POSSÍVEL TELEFONE ENCONTRADO'.",
+        "texto_en": "An audit wants to detect possible contacts in messages. Read a text and identify whether there is a sequence of 8 or 9 consecutive digits (simple rule). If it exists, print 'POSSIBLE PHONE FOUND'."
+      },
+      {
+        "id": 15,
+        "texto": "Um CRM precisa padronizar nomes. Leia um nome e imprima no formato com iniciais maiúsculas em cada palavra (title case), removendo espaços duplicados.",
+        "texto_en": "A CRM needs to standardize names. Read a name and print it in the format with capital letters in each word (title case), removing duplicate spaces."
+      },
+      {
+        "id": 16,
+        "texto": "Um FAQ classifica dúvidas por tema. Leia o assunto do e-mail e, se contiver 'pagamento' ou 'boleto', marque FINANCEIRO; se contiver 'matrícula' ou 'turma', marque ACADÊMICO; se contiver 'senha' ou 'erro', marque TI; caso contrário, OUTROS.",
+        "texto_en": "A FAQ classifies questions by topic. Read the subject of the email and, if it contains 'payment' or 'invoice', mark FINANCIAL; if it contains 'enrollment' or 'class', mark ACADEMIC; if it contains 'password' or 'error', mark IT; otherwise, OTHERS."
+      },
+      {
+        "id": 17,
+        "texto": "Um sistema registra logs no formato 'NIVEL: mensagem'. Leia uma linha e extraia o NIVEL (INFO/WARN/ERROR). Imprima o nível e a mensagem separadamente.",
+        "texto_en": "A system records logs in the format 'LEVEL: message'. Read a line and extract the LEVEL (INFO/WARN/ERROR). Print the level and message separately."
+      },
+      {
+        "id": 18,
+        "texto": "Um relatório social quer contar emojis básicos. Leia uma frase e conte quantos caracteres pertencem ao conjunto: 😀 😂 🔥 ❤️ 👍 (lista fixa). Imprima a contagem.",
+        "texto_en": "A social report wants to count basic emojis. Read a sentence and count how many characters belong to the set: 😀 😂 🔥 ❤️ 👍 (fixed list). Print the count."
+      },
+      {
+        "id": 19,
+        "texto": "Para análise textual simples, remova stopwords. Leia uma frase e remova as palavras: 'de', 'a', 'o', 'e', 'para', 'do', 'da'. Imprima o texto filtrado.",
+        "texto_en": "For simple textual analysis, remove stopwords. Read a sentence and remove the words: 'of', 'a', 'the', 'and', 'to', 'do', 'da'. Print the filtered text."
+      },
+      {
+        "id": 20,
+        "texto": "No atendimento, gere uma resposta padrão. Leia nome do aluno e número do protocolo e imprima: 'Olá, NOME. Seu protocolo PROTOCOLO foi registrado e está em análise.'.",
+        "texto_en": "When responding, generate a standard response. Read the student's name and protocol number and print: 'Hello, NAME. Your PROTOCOL protocol has been registered and is under analysis.'."
+      },
+      {
+        "id": 21,
+        "texto": "Você recebeu um texto com várias quebras de linha seguidas. Leia o texto e substitua ocorrências de múltiplas quebras de linha por apenas uma (regra simples).",
+        "texto_en": "You received a text with several line breaks in a row. Read the text and replace occurrences of multiple line breaks with just one (simple rule)."
+      },
+      {
+        "id": 22,
+        "texto": "Uma triagem marca urgência por assunto. Leia o assunto do e-mail e, se contiver 'URGENTE' ou 'IMEDIATO' (sem diferenciar maiúsculas/minúsculas), marque como URGENTE; caso contrário, NORMAL.",
+        "texto_en": "A triage marks urgency by subject. Read the subject of the email and, if it contains 'URGENT' or 'IMMEDIATE' (not case sensitive), mark it as URGENT; otherwise, NORMAL."
+      },
+      {
+        "id": 23,
+        "texto": "Um chatbot responde por intenção. Leia a intenção (SAUDACAO, DUVIDA, RECLAMACAO) e imprima uma mensagem padrão correspondente.",
+        "texto_en": "A chatbot responds by intent. Read the intention (GREETING, DOUBT, COMPLAINT) and print a corresponding standard message."
+      },
+      {
+        "id": 24,
+        "texto": "Um cadastro mostra CPF mascarado. Leia um CPF com 11 dígitos e formate como 000.000.000-00. Se não tiver 11 dígitos, informe 'CPF INVÁLIDO'.",
+        "texto_en": "A registration shows masked CPF. Read an 11-digit CPF and format it as 000.000.000-00. If it does not have 11 digits, enter 'INVALID CPF'."
+      },
+      {
+        "id": 25,
+        "texto": "Um sistema acadêmico gera identificadores. Leia um número de matrícula e gere a string 'MAT-' + matrícula. Ex.: 123 -> MAT-123.",
+        "texto_en": "An academic system generates identifiers. Read a registration number and generate the string 'MAT-' + registration number. Ex.: 123 -> MAT-123."
+      },
+      {
+        "id": 26,
+        "texto": "Em um documento, você quer contar palavras longas. Leia um parágrafo e conte quantas palavras têm mais de 7 letras (ignore pontuação simples).",
+        "texto_en": "In a document, you want to count long words. Read a paragraph and count how many words are longer than 7 letters (ignore simple punctuation)."
+      },
+      {
+        "id": 27,
+        "texto": "Um sistema de tags escolhe palavras relevantes. Leia um texto e gere até 5 tags escolhendo as 5 palavras mais frequentes (ignore palavras com 2 letras ou menos). Imprima as tags.",
+        "texto_en": "A tag system chooses relevant words. Read a text and generate up to 5 tags by choosing the 5 most frequent words (ignore words with 2 letters or less). Print the tags."
+      },
+      {
+        "id": 28,
+        "texto": "Uma verificação simples de similaridade compara dois textos. Leia dois textos e calcule um percentual simples: (número de palavras em comum) / (número de palavras únicas nos dois textos) * 100. Imprima o percentual.",
+        "texto_en": "A simple similarity check compares two texts. Read two texts and calculate a simple percentage: (number of words in common) / (number of unique words in both texts) * 100. Print the percentage."
+      },
+      {
+        "id": 29,
+        "texto": "Um sistema de exportação precisa trocar separadores. Leia uma linha de dados e substitua todas as vírgulas por ponto e vírgula. Imprima o resultado.",
+        "texto_en": "An export system needs to change separators. Read a line of data and replace all commas with semicolons. Print the result."
+      },
+      {
+        "id": 30,
+        "texto": "Uma versão para leitura simples remove complexidade. Leia um texto e gere uma versão em minúsculas, sem pontuação simples (. , ; : ! ?). Imprima o resultado.",
+        "texto_en": "A simple-to-read version removes complexity. Read a text and generate a lowercase version, without simple punctuation (. , ; : ! ?). Print the result."
+      }
+    ],
+    "tipo_en": "Strings - Case Studies",
+    "titulo_en": "List 10 - Strings with Case Studies"
+  },
+  {
+    "numero": 11,
+    "tipo": "Arrays/Listas",
+    "titulo": "Lista 11 - Arrays/Listas (operações essenciais)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Crie um array vazio e imprima seu tamanho.",
+        "texto_en": "Create an empty array and print its size."
+      },
+      {
+        "id": 2,
+        "texto": "Crie um array com 5 números e imprima o primeiro e o último.",
+        "texto_en": "Create an array with 5 numbers and print the first and last."
+      },
+      {
+        "id": 3,
+        "texto": "Adicione um número ao final do array e imprima o array.",
+        "texto_en": "Add a number to the end of the array and print the array."
+      },
+      {
+        "id": 4,
+        "texto": "Remova o último elemento e imprima o array.",
+        "texto_en": "Remove the last element and print the array."
+      },
+      {
+        "id": 5,
+        "texto": "Adicione um número no início e imprima o array.",
+        "texto_en": "Add a number at the beginning and print the array."
+      },
+      {
+        "id": 6,
+        "texto": "Remova o primeiro elemento e imprima o array.",
+        "texto_en": "Remove the first element and print the array."
+      },
+      {
+        "id": 7,
+        "texto": "Leia 10 números e armazene em um array; imprima o array.",
+        "texto_en": "Read 10 numbers and store in an array; print the array."
+      },
+      {
+        "id": 8,
+        "texto": "Dado um array, calcule a soma dos elementos.",
+        "texto_en": "Given an array, calculate the sum of the elements."
+      },
+      {
+        "id": 9,
+        "texto": "Dado um array, calcule a média dos elementos.",
+        "texto_en": "Given an array, calculate the average of the elements."
+      },
+      {
+        "id": 10,
+        "texto": "Dado um array, encontre o maior elemento (sem usar max pronto, se possível).",
+        "texto_en": "Given an array, find the largest element (without using max outright if possible)."
+      },
+      {
+        "id": 11,
+        "texto": "Dado um array, encontre o menor elemento (sem usar min pronto, se possível).",
+        "texto_en": "Given an array, find the smallest element (without using min out of the box if possible)."
+      },
+      {
+        "id": 12,
+        "texto": "Conte quantos elementos do array são pares.",
+        "texto_en": "Count how many elements in the array are even."
+      },
+      {
+        "id": 13,
+        "texto": "Conte quantos elementos do array são ímpares.",
+        "texto_en": "Count how many elements in the array are odd."
+      },
+      {
+        "id": 14,
+        "texto": "Crie um novo array contendo apenas os elementos positivos.",
+        "texto_en": "Create a new array containing only positive elements."
+      },
+      {
+        "id": 15,
+        "texto": "Crie um novo array contendo apenas os elementos negativos.",
+        "texto_en": "Create a new array containing only negative elements."
+      },
+      {
+        "id": 16,
+        "texto": "Verifique se um número X existe no array e imprima true/false.",
+        "texto_en": "Check if a number X exists in the array and print true/false."
+      },
+      {
+        "id": 17,
+        "texto": "Encontre o índice do número X no array (ou -1 se não existir).",
+        "texto_en": "Find the index of number X in the array (or -1 if it doesn't exist)."
+      },
+      {
+        "id": 18,
+        "texto": "Crie uma cópia do array (sem referenciar o mesmo objeto, se aplicável).",
+        "texto_en": "Create a copy of the array (without referencing the same object, if applicable)."
+      },
+      {
+        "id": 19,
+        "texto": "Inverta o array manualmente (sem usar reverse pronto, se possível).",
+        "texto_en": "Invert the array manually (without using reverse out of the box, if possible)."
+      },
+      {
+        "id": 20,
+        "texto": "Ordene o array em ordem crescente (pode usar sort ou implementar seleção).",
+        "texto_en": "Sort the array in ascending order (you can use sort or implement selection)."
+      },
+      {
+        "id": 21,
+        "texto": "Remova elementos duplicados e imprima o array único.",
+        "texto_en": "Remove duplicate elements and print the unique array."
+      },
+      {
+        "id": 22,
+        "texto": "Conte a frequência de cada número no array e imprima (número -> contagem).",
+        "texto_en": "Count the frequency of each number in the array and print (number -> count)."
+      },
+      {
+        "id": 23,
+        "texto": "Encontre a moda (elemento mais frequente) do array.",
+        "texto_en": "Find the mode (most frequent element) of the array."
+      },
+      {
+        "id": 24,
+        "texto": "Encontre a mediana do array (ordene e calcule).",
+        "texto_en": "Find the median of the array (sort and calculate)."
+      },
+      {
+        "id": 25,
+        "texto": "Encontre o segundo maior elemento do array.",
+        "texto_en": "Find the second largest element in the array."
+      },
+      {
+        "id": 26,
+        "texto": "Encontre o segundo menor elemento do array.",
+        "texto_en": "Find the second smallest element in the array."
+      },
+      {
+        "id": 27,
+        "texto": "Divida um array em grupos de tamanho K (chunk). Leia K e gere subarrays.",
+        "texto_en": "Divide an array into groups of size K (chunk). Read K and generate subarrays."
+      },
+      {
+        "id": 28,
+        "texto": "Some dois arrays posição a posição (mesmo tamanho) e gere um terceiro array.",
+        "texto_en": "Add two arrays position by position (same size) and generate a third array."
+      },
+      {
+        "id": 29,
+        "texto": "Concatene dois arrays e remova duplicados.",
+        "texto_en": "Concatenate two arrays and remove duplicates."
+      },
+      {
+        "id": 30,
+        "texto": "Dado um array, verifique se está ordenado (crescente) sem ordenar novamente.",
+        "texto_en": "Given an array, check if it is sorted (ascending) without sorting again."
+      }
+    ],
+    "tipo_en": "Arrays/Lists",
+    "titulo_en": "List 11 - Arrays/Lists (Essential Operations)"
+  },
+  {
+    "numero": 12,
+    "tipo": "Arrays - Estudos de Caso",
+    "titulo": "Lista 12 - Arrays com Estudos de Caso",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Uma turma tem N alunos. Leia N notas (0 a 10) e calcule a média da turma. Ao final, imprima a média com 2 casas decimais.",
+        "texto_en": "A class has N students. Read N grades (0 to 10) and calculate the class average. At the end, print the average with 2 decimal places."
+      },
+      {
+        "id": 2,
+        "texto": "A coordenação quer um resumo de desempenho. Leia N médias finais e conte quantos alunos ficaram: APROVADO (>=7), RECUPERAÇÃO (>=5 e <7) e REPROVADO (<5). Imprima os totais.",
+        "texto_en": "The coordination wants a performance summary. Read N final averages and count how many students received: PASS (>=7), RECOVERY (>=5 and <7) and FAIL (<5). Print the totals."
+      },
+      {
+        "id": 3,
+        "texto": "Uma loja acompanha vendas por dia. Leia 7 valores (uma semana) e imprima: total da semana, maior venda e qual dia (1 a 7) teve a maior venda.",
+        "texto_en": "A store tracks sales per day. Read 7 values ​​(one week) and print: total for the week, biggest sale and which day (1 to 7) had the biggest sale."
+      },
+      {
+        "id": 4,
+        "texto": "Você precisa gerar um ranking de vendas. Leia N valores de vendas e imprima os valores em ordem decrescente (do maior para o menor).",
+        "texto_en": "You need to generate a sales ranking. Read N sales values ​​and print the values ​​in descending order (from highest to lowest)."
+      },
+      {
+        "id": 5,
+        "texto": "Um estoque tem 10 produtos e o mínimo aceitável é 5 unidades. Leia 10 quantidades e imprima quais posições (ou códigos) estão abaixo do mínimo.",
+        "texto_en": "An inventory has 10 products and the minimum acceptable is 5 units. Read 10 quantities and print which positions (or codes) are below the minimum."
+      },
+      {
+        "id": 6,
+        "texto": "Para calcular valor total de estoque, leia 10 preços e 10 quantidades (mesmo índice = mesmo produto). Calcule o valor total do estoque e imprima também o valor de cada produto.",
+        "texto_en": "To calculate total stock value, read 10 prices and 10 quantities (same index = same product). Calculate the total value of stock and also print the value of each product."
+      },
+      {
+        "id": 7,
+        "texto": "Um aluno tem registro de presença em 30 aulas: 1 = presente, 0 = ausente. Leia 30 valores e calcule o percentual de presença. Imprima se está 'REGULAR' (>=75%) ou 'EM RISCO' (<75%).",
+        "texto_en": "A student has a record of attendance in 30 classes: 1 = present, 0 = absent. Read 30 values ​​and calculate the percentage of presence. Print whether it is 'REGULAR' (>=75%) or 'AT RISK' (<75%)."
+      },
+      {
+        "id": 8,
+        "texto": "Em uma pesquisa, você coletou idades. Leia N idades e conte quantas caem em cada faixa: 0-17, 18-35, 36-50, 51-65, >65. Imprima o relatório por faixa.",
+        "texto_en": "In a survey, you collected ages. Read N ages and count how many fall into each range: 0-17, 18-35, 36-50, 51-65, >65. Print the report by track."
+      },
+      {
+        "id": 9,
+        "texto": "No RH, leia N salários e imprima: média salarial, maior salário e menor salário.",
+        "texto_en": "In HR, read N salaries and print: average salary, highest salary and lowest salary."
+      },
+      {
+        "id": 10,
+        "texto": "Ainda no RH, com os salários lidos, calcule quantas pessoas ganham acima da média e imprima esse total.",
+        "texto_en": "Still in HR, with the salaries read, calculate how many people earn above average and print this total."
+      },
+      {
+        "id": 11,
+        "texto": "Em um acompanhamento de saúde, leia N pares (peso, altura). Calcule o IMC de cada pessoa, armazene em um array de IMCs e imprima a média dos IMCs.",
+        "texto_en": "In a health monitoring, read N pairs (weight, height). Calculate each person's BMI, store it in a BMI array and print the average BMI."
+      },
+      {
+        "id": 12,
+        "texto": "Uma turma tem nomes e notas. Leia N nomes e N notas correspondentes. Encontre e imprima o nome do aluno com maior nota.",
+        "texto_en": "A class has names and grades. Read N names and N corresponding notes. Find and print the name of the student with the highest score."
+      },
+      {
+        "id": 13,
+        "texto": "Com a mesma lista (nomes e notas), imprima a lista de aprovados (nota >= 7) no formato 'NOME - NOTA'.",
+        "texto_en": "With the same list (names and grades), print the list of approved candidates (grade >= 7) in the 'NAME - GRADE' format."
+      },
+      {
+        "id": 14,
+        "texto": "Um call center mede tempo de atendimento em minutos. Leia N tempos e calcule: tempo médio, maior tempo e menor tempo.",
+        "texto_en": "A call center measures service time in minutes. Read N times and calculate: average time, longest time and shortest time."
+      },
+      {
+        "id": 15,
+        "texto": "Um app de transporte registrou distâncias (km) de corridas. Leia N distâncias e uma tarifa por km. Calcule o faturamento total e a maior distância registrada.",
+        "texto_en": "A transportation app recorded running distances (km). Read N distances and a rate per km. Calculate total revenue and the longest recorded distance."
+      },
+      {
+        "id": 16,
+        "texto": "Uma biblioteca quer estimar multas. Leia N dias de atraso e calcule multa total considerando 1 unidade por dia de atraso. Imprima a soma.",
+        "texto_en": "A library wants to estimate fines. Read N days of delay and calculate the total fine considering 1 unit per day of delay. Print the sum."
+      },
+      {
+        "id": 17,
+        "texto": "Uma loja quer aplicar cupom apenas nos itens mais caros. Leia N preços. Identifique os 3 maiores preços e aplique 10% de desconto somente nesses 3. Calcule e imprima o total final.",
+        "texto_en": "A store wants to apply coupons only to the most expensive items. Read N prices. Identify the 3 highest prices and apply 10% discount only to these 3. Calculate and print the final total."
+      },
+      {
+        "id": 18,
+        "texto": "Um sistema de segurança registra tentativas de login: 1=sucesso, 0=falha. Leia N registros e calcule a taxa de falha em %.",
+        "texto_en": "A security system records login attempts: 1=success, 0=failure. Read N records and calculate the failure rate in %."
+      },
+      {
+        "id": 19,
+        "texto": "Uma página tem 10 posts e você registrou curtidas. Leia 10 números e imprima o top 3 (as três maiores quantidades de curtidas).",
+        "texto_en": "A page has 10 posts and you registered likes. Read 10 numbers and print the top 3 (the three highest amounts of likes)."
+      },
+      {
+        "id": 20,
+        "texto": "Uma avaliação de qualidade quer medir variação. Leia N notas (0 a 10) e calcule a amplitude: maior nota - menor nota. Imprima a amplitude.",
+        "texto_en": "A quality assessment wants to measure variation. Read N notes (0 to 10) and calculate the amplitude: highest note - lowest note. Print the amplitude."
+      },
+      {
+        "id": 21,
+        "texto": "Logística: você tem pesos de pacotes e caixas com limite de 10 kg. Leia N pesos e agrupe pacotes em caixas usando uma estratégia simples: vá colocando na caixa atual até não caber, então abra outra. Imprima quantas caixas foram usadas.",
+        "texto_en": "Logistics: you have package and box weights with a limit of 10 kg. Read N weights and group packages into boxes using a simple strategy: keep placing them in the current box until it no longer fits, then open another one. Print how many boxes were used."
+      },
+      {
+        "id": 22,
+        "texto": "Um campeonato precisa atribuir medalhas. Leia N pontuações. Determine os 3 maiores e imprima: OURO, PRATA, BRONZE com seus valores.",
+        "texto_en": "A championship needs to award medals. Read N scores. Determine the 3 largest and print: GOLD, SILVER, BRONZE with their values."
+      },
+      {
+        "id": 23,
+        "texto": "Uma fábrica registra defeitos por dia. Leia N valores e um limite L. Imprima quais dias ficaram acima do limite.",
+        "texto_en": "A factory records defects per day. Read N values ​​and a limit L. Print which days were above the limit."
+      },
+      {
+        "id": 24,
+        "texto": "Uma lista de tarefas precisa ser limpa. Leia N tarefas (texto) e, para cada uma, leia se está concluída (S/N). Remova as concluídas e imprima apenas as pendentes.",
+        "texto_en": "A to-do list needs cleaning. Read N tasks (text) and, for each one, read if it is completed (Y/N). Remove completed ones and print only pending ones."
+      },
+      {
+        "id": 25,
+        "texto": "Análise de palavras: leia N palavras e conte frequência (palavra -> quantidade). Imprima as 5 palavras mais frequentes.",
+        "texto_en": "Word analysis: read N words and count frequency (word -> quantity). Print the 5 most frequent words."
+      },
+      {
+        "id": 26,
+        "texto": "Finanças pessoais: leia receitas mensais (12 valores) e despesas mensais (12 valores). Calcule o saldo de cada mês e imprima qual mês teve o melhor saldo.",
+        "texto_en": "Personal finances: read monthly income (12 values) and monthly expenses (12 values). Calculate the balance for each month and print which month had the best balance."
+      },
+      {
+        "id": 27,
+        "texto": "Estatística de um conjunto: leia N números e calcule soma, média, mediana e moda (quando existir). Imprima tudo.",
+        "texto_en": "Statistics of a set: read N numbers and calculate sum, mean, median and mode (when applicable). Print everything."
+      },
+      {
+        "id": 28,
+        "texto": "Auditoria simples: leia N valores e identifique possíveis valores fora do padrão usando regra simples: marque valores maiores que (média * 2). Imprima os valores marcados.",
+        "texto_en": "Simple audit: read N values ​​and identify possible non-standard values ​​using simple rule: mark values ​​greater than (average * 2). Print the marked values."
+      },
+      {
+        "id": 29,
+        "texto": "Um processo seletivo classifica top 20%. Leia N notas, ordene e determine a nota de corte para os 20% melhores. Imprima os classificados.",
+        "texto_en": "A selection process ranks the top 20%. Read N notes, order and determine the cut-off score for the top 20%. Print the classifieds."
+      },
+      {
+        "id": 30,
+        "texto": "Carona solidária: leia N destinos (texto). Agrupe e imprima quantas pessoas vão para cada destino (destino -> contagem).",
+        "texto_en": "Carpooling: read N destinations (text). Group and print how many people go to each destination (destination -> count)."
+      }
+    ],
+    "tipo_en": "Arrays - Case Studies",
+    "titulo_en": "List 12 - Arrays with Case Studies"
+  },
+  {
+    "numero": 13,
+    "tipo": "Funções",
+    "titulo": "Lista 13 - Funções (básicas e reutilização)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Crie uma função soma(a,b) que retorna a soma.",
+        "texto_en": "Create a sum(a,b) function that returns the sum."
+      },
+      {
+        "id": 2,
+        "texto": "Crie uma função sub(a,b) que retorna a subtração.",
+        "texto_en": "Create a function sub(a,b) that returns the subtraction."
+      },
+      {
+        "id": 3,
+        "texto": "Crie uma função mult(a,b) que retorna o produto.",
+        "texto_en": "Create a mult(a,b) function that returns the product."
+      },
+      {
+        "id": 4,
+        "texto": "Crie uma função div(a,b) que retorna a divisão e trata b=0.",
+        "texto_en": "Create a function div(a,b) that returns the division and treats b=0."
+      },
+      {
+        "id": 5,
+        "texto": "Crie uma função ehPar(n) que retorna true/false.",
+        "texto_en": "Create a function ehPar(n) that returns true/false."
+      },
+      {
+        "id": 6,
+        "texto": "Crie uma função ehPrimo(n) que retorna true/false.",
+        "texto_en": "Create a function ehPrimo(n) that returns true/false."
+      },
+      {
+        "id": 7,
+        "texto": "Crie uma função fatorial(n) que retorna n!.",
+        "texto_en": "Create a factorial(n) function that returns n!."
+      },
+      {
+        "id": 8,
+        "texto": "Crie uma função fibonacci(n) que retorna um array com n termos.",
+        "texto_en": "Create a fibonacci(n) function that returns an array with n terms."
+      },
+      {
+        "id": 9,
+        "texto": "Crie uma função maior(a,b) que retorna o maior.",
+        "texto_en": "Create a function greater(a,b) that returns the greater."
+      },
+      {
+        "id": 10,
+        "texto": "Crie uma função menor(a,b) que retorna o menor.",
+        "texto_en": "Create a function smaller(a,b) that returns the smaller one."
+      },
+      {
+        "id": 11,
+        "texto": "Crie uma função media3(a,b,c) que retorna a média.",
+        "texto_en": "Create a function media3(a,b,c) that returns the average."
+      },
+      {
+        "id": 12,
+        "texto": "Crie uma função cToF(c) e fToC(f).",
+        "texto_en": "Create a function cToF(c) and fToC(f)."
+      },
+      {
+        "id": 13,
+        "texto": "Crie uma função areaRet(base,altura).",
+        "texto_en": "Create a function areaRet(base,height)."
+      },
+      {
+        "id": 14,
+        "texto": "Crie uma função areaCirc(raio) usando pi=3.14159.",
+        "texto_en": "Create a function areaCirc(radius) using pi=3.14159."
+      },
+      {
+        "id": 15,
+        "texto": "Crie uma função contarVogais(texto).",
+        "texto_en": "Create a function countVowels(text)."
+      },
+      {
+        "id": 16,
+        "texto": "Crie uma função inverter(texto) que retorna o texto invertido.",
+        "texto_en": "Create an invert(text) function that returns the inverted text."
+      },
+      {
+        "id": 17,
+        "texto": "Crie uma função ehPalindromo(texto) ignorando case.",
+        "texto_en": "Create a function ehPalindromo(text) ignoring case."
+      },
+      {
+        "id": 18,
+        "texto": "Crie uma função somaArray(arr) que retorna soma.",
+        "texto_en": "Create a function sumArray(arr) that returns sum."
+      },
+      {
+        "id": 19,
+        "texto": "Crie uma função mediaArray(arr) que retorna média.",
+        "texto_en": "Create a function mediaArray(arr) that returns average."
+      },
+      {
+        "id": 20,
+        "texto": "Crie uma função maxArray(arr) e minArray(arr) sem usar funções prontas, se possível.",
+        "texto_en": "Create a maxArray(arr) and minArray(arr) function without using ready-made functions, if possible."
+      },
+      {
+        "id": 21,
+        "texto": "Crie uma função removerDuplicados(arr) que retorna um novo array.",
+        "texto_en": "Create a function removeDuplicados(arr) that returns a new array."
+      },
+      {
+        "id": 22,
+        "texto": "Crie uma função frequencias(arr) que retorna (valor->contagem) em um mapa/dicionário.",
+        "texto_en": "Create a function frequencies(arr) that returns (value->count) in a map/dictionary."
+      },
+      {
+        "id": 23,
+        "texto": "Crie uma função ordenarCresc(arr) (pode usar sort ou seleção).",
+        "texto_en": "Create a function sortCresc(arr) (you can use sort or selection)."
+      },
+      {
+        "id": 24,
+        "texto": "Crie uma função buscarLinear(arr,x) que retorna índice ou -1.",
+        "texto_en": "Create a function fetchLinear(arr,x) that returns index or -1."
+      },
+      {
+        "id": 25,
+        "texto": "Crie uma função mdc(a,b) (Euclides).",
+        "texto_en": "Create a function gcd(a,b) (Euclid)."
+      },
+      {
+        "id": 26,
+        "texto": "Crie uma função mmc(a,b).",
+        "texto_en": "Create a function mmc(a,b)."
+      },
+      {
+        "id": 27,
+        "texto": "Crie uma função validarEmailSimples(email).",
+        "texto_en": "Create a function validateEmailSimples(email)."
+      },
+      {
+        "id": 28,
+        "texto": "Crie uma função aplicarDesconto(valor,percentual).",
+        "texto_en": "Create a function applyDiscount(value, percentage)."
+      },
+      {
+        "id": 29,
+        "texto": "Crie uma função classificarNota(nota) retornando 'Aprovado/Recuperação/Reprovado'.",
+        "texto_en": "Create a function classifyNota(grade) returning 'Passed/Recovery/Failed'."
+      },
+      {
+        "id": 30,
+        "texto": "Crie uma função resumoNumeros(arr) que retorna objeto com soma, média, max, min, contagem.",
+        "texto_en": "Create a function summaryNumbers(arr) that returns an object with sum, average, max, min, count."
+      }
+    ],
+    "tipo_en": "Functions",
+    "titulo_en": "List 13 - Functions (Basics and Reuse)"
+  },
+  {
+    "numero": 14,
+    "tipo": "Funções - Estudos de Caso",
+    "titulo": "Lista 14 - Funções com Estudos de Caso",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Implemente um módulo de 'Caixa'. Crie as funções: subtotal(itens), aplicarCupom(total,cupom) e calcularTroco(total,pago). Use essas funções em um programa que simula uma compra com pelo menos 3 itens.",
+        "texto_en": "Implement a 'Cashier' module. Create the functions: subtotal(items), applyCoupon(total,coupon) and calculateChange(total,paid). Use these functions in a program that simulates a purchase with at least 3 items."
+      },
+      {
+        "id": 2,
+        "texto": "Implemente um módulo de 'Notas'. Crie as funções: mediaAluno(notas), situacao(media) e relatorioTurma(listaDeMedias). O relatório deve contar aprovados, recuperação e reprovados.",
+        "texto_en": "Implement a 'Notes' module. Create the functions: mediaAluno(notes), situation(media) and reportTurma(listaOfMedias). The report must count approved, recovery and disapproved."
+      },
+      {
+        "id": 3,
+        "texto": "Implemente um módulo de 'Estoque'. Crie as funções: valorTotalEstoque(precos,quantidades) e listarAbaixoDoMinimo(quantidades,minimo). Demonstre com 5 produtos.",
+        "texto_en": "Implement a 'Stock' module. Create the functions: valorTotalEstoque (prices, quantities) and listBelowMinimum (quantities, minimum). Demonstrate with 5 products."
+      },
+      {
+        "id": 4,
+        "texto": "Implemente um módulo de 'Frete'. Crie fretePorPeso(peso) e freteFinal(peso,valorCompra). Se valorCompra>=200, frete final deve ser 0.",
+        "texto_en": "Implement a 'Shipping' module. Create freightByPeso(weight) and FreightFinal(weight,purchasevalue). If purchasevalue>=200, final shipping must be 0."
+      },
+      {
+        "id": 5,
+        "texto": "Implemente um módulo de 'Empréstimo'. Crie elegivel(renda,temDivida) e parcela(valor,meses,jurosMensal). Se não for elegível, não calcule parcela.",
+        "texto_en": "Implement a 'Loan' module. Create eligible(income,hasDebt) and installment(amount,months,monthly interest). If you are not eligible, do not calculate the installment."
+      },
+      {
+        "id": 6,
+        "texto": "Implemente um módulo de 'Senha'. Crie as funções validarForca(senha) e feedbackSenha(senha) retornando mensagens claras (ex.: 'falta número', 'muito curta').",
+        "texto_en": "Implement a 'Password' module. Create the functions validateForca(password) and feedbackPassword(password) returning clear messages (e.g. 'number missing', 'too short')."
+      },
+      {
+        "id": 7,
+        "texto": "Implemente um módulo de 'Texto'. Crie normalizar(texto) (minúsculo e sem pontuação simples), contarPalavras(texto) e topPalavras(texto,topN). Teste com um parágrafo.",
+        "texto_en": "Implement a 'Text' module. Create normalize(text) (lowercase and without simple punctuation), countWords(text) and topWords(text,topN). Test with a paragraph."
+      },
+      {
+        "id": 8,
+        "texto": "Implemente um módulo de 'Votação'. Crie podeVotar(idade), votoObrigatorio(idade) e mensagemVoto(idade). Mostre o resultado para 3 idades diferentes.",
+        "texto_en": "Implement a 'Voting' module. Create canVote(age), voteRequired(age) and messageVote(age). Show the result for 3 different ages."
+      },
+      {
+        "id": 9,
+        "texto": "Implemente um módulo de 'IMC'. Crie calcularIMC(peso,altura) e classificarIMC(imc). Leia dados de 3 pessoas e imprima resultado para cada uma.",
+        "texto_en": "Implement a 'BMI' module. Create calculateBMI(weight,height) and classifyBMI(BMI). Read data from 3 people and print results for each one."
+      },
+      {
+        "id": 10,
+        "texto": "Implemente um módulo de 'Energia'. Crie custoEnergia(kwh) com tarifa progressiva e custoComTaxa(kwh,taxaExtraPercentual). Imprima o valor final.",
+        "texto_en": "Implement an 'Energy' module. Create costEnergy(kwh) with progressive tariff and costWithRate(kwh,extrapercentage rate). Print the final value."
+      },
+      {
+        "id": 11,
+        "texto": "Implemente um módulo de 'Planos'. Crie precoPlano(tipo) e aplicarDesconto(preco,ehAluno). Demonstre para mensal/trimestral/anual.",
+        "texto_en": "Implement a 'Plans' module. Create pricePlan(type) and applyDiscount(price,ehStudent). Demonstrate for monthly/quarterly/yearly."
+      },
+      {
+        "id": 12,
+        "texto": "Implemente um módulo de 'Ranking'. Crie ordenarPorPontuacao(lista) e top3(lista). A lista deve conter objetos com nome e pontuação.",
+        "texto_en": "Implement a 'Ranking' module. Create orderByScore(list) and top3(list). The list must contain objects with name and punctuation."
+      },
+      {
+        "id": 13,
+        "texto": "Implemente um módulo de 'Biblioteca'. Crie multa(diasAtraso) e multaComDesconto(diasAtraso,bolsista). Mostre 3 exemplos.",
+        "texto_en": "Implement a 'Library' module. Create fine(daysDelay) and fineComDesconto(daysDelay, scholarship holder). Show 3 examples."
+      },
+      {
+        "id": 14,
+        "texto": "Implemente um módulo de 'Transporte'. Crie tarifa(tipoVeiculo) e custoCorrida(km,tipoVeiculo). Se km>20, aplique 10% de desconto.",
+        "texto_en": "Implement a 'Transport' module. Create fare (Vehicle type) and Race cost (km, Vehicle type). If km>20, apply 10% discount."
+      },
+      {
+        "id": 15,
+        "texto": "Implemente um módulo de 'Restaurante'. Crie subtotal(itens), taxaServico(subtotal,percentual) e totalFinal(subtotal,taxa,desconto). Simule uma conta com 3 itens.",
+        "texto_en": "Implement a 'Restaurant' module. Create subtotal(items), ServiceRate(subtotal,percentage) and FinalTotal(subtotal,rate,discount). Simulate an account with 3 items."
+      },
+      {
+        "id": 16,
+        "texto": "Implemente um módulo de 'Cadastro'. Crie gerarId(nome,ano) e validarCpf11(cpf). O ID deve ser padronizado e previsível.",
+        "texto_en": "Implement a 'Registration' module. Create generateId(name,year) and validateCpf11(cpf). The ID must be standardized and predictable."
+      },
+      {
+        "id": 17,
+        "texto": "Implemente um módulo de 'Relatórios Numéricos'. Crie funções soma(arr), media(arr), mediana(arr) e moda(arr). Use com um array de teste.",
+        "texto_en": "Implement a 'Numeric Reports' module. Create sum(arr), mean(arr), median(arr) and mode(arr) functions. Use with a test array."
+      },
+      {
+        "id": 18,
+        "texto": "Implemente um módulo de 'Logs'. Crie extrairNivel(linha) e extrairMensagem(linha) para o formato 'NIVEL: mensagem'. Teste com 3 linhas.",
+        "texto_en": "Implement a 'Logs' module. Create extractLevel(line) and extractMessage(line) for the format 'LEVEL: message'. Test with 3 lines."
+      },
+      {
+        "id": 19,
+        "texto": "Implemente um módulo de 'Sentimento simples'. Crie contarPositivas(texto,listaPos) e contarNegativas(texto,listaNeg) e imprima um saldo (positivas - negativas).",
+        "texto_en": "Implement a 'Simple Feeling' module. Create countPositives(text, listPos) and countNegatives(text, listNeg) and print a balance (positives - negatives)."
+      },
+      {
+        "id": 20,
+        "texto": "Implemente um módulo de 'Triagem de chamados'. Crie classificarChamado(texto) retornando FINANCEIRO/ACADÊMICO/TI/OUTROS por palavras-chave. Teste com 5 textos.",
+        "texto_en": "Implement a 'Ticket Triage' module. Create classifyTicket(text) returning FINANCIAL/ACADEMIC/IT/OTHERS by keywords. Test with 5 texts."
+      },
+      {
+        "id": 21,
+        "texto": "Implemente um módulo de 'Carrinho'. Crie adicionarItem(carrinho,item), removerItem(carrinho,id) e totalCarrinho(carrinho). Simule operações.",
+        "texto_en": "Implement a 'Cart' module. Create addItem(cart,item), removeItem(cart,id) and totalCart(cart). Simulate operations."
+      },
+      {
+        "id": 22,
+        "texto": "Implemente um módulo didático de 'Autenticação'. Crie hashSimples(senha) (ex.: soma de códigos) e validarLogin(usuario,senha,base). Mostre sucesso e falha.",
+        "texto_en": "Implement an 'Authentication' teaching module. Create hashSimples(password) (e.g. sum of codes) and validateLogin(user,password,base). Show success and failure."
+      },
+      {
+        "id": 23,
+        "texto": "Implemente um módulo de 'Faixas Etárias'. Crie percentuaisPorFaixa(idades,faixas) e imprima um relatório com percentuais por faixa.",
+        "texto_en": "Implement an 'Age Groups' module. Create percentagesByRange(ages,ranges) and print a report with percentages by range."
+      },
+      {
+        "id": 24,
+        "texto": "Implemente um módulo de 'Agenda'. Crie addContato(lista,contato) e buscarContato(lista,termo). Permita buscar por parte do nome.",
+        "texto_en": "Implement an 'Agenda' module. Create addContato(list,contact) and fetchContact(list,term). Allow searching by name."
+      },
+      {
+        "id": 25,
+        "texto": "Implemente um módulo de 'Compras'. Crie aplicarDescontoProgressivo(total) e calcularFrete(valor,peso). Use regras simples e mostre o total final.",
+        "texto_en": "Implement a 'Purchasing' module. Create applyProgressiveDiscount(total) and calculateShipping(value,weight). Use simple rules and show the final total."
+      },
+      {
+        "id": 26,
+        "texto": "Implemente um módulo de 'Investimento'. Crie montanteJurosSimples(p,t,i) e montanteJurosCompostos(p,t,i). Compare resultados para o mesmo cenário.",
+        "texto_en": "Implement an 'Investment' module. Create amountInterestSimple(p,t,i) and amountInterestCompound(p,t,i). Compare results for the same scenario."
+      },
+      {
+        "id": 27,
+        "texto": "Implemente um módulo de 'Validação'. Crie ehNumero(x), ehInteiro(x) e emIntervalo(x,min,max). Use essas funções para validar entradas do usuário.",
+        "texto_en": "Implement a 'Validation' module. Create ehNumero(x), ehInteger(x) and emInterval(x,min,max). Use these functions to validate user input."
+      },
+      {
+        "id": 28,
+        "texto": "Implemente um módulo de 'Relatório textual'. Crie cabecalho(titulo), linha(chave,valor) e rodape(). Gere um relatório com 5 linhas.",
+        "texto_en": "Implement a 'Textual Report' module. Create header(title), line(key,value) and footer(). Generate a report with 5 lines."
+      },
+      {
+        "id": 29,
+        "texto": "Implemente um módulo de 'Data simples'. Crie validarDiaMes(dia,mes) assumindo mês de 30 dias e ano sem bissexto. Teste com datas válidas e inválidas.",
+        "texto_en": "Implement a 'Simple Date' module. Create validateDiaMonth(day,month) assuming a 30-day month and a non-leap year. Test with valid and invalid dates."
+      },
+      {
+        "id": 30,
+        "texto": "Crie um programa principal que use pelo menos 5 módulos/funções criadas acima e gere um relatório final no console.",
+        "texto_en": "Create a main program that uses at least 5 modules/functions created above and generates a final report in the console."
+      }
+    ],
+    "tipo_en": "Functions - Case Studies",
+    "titulo_en": "List 14 - Functions with Case Studies"
+  },
+  {
+    "numero": 15,
+    "tipo": "Algoritmos Clássicos",
+    "titulo": "Lista 15 - Algoritmos Clássicos (implementação)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Implemente busca linear em um array.",
+        "texto_en": "Implement linear search in an array."
+      },
+      {
+        "id": 2,
+        "texto": "Implemente busca binária em um array ordenado.",
+        "texto_en": "Implement binary search on a sorted array."
+      },
+      {
+        "id": 3,
+        "texto": "Implemente Bubble Sort.",
+        "texto_en": "Implement Bubble Sort."
+      },
+      {
+        "id": 4,
+        "texto": "Implemente Selection Sort.",
+        "texto_en": "Implement Selection Sort."
+      },
+      {
+        "id": 5,
+        "texto": "Implemente Insertion Sort.",
+        "texto_en": "Implement Insertion Sort."
+      },
+      {
+        "id": 6,
+        "texto": "Implemente Merge Sort (recursivo ou iterativo).",
+        "texto_en": "Implement Merge Sort (recursive or iterative)."
+      },
+      {
+        "id": 7,
+        "texto": "Implemente Quick Sort (recursivo).",
+        "texto_en": "Implement Quick Sort (recursive)."
+      },
+      {
+        "id": 8,
+        "texto": "Implemente contagem de frequência usando mapa/dicionário.",
+        "texto_en": "Implement frequency counting using map/dictionary."
+      },
+      {
+        "id": 9,
+        "texto": "Implemente verificação de palíndromo sem usar reverse pronto (comparando extremos).",
+        "texto_en": "Implement palindrome checking without using reverse out of the box (comparing extremes)."
+      },
+      {
+        "id": 10,
+        "texto": "Implemente cálculo de MDC (Euclides) e mostre passos (imprima a cada iteração).",
+        "texto_en": "Implement GCD calculation (Euclid) and show steps (print each iteration)."
+      },
+      {
+        "id": 11,
+        "texto": "Implemente Fibonacci com memoização (cache).",
+        "texto_en": "Implement Fibonacci with memoization (cache)."
+      },
+      {
+        "id": 12,
+        "texto": "Implemente verificação de Armstrong para N dígitos (generalizado).",
+        "texto_en": "Implement Armstrong checking for N digits (generalized)."
+      },
+      {
+        "id": 13,
+        "texto": "Implemente crivo simples para primos até N (Crivo de Eratóstenes).",
+        "texto_en": "Implement simple sieve for primes up to N (Sieve of Eratosthenes)."
+      },
+      {
+        "id": 14,
+        "texto": "Implemente conversão decimal->binário por divisões sucessivas.",
+        "texto_en": "Implement decimal->binary conversion by successive divisions."
+      },
+      {
+        "id": 15,
+        "texto": "Implemente conversão decimal->base16 por divisões sucessivas.",
+        "texto_en": "Implement decimal->base16 conversion by successive divisions."
+      },
+      {
+        "id": 16,
+        "texto": "Implemente soma de dígitos e verificação de número feliz (happy number) com limite de iterações.",
+        "texto_en": "Implement sum of digits and happy number check with iteration limit."
+      },
+      {
+        "id": 17,
+        "texto": "Implemente detecção de número perfeito.",
+        "texto_en": "Implement perfect number detection."
+      },
+      {
+        "id": 18,
+        "texto": "Implemente validação de senha com regras e mensagem de erro específica (qual regra falhou).",
+        "texto_en": "Implement password validation with rules and specific error message (which rule failed)."
+      },
+      {
+        "id": 19,
+        "texto": "Implemente remoção de duplicados preservando a ordem original.",
+        "texto_en": "Implement duplicate removal while preserving the original order."
+      },
+      {
+        "id": 20,
+        "texto": "Implemente rotação de array (deslocar K posições) sem usar bibliotecas prontas, se possível.",
+        "texto_en": "Implement array rotation (shift K positions) without using ready-made libraries, if possible."
+      },
+      {
+        "id": 21,
+        "texto": "Implemente merge de dois arrays ordenados gerando um terceiro ordenado.",
+        "texto_en": "Implement merge of two sorted arrays generating a third sorted one."
+      },
+      {
+        "id": 22,
+        "texto": "Implemente contagem de inversões simples (quantos pares fora de ordem) em um array.",
+        "texto_en": "Implement simple inversion counting (how many out-of-order pairs) in an array."
+      },
+      {
+        "id": 23,
+        "texto": "Implemente verificação se array está ordenado crescente/decrescente.",
+        "texto_en": "Implement checking whether the array is sorted ascending/descending."
+      },
+      {
+        "id": 24,
+        "texto": "Implemente cálculo de mediana para array par e ímpar.",
+        "texto_en": "Implement median calculation for even and odd array."
+      },
+      {
+        "id": 25,
+        "texto": "Implemente cálculo de moda com desempate (se empatar, escolha o menor valor).",
+        "texto_en": "Implement mode calculation with tiebreaker (if tied, choose the lowest value)."
+      },
+      {
+        "id": 26,
+        "texto": "Implemente soma de subarray máximo (Kadane) e imprima soma final.",
+        "texto_en": "Implement maximum subarray sum (Kadane) and print final sum."
+      },
+      {
+        "id": 27,
+        "texto": "Implemente verificação se dois textos são anagramas (ignorando espaços/case).",
+        "texto_en": "Implement checking whether two texts are anagrams (ignoring spaces/case)."
+      },
+      {
+        "id": 28,
+        "texto": "Implemente compressão simples de string (ex.: aaabb -> a3b2).",
+        "texto_en": "Implement simple string compression (e.g. aaabb -> a3b2)."
+      },
+      {
+        "id": 29,
+        "texto": "Implemente descompressão do formato anterior (a3b2 -> aaabb).",
+        "texto_en": "Implement decompression of the previous format (a3b2 -> aaabb)."
+      },
+      {
+        "id": 30,
+        "texto": "Implemente uma pilha (push/pop) usando array e teste com operações.",
+        "texto_en": "Implement a stack (push/pop) using array and test with operations."
+      }
+    ],
+    "tipo_en": "Classic Algorithms",
+    "titulo_en": "List 15 - Classic Algorithms (Implementation)"
+  },
+  {
+    "numero": 16,
+    "tipo": "Busca e Ordenação - Casos",
+    "titulo": "Lista 16 - Busca/Ordenação aplicadas",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Você recebeu uma lista de alunos (nome e nota). Ordene os alunos por nota em ordem decrescente e imprima o ranking final numerado (1º, 2º, ...).",
+        "texto_en": "You have received a list of students (name and grade). Sort the students by grade in descending order and print the final numbered ranking (1st, 2nd, ...)."
+      },
+      {
+        "id": 2,
+        "texto": "Você recebeu uma lista de produtos com quantidade vendida. Encontre o produto mais vendido e também os 3 mais vendidos. Imprima nome e quantidade.",
+        "texto_en": "You received a list of products with quantity sold. Find the best selling product and also the top 3 best sellers. Print name and quantity."
+      },
+      {
+        "id": 3,
+        "texto": "Uma biblioteca quer listar empréstimos por data. Leia títulos e datas no formato DD/MM/AAAA e ordene do mais recente para o mais antigo. Imprima a lista.",
+        "texto_en": "A library wants to list loans by date. Read titles and dates in DD/MM/YYYY format and order from newest to oldest. Print the list."
+      },
+      {
+        "id": 4,
+        "texto": "Um suporte técnico registrou tempos de atendimento. Leia N tempos e encontre o menor e o maior tempo. Imprima ambos.",
+        "texto_en": "A technical support staff recorded service times. Read N times and find the shortest and longest times. Print both."
+      },
+      {
+        "id": 5,
+        "texto": "No e-commerce, você quer filtrar itens caros. Leia N preços e um preço-alvo. Imprima todos os itens (ou índices) com preço acima do alvo.",
+        "texto_en": "In e-commerce, you want to filter out expensive items. Read N prices and a target price. Print all items (or indices) with a price above the target."
+      },
+      {
+        "id": 6,
+        "texto": "Um CRM possui lista de clientes (nome e pontuação). Faça uma busca linear por um nome informado e imprima os dados do cliente encontrado, ou 'não encontrado'.",
+        "texto_en": "A CRM has a list of customers (name and score). Perform a linear search for a given name and print the data of the customer found, or 'not found'."
+      },
+      {
+        "id": 7,
+        "texto": "Uma agenda telefônica permite buscar por prefixo. Leia N contatos (nome e telefone). Leia um prefixo e imprima todos os contatos cujo nome começa com esse prefixo.",
+        "texto_en": "A phonebook allows you to search by prefix. Read N contacts (name and phone number). Read a prefix and print all contacts whose name starts with that prefix."
+      },
+      {
+        "id": 8,
+        "texto": "Um estoque tem códigos numéricos. Leia N códigos, ordene em ordem crescente e, em seguida, responda a uma consulta: encontre se um código X existe usando busca binária.",
+        "texto_en": "A stock has numeric codes. Read N codes, sort in ascending order, then answer a query: find if a code X exists using binary search."
+      },
+      {
+        "id": 9,
+        "texto": "Uma auditoria detecta transações duplicadas. Leia N IDs de transação e liste quais IDs aparecem mais de uma vez, junto com a frequência.",
+        "texto_en": "An audit detects duplicate transactions. Read N transaction IDs and list which IDs appear more than once, along with the frequency."
+      },
+      {
+        "id": 10,
+        "texto": "Um app de transporte quer destacar viagens longas. Leia N distâncias e imprima as 5 maiores distâncias em ordem decrescente.",
+        "texto_en": "A transportation app wants to highlight long trips. Read N distances and print the 5 largest distances in descending order."
+      },
+      {
+        "id": 11,
+        "texto": "O RH quer comparar média e mediana salarial. Leia N salários, calcule média e mediana, e imprima ambos com uma breve interpretação (qual é maior).",
+        "texto_en": "HR wants to compare average and median salaries. Read N salaries, calculate mean and median, and print both with a brief interpretation (which is higher)."
+      },
+      {
+        "id": 12,
+        "texto": "Em saúde, você tem um array de IMCs. Classifique cada IMC em faixas (abaixo/normal/acima) e conte quantos há em cada faixa. Imprima o relatório.",
+        "texto_en": "In healthcare, you have an array of BMIs. Classify each BMI into ranges (below/normal/above) and count how many are in each range. Print the report."
+      },
+      {
+        "id": 13,
+        "texto": "Uma prova objetiva: leia o gabarito (N letras) e as respostas de M alunos. Calcule a nota de cada aluno e ordene a lista por nota (maior para menor).",
+        "texto_en": "An objective test: read the answer sheet (N letters) and the answers from M students. Calculate each student's grade and order the list by grade (highest to lowest)."
+      },
+      {
+        "id": 14,
+        "texto": "Uma loja quer detectar carrinhos muito acima do padrão. Leia N totais de carrinhos, calcule a média e liste quais carrinhos têm total maior que 2x a média.",
+        "texto_en": "A store wants to detect carts that are way above standard. Read N cart totals, calculate the average, and list which carts have a total greater than 2x the average."
+      },
+      {
+        "id": 15,
+        "texto": "Um sistema registra horários no formato HH:MM. Leia N horários e ordene do mais cedo para o mais tarde. Imprima a ordem final.",
+        "texto_en": "A system records times in the HH:MM format. Read N times and order from earliest to latest. Print the final order."
+      },
+      {
+        "id": 16,
+        "texto": "Uma pesquisa coletou palavras. Leia N palavras, conte frequências e ordene as palavras pela frequência (maior para menor). Imprima top 10 (ou até N).",
+        "texto_en": "A search collected words. Read N words, count frequencies and order the words by frequency (highest to lowest). Print top 10 (or up to N)."
+      },
+      {
+        "id": 17,
+        "texto": "Frequência escolar: leia N percentuais de presença. Liste os alunos (ou índices) com presença abaixo de 75% e ordene a lista do menor percentual para o maior.",
+        "texto_en": "School attendance: read N attendance percentages. List the students (or rates) with attendance below 75% and order the list from lowest percentage to highest."
+      },
+      {
+        "id": 18,
+        "texto": "Finanças: leia despesas (categoria, valor). Some o total por categoria e ordene as categorias do maior gasto para o menor. Imprima ranking de categorias.",
+        "texto_en": "Finance: read expenses (category, value). Add up the total by category and order the categories from largest expense to smallest. Print category rankings."
+      },
+      {
+        "id": 19,
+        "texto": "Logs: leia N eventos (texto). Remova duplicados mantendo a ordem original e imprima a lista final sem repetições.",
+        "texto_en": "Logs: read N events (text). Remove duplicates while maintaining the original order and print the final list without repetitions."
+      },
+      {
+        "id": 20,
+        "texto": "Problema 'two-sum' em logística: leia N pesos e um alvo K. Verifique se existem dois pesos cuja soma é exatamente K e imprima o par encontrado (ou 'não existe').",
+        "texto_en": "'Two-sum' problem in logistics: read N weights and a target K. Check if there are two weights whose sum is exactly K and print the found pair (or 'does not exist')."
+      },
+      {
+        "id": 21,
+        "texto": "Atendimento: leia N notas de satisfação (1 a 5). Calcule a moda (nota mais frequente). Se empatar, escolha a menor nota. Imprima o resultado.",
+        "texto_en": "Service: read N satisfaction ratings (1 to 5). Calculate the mode (most frequent note). If you tie, choose the lowest score. Print the result."
+      },
+      {
+        "id": 22,
+        "texto": "Ranking com desempate: leia N participantes (nome, pontuação). Ordene por pontuação desc. Se empatar, ordene pelo nome em ordem alfabética. Imprima o ranking.",
+        "texto_en": "Ranking with tiebreaker: read N participants (name, score). Sort by discount score. If there is a tie, sort by name in alphabetical order. Print the ranking."
+      },
+      {
+        "id": 23,
+        "texto": "E-commerce: leia N produtos (nome, estoque). Liste apenas os indisponíveis (estoque=0) e ordene esses produtos pelo nome. Imprima.",
+        "texto_en": "E-commerce: read N products (name, stock). List only those that are unavailable (stock=0) and order these products by name. Print."
+      },
+      {
+        "id": 24,
+        "texto": "Biblioteca: leia N autores e a quantidade de livros de cada um. Ordene autores pela quantidade de livros (maior para menor) e imprima.",
+        "texto_en": "Library: read N authors and the number of books by each one. Sort authors by number of books (largest to smallest) and print."
+      },
+      {
+        "id": 25,
+        "texto": "Marketing: leia N títulos e seus tamanhos (número de caracteres). Ordene do maior para o menor e imprima top 10.",
+        "texto_en": "Marketing: read N titles and their sizes (number of characters). Sort from largest to smallest and print top 10."
+      },
+      {
+        "id": 26,
+        "texto": "RH: leia candidatos com nota técnica e nota de entrevista. Calcule nota final ponderada (ex.: técnica 70%, entrevista 30%) e ordene do maior para o menor.",
+        "texto_en": "HR: read candidates with technical note and interview note. Calculate a weighted final grade (e.g.: technical 70%, interview 30%) and order from highest to lowest."
+      },
+      {
+        "id": 27,
+        "texto": "Escola: leia notas de bimestres para N alunos. Calcule média final e filtre quem tem média>=7. Ordene os aprovados por média desc e imprima.",
+        "texto_en": "School: read bi-monthly notes for N students. Calculate final average and filter those with average>=7. Sort those approved by average and print."
+      },
+      {
+        "id": 28,
+        "texto": "Operações: leia N tempos e calcule o percentil 90 (P90). Ordene e encontre a posição correspondente. Imprima o P90.",
+        "texto_en": "Operations: read N times and calculate the 90th percentile (P90). Sort and find the corresponding position. Print the P90."
+      },
+      {
+        "id": 29,
+        "texto": "Estoque: leia N preços e encontre o segundo maior e o segundo menor (valores distintos). Imprima ambos.",
+        "texto_en": "Stock: read N prices and find the second highest and second lowest (distinct values). Print both."
+      },
+      {
+        "id": 30,
+        "texto": "Pesquisa: leia N cidades (texto). Conte frequência por cidade e imprima a cidade mais frequente e sua contagem.",
+        "texto_en": "Search: read N cities (text). Count frequency by city and print the most frequent city and its count."
+      }
+    ],
+    "tipo_en": "Search and Sorting - Case Studies",
+    "titulo_en": "List 16 - Applied Search and Sorting"
+  },
+  {
+    "numero": 17,
+    "tipo": "Objetos/Registros",
+    "titulo": "Lista 17 - Objetos/Dicionários/Registros (CRUD simples)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Crie um objeto/registro aluno com campos: nome, idade, nota; imprima.",
+        "texto_en": "Create a student object/record with fields: name, age, grade; print."
+      },
+      {
+        "id": 2,
+        "texto": "Crie uma lista de 5 alunos (objetos) e imprima apenas os nomes.",
+        "texto_en": "Create a list of 5 students (objects) and print only the names."
+      },
+      {
+        "id": 3,
+        "texto": "Dada lista de alunos, calcule média das notas.",
+        "texto_en": "Given the list of students, calculate the average of the grades."
+      },
+      {
+        "id": 4,
+        "texto": "Dada lista de alunos, encontre o aluno com maior nota.",
+        "texto_en": "Given list of students, find the student with the highest score."
+      },
+      {
+        "id": 5,
+        "texto": "Dada lista de alunos, filtre aprovados (nota>=7).",
+        "texto_en": "Given list of students, filter approved (grade>=7)."
+      },
+      {
+        "id": 6,
+        "texto": "Crie um objeto produto: id, nome, preco, estoque. Imprima valor total em estoque (preco*estoque).",
+        "texto_en": "Create a product object: id, name, price, stock. Print total value in stock (price*stock)."
+      },
+      {
+        "id": 7,
+        "texto": "Crie uma função para adicionar produto em uma lista (simulando cadastro).",
+        "texto_en": "Create a function to add a product to a list (simulating registration)."
+      },
+      {
+        "id": 8,
+        "texto": "Crie uma função para remover produto por id.",
+        "texto_en": "Create a function to remove product by id."
+      },
+      {
+        "id": 9,
+        "texto": "Crie uma função para atualizar estoque de um produto por id.",
+        "texto_en": "Create a function to update stock of a product by id."
+      },
+      {
+        "id": 10,
+        "texto": "Crie uma função para buscar produto por nome (parcial).",
+        "texto_en": "Create a function to search for product by (partial) name."
+      },
+      {
+        "id": 11,
+        "texto": "Crie um objeto chamado 'pedido' com itens (lista) e total; calcule total.",
+        "texto_en": "Create an object called 'order' with items (list) and total; calculate total."
+      },
+      {
+        "id": 12,
+        "texto": "Crie um carrinho: lista de itens {nome, preco, qtd}. Calcule total.",
+        "texto_en": "Create a cart: list of items {name, price, qty}. Calculate total."
+      },
+      {
+        "id": 13,
+        "texto": "Crie uma função que aplica desconto percentual no total do carrinho.",
+        "texto_en": "Create a function that applies a percentage discount to the cart total."
+      },
+      {
+        "id": 14,
+        "texto": "Crie um objeto 'usuario' com login e senha; valide login (simulação).",
+        "texto_en": "Create a 'user' object with login and password; validate login (simulation)."
+      },
+      {
+        "id": 15,
+        "texto": "Crie uma lista de usuários e verifique se um login já existe antes de cadastrar.",
+        "texto_en": "Create a list of users and check if a login already exists before registering."
+      },
+      {
+        "id": 16,
+        "texto": "Crie um dicionário de frequências de palavras a partir de um texto (palavra->contagem).",
+        "texto_en": "Create a word frequency dictionary from a text (word->count)."
+      },
+      {
+        "id": 17,
+        "texto": "Crie um mapa de notas por aluno (nome->nota) e imprima a nota de um aluno específico.",
+        "texto_en": "Create a grade map per student (name->grade) and print the grade for a specific student."
+      },
+      {
+        "id": 18,
+        "texto": "Crie um objeto 'conta' com saldo e operações de depositar/sacar (com validação).",
+        "texto_en": "Create an 'account' object with balance and deposit/withdrawal operations (with validation)."
+      },
+      {
+        "id": 19,
+        "texto": "Crie uma função extrato(conta) que imprime saldo atual e histórico simples (lista de operações).",
+        "texto_en": "Create a statement function (account) that prints current balance and simple history (list of operations)."
+      },
+      {
+        "id": 20,
+        "texto": "Crie um objeto 'evento' com data e lista de participantes; adicione participantes.",
+        "texto_en": "Create an 'event' object with date and list of participants; add participants."
+      },
+      {
+        "id": 21,
+        "texto": "Crie um cadastro de contatos {nome, telefone}; busque por nome e liste resultados.",
+        "texto_en": "Create a contact register {name, telephone}; search by name and list results."
+      },
+      {
+        "id": 22,
+        "texto": "Crie um sistema de tarefas {id, titulo, concluida}; marque como concluída por id.",
+        "texto_en": "Create a task system {id, title, completed}; mark as completed by id."
+      },
+      {
+        "id": 23,
+        "texto": "Liste apenas tarefas concluídas.",
+        "texto_en": "Only list completed tasks."
+      },
+      {
+        "id": 24,
+        "texto": "Liste apenas tarefas pendentes.",
+        "texto_en": "Only list to-do tasks."
+      },
+      {
+        "id": 25,
+        "texto": "Conte quantas tarefas existem por status.",
+        "texto_en": "Count how many tasks there are by status."
+      },
+      {
+        "id": 26,
+        "texto": "Crie um objeto 'turma' com alunos e calcule estatísticas (média, maior, menor nota).",
+        "texto_en": "Create a 'class' object with students and calculate statistics (average, highest, lowest grade)."
+      },
+      {
+        "id": 27,
+        "texto": "Crie um objeto 'relatorio' que formata uma saída textual com seções e dados.",
+        "texto_en": "Create a 'report' object that formats a textual output with sections and data."
+      },
+      {
+        "id": 28,
+        "texto": "Crie um dicionário categoria->total e some valores por categoria (ex.: despesas).",
+        "texto_en": "Create a category->total dictionary and add values ​​by category (e.g. expenses)."
+      },
+      {
+        "id": 29,
+        "texto": "Crie um registro de transações e filtre somente transações acima de um valor.",
+        "texto_en": "Create a transaction log and only filter transactions above a certain amount."
+      },
+      {
+        "id": 30,
+        "texto": "Crie uma função que exporta um 'relatório' em texto (string final) com linhas formatadas.",
+        "texto_en": "Create a function that exports a 'report' in text (final string) with formatted lines."
+      }
+    ],
+    "tipo_en": "Objects/Records",
+    "titulo_en": "List 17 - Objects/Dictionaries/Records (Simple CRUD)"
+  },
+  {
+    "numero": 18,
+    "tipo": "Projeto - Estudos de Caso (Negócio)",
+    "titulo": "Lista 18 - Estudos de Caso Integrados",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Mini-sistema de mercado: cadastre 5 produtos (nome e preço). Em seguida, para cada produto, leia a quantidade comprada. Calcule e imprima o total da compra com detalhamento por item (produto, qtd, subtotal).",
+        "texto_en": "Mini-market system: register 5 products (name and price). Then, for each product, read the quantity purchased. Calculate and print the purchase total with details by item (product, quantity, subtotal)."
+      },
+      {
+        "id": 2,
+        "texto": "No mesmo mercado, implemente cupom. Leia um código de cupom (texto). Se for 'DESC10', aplique 10% de desconto no total. Imprima total antes e depois.",
+        "texto_en": "In the same market, implement coupons. Scan a coupon code (text). If it is 'DESC10', apply 10% discount to the total. Print total before and after."
+      },
+      {
+        "id": 3,
+        "texto": "Finalize a compra no mercado: leia o valor pago e calcule troco ou falta. Imprima uma mensagem de fechamento (recibo simples).",
+        "texto_en": "Finalize the purchase at the market: read the amount paid and calculate the change or shortage. Print a closing message (simple receipt)."
+      },
+      {
+        "id": 4,
+        "texto": "Conta bancária simples: crie um menu com opções (depositar, sacar, saldo, sair). O saldo começa em 0. Continue executando até o usuário sair.",
+        "texto_en": "Simple bank account: create a menu with options (deposit, withdraw, balance, exit). Balance starts at 0. Keep running until user leaves."
+      },
+      {
+        "id": 5,
+        "texto": "Na conta bancária, não permita saque maior do que o saldo. Se tentar, exiba erro e não altere o saldo.",
+        "texto_en": "In the bank account, do not allow withdrawals greater than the balance. If you try, it displays error and does not change the balance."
+      },
+      {
+        "id": 6,
+        "texto": "Biblioteca básica: cadastre livros (título, autor). Permita registrar um empréstimo (marcar como emprestado) e uma devolução (marcar como disponível).",
+        "texto_en": "Basic library: register books (title, author). Allows you to record a loan (mark as borrowed) and a return (mark as available)."
+      },
+      {
+        "id": 7,
+        "texto": "Na biblioteca, ao devolver, leia dias de atraso e calcule multa (1 por dia). Imprima a multa do usuário.",
+        "texto_en": "At the library, when returning, read days late and calculate fine (1 per day). Print the user's fine."
+      },
+      {
+        "id": 8,
+        "texto": "Sistema escolar: cadastre alunos (nome) e 3 notas. Calcule média e situação (aprovado/recuperação/reprovado). Imprima o boletim de cada aluno.",
+        "texto_en": "School system: register students (name) and 3 grades. Calculate average and status (pass/recovery/fail). Print each student's report card."
+      },
+      {
+        "id": 9,
+        "texto": "No sistema escolar, gere um ranking por média (maior para menor) e imprima a classificação com posições.",
+        "texto_en": "In the school system, generate a ranking by average (highest to lowest) and print the ranking with positions."
+      },
+      {
+        "id": 10,
+        "texto": "No sistema escolar, imprima listas separadas: aprovados, recuperação e reprovados, com nome e média.",
+        "texto_en": "In the school system, print separate lists: approved, recovery and failed, with name and average."
+      },
+      {
+        "id": 11,
+        "texto": "Estoque: cadastre produtos (id, nome, estoque). Crie menu para entrada (aumenta estoque) e saída (reduz estoque). Não permita estoque negativo.",
+        "texto_en": "Stock: register products (id, name, stock). Create menu for entry (increases stock) and exit (reduces stock). Do not allow negative inventory."
+      },
+      {
+        "id": 12,
+        "texto": "No estoque, sempre que um produto ficar com estoque <= 5, imprima um alerta de BAIXO ESTOQUE.",
+        "texto_en": "In stock, whenever a product has stock <= 5, print a LOW STOCK alert."
+      },
+      {
+        "id": 13,
+        "texto": "Delivery: leia valor do pedido e bairro (A/B/C). Calcule taxa de entrega (A=5, B=8, C=12) e total final.",
+        "texto_en": "Delivery: read order value and neighborhood (A/B/C). Calculate delivery fee (A=5, B=8, C=12) and final total."
+      },
+      {
+        "id": 14,
+        "texto": "No delivery, se o valor do pedido for >= 80, o frete deve ser grátis. Mostre total final.",
+        "texto_en": "For delivery, if the order value is >= 80, shipping must be free. Show final total."
+      },
+      {
+        "id": 15,
+        "texto": "Clínica: leia valor base, tipo (normal/urgência) e convênio (S/N). Calcule o valor final e imprima um recibo simples (nome do paciente pode ser lido também).",
+        "texto_en": "Clinic: read base value, type (normal/urgent) and insurance (Y/N). Calculate the final amount and print a simple receipt (patient's name can also be read)."
+      },
+      {
+        "id": 16,
+        "texto": "Estacionamento: leia horas e se o carro é elétrico (S/N). Calcule valor por faixa e aplique desconto de elétrico. Imprima o valor final.",
+        "texto_en": "Parking: read the hours and whether the car is electric (Y/N). Calculate value per band and apply electric discount. Print the final value."
+      },
+      {
+        "id": 17,
+        "texto": "Hotel: leia noites e categoria (standard/luxo). Calcule total e aplique desconto para 5+ noites. Imprima total final.",
+        "texto_en": "Hotel: read nights and category (standard/luxury). Calculate total and apply discount for 5+ nights. Print final total."
+      },
+      {
+        "id": 18,
+        "texto": "RH: leia N funcionários (nome, salário, desempenho 1-5). Calcule novo salário com reajuste por desempenho e imprima a lista atualizada.",
+        "texto_en": "HR: read N employees (name, salary, performance 1-5). Calculate new salary with performance adjustment and print the updated list."
+      },
+      {
+        "id": 19,
+        "texto": "No RH, ao final, imprima: custo total antes, custo total depois e o funcionário com maior aumento absoluto (diferença em reais).",
+        "texto_en": "In HR, at the end, print: total cost before, total cost after and the employee with the highest absolute increase (difference in reais)."
+      },
+      {
+        "id": 20,
+        "texto": "Pesquisa: leia N respostas (texto) e imprima as 5 palavras mais frequentes (ignorando palavras muito curtas). Mostre também quantas respostas foram analisadas.",
+        "texto_en": "Search: read N answers (text) and print the 5 most frequent words (ignoring very short words). Also show how many responses were analyzed."
+      },
+      {
+        "id": 21,
+        "texto": "Eventos: cadastre participantes (nome e e-mail). Valide e-mail com regra simples (@ e .). Se inválido, não cadastre e peça novamente.",
+        "texto_en": "Events: register participants (name and email). Validate email with simple rule (@ and .). If invalid, do not register and request again."
+      },
+      {
+        "id": 22,
+        "texto": "No evento, ao final, imprima a lista de participantes em ordem alfabética pelo nome.",
+        "texto_en": "At the end of the event, print the list of participants in alphabetical order by name."
+      },
+      {
+        "id": 23,
+        "texto": "Transporte: registre corridas (km e tipo de veículo). Calcule faturamento total e identifique qual corrida teve maior valor cobrado.",
+        "texto_en": "Transport: record runs (km and type of vehicle). Calculate total revenue and identify which race had the highest amount charged."
+      },
+      {
+        "id": 24,
+        "texto": "Vendas: leia vendas diárias de 30 dias. Encontre a melhor semana (maior soma entre qualquer bloco de 7 dias consecutivos). Imprima a soma e a semana (dia inicial e final).",
+        "texto_en": "Sales: Read 30-day daily sales. Find the best week (largest sum among any block of 7 consecutive days). Print the sum and week (start and end day)."
+      },
+      {
+        "id": 25,
+        "texto": "Finanças: leia receitas e despesas por mês (12 meses). Calcule saldo mensal e mostre os 3 melhores meses por saldo.",
+        "texto_en": "Finances: read income and expenses by month (12 months). Calculate monthly balance and show the 3 best months by balance."
+      },
+      {
+        "id": 26,
+        "texto": "Suporte: leia N chamados (texto). Classifique cada um como FINANCEIRO/ACADÊMICO/TI por palavras-chave e imprima contagem por categoria.",
+        "texto_en": "Support: read N calls (text). Sort each one as FINANCIAL/ACADEMIC/IT by keywords and print count by category."
+      },
+      {
+        "id": 27,
+        "texto": "No suporte, marque chamados urgentes se contiverem 'urgente' ou 'imediato'. Ao final, imprima primeiro os urgentes e depois os normais.",
+        "texto_en": "In support, mark urgent tickets if they contain 'urgent' or 'immediate'. At the end, print the urgent ones first and then the normal ones."
+      },
+      {
+        "id": 28,
+        "texto": "Loja: leia totais de N compras. Calcule o ticket médio e conte quantas compras ficaram acima do ticket médio. Imprima os resultados.",
+        "texto_en": "Store: read totals of N purchases. Calculate the average ticket and count how many purchases were above the average ticket. Print the results."
+      },
+      {
+        "id": 29,
+        "texto": "Biblioteca: registre empréstimos com dias de atraso na devolução. Ao final, imprima quantos atrasos houve e o total de multa arrecadada.",
+        "texto_en": "Library: record loans days past due in return. At the end, print how many delays there were and the total fine collected."
+      },
+      {
+        "id": 30,
+        "texto": "Integração final: crie um menu principal que permita escolher entre 3 módulos (Escola, Estoque e Caixa). Cada módulo deve ter pelo menos 3 funcionalidades e voltar ao menu.",
+        "texto_en": "Final integration: create a main menu that allows you to choose between 3 modules (School, Stock and Cashier). Each module must have at least 3 functionalities and return to the menu."
+      }
+    ],
+    "tipo_en": "Projects - Case Studies (Business)",
+    "titulo_en": "List 18 - Integrated Case Studies (Business)"
+  },
+  {
+    "numero": 19,
+    "tipo": "Projeto - Estudos de Caso (Dados)",
+    "titulo": "Lista 19 - Estudos de Caso Integrados",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Relatório numérico: leia N números e gere um relatório com soma, média, mediana, moda (se houver), maior e menor. Imprima em seções.",
+        "texto_en": "Numeric Report: Read N numbers and generate a report with sum, mean, median, mode (if any), largest and smallest. Print in sections."
+      },
+      {
+        "id": 2,
+        "texto": "Histograma de notas: leia N notas (0-10) e conte quantas caem nas faixas: 0-2, 3-4, 5-6, 7-8, 9-10. Imprima a contagem por faixa.",
+        "texto_en": "Grade Histogram: Read N grades (0-10) and count how many fall into the ranges: 0-2, 3-4, 5-6, 7-8, 9-10. Print the count per track."
+      },
+      {
+        "id": 3,
+        "texto": "Percentis em vendas: leia N valores de vendas, ordene e calcule P50 (mediana) e P90. Imprima ambos e explique qual representa o 'topo'.",
+        "texto_en": "Percentiles in sales: read N sales values, order and calculate P50 (median) and P90. Print both and explain which represents the 'top'."
+      },
+      {
+        "id": 4,
+        "texto": "Despesas por categoria: leia N registros (categoria, valor). Some valores por categoria, ordene por total desc e imprima o ranking.",
+        "texto_en": "Expenses by category: read N records (category, value). Add values ​​by category, sort by total discount and print the ranking."
+      },
+      {
+        "id": 5,
+        "texto": "Top palavras em respostas: leia N textos, normalize (minúsculas, sem pontuação simples) e imprima top 10 palavras mais frequentes (ignorando <=2 letras).",
+        "texto_en": "Top words in answers: read N texts, normalize (lower case, without simple punctuation) and print the top 10 most frequent words (ignoring <=2 letters)."
+      },
+      {
+        "id": 6,
+        "texto": "Risco acadêmico: leia N alunos (nome, presença%). Liste os alunos com presença <75% e ordene do menor para o maior percentual.",
+        "texto_en": "Academic risk: read N students (name, presence%). List students with attendance <75% and order from lowest to highest percentage."
+      },
+      {
+        "id": 7,
+        "texto": "Comparação com média: leia N médias de alunos e conte quantos estão acima da média da turma. Imprima o número e o percentual.",
+        "texto_en": "Comparison with average: read N student averages and count how many are above the class average. Print the number and percentage."
+      },
+      {
+        "id": 8,
+        "texto": "Clima: leia 30 temperaturas (uma por dia). Encontre a maior sequência de dias consecutivos acima de 30°C e imprima o tamanho da sequência e onde começou.",
+        "texto_en": "Climate: read 30 temperatures (one per day). Find the longest streak of consecutive days above 30°C and print the length of the streak and where it started."
+      },
+      {
+        "id": 9,
+        "texto": "Outliers simples de peso: leia N pesos. Calcule média e marque como suspeito quem tiver peso > (média * 1.5). Imprima os pesos marcados.",
+        "texto_en": "Simple weight outliers: read N weights. Calculate the average and mark as suspect anyone with a weight > (average * 1.5). Print the marked weights."
+      },
+      {
+        "id": 10,
+        "texto": "SLA do atendimento: leia N tempos (min). Calcule a taxa de SLA: % de atendimentos com tempo <= 15 min. Imprima taxa.",
+        "texto_en": "Service SLA: read N times (min). Calculate the SLA rate: % of calls with time <= 15 min. Print rate."
+      },
+      {
+        "id": 11,
+        "texto": "Pesquisa binária: leia 100 respostas (S/N) e calcule percentuais de SIM e NÃO. Imprima o relatório.",
+        "texto_en": "Binary search: read 100 answers (Y/N) and calculate percentages of YES and NO. Print the report."
+      },
+      {
+        "id": 12,
+        "texto": "Idade e renda: leia N registros (idade, renda). Agrupe por faixas etárias e calcule a média de renda em cada faixa. Imprima por faixa.",
+        "texto_en": "Age and income: read N records (age, income). Group by age groups and calculate the average income in each group. Print by strip."
+      },
+      {
+        "id": 13,
+        "texto": "Tendência: leia uma série de N valores. Conte quantas vezes o valor aumenta em relação ao anterior e quantas vezes diminui. Imprima os totais.",
+        "texto_en": "Trend: read a series of N values. Count how many times the value increases compared to the previous one and how many times it decreases. Print the totals."
+      },
+      {
+        "id": 14,
+        "texto": "Média móvel: leia N valores e calcule a média móvel de janela 3 (para cada posição possível). Imprima o array resultante.",
+        "texto_en": "Moving Average: Read N values ​​and calculate the 3-window moving average (for each possible position). Print the resulting array."
+      },
+      {
+        "id": 15,
+        "texto": "Normalização: leia N notas. Calcule min e max e normalize cada nota para (nota-min)/(max-min). Imprima valores normalizados.",
+        "texto_en": "Normalization: read N notes. Calculate min and max and normalize each grade to (min-grade)/(max-min). Print normalized values."
+      },
+      {
+        "id": 16,
+        "texto": "Relatório de estoque: leia N produtos (nome, qtd, preço). Calcule valor por produto (qtd*preço) e total geral. Imprima.",
+        "texto_en": "Stock report: read N products (name, qty, price). Calculate value per product (qty*price) and grand total. Print."
+      },
+      {
+        "id": 17,
+        "texto": "Sentimento simples: leia N textos. Para cada texto, conte palavras positivas e negativas usando listas fixas. Ao final, imprima saldo total do conjunto.",
+        "texto_en": "Simple feeling: read N texts. For each text, count positive and negative words using fixed lists. At the end, print the total balance of the set."
+      },
+      {
+        "id": 18,
+        "texto": "Logs por nível: leia N linhas com 'INFO/WARN/ERROR' e conte quantas de cada tipo. Imprima relatório.",
+        "texto_en": "Logs by level: read N lines with 'INFO/WARN/ERROR' and count how many of each type. Print report."
+      },
+      {
+        "id": 19,
+        "texto": "Duplicatas: leia N IDs de transação e conte quantos IDs se repetem (e quantas repetições). Imprima o resumo.",
+        "texto_en": "Duplicates: read N transaction IDs and count how many IDs are repeated (and how many repetitions). Print the summary."
+      },
+      {
+        "id": 20,
+        "texto": "Quartis: leia N valores, ordene e calcule Q1, Q2 e Q3 por posição (aproximação simples). Imprima os quartis.",
+        "texto_en": "Quartiles: read N values, order and calculate Q1, Q2 and Q3 by position (simple approximation). Print the quartiles."
+      },
+      {
+        "id": 21,
+        "texto": "Matriz: leia uma matriz 5x5 de números e calcule soma de cada linha e soma de cada coluna. Imprima as somas.",
+        "texto_en": "Matrix: read a 5x5 matrix of numbers and calculate the sum of each row and the sum of each column. Print the sums."
+      },
+      {
+        "id": 22,
+        "texto": "Matriz: com a mesma matriz, encontre o maior valor e sua posição (linha, coluna). Imprima.",
+        "texto_en": "Matrix: With the same matrix, find the largest value and its position (row, column). Print."
+      },
+      {
+        "id": 23,
+        "texto": "Diversidade lexical: leia um texto, conte total de palavras e total de palavras únicas. Calcule (únicas/total)*100 e imprima.",
+        "texto_en": "Lexical diversity: read a text, count the total number of words and the total number of unique words. Calculate (unique/total)*100 and print."
+      },
+      {
+        "id": 24,
+        "texto": "Primos por limite: leia um número limite L e imprima quantos primos existem de 1 até L (use crivo se possível).",
+        "texto_en": "Primes by limit: read a limit number L and print how many primes there are from 1 to L (use sieve if possible)."
+      },
+      {
+        "id": 25,
+        "texto": "Soma acumulada: leia N valores e gere o array de soma acumulada (prefix sum). Imprima o array resultante.",
+        "texto_en": "Cumulative sum: read N values ​​and generate the cumulative sum array (prefix sum). Print the resulting array."
+      },
+      {
+        "id": 26,
+        "texto": "Subarray máximo: leia N valores (positivos e negativos) e encontre a soma máxima de um subarray contínuo. Imprima a soma e o intervalo (início/fim) se conseguir.",
+        "texto_en": "Maximum Subarray: Read N values ​​(positive and negative) and find the maximum sum of a continuous subarray. Print the sum and range (start/end) if you can."
+      },
+      {
+        "id": 27,
+        "texto": "Agregação por chave: leia N pares (chave, valor) e some valores por chave. Imprima o mapa final.",
+        "texto_en": "Aggregation by key: read N pairs (key, value) and add values ​​by key. Print the final map."
+      },
+      {
+        "id": 28,
+        "texto": "Relatório formatado: leia dados de alunos (nome, média, presença) e gere um relatório textual com cabeçalho, linhas e rodapé.",
+        "texto_en": "Formatted report: read student data (name, average, attendance) and generate a textual report with header, lines and footer."
+      },
+      {
+        "id": 29,
+        "texto": "Exportação CSV: leia N registros simples (nome, valor). Gere uma string CSV com cabeçalho e linhas e imprima o CSV final.",
+        "texto_en": "CSV export: read N single records (name, value). Generate a CSV string with header and lines and print the final CSV."
+      },
+      {
+        "id": 30,
+        "texto": "Programa final: leia um conjunto de dados (números e textos), calcule métricas e imprima um relatório com 3 seções: 'Resumo Numérico', 'Resumo Textual' e 'Conclusões'.",
+        "texto_en": "Final program: read a set of data (numbers and texts), calculate metrics and print a report with 3 sections: 'Numeric Summary', 'Textual Summary' and 'Conclusions'."
+      }
+    ],
+    "tipo_en": "Projects - Case Studies (Data)",
+    "titulo_en": "List 19 - Integrated Case Studies (Data)"
+  },
+  {
+    "numero": 20,
+    "tipo": "Desafios",
+    "titulo": "Lista 20 - Desafios (opcional/avançado, mas corretos)",
+    "questoes": [
+      {
+        "id": 1,
+        "texto": "Implemente BFS (busca em largura) em um grafo representado por lista de adjacência.",
+        "texto_en": "Implement BFS (breadth-first search) in a graph represented by an adjacency list."
+      },
+      {
+        "id": 2,
+        "texto": "Implemente DFS (busca em profundidade) em um grafo representado por lista de adjacência.",
+        "texto_en": "Implement DFS (depth-first search) on a graph represented by an adjacency list."
+      },
+      {
+        "id": 3,
+        "texto": "Implemente Dijkstra para grafo com pesos NÃO negativos e retorne distâncias a partir de uma origem.",
+        "texto_en": "Implement Dijkstra for graph with NON-negative weights and return distances from an origin."
+      },
+      {
+        "id": 4,
+        "texto": "Implemente Bellman-Ford para permitir pesos negativos e detectar ciclo negativo.",
+        "texto_en": "Implement Bellman-Ford to allow negative weights and detect negative cycle."
+      },
+      {
+        "id": 5,
+        "texto": "Implemente A* em um grid 2D com obstáculos (movimentos 4 direções), usando heurística Manhattan.",
+        "texto_en": "Implement A* on a 2D grid with obstacles (movements in 4 directions), using Manhattan heuristics."
+      },
+      {
+        "id": 6,
+        "texto": "Implemente busca binária que retorna a primeira ocorrência (lower bound) em array com duplicatas.",
+        "texto_en": "Implement binary search that returns the first occurrence (lower bound) in an array with duplicates."
+      },
+      {
+        "id": 7,
+        "texto": "Implemente algoritmo de Euclides estendido (retorne x,y e mdc para ax+by=mdc).",
+        "texto_en": "Implement extended Euclid algorithm (return x,y and gcd for ax+by=gdc)."
+      },
+      {
+        "id": 8,
+        "texto": "Implemente Torres de Hanói e imprima as movimentações para N discos.",
+        "texto_en": "Implement Towers of Hanoi and print the moves for N disks."
+      },
+      {
+        "id": 9,
+        "texto": "Implemente geração de combinações de um conjunto (sem repetição) e imprima todas para n<=10.",
+        "texto_en": "Implement generation of combinations from a set (without repetition) and print them all for n<=10."
+      },
+      {
+        "id": 10,
+        "texto": "Implemente geração de permutações de um conjunto e imprima todas para n<=8.",
+        "texto_en": "Implement generation of permutations of a set and print them all for n<=8."
+      },
+      {
+        "id": 11,
+        "texto": "Implemente QuickSort iterativo usando pilha (sem recursão).",
+        "texto_en": "Implement iterative QuickSort using stack (no recursion)."
+      },
+      {
+        "id": 12,
+        "texto": "Implemente MergeSort iterativo (bottom-up).",
+        "texto_en": "Implement iterative (bottom-up) MergeSort."
+      },
+      {
+        "id": 13,
+        "texto": "Implemente HeapSort.",
+        "texto_en": "Implement HeapSort."
+      },
+      {
+        "id": 14,
+        "texto": "Implemente cálculo de pi pela série de Leibniz e compare erro com 3.14159 para N termos.",
+        "texto_en": "Implement pi calculation by Leibniz series and compare error with 3.14159 for N terms."
+      },
+      {
+        "id": 15,
+        "texto": "Implemente pi por Monte Carlo com N pontos aleatórios (use random) e imprima aproximação.",
+        "texto_en": "Implement pi by Monte Carlo with N random points (use random) and print approximation."
+      },
+      {
+        "id": 16,
+        "texto": "Implemente verificação de Sudoku (se uma grade 9x9 é válida) sem resolver.",
+        "texto_en": "Implement Sudoku checking (whether a 9x9 grid is valid) without solving."
+      },
+      {
+        "id": 17,
+        "texto": "Implemente Sudoku solver por backtracking (pode ser para um exemplo pequeno/fornecido).",
+        "texto_en": "Implement Sudoku solver by backtracking (may be for small/provided example)."
+      },
+      {
+        "id": 18,
+        "texto": "Implemente fluxo máximo Ford-Fulkerson em grafo pequeno (matriz de capacidade).",
+        "texto_en": "Implement Ford-Fulkerson maximum flow in small graph (capacity matrix)."
+      },
+      {
+        "id": 19,
+        "texto": "Implemente detecção de ciclo em grafo direcionado usando DFS e cores.",
+        "texto_en": "Implement cycle detection in directed graph using DFS and colors."
+      },
+      {
+        "id": 20,
+        "texto": "Implemente topological sort em DAG e imprima a ordem.",
+        "texto_en": "Implement topological sort in DAG and print the order."
+      },
+      {
+        "id": 21,
+        "texto": "Implemente LRU Cache simples (capacidade K) usando estrutura apropriada (ou simulação).",
+        "texto_en": "Implement simple LRU Cache (K capacity) using appropriate framework (or mock)."
+      },
+      {
+        "id": 22,
+        "texto": "Implemente compressão RLE e calcule taxa de compressão para um texto.",
+        "texto_en": "Implement RLE compression and calculate compression ratio for a text."
+      },
+      {
+        "id": 23,
+        "texto": "Implemente busca de padrão (substring) sem usar find pronto (algoritmo ingênuo).",
+        "texto_en": "Implement pattern search (substring) without using find out of the box (naive algorithm)."
+      },
+      {
+        "id": 24,
+        "texto": "Implemente KMP (Knuth-Morris-Pratt) para busca de substring (opcional).",
+        "texto_en": "Implement KMP (Knuth-Morris-Pratt) for substring search (optional)."
+      },
+      {
+        "id": 25,
+        "texto": "Implemente detecção de anomalia simples em série temporal: z-score e marque pontos acima de um limiar.",
+        "texto_en": "Implement simple time series anomaly detection: z-score and score points above a threshold."
+      },
+      {
+        "id": 26,
+        "texto": "Implemente um simulador de fila (enqueue/dequeue) e processe uma lista de eventos.",
+        "texto_en": "Implement a queue simulator (enqueue/dequeue) and process a list of events."
+      },
+      {
+        "id": 27,
+        "texto": "Implemente um mini interpretador de expressões (ex.: '3 + 4 * 2') usando pilhas (Shunting-yard) (opcional).",
+        "texto_en": "Implement a mini expression interpreter (e.g. '3 + 4 * 2') using stacks (Shunting-yard) (optional)."
+      },
+      {
+        "id": 28,
+        "texto": "Implemente o problema do caixeiro-viajante por força bruta para até 10 cidades (distâncias em matriz).",
+        "texto_en": "Implement the traveling salesman problem by brute force for up to 10 cities (distances in matrix)."
+      },
+      {
+        "id": 29,
+        "texto": "Implemente Held-Karp (programação dinâmica) para caixeiro-viajante para n<=18 (opcional).",
+        "texto_en": "Implement Held-Karp (dynamic programming) for traveling salesman for n<=18 (optional)."
+      },
+      {
+        "id": 30,
+        "texto": "Crie um mini-projeto final: leia dados, aplique 3 algoritmos (ex.: ordenar, buscar, relatar) e gere um relatório completo.",
+        "texto_en": "Create a final mini-project: read data, apply 3 algorithms (e.g.: sort, search, report) and generate a complete report."
+      }
+    ],
+    "tipo_en": "Challenges",
+    "titulo_en": "List 20 - Challenges (Optional/Advanced)"
+  }
+]
