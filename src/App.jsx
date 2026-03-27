@@ -41,6 +41,8 @@ import SorteioInstagram from "./pages/SorteioInstagram";
 import SorteioNumeros from "./pages/SorteioNumeros";
 import SorteioTimes from "./pages/SorteioTimes";
 import TestadorRegex from "./pages/TestadorRegex";
+import TailwindCss from "./pages/TailwindCss";
+import TailwindCssTabelas from "./pages/TailwindCssTabelas";
 import TimerProva from "./pages/TimerProva";
 import Utilidades from "./pages/Utilidades";
 import ValidadorCpfCnpj from "./pages/ValidadorCpfCnpj";
@@ -121,6 +123,8 @@ export default function App() {
           <Route path="/disciplinas/git-github" element={<GitGithub />} />
           <Route path="/disciplinas/modelagem-dados" element={<ModelagemDados />} />
           <Route path="/disciplinas/protocolo-http" element={<ProtocoloHttp />} />
+          <Route path="/disciplinas/tailwind-css" element={<TailwindCss />} />
+          <Route path="/disciplinas/tailwind-css/tabelas" element={<TailwindCssTabelas />} />
           <Route path="/contato/*" element={<Contato />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

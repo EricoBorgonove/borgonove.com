@@ -321,6 +321,20 @@ export default function Navbar() {
         keywords: "http protocolo protocol rest api status code codes 200 404 500 verbs get post put patch delete",
       },
       {
+        title: t("subjects.items.tailwind-css.title"),
+        subtitle: subjectLabel,
+        path: "/disciplinas/tailwind-css",
+        keywords:
+          "tailwind css react vite utility classes flex grid spacing typography docs documentation cola cheat sheet",
+      },
+      {
+        title: isEn ? "Tailwind CSS Tables" : "Tailwind CSS: Tabelas",
+        subtitle: t("subjects.items.tailwind-css.title"),
+        path: "/disciplinas/tailwind-css/tabelas",
+        keywords:
+          "tailwind css tabelas classes layout flexbox grid spacing colors typography borders shadow responsive transitions transforms",
+      },
+      {
         title: t("navbar.contact"),
         subtitle: pageLabel,
         path: "/contato",

@@ -218,6 +218,10 @@
       "protocolo-http": {
         "title": "Protocolo HTTP",
         "description": "Fundamentos de requisição/resposta, verbos HTTP e interpretação de status codes."
+      },
+      "tailwind-css": {
+        "title": "Tailwind CSS",
+        "description": "Cola prática com classes, documentação oficial e exemplos rápidos para React + Vite."
       }
     }
   },

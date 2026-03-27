@@ -30,6 +30,10 @@ const disciplinas = [
     id: "protocolo-http",
     href: "/disciplinas/protocolo-http",
   },
+  {
+    id: "tailwind-css",
+    href: "/disciplinas/tailwind-css",
+  },
 ];
 
 export default function Disciplinas() {
