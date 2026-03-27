@@ -111,6 +111,13 @@ export const tailwindCheatSheetSections = [
     title_en: "1. Layout",
     description: "Mostra classes base para estruturar blocos, containers e o tipo principal de exibição dos elementos.",
     description_en: "Shows core classes for structuring blocks, containers, and the main display mode of elements.",
+    exampleTitle: "Exemplo integrado",
+    exampleTitle_en: "Integrated example",
+    exampleDescription:
+      "Use este bloco para enxergar como layout, alinhamento, espaçamento, cores, tipografia, sombra e interação se combinam em um componente real.",
+    exampleDescription_en:
+      "Use this block to see how layout, alignment, spacing, colors, typography, shadow, and interaction combine in a real component.",
+    example: tailwindFinalExample,
     columns: [
       { key: "class", label: "Classe", label_en: "Class" },
       { key: "explanation", label: "Explicação", label_en: "Explanation" },
@@ -326,6 +333,13 @@ export const tailwindCheatSheetSections = [
     title_en: "12. Responsiveness",
     description: "Apresenta os prefixos que permitem adaptar o estilo conforme o tamanho da tela.",
     description_en: "Presents the prefixes that let you adapt styles according to screen size.",
+    exampleTitle: "Exemplo de breakpoint",
+    exampleTitle_en: "Breakpoint example",
+    exampleDescription:
+      "Esse padrão mostra como a mesma estrutura pode mudar o tamanho do texto conforme a largura da tela.",
+    exampleDescription_en:
+      "This pattern shows how the same structure can change text size according to screen width.",
+    example: tailwindResponsiveExample,
     columns: [
       { key: "prefix", label: "Prefixo", label_en: "Prefix" },
       { key: "explanation", label: "Explicação", label_en: "Explanation" },

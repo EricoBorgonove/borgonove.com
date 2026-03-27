@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import {
   tailwindCheatSheetSections,
-  tailwindResponsiveExample,
 } from "../data/tailwindCssCheatSheet";
 
 function getText(item, key, isEn) {
@@ -24,7 +23,7 @@ export default function TailwindCssTabelas() {
         description:
           "Complete cheat-sheet tables organized by category for fast review during practice or exams.",
         quickNav: "Quick Navigation",
-        exampleLabel: "Responsive example",
+        exampleLabel: "Section example",
       }
     : {
         back: "Voltar para Tailwind CSS",
@@ -32,7 +31,7 @@ export default function TailwindCssTabelas() {
         description:
           "Tabelas completas da cola organizadas por categoria para revisão rápida durante exercícios, laboratório ou prova.",
         quickNav: "Navegação Rápida",
-        exampleLabel: "Exemplo de responsividade",
+        exampleLabel: "Exemplo da seção",
       };
 
   const sortedSections = [...tailwindCheatSheetSections].sort((a, b) =>
@@ -115,11 +114,18 @@ export default function TailwindCssTabelas() {
               </table>
             </div>
 
-            {section.id === "responsive" && (
+            {section.example && (
               <div className="mt-5">
-                <p className="text-sm font-semibold text-slate-200 mb-3">{txt.exampleLabel}</p>
+                <p className="text-sm font-semibold text-slate-200 mb-2">
+                  {getText(section, "exampleTitle", isEn) || txt.exampleLabel}
+                </p>
+                {getText(section, "exampleDescription", isEn) && (
+                  <p className="text-sm text-slate-400 mb-3">
+                    {getText(section, "exampleDescription", isEn)}
+                  </p>
+                )}
                 <pre className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-4 text-sm text-slate-200">
-                  <code>{tailwindResponsiveExample}</code>
+                  <code>{section.example}</code>
                 </pre>
               </div>
             )}
