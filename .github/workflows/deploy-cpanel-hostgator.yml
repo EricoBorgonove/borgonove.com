@@ -47,7 +47,16 @@ jobs:
               exit 1
             fi
             mkdir -p "$TARGET_DIR"
-            find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name ".well-known" -exec rm -rf {} +
+            PRESERVE_DIR="$TARGET_DIR/.deploy-preserve"
+            rm -rf "$PRESERVE_DIR"
+            mkdir -p "$PRESERVE_DIR"
+            if [ -f "$TARGET_DIR/api/contact-config.php" ]; then
+              cp "$TARGET_DIR/api/contact-config.php" "$PRESERVE_DIR/contact-config.php"
+            fi
+            if [ -f "$TARGET_DIR/api/db-config.php" ]; then
+              cp "$TARGET_DIR/api/db-config.php" "$PRESERVE_DIR/db-config.php"
+            fi
+            find "$TARGET_DIR" -mindepth 1 -maxdepth 1 ! -name ".well-known" ! -name ".deploy-preserve" -exec rm -rf {} +
 
       - name: Upload dist to cPanel
         uses: appleboy/scp-action@v0.1.7
@@ -61,3 +70,31 @@ jobs:
             dist/*
             dist/.htaccess
           target: ${{ secrets.CPANEL_TARGET_DIR }}
+          strip_components: 1
+
+      - name: Verify deployed SPA files
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          TARGET_DIR: ${{ secrets.CPANEL_TARGET_DIR }}
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          key: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CPANEL_SSH_PASSPHRASE }}
+          port: ${{ secrets.CPANEL_PORT }}
+          script_stop: true
+          envs: TARGET_DIR
+          script: |
+            if [ -f "$TARGET_DIR/.deploy-preserve/contact-config.php" ]; then
+              mkdir -p "$TARGET_DIR/api"
+              cp "$TARGET_DIR/.deploy-preserve/contact-config.php" "$TARGET_DIR/api/contact-config.php"
+            fi
+            if [ -f "$TARGET_DIR/.deploy-preserve/db-config.php" ]; then
+              mkdir -p "$TARGET_DIR/api"
+              cp "$TARGET_DIR/.deploy-preserve/db-config.php" "$TARGET_DIR/api/db-config.php"
+            fi
+            rm -rf "$TARGET_DIR/.deploy-preserve"
+            test -f "$TARGET_DIR/index.html"
+            test -f "$TARGET_DIR/.htaccess"
+            test -f "$TARGET_DIR/404.shtml"
+            grep -q "RewriteRule . /index.html" "$TARGET_DIR/.htaccess"

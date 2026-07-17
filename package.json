@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/ensure-cpanel-dist.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "i18n:seed-en": "node scripts/add-en-fields.mjs"

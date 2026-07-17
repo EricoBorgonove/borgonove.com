@@ -22,17 +22,17 @@
         place-items: center;
         font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         background:
-          radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.16), transparent 40%),
-          radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.12), transparent 42%),
+          linear-gradient(135deg, rgba(8, 145, 178, 0.18), transparent 42%),
+          linear-gradient(315deg, rgba(16, 185, 129, 0.12), transparent 46%),
           linear-gradient(rgba(6, 11, 30, 0.95), rgba(7, 12, 28, 0.98));
         color: #e2e8f0;
         padding: 24px;
       }
       .card {
-        width: min(560px, 100%);
+        width: min(720px, 100%);
         background: rgba(15, 23, 42, 0.72);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 18px;
+        border-radius: 16px;
         backdrop-filter: blur(10px);
         padding: 28px;
         text-align: center;
@@ -55,19 +55,34 @@
       }
       .actions {
         margin-top: 22px;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       a {
         text-decoration: none;
-        background: #22d3ee;
-        color: #0f172a;
+        border: 1px solid rgba(34, 211, 238, 0.28);
+        color: #cffafe;
         font-weight: 700;
-        padding: 10px 18px;
+        padding: 12px 14px;
         border-radius: 10px;
       }
+      a.primary {
+        background: #22d3ee;
+        color: #0f172a;
+      }
       a:hover {
+        border-color: rgba(103, 232, 249, 0.72);
+        color: #ffffff;
+      }
+      a.primary:hover {
         background: #67e8f9;
+        color: #0f172a;
+      }
+      @media (max-width: 560px) {
+        .actions {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -75,9 +90,12 @@
     <main class="card">
       <p class="tag" id="error-tag">Erro 404</p>
       <h1 id="error-title">Página não encontrada</h1>
-      <p id="error-description">O endereço acessado não existe ou foi movido.</p>
+      <p id="error-description">O endereço acessado não existe ou foi movido. Use uma das opções abaixo para continuar navegando.</p>
       <div class="actions">
-        <a id="back-link" href="/">Voltar para início</a>
+        <a class="primary" id="home-link" href="/">Ir para o início</a>
+        <a id="subjects-link" href="/disciplinas">Disciplinas</a>
+        <a id="roadmaps-link" href="/roadmaps">Roadmaps</a>
+        <a id="contact-link" href="/contato">Contato</a>
       </div>
     </main>
     <script>
@@ -91,11 +109,15 @@
         var tag = document.getElementById("error-tag");
         var title = document.getElementById("error-title");
         var description = document.getElementById("error-description");
-        var back = document.getElementById("back-link");
+        var home = document.getElementById("home-link");
+        var subjects = document.getElementById("subjects-link");
+        var contact = document.getElementById("contact-link");
         if (tag) tag.textContent = "Error 404";
         if (title) title.textContent = "Page not found";
-        if (description) description.textContent = "The requested address does not exist or has been moved.";
-        if (back) back.textContent = "Back to home";
+        if (description) description.textContent = "The requested address does not exist or has been moved. Use one of the options below to keep browsing.";
+        if (home) home.textContent = "Go to home";
+        if (subjects) subjects.textContent = "Subjects";
+        if (contact) contact.textContent = "Contact";
       })();
     </script>
   </body>

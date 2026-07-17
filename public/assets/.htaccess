@@ -1,0 +1,12 @@
+Options -MultiViews
+AddDefaultCharset UTF-8
+AddType application/javascript .js .mjs
+AddType text/css .css
+
+<IfModule mod_rewrite.c>
+  RewriteEngine Off
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

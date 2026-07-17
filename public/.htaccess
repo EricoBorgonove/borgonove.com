@@ -1,10 +1,40 @@
 ErrorDocument 404 /404.shtml
+DirectoryIndex index.html
+Options -MultiViews
+AddDefaultCharset UTF-8
+AddType application/javascript .js .mjs
+AddType text/css .css
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|shtml)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|mjs|css|png|jpe?g|gif|svg|webp|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
+
+  RewriteRule ^404\.shtml$ - [END]
+  RewriteRule ^index\.html$ - [END]
+  RewriteRule ^(assets|images|api|datasets|data)/ - [END]
+  RewriteRule ^(favicon\.ico|favicon-16x16\.png|favicon-32x32\.png|apple-touch-icon\.png|vite\.svg|legacy\.html)$ - [END]
+
+  # Let real files and directories be served normally.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # Missing static/API files should be a real Apache 404, not the React app.
+  RewriteCond %{REQUEST_URI} \.[A-Za-z0-9]{2,8}$ [OR]
+  RewriteCond %{REQUEST_URI} ^/api/
+  RewriteRule . - [R=404,END]
+
+  # React Router fallback for clean URLs loaded directly in the browser.
+  RewriteRule . /index.html [END]
 </IfModule>
