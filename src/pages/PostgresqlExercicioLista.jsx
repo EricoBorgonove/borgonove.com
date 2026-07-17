@@ -663,6 +663,7 @@ export default function PostgresqlExercicioLista() {
   const nextBlock = list.blocks[currentIndex + 1];
   const hasDiagrams = block.exercises.some((exercise) => typeof exercise === "object" && exercise.diagram);
   const requiresAnswerPassword = Boolean(list.answerPasswordPrefix);
+  const hideBlockOrder = list.slug === "loja-temporal";
 
   function getAnswerKey(exercise) {
     return `${list.slug}-${block.slug}-${exercise.number}`;
@@ -715,7 +716,7 @@ export default function PostgresqlExercicioLista() {
             {block.level}
           </span>
           <span className="text-sm font-semibold text-slate-500">
-            Lista {list.title} · Bloco {block.order} de {list.blocks.length}
+            {hideBlockOrder ? list.title : `Lista ${list.title} · Bloco ${block.order} de ${list.blocks.length}`}
           </span>
         </div>
         <h1 className="mb-4 text-4xl font-black md:text-5xl">{block.title}</h1>

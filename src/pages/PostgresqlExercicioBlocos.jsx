@@ -5,6 +5,7 @@ import { findPostgresqlExerciseList } from "../data/postgresqlExercises";
 export default function PostgresqlExercicioBlocos() {
   const { listSlug } = useParams();
   const list = findPostgresqlExerciseList(listSlug);
+  const hideBlockOrder = list?.slug === "loja-temporal";
 
   if (!list) {
     return <Navigate to="/disciplinas/postgresql/exercicios" replace />;
@@ -60,9 +61,11 @@ export default function PostgresqlExercicioBlocos() {
                 <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
                   Tipo: {block.level}
                 </span>
-                <span className="text-sm font-bold text-slate-500">
-                  Bloco {String(block.order).padStart(2, "0")}
-                </span>
+                {!hideBlockOrder && (
+                  <span className="text-sm font-bold text-slate-500">
+                    Bloco {String(block.order).padStart(2, "0")}
+                  </span>
+                )}
               </div>
 
               <h2 className="mb-3 text-xl font-semibold text-slate-100">{block.title}</h2>

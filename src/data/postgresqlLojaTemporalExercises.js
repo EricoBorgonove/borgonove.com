@@ -16,7 +16,7 @@ export const postgresqlLojaTemporalExerciseList = {
     {
       "slug": "laboratorio-guiado",
       "order": 1,
-      "title": "Lista 1: 15 questões guiadas",
+      "title": "15 questões guiadas",
       "summary": "Comece pelo reconhecimento da base, consultas pontuais no tempo, integridade temporal, auditoria, desempenho e análise avançada.",
       "level": "Intermediário",
       "exercises": [
@@ -100,7 +100,7 @@ export const postgresqlLojaTemporalExerciseList = {
     {
       "slug": "100-questoes-diversas",
       "order": 2,
-      "title": "Lista 2: 100 questões diversas",
+      "title": "100 questões diversas",
       "summary": "Resolva uma lista unificada com exploração da base, ranges, snapshots, funções de janela, vendas, junções temporais e auditoria.",
       "level": "Intermediário a avançado",
       "exercises": [
