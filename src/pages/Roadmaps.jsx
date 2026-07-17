@@ -53,6 +53,19 @@ const roadmaps = [
     ),
   },
   {
+    id: "python-pandas",
+    href: "/roadmaps/python-pandas",
+    emBreve: false,
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+        <path
+          fill="currentColor"
+          d="M4 4h16v4H4V4Zm0 6h6v10H6a2 2 0 0 1-2-2v-8Zm8 0h8v8a2 2 0 0 1-2 2h-6V10Zm2 2v2h4v-2h-4Zm0 4v2h3v-2h-3ZM6 12v2h2v-2H6Zm0 4v2h2v-2H6Z"
+        />
+      </svg>
+    ),
+  },
+  {
     id: "banco-dados",
     emBreve: true,
     icon: (

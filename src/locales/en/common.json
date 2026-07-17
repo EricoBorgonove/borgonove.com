@@ -173,6 +173,10 @@
         "title": "PHP",
         "description": "Practical track for modern PHP, web back-end, frameworks, code quality, and deployment."
       },
+      "python-pandas": {
+        "title": "Python Pandas",
+        "description": "Pandas mastery roadmap: ingestion, cleaning, aggregations, time series, and performance."
+      },
       "logica-programacao": {
         "title": "Programming Logic",
         "description": "Foundation for algorithms, decision and loop structures, problem-solving and computational thinking."
@@ -187,6 +191,10 @@
     "title": "Subjects",
     "description": "Academic content and learning tracks organized by topic.",
     "items": {
+      "afd": {
+        "title": "DFA",
+        "description": "Deterministic Finite Automata, conversion to Regular Expressions, and formal path reading."
+      },
       "algoritmos": {
         "title": "Algorithms",
         "description": "Logic, fundamentals and practice with graded exercise lists."
@@ -207,6 +215,14 @@
         "title": "Web Development",
         "description": "Fundamentals, modern front-end and production best practices."
       },
+      "docker": {
+        "title": "Docker",
+        "description": "Ubuntu and macOS installation, containers, images, Compose, volumes, networks, logs, and maintenance."
+      },
+      "esbmc": {
+        "title": "ESBMC",
+        "description": "Formal software verification with Bounded Model Checking, SMT, counterexamples and C/C++ failure analysis."
+      },
       "git-github": {
         "title": "Git and GitHub",
         "description": "Complete versioning: repository, commits, branches, push and pull."
@@ -218,6 +234,14 @@
       "protocolo-http": {
         "title": "HTTP Protocol",
         "description": "Request/response fundamentals, HTTP verbs, and status code interpretation."
+      },
+      "postgresql": {
+        "title": "PostgreSQL",
+        "description": "Relational databases, SQL commands by category, queries, relationships, transactions, security, and backup."
+      },
+      "python-pandas": {
+        "title": "Python Pandas",
+        "description": "Reference guide with tables for loading, cleaning, transforming, aggregating and exporting data."
       },
       "tailwind-css": {
         "title": "Tailwind CSS",

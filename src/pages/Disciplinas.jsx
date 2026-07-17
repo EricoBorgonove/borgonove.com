@@ -3,6 +3,10 @@ import { useTranslation } from "react-i18next";
 
 const disciplinas = [
   {
+    id: "afd",
+    href: "/disciplinas/afd",
+  },
+  {
     id: "algoritmos",
     href: "/disciplinas/algoritmos",
   },
@@ -19,6 +23,14 @@ const disciplinas = [
     href: null,
   },
   {
+    id: "docker",
+    href: "/disciplinas/docker",
+  },
+  {
+    id: "esbmc",
+    href: "/disciplinas/esbmc",
+  },
+  {
     id: "git-github",
     href: "/disciplinas/git-github",
   },
@@ -29,6 +41,14 @@ const disciplinas = [
   {
     id: "protocolo-http",
     href: "/disciplinas/protocolo-http",
+  },
+  {
+    id: "postgresql",
+    href: "/disciplinas/postgresql",
+  },
+  {
+    id: "python-pandas",
+    href: "/disciplinas/python-pandas",
   },
   {
     id: "tailwind-css",

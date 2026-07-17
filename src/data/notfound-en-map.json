@@ -1,6 +1,17 @@
 {
   "Erro 404": "Error 404",
   "O endereço acessado não existe ou foi movido.": "The accessed address does not exist or has been moved.",
+  "O endereço acessado não existe ou foi movido. Use uma das opções abaixo para continuar navegando.": "The accessed address does not exist or has been moved. Use one of the options below to keep browsing.",
   "Página não encontrada": "Page not found",
-  "Voltar para página anterior": "Return to previous page"
+  "Voltar para página anterior": "Return to previous page",
+  "Ir para o início": "Go to home",
+  "Caminhos úteis": "Useful paths",
+  "Disciplinas": "Subjects",
+  "Conteúdos acadêmicos e trilhas por tema.": "Academic content and tracks by topic.",
+  "Roadmaps": "Roadmaps",
+  "Rotas de estudo organizadas por objetivo.": "Study paths organized by objective.",
+  "Utilidades": "Utilities",
+  "Ferramentas rápidas para o dia a dia.": "Quick tools for daily use.",
+  "Contato": "Contact",
+  "Fale conosco para suporte ou projetos.": "Contact us for support or projects."
 }

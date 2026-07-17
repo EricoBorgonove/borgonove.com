@@ -2,6 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import algoritmosListas from "../data/algoritmos-listas.json";
+import { getPostgresqlExerciseQuestion, postgresqlExerciseLists } from "../data/postgresqlExercises";
+import { postgresqlTables } from "../data/postgresqlTables";
+import { postgresqlTopics } from "../data/postgresqlTopics";
 import logo from "../assets/images/logo.png";
 import logoB9 from "../assets/images/logob9.png";
 import { useAdminAuth } from "../hooks/useAdminAuth";
@@ -321,6 +324,52 @@ export default function Navbar() {
         keywords: "http protocolo protocol rest api status code codes 200 404 500 verbs get post put patch delete",
       },
       {
+        title: t("subjects.items.postgresql.title"),
+        subtitle: subjectLabel,
+        path: "/disciplinas/postgresql",
+        keywords:
+          "postgres postgresql banco dados database sql ddl dml dql select insert update delete joins indices transacoes backup psql",
+      },
+      {
+        title: isEn ? "PostgreSQL Support Material" : "PostgreSQL: Material de apoio",
+        subtitle: t("subjects.items.postgresql.title"),
+        path: "/disciplinas/postgresql/material-apoio",
+        keywords:
+          "postgres postgresql material apoio tipos dados restricoes modificadores create table primary key foreign key not null unique default check",
+      },
+      {
+        title: isEn ? "PostgreSQL Exercises" : "PostgreSQL: Exercícios",
+        subtitle: t("subjects.items.postgresql.title"),
+        path: "/disciplinas/postgresql/exercicios",
+        keywords:
+          "postgres postgresql exercicios exercícios pratica sql create table select join group by transacoes permissoes backup",
+      },
+      {
+        title: isEn ? "Pandas exercise lists" : "Listas de exercícios de Pandas",
+        subtitle: t("subjects.items.python-pandas.title"),
+        path: "/disciplinas/python-pandas/listas-exercicios",
+        keywords:
+          "pandas exercicios exercises listas series dataframe csv excel datasets alunos vendas analytics",
+      },
+      {
+        title: isEn ? "Health dataset exercises" : "Exercícios dataset saúde",
+        subtitle: t("subjects.items.python-pandas.title"),
+        path: "/disciplinas/python-pandas/listas-exercicios/saude-atendimentos",
+        keywords: "pandas saude saúde atendimentos hospitalares excel pacientes hospital limpeza dados",
+      },
+      {
+        title: isEn ? "E-commerce dataset exercises" : "Exercícios dataset e-commerce",
+        subtitle: t("subjects.items.python-pandas.title"),
+        path: "/disciplinas/python-pandas/listas-exercicios/ecommerce-pedidos",
+        keywords: "pandas ecommerce e-commerce pedidos clientes csv vendas ticket entrega pagamento",
+      },
+      {
+        title: isEn ? "Online education dataset exercises" : "Exercícios dataset educação online",
+        subtitle: t("subjects.items.python-pandas.title"),
+        path: "/disciplinas/python-pandas/listas-exercicios/educacao-online",
+        keywords: "pandas educacao educação online ead json alunos cursos notas evasao engajamento",
+      },
+      {
         title: t("subjects.items.tailwind-css.title"),
         subtitle: subjectLabel,
         path: "/disciplinas/tailwind-css",
@@ -355,7 +404,44 @@ export default function Navbar() {
       keywords: `${lista.titulo} ${lista.tipo} ${lista.titulo_en || ""} ${lista.tipo_en || ""} algoritmos algorithms exercicios exercises lista list`,
     }));
 
-    return [...baseSearchItems, ...listaItems];
+    const postgresqlItems = postgresqlTopics.map((topic) => ({
+      title: topic.title,
+      subtitle: `${t("subjects.items.postgresql.title")} • ${topic.category}`,
+      path: `/disciplinas/postgresql/${topic.slug}`,
+      keywords: `${topic.title} ${topic.summary} ${topic.category} postgresql postgres sql`,
+    }));
+
+    const postgresqlTableItems = postgresqlTables.map((table) => ({
+      title: table.title,
+      subtitle: `${t("subjects.items.postgresql.title")} • ${table.category}`,
+      path: `/disciplinas/postgresql/material-apoio/${table.slug}`,
+      keywords: `${table.title} ${table.summary} ${table.category} postgresql postgres sql material apoio`,
+    }));
+
+    const postgresqlExerciseListItems = postgresqlExerciseLists.map((list) => ({
+      title: `Lista ${list.title}`,
+      subtitle: `${t("subjects.items.postgresql.title")} • Exercícios`,
+      path: `/disciplinas/postgresql/exercicios/${list.slug}`,
+      keywords: `${list.title} ${list.summary} ${list.level} postgresql postgres sql exercicios prática`,
+    }));
+
+    const postgresqlExerciseItems = postgresqlExerciseLists.flatMap((list) =>
+      list.blocks.map((block) => ({
+        title: block.title,
+        subtitle: `${t("subjects.items.postgresql.title")} • Lista ${list.title}`,
+        path: `/disciplinas/postgresql/exercicios/${list.slug}/${block.slug}`,
+        keywords: `${list.title} ${block.title} ${block.summary} ${block.level} ${block.exercises.map(getPostgresqlExerciseQuestion).join(" ")} postgresql postgres sql exercicios prática`,
+      }))
+    );
+
+    return [
+      ...baseSearchItems,
+      ...listaItems,
+      ...postgresqlItems,
+      ...postgresqlTableItems,
+      ...postgresqlExerciseListItems,
+      ...postgresqlExerciseItems,
+    ];
   }, [isEn, t]);
 
   const searchResults = useMemo(() => {
@@ -465,44 +551,44 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50">
-      <div className="glass rounded-2xl px-4 sm:px-6 md:px-8 py-3 md:py-4 flex items-center justify-between gap-3">
-        <Link to="/" className="inline-flex items-center gap-3 min-w-0 shrink">
+      <div className="glass rounded-2xl px-4 sm:px-6 xl:px-7 py-3 xl:py-4 flex items-center justify-between gap-3">
+        <Link to="/" className="inline-flex items-center gap-3 min-w-0 shrink-0">
           <img
             src={theme === "light" ? logoB9 : logo}
             alt="Borgonove Tech"
-            className="h-5 sm:h-6 md:h-7 w-auto max-w-[140px] sm:max-w-[170px] md:max-w-none object-contain"
+            className="h-5 sm:h-6 xl:h-7 w-auto max-w-[140px] sm:max-w-[170px] xl:max-w-[190px] object-contain"
           />
           <span className="sr-only">Borgonove.tech</span>
         </Link>
 
-        <nav className="hidden md:flex gap-10 text-sm font-medium">
+        <nav className="hidden xl:flex flex-1 min-w-0 justify-center gap-5 2xl:gap-8 text-sm font-medium">
           <span
-            className="text-cyan-300"
+            className="text-cyan-300 whitespace-nowrap"
             title={t("navbar.adminArea")}
           >
             {t("navbar.me")}
           </span>
           {sectionItems.map((item) => (
-            <Link key={item.href} to={item.href} className="menu-link">
+            <Link key={item.href} to={item.href} className="menu-link whitespace-nowrap">
               {t("navbar.roadmaps")}
             </Link>
           ))}
-          <Link to="/blog" className="menu-link">
+          <Link to="/blog" className="menu-link whitespace-nowrap">
             {t("navbar.blog")}
           </Link>
-          <Link to="/utilidades" className="menu-link">
+          <Link to="/utilidades" className="menu-link whitespace-nowrap">
             {t("navbar.utilities")}
           </Link>
-          <Link to="/disciplinas" className="menu-link">
+          <Link to="/disciplinas" className="menu-link whitespace-nowrap">
             {t("navbar.subjects")}
           </Link>
         </nav>
 
-        <div ref={searchContainerRef} className="hidden md:flex items-center gap-4 relative">
+        <div ref={searchContainerRef} className="hidden xl:flex shrink-0 items-center gap-2 2xl:gap-3 relative">
           {!searchOpen && (
             <button
               type="button"
-              className="border border-slate-700 text-slate-200 px-3 py-2 rounded-xl hover:border-cyan-400 transition"
+              className="border border-slate-700 text-slate-200 px-3 py-2 rounded-xl hover:border-cyan-400 transition whitespace-nowrap"
               aria-label={t("navbar.search.open")}
               onClick={() => setSearchOpen(true)}
             >
@@ -511,7 +597,7 @@ export default function Navbar() {
           )}
 
           {searchOpen && (
-            <form onSubmit={handleSearchSubmit} className="relative w-52">
+            <form onSubmit={handleSearchSubmit} className="relative w-44 2xl:w-52">
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -558,7 +644,7 @@ export default function Navbar() {
           {!searchOpen && (
             <Link
               to="/contato"
-              className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2 rounded-xl font-semibold transition"
+              className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-4 2xl:px-5 py-2 rounded-xl font-semibold transition whitespace-nowrap"
             >
               {t("navbar.contact")}
             </Link>
@@ -593,7 +679,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="md:hidden text-2xl"
+          className="xl:hidden text-2xl shrink-0"
           aria-label={t("navbar.menuOpen")}
           onClick={() => setOpen((prev) => !prev)}
         >
@@ -602,7 +688,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="glass rounded-2xl mt-3 px-6 py-6 md:hidden">
+        <div className="glass rounded-2xl mt-3 px-6 py-6 xl:hidden">
           <span className="block py-2 text-cyan-300" title={t("navbar.adminArea")}>
             {t("navbar.me")}
           </span>

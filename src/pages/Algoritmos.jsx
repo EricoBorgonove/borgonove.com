@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import listas from "../data/algoritmos-listas.json";
 import { translatePtToEn } from "../utils/ptEnTranslate";
@@ -48,6 +49,9 @@ export default function Algoritmos() {
         topics: "Topics",
         type: "Type",
         noResults: "No questions found for this search.",
+        naturalTitle: "Algorithms in Natural Language",
+        naturalDescription: "50 introductory exercises based on everyday tasks, decisions, and repetitions.",
+        naturalAction: "Open exercise list",
       }
     : {
         back: "Voltar para Disciplinas",
@@ -58,6 +62,9 @@ export default function Algoritmos() {
         topics: "Assuntos",
         type: "Tipo",
         noResults: "Nenhuma questão encontrada para essa busca.",
+        naturalTitle: "Algoritmos em Linguagem Natural",
+        naturalDescription: "50 exercícios introdutórios com situações do cotidiano, decisões e repetições.",
+        naturalAction: "Abrir lista de exercícios",
       };
 
   const [query, setQuery] = useState("");
@@ -100,6 +107,23 @@ export default function Algoritmos() {
       <p className="text-slate-400 text-lg mb-10">
         {txt.description}
       </p>
+
+      <Link
+        to="/disciplinas/algoritmos/linguagem-natural"
+        className="glass theme-hover-border mb-8 block rounded-2xl p-6 transition hover:-translate-y-1 md:p-8"
+      >
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">
+          {isEn ? "Introductory list" : "Lista introdutória"}
+        </p>
+        <h2 className="mb-2 text-2xl font-semibold text-slate-100">{txt.naturalTitle}</h2>
+        <p className="mb-5 max-w-3xl text-sm leading-relaxed text-slate-400">
+          {txt.naturalDescription}
+        </p>
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
+          {txt.naturalAction}
+          <span aria-hidden="true">→</span>
+        </span>
+      </Link>
 
       <div className="glass rounded-2xl p-6 md:p-8 mb-8">
         <label htmlFor="busca-listas" className="block text-sm text-slate-300 mb-3">{txt.searchLabel}</label>
