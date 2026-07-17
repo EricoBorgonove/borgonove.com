@@ -5,10 +5,11 @@
 return [
   'host' => 'smtp.titan.email',
   'port' => '587',                         // 587 (TLS) | 465 (SSL)
-  'username' => 'contato@borgonove.tech',
+  'username' => 'contato@borgonove.com',
   'password' => 'SENHA_DA_CONTA_DE_EMAIL',
   'from_name' => 'Borgonove Tech',
-  'from_email' => 'contato@borgonove.tech',
+  'from_email' => 'contato@borgonove.com',
+  'to_email' => 'contato@borgonove.com',
   'encryption' => 'tls',                   // tls | ssl | none
   'auth' => true,                          // false para localhost:25 sem autenticação
   'debug' => false,                        // true para retornar detalhe técnico no JSON

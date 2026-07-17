@@ -174,10 +174,10 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             <a
               className="flex items-center justify-center md:justify-start gap-2 text-slate-200 hover:text-cyan-400"
-              href="mailto:contato@borgonove.tech"
+              href="mailto:contato@borgonove.com"
             >
               <IconMail />
-              contato@borgonove.tech
+              contato@borgonove.com
             </a>
             <a
               className="flex items-center justify-center md:justify-start gap-2 text-slate-200 hover:text-cyan-400"

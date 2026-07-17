@@ -88,7 +88,7 @@ function smtp_send_mail($config, $to, $subject, $body) {
 
   try {
     smtp_send_command($socket, null, [220]);
-    smtp_send_command($socket, 'EHLO borgonove.tech', [250]);
+    smtp_send_command($socket, 'EHLO borgonove.com', [250]);
 
     if ($encryption === 'tls') {
       smtp_send_command($socket, 'STARTTLS', [220]);
@@ -96,7 +96,7 @@ function smtp_send_mail($config, $to, $subject, $body) {
       if ($cryptoOk !== true) {
         throw new Exception('SMTP_STARTTLS_FAIL');
       }
-      smtp_send_command($socket, 'EHLO borgonove.tech', [250]);
+      smtp_send_command($socket, 'EHLO borgonove.com', [250]);
     }
 
     if ($useAuth) {
@@ -110,11 +110,13 @@ function smtp_send_mail($config, $to, $subject, $body) {
     smtp_send_command($socket, 'DATA', [354]);
 
     $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+    $replyTo = trim((string) ($config['reply_to'] ?? $fromEmail));
+
     $headers = [
       'Date: ' . date('r'),
       'From: ' . $fromName . ' <' . $fromEmail . '>',
       'To: <' . $to . '>',
-      'Reply-To: ' . $fromEmail,
+      'Reply-To: ' . $replyTo,
       'Subject: ' . $subjectEncoded,
       'MIME-Version: 1.0',
       'Content-Type: text/plain; charset=UTF-8',
@@ -141,14 +143,14 @@ function smtp_send_mail($config, $to, $subject, $body) {
   }
 }
 
-function php_mail_fallback($to, $subject, $body, $fromEmail) {
+function php_mail_fallback($to, $subject, $body, $fromEmail, $replyTo) {
   $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
   $headers = [];
   $headers[] = 'MIME-Version: 1.0';
   $headers[] = 'Content-Type: text/plain; charset=UTF-8';
   $headers[] = 'Content-Transfer-Encoding: 8bit';
   $headers[] = "From: Borgonove Tech <{$fromEmail}>";
-  $headers[] = "Reply-To: {$fromEmail}";
+  $headers[] = "Reply-To: {$replyTo}";
   $headers[] = "Return-Path: {$fromEmail}";
   $headers[] = 'X-Mailer: PHP/' . phpversion();
 
@@ -201,10 +203,10 @@ if ($mensagemLength > 2000) {
 $smtpConfig = [
   'host' => env_or_default('CONTACT_SMTP_HOST', 'localhost'),
   'port' => env_or_default('CONTACT_SMTP_PORT', '587'),
-  'username' => env_or_default('CONTACT_SMTP_USER', 'contato@borgonove.tech'),
+  'username' => env_or_default('CONTACT_SMTP_USER', 'contato@borgonove.com'),
   'password' => env_or_default('CONTACT_SMTP_PASS', ''),
   'from_name' => env_or_default('CONTACT_FROM_NAME', 'Borgonove Tech'),
-  'from_email' => env_or_default('CONTACT_FROM_EMAIL', 'contato@borgonove.tech'),
+  'from_email' => env_or_default('CONTACT_FROM_EMAIL', 'contato@borgonove.com'),
   'encryption' => env_or_default('CONTACT_SMTP_ENCRYPTION', 'tls'), // tls | ssl | none
   'auth' => env_or_default('CONTACT_SMTP_AUTH', '1') !== '0',
   'debug' => env_or_default('CONTACT_SMTP_DEBUG', '0') === '1',
@@ -218,19 +220,22 @@ if (file_exists($localConfigFile)) {
   }
 }
 
-if (!empty($smtpConfig['auth']) && $smtpConfig['password'] === '') {
-  contact_log('SMTP_CONFIG_INCOMPLETA senha vazia');
-  http_response_code(500);
-  echo json_encode(['ok' => false, 'error' => 'SMTP_CONFIG_INCOMPLETA']);
-  exit;
+$to = trim((string) ($smtpConfig['to_email'] ?? env_or_default('CONTACT_TO_EMAIL', 'contato@borgonove.com')));
+if ($to === '') {
+  $to = 'contato@borgonove.com';
 }
-
-$to = 'contato@borgonove.tech';
 $subject = "Contato via site - {$nome}";
 $body = "Nome: {$nome}\r\nEmail: {$email}\r\n\r\n{$mensagem}\r\n";
+$smtpConfig['reply_to'] = $email;
 
 try {
-  $attempts = [$smtpConfig];
+  $attempts = [];
+  if (empty($smtpConfig['auth']) || $smtpConfig['password'] !== '') {
+    $attempts[] = $smtpConfig;
+  } else {
+    contact_log('SMTP_CONFIG_INCOMPLETA senha vazia; tentando fallbacks sem autenticacao/mail');
+  }
+
   $hostLower = strtolower(trim((string) $smtpConfig['host']));
   $portNum = (int) $smtpConfig['port'];
   $encLower = strtolower(trim((string) $smtpConfig['encryption']));
@@ -242,8 +247,9 @@ try {
   }
 
   // Fallback útil para cPanel/HostGator: localhost sem auth na porta 25.
-  if ($hostLower === 'localhost' && (($portNum === 587 && $encLower === 'tls') || ($portNum === 465 && $encLower === 'ssl'))) {
+  if ($hostLower === 'localhost' || (($portNum === 587 && $encLower === 'tls') || ($portNum === 465 && $encLower === 'ssl'))) {
     $fallback = $smtpConfig;
+    $fallback['host'] = 'localhost';
     $fallback['port'] = 25;
     $fallback['encryption'] = 'none';
     $fallback['auth'] = false;
@@ -315,7 +321,7 @@ try {
 } catch (Exception $e) {
   contact_log("SMTP_FAIL email={$email} detalhe=" . $e->getMessage() . " tentando_fallback_mail=1");
 
-  $fallbackOk = php_mail_fallback($to, $subject, $body, $smtpConfig['from_email']);
+  $fallbackOk = php_mail_fallback($to, $subject, $body, $smtpConfig['from_email'], $email);
   if ($fallbackOk) {
     contact_log("FALLBACK_MAIL_OK email={$email}");
     echo json_encode(['ok' => true, 'fallback' => 'php_mail']);

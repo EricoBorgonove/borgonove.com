@@ -64,7 +64,7 @@ const secoes = [
   },
   {
     titulo: "8. Contato Para Privacidade",
-    itens: ["Para solicitações relacionadas à privacidade e LGPD, entre em contato pelo e-mail contato@borgonove.tech."],
+    itens: ["Para solicitações relacionadas à privacidade e LGPD, entre em contato pelo e-mail contato@borgonove.com."],
   },
   {
     titulo: "9. Atualizações Deste Aviso",
