@@ -1,0 +1,1301 @@
+id_aluno,nome,curso,periodo,turno,disciplina,campus,nota_av1,nota_av2,frequencia,horas_estudo_semanais,idade,bolsista,modalidade,media,situacao
+1,Aluno_0001,Sistemas de Informação,4,Noturno,Estatística,Djalma Batista,4.5,6.3,84.5,5.3,23,Não,EaD,5.4,Final
+2,Aluno_0002,Sistemas de Informação,9,Matutino,Engenharia de Software,Centro,6.8,7.1,92.9,3.3,22,Não,Híbrido,7.0,Aprovado
+3,Aluno_0003,Engenharia de Software,1,Matutino,Estatística,Djalma Batista,9.8,4.5,74.6,8.3,22,Sim,EaD,7.2,Reprovado
+4,Aluno_0004,Engenharia de Software,2,Noturno,Python,Djalma Batista,8.7,7.3,77.3,9.0,29,Não,Presencial,8.0,Aprovado
+5,Aluno_0005,Sistemas de Informação,2,Noturno,Direito Digital,Djalma Batista,8.3,6.6,75.3,6.3,29,Não,Presencial,7.4,Aprovado
+6,Aluno_0006,Administração,6,Noturno,Algoritmos,Djalma Batista,6.5,5.6,78.5,6.8,18,Não,EaD,6.0,Final
+7,Aluno_0007,Direito,4,Vespertino,Direito Digital,Djalma Batista,9.1,7.2,70.3,3.6,35,Não,Híbrido,8.2,Reprovado
+8,Aluno_0008,Ciência da Computação,10,Noturno,Direito Digital,Djalma Batista,8.0,4.2,70.2,15.6,35,Não,Híbrido,6.1,Reprovado
+9,Aluno_0009,Sistemas de Informação,3,Noturno,Direito Digital,Djalma Batista,7.5,7.2,71.2,4.5,54,Não,Presencial,7.4,Reprovado
+10,Aluno_0010,Sistemas de Informação,3,Noturno,Engenharia de Software,Djalma Batista,6.6,7.9,80.3,9.1,18,Não,Presencial,7.2,Aprovado
+11,Aluno_0011,Sistemas de Informação,3,Vespertino,Banco de Dados,Centro,7.4,7.6,65.3,3.9,42,Não,Híbrido,7.5,Reprovado
+12,Aluno_0012,Sistemas de Informação,6,Vespertino,Python,Djalma Batista,7.3,,71.2,3.5,22,Sim,EaD,7.8,Reprovado
+13,Aluno_0013,Engenharia de Software,8,Vespertino,Banco de Dados,Zona Leste,5.8,9.1,100.0,5.2,36,Não,Presencial,7.4,Aprovado
+14,Aluno_0014,Sistemas de Informação,7,Noturno,Algoritmos,Djalma Batista,5.4,7.0,91.4,6.3,39,Sim,Presencial,6.2,Final
+15,Aluno_0015,Ciência da Computação,4,Vespertino,Banco de Dados,Djalma Batista,5.0,9.0,63.6,10.7,31,Não,Presencial,7.0,Reprovado
+16,Aluno_0016,Administração,4,Noturno,Python,Djalma Batista,5.1,7.0,91.0,21.1,22,Sim,Presencial,6.0,Final
+17,Aluno_0017,Direito,10,Vespertino,Python,Djalma Batista,6.5,5.9,87.4,2.8,44,Não,EaD,6.2,Final
+18,Aluno_0018,Administração,2,Noturno,Algoritmos,Cidade Nova,6.2,6.4,76.4,7.8,51,Não,Híbrido,6.3,Final
+19,Aluno_0019,Sistemas de Informação,1,Matutino,Python,Djalma Batista,5.7,7.6,67.4,5.6,27,Sim,Híbrido,6.6,Reprovado
+20,Aluno_0020,Ciência da Computação,9,Noturno,Algoritmos,Zona Leste,5.5,8.9,65.7,1.4,24,Sim,Presencial,7.2,Reprovado
+21,Aluno_0021,Engenharia de Software,2,Noturno,Algoritmos,Zona Leste,7.3,7.1,81.4,12.1,40,Não,EaD,7.2,Aprovado
+22,Aluno_0022,Sistemas de Informação,8,Matutino,Python,Centro,9.3,6.0,,4.1,37,Não,Presencial,7.6,Reprovado
+23,Aluno_0023,Sistemas de Informação,9,Noturno,Estatística,Centro,6.8,9.6,94.5,4.0,52,Sim,EaD,8.2,Aprovado
+24,Aluno_0024,Engenharia de Software,4,Noturno,Algoritmos,Cidade Nova,6.7,4.7,98.7,12.1,23,Sim,EaD,5.7,Final
+25,Aluno_0025,Engenharia de Software,8,Noturno,Python,Djalma Batista,5.1,6.0,77.4,5.1,21,Não,Presencial,5.6,Final
+26,Aluno_0026,Ciência da Computação,9,Noturno,Estatística,Centro,6.4,8.6,95.1,10.1,45,Não,Presencial,7.5,Aprovado
+27,Aluno_0027,Ciência da Computação,10,Vespertino,Algoritmos,Djalma Batista,8.9,10.0,71.8,4.6,32,Sim,Presencial,9.4,Reprovado
+28,Aluno_0028,Ciência da Computação,10,Matutino,Estatística,Djalma Batista,8.7,7.9,67.3,7.1,22,Não,Presencial,8.3,Reprovado
+29,Aluno_0029,Sistemas de Informação,5,Vespertino,Engenharia de Software,Centro,8.5,7.5,94.5,4.9,30,Não,Híbrido,8.0,Aprovado
+30,Aluno_0030,Ciência da Computação,7,Matutino,Direito Digital,Centro,8.5,6.6,100.0,3.1,18,Sim,Presencial,7.6,Aprovado
+31,Aluno_0031,Sistemas de Informação,10,Matutino,Engenharia de Software,Zona Leste,7.6,8.0,100.0,7.3,41,Não,Presencial,7.8,Aprovado
+32,Aluno_0032,Sistemas de Informação,4,Matutino,Estatística,Djalma Batista,7.5,7.3,83.0,8.3,47,Sim,Presencial,7.4,Aprovado
+33,Aluno_0033,Administração,1,Noturno,Algoritmos,Cidade Nova,7.2,5.8,90.9,5.3,29,Sim,Híbrido,6.5,Final
+34,Aluno_0034,Engenharia de Software,3,Noturno,Python,Djalma Batista,6.0,6.6,82.7,1.2,34,Sim,Presencial,6.3,Final
+35,Aluno_0035,Direito,5,Matutino,Banco de Dados,Djalma Batista,7.0,5.6,99.1,2.4,33,Não,Presencial,6.3,Final
+36,Aluno_0036,Ciência da Computação,3,Matutino,Python,Djalma Batista,7.2,7.1,84.5,3.8,44,Não,EaD,7.2,Aprovado
+37,Aluno_0037,Ciência da Computação,7,Noturno,Banco de Dados,Djalma Batista,7.9,7.4,90.1,11.5,28,Não,Presencial,7.6,Aprovado
+38,Aluno_0038,Sistemas de Informação,9,Matutino,Banco de Dados,Djalma Batista,7.0,9.9,61.0,5.2,51,Sim,Presencial,8.4,Reprovado
+39,Aluno_0039,Sistemas de Informação,6,Matutino,Algoritmos,Centro,10.0,6.1,74.5,11.4,38,Sim,EaD,8.0,Reprovado
+40,Aluno_0040,Sistemas de Informação,10,Matutino,Estatística,Cidade Nova,4.6,6.8,90.2,9.4,17,Não,Presencial,5.7,Final
+41,Aluno_0041,Direito,1,Noturno,Python,Djalma Batista,8.2,,88.9,4.0,53,Sim,Híbrido,8.7,Aprovado
+42,Aluno_0042,Engenharia de Software,7,Noturno,Estatística,Centro,6.7,10.0,91.5,6.0,37,Sim,Presencial,8.4,Aprovado
+43,Aluno_0043,Engenharia de Software,3,Vespertino,Engenharia de Software,Cidade Nova,6.8,7.9,79.8,8.4,17,Não,Presencial,7.4,Aprovado
+44,Aluno_0044,Ciência da Computação,5,Noturno,Algoritmos,Cidade Nova,5.3,6.7,68.2,3.2,20,Não,Presencial,6.0,Reprovado
+45,Aluno_0045,Administração,10,Noturno,Algoritmos,Centro,8.6,6.3,77.1,8.0,48,Sim,EaD,7.4,Aprovado
+46,Aluno_0046,Sistemas de Informação,4,Noturno,Engenharia de Software,Djalma Batista,8.0,4.0,78.7,7.5,17,Não,Presencial,6.0,Final
+47,Aluno_0047,Ciência da Computação,10,Noturno,Python,Zona Leste,8.3,5.5,81.6,3.1,29,Sim,Presencial,6.9,Final
+48,Aluno_0048,Ciência da Computação,5,Noturno,Direito Digital,Centro,,7.3,63.5,7.1,33,Não,Presencial,7.2,Reprovado
+49,Aluno_0049,Direito,5,Vespertino,Engenharia de Software,Djalma Batista,6.2,6.8,74.0,5.0,28,Não,Presencial,6.5,Reprovado
+50,Aluno_0050,Administração,6,Matutino,Python,Djalma Batista,6.7,8.2,76.7,2.1,23,Não,EaD,7.4,Aprovado
+51,Aluno_0051,Sistemas de Informação,10,Noturno,Banco de Dados,Cidade Nova,7.6,6.8,44.4,3.8,19,Não,Híbrido,7.2,Reprovado
+52,Aluno_0052,Direito,10,Noturno,Algoritmos,Djalma Batista,3.2,5.9,90.5,3.7,42,Sim,EaD,4.6,Final
+53,Aluno_0053,Direito,6,Noturno,Python,Zona Leste,8.4,7.7,80.5,12.7,47,Sim,Presencial,8.0,Aprovado
+54,Aluno_0054,Sistemas de Informação,8,Noturno,Estatística,Djalma Batista,10.0,10.0,82.0,2.4,52,Sim,Presencial,10.0,Aprovado
+55,Aluno_0055,Ciência da Computação,8,Noturno,Estatística,Cidade Nova,7.7,6.6,70.3,3.5,42,Não,EaD,7.2,Reprovado
+56,Aluno_0056,Ciência da Computação,9,Matutino,Algoritmos,Djalma Batista,6.3,7.3,86.8,6.7,19,Não,Híbrido,6.8,Final
+57,Aluno_0057,Administração,8,Noturno,Engenharia de Software,Centro,6.5,8.5,65.5,5.5,44,Não,Presencial,7.5,Reprovado
+58,Aluno_0058,Sistemas de Informação,2,Noturno,Direito Digital,Zona Leste,8.1,6.1,67.9,4.7,33,Não,Presencial,7.1,Reprovado
+59,Aluno_0059,Direito,10,Noturno,Engenharia de Software,Djalma Batista,6.3,9.3,87.4,4.7,54,Sim,Presencial,7.8,Aprovado
+60,Aluno_0060,Ciência da Computação,1,Noturno,Python,Centro,8.4,4.4,83.4,9.0,46,Não,Presencial,6.4,Final
+61,Aluno_0061,Direito,10,Noturno,Engenharia de Software,Djalma Batista,6.5,6.4,58.8,3.2,18,Sim,Presencial,6.4,Reprovado
+62,Aluno_0062,Ciência da Computação,2,Matutino,Algoritmos,Djalma Batista,9.9,6.6,100.0,2.6,24,Sim,Híbrido,8.2,Aprovado
+63,Aluno_0063,Engenharia de Software,2,Noturno,Python,Djalma Batista,9.8,7.4,66.6,1.1,30,Não,Presencial,8.6,Reprovado
+64,Aluno_0064,Direito,3,Matutino,Banco de Dados,Cidade Nova,6.2,3.7,76.0,3.9,53,Não,Presencial,5.0,Final
+65,Aluno_0065,Direito,10,Noturno,Engenharia de Software,Djalma Batista,6.7,9.4,100.0,,51,Não,Presencial,8.0,Aprovado
+66,Aluno_0066,Direito,7,Noturno,Engenharia de Software,Djalma Batista,6.8,7.8,47.1,4.4,27,Não,Híbrido,7.3,Reprovado
+67,Aluno_0067,Sistemas de Informação,2,Vespertino,Direito Digital,Djalma Batista,6.8,9.0,52.4,1.5,31,Não,Presencial,7.9,Reprovado
+68,Aluno_0068,Direito,1,Noturno,Python,Centro,5.1,9.8,84.6,4.3,18,Sim,Presencial,7.4,Aprovado
+69,Aluno_0069,Sistemas de Informação,6,Noturno,Estatística,Cidade Nova,4.8,5.8,40.8,6.4,53,Não,Presencial,5.3,Reprovado
+70,Aluno_0070,Ciência da Computação,9,Noturno,Engenharia de Software,Djalma Batista,9.0,2.9,47.3,5.2,48,Sim,Presencial,6.0,Reprovado
+71,Aluno_0071,Engenharia de Software,3,Vespertino,Algoritmos,Djalma Batista,8.8,9.0,95.6,7.6,29,Sim,EaD,8.9,Aprovado
+72,Aluno_0072,Ciência da Computação,6,Noturno,Engenharia de Software,Zona Leste,8.7,6.6,71.9,9.9,33,Sim,Presencial,7.6,Reprovado
+73,Aluno_0073,Engenharia de Software,3,Noturno,Direito Digital,Djalma Batista,6.7,5.2,100.0,6.3,31,Sim,Presencial,6.0,Final
+74,Aluno_0074,Administração,1,Noturno,Banco de Dados,Zona Leste,10.0,8.1,62.5,5.3,49,Não,Presencial,9.0,Reprovado
+75,Aluno_0075,Sistemas de Informação,5,Matutino,Direito Digital,Zona Leste,6.8,10.0,73.2,6.8,32,Não,Presencial,8.4,Reprovado
+76,Aluno_0076,Engenharia de Software,10,Noturno,Engenharia de Software,Cidade Nova,8.4,6.9,86.1,6.4,29,Sim,Presencial,7.6,Aprovado
+77,Aluno_0077,Ciência da Computação,4,Noturno,Estatística,Djalma Batista,4.3,8.7,85.1,8.4,38,Sim,Híbrido,6.5,Final
+78,Aluno_0078,Sistemas de Informação,7,Vespertino,Engenharia de Software,Cidade Nova,6.4,5.4,74.2,5.5,39,Sim,Presencial,5.9,Reprovado
+79,Aluno_0079,Sistemas de Informação,6,Matutino,Python,Cidade Nova,6.5,4.2,68.3,2.3,52,Não,EaD,5.4,Reprovado
+80,Aluno_0080,Administração,10,Vespertino,Engenharia de Software,Centro,6.7,8.7,81.5,9.6,26,Sim,EaD,7.7,Aprovado
+81,Aluno_0081,Direito,7,Noturno,Estatística,Djalma Batista,,8.0,98.7,1.5,33,Não,Híbrido,6.2,Final
+82,Aluno_0082,Administração,5,Noturno,Python,Djalma Batista,8.1,6.3,89.4,8.0,46,Não,Presencial,7.2,Aprovado
+83,Aluno_0083,Administração,4,Noturno,Algoritmos,Djalma Batista,8.7,10.0,68.5,6.7,29,Não,Presencial,9.4,Reprovado
+84,Aluno_0084,Sistemas de Informação,7,Vespertino,Python,Centro,,4.1,63.1,6.8,46,Não,Presencial,4.8,Reprovado
+85,Aluno_0085,Ciência da Computação,7,Noturno,Direito Digital,Centro,4.7,5.0,67.6,5.6,46,Sim,Presencial,4.8,Reprovado
+86,Aluno_0086,Engenharia de Software,6,Matutino,Banco de Dados,Djalma Batista,,6.2,58.9,17.0,23,Não,Presencial,5.8,Reprovado
+87,Aluno_0087,Ciência da Computação,8,Vespertino,Direito Digital,Centro,7.7,6.5,80.2,3.4,26,Sim,Híbrido,7.1,Aprovado
+88,Aluno_0088,Ciência da Computação,4,Noturno,Python,Djalma Batista,5.7,9.6,90.2,5.0,51,Sim,Híbrido,7.6,Aprovado
+89,Aluno_0089,Ciência da Computação,10,Matutino,Algoritmos,Centro,6.6,7.2,76.9,10.4,18,Não,Presencial,6.9,Final
+90,Aluno_0090,Engenharia de Software,5,Noturno,Engenharia de Software,Zona Leste,4.9,6.8,100.0,6.9,46,Não,Presencial,5.8,Final
+91,Aluno_0091,Engenharia de Software,4,Matutino,Python,Djalma Batista,10.0,4.9,100.0,7.0,35,Não,Presencial,7.4,Aprovado
+92,Aluno_0092,Sistemas de Informação,1,Noturno,Direito Digital,Djalma Batista,6.9,8.9,82.6,10.6,53,Sim,Híbrido,7.9,Aprovado
+93,Aluno_0093,Ciência da Computação,8,Noturno,Python,Djalma Batista,8.9,5.2,88.5,11.3,19,Não,Presencial,7.0,Aprovado
+94,Aluno_0094,Engenharia de Software,1,Noturno,Python,Centro,7.7,4.9,64.5,8.2,41,Sim,Presencial,6.3,Reprovado
+95,Aluno_0095,Engenharia de Software,5,Matutino,Python,Cidade Nova,6.7,,72.6,14.9,50,Sim,Híbrido,6.6,Reprovado
+96,Aluno_0096,Sistemas de Informação,6,Matutino,Algoritmos,Zona Leste,6.6,7.4,97.1,6.9,38,Sim,Presencial,7.0,Aprovado
+97,Aluno_0097,Direito,6,Noturno,Estatística,Djalma Batista,5.5,5.9,69.3,8.2,54,Não,EaD,5.7,Reprovado
+98,Aluno_0098,Sistemas de Informação,5,Vespertino,Estatística,Zona Leste,6.0,8.3,100.0,9.2,30,Não,Presencial,7.2,Aprovado
+99,Aluno_0099,Ciência da Computação,3,Noturno,Python,Djalma Batista,5.0,6.6,94.7,11.0,18,Não,EaD,5.8,Final
+100,Aluno_0100,Direito,5,Noturno,Algoritmos,Centro,4.8,8.9,89.3,2.9,48,Sim,Presencial,6.8,Final
+101,Aluno_0101,Engenharia de Software,8,Matutino,Algoritmos,Djalma Batista,10.0,8.0,60.4,2.2,19,Sim,Presencial,9.0,Reprovado
+102,Aluno_0102,Sistemas de Informação,2,Vespertino,Python,Zona Leste,7.3,10.0,73.3,2.4,24,Sim,Híbrido,8.6,Reprovado
+103,Aluno_0103,Direito,6,Noturno,Direito Digital,Centro,9.4,6.3,87.7,3.9,42,Não,Presencial,7.8,Aprovado
+104,Aluno_0104,Engenharia de Software,9,Noturno,Direito Digital,Cidade Nova,5.4,8.5,63.2,9.4,48,Não,Presencial,7.0,Reprovado
+105,Aluno_0105,Direito,8,Noturno,Banco de Dados,Cidade Nova,4.5,4.1,75.1,4.6,27,Não,Presencial,4.3,Final
+106,Aluno_0106,Direito,8,Noturno,Python,Djalma Batista,5.0,10.0,89.3,5.0,17,Não,Presencial,7.5,Aprovado
+107,Aluno_0107,Engenharia de Software,8,Noturno,Banco de Dados,Djalma Batista,6.0,8.4,69.5,2.2,31,Sim,EaD,7.2,Reprovado
+108,Aluno_0108,Ciência da Computação,7,Matutino,Direito Digital,Zona Leste,6.9,6.6,65.3,2.3,20,Sim,Presencial,6.8,Reprovado
+109,Aluno_0109,Sistemas de Informação,8,Noturno,Direito Digital,Djalma Batista,6.5,6.7,51.0,3.9,20,Não,EaD,6.6,Reprovado
+110,Aluno_0110,Sistemas de Informação,6,Noturno,Python,Djalma Batista,5.4,6.7,72.2,3.3,44,Não,Presencial,6.1,Reprovado
+111,Aluno_0111,Ciência da Computação,2,Matutino,Banco de Dados,Centro,7.0,10.0,89.6,8.3,26,Não,Presencial,8.5,Aprovado
+112,Aluno_0112,Engenharia de Software,2,Vespertino,Banco de Dados,Centro,7.1,8.6,64.9,2.1,27,Não,EaD,7.8,Reprovado
+113,Aluno_0113,Engenharia de Software,8,Matutino,Python,Djalma Batista,8.1,6.3,78.3,2.5,39,Não,Presencial,7.2,Aprovado
+114,Aluno_0114,Ciência da Computação,1,Vespertino,Banco de Dados,Djalma Batista,9.4,5.0,74.6,6.4,19,Sim,Híbrido,7.2,Reprovado
+115,Aluno_0115,Sistemas de Informação,6,Noturno,Engenharia de Software,Djalma Batista,6.1,9.1,68.0,4.6,33,Sim,Presencial,7.6,Reprovado
+116,Aluno_0116,Ciência da Computação,6,Vespertino,Direito Digital,Djalma Batista,9.0,8.5,90.6,4.4,38,Não,Presencial,8.8,Aprovado
+117,Aluno_0117,Ciência da Computação,4,Matutino,Estatística,Zona Leste,6.9,8.3,100.0,9.4,43,Não,Presencial,7.6,Aprovado
+118,Aluno_0118,Direito,10,Vespertino,Algoritmos,Zona Leste,4.1,7.0,93.1,4.5,32,Sim,Presencial,5.6,Final
+119,Aluno_0119,Sistemas de Informação,3,Noturno,Banco de Dados,Centro,10.0,6.6,67.6,5.4,32,Sim,Presencial,8.3,Reprovado
+120,Aluno_0120,Engenharia de Software,3,Noturno,Banco de Dados,Djalma Batista,10.0,10.0,100.0,3.9,19,Não,Presencial,10.0,Aprovado
+121,Aluno_0121,Administração,1,Noturno,Algoritmos,Zona Leste,7.9,10.0,93.0,5.0,49,Não,EaD,9.0,Aprovado
+122,Aluno_0122,Sistemas de Informação,3,Matutino,Banco de Dados,Centro,7.0,,71.1,8.5,18,Sim,Presencial,7.6,Reprovado
+123,Aluno_0123,Ciência da Computação,4,Noturno,Algoritmos,Djalma Batista,6.3,8.7,66.4,4.2,43,Não,Presencial,7.5,Reprovado
+124,Aluno_0124,Sistemas de Informação,5,Noturno,Python,Zona Leste,6.0,7.5,94.8,6.0,31,Sim,Presencial,6.8,Final
+125,Aluno_0125,Engenharia de Software,3,Vespertino,Engenharia de Software,Cidade Nova,9.0,4.8,80.6,4.2,23,Não,Presencial,6.9,Final
+126,Aluno_0126,Engenharia de Software,6,Matutino,Engenharia de Software,Cidade Nova,6.8,5.4,65.2,1.1,25,Sim,Presencial,6.1,Reprovado
+127,Aluno_0127,Ciência da Computação,5,Matutino,Direito Digital,Cidade Nova,9.8,9.0,75.8,3.3,22,Não,Presencial,9.4,Aprovado
+128,Aluno_0128,Engenharia de Software,3,Matutino,Estatística,Djalma Batista,6.9,9.3,71.9,3.8,28,Não,Presencial,8.1,Reprovado
+129,Aluno_0129,Administração,6,Noturno,Banco de Dados,Djalma Batista,6.1,8.9,65.6,5.4,46,Sim,Presencial,7.5,Reprovado
+130,Aluno_0130,Sistemas de Informação,6,Noturno,Estatística,Cidade Nova,5.7,7.7,93.2,7.5,36,Não,Presencial,6.7,Final
+131,Aluno_0131,Sistemas de Informação,8,Noturno,Python,Djalma Batista,5.5,9.0,89.7,4.7,36,Sim,EaD,7.2,Aprovado
+132,Aluno_0132,Direito,2,Noturno,Engenharia de Software,Djalma Batista,7.7,,90.6,4.1,43,Não,EaD,7.4,Aprovado
+133,Aluno_0133,Engenharia de Software,1,Noturno,Python,Cidade Nova,4.5,8.2,90.4,6.2,36,Não,Presencial,6.4,Final
+134,Aluno_0134,Administração,4,Noturno,Python,Cidade Nova,5.3,6.8,64.3,5.3,23,Sim,Híbrido,6.0,Reprovado
+135,Aluno_0135,Engenharia de Software,7,Noturno,Banco de Dados,Centro,9.2,5.3,68.9,2.1,46,Sim,Presencial,7.2,Reprovado
+136,Aluno_0136,Direito,10,Matutino,Python,Cidade Nova,5.1,8.6,99.9,11.5,24,Não,Presencial,6.8,Final
+137,Aluno_0137,Ciência da Computação,3,Vespertino,Engenharia de Software,Cidade Nova,8.4,9.3,79.6,4.3,18,Sim,EaD,8.9,Aprovado
+138,Aluno_0138,Direito,3,Noturno,Estatística,Cidade Nova,3.1,10.0,55.9,,30,Não,EaD,6.6,Reprovado
+139,Aluno_0139,Administração,5,Matutino,Engenharia de Software,Djalma Batista,9.4,7.5,81.3,1.8,26,Sim,Híbrido,8.4,Aprovado
+140,Aluno_0140,Engenharia de Software,5,Vespertino,Banco de Dados,Djalma Batista,4.5,5.3,87.8,9.7,34,Não,Híbrido,4.9,Final
+141,Aluno_0141,Sistemas de Informação,10,Noturno,Engenharia de Software,Djalma Batista,5.2,6.5,85.9,4.0,34,Não,Presencial,5.8,Final
+142,Aluno_0142,Sistemas de Informação,3,Noturno,Algoritmos,Djalma Batista,8.0,6.9,63.9,12.2,32,Não,Híbrido,7.4,Reprovado
+143,Aluno_0143,Sistemas de Informação,9,Noturno,Estatística,Djalma Batista,7.3,7.4,100.0,5.1,21,Sim,Híbrido,7.4,Aprovado
+144,Aluno_0144,Sistemas de Informação,4,Noturno,Algoritmos,Djalma Batista,8.4,,55.5,7.2,47,Sim,Presencial,8.2,Reprovado
+145,Aluno_0145,Ciência da Computação,3,Noturno,Algoritmos,Centro,4.5,7.7,79.7,4.2,53,Sim,Híbrido,6.1,Final
+146,Aluno_0146,Engenharia de Software,2,Noturno,Direito Digital,Zona Leste,6.3,8.4,100.0,2.2,36,Sim,Presencial,7.4,Aprovado
+147,Aluno_0147,Engenharia de Software,10,Noturno,Banco de Dados,Djalma Batista,5.7,7.4,86.9,6.7,39,Não,EaD,6.6,Final
+148,Aluno_0148,Ciência da Computação,9,Noturno,Python,Cidade Nova,4.8,3.3,90.5,,48,Não,Presencial,4.0,Final
+149,Aluno_0149,Engenharia de Software,4,Noturno,Algoritmos,Cidade Nova,7.9,7.5,62.2,0.9,33,Sim,Presencial,7.7,Reprovado
+150,Aluno_0150,Sistemas de Informação,3,Noturno,Engenharia de Software,Djalma Batista,8.5,7.2,83.2,,29,Não,Presencial,7.8,Aprovado
+151,Aluno_0151,Sistemas de Informação,7,Noturno,Python,Zona Leste,6.2,8.0,77.5,9.6,29,Sim,Presencial,7.1,Aprovado
+152,Aluno_0152,Sistemas de Informação,8,Noturno,Engenharia de Software,Centro,9.5,6.5,61.0,4.0,33,Sim,EaD,8.0,Reprovado
+153,Aluno_0153,Engenharia de Software,2,Matutino,Engenharia de Software,Djalma Batista,5.4,7.5,91.0,7.8,31,Não,Presencial,6.4,Final
+154,Aluno_0154,Sistemas de Informação,7,Matutino,Python,Cidade Nova,9.5,,65.7,15.4,42,Não,Presencial,8.8,Reprovado
+155,Aluno_0155,Ciência da Computação,5,Matutino,Python,Djalma Batista,7.8,6.8,67.5,6.9,44,Não,Presencial,7.3,Reprovado
+156,Aluno_0156,Ciência da Computação,5,Noturno,Engenharia de Software,Cidade Nova,4.6,8.2,84.5,5.2,46,Sim,Presencial,6.4,Final
+157,Aluno_0157,Direito,3,Matutino,Banco de Dados,Djalma Batista,10.0,7.2,75.9,3.3,51,Sim,EaD,8.6,Aprovado
+158,Aluno_0158,Sistemas de Informação,5,Matutino,Estatística,Cidade Nova,6.0,7.4,80.5,6.2,38,Sim,Presencial,6.7,Final
+159,Aluno_0159,Engenharia de Software,2,Noturno,Direito Digital,Djalma Batista,9.0,2.1,74.9,6.7,26,Não,Presencial,5.6,Reprovado
+160,Aluno_0160,Engenharia de Software,4,Vespertino,Estatística,Centro,7.1,5.2,99.2,5.5,27,Não,Presencial,6.2,Final
+161,Aluno_0161,Direito,6,Noturno,Banco de Dados,Djalma Batista,7.5,5.2,64.1,7.9,54,Sim,Presencial,6.4,Reprovado
+162,Aluno_0162,Administração,1,Matutino,Direito Digital,Cidade Nova,8.4,7.5,71.0,2.4,49,Não,Presencial,8.0,Reprovado
+163,Aluno_0163,Sistemas de Informação,10,Noturno,Python,Cidade Nova,8.3,9.3,85.2,5.6,22,Não,Híbrido,8.8,Aprovado
+164,Aluno_0164,Sistemas de Informação,4,Noturno,Direito Digital,Centro,6.2,6.9,63.2,5.2,53,Não,EaD,6.6,Reprovado
+165,Aluno_0165,Administração,6,Noturno,Engenharia de Software,Centro,7.8,8.5,62.5,3.6,23,Sim,Presencial,8.2,Reprovado
+166,Aluno_0166,Ciência da Computação,9,Noturno,Estatística,Centro,7.6,8.2,80.1,6.6,28,Sim,Presencial,7.9,Aprovado
+167,Aluno_0167,Engenharia de Software,2,Noturno,Direito Digital,Zona Leste,7.2,7.3,91.0,2.2,23,Sim,Presencial,7.2,Aprovado
+168,Aluno_0168,Engenharia de Software,7,Matutino,Engenharia de Software,Centro,6.4,8.1,93.0,3.2,18,Sim,EaD,7.2,Aprovado
+169,Aluno_0169,Engenharia de Software,6,Matutino,Banco de Dados,Cidade Nova,7.2,7.5,79.4,4.3,17,Não,Presencial,7.4,Aprovado
+170,Aluno_0170,Administração,2,Matutino,Direito Digital,Cidade Nova,10.0,6.9,67.9,4.7,39,Não,EaD,8.4,Reprovado
+171,Aluno_0171,Administração,8,Noturno,Engenharia de Software,Djalma Batista,6.3,7.8,82.1,6.8,41,Não,Presencial,7.0,Aprovado
+172,Aluno_0172,Direito,7,Noturno,Banco de Dados,Djalma Batista,9.0,9.6,86.5,7.2,34,Não,Presencial,9.3,Aprovado
+173,Aluno_0173,Ciência da Computação,5,Noturno,Python,Djalma Batista,5.7,7.9,81.9,3.1,23,Sim,Híbrido,6.8,Final
+174,Aluno_0174,Direito,5,Matutino,Banco de Dados,Cidade Nova,5.2,7.5,96.5,12.1,19,Não,Presencial,6.4,Final
+175,Aluno_0175,Sistemas de Informação,7,Noturno,Banco de Dados,Djalma Batista,10.0,,62.8,6.5,45,Não,Híbrido,7.8,Reprovado
+176,Aluno_0176,Sistemas de Informação,9,Noturno,Estatística,Centro,7.8,9.5,67.5,14.1,26,Não,Presencial,8.6,Reprovado
+177,Aluno_0177,Administração,9,Noturno,Engenharia de Software,Cidade Nova,7.8,4.7,94.4,10.8,21,Sim,Presencial,6.2,Final
+178,Aluno_0178,Sistemas de Informação,9,Noturno,Direito Digital,Djalma Batista,7.9,4.2,55.9,3.7,50,Não,Presencial,6.1,Reprovado
+179,Aluno_0179,Sistemas de Informação,6,Matutino,Estatística,Centro,9.3,7.7,69.9,2.2,24,Sim,EaD,8.5,Reprovado
+180,Aluno_0180,Sistemas de Informação,10,Noturno,Algoritmos,Djalma Batista,7.5,5.6,67.0,1.9,30,Não,EaD,6.6,Reprovado
+181,Aluno_0181,Direito,6,Noturno,Banco de Dados,Djalma Batista,8.3,9.0,54.5,1.0,22,Sim,Presencial,8.6,Reprovado
+182,Aluno_0182,Engenharia de Software,3,Matutino,Algoritmos,Cidade Nova,4.9,4.2,75.2,6.0,17,Não,Presencial,4.6,Final
+183,Aluno_0183,Engenharia de Software,1,Matutino,Estatística,Djalma Batista,8.6,8.7,89.2,3.5,49,Não,Presencial,8.6,Aprovado
+184,Aluno_0184,Sistemas de Informação,7,Noturno,Engenharia de Software,Djalma Batista,6.4,8.5,80.3,7.4,27,Sim,Presencial,7.4,Aprovado
+185,Aluno_0185,Direito,4,Noturno,Estatística,Zona Leste,8.0,7.3,90.0,3.6,40,Sim,Presencial,7.6,Aprovado
+186,Aluno_0186,Direito,1,Noturno,Engenharia de Software,Djalma Batista,3.7,3.5,95.9,3.1,26,Sim,Presencial,3.6,Reprovado
+187,Aluno_0187,Ciência da Computação,8,Vespertino,Engenharia de Software,Zona Leste,7.9,4.2,72.2,7.2,39,Não,Presencial,6.1,Reprovado
+188,Aluno_0188,Ciência da Computação,6,Noturno,Python,Zona Leste,2.8,7.5,100.0,16.1,32,Não,Presencial,5.2,Final
+189,Aluno_0189,Sistemas de Informação,6,Noturno,Banco de Dados,Djalma Batista,6.3,6.7,72.8,10.7,53,Sim,Presencial,6.5,Reprovado
+190,Aluno_0190,Administração,2,Noturno,Estatística,Djalma Batista,3.7,8.3,74.8,7.2,32,Não,Presencial,6.0,Reprovado
+191,Aluno_0191,Engenharia de Software,1,Noturno,Engenharia de Software,Cidade Nova,7.9,7.0,67.4,10.1,47,Sim,Presencial,7.4,Reprovado
+192,Aluno_0192,Administração,2,Matutino,Estatística,Centro,6.9,,86.2,6.8,22,Não,Presencial,6.8,Final
+193,Aluno_0193,Ciência da Computação,4,Noturno,Estatística,Djalma Batista,5.4,3.0,73.6,,46,Não,EaD,4.2,Reprovado
+194,Aluno_0194,Direito,2,Vespertino,Engenharia de Software,Cidade Nova,9.4,8.5,76.8,8.0,53,Sim,Presencial,9.0,Aprovado
+195,Aluno_0195,Direito,1,Noturno,Direito Digital,Djalma Batista,5.2,6.0,74.9,7.1,17,Não,Presencial,5.6,Reprovado
+196,Aluno_0196,Direito,7,Noturno,Algoritmos,Zona Leste,1.3,6.4,74.6,9.0,41,Não,Presencial,3.8,Reprovado
+197,Aluno_0197,Administração,8,Noturno,Banco de Dados,Djalma Batista,7.7,5.3,80.4,3.5,37,Sim,EaD,6.5,Final
+198,Aluno_0198,Ciência da Computação,6,Noturno,Banco de Dados,Djalma Batista,3.6,4.5,71.2,9.7,51,Não,Presencial,4.0,Reprovado
+199,Aluno_0199,Sistemas de Informação,4,Noturno,Direito Digital,Djalma Batista,5.2,9.6,72.0,2.4,54,Sim,Híbrido,7.4,Reprovado
+200,Aluno_0200,Engenharia de Software,6,Noturno,Python,Zona Leste,5.9,8.5,94.1,5.8,21,Sim,Presencial,7.2,Aprovado
+201,Aluno_0201,Direito,3,Noturno,Direito Digital,Cidade Nova,4.2,8.5,73.6,5.2,28,Não,Presencial,6.4,Reprovado
+202,Aluno_0202,Engenharia de Software,8,Noturno,Python,Cidade Nova,5.9,6.7,83.8,0.7,21,Não,Presencial,6.3,Final
+203,Aluno_0203,Sistemas de Informação,10,Noturno,Python,Djalma Batista,4.3,4.1,64.7,3.8,25,Não,Presencial,4.2,Reprovado
+204,Aluno_0204,Engenharia de Software,2,Noturno,Direito Digital,Djalma Batista,7.1,10.0,71.3,7.0,25,Sim,Presencial,8.6,Reprovado
+205,Aluno_0205,Ciência da Computação,5,Matutino,Banco de Dados,Djalma Batista,4.6,7.8,59.5,3.8,51,Não,Presencial,6.2,Reprovado
+206,Aluno_0206,Ciência da Computação,1,Noturno,Algoritmos,Centro,6.9,7.3,100.0,11.5,17,Não,Presencial,7.1,Aprovado
+207,Aluno_0207,Engenharia de Software,6,Matutino,Banco de Dados,Centro,8.9,6.5,98.6,6.0,26,Não,Presencial,7.7,Aprovado
+208,Aluno_0208,Direito,2,Noturno,Banco de Dados,Centro,8.2,3.6,86.9,4.5,52,Sim,Presencial,5.9,Final
+209,Aluno_0209,Sistemas de Informação,4,Vespertino,Banco de Dados,Djalma Batista,6.7,9.0,100.0,9.8,53,Não,Presencial,7.8,Aprovado
+210,Aluno_0210,Ciência da Computação,6,Noturno,Direito Digital,Zona Leste,5.0,5.3,89.6,4.1,51,Não,Presencial,5.2,Final
+211,Aluno_0211,Sistemas de Informação,10,Noturno,Direito Digital,Djalma Batista,7.1,8.0,75.4,2.5,33,Não,EaD,7.6,Aprovado
+212,Aluno_0212,Sistemas de Informação,8,Noturno,Direito Digital,Zona Leste,5.5,8.4,83.6,7.4,29,Não,Presencial,7.0,Aprovado
+213,Aluno_0213,Direito,8,Noturno,Banco de Dados,Djalma Batista,7.2,7.7,98.4,2.2,22,Sim,Presencial,7.4,Aprovado
+214,Aluno_0214,Administração,6,Matutino,Algoritmos,Centro,3.7,7.9,64.8,3.9,53,Sim,Presencial,5.8,Reprovado
+215,Aluno_0215,Ciência da Computação,4,Vespertino,Python,Djalma Batista,8.3,9.4,60.4,5.4,48,Não,Presencial,8.9,Reprovado
+216,Aluno_0216,Direito,8,Matutino,Estatística,Djalma Batista,6.9,5.8,84.1,4.4,27,Não,Presencial,6.4,Final
+217,Aluno_0217,Administração,8,Noturno,Python,Centro,10.0,7.4,69.2,23.1,33,Sim,Presencial,8.7,Reprovado
+218,Aluno_0218,Direito,10,Noturno,Python,Djalma Batista,9.2,6.7,44.1,6.8,21,Sim,Presencial,8.0,Reprovado
+219,Aluno_0219,Sistemas de Informação,1,Noturno,Estatística,Djalma Batista,7.8,4.0,59.4,4.9,22,Não,Híbrido,5.9,Reprovado
+220,Aluno_0220,Administração,4,Matutino,Banco de Dados,Cidade Nova,6.6,7.6,73.3,3.6,26,Não,Presencial,7.1,Reprovado
+221,Aluno_0221,Ciência da Computação,4,Matutino,Algoritmos,Cidade Nova,5.5,9.2,78.7,6.5,49,Não,Presencial,7.4,Aprovado
+222,Aluno_0222,Ciência da Computação,7,Noturno,Algoritmos,Cidade Nova,8.5,9.4,79.2,1.2,46,Não,EaD,9.0,Aprovado
+223,Aluno_0223,Sistemas de Informação,7,Noturno,Python,Djalma Batista,6.4,10.0,100.0,10.0,37,Não,Presencial,8.2,Aprovado
+224,Aluno_0224,Ciência da Computação,8,Noturno,Estatística,Centro,8.9,4.1,74.9,1.7,33,Sim,Híbrido,6.5,Reprovado
+225,Aluno_0225,Sistemas de Informação,5,Noturno,Engenharia de Software,Centro,7.5,9.9,82.2,6.4,43,Não,Presencial,8.7,Aprovado
+226,Aluno_0226,Sistemas de Informação,7,Noturno,Banco de Dados,Djalma Batista,7.5,7.4,53.6,,19,Sim,Presencial,7.4,Reprovado
+227,Aluno_0227,Ciência da Computação,8,Matutino,Python,Centro,7.9,9.8,77.5,8.3,45,Não,EaD,8.9,Aprovado
+228,Aluno_0228,Direito,9,Noturno,Algoritmos,Djalma Batista,5.1,6.4,83.0,5.5,18,Não,Híbrido,5.8,Final
+229,Aluno_0229,Direito,3,Noturno,Direito Digital,Djalma Batista,5.0,6.2,57.4,7.0,45,Não,Presencial,5.6,Reprovado
+230,Aluno_0230,Ciência da Computação,3,Vespertino,Direito Digital,Djalma Batista,4.9,5.0,64.0,14.6,52,Não,Presencial,5.0,Reprovado
+231,Aluno_0231,Direito,4,Noturno,Estatística,Djalma Batista,8.7,8.4,85.3,8.4,50,Não,Presencial,8.6,Aprovado
+232,Aluno_0232,Direito,5,Matutino,Estatística,Cidade Nova,5.1,8.0,69.8,4.4,53,Não,Presencial,6.6,Reprovado
+233,Aluno_0233,Direito,10,Noturno,Python,Cidade Nova,5.3,5.2,76.5,2.8,17,Não,EaD,5.2,Final
+234,Aluno_0234,Sistemas de Informação,1,Matutino,Engenharia de Software,Zona Leste,7.8,3.4,86.1,4.8,42,Sim,Presencial,5.6,Final
+235,Aluno_0235,Direito,7,Noturno,Algoritmos,Cidade Nova,6.3,7.8,100.0,2.8,17,Não,Presencial,7.0,Aprovado
+236,Aluno_0236,Administração,9,Matutino,Python,Djalma Batista,6.1,8.0,74.7,5.7,20,Sim,EaD,7.0,Reprovado
+237,Aluno_0237,Direito,8,Noturno,Engenharia de Software,Zona Leste,6.0,5.4,100.0,5.8,30,Sim,Híbrido,5.7,Final
+238,Aluno_0238,Ciência da Computação,5,Noturno,Estatística,Zona Leste,2.6,5.1,48.6,1.9,34,Sim,Presencial,3.8,Reprovado
+239,Aluno_0239,Engenharia de Software,4,Noturno,Direito Digital,Djalma Batista,5.1,8.2,80.2,5.7,50,Não,EaD,6.6,Final
+240,Aluno_0240,Engenharia de Software,7,Noturno,Banco de Dados,Centro,8.9,,73.0,12.2,17,Não,Presencial,9.4,Reprovado
+241,Aluno_0241,Engenharia de Software,5,Noturno,Direito Digital,Zona Leste,5.8,6.3,70.0,5.5,38,Não,Presencial,6.0,Reprovado
+242,Aluno_0242,Sistemas de Informação,7,Matutino,Algoritmos,Centro,3.4,5.6,87.9,4.1,32,Sim,Presencial,4.5,Final
+243,Aluno_0243,Ciência da Computação,1,Vespertino,Algoritmos,Zona Leste,5.0,7.6,74.8,8.0,38,Sim,Presencial,6.3,Reprovado
+244,Aluno_0244,Direito,1,Matutino,Direito Digital,Djalma Batista,7.4,8.2,47.6,4.8,32,Não,EaD,7.8,Reprovado
+245,Aluno_0245,Direito,10,Noturno,Direito Digital,Djalma Batista,7.4,6.5,54.2,5.1,44,Sim,EaD,7.0,Reprovado
+246,Aluno_0246,Sistemas de Informação,3,Vespertino,Engenharia de Software,Djalma Batista,6.3,10.0,88.8,9.8,44,Não,Presencial,8.2,Aprovado
+247,Aluno_0247,Administração,2,Noturno,Python,Centro,5.6,,53.4,2.9,38,Não,EaD,7.1,Reprovado
+248,Aluno_0248,Ciência da Computação,2,Noturno,Estatística,Cidade Nova,4.3,6.5,89.2,8.9,22,Não,Presencial,5.4,Final
+249,Aluno_0249,Engenharia de Software,7,Matutino,Engenharia de Software,Zona Leste,7.5,4.4,79.9,1.9,41,Não,Presencial,6.0,Final
+250,Aluno_0250,Direito,10,Matutino,Banco de Dados,Djalma Batista,8.3,9.3,75.4,15.6,18,Sim,Presencial,8.8,Aprovado
+251,Aluno_0251,Direito,2,Vespertino,Direito Digital,Djalma Batista,9.1,9.1,76.8,3.0,23,Não,EaD,9.1,Aprovado
+252,Aluno_0252,Administração,4,Noturno,Banco de Dados,Cidade Nova,4.8,6.6,85.7,5.6,33,Não,Presencial,5.7,Final
+253,Aluno_0253,Ciência da Computação,2,Matutino,Banco de Dados,Centro,9.3,7.7,60.3,11.1,51,Não,Presencial,8.5,Reprovado
+254,Aluno_0254,Direito,6,Matutino,Engenharia de Software,Djalma Batista,6.7,6.8,78.6,1.9,36,Sim,Presencial,6.8,Final
+255,Aluno_0255,Sistemas de Informação,8,Noturno,Estatística,Centro,6.8,8.0,60.9,3.8,18,Não,Presencial,7.4,Reprovado
+256,Aluno_0256,Direito,10,Noturno,Algoritmos,Cidade Nova,8.4,5.4,80.5,8.5,23,Não,EaD,6.9,Final
+257,Aluno_0257,Direito,4,Vespertino,Python,Cidade Nova,5.8,5.1,87.7,1.4,48,Sim,Presencial,5.4,Final
+258,Aluno_0258,Engenharia de Software,5,Vespertino,Algoritmos,Centro,2.9,8.5,80.5,7.1,35,Não,Presencial,5.7,Final
+259,Aluno_0259,Sistemas de Informação,4,Matutino,Estatística,Djalma Batista,8.1,8.7,87.1,6.5,28,Sim,Híbrido,8.4,Aprovado
+260,Aluno_0260,Direito,3,Noturno,Algoritmos,Zona Leste,7.4,6.3,67.5,1.3,25,Não,Presencial,6.8,Reprovado
+261,Aluno_0261,Sistemas de Informação,5,Noturno,Direito Digital,Cidade Nova,6.2,5.8,77.1,1.1,43,Não,EaD,6.0,Final
+262,Aluno_0262,Sistemas de Informação,9,Matutino,Direito Digital,Djalma Batista,7.9,9.1,74.4,,30,Não,Presencial,8.5,Reprovado
+263,Aluno_0263,Direito,8,Matutino,Engenharia de Software,Djalma Batista,8.3,5.9,73.4,6.3,18,Não,Presencial,7.1,Reprovado
+264,Aluno_0264,Ciência da Computação,8,Noturno,Banco de Dados,Cidade Nova,4.1,7.2,66.0,3.3,37,Não,EaD,5.6,Reprovado
+265,Aluno_0265,Direito,8,Noturno,Estatística,Djalma Batista,6.8,7.0,71.5,1.8,20,Não,Presencial,6.9,Reprovado
+266,Aluno_0266,Ciência da Computação,8,Matutino,Estatística,Djalma Batista,2.7,4.6,61.3,9.2,37,Não,Híbrido,3.6,Reprovado
+267,Aluno_0267,Sistemas de Informação,7,Noturno,Algoritmos,Centro,6.6,7.4,52.6,11.6,38,Sim,Presencial,7.0,Reprovado
+268,Aluno_0268,Direito,8,Vespertino,Engenharia de Software,Djalma Batista,6.1,7.3,67.5,11.2,18,Não,Presencial,6.7,Reprovado
+269,Aluno_0269,Engenharia de Software,8,Vespertino,Algoritmos,Centro,7.7,7.7,87.4,5.6,33,Não,EaD,7.7,Aprovado
+270,Aluno_0270,Sistemas de Informação,8,Noturno,Algoritmos,Djalma Batista,4.9,7.4,81.5,1.2,35,Não,Presencial,6.2,Final
+271,Aluno_0271,Direito,10,Noturno,Estatística,Cidade Nova,6.0,10.0,59.2,1.7,40,Não,Presencial,8.0,Reprovado
+272,Aluno_0272,Engenharia de Software,7,Noturno,Algoritmos,Djalma Batista,1.0,9.1,71.9,2.4,36,Não,Híbrido,5.0,Reprovado
+273,Aluno_0273,Engenharia de Software,1,Noturno,Banco de Dados,Djalma Batista,7.8,7.2,88.4,3.4,54,Não,EaD,7.5,Aprovado
+274,Aluno_0274,Ciência da Computação,4,Noturno,Algoritmos,Djalma Batista,6.6,7.3,71.3,11.0,28,Não,Presencial,7.0,Reprovado
+275,Aluno_0275,Direito,4,Noturno,Banco de Dados,Zona Leste,7.0,10.0,56.7,6.6,41,Não,EaD,8.5,Reprovado
+276,Aluno_0276,Direito,5,Noturno,Estatística,Zona Leste,4.1,8.6,100.0,5.4,39,Não,Híbrido,6.4,Final
+277,Aluno_0277,Direito,10,Noturno,Engenharia de Software,Djalma Batista,7.5,5.0,75.5,5.8,50,Não,Presencial,6.2,Final
+278,Aluno_0278,Sistemas de Informação,6,Noturno,Direito Digital,Cidade Nova,9.8,8.7,60.5,8.9,48,Sim,Presencial,9.2,Reprovado
+279,Aluno_0279,Direito,4,Matutino,Banco de Dados,Centro,6.5,9.2,,8.6,40,Sim,Presencial,7.8,Aprovado
+280,Aluno_0280,Engenharia de Software,2,Noturno,Engenharia de Software,Zona Leste,8.0,9.9,76.7,,41,Não,Híbrido,9.0,Aprovado
+281,Aluno_0281,Direito,6,Noturno,Engenharia de Software,Djalma Batista,,6.4,54.9,10.0,19,Sim,EaD,5.8,Reprovado
+282,Aluno_0282,Ciência da Computação,8,Noturno,Banco de Dados,Cidade Nova,6.7,6.3,79.4,3.9,41,Não,EaD,6.5,Final
+283,Aluno_0283,Direito,8,Matutino,Estatística,Djalma Batista,4.0,5.5,92.8,8.3,44,Não,Híbrido,4.8,Final
+284,Aluno_0284,Direito,7,Noturno,Python,Djalma Batista,8.2,7.6,74.5,9.8,28,Sim,Presencial,7.9,Reprovado
+285,Aluno_0285,Sistemas de Informação,6,Noturno,Engenharia de Software,Zona Leste,7.1,8.3,47.1,8.9,42,Não,Presencial,7.7,Reprovado
+286,Aluno_0286,Ciência da Computação,2,Vespertino,Engenharia de Software,Centro,4.6,6.2,83.1,2.7,24,Não,Presencial,5.4,Final
+287,Aluno_0287,Administração,7,Noturno,Estatística,Djalma Batista,5.4,6.9,87.0,4.6,21,Não,Presencial,6.2,Final
+288,Aluno_0288,Sistemas de Informação,5,Matutino,Estatística,Djalma Batista,6.9,3.6,69.2,1.3,27,Sim,EaD,5.2,Reprovado
+289,Aluno_0289,Administração,6,Matutino,Algoritmos,Cidade Nova,8.5,9.7,69.3,2.1,51,Sim,EaD,9.1,Reprovado
+290,Aluno_0290,Engenharia de Software,10,Noturno,Estatística,Centro,9.5,,100.0,4.4,43,Não,Presencial,7.0,Aprovado
+291,Aluno_0291,Engenharia de Software,8,Noturno,Engenharia de Software,Djalma Batista,6.6,7.7,68.1,5.5,54,Sim,Presencial,7.2,Reprovado
+292,Aluno_0292,Sistemas de Informação,8,Noturno,Banco de Dados,Zona Leste,4.3,7.5,61.2,6.6,35,Não,EaD,5.9,Reprovado
+293,Aluno_0293,Sistemas de Informação,3,Matutino,Python,Djalma Batista,7.2,7.2,78.4,2.1,48,Não,Presencial,7.2,Aprovado
+294,Aluno_0294,Administração,7,Noturno,Algoritmos,Djalma Batista,10.0,7.2,86.6,4.8,44,Sim,Presencial,8.6,Aprovado
+295,Aluno_0295,Ciência da Computação,1,Matutino,Banco de Dados,Zona Leste,3.9,5.4,86.0,9.1,52,Não,Presencial,4.6,Final
+296,Aluno_0296,Direito,1,Matutino,Python,Djalma Batista,5.1,6.5,,6.1,34,Não,Presencial,5.8,Reprovado
+297,Aluno_0297,Ciência da Computação,7,Matutino,Python,Djalma Batista,7.9,8.7,68.1,7.3,26,Sim,Híbrido,8.3,Reprovado
+298,Aluno_0298,Sistemas de Informação,10,Noturno,Python,Centro,7.1,9.3,95.3,5.6,48,Sim,Presencial,8.2,Aprovado
+299,Aluno_0299,Sistemas de Informação,9,Noturno,Direito Digital,Cidade Nova,5.8,6.4,82.9,3.2,34,Sim,EaD,6.1,Final
+300,Aluno_0300,Engenharia de Software,7,Noturno,Banco de Dados,Djalma Batista,7.2,4.4,59.5,2.5,28,Sim,Presencial,5.8,Reprovado
+301,Aluno_0301,Administração,10,Noturno,Algoritmos,Zona Leste,8.6,5.8,96.6,4.6,24,Não,Presencial,7.2,Aprovado
+302,Aluno_0302,Ciência da Computação,5,Matutino,Algoritmos,Cidade Nova,6.6,10.0,92.5,7.8,49,Sim,Presencial,8.3,Aprovado
+303,Aluno_0303,Ciência da Computação,8,Noturno,Python,Djalma Batista,6.5,5.9,73.6,2.9,54,Sim,Presencial,6.2,Reprovado
+304,Aluno_0304,Ciência da Computação,2,Noturno,Banco de Dados,Cidade Nova,7.9,6.9,91.2,3.8,30,Não,Presencial,7.4,Aprovado
+305,Aluno_0305,Engenharia de Software,9,Noturno,Direito Digital,Djalma Batista,6.3,9.5,100.0,5.4,18,Não,Presencial,7.9,Aprovado
+306,Aluno_0306,Ciência da Computação,6,Matutino,Python,Djalma Batista,8.9,6.2,62.2,,25,Sim,Presencial,7.6,Reprovado
+307,Aluno_0307,Direito,9,Noturno,Estatística,Cidade Nova,10.0,6.8,86.3,6.4,21,Não,Presencial,8.4,Aprovado
+308,Aluno_0308,Engenharia de Software,2,Noturno,Algoritmos,Zona Leste,5.2,8.5,100.0,6.3,50,Sim,Presencial,6.8,Final
+309,Aluno_0309,Engenharia de Software,3,Noturno,Engenharia de Software,Djalma Batista,4.5,10.0,87.8,4.2,35,Não,Presencial,7.2,Aprovado
+310,Aluno_0310,Sistemas de Informação,8,Noturno,Python,Djalma Batista,7.5,6.0,66.7,13.1,23,Não,Presencial,6.8,Reprovado
+311,Aluno_0311,Administração,1,Matutino,Estatística,Centro,4.5,9.5,81.6,5.6,33,Não,Presencial,7.0,Aprovado
+312,Aluno_0312,Sistemas de Informação,10,Noturno,Algoritmos,Djalma Batista,4.5,6.6,98.5,9.3,42,Não,Híbrido,5.6,Final
+313,Aluno_0313,Sistemas de Informação,7,Matutino,Direito Digital,Djalma Batista,3.1,5.6,62.8,2.6,43,Não,Híbrido,4.4,Reprovado
+314,Aluno_0314,Engenharia de Software,7,Noturno,Banco de Dados,Djalma Batista,6.1,7.5,77.5,4.9,44,Não,EaD,6.8,Final
+315,Aluno_0315,Engenharia de Software,1,Noturno,Algoritmos,Cidade Nova,6.7,5.1,74.3,21.5,36,Não,EaD,5.9,Reprovado
+316,Aluno_0316,Ciência da Computação,9,Matutino,Banco de Dados,Djalma Batista,5.9,7.9,68.5,,22,Sim,Presencial,6.9,Reprovado
+317,Aluno_0317,Ciência da Computação,8,Noturno,Banco de Dados,Djalma Batista,9.3,10.0,81.6,4.1,24,Não,Presencial,9.6,Aprovado
+318,Aluno_0318,Direito,4,Noturno,Direito Digital,Cidade Nova,9.2,9.0,76.5,9.5,48,Não,EaD,9.1,Aprovado
+319,Aluno_0319,Sistemas de Informação,10,Matutino,Direito Digital,Cidade Nova,10.0,6.9,87.7,4.4,35,Não,Presencial,8.4,Aprovado
+320,Aluno_0320,Direito,5,Noturno,Python,Centro,6.9,8.9,95.1,4.6,48,Não,Presencial,7.9,Aprovado
+321,Aluno_0321,Engenharia de Software,2,Vespertino,Python,Djalma Batista,8.9,5.5,58.9,1.4,35,Não,EaD,7.2,Reprovado
+322,Aluno_0322,Ciência da Computação,9,Noturno,Algoritmos,Centro,7.4,5.8,79.0,1.0,40,Não,EaD,6.6,Final
+323,Aluno_0323,Ciência da Computação,6,Noturno,Direito Digital,Djalma Batista,7.2,7.0,77.2,6.8,40,Sim,Presencial,7.1,Aprovado
+324,Aluno_0324,Sistemas de Informação,3,Noturno,Estatística,Djalma Batista,6.0,7.2,81.1,3.9,33,Sim,Presencial,6.6,Final
+325,Aluno_0325,Direito,7,Noturno,Algoritmos,Cidade Nova,2.7,4.9,77.8,7.5,34,Não,Presencial,3.8,Reprovado
+326,Aluno_0326,Engenharia de Software,9,Noturno,Engenharia de Software,Djalma Batista,7.9,6.6,63.3,6.5,28,Não,EaD,7.2,Reprovado
+327,Aluno_0327,Ciência da Computação,3,Noturno,Banco de Dados,Djalma Batista,8.9,6.9,99.8,,39,Não,Presencial,7.9,Aprovado
+328,Aluno_0328,Engenharia de Software,2,Matutino,Banco de Dados,Djalma Batista,4.1,9.7,100.0,4.6,34,Não,Híbrido,6.9,Final
+329,Aluno_0329,Administração,7,Noturno,Python,Djalma Batista,6.8,4.9,86.2,3.0,32,Não,EaD,5.8,Final
+330,Aluno_0330,Ciência da Computação,7,Noturno,Estatística,Djalma Batista,8.6,4.7,87.0,,32,Não,Presencial,6.6,Final
+331,Aluno_0331,Administração,4,Matutino,Direito Digital,Zona Leste,6.2,7.4,80.0,1.8,52,Sim,Presencial,6.8,Final
+332,Aluno_0332,Ciência da Computação,9,Noturno,Direito Digital,Djalma Batista,8.9,9.1,92.5,5.2,39,Não,Presencial,9.0,Aprovado
+333,Aluno_0333,Sistemas de Informação,8,Noturno,Python,Djalma Batista,6.5,8.0,41.4,12.9,38,Sim,Híbrido,7.2,Reprovado
+334,Aluno_0334,Sistemas de Informação,1,Noturno,Engenharia de Software,Djalma Batista,5.9,7.6,77.9,16.3,49,Não,Presencial,6.8,Final
+335,Aluno_0335,Ciência da Computação,1,Matutino,Algoritmos,Zona Leste,9.1,6.6,69.4,3.0,40,Sim,EaD,7.8,Reprovado
+336,Aluno_0336,Sistemas de Informação,5,Matutino,Algoritmos,Centro,,8.2,80.2,8.7,36,Não,Presencial,6.6,Final
+337,Aluno_0337,Sistemas de Informação,6,Vespertino,Estatística,Djalma Batista,5.5,8.5,94.4,11.0,49,Sim,Presencial,7.0,Aprovado
+338,Aluno_0338,Administração,3,Noturno,Python,Zona Leste,5.2,6.7,78.3,3.5,47,Sim,Híbrido,6.0,Final
+339,Aluno_0339,Direito,9,Matutino,Python,Djalma Batista,4.7,5.5,72.6,8.0,24,Não,Presencial,5.1,Reprovado
+340,Aluno_0340,Direito,10,Noturno,Engenharia de Software,Djalma Batista,7.1,5.5,57.0,10.0,26,Não,EaD,6.3,Reprovado
+341,Aluno_0341,Sistemas de Informação,6,Matutino,Algoritmos,Djalma Batista,5.9,8.6,76.4,1.8,17,Sim,Presencial,7.2,Aprovado
+342,Aluno_0342,Sistemas de Informação,4,Noturno,Python,Djalma Batista,7.7,4.5,88.1,6.9,37,Não,EaD,6.1,Final
+343,Aluno_0343,Sistemas de Informação,7,Vespertino,Direito Digital,Djalma Batista,3.7,10.0,65.4,2.6,41,Não,EaD,6.8,Reprovado
+344,Aluno_0344,Direito,8,Noturno,Estatística,Cidade Nova,4.8,6.3,47.9,7.1,48,Sim,Híbrido,5.6,Reprovado
+345,Aluno_0345,Administração,9,Matutino,Algoritmos,Djalma Batista,6.9,7.6,100.0,5.3,26,Sim,Presencial,7.2,Aprovado
+346,Aluno_0346,Ciência da Computação,6,Noturno,Engenharia de Software,Centro,9.4,8.3,,1.5,25,Sim,Presencial,8.9,Aprovado
+347,Aluno_0347,Sistemas de Informação,6,Matutino,Estatística,Djalma Batista,7.5,5.9,74.7,3.3,36,Não,Presencial,6.7,Reprovado
+348,Aluno_0348,Engenharia de Software,8,Noturno,Banco de Dados,Djalma Batista,5.7,6.3,98.9,3.1,36,Sim,Presencial,6.0,Final
+349,Aluno_0349,Ciência da Computação,5,Noturno,Direito Digital,Djalma Batista,4.1,7.3,80.1,,23,Sim,Presencial,5.7,Final
+350,Aluno_0350,Ciência da Computação,3,Matutino,Engenharia de Software,Zona Leste,5.6,5.6,98.0,5.0,27,Sim,Presencial,5.6,Final
+351,Aluno_0351,Engenharia de Software,3,Noturno,Estatística,Djalma Batista,6.7,5.3,96.7,2.9,37,Não,Presencial,6.0,Final
+352,Aluno_0352,Direito,6,Noturno,Python,Cidade Nova,2.6,5.4,58.9,7.6,54,Não,EaD,4.0,Reprovado
+353,Aluno_0353,Sistemas de Informação,2,Matutino,Banco de Dados,Djalma Batista,4.6,9.2,84.9,4.4,35,Não,EaD,6.9,Final
+354,Aluno_0354,Sistemas de Informação,6,Noturno,Engenharia de Software,Djalma Batista,5.5,7.8,100.0,6.0,31,Não,Híbrido,6.6,Final
+355,Aluno_0355,Administração,6,Matutino,Python,Djalma Batista,6.3,5.8,63.0,4.8,22,Não,Presencial,6.0,Reprovado
+356,Aluno_0356,Sistemas de Informação,8,Noturno,Direito Digital,Djalma Batista,6.7,8.6,63.2,15.9,26,Sim,Presencial,7.6,Reprovado
+357,Aluno_0357,Sistemas de Informação,7,Noturno,Banco de Dados,Djalma Batista,5.7,5.8,65.7,6.0,32,Não,Presencial,5.8,Reprovado
+358,Aluno_0358,Sistemas de Informação,8,Matutino,Algoritmos,Djalma Batista,7.7,3.8,91.4,8.1,27,Não,Presencial,5.8,Final
+359,Aluno_0359,Sistemas de Informação,9,Noturno,Python,Cidade Nova,7.0,8.3,82.3,9.8,51,Não,Presencial,7.6,Aprovado
+360,Aluno_0360,Ciência da Computação,6,Noturno,Estatística,Djalma Batista,6.1,9.9,49.0,5.1,24,Não,Híbrido,8.0,Reprovado
+361,Aluno_0361,Direito,3,Noturno,Engenharia de Software,Centro,8.0,8.0,83.1,11.1,44,Não,Presencial,8.0,Aprovado
+362,Aluno_0362,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,7.8,3.9,74.2,8.8,19,Sim,Presencial,5.8,Reprovado
+363,Aluno_0363,Ciência da Computação,3,Noturno,Python,Centro,4.2,7.1,76.3,1.1,18,Sim,Presencial,5.6,Final
+364,Aluno_0364,Engenharia de Software,1,Noturno,Algoritmos,Centro,6.7,6.6,65.4,3.2,30,Não,Presencial,6.6,Reprovado
+365,Aluno_0365,Engenharia de Software,5,Vespertino,Engenharia de Software,Djalma Batista,8.4,7.7,83.2,5.1,45,Não,Presencial,8.0,Aprovado
+366,Aluno_0366,Direito,4,Noturno,Engenharia de Software,Djalma Batista,8.7,5.7,93.8,5.5,19,Sim,Presencial,7.2,Aprovado
+367,Aluno_0367,Direito,9,Noturno,Python,Cidade Nova,7.5,6.5,68.4,3.6,17,Não,Presencial,7.0,Reprovado
+368,Aluno_0368,Sistemas de Informação,9,Noturno,Algoritmos,Zona Leste,6.4,4.7,52.8,6.8,31,Não,Presencial,5.6,Reprovado
+369,Aluno_0369,Direito,5,Noturno,Direito Digital,Djalma Batista,7.6,7.5,73.5,4.4,36,Sim,Presencial,7.6,Reprovado
+370,Aluno_0370,Ciência da Computação,10,Noturno,Direito Digital,Djalma Batista,8.3,4.7,89.3,5.2,38,Não,EaD,6.5,Final
+371,Aluno_0371,Administração,4,Noturno,Banco de Dados,Zona Leste,7.0,7.8,71.7,4.2,50,Sim,Presencial,7.4,Reprovado
+372,Aluno_0372,Ciência da Computação,7,Noturno,Python,Djalma Batista,7.2,5.8,55.5,4.6,49,Não,Presencial,6.5,Reprovado
+373,Aluno_0373,Administração,6,Vespertino,Banco de Dados,Centro,6.4,1.8,89.4,2.7,25,Não,Híbrido,4.1,Final
+374,Aluno_0374,Direito,4,Noturno,Direito Digital,Djalma Batista,4.4,8.4,99.2,6.5,19,Sim,Presencial,6.4,Final
+375,Aluno_0375,Sistemas de Informação,10,Noturno,Engenharia de Software,Djalma Batista,6.5,7.9,78.3,7.4,18,Não,Presencial,7.2,Aprovado
+376,Aluno_0376,Engenharia de Software,2,Matutino,Banco de Dados,Centro,5.6,9.4,53.9,2.1,20,Não,Híbrido,7.5,Reprovado
+377,Aluno_0377,Administração,1,Noturno,Algoritmos,Centro,5.6,3.5,73.2,3.6,32,Sim,Presencial,4.6,Reprovado
+378,Aluno_0378,Direito,4,Noturno,Estatística,Djalma Batista,9.4,6.0,80.3,5.4,49,Sim,EaD,7.7,Aprovado
+379,Aluno_0379,Sistemas de Informação,4,Vespertino,Direito Digital,Centro,8.5,7.3,,12.5,25,Sim,Híbrido,7.9,Reprovado
+380,Aluno_0380,Direito,1,Matutino,Direito Digital,Cidade Nova,3.8,8.1,86.8,2.7,54,Não,Presencial,5.9,Final
+381,Aluno_0381,Ciência da Computação,6,Matutino,Algoritmos,Centro,4.8,4.6,64.4,4.3,34,Sim,Híbrido,4.7,Reprovado
+382,Aluno_0382,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,6.1,7.8,,3.9,32,Não,Presencial,7.0,Aprovado
+383,Aluno_0383,Ciência da Computação,1,Vespertino,Python,Centro,5.6,6.1,74.6,6.3,24,Sim,Presencial,5.8,Reprovado
+384,Aluno_0384,Sistemas de Informação,1,Matutino,Engenharia de Software,Cidade Nova,7.4,3.9,87.2,2.6,39,Sim,EaD,5.6,Final
+385,Aluno_0385,Direito,1,Noturno,Estatística,Cidade Nova,4.6,5.8,77.8,3.5,52,Não,Híbrido,5.2,Final
+386,Aluno_0386,Ciência da Computação,8,Vespertino,Python,Centro,8.5,8.0,75.1,15.7,19,Não,EaD,8.2,Aprovado
+387,Aluno_0387,Direito,10,Matutino,Python,Djalma Batista,6.7,4.0,66.0,1.2,31,Não,Presencial,5.4,Reprovado
+388,Aluno_0388,Sistemas de Informação,8,Vespertino,Algoritmos,Cidade Nova,6.2,,78.5,5.1,54,Não,Presencial,7.2,Aprovado
+389,Aluno_0389,Ciência da Computação,2,Noturno,Banco de Dados,Cidade Nova,6.8,7.6,74.1,5.2,49,Não,Presencial,7.2,Reprovado
+390,Aluno_0390,Sistemas de Informação,7,Noturno,Direito Digital,Djalma Batista,6.0,6.7,64.9,4.0,34,Sim,Presencial,6.4,Reprovado
+391,Aluno_0391,Sistemas de Informação,8,Vespertino,Direito Digital,Djalma Batista,3.1,4.3,80.4,9.7,39,Sim,Híbrido,3.7,Reprovado
+392,Aluno_0392,Sistemas de Informação,8,Noturno,Algoritmos,Djalma Batista,6.8,4.5,83.5,5.9,19,Não,Presencial,5.6,Final
+393,Aluno_0393,Sistemas de Informação,10,Noturno,Banco de Dados,Cidade Nova,6.2,6.4,72.9,13.2,46,Não,Presencial,6.3,Reprovado
+394,Aluno_0394,Engenharia de Software,7,Vespertino,Algoritmos,Djalma Batista,5.1,5.2,92.0,1.5,33,Não,Presencial,5.2,Final
+395,Aluno_0395,Ciência da Computação,5,Vespertino,Direito Digital,Centro,8.8,6.5,82.0,6.8,48,Sim,Presencial,7.6,Aprovado
+396,Aluno_0396,Ciência da Computação,1,Matutino,Python,Zona Leste,8.0,8.6,58.7,6.2,23,Sim,EaD,8.3,Reprovado
+397,Aluno_0397,Ciência da Computação,9,Noturno,Engenharia de Software,Cidade Nova,10.0,6.6,98.1,7.2,30,Sim,Presencial,8.3,Aprovado
+398,Aluno_0398,Direito,7,Noturno,Banco de Dados,Zona Leste,8.3,6.6,89.5,9.2,31,Não,EaD,7.4,Aprovado
+399,Aluno_0399,Administração,2,Matutino,Estatística,Zona Leste,5.6,6.6,93.0,11.3,28,Não,Presencial,6.1,Final
+400,Aluno_0400,Ciência da Computação,6,Noturno,Estatística,Djalma Batista,5.2,8.8,84.0,14.6,24,Sim,Presencial,7.0,Aprovado
+401,Aluno_0401,Ciência da Computação,2,Matutino,Python,Centro,5.9,9.3,42.9,2.2,32,Não,EaD,7.6,Reprovado
+402,Aluno_0402,Sistemas de Informação,1,Noturno,Algoritmos,Djalma Batista,5.6,7.8,94.4,6.9,50,Não,Presencial,6.7,Final
+403,Aluno_0403,Administração,7,Noturno,Algoritmos,Zona Leste,7.0,7.3,78.9,10.0,40,Sim,Presencial,7.2,Aprovado
+404,Aluno_0404,Sistemas de Informação,2,Vespertino,Direito Digital,Djalma Batista,4.0,7.5,83.3,5.0,45,Não,EaD,5.8,Final
+405,Aluno_0405,Ciência da Computação,2,Noturno,Python,Zona Leste,8.0,9.5,86.1,2.8,32,Não,Presencial,8.8,Aprovado
+406,Aluno_0406,Ciência da Computação,5,Matutino,Direito Digital,Centro,7.0,7.9,100.0,2.8,21,Sim,Presencial,7.4,Aprovado
+407,Aluno_0407,Ciência da Computação,5,Noturno,Direito Digital,Cidade Nova,7.8,9.7,69.8,3.4,21,Não,EaD,8.8,Reprovado
+408,Aluno_0408,Sistemas de Informação,7,Matutino,Estatística,Djalma Batista,4.7,6.4,70.2,6.5,46,Sim,Híbrido,5.6,Reprovado
+409,Aluno_0409,Direito,1,Noturno,Direito Digital,Djalma Batista,7.2,4.8,65.2,3.5,21,Não,Presencial,6.0,Reprovado
+410,Aluno_0410,Sistemas de Informação,8,Matutino,Direito Digital,Cidade Nova,9.1,6.0,62.0,5.4,29,Não,EaD,7.6,Reprovado
+411,Aluno_0411,Engenharia de Software,3,Noturno,Estatística,Djalma Batista,5.3,6.1,62.2,1.8,51,Não,Presencial,5.7,Reprovado
+412,Aluno_0412,Sistemas de Informação,4,Vespertino,Algoritmos,Cidade Nova,5.2,9.8,50.2,1.8,41,Sim,Presencial,7.5,Reprovado
+413,Aluno_0413,Sistemas de Informação,9,Noturno,Banco de Dados,Djalma Batista,8.1,8.4,84.4,7.6,30,Sim,Presencial,8.2,Aprovado
+414,Aluno_0414,Administração,4,Vespertino,Engenharia de Software,Cidade Nova,5.1,6.0,100.0,0.6,42,Não,Híbrido,5.6,Final
+415,Aluno_0415,Sistemas de Informação,10,Noturno,Direito Digital,Djalma Batista,6.4,8.5,100.0,11.7,34,Sim,Presencial,7.4,Aprovado
+416,Aluno_0416,Direito,5,Matutino,Banco de Dados,Centro,9.5,6.9,65.2,6.6,36,Não,Presencial,8.2,Reprovado
+417,Aluno_0417,Engenharia de Software,7,Matutino,Estatística,Cidade Nova,,9.9,73.9,2.1,50,Sim,Presencial,7.6,Reprovado
+418,Aluno_0418,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,9.6,6.5,96.5,6.3,23,Não,Híbrido,8.0,Aprovado
+419,Aluno_0419,Administração,1,Matutino,Engenharia de Software,Djalma Batista,6.2,4.5,84.5,4.0,26,Não,Presencial,5.4,Final
+420,Aluno_0420,Sistemas de Informação,9,Matutino,Banco de Dados,Djalma Batista,4.8,6.8,80.0,2.8,31,Não,Presencial,5.8,Final
+421,Aluno_0421,Direito,4,Noturno,Banco de Dados,Centro,7.9,6.5,74.1,10.3,33,Sim,Híbrido,7.2,Reprovado
+422,Aluno_0422,Sistemas de Informação,9,Noturno,Banco de Dados,Centro,7.0,4.8,95.7,7.2,27,Não,Presencial,5.9,Final
+423,Aluno_0423,Direito,6,Vespertino,Banco de Dados,Cidade Nova,6.8,8.1,61.9,3.6,50,Sim,Presencial,7.4,Reprovado
+424,Aluno_0424,Sistemas de Informação,1,Noturno,Python,Centro,5.4,9.5,85.2,3.1,43,Não,Presencial,7.4,Aprovado
+425,Aluno_0425,Engenharia de Software,3,Noturno,Direito Digital,Djalma Batista,7.0,5.2,83.2,13.7,37,Sim,Híbrido,6.1,Final
+426,Aluno_0426,Direito,2,Vespertino,Estatística,Djalma Batista,3.1,8.8,78.7,6.7,47,Não,Híbrido,6.0,Final
+427,Aluno_0427,Administração,9,Noturno,Engenharia de Software,Djalma Batista,7.2,6.1,89.8,5.5,20,Não,Presencial,6.6,Final
+428,Aluno_0428,Administração,1,Noturno,Estatística,Djalma Batista,9.1,7.1,78.5,3.1,33,Não,Presencial,8.1,Aprovado
+429,Aluno_0429,Direito,9,Noturno,Python,Zona Leste,3.6,6.9,70.0,3.1,36,Não,Presencial,5.2,Reprovado
+430,Aluno_0430,Administração,9,Vespertino,Python,Zona Leste,6.1,7.1,79.4,15.8,41,Sim,Presencial,6.6,Final
+431,Aluno_0431,Sistemas de Informação,8,Noturno,Python,Djalma Batista,5.2,7.9,54.1,7.8,39,Não,EaD,6.6,Reprovado
+432,Aluno_0432,Ciência da Computação,8,Matutino,Direito Digital,Centro,4.1,5.4,87.2,5.2,31,Sim,Presencial,4.8,Final
+433,Aluno_0433,Ciência da Computação,1,Matutino,Python,Cidade Nova,,9.3,91.0,2.0,49,Não,EaD,6.2,Final
+434,Aluno_0434,Ciência da Computação,8,Matutino,Banco de Dados,Djalma Batista,4.7,,68.2,3.8,35,Não,EaD,6.4,Reprovado
+435,Aluno_0435,Ciência da Computação,10,Noturno,Estatística,Djalma Batista,6.4,8.5,64.6,6.7,31,Não,EaD,7.4,Reprovado
+436,Aluno_0436,Engenharia de Software,3,Noturno,Algoritmos,Djalma Batista,8.9,5.8,68.7,10.0,21,Sim,Híbrido,7.4,Reprovado
+437,Aluno_0437,Sistemas de Informação,7,Noturno,Engenharia de Software,Centro,4.1,5.2,77.1,5.7,32,Sim,Presencial,4.6,Final
+438,Aluno_0438,Direito,1,Noturno,Python,Zona Leste,7.3,9.1,81.2,9.9,48,Não,Presencial,8.2,Aprovado
+439,Aluno_0439,Sistemas de Informação,1,Vespertino,Estatística,Cidade Nova,7.2,5.1,100.0,5.7,38,Não,EaD,6.2,Final
+440,Aluno_0440,Ciência da Computação,10,Matutino,Python,Djalma Batista,9.8,7.4,100.0,9.4,48,Sim,EaD,8.6,Aprovado
+441,Aluno_0441,Engenharia de Software,5,Vespertino,Direito Digital,Djalma Batista,7.8,8.8,90.5,4.5,29,Sim,Presencial,8.3,Aprovado
+442,Aluno_0442,Direito,5,Vespertino,Python,Cidade Nova,7.9,6.9,79.8,9.5,54,Sim,EaD,7.4,Aprovado
+443,Aluno_0443,Direito,8,Noturno,Python,Cidade Nova,8.1,9.1,64.1,3.9,42,Não,Presencial,8.6,Reprovado
+444,Aluno_0444,Engenharia de Software,7,Noturno,Python,Centro,5.1,6.6,100.0,8.1,33,Não,Presencial,5.8,Final
+445,Aluno_0445,Sistemas de Informação,8,Matutino,Python,Centro,5.8,4.9,74.3,6.0,21,Sim,Presencial,5.4,Reprovado
+446,Aluno_0446,Engenharia de Software,6,Matutino,Engenharia de Software,Djalma Batista,8.8,7.7,82.2,0.9,49,Sim,Híbrido,8.2,Aprovado
+447,Aluno_0447,Sistemas de Informação,6,Matutino,Estatística,Cidade Nova,3.1,7.4,87.4,,43,Não,Presencial,5.2,Final
+448,Aluno_0448,Ciência da Computação,2,Noturno,Direito Digital,Cidade Nova,5.6,10.0,78.9,1.7,21,Sim,Presencial,7.8,Aprovado
+449,Aluno_0449,Ciência da Computação,6,Noturno,Python,Djalma Batista,4.4,5.5,95.3,19.0,53,Não,Híbrido,5.0,Final
+450,Aluno_0450,Sistemas de Informação,5,Noturno,Python,Cidade Nova,7.2,6.7,84.8,7.2,23,Não,EaD,7.0,Aprovado
+451,Aluno_0451,Sistemas de Informação,3,Noturno,Python,Djalma Batista,6.0,5.9,92.8,3.8,34,Não,EaD,6.0,Final
+452,Aluno_0452,Administração,6,Noturno,Python,Djalma Batista,7.9,6.9,84.7,1.9,47,Não,Presencial,7.4,Aprovado
+453,Aluno_0453,Administração,8,Vespertino,Banco de Dados,Djalma Batista,6.6,6.8,77.4,5.6,22,Não,Presencial,6.7,Final
+454,Aluno_0454,Ciência da Computação,9,Matutino,Banco de Dados,Djalma Batista,4.0,5.6,79.1,7.1,18,Sim,Presencial,4.8,Final
+455,Aluno_0455,Sistemas de Informação,1,Noturno,Algoritmos,Djalma Batista,4.1,7.9,77.1,3.8,29,Não,EaD,6.0,Final
+456,Aluno_0456,Sistemas de Informação,3,Noturno,Python,Djalma Batista,6.8,6.7,58.7,6.3,27,Sim,EaD,6.8,Reprovado
+457,Aluno_0457,Ciência da Computação,3,Matutino,Algoritmos,Centro,5.4,9.4,63.0,10.3,42,Não,EaD,7.4,Reprovado
+458,Aluno_0458,Administração,8,Noturno,Engenharia de Software,Centro,5.8,6.0,89.1,2.9,37,Sim,EaD,5.9,Final
+459,Aluno_0459,Sistemas de Informação,1,Noturno,Algoritmos,Djalma Batista,8.5,10.0,59.1,3.7,18,Não,Presencial,9.2,Reprovado
+460,Aluno_0460,Direito,5,Noturno,Estatística,Djalma Batista,8.2,7.6,71.9,1.6,36,Sim,EaD,7.9,Reprovado
+461,Aluno_0461,Sistemas de Informação,3,Noturno,Banco de Dados,Centro,10.0,9.3,62.2,10.6,33,Sim,Presencial,9.6,Reprovado
+462,Aluno_0462,Administração,2,Noturno,Banco de Dados,Djalma Batista,6.2,7.3,71.1,0.6,32,Sim,Presencial,6.8,Reprovado
+463,Aluno_0463,Ciência da Computação,8,Noturno,Python,Djalma Batista,5.6,5.8,75.7,4.2,21,Não,Presencial,5.7,Final
+464,Aluno_0464,Direito,3,Matutino,Python,Zona Leste,7.6,6.7,71.9,12.9,30,Não,EaD,7.2,Reprovado
+465,Aluno_0465,Ciência da Computação,7,Matutino,Engenharia de Software,Cidade Nova,5.8,4.7,56.6,0.8,40,Sim,Híbrido,5.2,Reprovado
+466,Aluno_0466,Engenharia de Software,1,Matutino,Direito Digital,Zona Leste,5.8,6.9,75.2,6.5,20,Sim,Presencial,6.4,Final
+467,Aluno_0467,Sistemas de Informação,6,Matutino,Engenharia de Software,Centro,6.4,7.4,63.6,7.5,40,Sim,Presencial,6.9,Reprovado
+468,Aluno_0468,Sistemas de Informação,3,Noturno,Estatística,Djalma Batista,9.8,7.2,,7.2,25,Sim,Presencial,8.5,Reprovado
+469,Aluno_0469,Administração,8,Noturno,Python,Cidade Nova,8.1,9.4,89.1,8.7,19,Não,Híbrido,8.8,Aprovado
+470,Aluno_0470,Administração,6,Matutino,Python,Djalma Batista,,6.8,92.3,6.0,25,Não,EaD,7.6,Aprovado
+471,Aluno_0471,Administração,2,Noturno,Engenharia de Software,Djalma Batista,9.7,3.9,58.3,5.8,34,Não,Híbrido,6.8,Reprovado
+472,Aluno_0472,Engenharia de Software,6,Matutino,Engenharia de Software,Djalma Batista,8.4,10.0,100.0,1.7,52,Não,Híbrido,9.2,Aprovado
+473,Aluno_0473,Direito,7,Vespertino,Engenharia de Software,Cidade Nova,4.8,5.9,70.3,4.9,35,Não,Presencial,5.4,Reprovado
+474,Aluno_0474,Sistemas de Informação,5,Matutino,Banco de Dados,Djalma Batista,8.4,8.7,69.0,5.9,40,Não,Presencial,8.6,Reprovado
+475,Aluno_0475,Ciência da Computação,3,Vespertino,Algoritmos,Zona Leste,8.6,4.5,64.6,3.3,20,Sim,Presencial,6.6,Reprovado
+476,Aluno_0476,Ciência da Computação,4,Vespertino,Algoritmos,Zona Leste,8.0,7.5,78.8,3.0,25,Sim,Presencial,7.8,Aprovado
+477,Aluno_0477,Engenharia de Software,4,Noturno,Python,Centro,6.4,5.7,100.0,7.1,49,Não,Presencial,6.1,Final
+478,Aluno_0478,Ciência da Computação,6,Noturno,Banco de Dados,Cidade Nova,7.8,2.3,54.9,8.2,17,Sim,Presencial,5.0,Reprovado
+479,Aluno_0479,Sistemas de Informação,10,Noturno,Engenharia de Software,Centro,6.8,6.6,47.1,3.2,51,Sim,EaD,6.7,Reprovado
+480,Aluno_0480,Engenharia de Software,1,Matutino,Python,Cidade Nova,5.0,7.0,82.0,4.6,26,Não,Presencial,6.0,Final
+481,Aluno_0481,Direito,4,Matutino,Banco de Dados,Djalma Batista,5.5,6.7,86.5,6.6,28,Não,Presencial,6.1,Final
+482,Aluno_0482,Ciência da Computação,10,Matutino,Estatística,Cidade Nova,8.1,7.5,78.8,3.4,34,Não,Presencial,7.8,Aprovado
+483,Aluno_0483,Sistemas de Informação,4,Noturno,Direito Digital,Centro,5.2,6.6,86.9,5.3,30,Não,Presencial,5.9,Final
+484,Aluno_0484,Sistemas de Informação,10,Matutino,Banco de Dados,Zona Leste,5.3,7.2,61.0,6.2,26,Sim,EaD,6.2,Reprovado
+485,Aluno_0485,Sistemas de Informação,1,Noturno,Python,Centro,8.2,7.4,63.8,14.2,26,Não,EaD,7.8,Reprovado
+486,Aluno_0486,Ciência da Computação,9,Noturno,Algoritmos,Centro,7.0,7.0,79.9,4.6,34,Sim,Presencial,7.0,Aprovado
+487,Aluno_0487,Engenharia de Software,4,Noturno,Engenharia de Software,Cidade Nova,7.8,6.8,100.0,1.4,40,Não,Presencial,7.3,Aprovado
+488,Aluno_0488,Engenharia de Software,7,Noturno,Direito Digital,Cidade Nova,4.6,5.6,86.4,1.8,17,Não,Presencial,5.1,Final
+489,Aluno_0489,Direito,3,Matutino,Estatística,Centro,7.8,8.1,87.1,3.3,46,Não,Presencial,8.0,Aprovado
+490,Aluno_0490,Ciência da Computação,10,Matutino,Direito Digital,Djalma Batista,5.6,6.6,61.9,4.2,31,Não,Presencial,6.1,Reprovado
+491,Aluno_0491,Direito,3,Vespertino,Direito Digital,Centro,5.0,6.5,84.3,10.0,24,Não,Híbrido,5.8,Final
+492,Aluno_0492,Sistemas de Informação,8,Noturno,Banco de Dados,Zona Leste,5.9,8.0,60.3,16.4,51,Não,Presencial,7.0,Reprovado
+493,Aluno_0493,Ciência da Computação,8,Matutino,Python,Cidade Nova,9.3,7.5,100.0,4.8,34,Sim,Presencial,8.4,Aprovado
+494,Aluno_0494,Direito,1,Matutino,Python,Cidade Nova,6.1,5.9,62.8,7.2,32,Não,EaD,6.0,Reprovado
+495,Aluno_0495,Sistemas de Informação,10,Noturno,Direito Digital,Djalma Batista,10.0,9.2,66.1,11.4,37,Não,Presencial,9.6,Reprovado
+496,Aluno_0496,Sistemas de Informação,2,Matutino,Engenharia de Software,Centro,3.1,5.1,55.9,8.0,31,Não,Presencial,4.1,Reprovado
+497,Aluno_0497,Administração,8,Noturno,Python,Centro,4.0,5.3,79.3,4.3,21,Não,Híbrido,4.6,Final
+498,Aluno_0498,Ciência da Computação,1,Noturno,Direito Digital,Cidade Nova,9.2,8.2,78.7,5.0,23,Não,Presencial,8.7,Aprovado
+499,Aluno_0499,Direito,8,Vespertino,Python,Djalma Batista,9.6,10.0,100.0,5.3,23,Sim,EaD,9.8,Aprovado
+500,Aluno_0500,Sistemas de Informação,8,Matutino,Engenharia de Software,Zona Leste,5.2,6.1,89.6,11.9,43,Sim,EaD,5.6,Final
+501,Aluno_0501,Direito,2,Matutino,Estatística,Centro,6.9,7.8,66.1,9.5,41,Não,EaD,7.4,Reprovado
+502,Aluno_0502,Ciência da Computação,4,Noturno,Direito Digital,Djalma Batista,8.1,5.1,91.1,9.2,38,Não,Híbrido,6.6,Final
+503,Aluno_0503,Sistemas de Informação,6,Noturno,Algoritmos,Djalma Batista,6.4,5.5,59.3,6.9,29,Sim,EaD,6.0,Reprovado
+504,Aluno_0504,Engenharia de Software,9,Noturno,Algoritmos,Djalma Batista,7.1,9.0,67.2,6.1,33,Não,EaD,8.0,Reprovado
+505,Aluno_0505,Sistemas de Informação,8,Noturno,Direito Digital,Centro,6.8,7.7,79.8,4.8,29,Não,Híbrido,7.2,Aprovado
+506,Aluno_0506,Ciência da Computação,8,Noturno,Banco de Dados,Djalma Batista,4.1,9.1,61.0,2.3,42,Não,Híbrido,6.6,Reprovado
+507,Aluno_0507,Sistemas de Informação,7,Matutino,Estatística,Djalma Batista,6.2,,94.0,7.9,25,Sim,Híbrido,7.6,Aprovado
+508,Aluno_0508,Sistemas de Informação,9,Matutino,Banco de Dados,Cidade Nova,6.8,3.5,100.0,3.7,21,Não,EaD,5.2,Final
+509,Aluno_0509,Ciência da Computação,2,Noturno,Algoritmos,Djalma Batista,7.0,5.1,73.6,8.6,49,Não,Presencial,6.0,Reprovado
+510,Aluno_0510,Sistemas de Informação,3,Matutino,Engenharia de Software,Djalma Batista,3.7,7.6,68.2,1.2,20,Não,EaD,5.6,Reprovado
+511,Aluno_0511,Administração,10,Matutino,Direito Digital,Centro,8.2,4.2,76.1,2.6,44,Sim,Presencial,6.2,Final
+512,Aluno_0512,Sistemas de Informação,8,Noturno,Python,Centro,7.0,5.3,69.6,9.3,42,Sim,Presencial,6.2,Reprovado
+513,Aluno_0513,Ciência da Computação,6,Noturno,Algoritmos,Cidade Nova,4.9,9.5,81.9,11.9,20,Sim,Presencial,7.2,Aprovado
+514,Aluno_0514,Sistemas de Informação,10,Noturno,Estatística,Djalma Batista,10.0,6.2,58.2,8.6,32,Não,Híbrido,8.1,Reprovado
+515,Aluno_0515,Ciência da Computação,9,Noturno,Algoritmos,Cidade Nova,6.2,8.3,82.8,2.9,53,Sim,Presencial,7.2,Aprovado
+516,Aluno_0516,Administração,10,Matutino,Estatística,Centro,6.3,7.1,100.0,9.7,38,Não,EaD,6.7,Final
+517,Aluno_0517,Sistemas de Informação,4,Noturno,Estatística,Djalma Batista,8.0,5.9,48.0,3.0,52,Sim,Presencial,7.0,Reprovado
+518,Aluno_0518,Administração,8,Vespertino,Direito Digital,Djalma Batista,10.0,4.3,60.5,9.8,54,Sim,Presencial,7.2,Reprovado
+519,Aluno_0519,Sistemas de Informação,10,Vespertino,Estatística,Djalma Batista,8.0,7.5,71.3,2.5,51,Sim,Presencial,7.8,Reprovado
+520,Aluno_0520,Direito,3,Noturno,Banco de Dados,Djalma Batista,8.3,9.6,86.1,4.0,41,Não,EaD,9.0,Aprovado
+521,Aluno_0521,Engenharia de Software,3,Matutino,Engenharia de Software,Cidade Nova,5.0,6.0,91.4,0.6,24,Não,Híbrido,5.5,Final
+522,Aluno_0522,Administração,8,Noturno,Algoritmos,Centro,7.0,7.2,90.1,2.6,33,Não,Presencial,7.1,Aprovado
+523,Aluno_0523,Engenharia de Software,5,Matutino,Engenharia de Software,Djalma Batista,5.8,4.5,52.6,7.9,34,Não,Presencial,5.2,Reprovado
+524,Aluno_0524,Engenharia de Software,3,Noturno,Python,Djalma Batista,8.1,6.0,67.9,15.0,28,Sim,EaD,7.0,Reprovado
+525,Aluno_0525,Sistemas de Informação,10,Vespertino,Algoritmos,Djalma Batista,8.2,7.7,64.5,10.2,49,Não,Presencial,8.0,Reprovado
+526,Aluno_0526,Sistemas de Informação,1,Noturno,Engenharia de Software,Centro,9.7,8.4,77.0,8.4,39,Não,Presencial,9.0,Aprovado
+527,Aluno_0527,Administração,3,Noturno,Engenharia de Software,Djalma Batista,2.9,8.0,78.3,1.8,28,Não,Presencial,5.4,Final
+528,Aluno_0528,Ciência da Computação,9,Matutino,Direito Digital,Centro,5.7,3.6,57.5,4.1,27,Sim,EaD,4.6,Reprovado
+529,Aluno_0529,Ciência da Computação,5,Vespertino,Direito Digital,Djalma Batista,9.1,6.3,71.4,13.1,29,Não,Presencial,7.7,Reprovado
+530,Aluno_0530,Direito,10,Vespertino,Python,Cidade Nova,4.3,5.5,86.7,5.5,51,Sim,Presencial,4.9,Final
+531,Aluno_0531,Ciência da Computação,2,Matutino,Estatística,Zona Leste,8.3,6.6,68.6,2.2,43,Sim,Híbrido,7.4,Reprovado
+532,Aluno_0532,Administração,7,Noturno,Algoritmos,Djalma Batista,8.8,6.9,75.0,4.1,41,Sim,EaD,7.8,Aprovado
+533,Aluno_0533,Direito,2,Noturno,Direito Digital,Centro,6.7,8.9,100.0,1.0,19,Sim,Presencial,7.8,Aprovado
+534,Aluno_0534,Engenharia de Software,4,Matutino,Algoritmos,Zona Leste,4.2,7.6,100.0,8.9,41,Não,Presencial,5.9,Final
+535,Aluno_0535,Administração,7,Vespertino,Python,Djalma Batista,6.6,9.5,45.6,1.9,26,Não,Presencial,8.0,Reprovado
+536,Aluno_0536,Sistemas de Informação,4,Matutino,Direito Digital,Centro,9.4,5.9,79.7,5.3,33,Não,Presencial,7.6,Aprovado
+537,Aluno_0537,Sistemas de Informação,7,Noturno,Direito Digital,Djalma Batista,9.6,,100.0,2.2,19,Sim,Presencial,7.2,Aprovado
+538,Aluno_0538,Ciência da Computação,7,Matutino,Estatística,Centro,7.2,9.6,85.2,6.0,38,Sim,Presencial,8.4,Aprovado
+539,Aluno_0539,Sistemas de Informação,1,Noturno,Algoritmos,Djalma Batista,5.0,7.8,78.3,8.6,54,Não,Presencial,6.4,Final
+540,Aluno_0540,Direito,6,Noturno,Algoritmos,Zona Leste,9.9,5.8,97.7,3.8,30,Não,Híbrido,7.8,Aprovado
+541,Aluno_0541,Administração,9,Vespertino,Algoritmos,Cidade Nova,8.3,7.8,81.3,11.2,43,Sim,Híbrido,8.0,Aprovado
+542,Aluno_0542,Ciência da Computação,2,Noturno,Estatística,Cidade Nova,5.2,8.5,88.6,8.1,36,Não,Presencial,6.8,Final
+543,Aluno_0543,Ciência da Computação,3,Noturno,Direito Digital,Cidade Nova,7.4,7.3,74.8,7.3,34,Sim,Presencial,7.4,Reprovado
+544,Aluno_0544,Administração,10,Noturno,Python,Centro,7.3,5.9,81.1,11.0,29,Não,Presencial,6.6,Final
+545,Aluno_0545,Ciência da Computação,5,Matutino,Algoritmos,Djalma Batista,5.7,6.3,84.4,6.0,22,Sim,EaD,6.0,Final
+546,Aluno_0546,Ciência da Computação,9,Vespertino,Engenharia de Software,Zona Leste,7.4,7.6,91.0,4.3,26,Sim,Presencial,7.5,Aprovado
+547,Aluno_0547,Ciência da Computação,4,Noturno,Estatística,Zona Leste,8.8,7.4,71.5,6.8,53,Sim,Híbrido,8.1,Reprovado
+548,Aluno_0548,Administração,1,Noturno,Banco de Dados,Centro,6.3,9.2,71.1,,45,Sim,Híbrido,7.8,Reprovado
+549,Aluno_0549,Engenharia de Software,4,Noturno,Python,Zona Leste,9.0,6.6,49.1,9.1,22,Sim,Presencial,7.8,Reprovado
+550,Aluno_0550,Direito,6,Noturno,Engenharia de Software,Centro,3.6,5.5,72.2,9.1,27,Não,EaD,4.6,Reprovado
+551,Aluno_0551,Direito,5,Noturno,Algoritmos,Centro,10.0,10.0,92.3,4.6,41,Sim,EaD,10.0,Aprovado
+552,Aluno_0552,Ciência da Computação,1,Noturno,Banco de Dados,Centro,6.9,7.4,84.9,3.6,46,Sim,Presencial,7.2,Aprovado
+553,Aluno_0553,Ciência da Computação,4,Matutino,Python,Djalma Batista,8.7,8.5,63.0,6.1,36,Sim,Presencial,8.6,Reprovado
+554,Aluno_0554,Direito,6,Noturno,Estatística,Djalma Batista,7.2,8.0,,2.0,53,Não,EaD,7.6,Reprovado
+555,Aluno_0555,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,5.3,7.4,75.9,4.2,32,Não,Híbrido,6.4,Final
+556,Aluno_0556,Direito,10,Noturno,Direito Digital,Centro,6.7,6.7,91.9,10.6,47,Não,EaD,6.7,Final
+557,Aluno_0557,Administração,4,Noturno,Banco de Dados,Djalma Batista,3.4,2.3,70.8,2.6,45,Sim,Presencial,2.8,Reprovado
+558,Aluno_0558,Engenharia de Software,9,Matutino,Engenharia de Software,Djalma Batista,8.0,5.3,56.3,11.5,22,Sim,EaD,6.6,Reprovado
+559,Aluno_0559,Direito,5,Noturno,Python,Zona Leste,7.1,7.7,69.2,7.0,45,Sim,Híbrido,7.4,Reprovado
+560,Aluno_0560,Direito,8,Noturno,Engenharia de Software,Djalma Batista,6.5,2.5,82.9,7.5,48,Não,Presencial,4.5,Final
+561,Aluno_0561,Direito,9,Matutino,Engenharia de Software,Centro,8.2,7.2,96.6,3.6,25,Não,Presencial,7.7,Aprovado
+562,Aluno_0562,Ciência da Computação,10,Noturno,Algoritmos,Djalma Batista,6.9,8.2,74.1,2.9,53,Não,EaD,7.6,Reprovado
+563,Aluno_0563,Sistemas de Informação,5,Matutino,Estatística,Djalma Batista,7.9,8.5,93.8,4.5,39,Não,Híbrido,8.2,Aprovado
+564,Aluno_0564,Ciência da Computação,6,Vespertino,Banco de Dados,Cidade Nova,8.5,8.1,92.2,13.4,32,Não,Presencial,8.3,Aprovado
+565,Aluno_0565,Engenharia de Software,1,Matutino,Python,Centro,5.8,8.7,60.4,3.5,34,Não,Presencial,7.2,Reprovado
+566,Aluno_0566,Ciência da Computação,7,Noturno,Direito Digital,Cidade Nova,5.3,9.8,96.8,0.9,35,Sim,Presencial,7.6,Aprovado
+567,Aluno_0567,Direito,4,Noturno,Estatística,Djalma Batista,3.7,9.0,82.4,5.7,18,Sim,EaD,6.4,Final
+568,Aluno_0568,Ciência da Computação,2,Noturno,Estatística,Centro,7.0,7.4,59.9,10.2,26,Não,Híbrido,7.2,Reprovado
+569,Aluno_0569,Engenharia de Software,5,Noturno,Python,Djalma Batista,7.6,6.9,100.0,6.2,28,Sim,Presencial,7.2,Aprovado
+570,Aluno_0570,Sistemas de Informação,3,Noturno,Estatística,Djalma Batista,4.4,7.3,76.1,13.9,34,Não,Presencial,5.8,Final
+571,Aluno_0571,Direito,6,Matutino,Algoritmos,Djalma Batista,9.4,6.6,48.8,7.8,35,Não,Híbrido,8.0,Reprovado
+572,Aluno_0572,Engenharia de Software,8,Matutino,Estatística,Djalma Batista,5.3,9.0,67.4,6.2,54,Não,Presencial,7.2,Reprovado
+573,Aluno_0573,Sistemas de Informação,7,Noturno,Algoritmos,Djalma Batista,3.0,8.1,63.7,4.5,53,Sim,Híbrido,5.6,Reprovado
+574,Aluno_0574,Ciência da Computação,3,Matutino,Banco de Dados,Djalma Batista,9.5,6.5,67.8,7.3,43,Não,Presencial,8.0,Reprovado
+575,Aluno_0575,Direito,8,Noturno,Banco de Dados,Zona Leste,3.2,9.4,71.3,1.7,30,Não,Presencial,6.3,Reprovado
+576,Aluno_0576,Ciência da Computação,2,Noturno,Engenharia de Software,Djalma Batista,8.5,6.6,74.1,13.4,50,Sim,Presencial,7.6,Reprovado
+577,Aluno_0577,Sistemas de Informação,10,Noturno,Algoritmos,Djalma Batista,8.1,5.5,73.6,8.7,18,Sim,Presencial,6.8,Reprovado
+578,Aluno_0578,Administração,9,Noturno,Direito Digital,Djalma Batista,7.4,7.1,76.5,8.6,49,Sim,Híbrido,7.2,Aprovado
+579,Aluno_0579,Direito,4,Matutino,Banco de Dados,Centro,5.9,5.7,86.8,5.2,35,Não,Híbrido,5.8,Final
+580,Aluno_0580,Administração,1,Vespertino,Estatística,Djalma Batista,7.7,8.7,,11.3,43,Sim,EaD,8.2,Reprovado
+581,Aluno_0581,Ciência da Computação,8,Noturno,Python,Zona Leste,8.7,5.7,95.7,4.8,46,Não,Presencial,7.2,Aprovado
+582,Aluno_0582,Ciência da Computação,7,Vespertino,Python,Zona Leste,5.0,6.9,59.6,3.8,23,Não,Presencial,6.0,Reprovado
+583,Aluno_0583,Administração,5,Noturno,Algoritmos,Djalma Batista,8.6,8.7,87.2,5.5,43,Sim,Presencial,8.6,Aprovado
+584,Aluno_0584,Engenharia de Software,10,Matutino,Direito Digital,Centro,8.5,5.9,100.0,8.8,37,Não,Híbrido,7.2,Aprovado
+585,Aluno_0585,Direito,5,Noturno,Engenharia de Software,Djalma Batista,7.3,7.8,75.3,3.4,23,Sim,Presencial,7.6,Aprovado
+586,Aluno_0586,Sistemas de Informação,7,Noturno,Estatística,Centro,5.8,5.4,80.9,3.0,41,Não,Híbrido,5.6,Final
+587,Aluno_0587,Ciência da Computação,5,Noturno,Algoritmos,Djalma Batista,8.5,,63.5,2.9,54,Sim,Híbrido,8.0,Reprovado
+588,Aluno_0588,Sistemas de Informação,8,Vespertino,Python,Djalma Batista,7.7,8.1,70.3,4.0,34,Sim,Presencial,7.9,Reprovado
+589,Aluno_0589,Sistemas de Informação,6,Vespertino,Algoritmos,Djalma Batista,5.0,7.0,100.0,9.3,49,Sim,Híbrido,6.0,Final
+590,Aluno_0590,Sistemas de Informação,5,Noturno,Estatística,Cidade Nova,6.1,7.2,89.2,6.0,49,Não,Híbrido,6.6,Final
+591,Aluno_0591,Sistemas de Informação,9,Matutino,Direito Digital,Djalma Batista,8.3,7.9,84.3,2.4,48,Sim,EaD,8.1,Aprovado
+592,Aluno_0592,Administração,2,Noturno,Direito Digital,Djalma Batista,7.0,6.6,48.9,17.7,41,Sim,EaD,6.8,Reprovado
+593,Aluno_0593,Sistemas de Informação,1,Noturno,Banco de Dados,Cidade Nova,8.8,8.6,67.3,2.1,30,Sim,EaD,8.7,Reprovado
+594,Aluno_0594,Engenharia de Software,8,Noturno,Estatística,Centro,6.2,9.4,100.0,4.0,54,Sim,Presencial,7.8,Aprovado
+595,Aluno_0595,Direito,3,Noturno,Banco de Dados,Zona Leste,,5.5,84.2,2.8,54,Não,EaD,5.2,Final
+596,Aluno_0596,Engenharia de Software,7,Matutino,Banco de Dados,Djalma Batista,10.0,10.0,86.0,3.4,20,Não,Presencial,10.0,Aprovado
+597,Aluno_0597,Sistemas de Informação,10,Noturno,Banco de Dados,Cidade Nova,3.8,6.6,80.6,5.6,34,Não,Presencial,5.2,Final
+598,Aluno_0598,Direito,8,Noturno,Algoritmos,Cidade Nova,5.9,10.0,68.8,4.7,26,Sim,Híbrido,8.0,Reprovado
+599,Aluno_0599,Engenharia de Software,6,Noturno,Python,Djalma Batista,7.3,6.6,83.0,3.2,51,Sim,EaD,7.0,Aprovado
+600,Aluno_0600,Direito,10,Noturno,Direito Digital,Cidade Nova,8.6,8.3,55.0,6.5,51,Não,Presencial,8.4,Reprovado
+601,Aluno_0601,Direito,9,Noturno,Algoritmos,Djalma Batista,8.0,8.3,53.9,7.1,39,Não,Presencial,8.2,Reprovado
+602,Aluno_0602,Administração,7,Matutino,Python,Zona Leste,10.0,6.4,67.0,7.8,41,Sim,Híbrido,8.2,Reprovado
+603,Aluno_0603,Engenharia de Software,10,Vespertino,Direito Digital,Djalma Batista,6.6,7.2,80.9,5.6,17,Não,Híbrido,6.9,Final
+604,Aluno_0604,Ciência da Computação,5,Noturno,Estatística,Centro,5.2,9.5,54.5,6.9,34,Não,Presencial,7.4,Reprovado
+605,Aluno_0605,Engenharia de Software,8,Vespertino,Direito Digital,Djalma Batista,6.4,6.6,79.9,7.7,31,Sim,Híbrido,6.5,Final
+606,Aluno_0606,Sistemas de Informação,2,Noturno,Direito Digital,Zona Leste,6.2,6.4,63.1,3.5,41,Não,Presencial,6.3,Reprovado
+607,Aluno_0607,Administração,7,Noturno,Direito Digital,Djalma Batista,6.7,5.1,65.1,15.3,48,Sim,EaD,5.9,Reprovado
+608,Aluno_0608,Sistemas de Informação,4,Vespertino,Engenharia de Software,Zona Leste,5.0,9.8,97.5,13.1,36,Não,EaD,7.4,Aprovado
+609,Aluno_0609,Ciência da Computação,9,Matutino,Estatística,Zona Leste,8.2,6.3,78.6,8.8,33,Não,Híbrido,7.2,Aprovado
+610,Aluno_0610,Direito,1,Noturno,Algoritmos,Djalma Batista,7.5,9.1,64.4,4.3,27,Sim,Híbrido,8.3,Reprovado
+611,Aluno_0611,Engenharia de Software,7,Vespertino,Algoritmos,Cidade Nova,4.5,6.1,80.8,1.2,29,Não,Presencial,5.3,Final
+612,Aluno_0612,Ciência da Computação,6,Noturno,Python,Zona Leste,8.5,9.1,56.0,1.5,41,Não,EaD,8.8,Reprovado
+613,Aluno_0613,Ciência da Computação,8,Noturno,Algoritmos,Djalma Batista,5.3,8.5,83.7,4.5,36,Não,Presencial,6.9,Final
+614,Aluno_0614,Direito,5,Noturno,Banco de Dados,Djalma Batista,4.7,6.7,94.6,13.2,41,Sim,Presencial,5.7,Final
+615,Aluno_0615,Ciência da Computação,1,Noturno,Direito Digital,Centro,7.0,5.9,87.9,4.8,47,Não,Presencial,6.4,Final
+616,Aluno_0616,Direito,1,Vespertino,Algoritmos,Djalma Batista,3.6,6.0,100.0,2.8,17,Não,Presencial,4.8,Final
+617,Aluno_0617,Sistemas de Informação,9,Noturno,Python,Djalma Batista,7.9,6.0,48.9,2.9,32,Sim,Presencial,7.0,Reprovado
+618,Aluno_0618,Direito,10,Vespertino,Python,Djalma Batista,1.7,8.9,79.9,13.0,44,Sim,Presencial,5.3,Final
+619,Aluno_0619,Direito,6,Vespertino,Banco de Dados,Djalma Batista,4.9,7.4,57.8,4.5,37,Não,Presencial,6.2,Reprovado
+620,Aluno_0620,Sistemas de Informação,10,Noturno,Python,Djalma Batista,9.6,5.2,75.4,12.6,46,Não,EaD,7.4,Aprovado
+621,Aluno_0621,Ciência da Computação,5,Noturno,Engenharia de Software,Djalma Batista,5.6,6.7,78.0,2.7,19,Sim,Presencial,6.2,Final
+622,Aluno_0622,Sistemas de Informação,1,Vespertino,Direito Digital,Zona Leste,5.9,6.9,100.0,3.0,50,Não,Híbrido,6.4,Final
+623,Aluno_0623,Direito,6,Noturno,Direito Digital,Cidade Nova,9.1,3.5,77.1,3.9,22,Não,Presencial,6.3,Final
+624,Aluno_0624,Engenharia de Software,6,Noturno,Direito Digital,Djalma Batista,5.4,6.8,76.8,7.2,45,Sim,Presencial,6.1,Final
+625,Aluno_0625,Engenharia de Software,3,Vespertino,Estatística,Cidade Nova,8.2,8.3,93.1,8.2,19,Sim,Presencial,8.2,Aprovado
+626,Aluno_0626,Sistemas de Informação,8,Vespertino,Algoritmos,Cidade Nova,8.9,6.9,77.2,3.3,49,Não,Presencial,7.9,Aprovado
+627,Aluno_0627,Sistemas de Informação,1,Noturno,Engenharia de Software,Zona Leste,7.7,7.5,100.0,3.6,27,Não,Presencial,7.6,Aprovado
+628,Aluno_0628,Sistemas de Informação,1,Noturno,Algoritmos,Djalma Batista,4.2,7.9,88.0,1.9,21,Não,Híbrido,6.1,Final
+629,Aluno_0629,Ciência da Computação,6,Noturno,Engenharia de Software,Djalma Batista,5.7,6.5,90.4,1.8,48,Sim,Presencial,6.1,Final
+630,Aluno_0630,Engenharia de Software,10,Noturno,Algoritmos,Zona Leste,10.0,8.3,50.0,2.9,34,Não,Presencial,9.2,Reprovado
+631,Aluno_0631,Direito,1,Matutino,Banco de Dados,Zona Leste,5.9,9.6,100.0,11.9,36,Não,Presencial,7.8,Aprovado
+632,Aluno_0632,Engenharia de Software,6,Noturno,Python,Cidade Nova,10.0,4.5,68.2,2.8,44,Sim,Híbrido,7.2,Reprovado
+633,Aluno_0633,Ciência da Computação,1,Noturno,Python,Cidade Nova,9.9,6.5,77.9,5.6,29,Sim,Presencial,8.2,Aprovado
+634,Aluno_0634,Administração,6,Noturno,Banco de Dados,Djalma Batista,7.7,10.0,68.2,4.2,42,Não,Híbrido,8.8,Reprovado
+635,Aluno_0635,Direito,3,Vespertino,Engenharia de Software,Centro,7.3,7.4,62.6,2.7,32,Sim,Presencial,7.4,Reprovado
+636,Aluno_0636,Administração,8,Matutino,Estatística,Djalma Batista,6.0,7.0,60.0,7.6,41,Sim,Presencial,6.5,Reprovado
+637,Aluno_0637,Engenharia de Software,6,Matutino,Engenharia de Software,Djalma Batista,6.6,6.7,79.5,3.6,26,Sim,Presencial,6.6,Final
+638,Aluno_0638,Sistemas de Informação,1,Noturno,Python,Cidade Nova,5.6,9.3,48.5,9.0,45,Sim,EaD,7.4,Reprovado
+639,Aluno_0639,Sistemas de Informação,5,Noturno,Estatística,Djalma Batista,6.7,5.5,74.4,9.2,54,Não,EaD,6.1,Reprovado
+640,Aluno_0640,Direito,8,Noturno,Algoritmos,Centro,4.3,8.7,93.9,3.7,36,Sim,Presencial,6.5,Final
+641,Aluno_0641,Sistemas de Informação,3,Matutino,Estatística,Zona Leste,4.3,6.6,87.5,8.3,42,Não,Presencial,5.4,Final
+642,Aluno_0642,Ciência da Computação,6,Matutino,Engenharia de Software,Djalma Batista,9.1,5.8,84.5,8.3,48,Não,Presencial,7.4,Aprovado
+643,Aluno_0643,Engenharia de Software,5,Noturno,Banco de Dados,Zona Leste,3.9,6.7,64.6,4.4,54,Não,Presencial,5.3,Reprovado
+644,Aluno_0644,Engenharia de Software,6,Noturno,Algoritmos,Zona Leste,8.4,7.0,54.2,4.0,40,Sim,Presencial,7.7,Reprovado
+645,Aluno_0645,Engenharia de Software,10,Noturno,Engenharia de Software,Centro,3.4,6.3,93.6,6.5,47,Não,Híbrido,4.8,Final
+646,Aluno_0646,Sistemas de Informação,1,Matutino,Algoritmos,Djalma Batista,7.9,9.0,71.3,14.7,28,Não,EaD,8.4,Reprovado
+647,Aluno_0647,Ciência da Computação,7,Noturno,Estatística,Djalma Batista,6.4,5.8,76.8,10.2,52,Não,Presencial,6.1,Final
+648,Aluno_0648,Engenharia de Software,9,Matutino,Python,Djalma Batista,9.2,7.3,75.0,5.6,26,Não,Híbrido,8.2,Aprovado
+649,Aluno_0649,Administração,2,Matutino,Engenharia de Software,Djalma Batista,6.2,8.0,88.1,1.2,22,Não,Híbrido,7.1,Aprovado
+650,Aluno_0650,Direito,10,Noturno,Banco de Dados,Djalma Batista,3.2,7.3,100.0,5.2,23,Não,Presencial,5.2,Final
+651,Aluno_0651,Administração,5,Vespertino,Estatística,Zona Leste,6.5,8.4,99.9,1.2,47,Não,Presencial,7.4,Aprovado
+652,Aluno_0652,Direito,10,Matutino,Engenharia de Software,Djalma Batista,7.1,6.4,43.0,1.6,43,Não,Híbrido,6.8,Reprovado
+653,Aluno_0653,Engenharia de Software,4,Noturno,Banco de Dados,Cidade Nova,6.6,8.2,73.4,3.1,24,Sim,EaD,7.4,Reprovado
+654,Aluno_0654,Sistemas de Informação,6,Noturno,Engenharia de Software,Djalma Batista,7.8,8.2,57.8,5.6,19,Sim,Presencial,8.0,Reprovado
+655,Aluno_0655,Engenharia de Software,6,Noturno,Estatística,Centro,5.8,8.7,92.1,3.4,37,Não,EaD,7.2,Aprovado
+656,Aluno_0656,Engenharia de Software,2,Noturno,Engenharia de Software,Zona Leste,4.5,3.9,78.1,10.8,17,Sim,Presencial,4.2,Final
+657,Aluno_0657,Engenharia de Software,2,Matutino,Algoritmos,Djalma Batista,5.0,8.0,87.1,5.2,31,Não,Híbrido,6.5,Final
+658,Aluno_0658,Ciência da Computação,4,Vespertino,Estatística,Djalma Batista,5.9,8.6,72.1,3.5,23,Sim,Presencial,7.2,Reprovado
+659,Aluno_0659,Engenharia de Software,1,Noturno,Engenharia de Software,Cidade Nova,5.9,6.4,62.4,7.9,31,Não,Presencial,6.2,Reprovado
+660,Aluno_0660,Ciência da Computação,9,Noturno,Python,Cidade Nova,10.0,6.2,65.0,3.2,41,Não,Presencial,8.1,Reprovado
+661,Aluno_0661,Engenharia de Software,7,Noturno,Engenharia de Software,Cidade Nova,9.1,5.9,55.0,5.7,19,Sim,Presencial,7.5,Reprovado
+662,Aluno_0662,Sistemas de Informação,7,Matutino,Algoritmos,Djalma Batista,8.0,5.3,59.0,0.7,46,Não,Presencial,6.6,Reprovado
+663,Aluno_0663,Direito,3,Noturno,Banco de Dados,Djalma Batista,7.6,8.2,55.9,3.2,30,Não,Presencial,7.9,Reprovado
+664,Aluno_0664,Sistemas de Informação,3,Matutino,Banco de Dados,Zona Leste,7.3,10.0,62.5,10.4,20,Não,EaD,8.6,Reprovado
+665,Aluno_0665,Sistemas de Informação,1,Noturno,Banco de Dados,Zona Leste,7.3,6.2,61.6,7.0,52,Não,Presencial,6.8,Reprovado
+666,Aluno_0666,Ciência da Computação,3,Noturno,Python,Centro,7.1,6.3,83.9,6.1,19,Sim,Presencial,6.7,Final
+667,Aluno_0667,Engenharia de Software,3,Noturno,Algoritmos,Cidade Nova,6.9,7.1,83.3,7.6,21,Não,Presencial,7.0,Aprovado
+668,Aluno_0668,Ciência da Computação,4,Noturno,Estatística,Centro,,4.4,83.9,10.4,41,Sim,Presencial,3.7,Reprovado
+669,Aluno_0669,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,6.1,5.9,95.6,5.2,47,Sim,Presencial,6.0,Final
+670,Aluno_0670,Engenharia de Software,3,Noturno,Algoritmos,Djalma Batista,6.4,7.0,76.8,3.7,27,Não,Presencial,6.7,Final
+671,Aluno_0671,Ciência da Computação,10,Noturno,Engenharia de Software,Djalma Batista,5.5,5.6,66.3,8.3,24,Não,Híbrido,5.6,Reprovado
+672,Aluno_0672,Administração,8,Matutino,Python,Centro,5.8,9.1,,4.7,42,Não,Presencial,7.4,Aprovado
+673,Aluno_0673,Administração,8,Noturno,Algoritmos,Djalma Batista,7.3,4.9,91.6,3.7,18,Não,Híbrido,6.1,Final
+674,Aluno_0674,Engenharia de Software,1,Matutino,Algoritmos,Djalma Batista,8.2,8.6,80.3,4.3,44,Sim,Presencial,8.4,Aprovado
+675,Aluno_0675,Ciência da Computação,7,Noturno,Estatística,Cidade Nova,7.3,9.6,79.2,6.9,26,Não,EaD,8.4,Aprovado
+676,Aluno_0676,Direito,2,Noturno,Algoritmos,Cidade Nova,8.1,7.7,82.3,1.4,53,Não,Presencial,7.9,Aprovado
+677,Aluno_0677,Sistemas de Informação,1,Noturno,Estatística,Centro,8.2,6.9,75.0,7.0,37,Sim,EaD,7.6,Aprovado
+678,Aluno_0678,Ciência da Computação,3,Vespertino,Python,Zona Leste,6.3,7.5,79.9,2.4,44,Não,Presencial,6.9,Final
+679,Aluno_0679,Ciência da Computação,4,Matutino,Python,Djalma Batista,7.7,6.4,85.5,3.4,54,Não,Presencial,7.0,Aprovado
+680,Aluno_0680,Administração,6,Noturno,Engenharia de Software,Centro,3.7,3.6,67.1,2.0,49,Sim,Presencial,3.6,Reprovado
+681,Aluno_0681,Sistemas de Informação,10,Noturno,Estatística,Cidade Nova,6.1,5.4,53.5,7.8,27,Não,EaD,5.8,Reprovado
+682,Aluno_0682,Engenharia de Software,5,Noturno,Estatística,Centro,5.9,7.1,46.9,6.1,17,Não,Híbrido,6.5,Reprovado
+683,Aluno_0683,Direito,4,Vespertino,Banco de Dados,Djalma Batista,9.6,5.5,91.3,2.4,49,Sim,Presencial,7.6,Aprovado
+684,Aluno_0684,Ciência da Computação,8,Noturno,Banco de Dados,Djalma Batista,7.4,6.4,54.3,8.5,19,Não,Presencial,6.9,Reprovado
+685,Aluno_0685,Sistemas de Informação,4,Noturno,Engenharia de Software,Zona Leste,4.4,7.9,85.0,1.7,42,Não,EaD,6.2,Final
+686,Aluno_0686,Administração,10,Matutino,Python,Centro,7.9,7.3,60.7,4.1,31,Não,Híbrido,7.6,Reprovado
+687,Aluno_0687,Engenharia de Software,2,Matutino,Direito Digital,Zona Leste,8.4,8.9,60.9,1.9,30,Não,EaD,8.6,Reprovado
+688,Aluno_0688,Engenharia de Software,3,Noturno,Banco de Dados,Centro,6.6,7.6,67.2,4.7,39,Não,Híbrido,7.1,Reprovado
+689,Aluno_0689,Sistemas de Informação,6,Noturno,Algoritmos,Cidade Nova,8.0,7.7,80.9,3.7,24,Não,Presencial,7.8,Aprovado
+690,Aluno_0690,Ciência da Computação,8,Noturno,Python,Cidade Nova,2.3,5.9,58.7,2.3,52,Sim,Presencial,4.1,Reprovado
+691,Aluno_0691,Ciência da Computação,8,Noturno,Direito Digital,Cidade Nova,1.9,4.8,68.7,5.3,36,Não,Presencial,3.4,Reprovado
+692,Aluno_0692,Sistemas de Informação,9,Noturno,Algoritmos,Djalma Batista,4.7,6.4,77.6,2.6,22,Sim,EaD,5.6,Final
+693,Aluno_0693,Sistemas de Informação,7,Noturno,Estatística,Centro,7.1,5.9,59.8,0.9,49,Não,Presencial,6.5,Reprovado
+694,Aluno_0694,Direito,2,Matutino,Python,Cidade Nova,9.6,6.8,99.4,1.6,44,Não,Presencial,8.2,Aprovado
+695,Aluno_0695,Sistemas de Informação,8,Matutino,Engenharia de Software,Djalma Batista,4.8,5.3,52.2,4.1,54,Sim,Presencial,5.0,Reprovado
+696,Aluno_0696,Sistemas de Informação,7,Noturno,Estatística,Djalma Batista,5.3,8.5,74.7,4.4,46,Não,Presencial,6.9,Reprovado
+697,Aluno_0697,Engenharia de Software,8,Noturno,Estatística,Djalma Batista,7.0,5.9,97.1,3.0,33,Não,Presencial,6.4,Final
+698,Aluno_0698,Direito,3,Noturno,Algoritmos,Zona Leste,5.9,6.5,58.1,11.5,25,Sim,Presencial,6.2,Reprovado
+699,Aluno_0699,Sistemas de Informação,7,Noturno,Estatística,Djalma Batista,5.8,,76.4,6.4,44,Sim,Híbrido,6.4,Final
+700,Aluno_0700,Engenharia de Software,10,Vespertino,Banco de Dados,Centro,6.0,9.0,80.0,6.7,23,Não,Presencial,7.5,Aprovado
+701,Aluno_0701,Sistemas de Informação,9,Noturno,Python,Djalma Batista,9.2,10.0,65.9,2.8,44,Sim,Presencial,9.6,Reprovado
+702,Aluno_0702,Sistemas de Informação,3,Matutino,Banco de Dados,Djalma Batista,8.8,10.0,76.8,2.6,33,Não,EaD,9.4,Aprovado
+703,Aluno_0703,Sistemas de Informação,10,Noturno,Algoritmos,Cidade Nova,6.8,4.9,86.4,5.9,21,Não,Híbrido,5.8,Final
+704,Aluno_0704,Direito,6,Noturno,Direito Digital,Djalma Batista,9.8,6.5,71.0,4.4,21,Não,EaD,8.2,Reprovado
+705,Aluno_0705,Sistemas de Informação,2,Noturno,Algoritmos,Centro,7.7,6.1,89.5,6.2,30,Sim,Presencial,6.9,Final
+706,Aluno_0706,Sistemas de Informação,2,Noturno,Python,Cidade Nova,8.9,7.7,83.9,4.4,22,Não,Híbrido,8.3,Aprovado
+707,Aluno_0707,Ciência da Computação,5,Vespertino,Estatística,Cidade Nova,5.3,7.6,69.3,8.0,23,Sim,Presencial,6.4,Reprovado
+708,Aluno_0708,Direito,5,Noturno,Engenharia de Software,Djalma Batista,5.6,6.1,94.9,5.3,33,Não,Presencial,5.8,Final
+709,Aluno_0709,Sistemas de Informação,7,Vespertino,Algoritmos,Zona Leste,5.6,6.0,66.9,4.7,25,Sim,Presencial,5.8,Reprovado
+710,Aluno_0710,Ciência da Computação,2,Noturno,Python,Cidade Nova,6.6,5.4,90.8,7.0,47,Não,EaD,6.0,Final
+711,Aluno_0711,Sistemas de Informação,7,Noturno,Engenharia de Software,Zona Leste,6.9,2.6,67.2,12.4,38,Não,Presencial,4.8,Reprovado
+712,Aluno_0712,Ciência da Computação,5,Noturno,Estatística,Centro,7.4,4.9,73.3,7.7,25,Não,Híbrido,6.2,Reprovado
+713,Aluno_0713,Engenharia de Software,6,Noturno,Direito Digital,Centro,10.0,8.6,75.6,2.2,32,Sim,EaD,9.3,Aprovado
+714,Aluno_0714,Engenharia de Software,8,Matutino,Algoritmos,Zona Leste,8.1,9.6,83.1,4.6,52,Sim,Híbrido,8.8,Aprovado
+715,Aluno_0715,Ciência da Computação,10,Noturno,Direito Digital,Zona Leste,5.9,9.4,41.8,4.7,50,Não,Presencial,7.6,Reprovado
+716,Aluno_0716,Ciência da Computação,4,Matutino,Python,Djalma Batista,6.8,,84.9,6.3,29,Sim,Presencial,7.7,Aprovado
+717,Aluno_0717,Sistemas de Informação,7,Noturno,Direito Digital,Djalma Batista,9.5,5.4,76.5,4.1,35,Não,Presencial,7.4,Aprovado
+718,Aluno_0718,Ciência da Computação,6,Vespertino,Direito Digital,Djalma Batista,8.2,5.1,82.3,5.2,28,Não,Presencial,6.6,Final
+719,Aluno_0719,Sistemas de Informação,10,Vespertino,Python,Djalma Batista,9.5,4.0,85.5,5.5,52,Não,Presencial,6.8,Final
+720,Aluno_0720,Direito,2,Noturno,Python,Djalma Batista,5.9,6.1,,6.1,26,Não,EaD,6.0,Final
+721,Aluno_0721,Administração,8,Noturno,Algoritmos,Djalma Batista,5.5,7.2,47.9,2.1,32,Sim,EaD,6.4,Reprovado
+722,Aluno_0722,Administração,10,Matutino,Direito Digital,Zona Leste,5.5,5.4,62.1,2.4,44,Não,Presencial,5.4,Reprovado
+723,Aluno_0723,Direito,9,Vespertino,Engenharia de Software,Djalma Batista,6.1,7.8,83.0,14.6,35,Sim,Presencial,7.0,Aprovado
+724,Aluno_0724,Engenharia de Software,5,Noturno,Python,Cidade Nova,4.9,8.2,81.0,1.1,22,Sim,Presencial,6.6,Final
+725,Aluno_0725,Direito,10,Vespertino,Estatística,Djalma Batista,7.3,6.3,66.2,5.4,20,Sim,Híbrido,6.8,Reprovado
+726,Aluno_0726,Ciência da Computação,4,Matutino,Direito Digital,Djalma Batista,7.4,4.8,89.1,7.7,46,Não,Presencial,6.1,Final
+727,Aluno_0727,Engenharia de Software,6,Noturno,Python,Djalma Batista,9.2,9.4,74.2,2.7,47,Não,EaD,9.3,Reprovado
+728,Aluno_0728,Ciência da Computação,8,Vespertino,Engenharia de Software,Djalma Batista,3.6,7.2,91.3,10.2,43,Não,Presencial,5.4,Final
+729,Aluno_0729,Ciência da Computação,3,Noturno,Algoritmos,Cidade Nova,5.1,10.0,96.2,5.3,37,Sim,Presencial,7.6,Aprovado
+730,Aluno_0730,Direito,10,Noturno,Direito Digital,Zona Leste,8.3,7.3,82.2,12.6,53,Não,Presencial,7.8,Aprovado
+731,Aluno_0731,Ciência da Computação,1,Noturno,Python,Djalma Batista,7.1,7.4,86.3,2.8,25,Sim,Presencial,7.2,Aprovado
+732,Aluno_0732,Ciência da Computação,4,Noturno,Python,Centro,6.9,5.5,68.9,4.7,51,Sim,EaD,6.2,Reprovado
+733,Aluno_0733,Administração,4,Noturno,Estatística,Centro,9.1,6.4,91.4,3.8,37,Sim,EaD,7.8,Aprovado
+734,Aluno_0734,Sistemas de Informação,1,Matutino,Estatística,Zona Leste,5.0,4.5,81.3,3.5,33,Não,EaD,4.8,Final
+735,Aluno_0735,Ciência da Computação,9,Vespertino,Direito Digital,Cidade Nova,5.5,4.8,73.6,3.6,40,Não,EaD,5.2,Reprovado
+736,Aluno_0736,Administração,3,Noturno,Python,Centro,5.3,8.4,59.7,4.3,47,Sim,Presencial,6.8,Reprovado
+737,Aluno_0737,Engenharia de Software,5,Matutino,Direito Digital,Cidade Nova,3.2,6.6,,4.1,22,Não,Presencial,4.9,Reprovado
+738,Aluno_0738,Engenharia de Software,6,Noturno,Python,Cidade Nova,7.0,6.4,61.4,8.2,51,Sim,Híbrido,6.7,Reprovado
+739,Aluno_0739,Sistemas de Informação,8,Noturno,Estatística,Djalma Batista,5.9,5.8,89.4,7.8,53,Não,EaD,5.8,Final
+740,Aluno_0740,Ciência da Computação,6,Vespertino,Engenharia de Software,Djalma Batista,5.5,6.4,96.3,1.7,29,Sim,EaD,6.0,Final
+741,Aluno_0741,Direito,3,Noturno,Banco de Dados,Zona Leste,5.2,9.0,91.7,3.6,41,Sim,Presencial,7.1,Aprovado
+742,Aluno_0742,Engenharia de Software,6,Noturno,Banco de Dados,Cidade Nova,6.8,7.3,100.0,6.5,48,Não,Presencial,7.0,Aprovado
+743,Aluno_0743,Engenharia de Software,1,Noturno,Python,Centro,5.4,5.1,71.1,6.2,17,Não,Presencial,5.2,Reprovado
+744,Aluno_0744,Sistemas de Informação,4,Noturno,Estatística,Centro,7.2,8.9,86.9,4.5,51,Não,EaD,8.0,Aprovado
+745,Aluno_0745,Sistemas de Informação,6,Noturno,Algoritmos,Djalma Batista,7.6,10.0,60.3,5.2,35,Não,Híbrido,8.8,Reprovado
+746,Aluno_0746,Administração,7,Noturno,Algoritmos,Centro,6.3,7.9,75.0,4.1,28,Não,Presencial,7.1,Aprovado
+747,Aluno_0747,Ciência da Computação,10,Noturno,Banco de Dados,Cidade Nova,6.1,8.6,55.8,8.6,36,Não,Presencial,7.4,Reprovado
+748,Aluno_0748,Engenharia de Software,3,Noturno,Engenharia de Software,Djalma Batista,7.1,9.2,86.5,8.1,49,Não,Presencial,8.1,Aprovado
+749,Aluno_0749,Sistemas de Informação,9,Matutino,Banco de Dados,Cidade Nova,,4.3,72.7,4.3,45,Não,Presencial,5.5,Reprovado
+750,Aluno_0750,Direito,7,Matutino,Python,Zona Leste,9.2,10.0,47.2,5.0,32,Não,Presencial,9.6,Reprovado
+751,Aluno_0751,Administração,1,Noturno,Engenharia de Software,Djalma Batista,7.4,9.0,67.7,4.3,30,Não,Híbrido,8.2,Reprovado
+752,Aluno_0752,Engenharia de Software,2,Vespertino,Algoritmos,Centro,8.8,,100.0,4.8,23,Sim,EaD,8.4,Aprovado
+753,Aluno_0753,Sistemas de Informação,1,Matutino,Estatística,Djalma Batista,7.9,,84.2,9.4,22,Não,Híbrido,7.4,Aprovado
+754,Aluno_0754,Engenharia de Software,9,Noturno,Estatística,Cidade Nova,,4.8,89.5,4.1,37,Sim,EaD,4.6,Final
+755,Aluno_0755,Direito,9,Matutino,Python,Djalma Batista,5.8,6.5,79.9,3.5,52,Não,Presencial,6.2,Final
+756,Aluno_0756,Ciência da Computação,7,Noturno,Banco de Dados,Centro,6.7,7.9,75.3,5.0,38,Sim,Híbrido,7.3,Aprovado
+757,Aluno_0757,Direito,10,Noturno,Python,Zona Leste,8.4,5.2,78.2,15.0,35,Sim,Presencial,6.8,Final
+758,Aluno_0758,Engenharia de Software,3,Noturno,Estatística,Djalma Batista,10.0,7.0,81.7,4.3,41,Sim,Híbrido,8.5,Aprovado
+759,Aluno_0759,Administração,5,Noturno,Algoritmos,Zona Leste,5.9,5.1,61.6,3.2,19,Não,EaD,5.5,Reprovado
+760,Aluno_0760,Engenharia de Software,4,Matutino,Estatística,Zona Leste,6.9,6.4,89.4,7.5,52,Sim,Presencial,6.6,Final
+761,Aluno_0761,Sistemas de Informação,7,Noturno,Engenharia de Software,Djalma Batista,8.2,4.8,94.8,8.0,50,Não,Presencial,6.5,Final
+762,Aluno_0762,Ciência da Computação,9,Noturno,Direito Digital,Djalma Batista,6.7,4.6,75.1,5.6,27,Não,Presencial,5.6,Final
+763,Aluno_0763,Sistemas de Informação,2,Noturno,Estatística,Zona Leste,9.8,7.7,70.2,3.4,43,Sim,Presencial,8.8,Reprovado
+764,Aluno_0764,Administração,8,Noturno,Estatística,Zona Leste,4.4,6.1,66.9,8.7,18,Não,Presencial,5.2,Reprovado
+765,Aluno_0765,Direito,9,Vespertino,Direito Digital,Djalma Batista,8.0,6.3,100.0,2.3,22,Sim,Híbrido,7.2,Aprovado
+766,Aluno_0766,Engenharia de Software,10,Noturno,Engenharia de Software,Djalma Batista,8.0,6.0,71.2,0.7,18,Não,EaD,7.0,Reprovado
+767,Aluno_0767,Ciência da Computação,10,Matutino,Banco de Dados,Djalma Batista,8.9,10.0,87.8,4.6,33,Não,Presencial,9.4,Aprovado
+768,Aluno_0768,Sistemas de Informação,9,Noturno,Estatística,Zona Leste,6.9,8.1,75.2,14.3,30,Sim,Presencial,7.5,Aprovado
+769,Aluno_0769,Direito,10,Noturno,Python,Djalma Batista,8.4,8.3,74.3,5.7,26,Sim,Presencial,8.4,Reprovado
+770,Aluno_0770,Ciência da Computação,7,Matutino,Estatística,Centro,6.4,5.8,66.5,4.2,49,Não,Presencial,6.1,Reprovado
+771,Aluno_0771,Sistemas de Informação,9,Vespertino,Python,Cidade Nova,5.4,8.0,63.4,6.7,28,Não,Presencial,6.7,Reprovado
+772,Aluno_0772,Engenharia de Software,9,Vespertino,Engenharia de Software,Djalma Batista,5.1,6.7,89.1,6.7,48,Sim,EaD,5.9,Final
+773,Aluno_0773,Sistemas de Informação,3,Noturno,Estatística,Centro,4.2,5.8,63.1,10.0,40,Sim,Presencial,5.0,Reprovado
+774,Aluno_0774,Ciência da Computação,4,Noturno,Engenharia de Software,Djalma Batista,6.0,10.0,84.9,3.0,30,Não,Presencial,8.0,Aprovado
+775,Aluno_0775,Ciência da Computação,2,Vespertino,Engenharia de Software,Zona Leste,7.4,8.1,79.4,6.8,21,Sim,Presencial,7.8,Aprovado
+776,Aluno_0776,Sistemas de Informação,10,Noturno,Banco de Dados,Djalma Batista,6.4,8.0,89.3,5.0,21,Não,Presencial,7.2,Aprovado
+777,Aluno_0777,Administração,3,Matutino,Estatística,Cidade Nova,7.2,5.4,68.9,5.4,48,Não,Presencial,6.3,Reprovado
+778,Aluno_0778,Sistemas de Informação,5,Noturno,Python,Cidade Nova,9.0,4.9,94.2,4.9,49,Sim,Presencial,7.0,Aprovado
+779,Aluno_0779,Sistemas de Informação,5,Matutino,Python,Djalma Batista,5.9,7.0,75.9,4.9,20,Não,Presencial,6.4,Final
+780,Aluno_0780,Sistemas de Informação,6,Noturno,Estatística,Djalma Batista,10.0,6.1,,1.8,46,Não,Híbrido,8.0,Aprovado
+781,Aluno_0781,Direito,7,Noturno,Direito Digital,Djalma Batista,8.2,8.1,53.8,3.9,33,Não,EaD,8.1,Reprovado
+782,Aluno_0782,Ciência da Computação,7,Noturno,Banco de Dados,Djalma Batista,6.4,8.3,100.0,4.9,19,Não,EaD,7.4,Aprovado
+783,Aluno_0783,Engenharia de Software,1,Noturno,Banco de Dados,Cidade Nova,6.4,7.2,76.1,6.3,29,Não,Presencial,6.8,Final
+784,Aluno_0784,Sistemas de Informação,2,Noturno,Banco de Dados,Cidade Nova,5.0,8.5,81.3,5.4,52,Não,Presencial,6.8,Final
+785,Aluno_0785,Sistemas de Informação,9,Noturno,Python,Centro,6.8,7.4,68.9,5.3,34,Sim,Presencial,7.1,Reprovado
+786,Aluno_0786,Ciência da Computação,10,Noturno,Engenharia de Software,Centro,2.9,5.6,54.5,7.2,39,Não,EaD,4.2,Reprovado
+787,Aluno_0787,Direito,2,Noturno,Direito Digital,Centro,9.1,6.8,70.1,11.0,51,Sim,Presencial,8.0,Reprovado
+788,Aluno_0788,Administração,6,Noturno,Banco de Dados,Cidade Nova,1.7,7.3,,4.5,49,Sim,Presencial,4.5,Reprovado
+789,Aluno_0789,Sistemas de Informação,1,Matutino,Python,Djalma Batista,6.9,8.7,80.7,3.0,52,Não,Presencial,7.8,Aprovado
+790,Aluno_0790,Engenharia de Software,3,Noturno,Python,Djalma Batista,4.7,7.5,94.8,8.6,33,Não,Híbrido,6.1,Final
+791,Aluno_0791,Administração,2,Matutino,Engenharia de Software,Djalma Batista,5.5,6.1,80.9,6.8,50,Não,Híbrido,5.8,Final
+792,Aluno_0792,Ciência da Computação,3,Noturno,Estatística,Centro,5.8,8.7,81.1,4.3,28,Sim,Presencial,7.2,Aprovado
+793,Aluno_0793,Direito,5,Noturno,Estatística,Djalma Batista,10.0,7.7,83.8,0.9,21,Não,EaD,8.8,Aprovado
+794,Aluno_0794,Sistemas de Informação,10,Noturno,Banco de Dados,Djalma Batista,4.8,9.7,51.7,8.8,43,Não,Presencial,7.2,Reprovado
+795,Aluno_0795,Administração,6,Matutino,Banco de Dados,Djalma Batista,8.4,7.2,53.1,2.9,29,Não,Presencial,7.8,Reprovado
+796,Aluno_0796,Direito,9,Matutino,Direito Digital,Cidade Nova,8.9,5.3,55.5,4.6,42,Não,Presencial,7.1,Reprovado
+797,Aluno_0797,Administração,10,Noturno,Engenharia de Software,Djalma Batista,2.6,9.1,72.4,4.2,30,Não,Presencial,5.8,Reprovado
+798,Aluno_0798,Engenharia de Software,4,Noturno,Banco de Dados,Djalma Batista,5.7,6.1,49.9,9.0,48,Não,Presencial,5.9,Reprovado
+799,Aluno_0799,Ciência da Computação,7,Vespertino,Engenharia de Software,Djalma Batista,9.5,7.6,67.7,6.1,27,Sim,Híbrido,8.6,Reprovado
+800,Aluno_0800,Administração,6,Noturno,Python,Djalma Batista,4.4,7.4,57.5,2.4,54,Não,EaD,5.9,Reprovado
+801,Aluno_0801,Sistemas de Informação,2,Noturno,Banco de Dados,Centro,9.0,7.2,85.3,16.9,32,Sim,Presencial,8.1,Aprovado
+802,Aluno_0802,Ciência da Computação,10,Noturno,Python,Djalma Batista,6.8,6.8,84.6,7.0,38,Não,Presencial,6.8,Final
+803,Aluno_0803,Direito,8,Vespertino,Algoritmos,Djalma Batista,6.7,4.3,73.5,3.4,32,Não,Presencial,5.5,Reprovado
+804,Aluno_0804,Direito,7,Noturno,Engenharia de Software,Centro,6.9,5.4,49.5,10.5,29,Sim,Presencial,6.2,Reprovado
+805,Aluno_0805,Administração,7,Matutino,Algoritmos,Djalma Batista,7.4,9.0,74.4,5.2,28,Não,Híbrido,8.2,Reprovado
+806,Aluno_0806,Sistemas de Informação,8,Noturno,Banco de Dados,Djalma Batista,5.1,7.8,82.9,4.7,34,Não,Presencial,6.4,Final
+807,Aluno_0807,Direito,1,Matutino,Python,Zona Leste,6.3,10.0,90.2,,45,Sim,Presencial,8.2,Aprovado
+808,Aluno_0808,Direito,1,Vespertino,Banco de Dados,Djalma Batista,7.5,5.3,100.0,5.1,34,Sim,Presencial,6.4,Final
+809,Aluno_0809,Sistemas de Informação,8,Matutino,Algoritmos,Djalma Batista,7.1,7.0,94.8,5.0,18,Sim,Presencial,7.0,Aprovado
+810,Aluno_0810,Ciência da Computação,4,Matutino,Banco de Dados,Djalma Batista,7.4,9.1,80.5,4.8,18,Sim,Presencial,8.2,Aprovado
+811,Aluno_0811,Ciência da Computação,5,Noturno,Direito Digital,Centro,5.5,6.1,73.7,3.7,19,Não,Híbrido,5.8,Reprovado
+812,Aluno_0812,Ciência da Computação,8,Matutino,Estatística,Centro,7.9,6.3,66.9,3.2,45,Não,EaD,7.1,Reprovado
+813,Aluno_0813,Administração,5,Matutino,Algoritmos,Centro,7.0,6.6,98.3,5.7,24,Sim,Presencial,6.8,Final
+814,Aluno_0814,Engenharia de Software,10,Noturno,Banco de Dados,Cidade Nova,4.0,6.3,80.5,3.2,27,Não,EaD,5.2,Final
+815,Aluno_0815,Direito,4,Matutino,Python,Djalma Batista,5.8,8.0,87.5,6.2,28,Não,Híbrido,6.9,Final
+816,Aluno_0816,Administração,6,Matutino,Banco de Dados,Djalma Batista,5.2,4.1,69.1,10.3,48,Não,Presencial,4.6,Reprovado
+817,Aluno_0817,Ciência da Computação,5,Noturno,Python,Cidade Nova,5.2,9.9,59.4,5.1,20,Sim,Presencial,7.6,Reprovado
+818,Aluno_0818,Direito,7,Noturno,Estatística,Zona Leste,5.9,5.5,72.0,5.8,25,Não,Presencial,5.7,Reprovado
+819,Aluno_0819,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,7.9,3.5,73.5,9.0,40,Sim,Presencial,5.7,Reprovado
+820,Aluno_0820,Direito,7,Noturno,Estatística,Centro,5.7,7.1,80.9,4.5,32,Não,EaD,6.4,Final
+821,Aluno_0821,Sistemas de Informação,4,Noturno,Algoritmos,Djalma Batista,7.2,6.5,66.9,3.6,33,Não,Presencial,6.8,Reprovado
+822,Aluno_0822,Administração,5,Matutino,Python,Djalma Batista,6.9,6.8,78.4,0.7,38,Sim,Presencial,6.8,Final
+823,Aluno_0823,Sistemas de Informação,3,Noturno,Direito Digital,Djalma Batista,5.4,7.6,95.7,5.5,23,Não,Presencial,6.5,Final
+824,Aluno_0824,Ciência da Computação,4,Noturno,Algoritmos,Djalma Batista,6.2,8.2,52.9,3.6,26,Não,Presencial,7.2,Reprovado
+825,Aluno_0825,Direito,4,Noturno,Python,Cidade Nova,8.4,10.0,46.2,4.3,45,Não,Presencial,9.2,Reprovado
+826,Aluno_0826,Ciência da Computação,3,Noturno,Estatística,Centro,7.1,5.9,96.7,1.1,52,Não,EaD,6.5,Final
+827,Aluno_0827,Engenharia de Software,10,Matutino,Engenharia de Software,Djalma Batista,7.8,8.4,56.0,4.3,40,Não,Presencial,8.1,Reprovado
+828,Aluno_0828,Ciência da Computação,5,Noturno,Banco de Dados,Djalma Batista,9.1,8.3,72.3,2.5,30,Não,Presencial,8.7,Reprovado
+829,Aluno_0829,Direito,5,Noturno,Estatística,Cidade Nova,7.6,2.6,87.1,2.1,30,Não,Presencial,5.1,Final
+830,Aluno_0830,Sistemas de Informação,7,Noturno,Python,Djalma Batista,3.3,5.7,77.1,2.7,41,Sim,Híbrido,4.5,Final
+831,Aluno_0831,Sistemas de Informação,4,Matutino,Python,Centro,7.3,4.9,76.9,2.5,38,Não,Presencial,6.1,Final
+832,Aluno_0832,Ciência da Computação,4,Matutino,Python,Djalma Batista,5.7,7.9,79.1,8.2,39,Não,Presencial,6.8,Final
+833,Aluno_0833,Ciência da Computação,9,Matutino,Python,Centro,10.0,7.7,,9.3,48,Não,Presencial,8.8,Aprovado
+834,Aluno_0834,Sistemas de Informação,6,Noturno,Banco de Dados,Djalma Batista,7.5,7.7,100.0,5.6,42,Não,Presencial,7.6,Aprovado
+835,Aluno_0835,Ciência da Computação,4,Matutino,Algoritmos,Djalma Batista,5.7,6.6,67.6,12.5,43,Não,Presencial,6.2,Reprovado
+836,Aluno_0836,Ciência da Computação,2,Matutino,Direito Digital,Djalma Batista,7.8,6.8,93.8,4.2,28,Não,EaD,7.3,Aprovado
+837,Aluno_0837,Sistemas de Informação,6,Noturno,Engenharia de Software,Djalma Batista,7.0,7.1,85.6,0.5,35,Não,EaD,7.0,Aprovado
+838,Aluno_0838,Engenharia de Software,2,Matutino,Banco de Dados,Djalma Batista,3.7,6.4,77.7,2.9,35,Sim,Presencial,5.1,Final
+839,Aluno_0839,Administração,5,Noturno,Python,Cidade Nova,8.4,8.4,64.4,4.9,50,Sim,Presencial,8.4,Reprovado
+840,Aluno_0840,Sistemas de Informação,6,Vespertino,Banco de Dados,Djalma Batista,6.1,5.3,84.8,2.7,48,Sim,EaD,5.7,Final
+841,Aluno_0841,Engenharia de Software,4,Noturno,Estatística,Djalma Batista,9.4,5.8,73.4,5.3,45,Não,Presencial,7.6,Reprovado
+842,Aluno_0842,Engenharia de Software,3,Noturno,Direito Digital,Centro,6.6,7.3,72.3,7.3,37,Sim,Presencial,7.0,Reprovado
+843,Aluno_0843,Ciência da Computação,7,Noturno,Python,Centro,9.4,6.5,66.5,2.7,51,Sim,Presencial,8.0,Reprovado
+844,Aluno_0844,Direito,2,Noturno,Engenharia de Software,Zona Leste,7.6,5.2,93.0,11.1,21,Sim,Híbrido,6.4,Final
+845,Aluno_0845,Ciência da Computação,6,Matutino,Python,Centro,8.6,8.0,66.5,14.8,28,Sim,EaD,8.3,Reprovado
+846,Aluno_0846,Engenharia de Software,4,Matutino,Direito Digital,Centro,5.9,6.1,66.6,13.3,23,Não,Presencial,6.0,Reprovado
+847,Aluno_0847,Sistemas de Informação,6,Vespertino,Engenharia de Software,Centro,7.4,5.7,89.7,1.4,18,Não,Presencial,6.6,Final
+848,Aluno_0848,Direito,4,Noturno,Direito Digital,Zona Leste,3.7,6.8,75.8,3.7,41,Sim,EaD,5.2,Final
+849,Aluno_0849,Engenharia de Software,4,Noturno,Engenharia de Software,Cidade Nova,,5.6,76.2,6.0,26,Não,Presencial,6.1,Final
+850,Aluno_0850,Sistemas de Informação,4,Noturno,Algoritmos,Djalma Batista,4.1,7.0,93.5,2.0,54,Não,EaD,5.6,Final
+851,Aluno_0851,Ciência da Computação,9,Noturno,Algoritmos,Djalma Batista,4.7,6.5,97.7,2.1,22,Não,Presencial,5.6,Final
+852,Aluno_0852,Administração,7,Matutino,Banco de Dados,Djalma Batista,5.2,6.2,46.1,1.3,43,Não,Híbrido,5.7,Reprovado
+853,Aluno_0853,Ciência da Computação,3,Noturno,Banco de Dados,Centro,8.0,6.2,76.1,5.2,51,Não,EaD,7.1,Aprovado
+854,Aluno_0854,Engenharia de Software,3,Noturno,Engenharia de Software,Cidade Nova,6.5,8.8,56.8,6.2,26,Sim,Presencial,7.6,Reprovado
+855,Aluno_0855,Administração,6,Vespertino,Python,Centro,6.9,7.7,72.2,9.1,25,Não,Presencial,7.3,Reprovado
+856,Aluno_0856,Direito,6,Noturno,Estatística,Djalma Batista,6.5,4.2,77.9,6.8,36,Não,Presencial,5.4,Final
+857,Aluno_0857,Engenharia de Software,4,Matutino,Estatística,Cidade Nova,8.7,8.6,72.7,7.4,53,Sim,Presencial,8.6,Reprovado
+858,Aluno_0858,Direito,9,Noturno,Python,Cidade Nova,6.8,8.0,62.6,1.5,51,Sim,EaD,7.4,Reprovado
+859,Aluno_0859,Direito,4,Noturno,Python,Djalma Batista,7.2,7.9,61.9,5.9,53,Não,Presencial,7.6,Reprovado
+860,Aluno_0860,Ciência da Computação,9,Matutino,Algoritmos,Cidade Nova,5.8,8.6,88.9,4.9,24,Não,EaD,7.2,Aprovado
+861,Aluno_0861,Ciência da Computação,4,Noturno,Estatística,Djalma Batista,8.9,7.1,100.0,3.3,47,Não,Presencial,8.0,Aprovado
+862,Aluno_0862,Ciência da Computação,2,Vespertino,Engenharia de Software,Zona Leste,9.0,8.2,47.1,4.0,32,Não,EaD,8.6,Reprovado
+863,Aluno_0863,Administração,2,Noturno,Direito Digital,Cidade Nova,6.7,6.3,73.1,6.3,44,Não,Presencial,6.5,Reprovado
+864,Aluno_0864,Direito,5,Noturno,Banco de Dados,Centro,5.7,8.5,89.0,7.7,22,Sim,EaD,7.1,Aprovado
+865,Aluno_0865,Sistemas de Informação,4,Matutino,Direito Digital,Cidade Nova,3.9,7.5,77.5,13.7,48,Não,Presencial,5.7,Final
+866,Aluno_0866,Direito,7,Noturno,Algoritmos,Zona Leste,5.2,4.8,61.3,6.5,44,Não,Presencial,5.0,Reprovado
+867,Aluno_0867,Ciência da Computação,5,Noturno,Estatística,Centro,2.9,8.9,70.8,8.2,27,Não,Presencial,5.9,Reprovado
+868,Aluno_0868,Sistemas de Informação,6,Vespertino,Python,Djalma Batista,5.2,6.9,82.5,8.0,39,Sim,Presencial,6.1,Final
+869,Aluno_0869,Engenharia de Software,10,Matutino,Estatística,Cidade Nova,,6.6,73.4,9.4,46,Sim,Presencial,7.0,Reprovado
+870,Aluno_0870,Ciência da Computação,4,Noturno,Engenharia de Software,Djalma Batista,6.7,6.3,77.3,2.4,25,Não,Presencial,6.5,Final
+871,Aluno_0871,Direito,2,Noturno,Algoritmos,Djalma Batista,10.0,6.5,77.7,5.3,44,Não,Híbrido,8.2,Aprovado
+872,Aluno_0872,Sistemas de Informação,10,Matutino,Python,Zona Leste,6.1,7.5,70.1,2.8,40,Não,Presencial,6.8,Reprovado
+873,Aluno_0873,Direito,9,Vespertino,Direito Digital,Cidade Nova,6.0,5.4,90.2,2.9,44,Não,EaD,5.7,Final
+874,Aluno_0874,Engenharia de Software,10,Matutino,Engenharia de Software,Djalma Batista,8.7,4.4,70.8,6.6,40,Não,Presencial,6.6,Reprovado
+875,Aluno_0875,Sistemas de Informação,7,Noturno,Direito Digital,Djalma Batista,3.3,5.3,62.9,6.6,31,Não,Presencial,4.3,Reprovado
+876,Aluno_0876,Administração,4,Matutino,Banco de Dados,Djalma Batista,4.1,7.7,100.0,6.4,49,Sim,EaD,5.9,Final
+877,Aluno_0877,Engenharia de Software,3,Vespertino,Algoritmos,Djalma Batista,8.0,6.8,76.8,3.6,50,Não,Híbrido,7.4,Aprovado
+878,Aluno_0878,Ciência da Computação,10,Noturno,Engenharia de Software,Djalma Batista,6.4,9.0,39.0,5.4,38,Não,Presencial,7.7,Reprovado
+879,Aluno_0879,Ciência da Computação,3,Noturno,Engenharia de Software,Cidade Nova,6.5,7.0,96.8,4.3,45,Sim,Híbrido,6.8,Final
+880,Aluno_0880,Direito,9,Vespertino,Direito Digital,Djalma Batista,5.1,8.5,96.8,6.4,50,Não,Presencial,6.8,Final
+881,Aluno_0881,Ciência da Computação,5,Noturno,Python,Centro,7.2,5.9,84.9,9.2,26,Não,EaD,6.6,Final
+882,Aluno_0882,Sistemas de Informação,3,Noturno,Banco de Dados,Djalma Batista,5.3,6.4,87.5,2.7,46,Não,Presencial,5.8,Final
+883,Aluno_0883,Sistemas de Informação,5,Matutino,Direito Digital,Zona Leste,6.9,7.1,100.0,5.1,27,Não,Presencial,7.0,Aprovado
+884,Aluno_0884,Ciência da Computação,2,Matutino,Engenharia de Software,Djalma Batista,4.7,6.9,63.6,8.1,50,Não,Presencial,5.8,Reprovado
+885,Aluno_0885,Direito,4,Noturno,Algoritmos,Djalma Batista,6.5,6.7,80.0,1.6,37,Não,Presencial,6.6,Final
+886,Aluno_0886,Ciência da Computação,10,Matutino,Engenharia de Software,Djalma Batista,10.0,5.6,100.0,8.6,29,Não,Presencial,7.8,Aprovado
+887,Aluno_0887,Sistemas de Informação,2,Noturno,Estatística,Centro,6.0,4.4,100.0,1.0,41,Sim,Presencial,5.2,Final
+888,Aluno_0888,Sistemas de Informação,2,Noturno,Algoritmos,Centro,6.6,8.2,72.5,2.4,37,Não,Presencial,7.4,Reprovado
+889,Aluno_0889,Ciência da Computação,8,Vespertino,Algoritmos,Djalma Batista,6.4,8.0,100.0,4.9,17,Não,Presencial,7.2,Aprovado
+890,Aluno_0890,Administração,1,Vespertino,Engenharia de Software,Djalma Batista,7.1,6.1,90.0,4.2,21,Não,Presencial,6.6,Final
+891,Aluno_0891,Ciência da Computação,7,Noturno,Python,Djalma Batista,7.6,7.7,100.0,3.9,38,Não,Presencial,7.6,Aprovado
+892,Aluno_0892,Administração,5,Noturno,Algoritmos,Centro,7.3,6.8,89.5,13.1,23,Sim,EaD,7.0,Aprovado
+893,Aluno_0893,Ciência da Computação,8,Noturno,Estatística,Centro,7.3,9.0,82.6,2.2,29,Sim,EaD,8.2,Aprovado
+894,Aluno_0894,Sistemas de Informação,1,Noturno,Direito Digital,Djalma Batista,6.5,4.9,100.0,6.7,39,Não,Presencial,5.7,Final
+895,Aluno_0895,Administração,7,Matutino,Python,Djalma Batista,7.0,6.9,70.1,13.4,37,Não,Presencial,7.0,Reprovado
+896,Aluno_0896,Ciência da Computação,5,Noturno,Python,Djalma Batista,6.4,6.7,100.0,8.3,22,Não,Presencial,6.6,Final
+897,Aluno_0897,Direito,4,Noturno,Python,Djalma Batista,3.5,7.4,,6.3,36,Não,Híbrido,5.4,Final
+898,Aluno_0898,Administração,7,Noturno,Algoritmos,Centro,10.0,9.7,98.4,5.8,28,Não,EaD,9.8,Aprovado
+899,Aluno_0899,Sistemas de Informação,10,Matutino,Python,Djalma Batista,8.1,6.9,76.9,3.9,25,Não,Presencial,7.5,Aprovado
+900,Aluno_0900,Sistemas de Informação,2,Matutino,Engenharia de Software,Djalma Batista,5.0,8.4,81.7,3.7,44,Sim,EaD,6.7,Final
+901,Aluno_0901,Direito,1,Noturno,Python,Djalma Batista,7.2,6.8,58.9,1.9,27,Não,Presencial,7.0,Reprovado
+902,Aluno_0902,Ciência da Computação,1,Noturno,Estatística,Zona Leste,4.4,8.9,71.2,8.9,48,Não,Presencial,6.6,Reprovado
+903,Aluno_0903,Sistemas de Informação,1,Vespertino,Banco de Dados,Zona Leste,5.9,8.4,87.3,2.1,27,Não,Híbrido,7.2,Aprovado
+904,Aluno_0904,Sistemas de Informação,5,Vespertino,Estatística,Djalma Batista,4.1,6.5,56.6,4.9,40,Não,Híbrido,5.3,Reprovado
+905,Aluno_0905,Sistemas de Informação,10,Noturno,Algoritmos,Djalma Batista,6.7,6.4,73.5,4.2,31,Sim,EaD,6.6,Reprovado
+906,Aluno_0906,Direito,7,Noturno,Python,Djalma Batista,4.0,7.9,100.0,5.7,51,Não,Presencial,6.0,Final
+907,Aluno_0907,Sistemas de Informação,2,Vespertino,Python,Centro,7.5,6.0,75.7,7.3,33,Sim,Presencial,6.8,Final
+908,Aluno_0908,Ciência da Computação,10,Matutino,Engenharia de Software,Djalma Batista,8.0,7.4,93.5,3.8,41,Sim,Híbrido,7.7,Aprovado
+909,Aluno_0909,Engenharia de Software,8,Vespertino,Direito Digital,Cidade Nova,5.3,6.5,86.5,2.4,51,Não,EaD,5.9,Final
+910,Aluno_0910,Ciência da Computação,4,Noturno,Python,Centro,7.1,7.7,73.4,3.2,35,Sim,Presencial,7.4,Reprovado
+911,Aluno_0911,Sistemas de Informação,3,Noturno,Estatística,Zona Leste,5.2,6.8,75.7,2.8,47,Não,Presencial,6.0,Final
+912,Aluno_0912,Direito,10,Noturno,Algoritmos,Djalma Batista,7.7,5.9,,13.6,33,Sim,Híbrido,6.8,Final
+913,Aluno_0913,Sistemas de Informação,8,Noturno,Banco de Dados,Cidade Nova,5.6,9.0,47.2,10.3,39,Sim,Híbrido,7.3,Reprovado
+914,Aluno_0914,Direito,2,Vespertino,Python,Cidade Nova,8.2,7.5,92.2,1.9,17,Sim,EaD,7.8,Aprovado
+915,Aluno_0915,Administração,3,Noturno,Banco de Dados,Djalma Batista,3.5,7.0,76.2,4.2,26,Sim,EaD,5.2,Final
+916,Aluno_0916,Ciência da Computação,3,Noturno,Python,Djalma Batista,5.0,7.8,92.7,2.7,24,Não,Presencial,6.4,Final
+917,Aluno_0917,Engenharia de Software,10,Matutino,Algoritmos,Djalma Batista,4.8,4.3,83.8,3.3,42,Não,Presencial,4.6,Final
+918,Aluno_0918,Ciência da Computação,1,Matutino,Direito Digital,Djalma Batista,7.2,10.0,75.6,3.6,50,Não,EaD,8.6,Aprovado
+919,Aluno_0919,Ciência da Computação,6,Noturno,Estatística,Djalma Batista,7.8,7.1,81.0,2.9,35,Sim,Presencial,7.4,Aprovado
+920,Aluno_0920,Administração,2,Noturno,Algoritmos,Centro,7.3,3.8,81.0,8.4,30,Não,EaD,5.6,Final
+921,Aluno_0921,Administração,1,Vespertino,Banco de Dados,Djalma Batista,5.9,9.1,100.0,6.2,24,Não,Híbrido,7.5,Aprovado
+922,Aluno_0922,Ciência da Computação,2,Noturno,Python,Zona Leste,1.8,5.8,78.9,5.9,17,Sim,Presencial,3.8,Reprovado
+923,Aluno_0923,Engenharia de Software,6,Noturno,Banco de Dados,Djalma Batista,6.9,8.9,82.3,10.9,41,Não,EaD,7.9,Aprovado
+924,Aluno_0924,Administração,4,Matutino,Estatística,Zona Leste,8.2,7.3,59.1,8.1,40,Não,EaD,7.8,Reprovado
+925,Aluno_0925,Administração,6,Matutino,Algoritmos,Djalma Batista,10.0,4.4,77.3,5.1,36,Não,Presencial,7.2,Aprovado
+926,Aluno_0926,Engenharia de Software,9,Matutino,Banco de Dados,Cidade Nova,6.0,7.5,,6.0,46,Não,EaD,6.8,Final
+927,Aluno_0927,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,5.6,7.4,84.4,8.9,21,Não,Presencial,6.5,Final
+928,Aluno_0928,Sistemas de Informação,10,Matutino,Estatística,Djalma Batista,7.4,9.1,61.8,8.5,19,Sim,EaD,8.2,Reprovado
+929,Aluno_0929,Administração,8,Vespertino,Python,Zona Leste,6.3,8.0,63.4,0.9,48,Não,Presencial,7.2,Reprovado
+930,Aluno_0930,Sistemas de Informação,1,Noturno,Banco de Dados,Djalma Batista,9.1,5.0,66.9,6.6,33,Não,EaD,7.0,Reprovado
+931,Aluno_0931,Engenharia de Software,8,Noturno,Estatística,Cidade Nova,5.3,8.8,93.0,5.4,21,Não,Presencial,7.0,Aprovado
+932,Aluno_0932,Ciência da Computação,9,Matutino,Python,Centro,6.4,6.4,91.1,7.5,27,Não,Presencial,6.4,Final
+933,Aluno_0933,Sistemas de Informação,6,Noturno,Direito Digital,Centro,8.4,10.0,26.2,1.3,54,Não,Presencial,9.2,Reprovado
+934,Aluno_0934,Ciência da Computação,10,Noturno,Python,Centro,7.4,6.5,76.8,9.3,20,Não,Presencial,7.0,Aprovado
+935,Aluno_0935,Administração,5,Noturno,Direito Digital,Cidade Nova,8.9,6.7,80.2,7.7,35,Não,Presencial,7.8,Aprovado
+936,Aluno_0936,Sistemas de Informação,6,Noturno,Algoritmos,Djalma Batista,6.0,5.7,63.6,4.0,39,Sim,Presencial,5.8,Reprovado
+937,Aluno_0937,Engenharia de Software,6,Matutino,Estatística,Cidade Nova,9.1,6.3,72.1,12.5,33,Não,EaD,7.7,Reprovado
+938,Aluno_0938,Sistemas de Informação,9,Noturno,Python,Zona Leste,3.8,5.8,98.0,2.4,29,Não,Híbrido,4.8,Final
+939,Aluno_0939,Sistemas de Informação,4,Noturno,Direito Digital,Djalma Batista,3.9,9.1,,5.7,43,Não,Híbrido,6.5,Final
+940,Aluno_0940,Ciência da Computação,2,Noturno,Direito Digital,Djalma Batista,9.1,4.8,70.5,3.5,17,Não,Híbrido,7.0,Reprovado
+941,Aluno_0941,Engenharia de Software,9,Noturno,Algoritmos,Cidade Nova,6.8,8.5,75.2,,18,Não,EaD,7.6,Aprovado
+942,Aluno_0942,Sistemas de Informação,2,Noturno,Engenharia de Software,Djalma Batista,8.5,8.5,74.6,4.8,34,Não,Presencial,8.5,Reprovado
+943,Aluno_0943,Ciência da Computação,10,Matutino,Estatística,Djalma Batista,7.0,9.4,82.2,1.4,52,Não,EaD,8.2,Aprovado
+944,Aluno_0944,Sistemas de Informação,9,Noturno,Engenharia de Software,Djalma Batista,6.8,7.2,56.6,7.7,49,Não,EaD,7.0,Reprovado
+945,Aluno_0945,Ciência da Computação,2,Noturno,Python,Centro,4.4,5.4,68.0,17.8,52,Sim,Presencial,4.9,Reprovado
+946,Aluno_0946,Administração,8,Noturno,Estatística,Djalma Batista,6.8,6.8,93.5,2.3,18,Sim,EaD,6.8,Final
+947,Aluno_0947,Administração,9,Vespertino,Algoritmos,Centro,9.3,8.1,76.9,10.8,20,Não,Presencial,8.7,Aprovado
+948,Aluno_0948,Ciência da Computação,10,Noturno,Python,Cidade Nova,6.9,7.2,65.3,9.0,32,Não,Híbrido,7.0,Reprovado
+949,Aluno_0949,Engenharia de Software,9,Noturno,Estatística,Djalma Batista,8.0,7.7,65.9,1.7,20,Não,EaD,7.8,Reprovado
+950,Aluno_0950,Administração,10,Matutino,Estatística,Centro,8.0,9.4,88.8,2.2,25,Não,Híbrido,8.7,Aprovado
+951,Aluno_0951,Sistemas de Informação,9,Noturno,Engenharia de Software,Zona Leste,5.0,8.1,70.2,5.7,37,Sim,Presencial,6.6,Reprovado
+952,Aluno_0952,Direito,2,Noturno,Python,Cidade Nova,8.3,7.4,85.7,,39,Não,Presencial,7.8,Aprovado
+953,Aluno_0953,Administração,4,Noturno,Algoritmos,Cidade Nova,6.2,4.0,68.6,9.5,18,Não,Híbrido,5.1,Reprovado
+954,Aluno_0954,Sistemas de Informação,7,Noturno,Algoritmos,Djalma Batista,6.3,5.8,61.1,4.9,19,Não,Presencial,6.0,Reprovado
+955,Aluno_0955,Sistemas de Informação,2,Noturno,Python,Cidade Nova,10.0,6.4,81.7,5.3,39,Sim,Presencial,8.2,Aprovado
+956,Aluno_0956,Administração,1,Vespertino,Python,Djalma Batista,7.9,3.7,76.5,1.9,42,Não,EaD,5.8,Final
+957,Aluno_0957,Engenharia de Software,3,Noturno,Direito Digital,Djalma Batista,5.7,5.2,88.3,10.9,23,Sim,Híbrido,5.4,Final
+958,Aluno_0958,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,6.9,6.6,91.3,9.1,52,Não,Presencial,6.8,Final
+959,Aluno_0959,Sistemas de Informação,8,Noturno,Engenharia de Software,Djalma Batista,6.9,6.9,72.6,6.8,49,Não,Presencial,6.9,Reprovado
+960,Aluno_0960,Ciência da Computação,6,Noturno,Python,Cidade Nova,9.8,8.0,83.2,5.0,52,Sim,Presencial,8.9,Aprovado
+961,Aluno_0961,Direito,2,Noturno,Python,Djalma Batista,6.9,6.8,72.2,10.8,20,Não,Presencial,6.8,Reprovado
+962,Aluno_0962,Direito,9,Matutino,Banco de Dados,Cidade Nova,10.0,7.5,87.5,2.3,39,Não,Presencial,8.8,Aprovado
+963,Aluno_0963,Administração,2,Noturno,Banco de Dados,Cidade Nova,4.5,6.4,81.5,5.9,41,Não,Híbrido,5.4,Final
+964,Aluno_0964,Ciência da Computação,5,Vespertino,Estatística,Centro,6.7,7.2,68.6,13.8,42,Não,EaD,7.0,Reprovado
+965,Aluno_0965,Engenharia de Software,4,Matutino,Algoritmos,Djalma Batista,5.4,7.9,67.4,2.3,44,Sim,Híbrido,6.6,Reprovado
+966,Aluno_0966,Engenharia de Software,7,Matutino,Engenharia de Software,Centro,5.9,9.6,82.0,15.7,44,Sim,Presencial,7.8,Aprovado
+967,Aluno_0967,Ciência da Computação,8,Noturno,Estatística,Djalma Batista,5.9,6.2,95.4,8.8,37,Não,EaD,6.1,Final
+968,Aluno_0968,Sistemas de Informação,5,Vespertino,Python,Djalma Batista,5.5,7.3,91.5,7.6,26,Não,Híbrido,6.4,Final
+969,Aluno_0969,Administração,10,Vespertino,Banco de Dados,Zona Leste,9.9,8.6,63.9,10.7,43,Não,Presencial,9.2,Reprovado
+970,Aluno_0970,Direito,5,Matutino,Direito Digital,Djalma Batista,9.4,4.7,65.4,9.5,31,Sim,Presencial,7.0,Reprovado
+971,Aluno_0971,Ciência da Computação,2,Vespertino,Algoritmos,Djalma Batista,,10.0,67.6,1.7,33,Sim,Híbrido,8.8,Reprovado
+972,Aluno_0972,Engenharia de Software,8,Noturno,Estatística,Zona Leste,5.9,9.1,69.1,1.7,51,Não,Presencial,7.5,Reprovado
+973,Aluno_0973,Sistemas de Informação,2,Noturno,Direito Digital,Djalma Batista,5.6,4.2,50.8,3.6,21,Não,EaD,4.9,Reprovado
+974,Aluno_0974,Engenharia de Software,10,Vespertino,Algoritmos,Cidade Nova,8.1,7.7,89.9,6.3,32,Sim,Presencial,7.9,Aprovado
+975,Aluno_0975,Direito,6,Noturno,Direito Digital,Djalma Batista,7.3,6.1,71.2,9.9,39,Não,EaD,6.7,Reprovado
+976,Aluno_0976,Engenharia de Software,8,Noturno,Banco de Dados,Djalma Batista,6.5,6.4,84.9,4.4,25,Sim,Híbrido,6.4,Final
+977,Aluno_0977,Administração,6,Noturno,Estatística,Djalma Batista,7.8,7.7,73.3,3.1,49,Não,Presencial,7.8,Reprovado
+978,Aluno_0978,Engenharia de Software,4,Vespertino,Estatística,Djalma Batista,8.4,8.9,77.7,8.5,51,Não,Presencial,8.6,Aprovado
+979,Aluno_0979,Ciência da Computação,4,Noturno,Algoritmos,Djalma Batista,6.5,6.3,67.7,4.3,40,Não,Presencial,6.4,Reprovado
+980,Aluno_0980,Direito,6,Matutino,Direito Digital,Cidade Nova,5.4,6.3,77.6,6.5,40,Não,Presencial,5.8,Final
+981,Aluno_0981,Sistemas de Informação,4,Matutino,Banco de Dados,Centro,4.4,7.7,64.9,5.2,40,Não,Presencial,6.1,Reprovado
+982,Aluno_0982,Ciência da Computação,8,Vespertino,Python,Zona Leste,7.3,8.1,77.7,3.2,35,Não,EaD,7.7,Aprovado
+983,Aluno_0983,Ciência da Computação,9,Noturno,Estatística,Djalma Batista,10.0,5.4,99.9,3.3,41,Sim,Presencial,7.7,Aprovado
+984,Aluno_0984,Ciência da Computação,1,Matutino,Python,Centro,4.8,10.0,85.8,2.3,47,Não,Presencial,7.4,Aprovado
+985,Aluno_0985,Direito,4,Matutino,Banco de Dados,Centro,8.8,6.0,82.4,,54,Não,Presencial,7.4,Aprovado
+986,Aluno_0986,Ciência da Computação,4,Matutino,Estatística,Zona Leste,5.6,8.7,58.2,4.0,41,Não,Presencial,7.2,Reprovado
+987,Aluno_0987,Direito,2,Noturno,Estatística,Djalma Batista,5.9,7.9,86.5,3.1,43,Não,EaD,6.9,Final
+988,Aluno_0988,Engenharia de Software,6,Noturno,Direito Digital,Centro,8.4,8.1,88.0,1.3,48,Não,EaD,8.2,Aprovado
+989,Aluno_0989,Ciência da Computação,3,Vespertino,Python,Zona Leste,6.3,6.0,82.0,1.1,27,Não,Híbrido,6.2,Final
+990,Aluno_0990,Direito,7,Noturno,Direito Digital,Djalma Batista,7.2,4.2,81.2,2.4,21,Sim,Presencial,5.7,Final
+991,Aluno_0991,Sistemas de Informação,5,Noturno,Engenharia de Software,Zona Leste,7.2,7.1,75.9,6.5,49,Não,Presencial,7.2,Aprovado
+992,Aluno_0992,Sistemas de Informação,4,Noturno,Python,Djalma Batista,5.6,7.1,87.7,5.4,35,Sim,Presencial,6.4,Final
+993,Aluno_0993,Engenharia de Software,5,Matutino,Python,Cidade Nova,8.4,5.5,99.0,4.3,32,Não,Presencial,7.0,Aprovado
+994,Aluno_0994,Sistemas de Informação,8,Noturno,Engenharia de Software,Zona Leste,6.7,8.7,83.0,2.4,51,Não,Presencial,7.7,Aprovado
+995,Aluno_0995,Sistemas de Informação,3,Vespertino,Banco de Dados,Cidade Nova,4.3,7.0,63.4,1.2,27,Não,EaD,5.6,Reprovado
+996,Aluno_0996,Engenharia de Software,7,Noturno,Banco de Dados,Djalma Batista,5.2,5.7,64.6,3.2,27,Não,Presencial,5.4,Reprovado
+997,Aluno_0997,Engenharia de Software,6,Matutino,Estatística,Djalma Batista,1.2,8.1,88.9,4.3,26,Não,Presencial,4.6,Final
+998,Aluno_0998,Ciência da Computação,1,Vespertino,Algoritmos,Zona Leste,6.9,8.1,63.5,7.8,50,Sim,EaD,7.5,Reprovado
+999,Aluno_0999,Administração,7,Vespertino,Direito Digital,Centro,9.1,5.9,81.0,1.8,21,Não,EaD,7.5,Aprovado
+1000,Aluno_1000,Engenharia de Software,7,Noturno,Algoritmos,Djalma Batista,4.9,9.2,72.8,4.1,39,Não,Presencial,7.0,Reprovado
+1001,Aluno_1001,Direito,1,Matutino,Estatística,Cidade Nova,7.9,10.0,61.9,2.3,41,Sim,EaD,9.0,Reprovado
+1002,Aluno_1002,Sistemas de Informação,9,Noturno,Algoritmos,Centro,7.6,5.2,90.5,3.6,45,Sim,Híbrido,6.4,Final
+1003,Aluno_1003,Engenharia de Software,6,Matutino,Python,Djalma Batista,5.4,6.8,88.6,15.2,29,Não,Presencial,6.1,Final
+1004,Aluno_1004,Direito,2,Noturno,Python,Djalma Batista,9.6,7.7,57.7,2.7,48,Não,Presencial,8.6,Reprovado
+1005,Aluno_1005,Engenharia de Software,5,Noturno,Engenharia de Software,Djalma Batista,6.3,10.0,85.2,2.4,50,Não,Presencial,8.2,Aprovado
+1006,Aluno_1006,Direito,4,Noturno,Engenharia de Software,Centro,10.0,5.9,83.0,20.7,28,Sim,EaD,8.0,Aprovado
+1007,Aluno_1007,Ciência da Computação,7,Noturno,Estatística,Centro,3.9,5.5,90.6,7.3,40,Sim,Presencial,4.7,Final
+1008,Aluno_1008,Sistemas de Informação,8,Noturno,Estatística,Centro,6.3,5.5,80.5,7.0,37,Não,Híbrido,5.9,Final
+1009,Aluno_1009,Ciência da Computação,1,Vespertino,Estatística,Cidade Nova,6.5,9.2,99.4,2.8,45,Não,EaD,7.8,Aprovado
+1010,Aluno_1010,Ciência da Computação,5,Noturno,Python,Zona Leste,6.7,5.9,76.1,15.0,39,Não,Presencial,6.3,Final
+1011,Aluno_1011,Direito,3,Vespertino,Algoritmos,Centro,8.1,5.7,73.9,1.9,49,Não,Presencial,6.9,Reprovado
+1012,Aluno_1012,Sistemas de Informação,1,Noturno,Direito Digital,Djalma Batista,10.0,7.5,63.4,9.5,24,Não,Presencial,8.8,Reprovado
+1013,Aluno_1013,Administração,3,Noturno,Estatística,Cidade Nova,7.6,7.6,64.0,10.2,29,Não,Presencial,7.6,Reprovado
+1014,Aluno_1014,Administração,6,Vespertino,Estatística,Djalma Batista,6.8,8.9,62.6,11.5,21,Sim,Híbrido,7.8,Reprovado
+1015,Aluno_1015,Sistemas de Informação,7,Vespertino,Python,Centro,4.8,7.3,81.3,12.3,26,Sim,Presencial,6.0,Final
+1016,Aluno_1016,Ciência da Computação,8,Noturno,Direito Digital,Centro,3.4,7.5,74.0,4.4,30,Sim,Presencial,5.4,Reprovado
+1017,Aluno_1017,Administração,4,Noturno,Python,Djalma Batista,8.9,6.9,83.0,6.2,40,Sim,Presencial,7.9,Aprovado
+1018,Aluno_1018,Administração,3,Noturno,Direito Digital,Zona Leste,5.8,4.9,59.9,5.4,27,Sim,Presencial,5.4,Reprovado
+1019,Aluno_1019,Ciência da Computação,5,Noturno,Python,Djalma Batista,10.0,6.8,65.2,2.6,19,Sim,Presencial,8.4,Reprovado
+1020,Aluno_1020,Ciência da Computação,9,Noturno,Algoritmos,Cidade Nova,8.4,7.2,64.9,4.2,45,Não,Presencial,7.8,Reprovado
+1021,Aluno_1021,Engenharia de Software,6,Noturno,Estatística,Djalma Batista,7.4,6.3,100.0,10.2,46,Sim,Presencial,6.8,Final
+1022,Aluno_1022,Direito,9,Matutino,Banco de Dados,Zona Leste,7.5,4.4,75.5,1.9,53,Sim,Presencial,6.0,Final
+1023,Aluno_1023,Sistemas de Informação,6,Matutino,Banco de Dados,Djalma Batista,7.5,5.2,77.0,8.3,23,Não,Presencial,6.4,Final
+1024,Aluno_1024,Direito,2,Noturno,Estatística,Djalma Batista,5.5,7.0,76.8,8.5,33,Não,EaD,6.2,Final
+1025,Aluno_1025,Sistemas de Informação,5,Noturno,Estatística,Djalma Batista,,8.7,100.0,5.5,36,Não,Presencial,6.1,Final
+1026,Aluno_1026,Sistemas de Informação,9,Noturno,Estatística,Djalma Batista,5.8,10.0,53.8,8.8,27,Não,Presencial,7.9,Reprovado
+1027,Aluno_1027,Ciência da Computação,8,Noturno,Estatística,Djalma Batista,6.8,6.8,77.1,2.6,41,Não,Presencial,6.8,Final
+1028,Aluno_1028,Ciência da Computação,7,Matutino,Direito Digital,Centro,5.6,5.9,53.7,2.3,40,Sim,Presencial,5.8,Reprovado
+1029,Aluno_1029,Ciência da Computação,1,Noturno,Algoritmos,Djalma Batista,4.5,6.5,42.3,4.0,18,Sim,Híbrido,5.5,Reprovado
+1030,Aluno_1030,Ciência da Computação,4,Matutino,Banco de Dados,Djalma Batista,5.5,5.3,67.0,6.3,43,Não,Presencial,5.4,Reprovado
+1031,Aluno_1031,Ciência da Computação,7,Vespertino,Engenharia de Software,Djalma Batista,8.7,8.4,84.2,14.4,35,Sim,EaD,8.6,Aprovado
+1032,Aluno_1032,Sistemas de Informação,7,Noturno,Banco de Dados,Cidade Nova,8.1,10.0,66.0,5.5,45,Sim,Presencial,9.0,Reprovado
+1033,Aluno_1033,Ciência da Computação,6,Matutino,Banco de Dados,Cidade Nova,7.1,5.9,83.9,4.0,53,Não,Presencial,6.5,Final
+1034,Aluno_1034,Administração,8,Noturno,Python,Cidade Nova,7.9,5.1,79.6,10.0,27,Sim,EaD,6.5,Final
+1035,Aluno_1035,Ciência da Computação,6,Noturno,Estatística,Cidade Nova,4.8,8.8,75.9,2.1,35,Não,Presencial,6.8,Final
+1036,Aluno_1036,Ciência da Computação,10,Noturno,Estatística,Djalma Batista,5.4,7.6,97.0,1.8,44,Não,EaD,6.5,Final
+1037,Aluno_1037,Engenharia de Software,3,Matutino,Estatística,Djalma Batista,7.4,7.7,69.1,14.5,37,Não,Presencial,7.6,Reprovado
+1038,Aluno_1038,Administração,4,Vespertino,Python,Djalma Batista,5.0,9.8,83.7,3.1,42,Não,Presencial,7.4,Aprovado
+1039,Aluno_1039,Sistemas de Informação,3,Matutino,Algoritmos,Cidade Nova,7.0,4.8,51.0,11.7,38,Sim,EaD,5.9,Reprovado
+1040,Aluno_1040,Direito,1,Noturno,Algoritmos,Zona Leste,4.5,4.7,79.5,10.9,22,Não,Presencial,4.6,Final
+1041,Aluno_1041,Direito,10,Noturno,Engenharia de Software,Centro,3.8,6.8,74.1,9.0,27,Sim,EaD,5.3,Reprovado
+1042,Aluno_1042,Engenharia de Software,5,Noturno,Algoritmos,Djalma Batista,8.1,7.2,60.3,10.0,30,Sim,Presencial,7.6,Reprovado
+1043,Aluno_1043,Sistemas de Informação,1,Matutino,Algoritmos,Djalma Batista,8.6,6.5,84.0,9.8,52,Não,EaD,7.6,Aprovado
+1044,Aluno_1044,Engenharia de Software,1,Noturno,Estatística,Djalma Batista,5.7,10.0,66.9,1.0,18,Não,Presencial,7.8,Reprovado
+1045,Aluno_1045,Sistemas de Informação,2,Vespertino,Direito Digital,Centro,4.1,6.6,100.0,6.5,36,Sim,EaD,5.4,Final
+1046,Aluno_1046,Engenharia de Software,4,Matutino,Banco de Dados,Djalma Batista,2.8,6.2,41.5,5.6,38,Não,Híbrido,4.5,Reprovado
+1047,Aluno_1047,Direito,6,Noturno,Algoritmos,Zona Leste,10.0,7.3,81.7,3.6,20,Não,Presencial,8.6,Aprovado
+1048,Aluno_1048,Sistemas de Informação,8,Noturno,Algoritmos,Djalma Batista,7.0,8.8,78.6,4.3,45,Sim,Presencial,7.9,Aprovado
+1049,Aluno_1049,Direito,3,Matutino,Python,Zona Leste,5.7,5.9,73.8,4.9,40,Não,Híbrido,5.8,Reprovado
+1050,Aluno_1050,Sistemas de Informação,1,Matutino,Engenharia de Software,Cidade Nova,6.1,6.9,70.1,4.4,17,Não,Presencial,6.5,Reprovado
+1051,Aluno_1051,Direito,3,Noturno,Direito Digital,Cidade Nova,3.4,8.8,79.0,10.7,40,Não,EaD,6.1,Final
+1052,Aluno_1052,Ciência da Computação,3,Matutino,Python,Centro,7.9,8.9,93.9,,46,Sim,Híbrido,8.4,Aprovado
+1053,Aluno_1053,Sistemas de Informação,5,Matutino,Estatística,Centro,10.0,7.5,52.9,20.2,28,Não,EaD,8.8,Reprovado
+1054,Aluno_1054,Sistemas de Informação,4,Noturno,Banco de Dados,Centro,5.4,10.0,65.9,3.4,35,Sim,Presencial,7.7,Reprovado
+1055,Aluno_1055,Administração,4,Noturno,Engenharia de Software,Centro,10.0,10.0,62.2,4.0,53,Não,Presencial,10.0,Reprovado
+1056,Aluno_1056,Sistemas de Informação,9,Noturno,Python,Centro,6.6,4.7,61.5,4.7,20,Não,Presencial,5.6,Reprovado
+1057,Aluno_1057,Sistemas de Informação,7,Noturno,Algoritmos,Zona Leste,9.8,4.2,83.1,3.1,31,Não,Presencial,7.0,Aprovado
+1058,Aluno_1058,Ciência da Computação,4,Noturno,Algoritmos,Cidade Nova,7.4,8.5,86.8,4.7,36,Sim,Presencial,8.0,Aprovado
+1059,Aluno_1059,Engenharia de Software,3,Matutino,Engenharia de Software,Cidade Nova,7.4,9.4,94.0,3.6,36,Sim,EaD,8.4,Aprovado
+1060,Aluno_1060,Engenharia de Software,6,Noturno,Algoritmos,Zona Leste,10.0,6.7,87.1,8.3,37,Não,Presencial,8.4,Aprovado
+1061,Aluno_1061,Sistemas de Informação,3,Noturno,Python,Djalma Batista,8.2,6.2,88.3,3.9,26,Não,Híbrido,7.2,Aprovado
+1062,Aluno_1062,Ciência da Computação,6,Vespertino,Python,Djalma Batista,7.5,5.7,56.8,2.8,46,Não,EaD,6.6,Reprovado
+1063,Aluno_1063,Sistemas de Informação,9,Noturno,Algoritmos,Centro,3.3,5.1,100.0,4.2,40,Não,Híbrido,4.2,Final
+1064,Aluno_1064,Sistemas de Informação,6,Vespertino,Algoritmos,Centro,4.1,9.0,74.9,5.1,54,Não,Presencial,6.6,Reprovado
+1065,Aluno_1065,Ciência da Computação,4,Matutino,Estatística,Cidade Nova,7.6,6.5,93.5,4.5,19,Sim,Presencial,7.0,Aprovado
+1066,Aluno_1066,Direito,5,Matutino,Banco de Dados,Djalma Batista,9.4,7.6,57.4,20.7,45,Não,Presencial,8.5,Reprovado
+1067,Aluno_1067,Sistemas de Informação,6,Noturno,Engenharia de Software,Centro,7.0,4.0,74.4,7.1,24,Sim,Presencial,5.5,Reprovado
+1068,Aluno_1068,Ciência da Computação,3,Noturno,Python,Centro,5.7,8.8,92.1,2.2,45,Sim,Presencial,7.2,Aprovado
+1069,Aluno_1069,Ciência da Computação,8,Noturno,Engenharia de Software,Djalma Batista,3.5,,78.4,7.8,26,Não,EaD,5.8,Final
+1070,Aluno_1070,Administração,4,Noturno,Estatística,Centro,5.4,4.8,66.7,6.3,21,Não,Presencial,5.1,Reprovado
+1071,Aluno_1071,Administração,8,Vespertino,Python,Cidade Nova,7.0,7.5,97.6,7.3,27,Sim,Presencial,7.2,Aprovado
+1072,Aluno_1072,Direito,10,Vespertino,Estatística,Djalma Batista,5.3,7.1,60.4,7.7,20,Não,Presencial,6.2,Reprovado
+1073,Aluno_1073,Sistemas de Informação,10,Matutino,Estatística,Centro,5.1,6.3,77.7,11.4,51,Sim,EaD,5.7,Final
+1074,Aluno_1074,Sistemas de Informação,3,Matutino,Direito Digital,Centro,6.7,2.2,87.6,4.9,28,Não,Híbrido,4.4,Final
+1075,Aluno_1075,Ciência da Computação,10,Vespertino,Algoritmos,Djalma Batista,9.4,6.0,100.0,5.2,37,Sim,Presencial,7.7,Aprovado
+1076,Aluno_1076,Sistemas de Informação,7,Noturno,Direito Digital,Djalma Batista,8.0,7.6,71.1,3.3,32,Não,Presencial,7.8,Reprovado
+1077,Aluno_1077,Engenharia de Software,9,Noturno,Engenharia de Software,Zona Leste,7.3,6.2,73.9,6.1,30,Sim,Híbrido,6.8,Reprovado
+1078,Aluno_1078,Direito,4,Noturno,Engenharia de Software,Djalma Batista,7.1,6.7,71.3,3.1,37,Não,Presencial,6.9,Reprovado
+1079,Aluno_1079,Direito,8,Matutino,Algoritmos,Djalma Batista,7.8,9.6,81.6,2.6,43,Sim,EaD,8.7,Aprovado
+1080,Aluno_1080,Direito,3,Noturno,Direito Digital,Djalma Batista,6.6,7.0,86.8,13.8,52,Sim,Presencial,6.8,Final
+1081,Aluno_1081,Ciência da Computação,7,Vespertino,Engenharia de Software,Cidade Nova,6.1,3.5,94.4,5.1,17,Não,Presencial,4.8,Final
+1082,Aluno_1082,Direito,3,Matutino,Direito Digital,Centro,8.1,6.8,89.3,7.2,17,Não,Presencial,7.4,Aprovado
+1083,Aluno_1083,Ciência da Computação,7,Noturno,Algoritmos,Centro,6.4,7.3,70.5,3.6,38,Sim,EaD,6.8,Reprovado
+1084,Aluno_1084,Sistemas de Informação,10,Noturno,Python,Djalma Batista,4.7,5.7,90.2,15.4,31,Não,Presencial,5.2,Final
+1085,Aluno_1085,Direito,10,Matutino,Estatística,Zona Leste,9.4,8.3,79.4,4.6,36,Não,Presencial,8.9,Aprovado
+1086,Aluno_1086,Sistemas de Informação,6,Noturno,Estatística,Djalma Batista,3.4,4.6,89.2,12.3,19,Sim,Presencial,4.0,Final
+1087,Aluno_1087,Ciência da Computação,2,Vespertino,Direito Digital,Djalma Batista,9.5,6.9,90.0,7.2,30,Sim,Presencial,8.2,Aprovado
+1088,Aluno_1088,Ciência da Computação,3,Noturno,Engenharia de Software,Centro,7.7,4.6,100.0,5.6,25,Não,Híbrido,6.2,Final
+1089,Aluno_1089,Direito,6,Noturno,Direito Digital,Djalma Batista,5.1,6.6,72.7,6.5,35,Não,EaD,5.8,Reprovado
+1090,Aluno_1090,Direito,4,Noturno,Direito Digital,Zona Leste,6.8,8.3,69.8,5.1,50,Sim,Presencial,7.6,Reprovado
+1091,Aluno_1091,Ciência da Computação,6,Matutino,Banco de Dados,Zona Leste,6.0,6.8,84.7,4.9,20,Sim,Híbrido,6.4,Final
+1092,Aluno_1092,Direito,1,Vespertino,Estatística,Djalma Batista,8.3,6.7,95.7,6.2,49,Não,Presencial,7.5,Aprovado
+1093,Aluno_1093,Ciência da Computação,10,Noturno,Algoritmos,Zona Leste,8.2,7.1,78.9,1.3,53,Não,Presencial,7.6,Aprovado
+1094,Aluno_1094,Ciência da Computação,1,Noturno,Direito Digital,Cidade Nova,7.6,7.2,96.7,3.6,18,Não,EaD,7.4,Aprovado
+1095,Aluno_1095,Direito,3,Vespertino,Banco de Dados,Zona Leste,8.1,8.3,88.4,8.3,43,Sim,Presencial,8.2,Aprovado
+1096,Aluno_1096,Direito,8,Noturno,Banco de Dados,Djalma Batista,6.6,8.3,75.0,8.8,33,Não,Presencial,7.4,Aprovado
+1097,Aluno_1097,Administração,8,Noturno,Estatística,Centro,10.0,9.5,86.5,18.0,47,Sim,Presencial,9.8,Aprovado
+1098,Aluno_1098,Sistemas de Informação,4,Noturno,Estatística,Djalma Batista,9.0,7.4,71.5,9.5,22,Sim,EaD,8.2,Reprovado
+1099,Aluno_1099,Engenharia de Software,6,Noturno,Estatística,Cidade Nova,5.9,4.3,81.6,9.1,47,Não,Presencial,5.1,Final
+1100,Aluno_1100,Engenharia de Software,8,Noturno,Algoritmos,Djalma Batista,8.3,8.6,61.9,6.6,19,Não,Presencial,8.4,Reprovado
+1101,Aluno_1101,Administração,7,Noturno,Banco de Dados,Centro,8.1,9.4,77.0,10.5,19,Não,EaD,8.8,Aprovado
+1102,Aluno_1102,Sistemas de Informação,7,Noturno,Engenharia de Software,Djalma Batista,6.3,10.0,93.0,5.9,49,Sim,EaD,8.2,Aprovado
+1103,Aluno_1103,Direito,4,Vespertino,Algoritmos,Djalma Batista,6.2,9.6,89.5,5.6,29,Não,EaD,7.9,Aprovado
+1104,Aluno_1104,Engenharia de Software,9,Vespertino,Python,Centro,9.0,6.3,87.3,5.7,37,Sim,Presencial,7.6,Aprovado
+1105,Aluno_1105,Sistemas de Informação,10,Vespertino,Direito Digital,Zona Leste,6.8,7.4,82.3,10.4,53,Sim,Presencial,7.1,Aprovado
+1106,Aluno_1106,Ciência da Computação,6,Noturno,Estatística,Centro,7.3,6.6,80.4,5.6,32,Não,Presencial,7.0,Aprovado
+1107,Aluno_1107,Ciência da Computação,3,Vespertino,Banco de Dados,Zona Leste,9.3,6.4,59.0,7.1,37,Não,EaD,7.8,Reprovado
+1108,Aluno_1108,Engenharia de Software,5,Noturno,Direito Digital,Djalma Batista,10.0,6.9,,3.9,29,Sim,EaD,8.4,Reprovado
+1109,Aluno_1109,Administração,5,Vespertino,Algoritmos,Centro,5.9,9.3,80.7,14.8,20,Sim,Híbrido,7.6,Aprovado
+1110,Aluno_1110,Engenharia de Software,5,Matutino,Python,Centro,,4.4,61.1,4.4,47,Sim,Presencial,5.4,Reprovado
+1111,Aluno_1111,Engenharia de Software,8,Noturno,Algoritmos,Djalma Batista,6.9,5.4,51.7,5.5,25,Não,Presencial,6.2,Reprovado
+1112,Aluno_1112,Engenharia de Software,9,Matutino,Algoritmos,Centro,7.0,9.2,94.9,9.1,49,Não,Presencial,8.1,Aprovado
+1113,Aluno_1113,Sistemas de Informação,9,Matutino,Engenharia de Software,Cidade Nova,7.5,9.6,78.8,11.3,53,Sim,Presencial,8.6,Aprovado
+1114,Aluno_1114,Sistemas de Informação,6,Matutino,Direito Digital,Centro,5.9,6.0,81.1,5.8,53,Não,Presencial,6.0,Final
+1115,Aluno_1115,Ciência da Computação,6,Noturno,Engenharia de Software,Cidade Nova,4.5,9.9,86.3,8.3,40,Sim,Híbrido,7.2,Aprovado
+1116,Aluno_1116,Ciência da Computação,9,Noturno,Algoritmos,Centro,10.0,8.8,63.3,3.2,41,Sim,Presencial,9.4,Reprovado
+1117,Aluno_1117,Sistemas de Informação,4,Noturno,Python,Djalma Batista,7.9,6.6,71.9,6.3,45,Não,Presencial,7.2,Reprovado
+1118,Aluno_1118,Engenharia de Software,6,Noturno,Banco de Dados,Djalma Batista,6.0,3.0,100.0,8.3,52,Não,EaD,4.5,Final
+1119,Aluno_1119,Ciência da Computação,4,Noturno,Banco de Dados,Centro,7.6,4.3,70.7,12.2,31,Sim,Presencial,5.9,Reprovado
+1120,Aluno_1120,Sistemas de Informação,1,Vespertino,Direito Digital,Djalma Batista,10.0,6.0,74.0,2.3,34,Sim,EaD,8.0,Reprovado
+1121,Aluno_1121,Ciência da Computação,7,Vespertino,Estatística,Djalma Batista,5.4,8.4,68.0,2.8,36,Sim,EaD,6.9,Reprovado
+1122,Aluno_1122,Sistemas de Informação,10,Noturno,Estatística,Djalma Batista,7.2,8.4,66.9,1.7,21,Não,Presencial,7.8,Reprovado
+1123,Aluno_1123,Administração,6,Matutino,Banco de Dados,Centro,4.3,6.3,94.6,2.5,34,Sim,EaD,5.3,Final
+1124,Aluno_1124,Direito,9,Matutino,Algoritmos,Djalma Batista,6.6,6.7,40.8,9.0,17,Não,Presencial,6.6,Reprovado
+1125,Aluno_1125,Direito,7,Noturno,Algoritmos,Cidade Nova,7.9,7.0,71.1,6.3,35,Não,Presencial,7.4,Reprovado
+1126,Aluno_1126,Sistemas de Informação,7,Noturno,Engenharia de Software,Centro,4.8,6.7,81.4,2.7,39,Sim,Presencial,5.8,Final
+1127,Aluno_1127,Direito,2,Matutino,Direito Digital,Djalma Batista,6.5,7.4,100.0,10.6,42,Não,Presencial,7.0,Aprovado
+1128,Aluno_1128,Direito,9,Matutino,Engenharia de Software,Cidade Nova,8.2,7.0,61.0,5.6,45,Sim,Presencial,7.6,Reprovado
+1129,Aluno_1129,Direito,10,Noturno,Estatística,Centro,7.9,4.3,58.4,8.9,50,Não,Presencial,6.1,Reprovado
+1130,Aluno_1130,Sistemas de Informação,9,Noturno,Banco de Dados,Centro,4.7,6.7,65.1,6.4,35,Não,Presencial,5.7,Reprovado
+1131,Aluno_1131,Engenharia de Software,6,Noturno,Algoritmos,Centro,7.5,7.1,88.5,6.2,34,Não,Presencial,7.3,Aprovado
+1132,Aluno_1132,Direito,3,Noturno,Banco de Dados,Djalma Batista,7.8,8.8,79.9,6.0,18,Sim,EaD,8.3,Aprovado
+1133,Aluno_1133,Engenharia de Software,1,Noturno,Python,Cidade Nova,7.0,5.7,56.4,3.9,43,Não,Híbrido,6.4,Reprovado
+1134,Aluno_1134,Engenharia de Software,4,Noturno,Banco de Dados,Djalma Batista,8.8,7.4,79.5,10.3,22,Sim,EaD,8.1,Aprovado
+1135,Aluno_1135,Ciência da Computação,3,Noturno,Python,Zona Leste,5.7,8.1,100.0,1.3,22,Não,Presencial,6.9,Final
+1136,Aluno_1136,Engenharia de Software,1,Matutino,Engenharia de Software,Cidade Nova,7.5,6.8,82.0,5.5,22,Não,EaD,7.2,Aprovado
+1137,Aluno_1137,Sistemas de Informação,3,Noturno,Engenharia de Software,Centro,4.7,4.1,80.5,3.3,47,Sim,EaD,4.4,Final
+1138,Aluno_1138,Engenharia de Software,4,Matutino,Estatística,Djalma Batista,3.9,8.8,81.4,1.9,46,Sim,Presencial,6.4,Final
+1139,Aluno_1139,Sistemas de Informação,8,Matutino,Banco de Dados,Djalma Batista,,8.4,84.2,5.8,37,Não,Presencial,8.3,Aprovado
+1140,Aluno_1140,Ciência da Computação,9,Noturno,Banco de Dados,Djalma Batista,6.8,7.5,59.0,5.9,34,Não,EaD,7.2,Reprovado
+1141,Aluno_1141,Ciência da Computação,3,Noturno,Python,Centro,6.0,7.2,74.5,3.2,39,Não,EaD,6.6,Reprovado
+1142,Aluno_1142,Engenharia de Software,6,Noturno,Engenharia de Software,Djalma Batista,4.9,4.1,75.3,16.2,54,Não,Híbrido,4.5,Final
+1143,Aluno_1143,Sistemas de Informação,10,Matutino,Python,Centro,8.3,8.4,70.7,10.3,39,Não,EaD,8.4,Reprovado
+1144,Aluno_1144,Direito,5,Noturno,Engenharia de Software,Djalma Batista,4.1,9.6,88.3,7.2,44,Não,Híbrido,6.8,Final
+1145,Aluno_1145,Direito,6,Noturno,Python,Zona Leste,8.6,5.2,68.5,8.3,52,Sim,Presencial,6.9,Reprovado
+1146,Aluno_1146,Sistemas de Informação,4,Noturno,Engenharia de Software,Djalma Batista,7.6,9.4,72.6,4.7,41,Sim,Presencial,8.5,Reprovado
+1147,Aluno_1147,Sistemas de Informação,10,Matutino,Python,Zona Leste,4.2,9.0,59.1,5.6,23,Não,Híbrido,6.6,Reprovado
+1148,Aluno_1148,Sistemas de Informação,6,Vespertino,Engenharia de Software,Zona Leste,7.0,5.2,83.7,6.3,34,Não,Presencial,6.1,Final
+1149,Aluno_1149,Direito,7,Noturno,Direito Digital,Centro,10.0,6.4,92.1,6.4,36,Não,Presencial,8.2,Aprovado
+1150,Aluno_1150,Engenharia de Software,9,Matutino,Python,Cidade Nova,8.9,4.7,72.6,9.4,21,Sim,Presencial,6.8,Reprovado
+1151,Aluno_1151,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,5.3,7.0,90.1,7.5,34,Não,EaD,6.2,Final
+1152,Aluno_1152,Sistemas de Informação,7,Noturno,Estatística,Centro,8.1,7.9,75.8,8.5,49,Sim,Presencial,8.0,Aprovado
+1153,Aluno_1153,Engenharia de Software,6,Matutino,Direito Digital,Djalma Batista,4.3,4.9,40.1,4.5,31,Não,Presencial,4.6,Reprovado
+1154,Aluno_1154,Direito,1,Matutino,Direito Digital,Djalma Batista,4.3,7.8,77.2,5.4,51,Não,Presencial,6.0,Final
+1155,Aluno_1155,Direito,2,Matutino,Python,Centro,6.7,8.2,75.4,5.6,17,Sim,Presencial,7.4,Aprovado
+1156,Aluno_1156,Engenharia de Software,1,Noturno,Estatística,Centro,7.8,8.2,79.5,4.0,37,Não,Híbrido,8.0,Aprovado
+1157,Aluno_1157,Sistemas de Informação,9,Matutino,Banco de Dados,Centro,8.3,7.9,81.8,1.4,24,Não,Presencial,8.1,Aprovado
+1158,Aluno_1158,Sistemas de Informação,10,Noturno,Direito Digital,Djalma Batista,8.3,5.0,67.7,1.1,23,Não,Presencial,6.6,Reprovado
+1159,Aluno_1159,Sistemas de Informação,10,Noturno,Banco de Dados,Djalma Batista,7.7,6.9,100.0,2.5,46,Sim,Presencial,7.3,Aprovado
+1160,Aluno_1160,Sistemas de Informação,9,Noturno,Engenharia de Software,Djalma Batista,3.9,7.7,77.0,2.7,54,Sim,Presencial,5.8,Final
+1161,Aluno_1161,Sistemas de Informação,7,Matutino,Estatística,Djalma Batista,6.7,9.6,75.0,3.4,51,Sim,Presencial,8.2,Aprovado
+1162,Aluno_1162,Sistemas de Informação,2,Matutino,Algoritmos,Djalma Batista,8.5,7.1,89.2,5.6,18,Sim,Presencial,7.8,Aprovado
+1163,Aluno_1163,Ciência da Computação,6,Noturno,Engenharia de Software,Djalma Batista,7.6,7.8,78.3,10.2,24,Sim,Híbrido,7.7,Aprovado
+1164,Aluno_1164,Administração,4,Noturno,Estatística,Djalma Batista,7.1,5.5,,1.8,54,Sim,Presencial,6.3,Final
+1165,Aluno_1165,Engenharia de Software,1,Noturno,Python,Cidade Nova,7.4,5.1,74.9,4.2,20,Não,Presencial,6.2,Reprovado
+1166,Aluno_1166,Direito,1,Matutino,Python,Djalma Batista,7.4,4.9,83.3,7.5,53,Não,Presencial,6.2,Final
+1167,Aluno_1167,Direito,5,Vespertino,Banco de Dados,Cidade Nova,3.3,6.4,66.8,8.2,37,Não,Presencial,4.8,Reprovado
+1168,Aluno_1168,Sistemas de Informação,2,Noturno,Direito Digital,Djalma Batista,8.9,10.0,91.1,6.8,29,Não,Presencial,9.4,Aprovado
+1169,Aluno_1169,Direito,4,Vespertino,Algoritmos,Zona Leste,6.6,6.4,82.6,5.1,25,Não,Presencial,6.5,Final
+1170,Aluno_1170,Sistemas de Informação,1,Noturno,Python,Centro,8.1,7.7,72.9,7.4,45,Não,Híbrido,7.9,Reprovado
+1171,Aluno_1171,Engenharia de Software,4,Noturno,Estatística,Djalma Batista,2.6,8.0,64.9,2.0,40,Sim,Presencial,5.3,Reprovado
+1172,Aluno_1172,Ciência da Computação,6,Matutino,Direito Digital,Centro,9.8,5.2,58.4,7.3,32,Sim,EaD,7.5,Reprovado
+1173,Aluno_1173,Administração,10,Noturno,Direito Digital,Djalma Batista,4.7,6.4,84.3,8.6,28,Não,Presencial,5.6,Final
+1174,Aluno_1174,Sistemas de Informação,4,Noturno,Estatística,Centro,10.0,8.2,57.2,7.4,18,Não,Presencial,9.1,Reprovado
+1175,Aluno_1175,Sistemas de Informação,1,Matutino,Direito Digital,Djalma Batista,10.0,7.8,97.6,4.8,35,Não,Presencial,8.9,Aprovado
+1176,Aluno_1176,Administração,7,Noturno,Python,Zona Leste,4.4,3.7,59.1,,46,Não,Presencial,4.1,Reprovado
+1177,Aluno_1177,Sistemas de Informação,2,Vespertino,Estatística,Djalma Batista,8.3,8.1,75.3,2.3,32,Sim,Presencial,8.2,Aprovado
+1178,Aluno_1178,Direito,9,Vespertino,Estatística,Djalma Batista,5.0,,64.8,5.0,40,Não,Presencial,5.6,Reprovado
+1179,Aluno_1179,Direito,3,Matutino,Banco de Dados,Cidade Nova,,6.2,78.5,,29,Não,EaD,5.9,Final
+1180,Aluno_1180,Direito,8,Noturno,Algoritmos,Djalma Batista,5.7,7.8,78.4,7.0,21,Não,Presencial,6.8,Final
+1181,Aluno_1181,Administração,8,Noturno,Banco de Dados,Cidade Nova,7.6,9.7,84.7,5.9,39,Não,Presencial,8.6,Aprovado
+1182,Aluno_1182,Administração,3,Noturno,Algoritmos,Centro,7.4,6.8,55.1,0.3,54,Não,Híbrido,7.1,Reprovado
+1183,Aluno_1183,Sistemas de Informação,4,Matutino,Estatística,Cidade Nova,4.6,,66.5,3.4,47,Sim,Presencial,6.8,Reprovado
+1184,Aluno_1184,Direito,2,Noturno,Direito Digital,Djalma Batista,,4.7,92.6,7.2,33,Sim,EaD,6.2,Final
+1185,Aluno_1185,Engenharia de Software,4,Vespertino,Algoritmos,Cidade Nova,6.4,7.3,87.9,9.4,19,Sim,Presencial,6.8,Final
+1186,Aluno_1186,Engenharia de Software,9,Noturno,Estatística,Cidade Nova,3.5,6.2,40.5,3.8,42,Não,Presencial,4.8,Reprovado
+1187,Aluno_1187,Sistemas de Informação,2,Noturno,Estatística,Djalma Batista,6.0,7.6,83.7,12.6,29,Sim,Presencial,6.8,Final
+1188,Aluno_1188,Engenharia de Software,3,Matutino,Banco de Dados,Djalma Batista,9.8,6.6,62.5,4.8,54,Sim,Presencial,8.2,Reprovado
+1189,Aluno_1189,Administração,4,Matutino,Banco de Dados,Djalma Batista,6.1,4.8,69.1,5.0,38,Sim,Presencial,5.4,Reprovado
+1190,Aluno_1190,Administração,5,Noturno,Direito Digital,Zona Leste,3.5,5.6,74.6,2.9,37,Não,EaD,4.6,Reprovado
+1191,Aluno_1191,Ciência da Computação,1,Vespertino,Engenharia de Software,Djalma Batista,8.3,4.3,100.0,3.9,45,Não,EaD,6.3,Final
+1192,Aluno_1192,Sistemas de Informação,7,Noturno,Python,Centro,5.1,4.9,62.4,1.6,21,Não,EaD,5.0,Reprovado
+1193,Aluno_1193,Ciência da Computação,10,Matutino,Engenharia de Software,Djalma Batista,7.2,7.9,56.9,4.4,30,Não,Híbrido,7.6,Reprovado
+1194,Aluno_1194,Direito,7,Vespertino,Engenharia de Software,Djalma Batista,6.5,6.7,84.8,13.4,34,Sim,Híbrido,6.6,Final
+1195,Aluno_1195,Direito,9,Noturno,Direito Digital,Centro,10.0,7.5,77.6,5.7,20,Sim,Presencial,8.8,Aprovado
+1196,Aluno_1196,Ciência da Computação,4,Noturno,Algoritmos,Zona Leste,6.5,10.0,96.1,2.0,49,Não,EaD,8.2,Aprovado
+1197,Aluno_1197,Sistemas de Informação,6,Noturno,Direito Digital,Centro,4.7,6.6,72.7,5.0,36,Não,Presencial,5.6,Reprovado
+1198,Aluno_1198,Ciência da Computação,2,Matutino,Direito Digital,Cidade Nova,6.0,8.2,96.2,6.6,29,Não,EaD,7.1,Aprovado
+1199,Aluno_1199,Ciência da Computação,4,Vespertino,Estatística,Centro,,7.1,78.2,5.0,52,Sim,EaD,5.8,Final
+1200,Aluno_1200,Administração,2,Matutino,Estatística,Djalma Batista,6.4,10.0,85.9,2.2,20,Não,Presencial,8.2,Aprovado
+1201,Aluno_1201,Engenharia de Software,10,Noturno,Estatística,Djalma Batista,10.0,2.0,100.0,5.0,51,Não,Presencial,6.0,Final
+1202,Aluno_1202,Ciência da Computação,5,Noturno,Python,Centro,9.0,5.9,75.5,6.0,24,Sim,Híbrido,7.4,Aprovado
+1203,Aluno_1203,Engenharia de Software,7,Noturno,Algoritmos,Zona Leste,10.0,8.2,93.7,8.3,52,Sim,Presencial,9.1,Aprovado
+1204,Aluno_1204,Sistemas de Informação,1,Noturno,Algoritmos,Zona Leste,7.7,5.8,68.8,9.3,22,Não,Presencial,6.8,Reprovado
+1205,Aluno_1205,Administração,10,Vespertino,Estatística,Djalma Batista,7.1,8.1,81.4,7.1,38,Não,Presencial,7.6,Aprovado
+1206,Aluno_1206,Ciência da Computação,10,Noturno,Engenharia de Software,Djalma Batista,5.0,7.0,56.3,8.3,22,Não,Presencial,6.0,Reprovado
+1207,Aluno_1207,Ciência da Computação,7,Noturno,Python,Djalma Batista,7.3,8.6,70.4,3.0,52,Não,Presencial,8.0,Reprovado
+1208,Aluno_1208,Ciência da Computação,10,Noturno,Engenharia de Software,Zona Leste,6.6,5.2,62.1,7.6,25,Sim,Presencial,5.9,Reprovado
+1209,Aluno_1209,Direito,6,Matutino,Banco de Dados,Zona Leste,8.2,7.4,96.3,9.1,32,Não,Presencial,7.8,Aprovado
+1210,Aluno_1210,Engenharia de Software,6,Vespertino,Algoritmos,Cidade Nova,4.8,7.9,100.0,2.2,54,Sim,Híbrido,6.4,Final
+1211,Aluno_1211,Direito,8,Noturno,Algoritmos,Djalma Batista,6.9,7.3,72.7,8.1,49,Não,Presencial,7.1,Reprovado
+1212,Aluno_1212,Sistemas de Informação,8,Matutino,Engenharia de Software,Centro,,7.4,66.4,10.0,34,Não,Presencial,5.7,Reprovado
+1213,Aluno_1213,Ciência da Computação,6,Matutino,Python,Centro,7.4,9.1,58.3,7.6,28,Não,Presencial,8.2,Reprovado
+1214,Aluno_1214,Sistemas de Informação,3,Matutino,Algoritmos,Djalma Batista,,4.2,82.0,4.0,43,Não,Presencial,6.1,Final
+1215,Aluno_1215,Engenharia de Software,5,Noturno,Engenharia de Software,Centro,,7.3,69.0,8.3,17,Não,Híbrido,5.6,Reprovado
+1216,Aluno_1216,Sistemas de Informação,2,Vespertino,Direito Digital,Djalma Batista,4.4,5.0,,7.5,31,Não,EaD,4.7,Reprovado
+1217,Aluno_1217,Engenharia de Software,5,Matutino,Direito Digital,Djalma Batista,4.5,8.4,100.0,4.3,43,Sim,Presencial,6.4,Final
+1218,Aluno_1218,Direito,9,Matutino,Python,Zona Leste,6.5,5.7,73.6,18.7,32,Sim,Presencial,6.1,Reprovado
+1219,Aluno_1219,Administração,10,Noturno,Engenharia de Software,Cidade Nova,4.3,2.9,86.8,,37,Não,EaD,3.6,Reprovado
+1220,Aluno_1220,Ciência da Computação,1,Noturno,Direito Digital,Djalma Batista,9.3,8.4,78.8,6.7,17,Não,Presencial,8.9,Aprovado
+1221,Aluno_1221,Ciência da Computação,10,Noturno,Python,Centro,7.6,6.6,57.7,1.2,45,Sim,Presencial,7.1,Reprovado
+1222,Aluno_1222,Sistemas de Informação,5,Noturno,Estatística,Djalma Batista,7.9,7.7,50.3,6.3,19,Sim,Presencial,7.8,Reprovado
+1223,Aluno_1223,Engenharia de Software,6,Noturno,Python,Cidade Nova,3.9,9.5,85.3,4.4,28,Não,Híbrido,6.7,Final
+1224,Aluno_1224,Direito,7,Matutino,Banco de Dados,Cidade Nova,9.1,7.7,100.0,9.1,44,Não,Presencial,8.4,Aprovado
+1225,Aluno_1225,Sistemas de Informação,9,Matutino,Estatística,Cidade Nova,8.0,7.4,82.7,4.9,53,Não,Presencial,7.7,Aprovado
+1226,Aluno_1226,Ciência da Computação,6,Vespertino,Engenharia de Software,Cidade Nova,5.6,7.0,87.4,7.7,47,Não,Presencial,6.3,Final
+1227,Aluno_1227,Direito,5,Matutino,Estatística,Djalma Batista,4.0,5.1,64.4,4.8,47,Não,Presencial,4.6,Reprovado
+1228,Aluno_1228,Direito,7,Vespertino,Estatística,Djalma Batista,6.7,6.7,93.2,7.0,49,Não,Presencial,6.7,Final
+1229,Aluno_1229,Sistemas de Informação,1,Noturno,Engenharia de Software,Centro,6.0,10.0,93.0,10.6,49,Sim,Presencial,8.0,Aprovado
+1230,Aluno_1230,Engenharia de Software,5,Noturno,Engenharia de Software,Djalma Batista,6.0,6.5,67.6,6.3,27,Não,Híbrido,6.2,Reprovado
+1231,Aluno_1231,Sistemas de Informação,2,Noturno,Direito Digital,Cidade Nova,5.5,6.8,86.2,3.8,45,Não,Presencial,6.2,Final
+1232,Aluno_1232,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,8.1,9.2,51.5,4.4,41,Não,Presencial,8.6,Reprovado
+1233,Aluno_1233,Administração,7,Matutino,Engenharia de Software,Djalma Batista,2.1,4.5,88.9,1.3,29,Sim,Presencial,3.3,Reprovado
+1234,Aluno_1234,Direito,5,Matutino,Algoritmos,Djalma Batista,9.4,8.2,69.4,8.6,35,Sim,EaD,8.8,Reprovado
+1235,Aluno_1235,Direito,6,Noturno,Algoritmos,Zona Leste,8.6,4.4,59.6,4.0,52,Sim,Presencial,6.5,Reprovado
+1236,Aluno_1236,Sistemas de Informação,2,Noturno,Banco de Dados,Djalma Batista,7.2,7.8,84.0,6.0,44,Não,Presencial,7.5,Aprovado
+1237,Aluno_1237,Direito,3,Matutino,Python,Centro,6.5,7.1,51.4,1.1,20,Sim,EaD,6.8,Reprovado
+1238,Aluno_1238,Ciência da Computação,7,Noturno,Python,Djalma Batista,8.7,8.1,83.1,5.1,19,Não,Presencial,8.4,Aprovado
+1239,Aluno_1239,Ciência da Computação,2,Noturno,Algoritmos,Djalma Batista,6.7,5.4,,10.3,54,Não,Híbrido,6.1,Reprovado
+1240,Aluno_1240,Engenharia de Software,6,Noturno,Engenharia de Software,Centro,6.3,6.2,57.8,6.3,53,Não,Presencial,6.2,Reprovado
+1241,Aluno_1241,Sistemas de Informação,5,Noturno,Banco de Dados,Cidade Nova,8.8,8.2,78.9,19.3,41,Não,Presencial,8.5,Aprovado
+1242,Aluno_1242,Direito,10,Vespertino,Python,Centro,10.0,6.2,75.4,4.0,51,Não,Presencial,8.1,Aprovado
+1243,Aluno_1243,Engenharia de Software,1,Matutino,Python,Zona Leste,5.1,8.4,99.9,6.1,45,Não,Presencial,6.8,Final
+1244,Aluno_1244,Sistemas de Informação,10,Noturno,Estatística,Djalma Batista,7.6,7.5,58.7,5.5,45,Sim,EaD,7.6,Reprovado
+1245,Aluno_1245,Sistemas de Informação,4,Matutino,Algoritmos,Djalma Batista,4.8,6.3,98.6,8.7,28,Sim,Presencial,5.6,Final
+1246,Aluno_1246,Sistemas de Informação,2,Noturno,Engenharia de Software,Zona Leste,7.7,6.6,60.9,5.4,51,Não,Presencial,7.2,Reprovado
+1247,Aluno_1247,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,5.4,7.1,91.8,3.8,36,Sim,Híbrido,6.2,Final
+1248,Aluno_1248,Engenharia de Software,1,Vespertino,Python,Centro,9.0,6.7,94.6,5.9,33,Não,EaD,7.8,Aprovado
+1249,Aluno_1249,Direito,2,Noturno,Estatística,Cidade Nova,6.6,8.3,82.8,6.4,28,Não,Presencial,7.4,Aprovado
+1250,Aluno_1250,Sistemas de Informação,8,Noturno,Algoritmos,Djalma Batista,6.9,6.5,,8.0,52,Não,Presencial,6.7,Reprovado
+1251,Aluno_1251,Sistemas de Informação,6,Vespertino,Algoritmos,Cidade Nova,9.7,6.1,55.2,6.4,26,Sim,Presencial,7.9,Reprovado
+1252,Aluno_1252,Engenharia de Software,2,Noturno,Banco de Dados,Djalma Batista,5.5,8.6,48.7,12.7,34,Sim,EaD,7.0,Reprovado
+1253,Aluno_1253,Direito,6,Noturno,Python,Djalma Batista,8.0,6.4,100.0,16.2,46,Não,EaD,7.2,Aprovado
+1254,Aluno_1254,Ciência da Computação,10,Noturno,Banco de Dados,Djalma Batista,5.7,6.2,73.5,4.1,24,Não,Presencial,6.0,Reprovado
+1255,Aluno_1255,Ciência da Computação,9,Matutino,Banco de Dados,Cidade Nova,9.0,2.9,61.4,9.2,29,Não,Presencial,6.0,Reprovado
+1256,Aluno_1256,Engenharia de Software,7,Noturno,Direito Digital,Djalma Batista,10.0,5.3,60.9,,47,Sim,Presencial,7.6,Reprovado
+1257,Aluno_1257,Sistemas de Informação,9,Noturno,Estatística,Cidade Nova,6.3,5.7,80.5,1.3,22,Não,Presencial,6.0,Final
+1258,Aluno_1258,Sistemas de Informação,5,Matutino,Algoritmos,Zona Leste,2.9,6.2,72.1,11.3,23,Sim,EaD,4.6,Reprovado
+1259,Aluno_1259,Direito,7,Matutino,Direito Digital,Centro,5.6,5.9,49.2,3.3,37,Sim,Presencial,5.8,Reprovado
+1260,Aluno_1260,Engenharia de Software,7,Noturno,Engenharia de Software,Centro,10.0,8.8,91.0,3.2,54,Sim,Presencial,9.4,Aprovado
+1261,Aluno_1261,Engenharia de Software,3,Matutino,Algoritmos,Centro,5.7,5.8,83.0,6.3,44,Não,Presencial,5.8,Final
+1262,Aluno_1262,Direito,7,Noturno,Algoritmos,Djalma Batista,10.0,5.9,100.0,7.8,37,Sim,Presencial,8.0,Aprovado
+1263,Aluno_1263,Engenharia de Software,1,Noturno,Estatística,Centro,5.7,7.4,95.1,7.7,37,Sim,Presencial,6.6,Final
+1264,Aluno_1264,Sistemas de Informação,9,Noturno,Engenharia de Software,Centro,5.7,5.2,31.5,5.8,40,Sim,Híbrido,5.4,Reprovado
+1265,Aluno_1265,Ciência da Computação,10,Matutino,Python,Zona Leste,8.2,9.8,99.3,5.5,43,Não,EaD,9.0,Aprovado
+1266,Aluno_1266,Sistemas de Informação,6,Noturno,Engenharia de Software,Zona Leste,8.0,8.5,96.1,5.5,43,Não,Presencial,8.2,Aprovado
+1267,Aluno_1267,Sistemas de Informação,5,Vespertino,Python,Zona Leste,8.3,5.1,67.0,5.6,29,Sim,EaD,6.7,Reprovado
+1268,Aluno_1268,Engenharia de Software,7,Noturno,Engenharia de Software,Zona Leste,6.8,8.8,71.5,6.7,45,Não,EaD,7.8,Reprovado
+1269,Aluno_1269,Direito,5,Noturno,Banco de Dados,Centro,8.7,9.2,84.2,9.3,44,Não,Presencial,9.0,Aprovado
+1270,Aluno_1270,Administração,10,Noturno,Engenharia de Software,Cidade Nova,8.5,5.2,62.8,8.5,53,Sim,Presencial,6.8,Reprovado
+1271,Aluno_1271,Engenharia de Software,5,Noturno,Direito Digital,Zona Leste,8.9,5.1,74.4,9.0,45,Sim,Presencial,7.0,Reprovado
+1272,Aluno_1272,Sistemas de Informação,10,Noturno,Direito Digital,Djalma Batista,5.7,6.1,93.0,7.3,38,Não,Presencial,5.9,Final
+1273,Aluno_1273,Sistemas de Informação,7,Vespertino,Estatística,Zona Leste,8.7,4.7,85.8,8.0,52,Sim,EaD,6.7,Final
+1274,Aluno_1274,Direito,10,Noturno,Python,Djalma Batista,5.9,5.8,68.0,6.3,46,Sim,Presencial,5.8,Reprovado
+1275,Aluno_1275,Engenharia de Software,7,Noturno,Algoritmos,Centro,6.5,6.4,93.3,8.1,44,Não,Híbrido,6.4,Final
+1276,Aluno_1276,Engenharia de Software,3,Vespertino,Estatística,Cidade Nova,6.5,,82.5,6.7,39,Não,EaD,7.2,Aprovado
+1277,Aluno_1277,Direito,3,Matutino,Direito Digital,Zona Leste,5.0,7.2,82.0,1.3,49,Não,Presencial,6.1,Final
+1278,Aluno_1278,Direito,10,Noturno,Direito Digital,Djalma Batista,3.7,6.8,70.3,2.2,20,Não,EaD,5.2,Reprovado
+1279,Aluno_1279,Direito,3,Vespertino,Python,Cidade Nova,9.0,6.3,77.9,5.7,19,Não,Presencial,7.6,Aprovado
+1280,Aluno_1280,Sistemas de Informação,6,Noturno,Direito Digital,Centro,5.5,4.9,66.4,2.4,48,Sim,Presencial,5.2,Reprovado
+1281,Aluno_1281,Direito,6,Noturno,Direito Digital,Djalma Batista,6.3,8.1,48.9,6.1,20,Sim,Presencial,7.2,Reprovado
+1282,Aluno_1282,Direito,3,Matutino,Python,Cidade Nova,5.5,8.1,73.8,7.5,17,Não,Presencial,6.8,Reprovado
+1283,Aluno_1283,Ciência da Computação,3,Noturno,Direito Digital,Centro,6.3,6.1,76.2,7.8,28,Não,Presencial,6.2,Final
+1284,Aluno_1284,Engenharia de Software,8,Matutino,Algoritmos,Cidade Nova,5.9,5.2,80.1,5.6,29,Não,EaD,5.6,Final
+1285,Aluno_1285,Ciência da Computação,8,Noturno,Banco de Dados,Djalma Batista,9.1,9.7,96.2,7.5,50,Sim,Híbrido,9.4,Aprovado
+1286,Aluno_1286,Administração,7,Noturno,Estatística,Centro,5.7,7.5,68.2,9.1,45,Sim,Presencial,6.6,Reprovado
+1287,Aluno_1287,Sistemas de Informação,10,Noturno,Algoritmos,Centro,9.9,7.8,72.5,9.6,25,Sim,Presencial,8.8,Reprovado
+1288,Aluno_1288,Engenharia de Software,4,Noturno,Algoritmos,Djalma Batista,8.9,7.8,89.5,9.3,47,Não,Presencial,8.4,Aprovado
+1289,Aluno_1289,Sistemas de Informação,4,Noturno,Banco de Dados,Djalma Batista,5.9,5.1,66.7,6.7,23,Sim,EaD,5.5,Reprovado
+1290,Aluno_1290,Direito,3,Noturno,Estatística,Zona Leste,7.4,9.6,80.3,3.5,29,Não,Presencial,8.5,Aprovado
+1291,Aluno_1291,Sistemas de Informação,5,Matutino,Algoritmos,Centro,7.7,6.4,71.9,2.1,18,Não,Híbrido,7.0,Reprovado
+1292,Aluno_1292,Sistemas de Informação,3,Matutino,Direito Digital,Cidade Nova,8.3,8.5,74.3,5.6,49,Sim,EaD,8.4,Reprovado
+1293,Aluno_1293,Ciência da Computação,8,Noturno,Banco de Dados,Djalma Batista,8.5,9.6,89.4,5.3,23,Sim,EaD,9.0,Aprovado
+1294,Aluno_1294,Administração,7,Noturno,Estatística,Djalma Batista,7.1,7.2,72.4,9.2,34,Sim,Híbrido,7.2,Reprovado
+1295,Aluno_1295,Sistemas de Informação,3,Noturno,Engenharia de Software,Djalma Batista,5.1,5.1,89.9,3.9,24,Sim,Híbrido,5.1,Final
+1296,Aluno_1296,Sistemas de Informação,9,Noturno,Python,Djalma Batista,8.0,2.9,48.7,6.9,28,Sim,Presencial,5.4,Reprovado
+1297,Aluno_1297,Direito,5,Vespertino,Direito Digital,Centro,6.4,7.0,,,46,Sim,Presencial,6.7,Reprovado
+1298,Aluno_1298,Engenharia de Software,9,Noturno,Banco de Dados,Centro,1.8,7.5,43.2,5.4,25,Não,EaD,4.6,Reprovado
+1299,Aluno_1299,Administração,7,Noturno,Python,Centro,7.5,6.1,60.5,5.4,44,Não,Híbrido,6.8,Reprovado
+1300,Aluno_1300,Sistemas de Informação,7,Matutino,Engenharia de Software,Djalma Batista,5.5,7.3,100.0,3.8,20,Sim,EaD,6.4,Final

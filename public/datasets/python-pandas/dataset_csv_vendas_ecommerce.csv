@@ -1,0 +1,1521 @@
+id_pedido,data_venda,cliente,produto,categoria,quantidade,preco_unitario,canal_venda,forma_pagamento,uf,desconto_percentual,avaliacao_cliente,valor_bruto,valor_desconto,valor_liquido
+10001,2025-07-17,Cliente_0306,Webcam,Imagem,6,271.73,Site,Cartão Débito,AM,20,4.0,1630.38,326.08,1304.3
+10002,2025-03-01,Cliente_0092,Memória RAM,Componentes,7,335.28,Site,Cartão Crédito,AM,0,3.0,2346.96,0.0,2346.96
+10003,2025-03-24,Cliente_0458,SSD,Componentes,3,398.38,Instagram,Boleto,PA,15,4.0,1195.14,179.27,1015.87
+10004,2025-03-15,Cliente_0270,Roteador,Redes,6,373.2,Loja Física,PIX,PA,20,5.0,2239.2,447.84,1791.36
+10005,2025-11-07,Cliente_0052,Teclado,Periféricos,3,201.79,Instagram,Boleto,AM,10,4.0,605.37,60.54,544.83
+10006,2025-01-26,Cliente_0349,Memória RAM,Componentes,7,293.45,Site,Cartão Crédito,PA,20,4.0,2054.15,410.83,1643.32
+10007,2025-08-31,Cliente_0121,Notebook,Computadores,6,4076.78,Marketplace,Boleto,PA,10,3.0,24460.68,2446.07,22014.61
+10008,2025-11-19,Cliente_0459,Cadeira,Móveis,4,1374.81,Site,Cartão Crédito,AM,0,4.0,5499.24,0.0,5499.24
+10009,2025-04-26,Cliente_0050,Roteador,Redes,4,212.33,Instagram,Cartão Crédito,AM,0,4.0,849.32,0.0,849.32
+10010,2025-11-19,Cliente_0379,Mouse,Periféricos,4,82.43,Site,Cartão Débito,AC,10,3.0,329.72,32.97,296.75
+10011,2025-06-29,Cliente_0475,Roteador,Redes,5,334.81,Loja Física,Cartão Crédito,SP,20,5.0,1674.05,334.81,1339.24
+10012,2025-09-19,Cliente_0492,Memória RAM,Componentes,6,314.83,WhatsApp,Cartão Crédito,MG,0,5.0,1888.98,0.0,1888.98
+10013,2025-04-24,Cliente_0273,Memória RAM,Componentes,3,365.33,Loja Física,Cartão Crédito,AM,10,4.0,1095.99,109.6,986.39
+10014,2025-09-23,Cliente_0380,SSD,Componentes,7,357.19,Instagram,Cartão Débito,AM,15,2.0,2500.33,375.05,2125.28
+10015,2025-02-07,Cliente_0120,Webcam,Imagem,6,294.8,Instagram,Boleto,AM,0,1.0,1768.8,0.0,1768.8
+10016,2025-03-18,Cliente_0387,Cadeira,Móveis,7,1110.88,Site,PIX,RR,0,4.0,7776.16,0.0,7776.16
+10017,2025-04-12,Cliente_0446,Mouse,Periféricos,1,64.42,Loja Física,Cartão Crédito,RO,5,3.0,64.42,3.22,61.2
+10018,2025-01-12,Cliente_0095,Monitor,Imagem,4,907.21,Marketplace,Cartão Débito,PA,0,1.0,3628.84,0.0,3628.84
+10019,2025-10-29,Cliente_0149,Roteador,Redes,2,301.01,WhatsApp,Cartão Crédito,SP,0,4.0,602.02,0.0,602.02
+10020,2025-02-18,Cliente_0289,Webcam,Imagem,7,211.08,Site,Cartão Débito,AC,0,,1477.56,0.0,1477.56
+10021,2025-09-11,Cliente_0257,Cadeira,Móveis,1,1074.44,Loja Física,Boleto,MG,0,5.0,1074.44,0.0,1074.44
+10022,2025-12-13,Cliente_0454,Memória RAM,Componentes,7,345.97,Marketplace,Cartão Débito,AM,10,5.0,2421.79,242.18,2179.61
+10023,2025-09-06,Cliente_0371,Headset,Áudio,1,244.07,Site,Cartão Crédito,AM,10,3.0,244.07,24.41,219.66
+10024,2025-03-13,Cliente_0184,Cadeira,Móveis,7,1354.59,Marketplace,Boleto,AM,10,2.0,9482.13,948.21,8533.92
+10025,2025-07-16,Cliente_0260,Roteador,Redes,4,340.88,WhatsApp,Cartão Débito,AM,5,1.0,1363.52,68.18,1295.34
+10026,2025-09-10,Cliente_0150,Cadeira,Móveis,2,1447.92,WhatsApp,Cartão Débito,MG,25,,2895.84,723.96,2171.88
+10027,2025-12-24,Cliente_0205,SSD,Componentes,4,341.31,Marketplace,PIX,AM,20,4.0,1365.24,273.05,1092.19
+10028,2025-10-26,Cliente_0442,SSD,Componentes,7,381.76,Site,PIX,RR,25,4.0,2672.32,668.08,2004.24
+10029,2025-08-10,Cliente_0172,Cadeira,Móveis,4,1223.75,WhatsApp,Cartão Crédito,AM,5,4.0,4895.0,244.75,4650.25
+10030,2025-03-01,Cliente_0313,SSD,Componentes,2,445.37,Marketplace,Cartão Crédito,AM,20,5.0,890.74,178.15,712.59
+10031,2025-12-23,Cliente_0222,Webcam,Imagem,1,281.0,Site,PIX,AM,15,4.0,281.0,42.15,238.85
+10032,2025-06-06,Cliente_0168,Notebook,Computadores,1,3346.86,Site,PIX,AM,0,4.0,3346.86,0.0,3346.86
+10033,2025-12-08,Cliente_0244,Headset,Áudio,7,201.26,Site,PIX,RO,0,,1408.82,0.0,1408.82
+10034,2025-07-21,Cliente_0218,Roteador,Redes,6,238.15,Site,Cartão Débito,MG,10,4.0,1428.9,142.89,1286.01
+10035,2025-09-24,Cliente_0056,Roteador,Redes,2,271.66,Loja Física,Boleto,RR,0,4.0,543.32,0.0,543.32
+10036,2025-02-04,Cliente_0063,Roteador,Redes,1,304.79,Site,Boleto,RR,0,4.0,304.79,0.0,304.79
+10037,2025-09-12,Cliente_0103,Headset,Áudio,5,286.02,Site,Cartão Crédito,AM,5,5.0,1430.1,71.5,1358.6
+10038,2025-01-23,Cliente_0373,Roteador,Redes,4,265.67,Instagram,Cartão Crédito,RJ,10,4.0,1062.68,106.27,956.41
+10039,2025-06-14,Cliente_0167,Memória RAM,Componentes,7,345.15,Instagram,Cartão Crédito,AM,20,3.0,2416.05,483.21,1932.84
+10040,2025-01-28,Cliente_0007,Webcam,Imagem,5,288.78,Site,Cartão Crédito,RJ,10,5.0,1443.9,144.39,1299.51
+10041,2025-12-17,Cliente_0142,Webcam,Imagem,5,251.07,Site,Cartão Crédito,RR,10,4.0,1255.35,125.54,1129.81
+10042,2025-11-10,Cliente_0125,Roteador,Redes,6,236.64,Site,Cartão Crédito,AM,0,5.0,1419.84,0.0,1419.84
+10043,2025-02-22,Cliente_0090,Mouse,Periféricos,6,87.82,Marketplace,PIX,PA,10,5.0,526.92,52.69,474.23
+10044,2025-10-11,Cliente_0402,SSD,Componentes,6,376.3,Site,Cartão Crédito,MG,5,4.0,2257.8,112.89,2144.91
+10045,2025-10-25,Cliente_0311,Teclado,Periféricos,5,229.04,Marketplace,PIX,AM,20,2.0,1145.2,229.04,916.16
+10046,2025-03-26,Cliente_0371,Memória RAM,Componentes,3,288.05,Site,PIX,AM,5,5.0,864.15,43.21,820.94
+10047,2025-12-15,Cliente_0440,Cadeira,Móveis,3,1204.52,Site,Cartão Crédito,AM,5,5.0,3613.56,180.68,3432.88
+10048,2025-05-04,Cliente_0216,Memória RAM,Componentes,5,332.76,Instagram,PIX,RO,5,5.0,1663.8,83.19,1580.61
+10049,2025-07-26,Cliente_0441,Memória RAM,Componentes,4,319.4,Site,Cartão Crédito,AM,15,4.0,1277.6,191.64,1085.96
+10050,2025-06-14,Cliente_0123,Webcam,Imagem,7,259.91,Site,PIX,SP,25,,1819.37,454.84,1364.53
+10051,2025-02-16,Cliente_0372,Roteador,Redes,5,216.79,Site,Cartão Crédito,RJ,0,4.0,1083.95,0.0,1083.95
+10052,2025-06-05,Cliente_0186,SSD,Componentes,7,380.84,Site,Boleto,MG,5,3.0,2665.88,133.29,2532.59
+10053,2025-09-23,Cliente_0371,Mouse,Periféricos,5,65.84,Loja Física,Cartão Crédito,AM,10,,329.2,32.92,296.28
+10054,2025-10-06,Cliente_0153,Headset,Áudio,6,234.78,Site,Cartão Crédito,RR,20,5.0,1408.68,281.74,1126.94
+10055,2025-01-05,Cliente_0249,Teclado,Periféricos,7,206.46,WhatsApp,Boleto,AM,5,4.0,1445.22,72.26,1372.96
+10056,2025-03-23,Cliente_0114,Notebook,Computadores,6,2955.57,Loja Física,Cartão Crédito,RR,0,,17733.42,0.0,17733.42
+10057,2025-04-29,Cliente_0096,Cadeira,Móveis,6,1122.37,Loja Física,PIX,SP,5,2.0,6734.22,336.71,6397.51
+10058,2025-09-19,Cliente_0198,Memória RAM,Componentes,3,351.54,Site,PIX,RR,10,2.0,1054.62,105.46,949.16
+10059,2025-05-05,Cliente_0336,Mouse,Periféricos,5,91.24,Loja Física,Cartão Crédito,RJ,5,5.0,456.2,22.81,433.39
+10060,2025-10-30,Cliente_0003,Memória RAM,Componentes,4,241.39,Site,Cartão Crédito,SP,0,3.0,965.56,0.0,965.56
+10061,2025-08-03,Cliente_0149,SSD,Componentes,4,383.73,Site,PIX,AM,0,5.0,1534.92,0.0,1534.92
+10062,2025-01-28,Cliente_0416,Memória RAM,Componentes,6,251.51,Site,Cartão Débito,RO,10,5.0,1509.06,150.91,1358.15
+10063,2025-09-26,Cliente_0386,Headset,Áudio,6,225.34,WhatsApp,PIX,AM,25,4.0,1352.04,338.01,1014.03
+10064,2025-01-25,Cliente_0111,Mouse,Periféricos,5,82.04,Site,Boleto,PA,20,5.0,410.2,82.04,328.16
+10065,2025-01-07,Cliente_0020,Roteador,Redes,4,228.37,WhatsApp,Boleto,AM,10,2.0,913.48,91.35,822.13
+10066,2025-07-13,Cliente_0203,Roteador,Redes,5,376.93,Site,Boleto,MG,15,4.0,1884.65,282.7,1601.95
+10067,2025-03-21,Cliente_0371,Cadeira,Móveis,7,1019.07,WhatsApp,,PA,0,,7133.49,0.0,7133.49
+10068,2025-11-18,Cliente_0402,Webcam,Imagem,3,268.13,WhatsApp,PIX,AC,10,5.0,804.39,80.44,723.95
+10069,2025-02-05,Cliente_0182,Teclado,Periféricos,5,224.62,WhatsApp,Cartão Crédito,SP,0,4.0,1123.1,0.0,1123.1
+10070,2025-09-15,Cliente_0331,Cadeira,Móveis,6,1616.01,Instagram,PIX,SP,10,3.0,9696.06,969.61,8726.45
+10071,2025-04-23,Cliente_0227,Cadeira,Móveis,1,1208.63,WhatsApp,Boleto,SP,25,3.0,1208.63,302.16,906.47
+10072,2025-10-21,Cliente_0292,SSD,Componentes,3,446.06,WhatsApp,PIX,AM,20,4.0,1338.18,267.64,1070.54
+10073,2025-07-21,Cliente_0358,Notebook,Computadores,4,4635.83,Site,PIX,AC,5,4.0,18543.32,927.17,17616.15
+10074,2025-01-14,Cliente_0076,Monitor,Imagem,4,768.36,Instagram,Boleto,RR,15,1.0,3073.44,461.02,2612.42
+10075,2025-06-04,Cliente_0317,Notebook,Computadores,6,3631.82,Marketplace,PIX,RO,20,4.0,21790.92,4358.18,17432.74
+10076,2025-03-26,Cliente_0316,SSD,Componentes,6,275.1,Site,PIX,AM,0,5.0,1650.6,0.0,1650.6
+10077,2025-05-20,Cliente_0223,Mouse,Periféricos,3,89.79,Loja Física,Cartão Crédito,AM,15,4.0,269.37,40.41,228.96
+10078,2025-04-07,Cliente_0373,SSD,Componentes,6,384.6,Site,Cartão Crédito,MG,0,3.0,2307.6,0.0,2307.6
+10079,2025-07-04,Cliente_0036,Teclado,Periféricos,1,157.05,Instagram,Cartão Crédito,AM,20,,157.05,31.41,125.64
+10080,2025-12-08,Cliente_0478,SSD,Componentes,3,430.06,Site,Cartão Crédito,PA,0,4.0,1290.18,0.0,1290.18
+10081,2025-12-24,Cliente_0428,Cadeira,Móveis,6,926.83,Site,Boleto,AM,0,5.0,5560.98,0.0,5560.98
+10082,2025-07-08,Cliente_0324,Notebook,Computadores,7,4318.08,Site,PIX,AM,10,3.0,30226.56,3022.66,27203.9
+10083,2025-03-23,Cliente_0450,Webcam,Imagem,2,168.52,Loja Física,Cartão Crédito,AM,0,4.0,337.04,0.0,337.04
+10084,2025-10-27,Cliente_0300,Webcam,Imagem,1,251.7,Site,Cartão Crédito,RR,0,4.0,251.7,0.0,251.7
+10085,2025-06-29,Cliente_0333,Cadeira,Móveis,3,956.71,Loja Física,Cartão Crédito,RJ,10,4.0,2870.13,287.01,2583.12
+10086,2025-12-15,Cliente_0090,Notebook,Computadores,2,3152.57,Loja Física,Cartão Crédito,AM,15,4.0,6305.14,945.77,5359.37
+10087,2025-04-15,Cliente_0029,Headset,Áudio,5,295.79,Instagram,PIX,AM,0,3.0,1478.95,0.0,1478.95
+10088,2025-07-29,Cliente_0176,Notebook,Computadores,1,3213.85,Site,PIX,RR,15,4.0,3213.85,482.08,2731.77
+10089,2025-11-25,Cliente_0420,Notebook,Computadores,5,3698.47,Site,PIX,AM,15,4.0,18492.35,2773.85,15718.5
+10090,2025-09-06,Cliente_0220,Cadeira,Móveis,2,1558.98,Instagram,PIX,RJ,10,3.0,3117.96,311.8,2806.16
+10091,2025-03-13,Cliente_0136,SSD,Componentes,4,272.92,Site,PIX,AM,10,,1091.68,109.17,982.51
+10092,2025-06-10,Cliente_0389,Notebook,Computadores,4,4328.27,Marketplace,Cartão Crédito,PA,0,5.0,17313.08,0.0,17313.08
+10093,2025-05-13,Cliente_0352,Mouse,Periféricos,6,63.13,WhatsApp,PIX,RR,5,5.0,378.78,18.94,359.84
+10094,2025-08-28,Cliente_0478,Headset,Áudio,4,206.52,Site,Cartão Débito,SP,0,5.0,826.08,0.0,826.08
+10095,2025-03-19,Cliente_0462,SSD,Componentes,5,287.56,Marketplace,Boleto,RR,0,3.0,1437.8,0.0,1437.8
+10096,2025-02-27,Cliente_0175,Monitor,Imagem,1,1211.82,WhatsApp,Cartão Crédito,AM,5,4.0,1211.82,60.59,1151.23
+10097,2025-05-05,Cliente_0126,Headset,Áudio,5,214.53,WhatsApp,Cartão Crédito,AM,5,5.0,1072.65,53.63,1019.02
+10098,2025-01-11,Cliente_0171,Roteador,Redes,5,360.66,WhatsApp,Boleto,MG,10,1.0,1803.3,180.33,1622.97
+10099,2025-01-27,Cliente_0394,Headset,Áudio,4,336.14,Loja Física,Cartão Crédito,SP,10,4.0,1344.56,134.46,1210.1
+10100,2025-07-26,Cliente_0266,Teclado,Periféricos,5,176.45,Site,Boleto,AM,20,4.0,882.25,176.45,705.8
+10101,2025-08-10,Cliente_0134,Cadeira,Móveis,2,1354.35,WhatsApp,PIX,SP,0,3.0,2708.7,0.0,2708.7
+10102,2025-11-08,Cliente_0272,Headset,Áudio,3,304.36,WhatsApp,Cartão Débito,RO,0,4.0,913.08,0.0,913.08
+10103,2025-09-07,Cliente_0444,Mouse,Periféricos,3,78.85,Instagram,Cartão Crédito,RR,5,,236.55,11.83,224.72
+10104,2025-11-11,Cliente_0026,Roteador,Redes,3,237.18,Instagram,PIX,AM,0,5.0,711.54,0.0,711.54
+10105,2025-07-27,Cliente_0277,Monitor,Imagem,6,909.23,Instagram,Boleto,SP,15,4.0,5455.38,818.31,4637.07
+10106,2025-04-19,Cliente_0100,Monitor,Imagem,7,1091.82,Site,Boleto,AM,5,5.0,7642.74,382.14,7260.6
+10107,2025-10-23,Cliente_0442,Webcam,Imagem,7,268.06,Site,Cartão Crédito,SP,5,3.0,1876.42,93.82,1782.6
+10108,2025-03-02,Cliente_0425,Webcam,Imagem,4,195.43,Marketplace,Boleto,AM,5,5.0,781.72,39.09,742.63
+10109,2025-05-02,Cliente_0362,Memória RAM,Componentes,7,256.49,Marketplace,PIX,SP,5,5.0,1795.43,89.77,1705.66
+10110,2025-08-27,Cliente_0030,Roteador,Redes,4,364.65,Instagram,Cartão Crédito,AM,5,4.0,1458.6,72.93,1385.67
+10111,2025-04-16,Cliente_0133,Mouse,Periféricos,3,62.11,Site,PIX,AM,0,5.0,186.33,0.0,186.33
+10112,2025-10-06,Cliente_0394,Cadeira,Móveis,1,1429.01,Loja Física,PIX,AM,0,4.0,1429.01,0.0,1429.01
+10113,2025-02-05,Cliente_0496,Mouse,Periféricos,6,62.23,Site,Cartão Débito,AM,5,4.0,373.38,18.67,354.71
+10114,2025-02-07,Cliente_0351,Memória RAM,Componentes,3,375.82,Site,Cartão Crédito,PA,0,5.0,1127.46,0.0,1127.46
+10115,2025-03-13,Cliente_0139,Mouse,Periféricos,5,103.46,Marketplace,PIX,AM,15,5.0,517.3,77.59,439.71
+10116,2025-02-25,Cliente_0486,Cadeira,Móveis,7,1114.14,Instagram,Cartão Crédito,MG,0,5.0,7798.98,0.0,7798.98
+10117,2025-06-16,Cliente_0191,SSD,Componentes,3,278.03,Site,PIX,RR,0,,834.09,0.0,834.09
+10118,2025-08-09,Cliente_0391,Cadeira,Móveis,7,1246.09,Instagram,Cartão Crédito,RR,0,5.0,8722.63,0.0,8722.63
+10119,2025-03-17,Cliente_0187,Teclado,Periféricos,3,167.23,Loja Física,PIX,AM,5,5.0,501.69,25.08,476.61
+10120,2025-07-29,Cliente_0140,Headset,Áudio,7,250.07,Marketplace,Cartão Débito,PA,0,5.0,1750.49,0.0,1750.49
+10121,2025-07-30,Cliente_0320,Monitor,Imagem,1,1034.09,Instagram,PIX,AM,0,4.0,1034.09,0.0,1034.09
+10122,2025-08-16,Cliente_0379,Notebook,Computadores,4,3065.63,Site,Cartão Crédito,SP,0,4.0,12262.52,0.0,12262.52
+10123,2025-08-13,Cliente_0237,Headset,Áudio,7,241.04,Marketplace,PIX,AM,0,4.0,1687.28,0.0,1687.28
+10124,2025-09-11,Cliente_0369,Roteador,Redes,4,341.47,WhatsApp,Cartão Crédito,SP,15,4.0,1365.88,204.88,1161.0
+10125,2025-06-05,Cliente_0297,Headset,Áudio,5,284.06,Marketplace,PIX,AM,15,5.0,1420.3,213.04,1207.26
+10126,2025-12-29,Cliente_0444,Webcam,Imagem,3,208.07,Loja Física,Cartão Crédito,MG,0,1.0,624.21,0.0,624.21
+10127,2025-05-29,Cliente_0200,Webcam,Imagem,2,252.69,Instagram,PIX,AM,0,3.0,505.38,0.0,505.38
+10128,2025-11-14,Cliente_0284,Mouse,Periféricos,5,96.74,Marketplace,Boleto,AM,10,5.0,483.7,48.37,435.33
+10129,2025-10-06,Cliente_0379,Monitor,Imagem,7,994.94,WhatsApp,PIX,RO,15,2.0,6964.58,1044.69,5919.89
+10130,2025-08-19,Cliente_0080,Notebook,Computadores,4,3127.94,Loja Física,Cartão Débito,MG,25,3.0,12511.76,3127.94,9383.82
+10131,2025-07-09,Cliente_0447,Headset,Áudio,1,187.54,WhatsApp,PIX,AC,0,4.0,187.54,0.0,187.54
+10132,2025-08-13,Cliente_0259,Headset,Áudio,7,307.93,Instagram,PIX,AM,5,5.0,2155.51,107.78,2047.73
+10133,2025-03-06,Cliente_0101,Monitor,Imagem,4,1119.22,WhatsApp,PIX,RR,15,4.0,4476.88,671.53,3805.35
+10134,2025-04-18,Cliente_0032,Roteador,Redes,4,327.2,Marketplace,PIX,RJ,15,,1308.8,196.32,1112.48
+10135,2025-03-21,Cliente_0277,Webcam,Imagem,7,175.11,WhatsApp,Cartão Crédito,AM,0,3.0,1225.77,0.0,1225.77
+10136,2025-05-13,Cliente_0121,Cadeira,Móveis,1,1321.36,Site,Boleto,AM,10,5.0,1321.36,132.14,1189.22
+10137,2025-06-23,Cliente_0055,Roteador,Redes,3,347.93,Marketplace,PIX,SP,0,4.0,1043.79,0.0,1043.79
+10138,2025-03-05,Cliente_0493,Teclado,Periféricos,3,177.08,Loja Física,Cartão Crédito,RJ,0,3.0,531.24,0.0,531.24
+10139,2025-07-29,Cliente_0018,Mouse,Periféricos,7,69.5,Site,Cartão Crédito,SP,5,4.0,486.5,24.32,462.18
+10140,2025-10-24,Cliente_0309,Monitor,Imagem,7,992.32,Marketplace,PIX,MG,0,2.0,6946.24,0.0,6946.24
+10141,2025-04-08,Cliente_0368,Memória RAM,Componentes,7,373.74,Loja Física,PIX,AM,15,4.0,2616.18,392.43,2223.75
+10142,2025-06-21,Cliente_0121,Roteador,Redes,4,218.21,Site,Boleto,RR,15,4.0,872.84,130.93,741.91
+10143,2025-03-30,Cliente_0110,Headset,Áudio,7,277.04,Instagram,PIX,AC,15,3.0,1939.28,290.89,1648.39
+10144,2025-12-28,Cliente_0331,Notebook,Computadores,5,3975.66,Marketplace,Cartão Débito,SP,5,5.0,19878.3,993.92,18884.38
+10145,2025-08-14,Cliente_0061,Teclado,Periféricos,2,200.06,Instagram,PIX,SP,0,4.0,400.12,0.0,400.12
+10146,2025-05-23,Cliente_0434,Memória RAM,Componentes,7,342.01,Site,Cartão Crédito,RJ,0,,2394.07,0.0,2394.07
+10147,2025-07-15,Cliente_0264,Webcam,Imagem,5,248.34,Site,Cartão Crédito,AM,5,5.0,1241.7,62.08,1179.62
+10148,2025-06-28,Cliente_0268,Teclado,Periféricos,6,149.08,Site,PIX,AM,10,3.0,894.48,89.45,805.03
+10149,2025-02-23,Cliente_0435,Notebook,Computadores,5,3118.37,Site,PIX,AM,5,4.0,15591.85,779.59,14812.26
+10150,2025-07-15,Cliente_0500,Monitor,Imagem,4,1009.26,Site,PIX,AC,5,5.0,4037.04,201.85,3835.19
+10151,2025-08-05,Cliente_0450,Memória RAM,Componentes,4,228.18,Loja Física,PIX,AM,5,5.0,912.72,45.64,867.08
+10152,2025-11-29,Cliente_0297,Webcam,Imagem,2,248.79,Marketplace,Cartão Débito,SP,0,5.0,497.58,0.0,497.58
+10153,2025-10-25,Cliente_0406,Headset,Áudio,2,287.31,Loja Física,PIX,AM,10,5.0,574.62,57.46,517.16
+10154,2025-01-25,Cliente_0127,Cadeira,Móveis,2,1072.21,Site,Cartão Crédito,AM,5,1.0,2144.42,107.22,2037.2
+10155,2025-03-08,Cliente_0137,Notebook,Computadores,4,3881.08,Instagram,PIX,RR,15,4.0,15524.32,2328.65,13195.67
+10156,2025-06-12,Cliente_0078,Webcam,Imagem,4,235.5,Site,Boleto,SP,10,5.0,942.0,94.2,847.8
+10157,2025-04-22,Cliente_0207,Headset,Áudio,5,226.6,Loja Física,Cartão Crédito,AM,0,5.0,1133.0,0.0,1133.0
+10158,2025-11-25,Cliente_0395,Webcam,Imagem,4,226.11,Marketplace,PIX,SP,5,5.0,904.44,45.22,859.22
+10159,2025-07-25,Cliente_0397,Headset,Áudio,6,323.94,WhatsApp,Boleto,PA,10,5.0,1943.64,194.36,1749.28
+10160,2025-05-17,Cliente_0184,Headset,Áudio,3,251.49,Site,PIX,AM,0,2.0,754.47,0.0,754.47
+10161,2025-10-06,Cliente_0412,Teclado,Periféricos,3,203.02,Marketplace,Cartão Crédito,AM,15,,609.06,91.36,517.7
+10162,2025-06-14,Cliente_0089,Headset,Áudio,2,192.8,Marketplace,Cartão Crédito,SP,0,5.0,385.6,0.0,385.6
+10163,2025-09-28,Cliente_0320,SSD,Componentes,4,278.84,Loja Física,Cartão Crédito,PA,5,3.0,1115.36,55.77,1059.59
+10164,2025-08-16,Cliente_0229,SSD,Componentes,6,279.57,Instagram,Boleto,RJ,20,3.0,1677.42,335.48,1341.94
+10165,2025-05-07,Cliente_0064,Mouse,Periféricos,3,97.36,Marketplace,Cartão Débito,RR,10,4.0,292.08,29.21,262.87
+10166,2025-09-27,Cliente_0326,Notebook,Computadores,5,3360.54,Site,Cartão Débito,AM,5,5.0,16802.7,840.14,15962.56
+10167,2025-11-04,Cliente_0055,Mouse,Periféricos,1,70.93,Marketplace,Boleto,AM,0,4.0,70.93,0.0,70.93
+10168,2025-09-05,Cliente_0293,Webcam,Imagem,7,263.65,Site,Cartão Crédito,AM,0,3.0,1845.55,0.0,1845.55
+10169,2025-12-06,Cliente_0417,Teclado,Periféricos,5,153.36,Site,PIX,RO,10,4.0,766.8,76.68,690.12
+10170,2025-02-05,Cliente_0281,SSD,Componentes,1,314.26,Site,Cartão Débito,RO,5,4.0,314.26,15.71,298.55
+10171,2025-06-04,Cliente_0370,Monitor,Imagem,6,907.7,WhatsApp,Cartão Crédito,SP,5,4.0,5446.2,272.31,5173.89
+10172,2025-05-25,Cliente_0279,Roteador,Redes,5,265.68,Site,PIX,AM,20,5.0,1328.4,265.68,1062.72
+10173,2025-09-17,Cliente_0188,Roteador,Redes,3,308.35,WhatsApp,Cartão Crédito,AM,0,5.0,925.05,0.0,925.05
+10174,2025-01-19,Cliente_0440,SSD,Componentes,4,333.45,WhatsApp,Boleto,AM,5,4.0,1333.8,66.69,1267.11
+10175,2025-02-27,Cliente_0191,Mouse,Periféricos,1,78.86,WhatsApp,PIX,AM,10,5.0,78.86,7.89,70.97
+10176,2025-09-20,Cliente_0392,Headset,Áudio,4,316.93,WhatsApp,Cartão Débito,PA,5,5.0,1267.72,63.39,1204.33
+10177,2025-02-05,Cliente_0273,Cadeira,Móveis,6,1536.86,WhatsApp,Cartão Crédito,MG,5,4.0,9221.16,461.06,8760.1
+10178,2025-07-30,Cliente_0095,Notebook,Computadores,7,4363.19,Site,PIX,AC,0,4.0,30542.33,0.0,30542.33
+10179,2025-11-28,Cliente_0090,Notebook,Computadores,7,4441.14,Site,Cartão Débito,SP,20,4.0,31087.98,6217.6,24870.38
+10180,2025-05-28,Cliente_0247,Memória RAM,Componentes,4,327.55,Marketplace,Boleto,AM,5,4.0,1310.2,65.51,1244.69
+10181,2025-04-12,Cliente_0441,Headset,Áudio,3,284.43,Instagram,PIX,AM,5,5.0,853.29,42.66,810.63
+10182,2025-03-17,Cliente_0075,Monitor,Imagem,6,975.87,Site,PIX,AM,10,5.0,5855.22,585.52,5269.7
+10183,2025-03-09,Cliente_0062,Notebook,Computadores,7,4274.73,Marketplace,Cartão Crédito,AM,0,4.0,29923.11,0.0,29923.11
+10184,2025-03-07,Cliente_0222,Teclado,Periféricos,2,194.51,Marketplace,Cartão Débito,RO,15,5.0,389.02,58.35,330.67
+10185,2025-10-30,Cliente_0267,Monitor,Imagem,2,734.98,WhatsApp,PIX,AM,5,5.0,1469.96,73.5,1396.46
+10186,2025-08-10,Cliente_0451,Headset,Áudio,1,308.94,Marketplace,PIX,RJ,10,,308.94,30.89,278.05
+10187,2025-05-31,Cliente_0424,Roteador,Redes,3,337.78,Marketplace,Cartão Crédito,MG,15,3.0,1013.34,152.0,861.34
+10188,2025-10-01,Cliente_0424,Headset,Áudio,4,310.55,Instagram,Cartão Crédito,AM,20,5.0,1242.2,248.44,993.76
+10189,2025-10-05,Cliente_0121,Roteador,Redes,5,241.99,Instagram,PIX,SP,5,5.0,1209.95,60.5,1149.45
+10190,2025-03-09,Cliente_0312,SSD,Componentes,5,319.54,WhatsApp,Boleto,AC,15,5.0,1597.7,239.66,1358.04
+10191,2025-08-23,Cliente_0309,Teclado,Periféricos,6,166.94,Site,Boleto,AM,0,4.0,1001.64,0.0,1001.64
+10192,2025-07-22,Cliente_0341,Webcam,Imagem,1,232.07,Instagram,Boleto,RJ,10,5.0,232.07,23.21,208.86
+10193,2025-08-21,Cliente_0483,Cadeira,Móveis,1,996.39,Marketplace,PIX,AM,0,4.0,996.39,0.0,996.39
+10194,2025-06-12,Cliente_0028,Roteador,Redes,1,274.74,Instagram,Boleto,SP,0,5.0,274.74,0.0,274.74
+10195,2025-04-08,Cliente_0342,Roteador,Redes,3,240.6,Site,Cartão Crédito,AM,0,5.0,721.8,0.0,721.8
+10196,2025-01-09,Cliente_0426,Roteador,Redes,5,254.48,Site,PIX,AM,0,3.0,1272.4,0.0,1272.4
+10197,2025-09-06,Cliente_0371,Cadeira,Móveis,6,1408.6,Site,Cartão Crédito,PA,0,3.0,8451.6,0.0,8451.6
+10198,2025-08-15,Cliente_0302,Roteador,Redes,3,353.61,Site,PIX,RJ,10,5.0,1060.83,106.08,954.75
+10199,2025-08-29,Cliente_0274,Memória RAM,Componentes,6,229.12,WhatsApp,,AM,0,4.0,1374.72,0.0,1374.72
+10200,2025-03-16,Cliente_0023,Webcam,Imagem,3,239.7,Instagram,Cartão Crédito,AM,15,4.0,719.1,107.86,611.24
+10201,2025-01-17,Cliente_0410,Webcam,Imagem,4,169.76,Site,Cartão Débito,PA,0,5.0,679.04,0.0,679.04
+10202,2025-02-20,Cliente_0099,Notebook,Computadores,3,2804.02,Instagram,PIX,AM,0,5.0,8412.06,0.0,8412.06
+10203,2025-08-16,Cliente_0285,Notebook,Computadores,3,4105.68,Site,Cartão Crédito,AC,5,3.0,12317.04,615.85,11701.19
+10204,2025-07-13,Cliente_0308,Memória RAM,Componentes,4,357.41,WhatsApp,PIX,SP,5,4.0,1429.64,71.48,1358.16
+10205,2025-10-07,Cliente_0110,Memória RAM,Componentes,2,371.52,Instagram,Boleto,RJ,0,5.0,743.04,0.0,743.04
+10206,2025-08-26,Cliente_0203,Roteador,Redes,4,289.67,WhatsApp,Cartão Crédito,SP,25,5.0,1158.68,289.67,869.01
+10207,2025-09-28,Cliente_0106,Teclado,Periféricos,1,227.86,Site,PIX,RJ,0,4.0,227.86,0.0,227.86
+10208,2025-06-06,Cliente_0046,SSD,Componentes,7,297.54,Loja Física,PIX,SP,10,2.0,2082.78,208.28,1874.5
+10209,2025-09-11,Cliente_0257,Memória RAM,Componentes,2,269.95,Site,Cartão Crédito,MG,0,3.0,539.9,0.0,539.9
+10210,2025-11-04,Cliente_0447,Notebook,Computadores,7,2907.45,Site,Cartão Crédito,AM,20,,20352.15,4070.43,16281.72
+10211,2025-11-06,Cliente_0144,Teclado,Periféricos,5,221.13,Site,Cartão Crédito,PA,5,4.0,1105.65,55.28,1050.37
+10212,2025-11-10,Cliente_0025,Cadeira,Móveis,7,1064.65,Marketplace,PIX,MG,20,4.0,7452.55,1490.51,5962.04
+10213,2025-10-28,Cliente_0062,Monitor,Imagem,6,758.98,Site,Cartão Crédito,AC,0,1.0,4553.88,0.0,4553.88
+10214,2025-04-28,Cliente_0230,SSD,Componentes,3,393.35,Instagram,PIX,RJ,0,2.0,1180.05,0.0,1180.05
+10215,2025-11-29,Cliente_0082,Memória RAM,Componentes,2,238.87,Loja Física,Cartão Crédito,AM,5,5.0,477.74,23.89,453.85
+10216,2025-02-19,Cliente_0336,Webcam,Imagem,5,170.93,Site,Boleto,RJ,5,4.0,854.65,42.73,811.92
+10217,2025-10-05,Cliente_0211,Notebook,Computadores,4,2849.11,Site,Cartão Crédito,SP,0,4.0,11396.44,0.0,11396.44
+10218,2025-02-21,Cliente_0400,Mouse,Periféricos,4,60.01,Loja Física,PIX,AM,0,3.0,240.04,0.0,240.04
+10219,2025-06-30,Cliente_0197,Notebook,Computadores,1,4088.68,Instagram,Boleto,AM,15,4.0,4088.68,613.3,3475.38
+10220,2025-01-31,Cliente_0347,Memória RAM,Componentes,7,326.2,Loja Física,PIX,AM,0,5.0,2283.4,0.0,2283.4
+10221,2025-11-23,Cliente_0492,Monitor,Imagem,1,788.33,Instagram,Cartão Crédito,RJ,5,3.0,788.33,39.42,748.91
+10222,2025-09-03,Cliente_0198,Roteador,Redes,2,249.14,Instagram,Cartão Crédito,AC,5,5.0,498.28,24.91,473.37
+10223,2025-03-31,Cliente_0377,SSD,Componentes,7,432.8,Site,PIX,RJ,10,3.0,3029.6,302.96,2726.64
+10224,2025-01-31,Cliente_0162,Headset,Áudio,6,262.77,WhatsApp,PIX,PA,0,3.0,1576.62,0.0,1576.62
+10225,2025-04-12,Cliente_0208,Headset,Áudio,3,292.28,WhatsApp,PIX,MG,10,4.0,876.84,87.68,789.16
+10226,2025-08-18,Cliente_0309,Headset,Áudio,4,255.41,WhatsApp,Cartão Débito,PA,0,,1021.64,0.0,1021.64
+10227,2025-04-07,Cliente_0407,Headset,Áudio,2,223.16,Instagram,Boleto,AM,0,4.0,446.32,0.0,446.32
+10228,2025-03-08,Cliente_0427,Teclado,Periféricos,7,239.8,Loja Física,Cartão Crédito,AM,5,5.0,1678.6,83.93,1594.67
+10229,2025-07-11,Cliente_0044,Cadeira,Móveis,2,1307.27,Instagram,PIX,MG,20,4.0,2614.54,522.91,2091.63
+10230,2025-07-30,Cliente_0288,Notebook,Computadores,6,2900.06,Instagram,Boleto,AM,0,3.0,17400.36,0.0,17400.36
+10231,2025-05-17,Cliente_0491,SSD,Componentes,7,347.78,Loja Física,Cartão Crédito,AM,0,3.0,2434.46,0.0,2434.46
+10232,2025-12-05,Cliente_0279,Monitor,Imagem,2,852.84,Site,Cartão Crédito,AM,10,,1705.68,170.57,1535.11
+10233,2025-07-03,Cliente_0404,Cadeira,Móveis,1,1054.14,Site,Cartão Crédito,AM,5,3.0,1054.14,52.71,1001.43
+10234,2025-02-25,Cliente_0275,Mouse,Periféricos,6,104.81,Site,Cartão Crédito,RJ,10,5.0,628.86,62.89,565.97
+10235,2025-09-07,Cliente_0221,Mouse,Periféricos,4,102.28,Loja Física,Cartão Crédito,RR,25,,409.12,102.28,306.84
+10236,2025-10-09,Cliente_0456,SSD,Componentes,7,304.32,Instagram,Cartão Crédito,RO,25,3.0,2130.24,532.56,1597.68
+10237,2025-03-01,Cliente_0285,Notebook,Computadores,1,3364.51,Instagram,Cartão Crédito,MG,5,4.0,3364.51,168.23,3196.28
+10238,2025-05-08,Cliente_0146,SSD,Componentes,1,422.59,WhatsApp,Boleto,RR,5,3.0,422.59,21.13,401.46
+10239,2025-07-24,Cliente_0069,Roteador,Redes,6,245.03,Instagram,PIX,RJ,20,3.0,1470.18,294.04,1176.14
+10240,2025-08-02,Cliente_0140,Roteador,Redes,6,309.38,Site,Cartão Crédito,AM,0,3.0,1856.28,0.0,1856.28
+10241,2025-05-07,Cliente_0010,Notebook,Computadores,2,4094.57,Marketplace,PIX,MG,5,5.0,8189.14,409.46,7779.68
+10242,2025-03-13,Cliente_0111,Memória RAM,Componentes,5,342.72,Loja Física,Cartão Débito,AM,5,5.0,1713.6,85.68,1627.92
+10243,2025-08-04,Cliente_0037,Notebook,Computadores,5,4108.46,Site,PIX,SP,0,5.0,20542.3,0.0,20542.3
+10244,2025-03-31,Cliente_0081,Monitor,Imagem,5,1056.62,Marketplace,PIX,AC,25,,5283.1,1320.78,3962.32
+10245,2025-11-10,Cliente_0096,Memória RAM,Componentes,7,398.67,Site,Cartão Débito,AM,15,3.0,2790.69,418.6,2372.09
+10246,2025-08-21,Cliente_0055,Notebook,Computadores,7,3352.65,Instagram,PIX,PA,5,4.0,23468.55,1173.43,22295.12
+10247,2025-08-21,Cliente_0132,Memória RAM,Componentes,2,383.15,Site,Cartão Crédito,AM,15,4.0,766.3,114.94,651.36
+10248,2025-03-04,Cliente_0223,SSD,Componentes,3,267.08,Site,Boleto,AM,5,3.0,801.24,40.06,761.18
+10249,2025-09-04,Cliente_0384,Headset,Áudio,7,230.73,Instagram,Cartão Crédito,RO,20,3.0,1615.11,323.02,1292.09
+10250,2025-05-15,Cliente_0063,Cadeira,Móveis,4,935.03,WhatsApp,PIX,MG,0,4.0,3740.12,0.0,3740.12
+10251,2025-01-02,Cliente_0474,Headset,Áudio,2,285.18,Marketplace,PIX,RR,0,5.0,570.36,0.0,570.36
+10252,2025-06-10,Cliente_0012,Monitor,Imagem,2,729.43,WhatsApp,Cartão Débito,RR,0,,1458.86,0.0,1458.86
+10253,2025-05-20,Cliente_0146,Roteador,Redes,1,352.08,Marketplace,Cartão Crédito,AM,5,3.0,352.08,17.6,334.48
+10254,2025-10-31,Cliente_0264,Monitor,Imagem,5,1024.16,Site,Cartão Crédito,AM,0,5.0,5120.8,0.0,5120.8
+10255,2025-11-05,Cliente_0032,Roteador,Redes,6,214.84,Site,Cartão Débito,RR,0,5.0,1289.04,0.0,1289.04
+10256,2025-07-21,Cliente_0468,SSD,Componentes,2,412.6,WhatsApp,Cartão Crédito,MG,25,4.0,825.2,206.3,618.9
+10257,2025-05-05,Cliente_0049,SSD,Componentes,3,443.53,Marketplace,Cartão Débito,RJ,20,3.0,1330.59,266.12,1064.47
+10258,2025-12-13,Cliente_0360,Memória RAM,Componentes,7,344.0,WhatsApp,PIX,AM,10,,2408.0,240.8,2167.2
+10259,2025-03-23,Cliente_0447,Teclado,Periféricos,4,138.3,Site,Cartão Crédito,RR,20,5.0,553.2,110.64,442.56
+10260,2025-11-20,Cliente_0461,Roteador,Redes,3,354.13,Site,Cartão Crédito,RR,20,,1062.39,212.48,849.91
+10261,2025-06-13,Cliente_0187,SSD,Componentes,2,416.32,Instagram,PIX,AC,10,4.0,832.64,83.26,749.38
+10262,2025-12-16,Cliente_0343,Teclado,Periféricos,2,175.87,Site,PIX,AC,5,4.0,351.74,17.59,334.15
+10263,2025-08-28,Cliente_0451,Mouse,Periféricos,1,75.77,Site,Cartão Crédito,SP,20,3.0,75.77,15.15,60.62
+10264,2025-08-01,Cliente_0099,Mouse,Periféricos,3,83.03,Instagram,Cartão Crédito,AM,10,,249.09,24.91,224.18
+10265,2025-05-29,Cliente_0167,Memória RAM,Componentes,1,381.08,Marketplace,Cartão Crédito,MG,0,3.0,381.08,0.0,381.08
+10266,2025-03-13,Cliente_0306,Monitor,Imagem,6,811.11,Site,Cartão Débito,AM,5,1.0,4866.66,243.33,4623.33
+10267,2025-04-13,Cliente_0213,Headset,Áudio,3,202.64,Site,Cartão Crédito,PA,5,4.0,607.92,30.4,577.52
+10268,2025-07-02,Cliente_0199,Mouse,Periféricos,5,101.5,Marketplace,Boleto,RJ,20,4.0,507.5,101.5,406.0
+10269,2025-07-03,Cliente_0246,Memória RAM,Componentes,6,229.73,Instagram,Cartão Crédito,PA,10,4.0,1378.38,137.84,1240.54
+10270,2025-01-13,Cliente_0154,Webcam,Imagem,5,285.25,Marketplace,PIX,AM,20,5.0,1426.25,285.25,1141.0
+10271,2025-08-20,Cliente_0407,Teclado,Periféricos,3,168.02,Instagram,Cartão Crédito,AM,15,4.0,504.06,75.61,428.45
+10272,2025-05-30,Cliente_0096,Cadeira,Móveis,1,1265.92,WhatsApp,Cartão Crédito,RR,0,4.0,1265.92,0.0,1265.92
+10273,2025-09-20,Cliente_0063,Webcam,Imagem,5,182.46,Marketplace,Boleto,AM,10,1.0,912.3,91.23,821.07
+10274,2025-01-24,Cliente_0194,Cadeira,Móveis,2,1549.62,WhatsApp,PIX,PA,0,4.0,3099.24,0.0,3099.24
+10275,2025-07-08,Cliente_0423,Roteador,Redes,7,335.97,Instagram,Cartão Crédito,AM,5,3.0,2351.79,117.59,2234.2
+10276,2025-05-13,Cliente_0322,Roteador,Redes,4,365.26,Site,PIX,SP,15,3.0,1461.04,219.16,1241.88
+10277,2025-02-19,Cliente_0359,Cadeira,Móveis,1,1391.92,Instagram,PIX,AM,10,5.0,1391.92,139.19,1252.73
+10278,2025-07-02,Cliente_0302,SSD,Componentes,6,301.29,Instagram,Cartão Crédito,AC,15,4.0,1807.74,271.16,1536.58
+10279,2025-01-26,Cliente_0399,SSD,Componentes,7,327.24,Instagram,PIX,PA,0,3.0,2290.68,0.0,2290.68
+10280,2025-05-18,Cliente_0272,Headset,Áudio,6,260.53,Marketplace,Cartão Crédito,RO,15,4.0,1563.18,234.48,1328.7
+10281,2025-01-11,Cliente_0376,Monitor,Imagem,3,1002.92,Site,Boleto,AM,0,3.0,3008.76,0.0,3008.76
+10282,2025-10-23,Cliente_0090,Headset,Áudio,6,326.47,Marketplace,Boleto,RO,5,4.0,1958.82,97.94,1860.88
+10283,2025-04-12,Cliente_0328,Memória RAM,Componentes,4,294.11,Loja Física,PIX,AC,5,5.0,1176.44,58.82,1117.62
+10284,2025-01-11,Cliente_0272,Roteador,Redes,4,328.12,Marketplace,Cartão Crédito,AM,10,5.0,1312.48,131.25,1181.23
+10285,2025-04-22,Cliente_0085,Cadeira,Móveis,2,1591.93,Instagram,Boleto,SP,0,5.0,3183.86,0.0,3183.86
+10286,2025-04-04,Cliente_0295,Teclado,Periféricos,6,151.46,WhatsApp,PIX,RJ,5,4.0,908.76,45.44,863.32
+10287,2025-09-17,Cliente_0395,Teclado,Periféricos,1,228.17,Instagram,Cartão Crédito,AM,10,4.0,228.17,22.82,205.35
+10288,2025-09-15,Cliente_0472,Notebook,Computadores,4,3508.48,Site,Boleto,RO,10,5.0,14033.92,1403.39,12630.53
+10289,2025-06-16,Cliente_0036,Headset,Áudio,1,297.36,Loja Física,PIX,RO,5,3.0,297.36,14.87,282.49
+10290,2025-07-28,Cliente_0018,Cadeira,Móveis,2,1111.35,Site,Boleto,AM,5,3.0,2222.7,111.14,2111.56
+10291,2025-02-14,Cliente_0407,SSD,Componentes,3,332.64,Marketplace,Cartão Crédito,AM,20,5.0,997.92,199.58,798.34
+10292,2025-11-26,Cliente_0077,Memória RAM,Componentes,4,229.88,Site,PIX,MG,20,4.0,919.52,183.9,735.62
+10293,2025-07-24,Cliente_0049,Webcam,Imagem,4,293.23,Site,Cartão Crédito,RR,5,5.0,1172.92,58.65,1114.27
+10294,2025-12-25,Cliente_0492,Notebook,Computadores,4,4333.25,Site,PIX,MG,5,3.0,17333.0,866.65,16466.35
+10295,2025-02-11,Cliente_0498,Webcam,Imagem,6,177.4,Instagram,PIX,AC,10,4.0,1064.4,106.44,957.96
+10296,2025-10-12,Cliente_0426,Roteador,Redes,1,377.92,Site,Cartão Crédito,AM,0,5.0,377.92,0.0,377.92
+10297,2025-04-10,Cliente_0359,Memória RAM,Componentes,7,333.9,Site,Cartão Crédito,AM,0,4.0,2337.3,0.0,2337.3
+10298,2025-12-22,Cliente_0236,Monitor,Imagem,4,1136.01,Loja Física,Cartão Crédito,SP,0,4.0,4544.04,0.0,4544.04
+10299,2025-09-29,Cliente_0044,Webcam,Imagem,1,173.8,Loja Física,PIX,RR,0,2.0,173.8,0.0,173.8
+10300,2025-01-06,Cliente_0109,Memória RAM,Componentes,6,295.1,Loja Física,Cartão Débito,AM,10,3.0,1770.6,177.06,1593.54
+10301,2025-02-11,Cliente_0129,Notebook,Computadores,5,4031.27,Loja Física,Cartão Crédito,RO,5,1.0,20156.35,1007.82,19148.53
+10302,2025-12-22,Cliente_0007,Roteador,Redes,5,227.88,Instagram,Cartão Débito,SP,0,4.0,1139.4,0.0,1139.4
+10303,2025-09-10,Cliente_0304,Memória RAM,Componentes,1,313.0,WhatsApp,Cartão Débito,SP,20,,313.0,62.6,250.4
+10304,2025-03-17,Cliente_0112,Monitor,Imagem,6,914.05,Instagram,PIX,AM,20,5.0,5484.3,1096.86,4387.44
+10305,2025-02-11,Cliente_0213,SSD,Componentes,5,307.87,Instagram,PIX,AM,20,5.0,1539.35,307.87,1231.48
+10306,2025-12-17,Cliente_0400,Teclado,Periféricos,2,167.43,Marketplace,Boleto,MG,5,5.0,334.86,16.74,318.12
+10307,2025-09-25,Cliente_0304,Mouse,Periféricos,2,106.42,Site,Cartão Débito,RJ,0,4.0,212.84,0.0,212.84
+10308,2025-08-05,Cliente_0462,SSD,Componentes,5,323.12,Loja Física,PIX,AM,0,4.0,1615.6,0.0,1615.6
+10309,2025-03-05,Cliente_0427,SSD,Componentes,3,307.32,Instagram,Cartão Crédito,SP,0,3.0,921.96,0.0,921.96
+10310,2025-06-28,Cliente_0307,Teclado,Periféricos,1,192.91,Site,PIX,AM,0,5.0,192.91,0.0,192.91
+10311,2025-01-29,Cliente_0363,SSD,Componentes,5,403.4,Site,PIX,AM,20,3.0,2017.0,403.4,1613.6
+10312,2025-10-02,Cliente_0066,Cadeira,Móveis,1,1422.07,Site,Cartão Crédito,AM,25,4.0,1422.07,355.52,1066.55
+10313,2025-08-04,Cliente_0031,Roteador,Redes,7,336.71,WhatsApp,PIX,AM,15,5.0,2356.97,353.55,2003.42
+10314,2025-12-19,Cliente_0295,Memória RAM,Componentes,7,231.63,WhatsApp,Boleto,RJ,10,3.0,1621.41,162.14,1459.27
+10315,2025-10-28,Cliente_0265,Roteador,Redes,6,276.15,Instagram,Boleto,RR,10,3.0,1656.9,165.69,1491.21
+10316,2025-02-23,Cliente_0297,Cadeira,Móveis,7,1457.25,Site,Cartão Crédito,AM,15,3.0,10200.75,1530.11,8670.64
+10317,2025-03-21,Cliente_0319,SSD,Componentes,7,452.52,Site,PIX,RJ,20,4.0,3167.64,633.53,2534.11
+10318,2025-07-13,Cliente_0014,Mouse,Periféricos,5,88.91,Loja Física,PIX,SP,10,3.0,444.55,44.46,400.09
+10319,2025-07-19,Cliente_0058,Notebook,Computadores,2,2734.84,Site,Cartão Crédito,AM,0,4.0,5469.68,0.0,5469.68
+10320,2025-01-13,Cliente_0458,Roteador,Redes,6,276.64,WhatsApp,Cartão Crédito,AC,0,4.0,1659.84,0.0,1659.84
+10321,2025-08-10,Cliente_0496,Roteador,Redes,7,222.47,Marketplace,PIX,SP,10,4.0,1557.29,155.73,1401.56
+10322,2025-07-12,Cliente_0344,Mouse,Periféricos,3,95.93,WhatsApp,Cartão Crédito,SP,0,4.0,287.79,0.0,287.79
+10323,2025-11-23,Cliente_0242,Monitor,Imagem,1,709.29,Marketplace,Cartão Crédito,SP,20,,709.29,141.86,567.43
+10324,2025-08-28,Cliente_0353,Roteador,Redes,3,241.2,Marketplace,Boleto,AM,10,4.0,723.6,72.36,651.24
+10325,2025-09-27,Cliente_0248,Memória RAM,Componentes,7,300.05,Marketplace,Boleto,AM,10,5.0,2100.35,210.04,1890.31
+10326,2025-10-25,Cliente_0098,Webcam,Imagem,2,226.07,Loja Física,Cartão Crédito,RJ,0,5.0,452.14,0.0,452.14
+10327,2025-04-09,Cliente_0468,Memória RAM,Componentes,7,298.17,Loja Física,Cartão Crédito,RJ,5,4.0,2087.19,104.36,1982.83
+10328,2025-08-08,Cliente_0448,Memória RAM,Componentes,4,308.41,Marketplace,PIX,AM,5,3.0,1233.64,61.68,1171.96
+10329,2025-11-28,Cliente_0412,Memória RAM,Componentes,4,353.38,Marketplace,PIX,AM,10,4.0,1413.52,141.35,1272.17
+10330,2025-04-14,Cliente_0388,SSD,Componentes,1,340.05,WhatsApp,Boleto,RJ,5,5.0,340.05,17.0,323.05
+10331,2025-03-06,Cliente_0162,Cadeira,Móveis,6,1294.38,WhatsApp,Cartão Crédito,AM,25,4.0,7766.28,1941.57,5824.71
+10332,2025-05-25,Cliente_0388,Roteador,Redes,2,260.97,Marketplace,PIX,AM,10,2.0,521.94,52.19,469.75
+10333,2025-02-07,Cliente_0247,Webcam,Imagem,7,211.68,Site,Cartão Crédito,AM,10,1.0,1481.76,148.18,1333.58
+10334,2025-01-28,Cliente_0326,Mouse,Periféricos,1,89.46,Site,Boleto,PA,20,4.0,89.46,17.89,71.57
+10335,2025-10-16,Cliente_0442,Notebook,Computadores,6,3655.04,WhatsApp,PIX,AM,25,3.0,21930.24,5482.56,16447.68
+10336,2025-08-25,Cliente_0342,Headset,Áudio,1,295.96,Site,PIX,RR,0,5.0,295.96,0.0,295.96
+10337,2025-05-06,Cliente_0004,SSD,Componentes,1,380.21,Site,Boleto,AM,15,3.0,380.21,57.03,323.18
+10338,2025-11-22,Cliente_0306,Teclado,Periféricos,3,221.79,Site,Cartão Crédito,MG,0,4.0,665.37,0.0,665.37
+10339,2025-03-26,Cliente_0261,Webcam,Imagem,5,223.53,Marketplace,Cartão Crédito,MG,5,5.0,1117.65,55.88,1061.77
+10340,2025-08-25,Cliente_0331,Headset,Áudio,2,261.16,Marketplace,PIX,MG,0,5.0,522.32,0.0,522.32
+10341,2025-09-03,Cliente_0045,Roteador,Redes,3,322.56,Site,Boleto,RJ,10,4.0,967.68,96.77,870.91
+10342,2025-09-23,Cliente_0419,SSD,Componentes,6,308.96,Site,Cartão Débito,AC,5,3.0,1853.76,92.69,1761.07
+10343,2025-09-06,Cliente_0211,Cadeira,Móveis,5,1177.87,Loja Física,Cartão Crédito,AM,10,4.0,5889.35,588.93,5300.42
+10344,2025-10-19,Cliente_0244,Cadeira,Móveis,1,1349.89,WhatsApp,PIX,AM,10,4.0,1349.89,134.99,1214.9
+10345,2025-07-24,Cliente_0203,Webcam,Imagem,4,168.81,Site,Cartão Crédito,AM,10,4.0,675.24,67.52,607.72
+10346,2025-08-16,Cliente_0203,Webcam,Imagem,7,222.68,Site,PIX,AM,0,4.0,1558.76,0.0,1558.76
+10347,2025-08-28,Cliente_0373,Monitor,Imagem,3,998.38,Marketplace,PIX,RR,15,3.0,2995.14,449.27,2545.87
+10348,2025-03-14,Cliente_0027,Roteador,Redes,2,372.52,Loja Física,Cartão Crédito,MG,10,5.0,745.04,74.5,670.54
+10349,2025-06-08,Cliente_0386,Roteador,Redes,2,357.34,Loja Física,PIX,PA,5,1.0,714.68,35.73,678.95
+10350,2025-07-31,Cliente_0438,Roteador,Redes,5,257.16,Marketplace,Boleto,RR,25,4.0,1285.8,321.45,964.35
+10351,2025-05-16,Cliente_0495,SSD,Componentes,3,369.01,WhatsApp,PIX,SP,0,,1107.03,0.0,1107.03
+10352,2025-10-10,Cliente_0118,Cadeira,Móveis,1,940.62,Site,Cartão Crédito,AM,5,5.0,940.62,47.03,893.59
+10353,2025-06-13,Cliente_0456,SSD,Componentes,5,313.06,Site,PIX,MG,10,4.0,1565.3,156.53,1408.77
+10354,2025-05-17,Cliente_0226,Webcam,Imagem,6,267.28,Marketplace,Cartão Crédito,RR,0,3.0,1603.68,0.0,1603.68
+10355,2025-06-20,Cliente_0360,Notebook,Computadores,2,2883.96,Loja Física,PIX,AM,5,,5767.92,288.4,5479.52
+10356,2025-06-01,Cliente_0468,Monitor,Imagem,6,814.15,Marketplace,Cartão Crédito,MG,15,1.0,4884.9,732.74,4152.16
+10357,2025-06-14,Cliente_0471,Webcam,Imagem,3,289.61,WhatsApp,Cartão Débito,RO,0,5.0,868.83,0.0,868.83
+10358,2025-10-24,Cliente_0463,Memória RAM,Componentes,4,373.29,Loja Física,Boleto,PA,5,5.0,1493.16,74.66,1418.5
+10359,2025-04-14,Cliente_0432,Mouse,Periféricos,6,97.53,Marketplace,Cartão Crédito,RO,10,1.0,585.18,58.52,526.66
+10360,2025-08-10,Cliente_0205,Headset,Áudio,7,317.18,Site,PIX,SP,10,5.0,2220.26,222.03,1998.23
+10361,2025-10-09,Cliente_0247,Memória RAM,Componentes,1,359.93,Site,PIX,AM,10,,359.93,35.99,323.94
+10362,2025-05-09,Cliente_0479,Memória RAM,Componentes,7,246.71,Loja Física,Cartão Crédito,RJ,20,5.0,1726.97,345.39,1381.58
+10363,2025-08-08,Cliente_0049,Cadeira,Móveis,2,1271.92,Site,PIX,MG,5,4.0,2543.84,127.19,2416.65
+10364,2025-06-22,Cliente_0366,Webcam,Imagem,7,223.64,Site,Cartão Crédito,RR,10,5.0,1565.48,156.55,1408.93
+10365,2025-12-14,Cliente_0253,Memória RAM,Componentes,3,281.01,WhatsApp,Boleto,AC,15,4.0,843.03,126.45,716.58
+10366,2025-04-06,Cliente_0078,Roteador,Redes,4,350.12,WhatsApp,Cartão Débito,RJ,0,5.0,1400.48,0.0,1400.48
+10367,2025-02-21,Cliente_0257,SSD,Componentes,2,359.97,Site,Cartão Débito,AM,25,4.0,719.94,179.98,539.96
+10368,2025-04-04,Cliente_0120,Roteador,Redes,4,220.13,Loja Física,Cartão Débito,MG,20,1.0,880.52,176.1,704.42
+10369,2025-03-05,Cliente_0475,Cadeira,Móveis,2,1097.98,Site,Cartão Crédito,AC,0,3.0,2195.96,0.0,2195.96
+10370,2025-01-21,Cliente_0417,Cadeira,Móveis,5,1064.61,Site,,PA,10,2.0,5323.05,532.3,4790.75
+10371,2025-04-16,Cliente_0035,Webcam,Imagem,7,282.15,Marketplace,Cartão Crédito,AC,10,2.0,1975.05,197.5,1777.55
+10372,2025-12-02,Cliente_0438,Webcam,Imagem,5,250.46,Loja Física,Boleto,RR,5,1.0,1252.3,62.62,1189.68
+10373,2025-07-19,Cliente_0312,Mouse,Periféricos,5,86.9,Site,PIX,AM,20,4.0,434.5,86.9,347.6
+10374,2025-11-28,Cliente_0143,Memória RAM,Componentes,3,316.2,Site,Cartão Crédito,SP,10,3.0,948.6,94.86,853.74
+10375,2025-12-18,Cliente_0197,Monitor,Imagem,5,1026.06,Site,PIX,RR,10,5.0,5130.3,513.03,4617.27
+10376,2025-10-08,Cliente_0485,Roteador,Redes,3,336.82,WhatsApp,,SP,0,5.0,1010.46,0.0,1010.46
+10377,2025-10-09,Cliente_0260,Memória RAM,Componentes,1,324.79,Marketplace,Cartão Crédito,AM,5,4.0,324.79,16.24,308.55
+10378,2025-04-10,Cliente_0366,Roteador,Redes,5,367.63,Instagram,Cartão Crédito,RR,5,4.0,1838.15,91.91,1746.24
+10379,2025-12-03,Cliente_0084,Teclado,Periféricos,3,240.5,Site,Cartão Crédito,SP,15,3.0,721.5,108.22,613.28
+10380,2025-01-27,Cliente_0192,Headset,Áudio,2,336.8,Marketplace,Cartão Crédito,MG,10,4.0,673.6,67.36,606.24
+10381,2025-09-02,Cliente_0487,Headset,Áudio,3,287.91,Marketplace,,RJ,0,5.0,863.73,0.0,863.73
+10382,2025-03-04,Cliente_0022,Webcam,Imagem,6,288.11,Loja Física,PIX,RJ,0,5.0,1728.66,0.0,1728.66
+10383,2025-12-08,Cliente_0024,Monitor,Imagem,3,893.42,Site,Cartão Crédito,AM,5,2.0,2680.26,134.01,2546.25
+10384,2025-02-07,Cliente_0431,Monitor,Imagem,7,1139.18,WhatsApp,Cartão Débito,RJ,15,5.0,7974.26,1196.14,6778.12
+10385,2025-10-29,Cliente_0075,Notebook,Computadores,6,4534.27,Instagram,PIX,AM,15,5.0,27205.62,4080.84,23124.78
+10386,2025-05-07,Cliente_0366,Cadeira,Móveis,2,1550.98,Site,Cartão Crédito,AM,5,4.0,3101.96,155.1,2946.86
+10387,2025-03-12,Cliente_0134,Monitor,Imagem,7,1123.66,Site,Cartão Crédito,AM,0,3.0,7865.62,0.0,7865.62
+10388,2025-05-14,Cliente_0411,Roteador,Redes,3,278.31,Instagram,Cartão Débito,RJ,0,4.0,834.93,0.0,834.93
+10389,2025-09-10,Cliente_0394,Roteador,Redes,7,236.7,WhatsApp,Cartão Crédito,AM,0,4.0,1656.9,0.0,1656.9
+10390,2025-01-13,Cliente_0167,Headset,Áudio,2,237.59,Loja Física,PIX,AM,15,4.0,475.18,71.28,403.9
+10391,2025-06-23,Cliente_0458,Memória RAM,Componentes,7,363.11,Marketplace,Cartão Débito,AM,0,4.0,2541.77,0.0,2541.77
+10392,2025-03-31,Cliente_0110,Monitor,Imagem,6,800.76,Site,Cartão Débito,RR,5,3.0,4804.56,240.23,4564.33
+10393,2025-10-16,Cliente_0090,Notebook,Computadores,4,3629.37,Site,Cartão Débito,RJ,10,3.0,14517.48,1451.75,13065.73
+10394,2025-07-26,Cliente_0037,Memória RAM,Componentes,5,326.77,Instagram,Cartão Crédito,PA,25,2.0,1633.85,408.46,1225.39
+10395,2025-03-03,Cliente_0310,Headset,Áudio,6,278.08,Marketplace,Cartão Débito,RR,25,3.0,1668.48,417.12,1251.36
+10396,2025-11-15,Cliente_0481,Roteador,Redes,1,367.2,Loja Física,Cartão Crédito,AM,25,4.0,367.2,91.8,275.4
+10397,2025-11-08,Cliente_0051,Webcam,Imagem,3,252.32,Site,Cartão Crédito,AM,10,3.0,756.96,75.7,681.26
+10398,2025-02-08,Cliente_0060,Teclado,Periféricos,7,219.92,Site,Boleto,AM,15,3.0,1539.44,230.92,1308.52
+10399,2025-03-01,Cliente_0072,Monitor,Imagem,2,989.21,Instagram,Boleto,PA,15,5.0,1978.42,296.76,1681.66
+10400,2025-04-15,Cliente_0128,Roteador,Redes,5,350.04,WhatsApp,Cartão Crédito,RO,20,5.0,1750.2,350.04,1400.16
+10401,2025-08-27,Cliente_0307,Memória RAM,Componentes,7,272.46,Marketplace,Cartão Débito,AM,25,4.0,1907.22,476.8,1430.42
+10402,2025-05-07,Cliente_0062,Roteador,Redes,3,245.26,Site,PIX,RJ,5,4.0,735.78,36.79,698.99
+10403,2025-03-24,Cliente_0305,Notebook,Computadores,5,4570.27,Site,PIX,MG,5,5.0,22851.35,1142.57,21708.78
+10404,2025-08-08,Cliente_0179,Headset,Áudio,4,291.52,Site,Cartão Crédito,AM,5,5.0,1166.08,58.3,1107.78
+10405,2025-04-15,Cliente_0028,SSD,Componentes,3,403.52,Instagram,Cartão Crédito,AM,10,4.0,1210.56,121.06,1089.5
+10406,2025-03-15,Cliente_0240,Roteador,Redes,7,288.51,Loja Física,PIX,SP,15,5.0,2019.57,302.94,1716.63
+10407,2025-05-15,Cliente_0420,Webcam,Imagem,2,214.72,WhatsApp,Cartão Crédito,AM,20,4.0,429.44,85.89,343.55
+10408,2025-03-03,Cliente_0232,Monitor,Imagem,4,975.07,Instagram,PIX,AM,5,4.0,3900.28,195.01,3705.27
+10409,2025-01-01,Cliente_0153,Webcam,Imagem,3,180.91,Site,Cartão Crédito,PA,5,,542.73,27.14,515.59
+10410,2025-03-20,Cliente_0420,Notebook,Computadores,5,3579.9,Marketplace,Cartão Débito,RJ,25,4.0,17899.5,4474.88,13424.62
+10411,2025-03-06,Cliente_0333,Cadeira,Móveis,7,1227.86,Loja Física,Cartão Crédito,AC,0,,8595.02,0.0,8595.02
+10412,2025-07-02,Cliente_0444,Memória RAM,Componentes,4,321.9,Site,Cartão Crédito,AM,0,4.0,1287.6,0.0,1287.6
+10413,2025-03-07,Cliente_0007,Teclado,Periféricos,2,203.55,WhatsApp,Boleto,AM,10,4.0,407.1,40.71,366.39
+10414,2025-11-19,Cliente_0065,Monitor,Imagem,3,1191.95,Loja Física,Cartão Crédito,AM,0,4.0,3575.85,0.0,3575.85
+10415,2025-12-22,Cliente_0457,SSD,Componentes,5,399.46,Instagram,Cartão Débito,AM,5,5.0,1997.3,99.86,1897.44
+10416,2025-07-27,Cliente_0123,Headset,Áudio,7,320.06,Marketplace,Cartão Crédito,PA,0,2.0,2240.42,0.0,2240.42
+10417,2025-02-23,Cliente_0476,Headset,Áudio,5,270.95,Marketplace,Boleto,RJ,0,5.0,1354.75,0.0,1354.75
+10418,2025-08-09,Cliente_0036,Notebook,Computadores,6,3941.55,Marketplace,Cartão Débito,AM,10,5.0,23649.3,2364.93,21284.37
+10419,2025-08-24,Cliente_0238,Cadeira,Móveis,4,950.28,Site,Cartão Crédito,AM,5,4.0,3801.12,190.06,3611.06
+10420,2025-04-10,Cliente_0478,Mouse,Periféricos,7,66.4,Site,Cartão Crédito,AM,5,2.0,464.8,23.24,441.56
+10421,2025-04-13,Cliente_0073,Notebook,Computadores,3,3842.31,Site,Cartão Crédito,AM,0,3.0,11526.93,0.0,11526.93
+10422,2025-07-01,Cliente_0030,Cadeira,Móveis,6,1184.91,Loja Física,Cartão Crédito,MG,15,5.0,7109.46,1066.42,6043.04
+10423,2025-04-18,Cliente_0227,Headset,Áudio,5,307.32,Instagram,Cartão Crédito,AM,0,5.0,1536.6,0.0,1536.6
+10424,2025-01-12,Cliente_0303,Headset,Áudio,4,268.98,Marketplace,PIX,AM,0,4.0,1075.92,0.0,1075.92
+10425,2025-12-09,Cliente_0347,Memória RAM,Componentes,1,383.81,Loja Física,Cartão Crédito,AM,0,4.0,383.81,0.0,383.81
+10426,2025-03-27,Cliente_0285,Roteador,Redes,7,373.35,Site,Cartão Crédito,PA,5,3.0,2613.45,130.67,2482.78
+10427,2025-10-15,Cliente_0005,Roteador,Redes,5,234.8,Loja Física,Cartão Débito,MG,5,4.0,1174.0,58.7,1115.3
+10428,2025-11-23,Cliente_0065,Teclado,Periféricos,4,177.64,Instagram,Cartão Débito,AM,5,4.0,710.56,35.53,675.03
+10429,2025-08-02,Cliente_0235,Notebook,Computadores,1,4021.46,Instagram,PIX,PA,25,5.0,4021.46,1005.36,3016.1
+10430,2025-02-13,Cliente_0115,SSD,Componentes,7,326.65,Site,PIX,AM,20,,2286.55,457.31,1829.24
+10431,2025-11-18,Cliente_0453,Headset,Áudio,4,227.55,WhatsApp,PIX,SP,10,5.0,910.2,91.02,819.18
+10432,2025-03-19,Cliente_0319,Headset,Áudio,5,309.56,Loja Física,PIX,AC,0,3.0,1547.8,0.0,1547.8
+10433,2025-02-24,Cliente_0246,SSD,Componentes,1,468.38,Site,PIX,SP,10,4.0,468.38,46.84,421.54
+10434,2025-09-29,Cliente_0349,SSD,Componentes,7,425.0,WhatsApp,Cartão Débito,PA,0,2.0,2975.0,0.0,2975.0
+10435,2025-12-10,Cliente_0440,Mouse,Periféricos,4,85.14,Loja Física,Boleto,RJ,10,3.0,340.56,34.06,306.5
+10436,2025-03-12,Cliente_0017,Teclado,Periféricos,3,182.79,Site,Cartão Crédito,PA,5,3.0,548.37,27.42,520.95
+10437,2025-03-09,Cliente_0383,Roteador,Redes,1,300.66,Site,Cartão Crédito,RR,15,4.0,300.66,45.1,255.56
+10438,2025-06-29,Cliente_0307,Roteador,Redes,4,287.76,Site,Cartão Crédito,SP,20,5.0,1151.04,230.21,920.83
+10439,2025-06-23,Cliente_0369,Notebook,Computadores,3,3681.06,Marketplace,Boleto,RR,5,4.0,11043.18,552.16,10491.02
+10440,2025-06-18,Cliente_0037,Teclado,Periféricos,1,156.97,Marketplace,Boleto,AM,5,,156.97,7.85,149.12
+10441,2025-09-18,Cliente_0344,Monitor,Imagem,4,1163.02,Site,PIX,AM,10,3.0,4652.08,465.21,4186.87
+10442,2025-05-05,Cliente_0372,Webcam,Imagem,5,264.6,Instagram,PIX,AM,0,4.0,1323.0,0.0,1323.0
+10443,2025-05-11,Cliente_0381,Memória RAM,Componentes,1,347.58,Site,PIX,PA,20,4.0,347.58,69.52,278.06
+10444,2025-08-22,Cliente_0219,Headset,Áudio,1,329.99,Site,Cartão Crédito,RO,5,3.0,329.99,16.5,313.49
+10445,2025-06-03,Cliente_0137,Notebook,Computadores,7,3222.23,Instagram,Cartão Crédito,AM,0,,22555.61,0.0,22555.61
+10446,2025-11-26,Cliente_0246,Mouse,Periféricos,3,63.9,Site,PIX,RO,15,4.0,191.7,28.76,162.94
+10447,2025-05-05,Cliente_0038,Roteador,Redes,6,348.79,Marketplace,Cartão Débito,RJ,0,,2092.74,0.0,2092.74
+10448,2025-12-20,Cliente_0251,Mouse,Periféricos,7,107.92,WhatsApp,Cartão Crédito,AM,0,4.0,755.44,0.0,755.44
+10449,2025-04-10,Cliente_0053,Memória RAM,Componentes,6,329.12,Site,Boleto,AM,10,3.0,1974.72,197.47,1777.25
+10450,2025-02-22,Cliente_0397,Roteador,Redes,4,219.88,Site,PIX,RJ,10,3.0,879.52,87.95,791.57
+10451,2025-11-28,Cliente_0346,Webcam,Imagem,5,268.02,Site,PIX,SP,10,5.0,1340.1,134.01,1206.09
+10452,2025-05-08,Cliente_0309,Mouse,Periféricos,3,63.54,Instagram,PIX,AM,10,1.0,190.62,19.06,171.56
+10453,2025-01-14,Cliente_0203,Notebook,Computadores,1,3759.03,Marketplace,PIX,PA,0,,3759.03,0.0,3759.03
+10454,2025-01-05,Cliente_0375,Headset,Áudio,6,229.13,Marketplace,Cartão Débito,AC,5,4.0,1374.78,68.74,1306.04
+10455,2025-09-07,Cliente_0472,Notebook,Computadores,3,4546.56,Instagram,PIX,RR,5,3.0,13639.68,681.98,12957.7
+10456,2025-01-27,Cliente_0375,Memória RAM,Componentes,3,306.24,Instagram,Cartão Crédito,RO,25,5.0,918.72,229.68,689.04
+10457,2025-05-05,Cliente_0481,Teclado,Periféricos,7,232.03,Site,PIX,RR,0,3.0,1624.21,0.0,1624.21
+10458,2025-01-29,Cliente_0049,Mouse,Periféricos,3,74.36,Instagram,PIX,SP,0,2.0,223.08,0.0,223.08
+10459,2025-01-03,Cliente_0122,Cadeira,Móveis,1,1178.9,Marketplace,Cartão Débito,AM,20,5.0,1178.9,235.78,943.12
+10460,2025-08-16,Cliente_0326,Teclado,Periféricos,7,237.29,Site,Boleto,SP,25,4.0,1661.03,415.26,1245.77
+10461,2025-05-17,Cliente_0419,Headset,Áudio,2,217.7,Loja Física,Cartão Crédito,MG,15,4.0,435.4,65.31,370.09
+10462,2025-09-14,Cliente_0016,Roteador,Redes,3,307.19,Marketplace,Boleto,PA,0,3.0,921.57,0.0,921.57
+10463,2025-08-28,Cliente_0269,SSD,Componentes,2,344.09,Site,Cartão Crédito,SP,10,2.0,688.18,68.82,619.36
+10464,2025-10-06,Cliente_0236,Roteador,Redes,6,340.06,Instagram,Cartão Crédito,AM,5,4.0,2040.36,102.02,1938.34
+10465,2025-11-19,Cliente_0121,Mouse,Periféricos,5,66.21,WhatsApp,Cartão Débito,AM,15,4.0,331.05,49.66,281.39
+10466,2025-06-09,Cliente_0139,Headset,Áudio,7,253.08,Site,PIX,MG,0,5.0,1771.56,0.0,1771.56
+10467,2025-01-06,Cliente_0087,SSD,Componentes,6,409.28,Site,PIX,AM,0,4.0,2455.68,0.0,2455.68
+10468,2025-11-01,Cliente_0130,Notebook,Computadores,7,3479.73,Instagram,Cartão Crédito,AM,5,5.0,24358.11,1217.91,23140.2
+10469,2025-05-23,Cliente_0252,Roteador,Redes,5,219.83,Marketplace,Cartão Crédito,PA,0,3.0,1099.15,0.0,1099.15
+10470,2025-06-30,Cliente_0350,Roteador,Redes,5,328.46,Site,PIX,PA,10,2.0,1642.3,164.23,1478.07
+10471,2025-01-30,Cliente_0275,Monitor,Imagem,7,946.73,WhatsApp,PIX,RO,15,3.0,6627.11,994.07,5633.04
+10472,2025-09-10,Cliente_0360,Headset,Áudio,6,189.2,Marketplace,Cartão Débito,AM,10,5.0,1135.2,113.52,1021.68
+10473,2025-02-09,Cliente_0301,Roteador,Redes,4,312.93,WhatsApp,Cartão Crédito,AM,5,5.0,1251.72,62.59,1189.13
+10474,2025-07-06,Cliente_0430,Teclado,Periféricos,1,234.35,Site,Cartão Crédito,AM,20,3.0,234.35,46.87,187.48
+10475,2025-11-15,Cliente_0047,Mouse,Periféricos,2,65.33,Loja Física,Boleto,RR,0,1.0,130.66,0.0,130.66
+10476,2025-10-31,Cliente_0433,Teclado,Periféricos,4,198.79,Instagram,Cartão Crédito,RR,0,5.0,795.16,0.0,795.16
+10477,2025-08-15,Cliente_0079,Headset,Áudio,2,296.8,Site,Cartão Crédito,RO,5,5.0,593.6,29.68,563.92
+10478,2025-08-08,Cliente_0298,Webcam,Imagem,7,174.34,WhatsApp,Boleto,RR,0,5.0,1220.38,0.0,1220.38
+10479,2025-11-20,Cliente_0417,Mouse,Periféricos,1,61.09,Site,Cartão Débito,AM,0,3.0,61.09,0.0,61.09
+10480,2025-02-12,Cliente_0364,Webcam,Imagem,7,226.27,WhatsApp,Cartão Crédito,SP,5,4.0,1583.89,79.19,1504.7
+10481,2025-05-24,Cliente_0425,Cadeira,Móveis,3,1469.65,Instagram,Cartão Crédito,AM,20,5.0,4408.95,881.79,3527.16
+10482,2025-10-05,Cliente_0375,Webcam,Imagem,7,186.21,WhatsApp,Cartão Crédito,AM,20,3.0,1303.47,260.69,1042.78
+10483,2025-11-15,Cliente_0453,Webcam,Imagem,6,275.44,Marketplace,Cartão Crédito,SP,5,4.0,1652.64,82.63,1570.01
+10484,2025-06-23,Cliente_0342,Memória RAM,Componentes,4,343.18,Loja Física,PIX,AM,0,4.0,1372.72,0.0,1372.72
+10485,2025-09-04,Cliente_0219,Webcam,Imagem,7,208.85,Site,Cartão Crédito,PA,0,3.0,1461.95,0.0,1461.95
+10486,2025-06-22,Cliente_0111,Cadeira,Móveis,1,1271.39,Instagram,PIX,AM,5,,1271.39,63.57,1207.82
+10487,2025-02-10,Cliente_0227,Roteador,Redes,6,372.22,Loja Física,PIX,RR,0,5.0,2233.32,0.0,2233.32
+10488,2025-02-19,Cliente_0275,SSD,Componentes,4,307.95,Loja Física,Cartão Crédito,AM,0,4.0,1231.8,0.0,1231.8
+10489,2025-11-19,Cliente_0256,Webcam,Imagem,7,230.94,Site,Cartão Débito,MG,10,3.0,1616.58,161.66,1454.92
+10490,2025-06-29,Cliente_0039,Cadeira,Móveis,5,1349.63,Instagram,PIX,AM,10,5.0,6748.15,674.82,6073.33
+10491,2025-12-08,Cliente_0135,Monitor,Imagem,7,749.53,Instagram,PIX,RO,0,3.0,5246.71,0.0,5246.71
+10492,2025-06-08,Cliente_0295,Webcam,Imagem,4,170.74,Site,Cartão Crédito,RJ,15,3.0,682.96,102.44,580.52
+10493,2025-02-06,Cliente_0098,SSD,Componentes,3,265.33,Instagram,,RO,15,4.0,795.99,119.4,676.59
+10494,2025-01-27,Cliente_0034,SSD,Componentes,3,330.69,Loja Física,PIX,RR,5,4.0,992.07,49.6,942.47
+10495,2025-09-13,Cliente_0475,Monitor,Imagem,2,714.93,Site,PIX,RR,0,2.0,1429.86,0.0,1429.86
+10496,2025-10-05,Cliente_0428,Roteador,Redes,4,345.03,Instagram,Cartão Crédito,PA,20,4.0,1380.12,276.02,1104.1
+10497,2025-09-06,Cliente_0453,Memória RAM,Componentes,7,404.52,WhatsApp,Cartão Débito,SP,10,1.0,2831.64,283.16,2548.48
+10498,2025-06-30,Cliente_0068,Teclado,Periféricos,5,141.62,Site,PIX,AM,0,5.0,708.1,0.0,708.1
+10499,2025-01-17,Cliente_0191,Memória RAM,Componentes,7,302.89,Marketplace,PIX,RJ,10,,2120.23,212.02,1908.21
+10500,2025-05-05,Cliente_0199,Teclado,Periféricos,3,137.78,Loja Física,Cartão Crédito,RO,5,5.0,413.34,20.67,392.67
+10501,2025-11-08,Cliente_0048,Webcam,Imagem,2,182.69,Loja Física,PIX,RJ,10,4.0,365.38,36.54,328.84
+10502,2025-07-31,Cliente_0259,Monitor,Imagem,7,849.38,Marketplace,PIX,AM,5,3.0,5945.66,297.28,5648.38
+10503,2025-08-25,Cliente_0213,Headset,Áudio,5,246.55,Marketplace,Cartão Crédito,RJ,5,5.0,1232.75,61.64,1171.11
+10504,2025-10-26,Cliente_0162,Teclado,Periféricos,5,236.5,Site,Boleto,AM,15,,1182.5,177.38,1005.12
+10505,2025-07-19,Cliente_0113,Mouse,Periféricos,7,79.0,Marketplace,PIX,SP,10,3.0,553.0,55.3,497.7
+10506,2025-06-30,Cliente_0137,SSD,Componentes,5,366.72,Loja Física,Cartão Crédito,PA,0,4.0,1833.6,0.0,1833.6
+10507,2025-05-10,Cliente_0317,Webcam,Imagem,1,197.42,Site,Cartão Crédito,AC,0,4.0,197.42,0.0,197.42
+10508,2025-05-01,Cliente_0404,Webcam,Imagem,3,165.02,Site,Boleto,RO,0,4.0,495.06,0.0,495.06
+10509,2025-07-06,Cliente_0424,SSD,Componentes,1,451.36,Loja Física,PIX,AM,5,4.0,451.36,22.57,428.79
+10510,2025-08-15,Cliente_0381,Notebook,Computadores,1,2796.6,Marketplace,Cartão Crédito,RR,0,,2796.6,0.0,2796.6
+10511,2025-06-11,Cliente_0012,SSD,Componentes,3,464.99,Instagram,Cartão Débito,AM,10,3.0,1394.97,139.5,1255.47
+10512,2025-04-22,Cliente_0359,Roteador,Redes,4,231.98,WhatsApp,Boleto,RR,0,4.0,927.92,0.0,927.92
+10513,2025-05-14,Cliente_0238,Headset,Áudio,6,278.23,Loja Física,Cartão Crédito,SP,10,,1669.38,166.94,1502.44
+10514,2025-07-05,Cliente_0284,SSD,Componentes,2,472.38,WhatsApp,Cartão Crédito,AM,15,4.0,944.76,141.71,803.05
+10515,2025-06-24,Cliente_0176,Memória RAM,Componentes,7,249.92,WhatsApp,Cartão Crédito,RR,0,5.0,1749.44,0.0,1749.44
+10516,2025-09-18,Cliente_0225,Mouse,Periféricos,6,80.35,Instagram,Cartão Crédito,RO,10,2.0,482.1,48.21,433.89
+10517,2025-11-13,Cliente_0458,Teclado,Periféricos,6,219.29,Loja Física,Cartão Crédito,AM,25,,1315.74,328.94,986.8
+10518,2025-11-08,Cliente_0075,Cadeira,Móveis,6,923.18,Marketplace,Cartão Crédito,MG,0,3.0,5539.08,0.0,5539.08
+10519,2025-12-24,Cliente_0135,Memória RAM,Componentes,6,349.16,Loja Física,Cartão Débito,RR,20,,2094.96,418.99,1675.97
+10520,2025-09-26,Cliente_0082,Roteador,Redes,3,223.5,Loja Física,Cartão Crédito,AM,10,3.0,670.5,67.05,603.45
+10521,2025-10-09,Cliente_0083,Roteador,Redes,6,249.74,Site,Cartão Crédito,AM,10,4.0,1498.44,149.84,1348.6
+10522,2025-08-12,Cliente_0142,SSD,Componentes,2,296.12,Site,Boleto,RR,0,4.0,592.24,0.0,592.24
+10523,2025-09-09,Cliente_0209,Cadeira,Móveis,7,1553.28,Site,Boleto,AM,15,4.0,10872.96,1630.94,9242.02
+10524,2025-03-05,Cliente_0215,Headset,Áudio,4,214.57,Loja Física,Cartão Crédito,AM,5,3.0,858.28,42.91,815.37
+10525,2025-11-14,Cliente_0403,Teclado,Periféricos,3,139.37,Loja Física,Cartão Crédito,AM,10,,418.11,41.81,376.3
+10526,2025-05-04,Cliente_0310,Monitor,Imagem,6,992.32,Instagram,Cartão Crédito,RR,15,4.0,5953.92,893.09,5060.83
+10527,2025-03-11,Cliente_0255,Webcam,Imagem,5,210.7,Marketplace,PIX,RO,5,5.0,1053.5,52.68,1000.82
+10528,2025-08-26,Cliente_0188,Webcam,Imagem,7,218.55,Loja Física,PIX,AM,0,3.0,1529.85,0.0,1529.85
+10529,2025-03-16,Cliente_0493,Teclado,Periféricos,3,147.86,Site,Cartão Crédito,RO,0,5.0,443.58,0.0,443.58
+10530,2025-01-10,Cliente_0247,Monitor,Imagem,4,1079.05,Site,PIX,MG,0,4.0,4316.2,0.0,4316.2
+10531,2025-09-25,Cliente_0255,Teclado,Periféricos,6,199.97,Instagram,Cartão Crédito,MG,20,,1199.82,239.96,959.86
+10532,2025-03-29,Cliente_0323,Mouse,Periféricos,1,77.48,WhatsApp,Cartão Crédito,RJ,0,4.0,77.48,0.0,77.48
+10533,2025-02-19,Cliente_0162,Cadeira,Móveis,3,1023.53,Loja Física,Cartão Crédito,SP,5,3.0,3070.59,153.53,2917.06
+10534,2025-05-23,Cliente_0345,Webcam,Imagem,7,243.34,Instagram,PIX,AM,0,4.0,1703.38,0.0,1703.38
+10535,2025-02-28,Cliente_0425,Monitor,Imagem,7,1095.44,Site,PIX,AM,20,5.0,7668.08,1533.62,6134.46
+10536,2025-11-14,Cliente_0415,Headset,Áudio,5,234.36,Marketplace,PIX,PA,5,5.0,1171.8,58.59,1113.21
+10537,2025-07-30,Cliente_0167,SSD,Componentes,7,267.93,Loja Física,PIX,RO,25,5.0,1875.51,468.88,1406.63
+10538,2025-03-13,Cliente_0078,Memória RAM,Componentes,3,263.58,Marketplace,Boleto,RJ,15,2.0,790.74,118.61,672.13
+10539,2025-09-01,Cliente_0485,Webcam,Imagem,1,255.08,Instagram,PIX,AM,20,4.0,255.08,51.02,204.06
+10540,2025-08-27,Cliente_0436,Roteador,Redes,3,376.17,Site,PIX,PA,0,,1128.51,0.0,1128.51
+10541,2025-07-09,Cliente_0175,Notebook,Computadores,5,2653.09,WhatsApp,PIX,AC,0,2.0,13265.45,0.0,13265.45
+10542,2025-02-19,Cliente_0020,Teclado,Periféricos,4,168.06,Site,Cartão Crédito,PA,0,2.0,672.24,0.0,672.24
+10543,2025-07-24,Cliente_0096,Headset,Áudio,5,196.8,Site,Cartão Crédito,PA,5,5.0,984.0,49.2,934.8
+10544,2025-02-23,Cliente_0481,Teclado,Periféricos,4,169.17,Loja Física,PIX,AM,10,4.0,676.68,67.67,609.01
+10545,2025-11-06,Cliente_0180,Notebook,Computadores,5,3477.42,WhatsApp,Boleto,MG,0,5.0,17387.1,0.0,17387.1
+10546,2025-08-12,Cliente_0095,Mouse,Periféricos,2,104.2,Marketplace,Cartão Débito,PA,0,4.0,208.4,0.0,208.4
+10547,2025-06-05,Cliente_0071,SSD,Componentes,3,279.42,Marketplace,PIX,RR,10,,838.26,83.83,754.43
+10548,2025-12-26,Cliente_0190,Webcam,Imagem,7,267.58,Site,Cartão Crédito,AM,0,5.0,1873.06,0.0,1873.06
+10549,2025-02-20,Cliente_0389,Roteador,Redes,3,276.45,Site,Cartão Crédito,RR,5,5.0,829.35,41.47,787.88
+10550,2025-08-29,Cliente_0441,Teclado,Periféricos,1,222.62,Site,PIX,AM,0,4.0,222.62,0.0,222.62
+10551,2025-11-26,Cliente_0132,Monitor,Imagem,2,952.24,Marketplace,Cartão Débito,AM,10,4.0,1904.48,190.45,1714.03
+10552,2025-06-10,Cliente_0139,Teclado,Periféricos,1,139.24,Site,PIX,AM,5,5.0,139.24,6.96,132.28
+10553,2025-05-09,Cliente_0275,Monitor,Imagem,3,1185.95,WhatsApp,Cartão Crédito,AM,10,4.0,3557.85,355.78,3202.07
+10554,2025-03-26,Cliente_0102,SSD,Componentes,1,279.87,Site,Cartão Crédito,RR,0,5.0,279.87,0.0,279.87
+10555,2025-03-10,Cliente_0468,Memória RAM,Componentes,4,332.58,Instagram,Cartão Crédito,PA,0,4.0,1330.32,0.0,1330.32
+10556,2025-02-24,Cliente_0283,Webcam,Imagem,2,280.85,Instagram,Cartão Débito,RJ,15,2.0,561.7,84.26,477.44
+10557,2025-03-26,Cliente_0029,Memória RAM,Componentes,7,239.36,Marketplace,PIX,AM,10,4.0,1675.52,167.55,1507.97
+10558,2025-12-11,Cliente_0018,Memória RAM,Componentes,5,324.7,Site,,AM,10,3.0,1623.5,162.35,1461.15
+10559,2025-11-25,Cliente_0421,Webcam,Imagem,4,273.81,WhatsApp,Cartão Crédito,RJ,10,5.0,1095.24,109.52,985.72
+10560,2025-03-21,Cliente_0445,Webcam,Imagem,6,295.19,Instagram,PIX,AM,0,5.0,1771.14,0.0,1771.14
+10561,2025-08-08,Cliente_0244,SSD,Componentes,5,414.61,Marketplace,PIX,AM,20,2.0,2073.05,414.61,1658.44
+10562,2025-04-20,Cliente_0175,Roteador,Redes,1,256.76,Marketplace,Cartão Crédito,AM,15,5.0,256.76,38.51,218.25
+10563,2025-09-10,Cliente_0089,Teclado,Periféricos,3,210.55,Site,PIX,SP,10,5.0,631.65,63.16,568.49
+10564,2025-11-13,Cliente_0020,SSD,Componentes,4,410.71,Marketplace,Cartão Crédito,SP,20,5.0,1642.84,328.57,1314.27
+10565,2025-06-13,Cliente_0326,Notebook,Computadores,2,4094.93,Marketplace,PIX,AM,0,4.0,8189.86,0.0,8189.86
+10566,2025-04-13,Cliente_0356,Cadeira,Móveis,5,1515.07,WhatsApp,PIX,AC,10,4.0,7575.35,757.54,6817.81
+10567,2025-04-23,Cliente_0433,Mouse,Periféricos,6,64.19,WhatsApp,Cartão Crédito,RR,25,5.0,385.14,96.28,288.86
+10568,2025-09-09,Cliente_0399,Webcam,Imagem,4,179.31,Site,PIX,RJ,0,4.0,717.24,0.0,717.24
+10569,2025-06-01,Cliente_0018,Teclado,Periféricos,7,204.19,Site,Boleto,AM,0,5.0,1429.33,0.0,1429.33
+10570,2025-12-02,Cliente_0038,Roteador,Redes,7,370.25,Site,PIX,SP,15,5.0,2591.75,388.76,2202.99
+10571,2025-09-08,Cliente_0376,Headset,Áudio,3,257.38,WhatsApp,Cartão Crédito,AM,0,5.0,772.14,0.0,772.14
+10572,2025-12-20,Cliente_0089,Roteador,Redes,2,371.37,Site,Cartão Débito,PA,20,,742.74,148.55,594.19
+10573,2025-03-29,Cliente_0340,Mouse,Periféricos,2,105.03,Marketplace,PIX,AM,0,5.0,210.06,0.0,210.06
+10574,2025-04-10,Cliente_0150,Notebook,Computadores,5,4521.11,Marketplace,Cartão Crédito,SP,10,1.0,22605.55,2260.55,20345.0
+10575,2025-04-30,Cliente_0499,Headset,Áudio,4,323.98,Marketplace,Cartão Débito,AC,5,3.0,1295.92,64.8,1231.12
+10576,2025-10-30,Cliente_0204,Memória RAM,Componentes,4,386.7,Site,PIX,RR,0,1.0,1546.8,0.0,1546.8
+10577,2025-07-23,Cliente_0233,Memória RAM,Componentes,2,372.58,Site,Boleto,SP,20,3.0,745.16,149.03,596.13
+10578,2025-05-29,Cliente_0104,Webcam,Imagem,7,256.74,Instagram,PIX,RO,15,2.0,1797.18,269.58,1527.6
+10579,2025-07-20,Cliente_0444,Memória RAM,Componentes,1,229.39,Site,PIX,SP,0,4.0,229.39,0.0,229.39
+10580,2025-10-22,Cliente_0111,Monitor,Imagem,2,746.42,Site,Cartão Débito,AM,0,1.0,1492.84,0.0,1492.84
+10581,2025-01-03,Cliente_0225,Teclado,Periféricos,3,149.5,Site,PIX,PA,15,4.0,448.5,67.28,381.22
+10582,2025-03-09,Cliente_0221,Monitor,Imagem,4,687.71,Marketplace,Cartão Crédito,AM,15,5.0,2750.84,412.63,2338.21
+10583,2025-06-03,Cliente_0450,Webcam,Imagem,7,180.4,Instagram,Cartão Débito,PA,10,5.0,1262.8,126.28,1136.52
+10584,2025-07-01,Cliente_0026,SSD,Componentes,5,455.65,Site,Boleto,SP,10,,2278.25,227.82,2050.43
+10585,2025-01-13,Cliente_0064,Mouse,Periféricos,4,91.86,Site,Cartão Crédito,SP,0,3.0,367.44,0.0,367.44
+10586,2025-07-08,Cliente_0254,Headset,Áudio,7,234.31,Site,Boleto,SP,20,4.0,1640.17,328.03,1312.14
+10587,2025-01-20,Cliente_0249,Headset,Áudio,2,306.5,Instagram,Cartão Crédito,AM,15,4.0,613.0,91.95,521.05
+10588,2025-12-05,Cliente_0224,Memória RAM,Componentes,3,312.91,Site,PIX,AC,5,4.0,938.73,46.94,891.79
+10589,2025-10-10,Cliente_0314,Teclado,Periféricos,1,150.35,Marketplace,Cartão Crédito,AM,5,4.0,150.35,7.52,142.83
+10590,2025-01-10,Cliente_0131,Cadeira,Móveis,7,1536.84,Site,Cartão Crédito,MG,10,1.0,10757.88,1075.79,9682.09
+10591,2025-07-07,Cliente_0030,Roteador,Redes,7,266.9,WhatsApp,Cartão Crédito,AM,15,3.0,1868.3,280.24,1588.06
+10592,2025-12-11,Cliente_0275,Headset,Áudio,4,292.33,Site,Cartão Crédito,RO,15,5.0,1169.32,175.4,993.92
+10593,2025-01-19,Cliente_0010,Mouse,Periféricos,2,73.95,WhatsApp,Cartão Crédito,SP,20,5.0,147.9,29.58,118.32
+10594,2025-05-23,Cliente_0089,Mouse,Periféricos,6,84.0,Loja Física,Cartão Crédito,RJ,5,4.0,504.0,25.2,478.8
+10595,2025-04-13,Cliente_0430,Monitor,Imagem,2,1115.78,Marketplace,Boleto,PA,10,4.0,2231.56,223.16,2008.4
+10596,2025-10-30,Cliente_0147,Monitor,Imagem,2,759.66,WhatsApp,Cartão Crédito,AM,20,4.0,1519.32,303.86,1215.46
+10597,2025-08-29,Cliente_0127,Webcam,Imagem,3,294.0,Site,PIX,PA,0,2.0,882.0,0.0,882.0
+10598,2025-06-01,Cliente_0186,Notebook,Computadores,2,2772.45,Site,Cartão Débito,AM,5,,5544.9,277.24,5267.66
+10599,2025-09-29,Cliente_0124,Cadeira,Móveis,7,1284.49,Site,PIX,AC,10,5.0,8991.43,899.14,8092.29
+10600,2025-12-03,Cliente_0107,Memória RAM,Componentes,2,389.88,Site,Cartão Débito,MG,20,2.0,779.76,155.95,623.81
+10601,2025-07-07,Cliente_0341,Mouse,Periféricos,2,105.39,Site,PIX,AM,0,3.0,210.78,0.0,210.78
+10602,2025-07-29,Cliente_0006,Headset,Áudio,4,222.32,Marketplace,PIX,RR,0,4.0,889.28,0.0,889.28
+10603,2025-06-26,Cliente_0051,Roteador,Redes,2,234.19,Site,PIX,RJ,0,3.0,468.38,0.0,468.38
+10604,2025-07-13,Cliente_0398,Roteador,Redes,3,331.7,Instagram,PIX,AM,0,,995.1,0.0,995.1
+10605,2025-06-26,Cliente_0314,Monitor,Imagem,6,697.67,Site,Cartão Crédito,PA,0,5.0,4186.02,0.0,4186.02
+10606,2025-03-07,Cliente_0136,Monitor,Imagem,4,937.03,Marketplace,Cartão Crédito,RJ,10,4.0,3748.12,374.81,3373.31
+10607,2025-11-06,Cliente_0002,SSD,Componentes,7,429.73,WhatsApp,Boleto,RJ,20,1.0,3008.11,601.62,2406.49
+10608,2025-01-02,Cliente_0018,Cadeira,Móveis,6,1303.38,Instagram,Cartão Crédito,RR,10,5.0,7820.28,782.03,7038.25
+10609,2025-11-13,Cliente_0249,Webcam,Imagem,2,189.82,Instagram,PIX,AM,0,4.0,379.64,0.0,379.64
+10610,2025-09-28,Cliente_0470,Memória RAM,Componentes,1,312.67,Instagram,Cartão Crédito,AM,20,5.0,312.67,62.53,250.14
+10611,2025-03-01,Cliente_0185,Teclado,Periféricos,6,234.5,Loja Física,Cartão Crédito,RO,10,4.0,1407.0,140.7,1266.3
+10612,2025-02-12,Cliente_0222,Mouse,Periféricos,3,89.63,Site,Cartão Débito,AM,0,3.0,268.89,0.0,268.89
+10613,2025-04-03,Cliente_0228,Teclado,Periféricos,1,212.92,WhatsApp,Cartão Crédito,AM,5,5.0,212.92,10.65,202.27
+10614,2025-08-14,Cliente_0348,SSD,Componentes,3,333.12,Instagram,PIX,SP,15,4.0,999.36,149.9,849.46
+10615,2025-10-13,Cliente_0419,Memória RAM,Componentes,7,258.93,Site,Cartão Crédito,SP,15,3.0,1812.51,271.88,1540.63
+10616,2025-03-04,Cliente_0194,Roteador,Redes,1,252.95,WhatsApp,,RJ,10,3.0,252.95,25.3,227.65
+10617,2025-10-07,Cliente_0312,Headset,Áudio,2,267.48,WhatsApp,Cartão Crédito,AM,0,4.0,534.96,0.0,534.96
+10618,2025-01-14,Cliente_0484,SSD,Componentes,1,321.35,Marketplace,Boleto,AM,15,5.0,321.35,48.2,273.15
+10619,2025-01-28,Cliente_0210,Webcam,Imagem,7,236.54,Site,Cartão Crédito,RJ,0,4.0,1655.78,0.0,1655.78
+10620,2025-05-22,Cliente_0299,Memória RAM,Componentes,6,352.4,Loja Física,Cartão Crédito,SP,15,5.0,2114.4,317.16,1797.24
+10621,2025-04-18,Cliente_0329,Monitor,Imagem,1,1071.57,Site,Cartão Crédito,SP,10,3.0,1071.57,107.16,964.41
+10622,2025-10-17,Cliente_0476,Roteador,Redes,3,237.67,Instagram,PIX,MG,0,4.0,713.01,0.0,713.01
+10623,2025-03-19,Cliente_0072,Teclado,Periféricos,2,216.05,Site,Cartão Crédito,RJ,0,5.0,432.1,0.0,432.1
+10624,2025-09-04,Cliente_0117,Memória RAM,Componentes,3,346.08,Instagram,Cartão Crédito,RR,0,5.0,1038.24,0.0,1038.24
+10625,2025-01-12,Cliente_0264,SSD,Componentes,2,265.02,Loja Física,Cartão Crédito,AM,0,4.0,530.04,0.0,530.04
+10626,2025-07-03,Cliente_0005,Webcam,Imagem,6,172.77,Site,Cartão Crédito,RR,0,3.0,1036.62,0.0,1036.62
+10627,2025-11-13,Cliente_0269,Notebook,Computadores,5,3982.12,WhatsApp,Cartão Débito,RO,10,2.0,19910.6,1991.06,17919.54
+10628,2025-12-27,Cliente_0007,Mouse,Periféricos,4,78.42,Site,PIX,AM,10,5.0,313.68,31.37,282.31
+10629,2025-10-23,Cliente_0021,Memória RAM,Componentes,6,251.3,Site,PIX,SP,10,2.0,1507.8,150.78,1357.02
+10630,2025-08-28,Cliente_0477,Headset,Áudio,7,194.16,Marketplace,Cartão Débito,AM,10,3.0,1359.12,135.91,1223.21
+10631,2025-09-20,Cliente_0037,Notebook,Computadores,6,2959.74,Loja Física,Boleto,SP,15,3.0,17758.44,2663.77,15094.67
+10632,2025-12-01,Cliente_0173,Memória RAM,Componentes,4,397.35,WhatsApp,Cartão Crédito,AM,20,4.0,1589.4,317.88,1271.52
+10633,2025-03-14,Cliente_0436,Notebook,Computadores,3,4152.89,Loja Física,Boleto,PA,0,5.0,12458.67,0.0,12458.67
+10634,2025-03-09,Cliente_0432,SSD,Componentes,6,373.32,Site,PIX,RJ,10,3.0,2239.92,223.99,2015.93
+10635,2025-10-14,Cliente_0062,Headset,Áudio,2,328.73,WhatsApp,PIX,AM,0,4.0,657.46,0.0,657.46
+10636,2025-11-22,Cliente_0206,Cadeira,Móveis,1,1345.76,WhatsApp,Cartão Débito,RR,0,2.0,1345.76,0.0,1345.76
+10637,2025-08-08,Cliente_0101,Notebook,Computadores,6,4148.85,Site,Boleto,AM,10,4.0,24893.1,2489.31,22403.79
+10638,2025-02-16,Cliente_0119,Mouse,Periféricos,4,73.57,Marketplace,PIX,RJ,5,3.0,294.28,14.71,279.57
+10639,2025-02-27,Cliente_0179,Webcam,Imagem,6,242.75,Marketplace,PIX,RJ,15,3.0,1456.5,218.48,1238.02
+10640,2025-01-24,Cliente_0132,Mouse,Periféricos,3,66.89,Instagram,PIX,MG,5,4.0,200.67,10.03,190.64
+10641,2025-10-17,Cliente_0376,Headset,Áudio,3,248.17,WhatsApp,PIX,RJ,0,5.0,744.51,0.0,744.51
+10642,2025-11-15,Cliente_0342,Memória RAM,Componentes,3,230.98,Site,Cartão Débito,SP,20,5.0,692.94,138.59,554.35
+10643,2025-01-24,Cliente_0440,Headset,Áudio,2,219.99,Marketplace,Cartão Crédito,AM,0,4.0,439.98,0.0,439.98
+10644,2025-03-05,Cliente_0075,Teclado,Periféricos,7,143.09,Site,Cartão Crédito,AM,0,3.0,1001.63,0.0,1001.63
+10645,2025-09-12,Cliente_0290,Cadeira,Móveis,7,1179.2,Instagram,Cartão Crédito,PA,0,4.0,8254.4,0.0,8254.4
+10646,2025-05-28,Cliente_0045,Webcam,Imagem,6,276.28,Loja Física,Boleto,RO,25,4.0,1657.68,414.42,1243.26
+10647,2025-04-26,Cliente_0144,Roteador,Redes,3,273.49,Site,PIX,SP,5,5.0,820.47,41.02,779.45
+10648,2025-04-08,Cliente_0137,Roteador,Redes,5,349.72,Instagram,Cartão Crédito,AM,5,,1748.6,87.43,1661.17
+10649,2025-08-27,Cliente_0208,SSD,Componentes,1,400.36,WhatsApp,Boleto,AM,15,5.0,400.36,60.05,340.31
+10650,2025-10-10,Cliente_0231,Teclado,Periféricos,7,190.03,Loja Física,PIX,PA,10,4.0,1330.21,133.02,1197.19
+10651,2025-10-27,Cliente_0272,Monitor,Imagem,3,802.92,Marketplace,Cartão Débito,AM,15,5.0,2408.76,361.31,2047.45
+10652,2025-04-03,Cliente_0095,Roteador,Redes,7,364.92,Site,Cartão Crédito,SP,5,4.0,2554.44,127.72,2426.72
+10653,2025-03-06,Cliente_0415,Monitor,Imagem,2,704.27,Instagram,PIX,RR,25,5.0,1408.54,352.14,1056.4
+10654,2025-06-23,Cliente_0397,Mouse,Periféricos,1,93.07,Loja Física,PIX,SP,15,3.0,93.07,13.96,79.11
+10655,2025-11-06,Cliente_0384,Webcam,Imagem,1,247.0,Loja Física,,AM,5,4.0,247.0,12.35,234.65
+10656,2025-08-23,Cliente_0261,Monitor,Imagem,4,913.16,Site,Cartão Crédito,MG,5,2.0,3652.64,182.63,3470.01
+10657,2025-06-16,Cliente_0379,Monitor,Imagem,3,804.77,Marketplace,Cartão Crédito,AM,20,4.0,2414.31,482.86,1931.45
+10658,2025-08-25,Cliente_0127,SSD,Componentes,3,352.95,Site,PIX,AM,10,5.0,1058.85,105.88,952.97
+10659,2025-01-07,Cliente_0431,Cadeira,Móveis,6,1528.4,Site,Cartão Crédito,AC,10,5.0,9170.4,917.04,8253.36
+10660,2025-11-06,Cliente_0167,Cadeira,Móveis,2,1502.47,Marketplace,PIX,AM,15,5.0,3004.94,450.74,2554.2
+10661,2025-02-12,Cliente_0018,Memória RAM,Componentes,5,394.45,Site,Cartão Crédito,AM,10,,1972.25,197.22,1775.03
+10662,2025-10-03,Cliente_0148,Monitor,Imagem,6,841.21,Site,Cartão Crédito,AM,0,2.0,5047.26,0.0,5047.26
+10663,2025-12-06,Cliente_0247,Memória RAM,Componentes,5,294.68,Marketplace,Cartão Crédito,RO,0,4.0,1473.4,0.0,1473.4
+10664,2025-06-02,Cliente_0130,Notebook,Computadores,4,2664.32,Instagram,PIX,RJ,10,4.0,10657.28,1065.73,9591.55
+10665,2025-02-12,Cliente_0296,Memória RAM,Componentes,7,394.73,Loja Física,PIX,RR,0,5.0,2763.11,0.0,2763.11
+10666,2025-08-01,Cliente_0414,Notebook,Computadores,7,3316.72,Marketplace,PIX,RO,5,4.0,23217.04,1160.85,22056.19
+10667,2025-07-20,Cliente_0266,Webcam,Imagem,5,218.35,Marketplace,PIX,AM,15,2.0,1091.75,163.76,927.99
+10668,2025-06-04,Cliente_0320,Cadeira,Móveis,7,1553.62,Site,PIX,AM,0,4.0,10875.34,0.0,10875.34
+10669,2025-08-08,Cliente_0042,Webcam,Imagem,2,234.51,Site,,AM,0,,469.02,0.0,469.02
+10670,2025-06-02,Cliente_0203,Memória RAM,Componentes,7,326.91,Marketplace,Cartão Crédito,RJ,15,5.0,2288.37,343.26,1945.11
+10671,2025-02-05,Cliente_0181,Roteador,Redes,4,239.61,Site,Cartão Crédito,AM,10,4.0,958.44,95.84,862.6
+10672,2025-08-14,Cliente_0349,Monitor,Imagem,3,944.28,Loja Física,,MG,0,5.0,2832.84,0.0,2832.84
+10673,2025-11-18,Cliente_0181,Memória RAM,Componentes,5,390.28,Instagram,PIX,AM,15,1.0,1951.4,292.71,1658.69
+10674,2025-05-01,Cliente_0296,Teclado,Periféricos,2,195.34,Site,Boleto,AC,10,4.0,390.68,39.07,351.61
+10675,2025-01-09,Cliente_0144,Roteador,Redes,2,252.86,Marketplace,PIX,MG,0,5.0,505.72,0.0,505.72
+10676,2025-12-05,Cliente_0432,Memória RAM,Componentes,3,230.61,WhatsApp,Cartão Crédito,AM,5,3.0,691.83,34.59,657.24
+10677,2025-12-01,Cliente_0381,Notebook,Computadores,7,3331.23,Site,Boleto,SP,0,3.0,23318.61,0.0,23318.61
+10678,2025-06-30,Cliente_0061,Headset,Áudio,2,273.39,Site,Cartão Crédito,AM,15,5.0,546.78,82.02,464.76
+10679,2025-01-21,Cliente_0476,Roteador,Redes,4,217.16,Loja Física,PIX,AM,5,5.0,868.64,43.43,825.21
+10680,2025-09-29,Cliente_0209,Headset,Áudio,4,278.97,Site,PIX,AM,10,,1115.88,111.59,1004.29
+10681,2025-07-13,Cliente_0166,Notebook,Computadores,6,3724.17,Site,PIX,SP,20,3.0,22345.02,4469.0,17876.02
+10682,2025-01-26,Cliente_0370,Notebook,Computadores,1,4270.21,Site,Cartão Crédito,AM,0,4.0,4270.21,0.0,4270.21
+10683,2025-10-12,Cliente_0497,Teclado,Periféricos,3,138.12,Instagram,Cartão Crédito,AM,0,4.0,414.36,0.0,414.36
+10684,2025-04-08,Cliente_0300,Memória RAM,Componentes,7,365.55,Marketplace,Cartão Crédito,MG,0,5.0,2558.85,0.0,2558.85
+10685,2025-08-07,Cliente_0143,Webcam,Imagem,2,233.76,Instagram,PIX,AM,0,3.0,467.52,0.0,467.52
+10686,2025-11-23,Cliente_0351,Cadeira,Móveis,5,1166.78,WhatsApp,Cartão Débito,PA,10,4.0,5833.9,583.39,5250.51
+10687,2025-09-30,Cliente_0061,Memória RAM,Componentes,6,398.77,Loja Física,Cartão Crédito,MG,10,3.0,2392.62,239.26,2153.36
+10688,2025-10-15,Cliente_0263,Monitor,Imagem,4,761.46,WhatsApp,PIX,AM,0,5.0,3045.84,0.0,3045.84
+10689,2025-03-07,Cliente_0124,Monitor,Imagem,3,967.32,Instagram,PIX,AM,0,3.0,2901.96,0.0,2901.96
+10690,2025-11-11,Cliente_0238,Teclado,Periféricos,7,169.67,Site,Cartão Crédito,SP,0,2.0,1187.69,0.0,1187.69
+10691,2025-04-21,Cliente_0030,Headset,Áudio,3,266.62,WhatsApp,Cartão Crédito,AM,25,4.0,799.86,199.96,599.9
+10692,2025-07-31,Cliente_0420,Headset,Áudio,7,270.34,Site,,AM,10,4.0,1892.38,189.24,1703.14
+10693,2025-06-20,Cliente_0255,Roteador,Redes,4,225.03,Loja Física,PIX,PA,10,3.0,900.12,90.01,810.11
+10694,2025-12-05,Cliente_0369,Webcam,Imagem,1,252.27,Site,Cartão Débito,SP,0,3.0,252.27,0.0,252.27
+10695,2025-02-28,Cliente_0090,Webcam,Imagem,3,248.75,Loja Física,PIX,AM,5,5.0,746.25,37.31,708.94
+10696,2025-01-30,Cliente_0139,Cadeira,Móveis,2,1454.02,WhatsApp,PIX,AM,0,2.0,2908.04,0.0,2908.04
+10697,2025-09-24,Cliente_0379,Monitor,Imagem,5,723.96,Instagram,Cartão Débito,AM,25,2.0,3619.8,904.95,2714.85
+10698,2025-06-03,Cliente_0454,Webcam,Imagem,5,204.24,Site,Cartão Crédito,AM,15,3.0,1021.2,153.18,868.02
+10699,2025-12-16,Cliente_0362,Mouse,Periféricos,4,91.21,Site,Cartão Crédito,AC,10,,364.84,36.48,328.36
+10700,2025-01-02,Cliente_0413,Memória RAM,Componentes,3,249.61,Instagram,Cartão Crédito,AM,10,2.0,748.83,74.88,673.95
+10701,2025-06-18,Cliente_0348,Webcam,Imagem,5,254.44,Site,Cartão Crédito,RO,5,5.0,1272.2,63.61,1208.59
+10702,2025-08-02,Cliente_0207,Mouse,Periféricos,3,62.83,Marketplace,Cartão Crédito,RR,0,5.0,188.49,0.0,188.49
+10703,2025-09-08,Cliente_0093,Roteador,Redes,4,266.27,Instagram,Boleto,AM,0,4.0,1065.08,0.0,1065.08
+10704,2025-01-31,Cliente_0134,Mouse,Periféricos,1,100.64,Site,PIX,AM,5,4.0,100.64,5.03,95.61
+10705,2025-11-15,Cliente_0368,Cadeira,Móveis,5,1457.49,Instagram,PIX,AM,0,5.0,7287.45,0.0,7287.45
+10706,2025-07-02,Cliente_0204,Webcam,Imagem,2,250.11,Marketplace,PIX,AM,0,5.0,500.22,0.0,500.22
+10707,2025-07-08,Cliente_0307,Memória RAM,Componentes,6,381.68,Site,Cartão Crédito,RO,10,5.0,2290.08,229.01,2061.07
+10708,2025-08-01,Cliente_0336,Monitor,Imagem,4,1058.01,Marketplace,Cartão Crédito,AC,20,5.0,4232.04,846.41,3385.63
+10709,2025-05-07,Cliente_0110,SSD,Componentes,6,371.57,WhatsApp,PIX,AM,20,4.0,2229.42,445.88,1783.54
+10710,2025-10-19,Cliente_0038,Roteador,Redes,1,374.59,Site,Cartão Crédito,RO,0,5.0,374.59,0.0,374.59
+10711,2025-10-23,Cliente_0457,Mouse,Periféricos,2,93.35,Site,PIX,MG,0,3.0,186.7,0.0,186.7
+10712,2025-01-23,Cliente_0022,Cadeira,Móveis,6,1332.98,Loja Física,PIX,AM,10,4.0,7997.88,799.79,7198.09
+10713,2025-01-18,Cliente_0225,Monitor,Imagem,2,895.79,Site,Boleto,PA,15,5.0,1791.58,268.74,1522.84
+10714,2025-03-20,Cliente_0346,SSD,Componentes,5,452.01,Site,Cartão Crédito,SP,25,3.0,2260.05,565.01,1695.04
+10715,2025-02-03,Cliente_0438,Memória RAM,Componentes,3,278.23,Marketplace,PIX,AM,20,2.0,834.69,166.94,667.75
+10716,2025-04-17,Cliente_0168,Mouse,Periféricos,4,60.44,Site,PIX,SP,10,3.0,241.76,24.18,217.58
+10717,2025-11-01,Cliente_0135,Webcam,Imagem,2,190.97,Site,PIX,MG,0,4.0,381.94,0.0,381.94
+10718,2025-07-18,Cliente_0110,Webcam,Imagem,5,179.46,WhatsApp,Cartão Crédito,AM,0,5.0,897.3,0.0,897.3
+10719,2025-07-10,Cliente_0224,SSD,Componentes,1,329.49,Site,Cartão Crédito,SP,0,4.0,329.49,0.0,329.49
+10720,2025-08-20,Cliente_0168,Headset,Áudio,7,311.38,WhatsApp,Boleto,AM,10,5.0,2179.66,217.97,1961.69
+10721,2025-03-03,Cliente_0107,Teclado,Periféricos,2,205.37,Site,Cartão Crédito,AM,0,3.0,410.74,0.0,410.74
+10722,2025-02-11,Cliente_0380,Notebook,Computadores,1,2979.86,Loja Física,Cartão Crédito,PA,15,2.0,2979.86,446.98,2532.88
+10723,2025-01-24,Cliente_0024,Monitor,Imagem,4,1100.96,Instagram,Cartão Débito,AM,10,3.0,4403.84,440.38,3963.46
+10724,2025-06-12,Cliente_0297,Teclado,Periféricos,5,189.46,Site,Cartão Crédito,RR,0,4.0,947.3,0.0,947.3
+10725,2025-07-02,Cliente_0307,Mouse,Periféricos,1,84.61,Loja Física,PIX,AM,20,4.0,84.61,16.92,67.69
+10726,2025-11-29,Cliente_0423,Cadeira,Móveis,3,1160.72,WhatsApp,Cartão Crédito,SP,5,5.0,3482.16,174.11,3308.05
+10727,2025-04-05,Cliente_0358,Webcam,Imagem,6,279.13,Site,Cartão Crédito,PA,20,4.0,1674.78,334.96,1339.82
+10728,2025-03-24,Cliente_0370,Roteador,Redes,1,263.48,Marketplace,Cartão Crédito,PA,20,4.0,263.48,52.7,210.78
+10729,2025-04-03,Cliente_0485,Webcam,Imagem,1,177.43,Instagram,PIX,AM,0,1.0,177.43,0.0,177.43
+10730,2025-10-05,Cliente_0211,SSD,Componentes,5,326.07,Loja Física,PIX,AM,5,1.0,1630.35,81.52,1548.83
+10731,2025-04-15,Cliente_0171,Mouse,Periféricos,5,94.34,Marketplace,PIX,AM,0,2.0,471.7,0.0,471.7
+10732,2025-03-26,Cliente_0069,Roteador,Redes,2,320.47,Site,PIX,SP,15,5.0,640.94,96.14,544.8
+10733,2025-03-02,Cliente_0222,Cadeira,Móveis,6,1035.37,Site,Boleto,AM,5,4.0,6212.22,310.61,5901.61
+10734,2025-07-27,Cliente_0443,Cadeira,Móveis,1,980.48,Instagram,Cartão Crédito,RO,20,3.0,980.48,196.1,784.38
+10735,2025-06-07,Cliente_0153,Roteador,Redes,1,321.03,WhatsApp,Cartão Crédito,AM,0,4.0,321.03,0.0,321.03
+10736,2025-03-10,Cliente_0350,Notebook,Computadores,5,4045.39,Site,Cartão Crédito,AC,10,4.0,20226.95,2022.7,18204.25
+10737,2025-09-19,Cliente_0376,Mouse,Periféricos,7,77.58,Marketplace,Cartão Crédito,RR,25,2.0,543.06,135.76,407.3
+10738,2025-12-07,Cliente_0281,Memória RAM,Componentes,3,376.7,Site,,PA,10,5.0,1130.1,113.01,1017.09
+10739,2025-08-22,Cliente_0201,SSD,Componentes,7,467.92,Marketplace,Cartão Crédito,AC,0,5.0,3275.44,0.0,3275.44
+10740,2025-05-19,Cliente_0219,Monitor,Imagem,5,786.05,Marketplace,Cartão Crédito,PA,10,4.0,3930.25,393.02,3537.23
+10741,2025-10-07,Cliente_0408,Cadeira,Móveis,3,1315.49,Marketplace,Cartão Crédito,SP,0,5.0,3946.47,0.0,3946.47
+10742,2025-12-01,Cliente_0446,Mouse,Periféricos,6,60.26,WhatsApp,Cartão Débito,SP,0,3.0,361.56,0.0,361.56
+10743,2025-08-19,Cliente_0104,Headset,Áudio,7,294.46,Site,Cartão Débito,RR,0,5.0,2061.22,0.0,2061.22
+10744,2025-12-26,Cliente_0299,Mouse,Periféricos,5,79.89,Site,Boleto,RJ,0,5.0,399.45,0.0,399.45
+10745,2025-02-20,Cliente_0315,Headset,Áudio,6,216.49,WhatsApp,PIX,SP,15,4.0,1298.94,194.84,1104.1
+10746,2025-08-27,Cliente_0310,Webcam,Imagem,4,264.29,Site,PIX,RR,5,3.0,1057.16,52.86,1004.3
+10747,2025-01-19,Cliente_0486,Webcam,Imagem,1,272.01,Marketplace,PIX,AM,15,4.0,272.01,40.8,231.21
+10748,2025-06-27,Cliente_0335,Memória RAM,Componentes,6,245.01,Marketplace,Cartão Crédito,RR,0,3.0,1470.06,0.0,1470.06
+10749,2025-07-28,Cliente_0230,Teclado,Periféricos,3,139.43,Marketplace,Cartão Crédito,AM,0,1.0,418.29,0.0,418.29
+10750,2025-05-11,Cliente_0410,Monitor,Imagem,4,855.4,Site,PIX,RR,0,5.0,3421.6,0.0,3421.6
+10751,2025-08-19,Cliente_0054,Memória RAM,Componentes,3,337.68,Site,Cartão Crédito,AC,0,2.0,1013.04,0.0,1013.04
+10752,2025-04-02,Cliente_0189,SSD,Componentes,2,429.12,Marketplace,PIX,AC,5,3.0,858.24,42.91,815.33
+10753,2025-01-31,Cliente_0222,Webcam,Imagem,2,237.08,Site,Cartão Débito,AC,10,5.0,474.16,47.42,426.74
+10754,2025-12-28,Cliente_0075,SSD,Componentes,1,384.46,Marketplace,PIX,AC,25,5.0,384.46,96.12,288.34
+10755,2025-09-06,Cliente_0349,Memória RAM,Componentes,4,368.97,Instagram,Cartão Crédito,AM,5,2.0,1475.88,73.79,1402.09
+10756,2025-05-04,Cliente_0463,Monitor,Imagem,4,960.58,Instagram,,AM,0,5.0,3842.32,0.0,3842.32
+10757,2025-05-16,Cliente_0172,Headset,Áudio,2,279.17,Site,Cartão Crédito,RO,0,,558.34,0.0,558.34
+10758,2025-09-30,Cliente_0393,Memória RAM,Componentes,1,317.92,WhatsApp,PIX,PA,20,2.0,317.92,63.58,254.34
+10759,2025-12-21,Cliente_0042,Webcam,Imagem,6,281.22,Instagram,Cartão Débito,SP,10,4.0,1687.32,168.73,1518.59
+10760,2025-04-10,Cliente_0157,Monitor,Imagem,2,802.18,Marketplace,Cartão Crédito,AM,15,5.0,1604.36,240.65,1363.71
+10761,2025-08-07,Cliente_0335,Cadeira,Móveis,4,1090.08,WhatsApp,Cartão Débito,AM,0,5.0,4360.32,0.0,4360.32
+10762,2025-04-14,Cliente_0081,Notebook,Computadores,3,2893.72,Marketplace,Cartão Débito,RR,0,3.0,8681.16,0.0,8681.16
+10763,2025-10-28,Cliente_0208,Notebook,Computadores,7,4345.88,WhatsApp,Cartão Crédito,RR,0,3.0,30421.16,0.0,30421.16
+10764,2025-04-07,Cliente_0314,Memória RAM,Componentes,4,299.12,Site,Boleto,AM,20,5.0,1196.48,239.3,957.18
+10765,2025-11-12,Cliente_0086,SSD,Componentes,1,335.56,Loja Física,Cartão Débito,PA,0,,335.56,0.0,335.56
+10766,2025-07-22,Cliente_0232,Notebook,Computadores,4,4685.83,Site,Boleto,AM,10,5.0,18743.32,1874.33,16868.99
+10767,2025-01-21,Cliente_0447,Mouse,Periféricos,5,104.49,Loja Física,Cartão Débito,AM,5,,522.45,26.12,496.33
+10768,2025-07-17,Cliente_0177,Monitor,Imagem,4,1199.87,WhatsApp,Cartão Débito,AM,5,5.0,4799.48,239.97,4559.51
+10769,2025-04-22,Cliente_0107,Notebook,Computadores,5,2923.83,Site,Cartão Crédito,RR,0,,14619.15,0.0,14619.15
+10770,2025-05-29,Cliente_0139,Mouse,Periféricos,2,102.78,Instagram,PIX,RJ,10,5.0,205.56,20.56,185.0
+10771,2025-08-31,Cliente_0102,Headset,Áudio,6,236.81,Marketplace,Boleto,AM,0,5.0,1420.86,0.0,1420.86
+10772,2025-07-02,Cliente_0473,SSD,Componentes,5,265.16,Site,Cartão Crédito,AM,25,3.0,1325.8,331.45,994.35
+10773,2025-10-11,Cliente_0310,Cadeira,Móveis,4,1181.73,Loja Física,PIX,SP,0,5.0,4726.92,0.0,4726.92
+10774,2025-12-03,Cliente_0030,Cadeira,Móveis,6,1266.62,Site,PIX,RJ,0,3.0,7599.72,0.0,7599.72
+10775,2025-12-04,Cliente_0194,Monitor,Imagem,7,733.44,WhatsApp,Cartão Crédito,AM,0,1.0,5134.08,0.0,5134.08
+10776,2025-10-29,Cliente_0321,Mouse,Periféricos,6,85.81,Site,Cartão Crédito,PA,15,4.0,514.86,77.23,437.63
+10777,2025-10-27,Cliente_0244,Teclado,Periféricos,4,223.5,Marketplace,PIX,AM,0,4.0,894.0,0.0,894.0
+10778,2025-03-30,Cliente_0486,Cadeira,Móveis,4,1171.91,Site,PIX,AM,5,2.0,4687.64,234.38,4453.26
+10779,2025-08-10,Cliente_0314,Cadeira,Móveis,7,1153.9,Site,Cartão Crédito,AC,0,,8077.3,0.0,8077.3
+10780,2025-09-05,Cliente_0185,Headset,Áudio,1,238.32,Instagram,PIX,MG,0,5.0,238.32,0.0,238.32
+10781,2025-06-26,Cliente_0293,Cadeira,Móveis,2,1564.63,Instagram,Cartão Crédito,AC,10,5.0,3129.26,312.93,2816.33
+10782,2025-04-28,Cliente_0247,Cadeira,Móveis,5,935.11,Site,Cartão Débito,MG,0,,4675.55,0.0,4675.55
+10783,2025-06-23,Cliente_0118,Notebook,Computadores,3,3559.66,WhatsApp,Cartão Débito,PA,10,4.0,10678.98,1067.9,9611.08
+10784,2025-08-07,Cliente_0438,Cadeira,Móveis,5,1090.51,Site,PIX,RJ,15,3.0,5452.55,817.88,4634.67
+10785,2025-08-06,Cliente_0073,Headset,Áudio,4,321.57,Loja Física,PIX,AM,20,3.0,1286.28,257.26,1029.02
+10786,2025-11-15,Cliente_0069,SSD,Componentes,3,282.67,Instagram,Cartão Crédito,AM,0,4.0,848.01,0.0,848.01
+10787,2025-03-18,Cliente_0242,Memória RAM,Componentes,3,299.06,Instagram,Cartão Crédito,SP,5,5.0,897.18,44.86,852.32
+10788,2025-03-29,Cliente_0152,Cadeira,Móveis,5,1192.91,Site,PIX,AM,20,4.0,5964.55,1192.91,4771.64
+10789,2025-03-19,Cliente_0319,Roteador,Redes,7,359.25,Marketplace,Cartão Crédito,AM,15,4.0,2514.75,377.21,2137.54
+10790,2025-07-20,Cliente_0475,Monitor,Imagem,5,791.37,Marketplace,Boleto,AC,0,3.0,3956.85,0.0,3956.85
+10791,2025-03-05,Cliente_0094,Teclado,Periféricos,5,204.65,Site,Boleto,AM,5,4.0,1023.25,51.16,972.09
+10792,2025-01-04,Cliente_0435,Roteador,Redes,5,232.58,Site,Cartão Crédito,RR,20,2.0,1162.9,232.58,930.32
+10793,2025-03-24,Cliente_0271,Notebook,Computadores,7,4628.35,Site,PIX,AM,5,5.0,32398.45,1619.92,30778.53
+10794,2025-07-12,Cliente_0431,Webcam,Imagem,7,243.28,Site,PIX,SP,15,2.0,1702.96,255.44,1447.52
+10795,2025-01-06,Cliente_0457,Headset,Áudio,2,281.44,Site,PIX,AM,5,4.0,562.88,28.14,534.74
+10796,2025-07-12,Cliente_0430,Monitor,Imagem,1,909.24,Site,PIX,RR,0,2.0,909.24,0.0,909.24
+10797,2025-08-05,Cliente_0229,Memória RAM,Componentes,1,286.61,Marketplace,Cartão Crédito,AM,0,5.0,286.61,0.0,286.61
+10798,2025-12-13,Cliente_0030,Webcam,Imagem,5,193.07,Site,Cartão Crédito,SP,0,4.0,965.35,0.0,965.35
+10799,2025-01-22,Cliente_0113,Roteador,Redes,1,311.47,Site,PIX,RO,0,3.0,311.47,0.0,311.47
+10800,2025-05-25,Cliente_0335,SSD,Componentes,5,462.96,Site,Boleto,AM,20,4.0,2314.8,462.96,1851.84
+10801,2025-10-12,Cliente_0148,Monitor,Imagem,5,869.29,Marketplace,Cartão Crédito,AM,10,5.0,4346.45,434.64,3911.81
+10802,2025-05-25,Cliente_0057,Roteador,Redes,5,358.37,Site,Cartão Crédito,AM,15,5.0,1791.85,268.78,1523.07
+10803,2025-01-02,Cliente_0177,Roteador,Redes,6,234.99,Marketplace,Boleto,RR,10,3.0,1409.94,140.99,1268.95
+10804,2025-10-15,Cliente_0312,SSD,Componentes,2,459.09,Loja Física,Cartão Crédito,RR,5,5.0,918.18,45.91,872.27
+10805,2025-12-25,Cliente_0056,Monitor,Imagem,4,864.26,Marketplace,Boleto,AM,0,1.0,3457.04,0.0,3457.04
+10806,2025-08-13,Cliente_0409,Notebook,Computadores,1,3422.43,Site,PIX,SP,20,3.0,3422.43,684.49,2737.94
+10807,2025-08-02,Cliente_0265,SSD,Componentes,1,359.7,Instagram,PIX,RJ,5,4.0,359.7,17.98,341.72
+10808,2025-06-15,Cliente_0237,Notebook,Computadores,2,4133.31,Site,Cartão Crédito,AM,5,3.0,8266.62,413.33,7853.29
+10809,2025-05-21,Cliente_0278,Teclado,Periféricos,2,212.72,WhatsApp,Cartão Crédito,PA,25,5.0,425.44,106.36,319.08
+10810,2025-11-13,Cliente_0077,Webcam,Imagem,5,228.31,Loja Física,PIX,RO,5,,1141.55,57.08,1084.47
+10811,2025-03-05,Cliente_0421,Teclado,Periféricos,5,191.5,Instagram,Cartão Crédito,RO,20,1.0,957.5,191.5,766.0
+10812,2025-11-29,Cliente_0124,SSD,Componentes,6,268.8,WhatsApp,PIX,AM,20,3.0,1612.8,322.56,1290.24
+10813,2025-07-31,Cliente_0028,Headset,Áudio,6,233.14,Marketplace,Cartão Crédito,AM,0,4.0,1398.84,0.0,1398.84
+10814,2025-10-16,Cliente_0142,Teclado,Periféricos,4,172.37,Site,Cartão Crédito,AM,0,4.0,689.48,0.0,689.48
+10815,2025-04-08,Cliente_0158,Headset,Áudio,1,271.31,Site,Cartão Crédito,RR,25,5.0,271.31,67.83,203.48
+10816,2025-06-15,Cliente_0167,Headset,Áudio,2,271.24,Marketplace,,AC,5,5.0,542.48,27.12,515.36
+10817,2025-05-06,Cliente_0185,SSD,Componentes,4,411.58,WhatsApp,Boleto,AM,0,5.0,1646.32,0.0,1646.32
+10818,2025-06-06,Cliente_0389,Memória RAM,Componentes,1,354.06,WhatsApp,PIX,AM,5,3.0,354.06,17.7,336.36
+10819,2025-09-07,Cliente_0012,Cadeira,Móveis,4,1069.35,Marketplace,Boleto,AM,10,5.0,4277.4,427.74,3849.66
+10820,2025-03-02,Cliente_0419,Roteador,Redes,4,339.39,Instagram,PIX,SP,15,3.0,1357.56,203.63,1153.93
+10821,2025-02-01,Cliente_0169,Teclado,Periféricos,7,137.12,Marketplace,Cartão Crédito,AM,20,,959.84,191.97,767.87
+10822,2025-10-01,Cliente_0319,Mouse,Periféricos,5,94.38,Loja Física,Cartão Crédito,RR,20,1.0,471.9,94.38,377.52
+10823,2025-10-28,Cliente_0426,Teclado,Periféricos,4,146.02,Instagram,Cartão Débito,SP,20,4.0,584.08,116.82,467.26
+10824,2025-01-21,Cliente_0381,Memória RAM,Componentes,5,356.34,Instagram,Cartão Débito,SP,0,2.0,1781.7,0.0,1781.7
+10825,2025-01-12,Cliente_0449,Webcam,Imagem,1,234.58,Marketplace,Cartão Débito,AC,10,4.0,234.58,23.46,211.12
+10826,2025-09-01,Cliente_0494,Memória RAM,Componentes,6,303.71,WhatsApp,PIX,AM,0,5.0,1822.26,0.0,1822.26
+10827,2025-04-13,Cliente_0449,Cadeira,Móveis,1,1397.28,Loja Física,Cartão Débito,SP,0,5.0,1397.28,0.0,1397.28
+10828,2025-10-03,Cliente_0106,SSD,Componentes,5,270.14,Site,PIX,SP,15,5.0,1350.7,202.6,1148.1
+10829,2025-01-07,Cliente_0254,Roteador,Redes,6,247.54,Site,PIX,SP,5,4.0,1485.24,74.26,1410.98
+10830,2025-12-13,Cliente_0427,Memória RAM,Componentes,7,335.96,WhatsApp,PIX,AM,20,3.0,2351.72,470.34,1881.38
+10831,2025-05-10,Cliente_0444,Teclado,Periféricos,3,226.5,Loja Física,Cartão Crédito,AM,0,5.0,679.5,0.0,679.5
+10832,2025-10-26,Cliente_0404,Webcam,Imagem,6,215.31,Instagram,Cartão Crédito,SP,15,5.0,1291.86,193.78,1098.08
+10833,2025-04-07,Cliente_0098,Memória RAM,Componentes,4,271.58,Marketplace,PIX,MG,0,3.0,1086.32,0.0,1086.32
+10834,2025-10-04,Cliente_0119,Mouse,Periféricos,1,84.9,WhatsApp,PIX,SP,0,5.0,84.9,0.0,84.9
+10835,2025-10-12,Cliente_0226,Webcam,Imagem,7,247.15,WhatsApp,Cartão Crédito,RJ,5,,1730.05,86.5,1643.55
+10836,2025-10-15,Cliente_0447,Headset,Áudio,4,250.52,Loja Física,Boleto,RR,5,5.0,1002.08,50.1,951.98
+10837,2025-06-22,Cliente_0375,SSD,Componentes,7,446.61,Site,Cartão Crédito,AM,5,4.0,3126.27,156.31,2969.96
+10838,2025-11-28,Cliente_0152,Monitor,Imagem,6,957.66,Loja Física,Cartão Crédito,AC,20,5.0,5745.96,1149.19,4596.77
+10839,2025-07-24,Cliente_0476,Notebook,Computadores,3,2700.23,Site,Cartão Crédito,SP,10,4.0,8100.69,810.07,7290.62
+10840,2025-04-13,Cliente_0203,Roteador,Redes,4,247.47,WhatsApp,Cartão Débito,AC,0,5.0,989.88,0.0,989.88
+10841,2025-04-23,Cliente_0456,SSD,Componentes,3,357.14,Site,Boleto,MG,0,4.0,1071.42,0.0,1071.42
+10842,2025-12-26,Cliente_0163,Cadeira,Móveis,2,1402.36,Marketplace,Cartão Crédito,AM,5,,2804.72,140.24,2664.48
+10843,2025-05-11,Cliente_0297,SSD,Componentes,3,308.65,Marketplace,Cartão Crédito,AM,5,5.0,925.95,46.3,879.65
+10844,2025-02-08,Cliente_0122,Teclado,Periféricos,1,240.44,Loja Física,Cartão Débito,RJ,10,3.0,240.44,24.04,216.4
+10845,2025-11-03,Cliente_0016,SSD,Componentes,6,329.4,Marketplace,Boleto,AM,0,5.0,1976.4,0.0,1976.4
+10846,2025-01-08,Cliente_0378,SSD,Componentes,5,374.32,Site,PIX,SP,15,4.0,1871.6,280.74,1590.86
+10847,2025-02-15,Cliente_0336,Notebook,Computadores,5,2664.83,Marketplace,Cartão Crédito,RJ,0,4.0,13324.15,0.0,13324.15
+10848,2025-07-13,Cliente_0106,Monitor,Imagem,4,1152.84,Instagram,Cartão Débito,AM,10,4.0,4611.36,461.14,4150.22
+10849,2025-01-06,Cliente_0262,Webcam,Imagem,6,269.13,Site,Cartão Crédito,RJ,10,1.0,1614.78,161.48,1453.3
+10850,2025-02-27,Cliente_0020,Notebook,Computadores,7,3035.46,WhatsApp,Cartão Crédito,AM,0,,21248.22,0.0,21248.22
+10851,2025-06-18,Cliente_0440,Teclado,Periféricos,2,235.79,Marketplace,Cartão Crédito,SP,15,4.0,471.58,70.74,400.84
+10852,2025-05-02,Cliente_0244,Teclado,Periféricos,4,169.11,Marketplace,PIX,AM,10,5.0,676.44,67.64,608.8
+10853,2025-09-06,Cliente_0244,Cadeira,Móveis,3,1398.37,Instagram,PIX,AC,10,3.0,4195.11,419.51,3775.6
+10854,2025-07-26,Cliente_0459,Headset,Áudio,5,310.35,Loja Física,Boleto,AC,5,5.0,1551.75,77.59,1474.16
+10855,2025-04-25,Cliente_0392,Webcam,Imagem,3,262.8,Loja Física,Cartão Crédito,PA,20,4.0,788.4,157.68,630.72
+10856,2025-08-27,Cliente_0212,Teclado,Periféricos,5,234.1,Marketplace,,AC,10,4.0,1170.5,117.05,1053.45
+10857,2025-02-23,Cliente_0224,Notebook,Computadores,5,4439.98,WhatsApp,Cartão Débito,MG,5,,22199.9,1109.99,21089.91
+10858,2025-03-17,Cliente_0353,Teclado,Periféricos,5,242.42,Instagram,Cartão Crédito,SP,0,4.0,1212.1,0.0,1212.1
+10859,2025-06-18,Cliente_0262,SSD,Componentes,6,300.85,Marketplace,Cartão Débito,MG,0,5.0,1805.1,0.0,1805.1
+10860,2025-02-17,Cliente_0220,Headset,Áudio,7,233.21,Loja Física,PIX,PA,0,1.0,1632.47,0.0,1632.47
+10861,2025-08-12,Cliente_0008,Teclado,Periféricos,7,203.71,Instagram,Cartão Crédito,RR,25,4.0,1425.97,356.49,1069.48
+10862,2025-03-11,Cliente_0446,SSD,Componentes,7,416.44,Instagram,Cartão Crédito,AM,5,5.0,2915.08,145.75,2769.33
+10863,2025-06-04,Cliente_0014,Cadeira,Móveis,1,1284.92,WhatsApp,Cartão Crédito,MG,20,5.0,1284.92,256.98,1027.94
+10864,2025-02-16,Cliente_0387,Teclado,Periféricos,6,142.98,Site,PIX,AM,0,4.0,857.88,0.0,857.88
+10865,2025-10-06,Cliente_0130,Headset,Áudio,3,313.74,Site,PIX,AM,5,5.0,941.22,47.06,894.16
+10866,2025-07-21,Cliente_0022,Notebook,Computadores,7,4642.84,Instagram,PIX,AM,25,4.0,32499.88,8124.97,24374.91
+10867,2025-05-22,Cliente_0225,Cadeira,Móveis,6,1191.97,Site,Cartão Crédito,PA,0,4.0,7151.82,0.0,7151.82
+10868,2025-11-13,Cliente_0235,Memória RAM,Componentes,7,265.47,WhatsApp,Boleto,RJ,10,4.0,1858.29,185.83,1672.46
+10869,2025-05-06,Cliente_0341,Webcam,Imagem,4,167.55,Site,Boleto,AM,20,5.0,670.2,134.04,536.16
+10870,2025-11-28,Cliente_0454,SSD,Componentes,2,312.33,Site,PIX,RJ,20,4.0,624.66,124.93,499.73
+10871,2025-06-02,Cliente_0488,Cadeira,Móveis,4,1403.94,Loja Física,PIX,PA,15,4.0,5615.76,842.36,4773.4
+10872,2025-03-06,Cliente_0199,Headset,Áudio,6,324.24,Site,PIX,RJ,20,,1945.44,389.09,1556.35
+10873,2025-04-06,Cliente_0134,Cadeira,Móveis,3,967.33,Marketplace,Cartão Crédito,RR,10,3.0,2901.99,290.2,2611.79
+10874,2025-06-30,Cliente_0178,Webcam,Imagem,2,238.03,Loja Física,Cartão Débito,AM,0,2.0,476.06,0.0,476.06
+10875,2025-12-28,Cliente_0044,Memória RAM,Componentes,4,350.2,Loja Física,Boleto,PA,15,2.0,1400.8,210.12,1190.68
+10876,2025-06-27,Cliente_0008,SSD,Componentes,2,320.54,Loja Física,PIX,PA,25,4.0,641.08,160.27,480.81
+10877,2025-05-09,Cliente_0280,Headset,Áudio,3,272.98,Site,PIX,AM,5,4.0,818.94,40.95,777.99
+10878,2025-02-08,Cliente_0027,Webcam,Imagem,5,259.41,Site,PIX,AM,0,2.0,1297.05,0.0,1297.05
+10879,2025-10-27,Cliente_0437,SSD,Componentes,3,438.42,Site,Cartão Crédito,AM,10,4.0,1315.26,131.53,1183.73
+10880,2025-12-27,Cliente_0051,Notebook,Computadores,7,3575.25,Site,Cartão Débito,AM,10,4.0,25026.75,2502.68,22524.07
+10881,2025-12-16,Cliente_0412,SSD,Componentes,1,419.55,Instagram,Cartão Crédito,RO,0,5.0,419.55,0.0,419.55
+10882,2025-05-13,Cliente_0443,Webcam,Imagem,2,204.84,Instagram,Cartão Débito,PA,10,,409.68,40.97,368.71
+10883,2025-04-19,Cliente_0069,Mouse,Periféricos,3,70.23,Marketplace,Cartão Crédito,SP,10,5.0,210.69,21.07,189.62
+10884,2025-03-13,Cliente_0467,Mouse,Periféricos,5,68.99,Site,PIX,MG,10,3.0,344.95,34.49,310.46
+10885,2025-07-27,Cliente_0457,Cadeira,Móveis,5,1158.39,Instagram,PIX,AM,0,2.0,5791.95,0.0,5791.95
+10886,2025-03-06,Cliente_0281,Teclado,Periféricos,3,138.88,Site,PIX,PA,0,5.0,416.64,0.0,416.64
+10887,2025-08-29,Cliente_0044,Notebook,Computadores,4,3219.28,Site,Cartão Débito,AM,10,5.0,12877.12,1287.71,11589.41
+10888,2025-03-20,Cliente_0175,SSD,Componentes,3,399.47,Marketplace,Cartão Débito,PA,10,3.0,1198.41,119.84,1078.57
+10889,2025-03-29,Cliente_0119,Webcam,Imagem,5,250.53,Marketplace,Cartão Débito,SP,0,3.0,1252.65,0.0,1252.65
+10890,2025-06-27,Cliente_0365,Monitor,Imagem,3,714.72,Loja Física,PIX,AM,0,5.0,2144.16,0.0,2144.16
+10891,2025-09-19,Cliente_0376,Notebook,Computadores,1,3228.57,WhatsApp,Cartão Débito,AM,0,4.0,3228.57,0.0,3228.57
+10892,2025-03-07,Cliente_0269,Mouse,Periféricos,4,87.34,Marketplace,PIX,AM,5,4.0,349.36,17.47,331.89
+10893,2025-11-21,Cliente_0181,Memória RAM,Componentes,3,282.34,Marketplace,PIX,SP,25,3.0,847.02,211.76,635.26
+10894,2025-04-15,Cliente_0053,Monitor,Imagem,5,900.71,Site,Cartão Crédito,RO,15,5.0,4503.55,675.53,3828.02
+10895,2025-04-08,Cliente_0293,Teclado,Periféricos,3,211.98,Site,Cartão Crédito,MG,20,5.0,635.94,127.19,508.75
+10896,2025-04-06,Cliente_0191,SSD,Componentes,7,264.45,Loja Física,Cartão Débito,RJ,5,5.0,1851.15,92.56,1758.59
+10897,2025-02-15,Cliente_0194,Monitor,Imagem,3,824.25,Site,Cartão Crédito,AM,5,5.0,2472.75,123.64,2349.11
+10898,2025-01-31,Cliente_0371,Webcam,Imagem,2,183.79,Instagram,PIX,AM,0,4.0,367.58,0.0,367.58
+10899,2025-07-23,Cliente_0040,Headset,Áudio,3,206.64,Site,PIX,PA,10,5.0,619.92,61.99,557.93
+10900,2025-05-28,Cliente_0078,Headset,Áudio,1,331.36,Site,,RR,5,4.0,331.36,16.57,314.79
+10901,2025-05-12,Cliente_0189,Cadeira,Móveis,5,1171.12,Loja Física,PIX,RR,15,3.0,5855.6,878.34,4977.26
+10902,2025-07-05,Cliente_0095,Monitor,Imagem,6,959.63,Site,PIX,AM,5,5.0,5757.78,287.89,5469.89
+10903,2025-07-08,Cliente_0390,Mouse,Periféricos,2,95.22,Instagram,Cartão Crédito,AM,0,4.0,190.44,0.0,190.44
+10904,2025-05-07,Cliente_0025,Cadeira,Móveis,6,934.16,Site,PIX,AM,0,4.0,5604.96,0.0,5604.96
+10905,2025-12-30,Cliente_0103,Headset,Áudio,3,223.65,Marketplace,Cartão Débito,RJ,15,,670.95,100.64,570.31
+10906,2025-10-24,Cliente_0302,Teclado,Periféricos,7,224.87,Marketplace,Cartão Crédito,MG,0,,1574.09,0.0,1574.09
+10907,2025-11-05,Cliente_0159,Monitor,Imagem,4,1140.47,Instagram,PIX,AM,0,4.0,4561.88,0.0,4561.88
+10908,2025-03-28,Cliente_0358,Teclado,Periféricos,1,175.28,Loja Física,Cartão Crédito,AM,20,1.0,175.28,35.06,140.22
+10909,2025-05-01,Cliente_0208,Teclado,Periféricos,1,175.49,Site,Cartão Crédito,AM,10,4.0,175.49,17.55,157.94
+10910,2025-11-28,Cliente_0447,Monitor,Imagem,7,1083.72,Marketplace,Cartão Crédito,RJ,0,,7586.04,0.0,7586.04
+10911,2025-10-31,Cliente_0347,Mouse,Periféricos,1,74.16,Marketplace,PIX,MG,0,4.0,74.16,0.0,74.16
+10912,2025-05-15,Cliente_0094,Monitor,Imagem,7,738.23,WhatsApp,Boleto,AM,0,,5167.61,0.0,5167.61
+10913,2025-11-24,Cliente_0324,Roteador,Redes,2,253.27,Site,PIX,AM,10,2.0,506.54,50.65,455.89
+10914,2025-07-18,Cliente_0039,Mouse,Periféricos,7,78.59,Site,Boleto,AM,15,4.0,550.13,82.52,467.61
+10915,2025-06-20,Cliente_0336,Roteador,Redes,7,218.77,Site,PIX,RR,0,4.0,1531.39,0.0,1531.39
+10916,2025-09-17,Cliente_0164,SSD,Componentes,3,363.02,Site,Cartão Débito,AC,20,3.0,1089.06,217.81,871.25
+10917,2025-05-04,Cliente_0391,Roteador,Redes,1,334.32,Site,Cartão Crédito,RR,0,,334.32,0.0,334.32
+10918,2025-08-30,Cliente_0341,Headset,Áudio,3,264.56,Site,Cartão Crédito,MG,0,5.0,793.68,0.0,793.68
+10919,2025-03-12,Cliente_0322,Webcam,Imagem,4,174.49,Instagram,PIX,AM,25,3.0,697.96,174.49,523.47
+10920,2025-02-28,Cliente_0055,Monitor,Imagem,7,912.68,WhatsApp,PIX,SP,0,4.0,6388.76,0.0,6388.76
+10921,2025-04-19,Cliente_0072,Roteador,Redes,3,329.1,Site,Cartão Débito,AM,20,5.0,987.3,197.46,789.84
+10922,2025-02-10,Cliente_0042,Cadeira,Móveis,6,941.83,WhatsApp,Boleto,AM,10,4.0,5650.98,565.1,5085.88
+10923,2025-10-13,Cliente_0411,Roteador,Redes,3,220.05,Loja Física,Cartão Crédito,SP,0,5.0,660.15,0.0,660.15
+10924,2025-05-26,Cliente_0386,Monitor,Imagem,3,875.12,WhatsApp,Cartão Crédito,MG,5,3.0,2625.36,131.27,2494.09
+10925,2025-10-13,Cliente_0326,Cadeira,Móveis,7,1040.37,WhatsApp,PIX,SP,5,4.0,7282.59,364.13,6918.46
+10926,2025-02-21,Cliente_0132,Notebook,Computadores,5,4588.04,Loja Física,Cartão Crédito,SP,20,3.0,22940.2,4588.04,18352.16
+10927,2025-06-25,Cliente_0021,Cadeira,Móveis,6,1318.57,Loja Física,PIX,SP,5,2.0,7911.42,395.57,7515.85
+10928,2025-10-06,Cliente_0001,Cadeira,Móveis,2,1106.87,Instagram,PIX,AM,5,4.0,2213.74,110.69,2103.05
+10929,2025-06-14,Cliente_0166,Mouse,Periféricos,7,93.83,Instagram,Cartão Crédito,SP,0,,656.81,0.0,656.81
+10930,2025-11-23,Cliente_0060,Roteador,Redes,3,272.99,WhatsApp,Cartão Crédito,SP,10,2.0,818.97,81.9,737.07
+10931,2025-09-09,Cliente_0076,Roteador,Redes,1,232.2,Instagram,PIX,RR,0,3.0,232.2,0.0,232.2
+10932,2025-04-13,Cliente_0091,Memória RAM,Componentes,7,267.7,Site,PIX,RR,0,4.0,1873.9,0.0,1873.9
+10933,2025-02-22,Cliente_0398,Cadeira,Móveis,5,1362.78,Loja Física,Cartão Crédito,SP,25,5.0,6813.9,1703.48,5110.42
+10934,2025-09-12,Cliente_0207,Webcam,Imagem,3,171.85,Marketplace,PIX,SP,0,5.0,515.55,0.0,515.55
+10935,2025-12-27,Cliente_0088,Mouse,Periféricos,5,73.09,Loja Física,Cartão Débito,AM,0,5.0,365.45,0.0,365.45
+10936,2025-06-22,Cliente_0082,Mouse,Periféricos,2,70.0,Site,PIX,SP,10,1.0,140.0,14.0,126.0
+10937,2025-09-08,Cliente_0017,Mouse,Periféricos,7,69.65,Marketplace,PIX,SP,15,5.0,487.55,73.13,414.42
+10938,2025-06-26,Cliente_0329,Roteador,Redes,5,324.7,Site,Cartão Débito,AM,0,5.0,1623.5,0.0,1623.5
+10939,2025-02-18,Cliente_0431,Memória RAM,Componentes,1,373.65,WhatsApp,Cartão Crédito,SP,0,4.0,373.65,0.0,373.65
+10940,2025-04-21,Cliente_0210,Teclado,Periféricos,3,212.31,Site,PIX,AM,0,4.0,636.93,0.0,636.93
+10941,2025-07-29,Cliente_0312,Monitor,Imagem,1,1023.69,Loja Física,Cartão Crédito,AM,0,5.0,1023.69,0.0,1023.69
+10942,2025-09-05,Cliente_0383,Notebook,Computadores,7,4549.55,Site,PIX,RR,10,4.0,31846.85,3184.68,28662.17
+10943,2025-06-24,Cliente_0053,Notebook,Computadores,7,2747.62,Site,Cartão Crédito,RJ,10,3.0,19233.34,1923.33,17310.01
+10944,2025-04-17,Cliente_0128,Monitor,Imagem,4,765.44,Site,Cartão Crédito,AM,10,4.0,3061.76,306.18,2755.58
+10945,2025-06-02,Cliente_0146,Mouse,Periféricos,5,79.89,Site,Cartão Crédito,SP,5,4.0,399.45,19.97,379.48
+10946,2025-12-13,Cliente_0453,SSD,Componentes,5,340.71,Marketplace,Cartão Crédito,RR,15,3.0,1703.55,255.53,1448.02
+10947,2025-06-04,Cliente_0304,Monitor,Imagem,5,900.75,Site,Cartão Crédito,RJ,5,5.0,4503.75,225.19,4278.56
+10948,2025-05-20,Cliente_0393,Teclado,Periféricos,6,157.3,Instagram,Cartão Débito,RJ,20,5.0,943.8,188.76,755.04
+10949,2025-05-31,Cliente_0310,Teclado,Periféricos,7,151.15,Site,Cartão Crédito,RJ,5,4.0,1058.05,52.9,1005.15
+10950,2025-09-30,Cliente_0419,Cadeira,Móveis,7,1266.62,WhatsApp,Cartão Crédito,SP,15,4.0,8866.34,1329.95,7536.39
+10951,2025-02-13,Cliente_0492,Cadeira,Móveis,2,1568.2,Site,Cartão Crédito,RJ,5,5.0,3136.4,156.82,2979.58
+10952,2025-03-12,Cliente_0248,Cadeira,Móveis,6,1182.22,Instagram,PIX,AM,5,5.0,7093.32,354.67,6738.65
+10953,2025-05-05,Cliente_0430,Cadeira,Móveis,1,931.21,Marketplace,Cartão Débito,AM,15,4.0,931.21,139.68,791.53
+10954,2025-06-01,Cliente_0001,SSD,Componentes,7,410.8,WhatsApp,Cartão Débito,AM,0,5.0,2875.6,0.0,2875.6
+10955,2025-12-15,Cliente_0041,SSD,Componentes,4,323.63,WhatsApp,PIX,SP,10,5.0,1294.52,129.45,1165.07
+10956,2025-11-12,Cliente_0073,Memória RAM,Componentes,2,269.12,WhatsApp,Cartão Débito,AM,10,3.0,538.24,53.82,484.42
+10957,2025-11-05,Cliente_0160,Notebook,Computadores,2,3305.94,Site,Cartão Crédito,AM,15,4.0,6611.88,991.78,5620.1
+10958,2025-08-08,Cliente_0212,Roteador,Redes,3,331.6,Loja Física,Cartão Crédito,RJ,10,2.0,994.8,99.48,895.32
+10959,2025-08-03,Cliente_0333,SSD,Componentes,7,434.45,Loja Física,PIX,SP,5,,3041.15,152.06,2889.09
+10960,2025-11-26,Cliente_0296,Headset,Áudio,4,275.71,WhatsApp,Cartão Crédito,RJ,0,2.0,1102.84,0.0,1102.84
+10961,2025-05-24,Cliente_0139,Teclado,Periféricos,7,169.83,Site,Cartão Crédito,AM,20,3.0,1188.81,237.76,951.05
+10962,2025-04-17,Cliente_0446,Roteador,Redes,5,262.16,WhatsApp,PIX,PA,5,4.0,1310.8,65.54,1245.26
+10963,2025-12-20,Cliente_0430,Teclado,Periféricos,6,148.43,Instagram,Cartão Crédito,AM,15,5.0,890.58,133.59,756.99
+10964,2025-10-08,Cliente_0304,Cadeira,Móveis,5,1571.98,Marketplace,Boleto,AM,0,4.0,7859.9,0.0,7859.9
+10965,2025-11-18,Cliente_0043,SSD,Componentes,7,396.51,Instagram,Cartão Crédito,AM,0,5.0,2775.57,0.0,2775.57
+10966,2025-11-02,Cliente_0179,Roteador,Redes,3,214.53,Instagram,Cartão Crédito,AM,0,5.0,643.59,0.0,643.59
+10967,2025-11-21,Cliente_0189,Mouse,Periféricos,6,91.79,Marketplace,Cartão Crédito,AM,10,5.0,550.74,55.07,495.67
+10968,2025-11-30,Cliente_0246,Memória RAM,Componentes,5,305.49,Instagram,PIX,RR,0,5.0,1527.45,0.0,1527.45
+10969,2025-03-05,Cliente_0298,Headset,Áudio,1,333.38,Loja Física,Boleto,PA,0,1.0,333.38,0.0,333.38
+10970,2025-10-11,Cliente_0154,Headset,Áudio,5,310.36,Marketplace,Boleto,AM,0,,1551.8,0.0,1551.8
+10971,2025-09-22,Cliente_0104,Notebook,Computadores,7,2984.76,Marketplace,Cartão Crédito,SP,0,5.0,20893.32,0.0,20893.32
+10972,2025-01-06,Cliente_0011,Cadeira,Móveis,6,1418.48,Site,PIX,SP,0,,8510.88,0.0,8510.88
+10973,2025-06-17,Cliente_0025,Headset,Áudio,1,260.33,WhatsApp,PIX,RJ,0,5.0,260.33,0.0,260.33
+10974,2025-12-21,Cliente_0296,Webcam,Imagem,3,189.69,Marketplace,PIX,PA,15,5.0,569.07,85.36,483.71
+10975,2025-06-22,Cliente_0025,Webcam,Imagem,3,257.23,Site,Cartão Crédito,MG,5,3.0,771.69,38.58,733.11
+10976,2025-12-04,Cliente_0084,Monitor,Imagem,1,970.59,Loja Física,PIX,RJ,5,4.0,970.59,48.53,922.06
+10977,2025-04-29,Cliente_0106,Headset,Áudio,6,192.06,Site,Cartão Crédito,RR,25,4.0,1152.36,288.09,864.27
+10978,2025-08-14,Cliente_0241,Roteador,Redes,6,318.63,Site,Cartão Crédito,PA,5,2.0,1911.78,95.59,1816.19
+10979,2025-06-23,Cliente_0119,SSD,Componentes,5,395.85,Instagram,PIX,AM,20,5.0,1979.25,395.85,1583.4
+10980,2025-05-09,Cliente_0459,Mouse,Periféricos,3,66.92,Marketplace,Cartão Crédito,SP,0,3.0,200.76,0.0,200.76
+10981,2025-07-06,Cliente_0108,Notebook,Computadores,3,3357.87,Site,PIX,RR,5,2.0,10073.61,503.68,9569.93
+10982,2025-03-04,Cliente_0330,Cadeira,Móveis,1,1321.85,Site,Cartão Débito,MG,5,5.0,1321.85,66.09,1255.76
+10983,2025-10-01,Cliente_0180,Monitor,Imagem,3,749.94,WhatsApp,Cartão Crédito,RO,5,5.0,2249.82,112.49,2137.33
+10984,2025-03-27,Cliente_0369,Roteador,Redes,7,353.26,Site,PIX,MG,10,5.0,2472.82,247.28,2225.54
+10985,2025-07-29,Cliente_0131,Teclado,Periféricos,5,137.97,Site,PIX,RJ,0,5.0,689.85,0.0,689.85
+10986,2025-07-12,Cliente_0295,Webcam,Imagem,3,178.57,WhatsApp,Boleto,MG,15,4.0,535.71,80.36,455.35
+10987,2025-08-26,Cliente_0091,SSD,Componentes,1,286.88,Site,Cartão Crédito,AM,5,5.0,286.88,14.34,272.54
+10988,2025-01-20,Cliente_0419,Monitor,Imagem,5,960.18,Marketplace,Cartão Crédito,AM,0,4.0,4800.9,0.0,4800.9
+10989,2025-07-01,Cliente_0241,Roteador,Redes,4,314.18,Site,PIX,SP,10,,1256.72,125.67,1131.05
+10990,2025-02-17,Cliente_0247,Cadeira,Móveis,1,1190.69,Marketplace,Cartão Crédito,SP,15,2.0,1190.69,178.6,1012.09
+10991,2025-08-16,Cliente_0168,Mouse,Periféricos,4,73.86,Instagram,PIX,AM,0,5.0,295.44,0.0,295.44
+10992,2025-02-23,Cliente_0223,SSD,Componentes,3,432.46,WhatsApp,Boleto,SP,0,5.0,1297.38,0.0,1297.38
+10993,2025-04-12,Cliente_0469,Cadeira,Móveis,5,949.17,Instagram,Boleto,RO,15,4.0,4745.85,711.88,4033.97
+10994,2025-03-30,Cliente_0278,Memória RAM,Componentes,3,275.45,Marketplace,Cartão Crédito,AM,25,5.0,826.35,206.59,619.76
+10995,2025-05-24,Cliente_0190,Cadeira,Móveis,5,928.16,WhatsApp,Boleto,RR,0,5.0,4640.8,0.0,4640.8
+10996,2025-05-28,Cliente_0019,Cadeira,Móveis,2,910.0,WhatsApp,PIX,MG,20,5.0,1820.0,364.0,1456.0
+10997,2025-08-18,Cliente_0014,Mouse,Periféricos,3,76.96,Site,PIX,RR,5,3.0,230.88,11.54,219.34
+10998,2025-10-30,Cliente_0485,Headset,Áudio,3,216.72,Loja Física,PIX,SP,20,3.0,650.16,130.03,520.13
+10999,2025-09-07,Cliente_0243,Memória RAM,Componentes,3,273.31,Instagram,PIX,AM,10,1.0,819.93,81.99,737.94
+11000,2025-08-13,Cliente_0109,Notebook,Computadores,6,4348.99,Marketplace,Boleto,SP,20,3.0,26093.94,5218.79,20875.15
+11001,2025-06-10,Cliente_0434,Monitor,Imagem,1,763.01,Instagram,PIX,MG,15,4.0,763.01,114.45,648.56
+11002,2025-06-17,Cliente_0190,Roteador,Redes,6,341.08,Instagram,Cartão Débito,PA,0,5.0,2046.48,0.0,2046.48
+11003,2025-04-20,Cliente_0471,Roteador,Redes,5,323.41,Site,Cartão Débito,AM,0,4.0,1617.05,0.0,1617.05
+11004,2025-09-18,Cliente_0218,Teclado,Periféricos,5,170.26,Marketplace,Cartão Crédito,AC,5,5.0,851.3,42.56,808.74
+11005,2025-06-22,Cliente_0299,Notebook,Computadores,5,3772.77,Marketplace,PIX,RJ,0,4.0,18863.85,0.0,18863.85
+11006,2025-10-24,Cliente_0311,Notebook,Computadores,1,3558.31,Site,PIX,AM,5,4.0,3558.31,177.92,3380.39
+11007,2025-08-31,Cliente_0236,Notebook,Computadores,5,2894.63,Marketplace,PIX,PA,25,3.0,14473.15,3618.29,10854.86
+11008,2025-07-28,Cliente_0168,Notebook,Computadores,6,4530.09,WhatsApp,Cartão Crédito,AM,0,5.0,27180.54,0.0,27180.54
+11009,2025-08-31,Cliente_0268,Mouse,Periféricos,7,87.34,Marketplace,Cartão Crédito,PA,5,5.0,611.38,30.57,580.81
+11010,2025-09-11,Cliente_0193,Headset,Áudio,6,319.54,Instagram,Cartão Crédito,RR,5,4.0,1917.24,95.86,1821.38
+11011,2025-03-23,Cliente_0242,Mouse,Periféricos,7,99.54,WhatsApp,Cartão Débito,MG,10,4.0,696.78,69.68,627.1
+11012,2025-01-31,Cliente_0162,Monitor,Imagem,3,718.08,Marketplace,Cartão Crédito,PA,0,3.0,2154.24,0.0,2154.24
+11013,2025-01-04,Cliente_0364,Memória RAM,Componentes,4,262.31,Site,PIX,RR,0,5.0,1049.24,0.0,1049.24
+11014,2025-07-13,Cliente_0339,Teclado,Periféricos,7,150.69,Marketplace,,RJ,20,5.0,1054.83,210.97,843.86
+11015,2025-02-25,Cliente_0279,Mouse,Periféricos,2,99.88,Site,PIX,AM,15,5.0,199.76,29.96,169.8
+11016,2025-09-18,Cliente_0455,Monitor,Imagem,5,1140.72,Loja Física,PIX,AC,15,3.0,5703.6,855.54,4848.06
+11017,2025-03-22,Cliente_0135,Memória RAM,Componentes,1,320.03,WhatsApp,Cartão Débito,SP,15,3.0,320.03,48.0,272.03
+11018,2025-02-23,Cliente_0193,Monitor,Imagem,7,731.26,Instagram,Boleto,AM,5,2.0,5118.82,255.94,4862.88
+11019,2025-04-06,Cliente_0402,Headset,Áudio,1,207.84,Instagram,Boleto,AM,10,2.0,207.84,20.78,187.06
+11020,2025-12-15,Cliente_0392,Monitor,Imagem,5,1114.32,Instagram,PIX,RR,5,3.0,5571.6,278.58,5293.02
+11021,2025-12-02,Cliente_0089,SSD,Componentes,4,457.63,Site,Cartão Crédito,AM,0,2.0,1830.52,0.0,1830.52
+11022,2025-09-14,Cliente_0042,Monitor,Imagem,6,782.72,Loja Física,PIX,AM,5,4.0,4696.32,234.82,4461.5
+11023,2025-07-23,Cliente_0093,Mouse,Periféricos,5,60.53,Marketplace,Boleto,MG,0,4.0,302.65,0.0,302.65
+11024,2025-07-30,Cliente_0215,Monitor,Imagem,1,853.71,Site,PIX,RR,5,4.0,853.71,42.69,811.02
+11025,2025-11-25,Cliente_0349,Mouse,Periféricos,2,61.46,Loja Física,PIX,RJ,0,4.0,122.92,0.0,122.92
+11026,2025-11-13,Cliente_0001,Memória RAM,Componentes,4,374.04,Site,Boleto,AM,10,5.0,1496.16,149.62,1346.54
+11027,2025-05-06,Cliente_0335,SSD,Componentes,5,365.72,WhatsApp,Boleto,MG,5,5.0,1828.6,91.43,1737.17
+11028,2025-01-07,Cliente_0399,Memória RAM,Componentes,7,340.53,Instagram,Cartão Crédito,SP,10,4.0,2383.71,238.37,2145.34
+11029,2025-05-05,Cliente_0412,Monitor,Imagem,2,897.2,Marketplace,PIX,SP,5,5.0,1794.4,89.72,1704.68
+11030,2025-09-28,Cliente_0164,Notebook,Computadores,5,3350.57,Site,Cartão Crédito,PA,20,5.0,16752.85,3350.57,13402.28
+11031,2025-04-18,Cliente_0106,Teclado,Periféricos,4,159.0,Site,Cartão Débito,PA,0,4.0,636.0,0.0,636.0
+11032,2025-09-17,Cliente_0232,Webcam,Imagem,1,266.71,Loja Física,Cartão Crédito,RO,10,1.0,266.71,26.67,240.04
+11033,2025-11-15,Cliente_0480,Notebook,Computadores,6,4085.65,Instagram,PIX,SP,10,5.0,24513.9,2451.39,22062.51
+11034,2025-03-11,Cliente_0046,SSD,Componentes,7,338.25,WhatsApp,PIX,RJ,25,,2367.75,591.94,1775.81
+11035,2025-02-07,Cliente_0205,Memória RAM,Componentes,6,282.8,Marketplace,Cartão Débito,AM,5,2.0,1696.8,84.84,1611.96
+11036,2025-06-24,Cliente_0021,SSD,Componentes,4,262.76,WhatsApp,Cartão Crédito,RJ,0,1.0,1051.04,0.0,1051.04
+11037,2025-07-07,Cliente_0177,Headset,Áudio,3,197.03,WhatsApp,Cartão Crédito,MG,0,5.0,591.09,0.0,591.09
+11038,2025-08-15,Cliente_0167,Memória RAM,Componentes,6,337.19,Instagram,Cartão Crédito,RO,0,4.0,2023.14,0.0,2023.14
+11039,2025-09-15,Cliente_0294,Monitor,Imagem,5,952.89,Marketplace,Cartão Crédito,AM,5,5.0,4764.45,238.22,4526.23
+11040,2025-07-16,Cliente_0265,Memória RAM,Componentes,2,303.26,Loja Física,Boleto,SP,15,3.0,606.52,90.98,515.54
+11041,2025-01-08,Cliente_0276,Notebook,Computadores,2,4362.75,Site,PIX,RR,0,5.0,8725.5,0.0,8725.5
+11042,2025-02-20,Cliente_0340,Teclado,Periféricos,7,189.42,WhatsApp,Cartão Crédito,SP,0,2.0,1325.94,0.0,1325.94
+11043,2025-08-10,Cliente_0008,Monitor,Imagem,6,882.63,Marketplace,PIX,SP,0,4.0,5295.78,0.0,5295.78
+11044,2025-01-19,Cliente_0270,Roteador,Redes,4,237.09,Marketplace,PIX,AM,0,,948.36,0.0,948.36
+11045,2025-12-16,Cliente_0318,Notebook,Computadores,7,4348.44,Site,Cartão Débito,RO,20,3.0,30439.08,6087.82,24351.26
+11046,2025-09-04,Cliente_0212,Cadeira,Móveis,4,1314.9,Loja Física,Cartão Débito,PA,20,3.0,5259.6,1051.92,4207.68
+11047,2025-01-31,Cliente_0163,Monitor,Imagem,4,724.93,Site,Cartão Crédito,MG,0,5.0,2899.72,0.0,2899.72
+11048,2025-03-21,Cliente_0311,Monitor,Imagem,2,1025.41,Loja Física,PIX,AM,0,3.0,2050.82,0.0,2050.82
+11049,2025-12-24,Cliente_0045,Notebook,Computadores,1,3517.65,Instagram,PIX,AM,20,2.0,3517.65,703.53,2814.12
+11050,2025-01-22,Cliente_0405,Headset,Áudio,2,309.21,Site,Boleto,RJ,0,4.0,618.42,0.0,618.42
+11051,2025-10-16,Cliente_0233,Memória RAM,Componentes,1,390.4,WhatsApp,PIX,AM,10,5.0,390.4,39.04,351.36
+11052,2025-08-30,Cliente_0053,Cadeira,Móveis,7,1332.34,Loja Física,Cartão Débito,AC,20,5.0,9326.38,1865.28,7461.1
+11053,2025-08-02,Cliente_0233,SSD,Componentes,7,416.14,WhatsApp,PIX,AM,5,5.0,2912.98,145.65,2767.33
+11054,2025-07-19,Cliente_0438,Monitor,Imagem,7,705.56,Instagram,Boleto,RR,0,4.0,4938.92,0.0,4938.92
+11055,2025-06-14,Cliente_0342,Memória RAM,Componentes,4,325.85,Marketplace,Boleto,RO,0,4.0,1303.4,0.0,1303.4
+11056,2025-05-20,Cliente_0171,Webcam,Imagem,3,264.7,Marketplace,PIX,PA,20,4.0,794.1,158.82,635.28
+11057,2025-11-16,Cliente_0006,Webcam,Imagem,2,230.57,Marketplace,Cartão Débito,MG,0,5.0,461.14,0.0,461.14
+11058,2025-10-12,Cliente_0439,SSD,Componentes,4,387.15,Site,PIX,AM,5,5.0,1548.6,77.43,1471.17
+11059,2025-01-13,Cliente_0044,Mouse,Periféricos,2,103.15,Site,PIX,PA,15,5.0,206.3,30.94,175.36
+11060,2025-01-26,Cliente_0091,Cadeira,Móveis,4,1042.63,WhatsApp,Cartão Crédito,PA,15,,4170.52,625.58,3544.94
+11061,2025-01-22,Cliente_0196,Webcam,Imagem,2,177.97,Instagram,Cartão Crédito,RO,5,4.0,355.94,17.8,338.14
+11062,2025-12-15,Cliente_0004,Teclado,Periféricos,5,209.59,WhatsApp,PIX,PA,0,4.0,1047.95,0.0,1047.95
+11063,2025-03-17,Cliente_0121,SSD,Componentes,2,435.3,Site,Cartão Crédito,AM,10,5.0,870.6,87.06,783.54
+11064,2025-04-02,Cliente_0063,Notebook,Computadores,5,4411.03,WhatsApp,PIX,MG,0,3.0,22055.15,0.0,22055.15
+11065,2025-11-25,Cliente_0092,Notebook,Computadores,1,3972.45,Marketplace,PIX,PA,0,2.0,3972.45,0.0,3972.45
+11066,2025-09-23,Cliente_0247,Roteador,Redes,2,349.98,Loja Física,Cartão Crédito,AM,15,5.0,699.96,104.99,594.97
+11067,2025-02-17,Cliente_0219,Teclado,Periféricos,1,210.67,Instagram,Cartão Crédito,PA,0,4.0,210.67,0.0,210.67
+11068,2025-06-19,Cliente_0442,Cadeira,Móveis,3,962.91,WhatsApp,Cartão Crédito,AM,0,4.0,2888.73,0.0,2888.73
+11069,2025-12-12,Cliente_0438,Webcam,Imagem,6,265.59,Marketplace,Cartão Crédito,AM,0,4.0,1593.54,0.0,1593.54
+11070,2025-09-02,Cliente_0337,Mouse,Periféricos,6,68.61,Marketplace,Boleto,AM,5,5.0,411.66,20.58,391.08
+11071,2025-08-16,Cliente_0231,Cadeira,Móveis,5,1070.36,Site,Cartão Crédito,AM,10,3.0,5351.8,535.18,4816.62
+11072,2025-07-06,Cliente_0294,Headset,Áudio,2,246.7,Marketplace,PIX,AM,15,5.0,493.4,74.01,419.39
+11073,2025-06-17,Cliente_0188,Cadeira,Móveis,6,1126.49,WhatsApp,Cartão Crédito,PA,10,4.0,6758.94,675.89,6083.05
+11074,2025-07-22,Cliente_0308,Notebook,Computadores,1,3300.47,Site,Cartão Crédito,RO,10,5.0,3300.47,330.05,2970.42
+11075,2025-01-06,Cliente_0413,Roteador,Redes,6,238.44,Loja Física,Cartão Crédito,RO,10,4.0,1430.64,143.06,1287.58
+11076,2025-05-12,Cliente_0168,Webcam,Imagem,6,203.79,Site,Cartão Crédito,AM,0,,1222.74,0.0,1222.74
+11077,2025-09-02,Cliente_0455,SSD,Componentes,4,266.63,WhatsApp,PIX,MG,5,4.0,1066.52,53.33,1013.19
+11078,2025-04-01,Cliente_0264,Webcam,Imagem,6,227.42,WhatsApp,PIX,SP,10,,1364.52,136.45,1228.07
+11079,2025-11-07,Cliente_0105,Memória RAM,Componentes,1,363.35,Instagram,Cartão Crédito,MG,0,5.0,363.35,0.0,363.35
+11080,2025-05-06,Cliente_0481,Notebook,Computadores,6,4435.72,Site,PIX,AM,0,4.0,26614.32,0.0,26614.32
+11081,2025-08-30,Cliente_0224,Roteador,Redes,2,347.83,Marketplace,Cartão Crédito,AC,5,4.0,695.66,34.78,660.88
+11082,2025-09-06,Cliente_0419,Memória RAM,Componentes,6,299.96,Site,Cartão Crédito,AM,5,4.0,1799.76,89.99,1709.77
+11083,2025-01-07,Cliente_0466,Teclado,Periféricos,3,213.89,Instagram,Cartão Crédito,SP,5,5.0,641.67,32.08,609.59
+11084,2025-03-29,Cliente_0115,Mouse,Periféricos,6,73.82,Site,Cartão Crédito,AM,10,4.0,442.92,44.29,398.63
+11085,2025-03-27,Cliente_0379,Cadeira,Móveis,5,940.0,Instagram,PIX,AM,5,4.0,4700.0,235.0,4465.0
+11086,2025-12-21,Cliente_0235,Headset,Áudio,4,288.9,Site,Boleto,PA,20,5.0,1155.6,231.12,924.48
+11087,2025-05-25,Cliente_0272,Monitor,Imagem,7,1025.35,Site,Cartão Crédito,RO,5,5.0,7177.45,358.87,6818.58
+11088,2025-11-27,Cliente_0274,Monitor,Imagem,1,1107.88,Site,Cartão Crédito,RR,5,1.0,1107.88,55.39,1052.49
+11089,2025-07-17,Cliente_0443,SSD,Componentes,6,391.88,Marketplace,PIX,AM,0,2.0,2351.28,0.0,2351.28
+11090,2025-12-29,Cliente_0230,Roteador,Redes,6,236.36,Marketplace,PIX,PA,0,2.0,1418.16,0.0,1418.16
+11091,2025-06-13,Cliente_0217,Teclado,Periféricos,2,227.14,Site,,MG,20,3.0,454.28,90.86,363.42
+11092,2025-05-25,Cliente_0034,Notebook,Computadores,7,3942.23,Marketplace,PIX,RJ,0,4.0,27595.61,0.0,27595.61
+11093,2025-12-08,Cliente_0388,Headset,Áudio,2,308.64,WhatsApp,PIX,RO,0,5.0,617.28,0.0,617.28
+11094,2025-01-01,Cliente_0197,SSD,Componentes,5,425.06,Site,Cartão Crédito,RR,5,4.0,2125.3,106.26,2019.04
+11095,2025-04-30,Cliente_0383,Teclado,Periféricos,7,167.17,Loja Física,Cartão Crédito,AM,0,1.0,1170.19,0.0,1170.19
+11096,2025-03-08,Cliente_0462,Mouse,Periféricos,4,63.58,Marketplace,Cartão Crédito,AM,5,4.0,254.32,12.72,241.6
+11097,2025-12-21,Cliente_0449,Notebook,Computadores,1,2995.66,Site,Cartão Crédito,AM,0,,2995.66,0.0,2995.66
+11098,2025-02-18,Cliente_0317,Monitor,Imagem,1,725.15,Instagram,Cartão Débito,PA,5,4.0,725.15,36.26,688.89
+11099,2025-11-03,Cliente_0214,Mouse,Periféricos,1,71.68,Instagram,PIX,SP,15,,71.68,10.75,60.93
+11100,2025-11-23,Cliente_0046,SSD,Componentes,5,359.0,Loja Física,Cartão Crédito,PA,10,2.0,1795.0,179.5,1615.5
+11101,2025-10-14,Cliente_0405,Roteador,Redes,5,362.34,Site,PIX,AM,5,3.0,1811.7,90.58,1721.12
+11102,2025-01-24,Cliente_0333,Memória RAM,Componentes,6,381.96,WhatsApp,Cartão Crédito,PA,10,5.0,2291.76,229.18,2062.58
+11103,2025-07-30,Cliente_0240,Roteador,Redes,4,330.72,Marketplace,Cartão Crédito,AM,15,4.0,1322.88,198.43,1124.45
+11104,2025-10-20,Cliente_0254,Notebook,Computadores,1,2675.64,Instagram,PIX,SP,15,5.0,2675.64,401.35,2274.29
+11105,2025-03-04,Cliente_0228,Mouse,Periféricos,1,76.39,Site,Cartão Crédito,AM,0,5.0,76.39,0.0,76.39
+11106,2025-02-25,Cliente_0221,Cadeira,Móveis,6,1391.29,Site,Cartão Débito,PA,0,3.0,8347.74,0.0,8347.74
+11107,2025-01-18,Cliente_0379,Roteador,Redes,4,231.68,Instagram,PIX,SP,0,5.0,926.72,0.0,926.72
+11108,2025-12-28,Cliente_0166,Webcam,Imagem,7,270.74,Instagram,Cartão Crédito,AM,0,5.0,1895.18,0.0,1895.18
+11109,2025-03-18,Cliente_0073,Mouse,Periféricos,4,103.9,Loja Física,Boleto,AM,0,5.0,415.6,0.0,415.6
+11110,2025-09-17,Cliente_0225,SSD,Componentes,4,336.86,Marketplace,Cartão Crédito,RR,0,4.0,1347.44,0.0,1347.44
+11111,2025-05-01,Cliente_0086,Roteador,Redes,2,328.58,Site,Cartão Crédito,AM,15,2.0,657.16,98.57,558.59
+11112,2025-07-03,Cliente_0081,Memória RAM,Componentes,4,251.68,Marketplace,Cartão Débito,RO,5,4.0,1006.72,50.34,956.38
+11113,2025-02-17,Cliente_0444,SSD,Componentes,3,407.57,Site,PIX,SP,0,,1222.71,0.0,1222.71
+11114,2025-05-27,Cliente_0215,Memória RAM,Componentes,5,228.86,Instagram,PIX,AM,10,1.0,1144.3,114.43,1029.87
+11115,2025-10-09,Cliente_0164,Cadeira,Móveis,4,1008.56,Loja Física,Cartão Débito,PA,15,3.0,4034.24,605.14,3429.1
+11116,2025-12-30,Cliente_0390,Webcam,Imagem,2,258.7,Instagram,Cartão Débito,MG,5,4.0,517.4,25.87,491.53
+11117,2025-10-21,Cliente_0240,Cadeira,Móveis,7,1412.53,Loja Física,PIX,PA,5,5.0,9887.71,494.39,9393.32
+11118,2025-03-21,Cliente_0423,Webcam,Imagem,3,249.63,WhatsApp,PIX,MG,0,4.0,748.89,0.0,748.89
+11119,2025-08-24,Cliente_0413,Teclado,Periféricos,2,186.56,Marketplace,Cartão Crédito,AM,10,3.0,373.12,37.31,335.81
+11120,2025-08-17,Cliente_0411,Monitor,Imagem,2,1039.45,Site,Cartão Débito,SP,5,5.0,2078.9,103.94,1974.96
+11121,2025-10-11,Cliente_0069,Memória RAM,Componentes,6,364.28,Instagram,Cartão Crédito,AC,5,2.0,2185.68,109.28,2076.4
+11122,2025-03-02,Cliente_0137,Teclado,Periféricos,2,239.38,Site,Boleto,RJ,5,3.0,478.76,23.94,454.82
+11123,2025-08-08,Cliente_0152,Mouse,Periféricos,2,102.65,Marketplace,Boleto,AM,10,4.0,205.3,20.53,184.77
+11124,2025-12-11,Cliente_0447,Webcam,Imagem,1,269.88,Loja Física,,AM,10,4.0,269.88,26.99,242.89
+11125,2025-03-30,Cliente_0403,Cadeira,Móveis,5,1400.23,Marketplace,Cartão Crédito,AM,5,4.0,7001.15,350.06,6651.09
+11126,2025-09-21,Cliente_0097,Teclado,Periféricos,6,197.01,Loja Física,Cartão Crédito,MG,0,2.0,1182.06,0.0,1182.06
+11127,2025-08-16,Cliente_0379,Cadeira,Móveis,6,986.84,Loja Física,PIX,PA,10,4.0,5921.04,592.1,5328.94
+11128,2025-04-13,Cliente_0158,Webcam,Imagem,1,186.85,WhatsApp,Cartão Crédito,RJ,20,5.0,186.85,37.37,149.48
+11129,2025-03-29,Cliente_0186,Cadeira,Móveis,3,1490.6,Site,Cartão Crédito,AM,15,4.0,4471.8,670.77,3801.03
+11130,2025-01-23,Cliente_0168,Notebook,Computadores,1,4311.96,WhatsApp,Cartão Crédito,AM,25,4.0,4311.96,1077.99,3233.97
+11131,2025-10-20,Cliente_0244,Notebook,Computadores,6,3915.36,Marketplace,Cartão Crédito,AM,0,3.0,23492.16,0.0,23492.16
+11132,2025-09-24,Cliente_0119,Memória RAM,Componentes,3,303.99,Site,Cartão Crédito,RO,0,2.0,911.97,0.0,911.97
+11133,2025-01-17,Cliente_0196,Cadeira,Móveis,6,918.74,WhatsApp,Cartão Débito,RJ,5,5.0,5512.44,275.62,5236.82
+11134,2025-10-12,Cliente_0288,Mouse,Periféricos,4,75.7,WhatsApp,Cartão Crédito,PA,0,4.0,302.8,0.0,302.8
+11135,2025-11-09,Cliente_0369,Notebook,Computadores,3,3508.34,Marketplace,PIX,RJ,0,4.0,10525.02,0.0,10525.02
+11136,2025-06-11,Cliente_0065,Mouse,Periféricos,6,83.32,Loja Física,Cartão Crédito,AM,5,5.0,499.92,25.0,474.92
+11137,2025-03-19,Cliente_0162,SSD,Componentes,1,457.66,Site,Boleto,SP,0,5.0,457.66,0.0,457.66
+11138,2025-05-02,Cliente_0085,Headset,Áudio,6,203.81,Instagram,Cartão Débito,SP,0,5.0,1222.86,0.0,1222.86
+11139,2025-04-22,Cliente_0415,Webcam,Imagem,1,233.49,Site,PIX,AM,25,5.0,233.49,58.37,175.12
+11140,2025-08-27,Cliente_0059,Webcam,Imagem,3,213.57,Instagram,Cartão Crédito,AM,0,2.0,640.71,0.0,640.71
+11141,2025-07-29,Cliente_0462,Mouse,Periféricos,1,107.52,Instagram,Boleto,AM,0,,107.52,0.0,107.52
+11142,2025-12-15,Cliente_0282,Monitor,Imagem,3,1140.41,Site,PIX,AM,0,5.0,3421.23,0.0,3421.23
+11143,2025-01-02,Cliente_0150,Mouse,Periféricos,2,81.06,Marketplace,PIX,RJ,15,3.0,162.12,24.32,137.8
+11144,2025-07-22,Cliente_0418,Webcam,Imagem,5,296.96,Site,PIX,MG,10,5.0,1484.8,148.48,1336.32
+11145,2025-10-14,Cliente_0481,Headset,Áudio,7,264.61,Site,Cartão Crédito,SP,0,4.0,1852.27,0.0,1852.27
+11146,2025-04-27,Cliente_0121,Notebook,Computadores,3,2975.95,Instagram,Cartão Crédito,SP,0,5.0,8927.85,0.0,8927.85
+11147,2025-10-27,Cliente_0269,Mouse,Periféricos,7,86.68,Instagram,PIX,AM,15,3.0,606.76,91.01,515.75
+11148,2025-12-12,Cliente_0255,Cadeira,Móveis,7,1062.87,Site,Cartão Crédito,AM,0,4.0,7440.09,0.0,7440.09
+11149,2025-04-24,Cliente_0224,Monitor,Imagem,2,1018.61,Site,PIX,SP,25,3.0,2037.22,509.3,1527.92
+11150,2025-03-15,Cliente_0055,Webcam,Imagem,2,288.74,Site,Cartão Crédito,RR,5,4.0,577.48,28.87,548.61
+11151,2025-08-29,Cliente_0136,Mouse,Periféricos,2,97.74,Site,Cartão Crédito,AC,0,3.0,195.48,0.0,195.48
+11152,2025-10-29,Cliente_0190,Mouse,Periféricos,7,73.11,Instagram,Cartão Crédito,SP,20,4.0,511.77,102.35,409.42
+11153,2025-02-23,Cliente_0406,Cadeira,Móveis,2,1113.74,WhatsApp,PIX,PA,0,5.0,2227.48,0.0,2227.48
+11154,2025-06-08,Cliente_0253,SSD,Componentes,3,277.05,Site,Cartão Crédito,AM,0,5.0,831.15,0.0,831.15
+11155,2025-04-19,Cliente_0489,Notebook,Computadores,7,3225.32,Marketplace,Cartão Crédito,SP,0,3.0,22577.24,0.0,22577.24
+11156,2025-10-07,Cliente_0312,Headset,Áudio,7,201.39,Site,Cartão Crédito,PA,15,5.0,1409.73,211.46,1198.27
+11157,2025-06-02,Cliente_0084,Notebook,Computadores,1,3673.84,Instagram,Cartão Crédito,SP,0,4.0,3673.84,0.0,3673.84
+11158,2025-06-12,Cliente_0405,Cadeira,Móveis,2,1410.01,Site,Cartão Crédito,PA,5,5.0,2820.02,141.0,2679.02
+11159,2025-02-26,Cliente_0354,Webcam,Imagem,4,264.16,WhatsApp,PIX,AM,0,4.0,1056.64,0.0,1056.64
+11160,2025-11-24,Cliente_0177,Cadeira,Móveis,2,942.86,Instagram,PIX,AM,15,5.0,1885.72,282.86,1602.86
+11161,2025-11-21,Cliente_0094,Memória RAM,Componentes,1,286.19,Marketplace,PIX,SP,0,5.0,286.19,0.0,286.19
+11162,2025-08-02,Cliente_0390,Teclado,Periféricos,1,166.12,Marketplace,Cartão Crédito,RR,0,4.0,166.12,0.0,166.12
+11163,2025-01-28,Cliente_0035,SSD,Componentes,5,284.4,Site,Cartão Crédito,PA,10,4.0,1422.0,142.2,1279.8
+11164,2025-07-23,Cliente_0411,Teclado,Periféricos,5,174.15,WhatsApp,Cartão Débito,PA,10,,870.75,87.08,783.67
+11165,2025-02-02,Cliente_0212,Webcam,Imagem,7,204.51,Site,Cartão Crédito,RR,15,5.0,1431.57,214.74,1216.83
+11166,2025-11-05,Cliente_0126,Headset,Áudio,2,282.67,Site,Cartão Débito,AM,0,4.0,565.34,0.0,565.34
+11167,2025-05-02,Cliente_0369,Notebook,Computadores,2,4479.94,Site,Cartão Crédito,AM,15,3.0,8959.88,1343.98,7615.9
+11168,2025-01-16,Cliente_0230,Monitor,Imagem,6,920.61,Site,PIX,AM,5,5.0,5523.66,276.18,5247.48
+11169,2025-06-03,Cliente_0168,Memória RAM,Componentes,7,359.4,Site,Cartão Débito,PA,0,,2515.8,0.0,2515.8
+11170,2025-12-09,Cliente_0014,SSD,Componentes,6,293.16,Marketplace,PIX,RR,15,4.0,1758.96,263.84,1495.12
+11171,2025-08-06,Cliente_0074,Teclado,Periféricos,5,231.66,Site,Cartão Crédito,AM,5,5.0,1158.3,57.92,1100.38
+11172,2025-04-15,Cliente_0052,Mouse,Periféricos,2,67.32,Marketplace,PIX,PA,10,3.0,134.64,13.46,121.18
+11173,2025-03-18,Cliente_0362,Memória RAM,Componentes,6,259.58,Site,Boleto,PA,20,,1557.48,311.5,1245.98
+11174,2025-03-28,Cliente_0207,Notebook,Computadores,4,2848.57,WhatsApp,Cartão Crédito,AM,10,5.0,11394.28,1139.43,10254.85
+11175,2025-01-31,Cliente_0296,Memória RAM,Componentes,3,280.74,Site,PIX,MG,0,4.0,842.22,0.0,842.22
+11176,2025-04-10,Cliente_0043,Webcam,Imagem,5,237.92,Marketplace,Cartão Crédito,AM,20,4.0,1189.6,237.92,951.68
+11177,2025-06-04,Cliente_0368,Mouse,Periféricos,5,107.42,Marketplace,PIX,AC,0,5.0,537.1,0.0,537.1
+11178,2025-10-19,Cliente_0442,Headset,Áudio,1,306.51,Site,Boleto,AM,5,4.0,306.51,15.33,291.18
+11179,2025-11-11,Cliente_0003,Mouse,Periféricos,2,78.26,Site,Cartão Crédito,RJ,0,5.0,156.52,0.0,156.52
+11180,2025-04-16,Cliente_0399,Headset,Áudio,5,273.88,Site,Cartão Crédito,RJ,0,5.0,1369.4,0.0,1369.4
+11181,2025-08-18,Cliente_0429,Webcam,Imagem,5,247.28,Site,PIX,PA,10,4.0,1236.4,123.64,1112.76
+11182,2025-01-03,Cliente_0095,Headset,Áudio,6,310.91,Site,Cartão Débito,SP,5,,1865.46,93.27,1772.19
+11183,2025-08-10,Cliente_0395,Mouse,Periféricos,4,95.35,Marketplace,Boleto,AM,10,4.0,381.4,38.14,343.26
+11184,2025-05-01,Cliente_0238,Headset,Áudio,7,272.89,Instagram,Cartão Débito,AM,15,5.0,1910.23,286.53,1623.7
+11185,2025-06-09,Cliente_0167,Roteador,Redes,2,322.42,Marketplace,Cartão Débito,AM,0,5.0,644.84,0.0,644.84
+11186,2025-09-28,Cliente_0019,Cadeira,Móveis,3,1437.06,Site,PIX,AM,10,5.0,4311.18,431.12,3880.06
+11187,2025-11-27,Cliente_0207,Headset,Áudio,4,207.47,WhatsApp,Boleto,PA,15,2.0,829.88,124.48,705.4
+11188,2025-07-13,Cliente_0230,Mouse,Periféricos,3,69.62,Site,Cartão Crédito,AM,10,4.0,208.86,20.89,187.97
+11189,2025-08-06,Cliente_0404,Cadeira,Móveis,1,1395.78,Instagram,Cartão Débito,PA,5,4.0,1395.78,69.79,1325.99
+11190,2025-07-10,Cliente_0214,Cadeira,Móveis,5,1512.31,Site,Cartão Crédito,SP,5,4.0,7561.55,378.08,7183.47
+11191,2025-09-09,Cliente_0455,Mouse,Periféricos,6,79.64,Site,PIX,AM,5,4.0,477.84,23.89,453.95
+11192,2025-08-14,Cliente_0056,Monitor,Imagem,4,1204.14,Marketplace,Cartão Crédito,AM,5,5.0,4816.56,240.83,4575.73
+11193,2025-01-01,Cliente_0334,Webcam,Imagem,3,193.52,Marketplace,PIX,PA,0,4.0,580.56,0.0,580.56
+11194,2025-05-13,Cliente_0374,Notebook,Computadores,2,3500.07,Marketplace,Cartão Crédito,PA,10,4.0,7000.14,700.01,6300.13
+11195,2025-03-31,Cliente_0132,Notebook,Computadores,1,3419.9,Marketplace,Cartão Crédito,AM,0,3.0,3419.9,0.0,3419.9
+11196,2025-01-06,Cliente_0009,Cadeira,Móveis,7,1569.81,WhatsApp,PIX,AM,25,3.0,10988.67,2747.17,8241.5
+11197,2025-09-01,Cliente_0231,Webcam,Imagem,1,202.67,Instagram,Boleto,RR,15,5.0,202.67,30.4,172.27
+11198,2025-05-13,Cliente_0153,Headset,Áudio,5,258.12,Instagram,Boleto,AM,0,3.0,1290.6,0.0,1290.6
+11199,2025-04-26,Cliente_0431,Roteador,Redes,5,241.46,Site,Boleto,RJ,0,3.0,1207.3,0.0,1207.3
+11200,2025-03-14,Cliente_0483,SSD,Componentes,3,371.97,Site,Cartão Débito,AM,10,4.0,1115.91,111.59,1004.32
+11201,2025-06-05,Cliente_0485,Monitor,Imagem,3,1138.0,Marketplace,Cartão Crédito,AM,15,2.0,3414.0,512.1,2901.9
+11202,2025-07-30,Cliente_0305,Teclado,Periféricos,1,167.84,Site,Cartão Crédito,PA,25,3.0,167.84,41.96,125.88
+11203,2025-03-10,Cliente_0411,Webcam,Imagem,3,272.02,Instagram,PIX,MG,0,5.0,816.06,0.0,816.06
+11204,2025-10-27,Cliente_0284,Monitor,Imagem,5,1167.11,Site,Boleto,RO,0,5.0,5835.55,0.0,5835.55
+11205,2025-05-24,Cliente_0472,Notebook,Computadores,1,2778.21,Loja Física,Boleto,AM,20,4.0,2778.21,555.64,2222.57
+11206,2025-07-18,Cliente_0481,SSD,Componentes,1,421.35,WhatsApp,Cartão Crédito,AM,0,4.0,421.35,0.0,421.35
+11207,2025-07-25,Cliente_0481,Headset,Áudio,7,225.8,Site,Boleto,PA,10,,1580.6,158.06,1422.54
+11208,2025-07-20,Cliente_0190,SSD,Componentes,2,299.32,Loja Física,Cartão Crédito,AM,0,1.0,598.64,0.0,598.64
+11209,2025-08-27,Cliente_0016,SSD,Componentes,2,388.74,WhatsApp,Cartão Crédito,AC,15,4.0,777.48,116.62,660.86
+11210,2025-03-09,Cliente_0343,Headset,Áudio,3,293.34,WhatsApp,Boleto,RO,0,4.0,880.02,0.0,880.02
+11211,2025-06-20,Cliente_0430,SSD,Componentes,3,345.4,Site,Cartão Crédito,AM,10,5.0,1036.2,103.62,932.58
+11212,2025-10-24,Cliente_0203,Webcam,Imagem,5,170.17,Loja Física,Cartão Crédito,AM,5,,850.85,42.54,808.31
+11213,2025-03-11,Cliente_0174,Teclado,Periféricos,5,233.14,Site,Cartão Crédito,SP,25,4.0,1165.7,291.42,874.28
+11214,2025-10-14,Cliente_0168,Monitor,Imagem,2,1069.6,Marketplace,Cartão Crédito,RO,0,4.0,2139.2,0.0,2139.2
+11215,2025-01-17,Cliente_0339,Webcam,Imagem,1,200.86,Marketplace,Cartão Crédito,RJ,0,5.0,200.86,0.0,200.86
+11216,2025-05-17,Cliente_0034,Monitor,Imagem,4,943.31,Loja Física,Cartão Crédito,AM,0,,3773.24,0.0,3773.24
+11217,2025-08-07,Cliente_0471,Cadeira,Móveis,6,920.01,Site,Cartão Crédito,AC,20,5.0,5520.06,1104.01,4416.05
+11218,2025-11-07,Cliente_0394,Mouse,Periféricos,6,76.29,Loja Física,PIX,AM,10,5.0,457.74,45.77,411.97
+11219,2025-01-06,Cliente_0229,Mouse,Periféricos,7,85.08,Instagram,Cartão Crédito,AM,5,5.0,595.56,29.78,565.78
+11220,2025-07-17,Cliente_0495,Teclado,Periféricos,4,190.86,Site,Boleto,AC,0,2.0,763.44,0.0,763.44
+11221,2025-05-12,Cliente_0001,Roteador,Redes,7,244.98,Marketplace,PIX,SP,5,4.0,1714.86,85.74,1629.12
+11222,2025-12-29,Cliente_0322,Webcam,Imagem,3,267.53,WhatsApp,PIX,AM,5,1.0,802.59,40.13,762.46
+11223,2025-12-10,Cliente_0115,Teclado,Periféricos,6,167.28,WhatsApp,PIX,SP,0,3.0,1003.68,0.0,1003.68
+11224,2025-07-03,Cliente_0214,Teclado,Periféricos,7,197.68,Loja Física,Boleto,AC,15,5.0,1383.76,207.56,1176.2
+11225,2025-01-18,Cliente_0254,Monitor,Imagem,6,821.62,Site,Cartão Crédito,AM,0,5.0,4929.72,0.0,4929.72
+11226,2025-08-01,Cliente_0145,Roteador,Redes,4,281.43,Site,Boleto,RJ,10,5.0,1125.72,112.57,1013.15
+11227,2025-02-17,Cliente_0047,Cadeira,Móveis,7,1049.41,Site,Cartão Crédito,RR,15,5.0,7345.87,1101.88,6243.99
+11228,2025-01-29,Cliente_0280,Notebook,Computadores,4,3954.32,Site,Cartão Crédito,AC,20,2.0,15817.28,3163.46,12653.82
+11229,2025-06-02,Cliente_0178,Cadeira,Móveis,2,1206.42,Instagram,Cartão Débito,PA,15,5.0,2412.84,361.93,2050.91
+11230,2025-11-28,Cliente_0213,SSD,Componentes,1,265.88,Site,PIX,PA,0,4.0,265.88,0.0,265.88
+11231,2025-08-26,Cliente_0360,SSD,Componentes,5,268.41,Site,Cartão Crédito,RJ,10,5.0,1342.05,134.21,1207.84
+11232,2025-11-15,Cliente_0285,Cadeira,Móveis,2,1239.22,WhatsApp,Cartão Crédito,AM,0,4.0,2478.44,0.0,2478.44
+11233,2025-09-22,Cliente_0245,Cadeira,Móveis,6,1031.92,Marketplace,PIX,AM,0,4.0,6191.52,0.0,6191.52
+11234,2025-07-18,Cliente_0253,Teclado,Periféricos,5,198.18,Loja Física,Cartão Crédito,RJ,10,4.0,990.9,99.09,891.81
+11235,2025-01-14,Cliente_0206,Mouse,Periféricos,2,79.59,Instagram,PIX,SP,20,4.0,159.18,31.84,127.34
+11236,2025-10-03,Cliente_0072,Webcam,Imagem,2,251.38,Instagram,PIX,AM,0,3.0,502.76,0.0,502.76
+11237,2025-01-10,Cliente_0222,SSD,Componentes,4,462.5,Site,PIX,AM,0,4.0,1850.0,0.0,1850.0
+11238,2025-05-19,Cliente_0342,Roteador,Redes,5,298.83,Instagram,Cartão Débito,AC,10,4.0,1494.15,149.42,1344.73
+11239,2025-06-16,Cliente_0215,Cadeira,Móveis,2,1466.91,Marketplace,,AM,0,5.0,2933.82,0.0,2933.82
+11240,2025-05-27,Cliente_0360,Headset,Áudio,4,300.46,Instagram,PIX,PA,10,5.0,1201.84,120.18,1081.66
+11241,2025-09-02,Cliente_0499,Monitor,Imagem,3,1172.77,Loja Física,,AM,0,5.0,3518.31,0.0,3518.31
+11242,2025-03-11,Cliente_0141,Notebook,Computadores,5,3074.44,WhatsApp,Cartão Crédito,RO,0,5.0,15372.2,0.0,15372.2
+11243,2025-11-24,Cliente_0448,Memória RAM,Componentes,7,373.92,Instagram,Cartão Crédito,AM,5,4.0,2617.44,130.87,2486.57
+11244,2025-11-17,Cliente_0156,Roteador,Redes,2,362.13,Site,Cartão Débito,RO,20,5.0,724.26,144.85,579.41
+11245,2025-04-14,Cliente_0222,Monitor,Imagem,6,887.09,WhatsApp,Cartão Débito,AC,10,4.0,5322.54,532.25,4790.29
+11246,2025-08-17,Cliente_0389,Mouse,Periféricos,3,75.06,Loja Física,PIX,PA,15,3.0,225.18,33.78,191.4
+11247,2025-11-12,Cliente_0330,Monitor,Imagem,4,1189.1,Marketplace,PIX,AM,0,5.0,4756.4,0.0,4756.4
+11248,2025-05-18,Cliente_0231,Headset,Áudio,2,281.64,Loja Física,PIX,AM,20,3.0,563.28,112.66,450.62
+11249,2025-11-15,Cliente_0393,Mouse,Periféricos,6,78.27,Site,Boleto,AM,5,3.0,469.62,23.48,446.14
+11250,2025-02-05,Cliente_0142,Webcam,Imagem,4,269.52,Site,Cartão Crédito,PA,20,5.0,1078.08,215.62,862.46
+11251,2025-04-28,Cliente_0358,Teclado,Periféricos,4,167.88,Site,PIX,AC,5,5.0,671.52,33.58,637.94
+11252,2025-09-12,Cliente_0394,SSD,Componentes,7,299.55,Site,PIX,AM,0,5.0,2096.85,0.0,2096.85
+11253,2025-11-09,Cliente_0417,Monitor,Imagem,6,968.74,Instagram,Cartão Crédito,SP,0,4.0,5812.44,0.0,5812.44
+11254,2025-12-01,Cliente_0075,Headset,Áudio,4,272.43,Site,PIX,SP,10,5.0,1089.72,108.97,980.75
+11255,2025-01-20,Cliente_0040,Teclado,Periféricos,5,224.18,WhatsApp,Cartão Débito,PA,0,5.0,1120.9,0.0,1120.9
+11256,2025-10-25,Cliente_0390,Headset,Áudio,7,256.05,Marketplace,Cartão Crédito,AM,20,5.0,1792.35,358.47,1433.88
+11257,2025-01-21,Cliente_0273,Memória RAM,Componentes,3,371.63,Instagram,Cartão Crédito,RJ,0,5.0,1114.89,0.0,1114.89
+11258,2025-09-13,Cliente_0420,Mouse,Periféricos,7,74.94,Site,Cartão Crédito,SP,0,4.0,524.58,0.0,524.58
+11259,2025-09-05,Cliente_0070,Webcam,Imagem,3,240.95,Marketplace,PIX,MG,0,2.0,722.85,0.0,722.85
+11260,2025-06-15,Cliente_0317,Roteador,Redes,1,245.02,Site,Cartão Crédito,AM,0,5.0,245.02,0.0,245.02
+11261,2025-12-15,Cliente_0111,SSD,Componentes,7,343.44,Loja Física,Cartão Crédito,RJ,10,5.0,2404.08,240.41,2163.67
+11262,2025-09-12,Cliente_0458,Teclado,Periféricos,7,227.61,Loja Física,Cartão Crédito,AM,10,4.0,1593.27,159.33,1433.94
+11263,2025-03-19,Cliente_0433,Monitor,Imagem,2,791.63,Marketplace,Cartão Crédito,PA,15,5.0,1583.26,237.49,1345.77
+11264,2025-10-07,Cliente_0234,Roteador,Redes,7,346.12,Site,,PA,0,4.0,2422.84,0.0,2422.84
+11265,2025-10-09,Cliente_0197,Mouse,Periféricos,4,73.58,Loja Física,PIX,PA,20,4.0,294.32,58.86,235.46
+11266,2025-12-31,Cliente_0339,Roteador,Redes,2,215.79,Site,Cartão Crédito,RO,0,4.0,431.58,0.0,431.58
+11267,2025-02-03,Cliente_0199,Memória RAM,Componentes,3,244.79,Site,PIX,AM,20,3.0,734.37,146.87,587.5
+11268,2025-04-09,Cliente_0024,Teclado,Periféricos,3,215.55,Instagram,Cartão Crédito,RJ,0,3.0,646.65,0.0,646.65
+11269,2025-05-23,Cliente_0307,Memória RAM,Componentes,4,272.17,WhatsApp,PIX,RR,15,5.0,1088.68,163.3,925.38
+11270,2025-02-24,Cliente_0426,Webcam,Imagem,5,251.35,Site,Cartão Crédito,RJ,10,4.0,1256.75,125.68,1131.07
+11271,2025-01-03,Cliente_0147,Cadeira,Móveis,6,1403.42,WhatsApp,PIX,AM,5,1.0,8420.52,421.03,7999.49
+11272,2025-11-28,Cliente_0062,Teclado,Periféricos,4,172.27,Site,PIX,RO,0,,689.08,0.0,689.08
+11273,2025-08-07,Cliente_0459,Webcam,Imagem,4,227.69,Site,Cartão Crédito,PA,10,3.0,910.76,91.08,819.68
+11274,2025-07-30,Cliente_0067,Teclado,Periféricos,1,178.61,Marketplace,Cartão Crédito,RR,0,5.0,178.61,0.0,178.61
+11275,2025-11-01,Cliente_0030,Cadeira,Móveis,6,1582.09,Site,Boleto,SP,5,,9492.54,474.63,9017.91
+11276,2025-05-29,Cliente_0107,SSD,Componentes,7,329.69,Site,Cartão Crédito,AM,10,4.0,2307.83,230.78,2077.05
+11277,2025-08-20,Cliente_0166,Headset,Áudio,5,215.0,Site,Cartão Crédito,AM,15,5.0,1075.0,161.25,913.75
+11278,2025-03-29,Cliente_0390,Teclado,Periféricos,2,174.48,Site,Cartão Crédito,SP,25,,348.96,87.24,261.72
+11279,2025-07-30,Cliente_0367,Cadeira,Móveis,6,1382.05,Site,PIX,RR,0,5.0,8292.3,0.0,8292.3
+11280,2025-08-11,Cliente_0483,SSD,Componentes,5,408.95,Loja Física,PIX,AM,0,4.0,2044.75,0.0,2044.75
+11281,2025-10-23,Cliente_0406,Roteador,Redes,4,365.24,Marketplace,PIX,PA,0,4.0,1460.96,0.0,1460.96
+11282,2025-05-28,Cliente_0121,Teclado,Periféricos,4,230.23,WhatsApp,PIX,PA,15,4.0,920.92,138.14,782.78
+11283,2025-07-26,Cliente_0011,Headset,Áudio,4,230.75,Marketplace,PIX,SP,20,5.0,923.0,184.6,738.4
+11284,2025-12-26,Cliente_0072,Memória RAM,Componentes,4,306.93,Marketplace,Boleto,AM,25,5.0,1227.72,306.93,920.79
+11285,2025-08-15,Cliente_0347,Roteador,Redes,4,335.54,Marketplace,Cartão Débito,RO,20,5.0,1342.16,268.43,1073.73
+11286,2025-12-26,Cliente_0253,Roteador,Redes,6,363.98,WhatsApp,Boleto,RO,20,4.0,2183.88,436.78,1747.1
+11287,2025-07-03,Cliente_0285,Teclado,Periféricos,7,171.41,Site,Boleto,SP,25,4.0,1199.87,299.97,899.9
+11288,2025-02-10,Cliente_0119,Mouse,Periféricos,6,81.33,Site,Cartão Crédito,RJ,5,4.0,487.98,24.4,463.58
+11289,2025-07-01,Cliente_0375,SSD,Componentes,7,451.39,Loja Física,PIX,PA,20,1.0,3159.73,631.95,2527.78
+11290,2025-02-13,Cliente_0008,Webcam,Imagem,6,212.32,Site,Cartão Crédito,AM,15,5.0,1273.92,191.09,1082.83
+11291,2025-07-29,Cliente_0215,Memória RAM,Componentes,5,311.49,WhatsApp,Boleto,AM,0,4.0,1557.45,0.0,1557.45
+11292,2025-12-03,Cliente_0221,Monitor,Imagem,4,1163.43,Marketplace,Cartão Crédito,AM,0,4.0,4653.72,0.0,4653.72
+11293,2025-09-07,Cliente_0080,Teclado,Periféricos,3,221.64,Site,Cartão Crédito,AM,0,5.0,664.92,0.0,664.92
+11294,2025-03-25,Cliente_0419,Roteador,Redes,6,250.9,Loja Física,PIX,SP,15,2.0,1505.4,225.81,1279.59
+11295,2025-05-19,Cliente_0072,Headset,Áudio,3,236.22,Site,Cartão Crédito,SP,10,,708.66,70.87,637.79
+11296,2025-08-19,Cliente_0200,Notebook,Computadores,1,3366.21,WhatsApp,Cartão Crédito,PA,0,1.0,3366.21,0.0,3366.21
+11297,2025-01-12,Cliente_0173,Headset,Áudio,2,324.41,WhatsApp,Cartão Crédito,AM,15,,648.82,97.32,551.5
+11298,2025-09-30,Cliente_0289,Teclado,Periféricos,6,242.88,Marketplace,,AM,0,4.0,1457.28,0.0,1457.28
+11299,2025-03-31,Cliente_0234,Notebook,Computadores,3,4250.41,Site,PIX,RJ,15,2.0,12751.23,1912.68,10838.55
+11300,2025-01-25,Cliente_0261,Teclado,Periféricos,1,187.31,Site,Boleto,RJ,15,5.0,187.31,28.1,159.21
+11301,2025-01-26,Cliente_0446,Headset,Áudio,5,189.03,Instagram,PIX,AM,25,5.0,945.15,236.29,708.86
+11302,2025-06-02,Cliente_0421,Headset,Áudio,2,292.12,WhatsApp,Boleto,RO,0,4.0,584.24,0.0,584.24
+11303,2025-03-01,Cliente_0145,Roteador,Redes,7,275.41,Site,Cartão Crédito,AM,20,5.0,1927.87,385.57,1542.3
+11304,2025-03-01,Cliente_0022,SSD,Componentes,4,395.43,Site,Cartão Crédito,AM,0,,1581.72,0.0,1581.72
+11305,2025-10-10,Cliente_0078,Notebook,Computadores,6,3899.06,Site,PIX,AM,5,3.0,23394.36,1169.72,22224.64
+11306,2025-06-20,Cliente_0230,Webcam,Imagem,6,228.47,Instagram,Cartão Crédito,RR,5,5.0,1370.82,68.54,1302.28
+11307,2025-03-17,Cliente_0160,Headset,Áudio,4,329.16,WhatsApp,Boleto,AM,10,4.0,1316.64,131.66,1184.98
+11308,2025-10-03,Cliente_0014,Teclado,Periféricos,7,137.5,Site,PIX,AM,25,4.0,962.5,240.62,721.88
+11309,2025-07-27,Cliente_0236,Monitor,Imagem,5,1059.55,Site,PIX,AM,10,4.0,5297.75,529.78,4767.97
+11310,2025-06-04,Cliente_0148,Teclado,Periféricos,2,179.26,Marketplace,PIX,AM,20,4.0,358.52,71.7,286.82
+11311,2025-06-29,Cliente_0150,SSD,Componentes,6,412.4,Loja Física,PIX,AC,0,1.0,2474.4,0.0,2474.4
+11312,2025-03-23,Cliente_0030,Monitor,Imagem,3,1039.62,Loja Física,PIX,AM,5,4.0,3118.86,155.94,2962.92
+11313,2025-01-10,Cliente_0438,Teclado,Periféricos,7,136.11,Loja Física,Cartão Crédito,RJ,5,4.0,952.77,47.64,905.13
+11314,2025-08-31,Cliente_0161,Mouse,Periféricos,2,73.7,Site,PIX,AM,0,5.0,147.4,0.0,147.4
+11315,2025-06-27,Cliente_0261,Teclado,Periféricos,1,155.42,Instagram,Cartão Crédito,AM,25,5.0,155.42,38.85,116.57
+11316,2025-10-13,Cliente_0018,Webcam,Imagem,7,187.04,WhatsApp,Cartão Débito,AM,10,4.0,1309.28,130.93,1178.35
+11317,2025-09-14,Cliente_0063,Cadeira,Móveis,6,1424.5,WhatsApp,Cartão Crédito,AM,5,4.0,8547.0,427.35,8119.65
+11318,2025-11-06,Cliente_0430,Roteador,Redes,5,250.24,Marketplace,PIX,AM,15,,1251.2,187.68,1063.52
+11319,2025-01-04,Cliente_0135,Headset,Áudio,7,258.71,Marketplace,Cartão Crédito,AM,5,4.0,1810.97,90.55,1720.42
+11320,2025-08-03,Cliente_0157,SSD,Componentes,3,314.37,WhatsApp,Cartão Crédito,RJ,0,3.0,943.11,0.0,943.11
+11321,2025-01-30,Cliente_0057,Notebook,Computadores,2,3843.49,Instagram,PIX,AC,5,4.0,7686.98,384.35,7302.63
+11322,2025-12-12,Cliente_0431,Teclado,Periféricos,7,212.82,Site,PIX,RJ,10,5.0,1489.74,148.97,1340.77
+11323,2025-03-06,Cliente_0265,Mouse,Periféricos,2,75.89,Marketplace,Boleto,AM,25,1.0,151.78,37.94,113.84
+11324,2025-05-04,Cliente_0254,Mouse,Periféricos,3,88.95,WhatsApp,Cartão Crédito,PA,0,4.0,266.85,0.0,266.85
+11325,2025-10-12,Cliente_0495,Notebook,Computadores,1,4357.2,Marketplace,PIX,AM,5,5.0,4357.2,217.86,4139.34
+11326,2025-06-02,Cliente_0187,Headset,Áudio,1,201.63,Loja Física,Cartão Crédito,SP,0,4.0,201.63,0.0,201.63
+11327,2025-02-09,Cliente_0368,Headset,Áudio,7,294.1,Instagram,PIX,MG,0,4.0,2058.7,0.0,2058.7
+11328,2025-01-26,Cliente_0361,Teclado,Periféricos,2,169.9,Site,Boleto,SP,10,,339.8,33.98,305.82
+11329,2025-09-30,Cliente_0379,Memória RAM,Componentes,4,247.08,Site,Boleto,AM,0,2.0,988.32,0.0,988.32
+11330,2025-06-08,Cliente_0327,Cadeira,Móveis,3,1292.87,WhatsApp,PIX,AM,15,5.0,3878.61,581.79,3296.82
+11331,2025-07-08,Cliente_0199,Roteador,Redes,6,248.01,Instagram,Cartão Crédito,AM,5,4.0,1488.06,74.4,1413.66
+11332,2025-09-21,Cliente_0369,Cadeira,Móveis,7,1491.38,Site,Cartão Crédito,AM,0,2.0,10439.66,0.0,10439.66
+11333,2025-03-10,Cliente_0171,Roteador,Redes,1,217.21,WhatsApp,Cartão Crédito,AM,5,3.0,217.21,10.86,206.35
+11334,2025-01-01,Cliente_0315,Cadeira,Móveis,6,971.03,Instagram,PIX,AM,0,5.0,5826.18,0.0,5826.18
+11335,2025-03-20,Cliente_0006,Mouse,Periféricos,1,85.01,Loja Física,Cartão Crédito,AM,20,1.0,85.01,17.0,68.01
+11336,2025-08-16,Cliente_0366,Roteador,Redes,1,308.94,Marketplace,PIX,PA,0,4.0,308.94,0.0,308.94
+11337,2025-11-23,Cliente_0256,Roteador,Redes,5,332.62,Site,Cartão Crédito,PA,0,,1663.1,0.0,1663.1
+11338,2025-02-15,Cliente_0367,SSD,Componentes,7,316.94,Marketplace,Cartão Crédito,SP,10,5.0,2218.58,221.86,1996.72
+11339,2025-04-18,Cliente_0309,Cadeira,Móveis,6,1506.07,WhatsApp,Cartão Crédito,AM,25,4.0,9036.42,2259.1,6777.32
+11340,2025-12-21,Cliente_0320,Teclado,Periféricos,4,237.94,Site,Cartão Crédito,AM,20,3.0,951.76,190.35,761.41
+11341,2025-05-04,Cliente_0488,Roteador,Redes,1,293.84,Loja Física,Cartão Crédito,RO,0,4.0,293.84,0.0,293.84
+11342,2025-05-28,Cliente_0248,Memória RAM,Componentes,4,361.9,Site,Cartão Crédito,RR,0,4.0,1447.6,0.0,1447.6
+11343,2025-09-09,Cliente_0219,Mouse,Periféricos,2,85.19,Instagram,Cartão Crédito,AM,10,,170.38,17.04,153.34
+11344,2025-01-02,Cliente_0004,Webcam,Imagem,2,174.17,Instagram,PIX,RJ,15,,348.34,52.25,296.09
+11345,2025-08-10,Cliente_0001,Teclado,Periféricos,5,170.22,WhatsApp,,AM,5,4.0,851.1,42.56,808.54
+11346,2025-07-08,Cliente_0326,Cadeira,Móveis,4,962.99,Instagram,PIX,AM,5,3.0,3851.96,192.6,3659.36
+11347,2025-03-12,Cliente_0031,Headset,Áudio,3,335.83,Instagram,PIX,PA,0,5.0,1007.49,0.0,1007.49
+11348,2025-12-25,Cliente_0321,Cadeira,Móveis,5,1064.9,Loja Física,Cartão Crédito,AM,0,5.0,5324.5,0.0,5324.5
+11349,2025-11-29,Cliente_0117,SSD,Componentes,1,396.04,Site,Cartão Crédito,RR,10,4.0,396.04,39.6,356.44
+11350,2025-04-07,Cliente_0453,Teclado,Periféricos,2,165.71,Site,PIX,PA,0,4.0,331.42,0.0,331.42
+11351,2025-08-20,Cliente_0275,Mouse,Periféricos,7,91.36,Site,Cartão Débito,AM,0,4.0,639.52,0.0,639.52
+11352,2025-01-30,Cliente_0197,SSD,Componentes,2,306.68,Marketplace,Cartão Crédito,RJ,0,5.0,613.36,0.0,613.36
+11353,2025-01-30,Cliente_0374,Notebook,Computadores,3,4274.07,Instagram,Cartão Crédito,AM,5,3.0,12822.21,641.11,12181.1
+11354,2025-08-03,Cliente_0325,Mouse,Periféricos,5,65.32,WhatsApp,,SP,0,5.0,326.6,0.0,326.6
+11355,2025-06-22,Cliente_0177,Roteador,Redes,4,360.39,Instagram,PIX,AM,5,1.0,1441.56,72.08,1369.48
+11356,2025-10-07,Cliente_0287,Notebook,Computadores,7,4389.89,Site,Cartão Crédito,PA,20,,30729.23,6145.85,24583.38
+11357,2025-07-30,Cliente_0444,Headset,Áudio,2,289.32,Loja Física,Boleto,AM,0,4.0,578.64,0.0,578.64
+11358,2025-11-13,Cliente_0236,SSD,Componentes,1,276.66,Site,PIX,SP,10,3.0,276.66,27.67,248.99
+11359,2025-05-05,Cliente_0455,Mouse,Periféricos,3,70.01,WhatsApp,Cartão Crédito,SP,15,1.0,210.03,31.5,178.53
+11360,2025-03-21,Cliente_0079,Monitor,Imagem,3,1139.06,Site,Boleto,AM,0,4.0,3417.18,0.0,3417.18
+11361,2025-07-03,Cliente_0243,Monitor,Imagem,6,740.87,Site,Cartão Crédito,AM,0,3.0,4445.22,0.0,4445.22
+11362,2025-01-15,Cliente_0311,Webcam,Imagem,3,185.58,Instagram,Cartão Crédito,MG,0,5.0,556.74,0.0,556.74
+11363,2025-01-11,Cliente_0205,Notebook,Computadores,1,3767.41,Site,Cartão Crédito,RJ,10,4.0,3767.41,376.74,3390.67
+11364,2025-12-08,Cliente_0460,Memória RAM,Componentes,3,274.35,Site,Cartão Débito,RR,10,2.0,823.05,82.3,740.75
+11365,2025-03-30,Cliente_0383,Teclado,Periféricos,4,158.98,Instagram,Cartão Crédito,PA,0,4.0,635.92,0.0,635.92
+11366,2025-01-03,Cliente_0211,Cadeira,Móveis,6,1314.59,Site,Boleto,SP,15,4.0,7887.54,1183.13,6704.41
+11367,2025-01-24,Cliente_0333,Roteador,Redes,4,272.59,Site,Cartão Crédito,AM,15,4.0,1090.36,163.55,926.81
+11368,2025-03-30,Cliente_0091,Headset,Áudio,7,208.58,Site,Cartão Débito,AC,0,4.0,1460.06,0.0,1460.06
+11369,2025-01-09,Cliente_0166,Monitor,Imagem,5,963.82,Instagram,Boleto,PA,15,4.0,4819.1,722.86,4096.24
+11370,2025-02-15,Cliente_0161,Memória RAM,Componentes,5,294.66,Instagram,Cartão Crédito,SP,0,4.0,1473.3,0.0,1473.3
+11371,2025-04-04,Cliente_0006,Memória RAM,Componentes,7,357.21,Site,Cartão Crédito,AM,10,3.0,2500.47,250.05,2250.42
+11372,2025-03-12,Cliente_0141,Notebook,Computadores,7,2840.79,Marketplace,Cartão Crédito,RO,0,3.0,19885.53,0.0,19885.53
+11373,2025-07-07,Cliente_0205,Webcam,Imagem,4,246.92,Marketplace,Cartão Débito,RR,10,3.0,987.68,98.77,888.91
+11374,2025-05-19,Cliente_0461,Roteador,Redes,1,283.33,Marketplace,Cartão Débito,RJ,0,5.0,283.33,0.0,283.33
+11375,2025-01-10,Cliente_0020,Memória RAM,Componentes,6,298.09,Instagram,PIX,AC,10,4.0,1788.54,178.85,1609.69
+11376,2025-01-03,Cliente_0100,Headset,Áudio,5,222.34,Site,Cartão Crédito,RJ,0,4.0,1111.7,0.0,1111.7
+11377,2025-01-19,Cliente_0165,Notebook,Computadores,3,2688.89,Instagram,Cartão Débito,RJ,10,5.0,8066.67,806.67,7260.0
+11378,2025-05-10,Cliente_0045,SSD,Componentes,7,440.51,WhatsApp,Cartão Crédito,PA,0,4.0,3083.57,0.0,3083.57
+11379,2025-08-09,Cliente_0457,Headset,Áudio,4,236.46,Instagram,Cartão Crédito,AM,0,4.0,945.84,0.0,945.84
+11380,2025-05-10,Cliente_0337,Cadeira,Móveis,2,1390.39,Site,PIX,RO,0,2.0,2780.78,0.0,2780.78
+11381,2025-04-23,Cliente_0227,Webcam,Imagem,1,290.08,Site,Cartão Crédito,RJ,0,5.0,290.08,0.0,290.08
+11382,2025-05-18,Cliente_0315,Roteador,Redes,1,304.92,WhatsApp,Cartão Débito,AM,15,5.0,304.92,45.74,259.18
+11383,2025-02-12,Cliente_0052,Webcam,Imagem,4,217.42,Loja Física,Boleto,RR,25,5.0,869.68,217.42,652.26
+11384,2025-08-06,Cliente_0146,Webcam,Imagem,2,200.41,Site,PIX,AM,15,5.0,400.82,60.12,340.7
+11385,2025-02-27,Cliente_0281,Notebook,Computadores,1,4586.49,Site,Cartão Crédito,AM,20,5.0,4586.49,917.3,3669.19
+11386,2025-04-23,Cliente_0123,Webcam,Imagem,6,255.03,WhatsApp,Cartão Débito,AC,0,5.0,1530.18,0.0,1530.18
+11387,2025-07-07,Cliente_0207,Teclado,Periféricos,5,206.85,Site,Cartão Débito,AC,0,4.0,1034.25,0.0,1034.25
+11388,2025-05-02,Cliente_0471,Headset,Áudio,6,251.42,Marketplace,Cartão Crédito,RO,10,4.0,1508.52,150.85,1357.67
+11389,2025-03-26,Cliente_0385,Roteador,Redes,2,351.97,Marketplace,PIX,RJ,25,,703.94,175.98,527.96
+11390,2025-04-16,Cliente_0297,Headset,Áudio,6,294.55,Instagram,Cartão Crédito,AM,10,5.0,1767.3,176.73,1590.57
+11391,2025-12-22,Cliente_0102,SSD,Componentes,3,321.97,Site,Cartão Débito,AM,5,4.0,965.91,48.3,917.61
+11392,2025-04-09,Cliente_0274,Webcam,Imagem,7,244.14,Site,Cartão Crédito,RJ,0,4.0,1708.98,0.0,1708.98
+11393,2025-01-09,Cliente_0129,Webcam,Imagem,7,221.79,WhatsApp,Cartão Débito,RR,0,5.0,1552.53,0.0,1552.53
+11394,2025-01-06,Cliente_0167,Cadeira,Móveis,5,904.74,Instagram,Cartão Crédito,AM,5,4.0,4523.7,226.18,4297.52
+11395,2025-04-18,Cliente_0202,Webcam,Imagem,2,271.61,Loja Física,Boleto,SP,10,3.0,543.22,54.32,488.9
+11396,2025-06-01,Cliente_0415,Webcam,Imagem,4,181.21,Marketplace,Cartão Débito,RJ,0,5.0,724.84,0.0,724.84
+11397,2025-12-04,Cliente_0102,Headset,Áudio,1,263.99,WhatsApp,Cartão Crédito,AC,20,2.0,263.99,52.8,211.19
+11398,2025-08-25,Cliente_0071,Headset,Áudio,5,237.93,WhatsApp,Boleto,SP,20,4.0,1189.65,237.93,951.72
+11399,2025-01-27,Cliente_0422,Monitor,Imagem,4,859.73,Instagram,Boleto,AM,20,5.0,3438.92,687.78,2751.14
+11400,2025-04-29,Cliente_0008,Monitor,Imagem,2,932.78,Site,Cartão Débito,AM,20,4.0,1865.56,373.11,1492.45
+11401,2025-07-30,Cliente_0162,Headset,Áudio,3,337.05,Marketplace,Cartão Crédito,RJ,0,,1011.15,0.0,1011.15
+11402,2025-04-10,Cliente_0073,Roteador,Redes,1,278.61,Marketplace,Cartão Crédito,RO,25,,278.61,69.65,208.96
+11403,2025-01-03,Cliente_0345,Memória RAM,Componentes,1,257.82,Instagram,PIX,AM,5,5.0,257.82,12.89,244.93
+11404,2025-10-21,Cliente_0027,Cadeira,Móveis,5,1341.8,Loja Física,PIX,RR,20,,6709.0,1341.8,5367.2
+11405,2025-11-26,Cliente_0169,SSD,Componentes,4,312.12,Site,Cartão Crédito,AC,0,4.0,1248.48,0.0,1248.48
+11406,2025-11-25,Cliente_0263,Memória RAM,Componentes,7,244.0,Site,Cartão Crédito,AM,5,4.0,1708.0,85.4,1622.6
+11407,2025-01-17,Cliente_0288,Monitor,Imagem,2,702.09,Marketplace,,AC,0,5.0,1404.18,0.0,1404.18
+11408,2025-04-16,Cliente_0073,Webcam,Imagem,2,168.02,Site,Boleto,AM,0,4.0,336.04,0.0,336.04
+11409,2025-08-18,Cliente_0209,Headset,Áudio,4,252.17,Instagram,Cartão Crédito,AM,20,4.0,1008.68,201.74,806.94
+11410,2025-10-31,Cliente_0099,Monitor,Imagem,1,905.43,WhatsApp,Cartão Crédito,AC,15,5.0,905.43,135.81,769.62
+11411,2025-06-26,Cliente_0368,Webcam,Imagem,4,189.49,Marketplace,Cartão Crédito,AM,5,5.0,757.96,37.9,720.06
+11412,2025-03-25,Cliente_0400,Teclado,Periféricos,6,219.67,WhatsApp,PIX,AM,5,5.0,1318.02,65.9,1252.12
+11413,2025-09-20,Cliente_0386,Notebook,Computadores,7,2896.47,Marketplace,,RJ,15,5.0,20275.29,3041.29,17234.0
+11414,2025-07-15,Cliente_0427,Webcam,Imagem,2,285.82,Marketplace,PIX,AC,0,5.0,571.64,0.0,571.64
+11415,2025-09-06,Cliente_0031,Memória RAM,Componentes,4,330.76,Marketplace,Cartão Crédito,PA,15,5.0,1323.04,198.46,1124.58
+11416,2025-05-29,Cliente_0336,Mouse,Periféricos,1,61.33,Site,Cartão Crédito,AM,5,4.0,61.33,3.07,58.26
+11417,2025-07-25,Cliente_0431,Webcam,Imagem,5,292.11,Instagram,Cartão Crédito,AM,10,3.0,1460.55,146.06,1314.49
+11418,2025-03-22,Cliente_0033,Roteador,Redes,6,261.73,Site,Cartão Crédito,RR,25,5.0,1570.38,392.6,1177.78
+11419,2025-07-08,Cliente_0213,Mouse,Periféricos,1,81.6,WhatsApp,PIX,AM,5,1.0,81.6,4.08,77.52
+11420,2025-07-25,Cliente_0145,Teclado,Periféricos,3,165.7,Site,PIX,PA,5,,497.1,24.86,472.24
+11421,2025-11-04,Cliente_0099,Roteador,Redes,3,332.37,Site,Cartão Crédito,PA,20,5.0,997.11,199.42,797.69
+11422,2025-09-26,Cliente_0310,Roteador,Redes,4,291.59,Marketplace,Cartão Débito,PA,20,5.0,1166.36,233.27,933.09
+11423,2025-10-17,Cliente_0310,Teclado,Periféricos,7,149.3,Instagram,Cartão Crédito,AM,25,,1045.1,261.27,783.83
+11424,2025-12-27,Cliente_0435,Monitor,Imagem,7,731.27,Site,PIX,AM,10,5.0,5118.89,511.89,4607.0
+11425,2025-10-27,Cliente_0180,Cadeira,Móveis,1,1422.27,Site,PIX,MG,0,2.0,1422.27,0.0,1422.27
+11426,2025-09-12,Cliente_0135,Teclado,Periféricos,1,160.6,Loja Física,Cartão Crédito,MG,0,4.0,160.6,0.0,160.6
+11427,2025-01-08,Cliente_0438,Memória RAM,Componentes,2,249.8,Instagram,Cartão Crédito,PA,0,4.0,499.6,0.0,499.6
+11428,2025-04-24,Cliente_0477,Mouse,Periféricos,5,83.97,Site,PIX,SP,10,4.0,419.85,41.98,377.87
+11429,2025-01-05,Cliente_0395,Webcam,Imagem,6,270.97,Instagram,Cartão Crédito,AC,0,4.0,1625.82,0.0,1625.82
+11430,2025-12-08,Cliente_0190,Cadeira,Móveis,1,1100.72,Site,PIX,AM,10,5.0,1100.72,110.07,990.65
+11431,2025-03-14,Cliente_0030,Mouse,Periféricos,6,73.27,Site,Cartão Crédito,AM,20,4.0,439.62,87.92,351.7
+11432,2025-12-14,Cliente_0082,Teclado,Periféricos,4,225.06,WhatsApp,PIX,AM,25,4.0,900.24,225.06,675.18
+11433,2025-05-01,Cliente_0057,Cadeira,Móveis,2,1006.44,Instagram,Boleto,RO,0,4.0,2012.88,0.0,2012.88
+11434,2025-10-29,Cliente_0174,Roteador,Redes,7,313.61,Site,PIX,RR,0,4.0,2195.27,0.0,2195.27
+11435,2025-08-22,Cliente_0208,Monitor,Imagem,6,1190.71,WhatsApp,Cartão Crédito,MG,15,3.0,7144.26,1071.64,6072.62
+11436,2025-03-07,Cliente_0326,Notebook,Computadores,6,4391.74,Loja Física,Boleto,SP,5,4.0,26350.44,1317.52,25032.92
+11437,2025-08-18,Cliente_0322,Notebook,Computadores,6,2754.81,Site,PIX,RJ,15,5.0,16528.86,2479.33,14049.53
+11438,2025-01-31,Cliente_0183,Teclado,Periféricos,6,169.55,Instagram,Cartão Crédito,RJ,20,4.0,1017.3,203.46,813.84
+11439,2025-11-03,Cliente_0235,SSD,Componentes,6,292.4,WhatsApp,PIX,SP,5,2.0,1754.4,87.72,1666.68
+11440,2025-10-24,Cliente_0107,Monitor,Imagem,7,1187.59,Instagram,PIX,AM,5,4.0,8313.13,415.66,7897.47
+11441,2025-02-20,Cliente_0186,Notebook,Computadores,2,4695.48,Marketplace,Cartão Crédito,AM,5,5.0,9390.96,469.55,8921.41
+11442,2025-05-27,Cliente_0266,SSD,Componentes,4,311.85,Marketplace,Boleto,RR,10,5.0,1247.4,124.74,1122.66
+11443,2025-04-05,Cliente_0132,Roteador,Redes,6,322.51,Instagram,Cartão Crédito,AC,5,,1935.06,96.75,1838.31
+11444,2025-11-25,Cliente_0497,Cadeira,Móveis,6,1505.97,Marketplace,Cartão Crédito,PA,15,5.0,9035.82,1355.37,7680.45
+11445,2025-02-07,Cliente_0330,Notebook,Computadores,4,3115.73,Instagram,Cartão Crédito,RJ,20,4.0,12462.92,2492.58,9970.34
+11446,2025-07-17,Cliente_0329,Roteador,Redes,1,241.53,Site,Cartão Crédito,MG,0,4.0,241.53,0.0,241.53
+11447,2025-08-29,Cliente_0318,Roteador,Redes,1,211.88,Loja Física,Cartão Crédito,RR,25,3.0,211.88,52.97,158.91
+11448,2025-06-22,Cliente_0365,Cadeira,Móveis,7,1196.61,Site,PIX,PA,10,5.0,8376.27,837.63,7538.64
+11449,2025-09-13,Cliente_0171,Notebook,Computadores,2,4513.82,Instagram,,RJ,20,4.0,9027.64,1805.53,7222.11
+11450,2025-02-10,Cliente_0298,Roteador,Redes,2,361.7,Marketplace,Cartão Crédito,AM,0,5.0,723.4,0.0,723.4
+11451,2025-05-09,Cliente_0024,Roteador,Redes,5,231.46,Marketplace,Cartão Débito,AM,0,3.0,1157.3,0.0,1157.3
+11452,2025-02-23,Cliente_0261,Teclado,Periféricos,2,157.07,Instagram,PIX,RJ,0,4.0,314.14,0.0,314.14
+11453,2025-03-27,Cliente_0355,Mouse,Periféricos,7,79.59,Loja Física,Cartão Crédito,SP,0,4.0,557.13,0.0,557.13
+11454,2025-07-31,Cliente_0196,Monitor,Imagem,4,1096.54,Site,PIX,PA,0,5.0,4386.16,0.0,4386.16
+11455,2025-09-26,Cliente_0099,Mouse,Periféricos,6,89.37,Marketplace,PIX,RJ,20,3.0,536.22,107.24,428.98
+11456,2025-10-23,Cliente_0490,Headset,Áudio,4,264.58,Loja Física,Cartão Crédito,AM,5,5.0,1058.32,52.92,1005.4
+11457,2025-01-21,Cliente_0376,Monitor,Imagem,7,994.64,WhatsApp,Cartão Débito,RO,25,2.0,6962.48,1740.62,5221.86
+11458,2025-08-03,Cliente_0333,Cadeira,Móveis,5,969.26,Marketplace,Cartão Crédito,RO,10,4.0,4846.3,484.63,4361.67
+11459,2025-07-08,Cliente_0101,Webcam,Imagem,3,228.05,Site,PIX,AM,0,2.0,684.15,0.0,684.15
+11460,2025-06-10,Cliente_0352,Mouse,Periféricos,7,107.62,Site,Boleto,AM,5,3.0,753.34,37.67,715.67
+11461,2025-07-20,Cliente_0429,Mouse,Periféricos,7,64.25,Site,PIX,RJ,25,3.0,449.75,112.44,337.31
+11462,2025-01-29,Cliente_0443,SSD,Componentes,3,371.54,Marketplace,Cartão Crédito,AM,10,4.0,1114.62,111.46,1003.16
+11463,2025-09-01,Cliente_0120,Memória RAM,Componentes,4,278.22,Site,Cartão Crédito,AM,0,4.0,1112.88,0.0,1112.88
+11464,2025-07-02,Cliente_0321,Headset,Áudio,3,268.49,WhatsApp,Cartão Crédito,PA,20,5.0,805.47,161.09,644.38
+11465,2025-02-01,Cliente_0447,Webcam,Imagem,7,240.74,WhatsApp,Boleto,AM,0,3.0,1685.18,0.0,1685.18
+11466,2025-09-24,Cliente_0377,Memória RAM,Componentes,7,328.95,Site,Cartão Crédito,RJ,10,2.0,2302.65,230.26,2072.39
+11467,2025-02-05,Cliente_0203,Notebook,Computadores,3,4414.64,Marketplace,PIX,AM,5,5.0,13243.92,662.2,12581.72
+11468,2025-04-03,Cliente_0090,SSD,Componentes,7,344.35,Loja Física,Cartão Crédito,RO,0,5.0,2410.45,0.0,2410.45
+11469,2025-06-08,Cliente_0195,Roteador,Redes,5,296.75,Site,Cartão Crédito,AM,0,4.0,1483.75,0.0,1483.75
+11470,2025-06-29,Cliente_0177,Roteador,Redes,7,211.84,Instagram,PIX,SP,20,5.0,1482.88,296.58,1186.3
+11471,2025-11-02,Cliente_0115,Memória RAM,Componentes,7,367.12,Instagram,Boleto,RO,20,5.0,2569.84,513.97,2055.87
+11472,2025-08-06,Cliente_0333,Memória RAM,Componentes,6,271.71,Site,PIX,PA,5,4.0,1630.26,81.51,1548.75
+11473,2025-11-25,Cliente_0032,Roteador,Redes,2,347.18,Marketplace,Cartão Crédito,MG,0,4.0,694.36,0.0,694.36
+11474,2025-12-19,Cliente_0368,Webcam,Imagem,2,200.06,WhatsApp,Cartão Crédito,AM,0,3.0,400.12,0.0,400.12
+11475,2025-12-09,Cliente_0434,Roteador,Redes,3,211.81,Instagram,Cartão Débito,RR,0,1.0,635.43,0.0,635.43
+11476,2025-08-15,Cliente_0215,Teclado,Periféricos,1,151.72,Marketplace,Cartão Crédito,MG,5,,151.72,7.59,144.13
+11477,2025-07-31,Cliente_0442,Headset,Áudio,5,335.35,Site,Cartão Crédito,SP,0,4.0,1676.75,0.0,1676.75
+11478,2025-12-19,Cliente_0308,Mouse,Periféricos,6,75.35,WhatsApp,PIX,SP,0,4.0,452.1,0.0,452.1
+11479,2025-06-12,Cliente_0279,Roteador,Redes,6,228.28,WhatsApp,Cartão Crédito,AM,5,,1369.68,68.48,1301.2
+11480,2025-06-07,Cliente_0243,Teclado,Periféricos,3,147.83,Site,PIX,AM,15,5.0,443.49,66.52,376.97
+11481,2025-04-20,Cliente_0286,Roteador,Redes,1,262.14,WhatsApp,Boleto,AM,20,4.0,262.14,52.43,209.71
+11482,2025-02-24,Cliente_0070,Webcam,Imagem,1,169.97,Site,PIX,MG,10,5.0,169.97,17.0,152.97
+11483,2025-12-16,Cliente_0071,Notebook,Computadores,6,3699.13,Site,PIX,MG,10,5.0,22194.78,2219.48,19975.3
+11484,2025-08-02,Cliente_0111,Teclado,Periféricos,5,158.08,Marketplace,Cartão Crédito,AM,5,5.0,790.4,39.52,750.88
+11485,2025-12-31,Cliente_0158,Headset,Áudio,2,265.4,Instagram,Cartão Débito,AM,5,2.0,530.8,26.54,504.26
+11486,2025-01-15,Cliente_0037,Monitor,Imagem,6,751.01,Marketplace,Cartão Crédito,AM,10,4.0,4506.06,450.61,4055.45
+11487,2025-06-02,Cliente_0304,Teclado,Periféricos,7,181.42,Marketplace,PIX,AM,10,4.0,1269.94,126.99,1142.95
+11488,2025-01-20,Cliente_0416,Cadeira,Móveis,6,1330.5,Site,PIX,AM,5,2.0,7983.0,399.15,7583.85
+11489,2025-02-21,Cliente_0326,Cadeira,Móveis,7,944.64,Site,PIX,SP,5,4.0,6612.48,330.62,6281.86
+11490,2025-12-09,Cliente_0035,Monitor,Imagem,4,890.32,Instagram,Cartão Crédito,RJ,20,5.0,3561.28,712.26,2849.02
+11491,2025-11-17,Cliente_0480,Memória RAM,Componentes,1,279.45,Site,Cartão Crédito,SP,10,3.0,279.45,27.94,251.51
+11492,2025-03-25,Cliente_0460,Cadeira,Móveis,4,1073.06,Site,Cartão Crédito,AC,10,4.0,4292.24,429.22,3863.02
+11493,2025-11-22,Cliente_0324,Memória RAM,Componentes,4,333.82,Site,Cartão Crédito,SP,15,5.0,1335.28,200.29,1134.99
+11494,2025-08-12,Cliente_0416,Roteador,Redes,5,308.88,Loja Física,Cartão Crédito,SP,0,4.0,1544.4,0.0,1544.4
+11495,2025-05-09,Cliente_0059,Roteador,Redes,6,315.96,WhatsApp,Boleto,PA,5,5.0,1895.76,94.79,1800.97
+11496,2025-12-16,Cliente_0374,Mouse,Periféricos,2,67.63,Site,PIX,AM,25,5.0,135.26,33.82,101.44
+11497,2025-01-16,Cliente_0419,Cadeira,Móveis,7,1105.71,Site,Cartão Crédito,AM,5,,7739.97,387.0,7352.97
+11498,2025-10-01,Cliente_0368,Monitor,Imagem,7,788.23,Marketplace,,AC,0,4.0,5517.61,0.0,5517.61
+11499,2025-03-18,Cliente_0400,Mouse,Periféricos,5,85.94,WhatsApp,PIX,MG,10,5.0,429.7,42.97,386.73
+11500,2025-10-27,Cliente_0375,Headset,Áudio,1,256.66,Site,Cartão Crédito,RO,0,5.0,256.66,0.0,256.66
+11117,2025-10-21,Cliente_0240,Cadeira,Móveis,7,1412.53,Loja Física,PIX,PA,5,5.0,9887.71,494.39,9393.32
+11369,2025-01-09,Cliente_0166,Monitor,Imagem,5,963.82,Instagram,Boleto,PA,15,4.0,4819.1,722.86,4096.24
+10423,2025-04-18,Cliente_0227,Headset,Áudio,5,307.32,Instagram,Cartão Crédito,AM,0,5.0,1536.6,0.0,1536.6
+10414,2025-11-19,Cliente_0065,Monitor,Imagem,3,1191.95,Loja Física,Cartão Crédito,AM,0,4.0,3575.85,0.0,3575.85
+10452,2025-05-08,Cliente_0309,Mouse,Periféricos,3,63.54,Instagram,PIX,AM,10,1.0,190.62,19.06,171.56
+10862,2025-03-11,Cliente_0446,SSD,Componentes,7,416.44,Instagram,Cartão Crédito,AM,5,5.0,2915.08,145.75,2769.33
+11064,2025-04-02,Cliente_0063,Notebook,Computadores,5,4411.03,WhatsApp,PIX,MG,0,3.0,22055.15,0.0,22055.15
+10742,2025-12-01,Cliente_0446,Mouse,Periféricos,6,60.26,WhatsApp,Cartão Débito,SP,0,3.0,361.56,0.0,361.56
+11273,2025-08-07,Cliente_0459,Webcam,Imagem,4,227.69,Site,Cartão Crédito,PA,10,3.0,910.76,91.08,819.68
+10260,2025-11-20,Cliente_0461,Roteador,Redes,3,354.13,Site,Cartão Crédito,RR,20,,1062.39,212.48,849.91
+10889,2025-03-29,Cliente_0119,Webcam,Imagem,5,250.53,Marketplace,Cartão Débito,SP,0,3.0,1252.65,0.0,1252.65
+11433,2025-05-01,Cliente_0057,Cadeira,Móveis,2,1006.44,Instagram,Boleto,RO,0,4.0,2012.88,0.0,2012.88
+10713,2025-01-18,Cliente_0225,Monitor,Imagem,2,895.79,Site,Boleto,PA,15,5.0,1791.58,268.74,1522.84
+11383,2025-02-12,Cliente_0052,Webcam,Imagem,4,217.42,Loja Física,Boleto,RR,25,5.0,869.68,217.42,652.26
+10071,2025-04-23,Cliente_0227,Cadeira,Móveis,1,1208.63,WhatsApp,Boleto,SP,25,3.0,1208.63,302.16,906.47
+11269,2025-05-23,Cliente_0307,Memória RAM,Componentes,4,272.17,WhatsApp,PIX,RR,15,5.0,1088.68,163.3,925.38
+11492,2025-03-25,Cliente_0460,Cadeira,Móveis,4,1073.06,Site,Cartão Crédito,AC,10,4.0,4292.24,429.22,3863.02
+10608,2025-01-02,Cliente_0018,Cadeira,Móveis,6,1303.38,Instagram,Cartão Crédito,RR,10,5.0,7820.28,782.03,7038.25
+10434,2025-09-29,Cliente_0349,SSD,Componentes,7,425.0,WhatsApp,Cartão Débito,PA,0,2.0,2975.0,0.0,2975.0
+10052,2025-06-05,Cliente_0186,SSD,Componentes,7,380.84,Site,Boleto,MG,5,3.0,2665.88,133.29,2532.59
