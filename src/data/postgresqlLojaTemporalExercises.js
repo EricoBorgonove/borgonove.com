@@ -1,8 +1,8 @@
 export const postgresqlLojaTemporalExerciseList = {
   "slug": "loja-temporal",
   "order": 5,
-  "title": "Loja Temporal PostgreSQL 18+",
-  "summary": "Pratique bancos de dados temporais em uma loja fictícia com histórico de preços, vendas, ranges, snapshots, auditoria e integridade temporal no PostgreSQL 18+.",
+  "title": "Loja Temporal",
+  "summary": "Pratique bancos de dados temporais em uma loja fictícia com histórico de preços, vendas, ranges, snapshots, auditoria e integridade temporal.",
   "level": "Intermediário a avançado",
   "answerPasswordPrefix": "loja",
   "files": [
@@ -16,7 +16,7 @@ export const postgresqlLojaTemporalExerciseList = {
     {
       "slug": "laboratorio-guiado",
       "order": 1,
-      "title": "15 questões guiadas",
+      "title": "Lista 1: 15 questões guiadas",
       "summary": "Comece pelo reconhecimento da base, consultas pontuais no tempo, integridade temporal, auditoria, desempenho e análise avançada.",
       "level": "Intermediário",
       "exercises": [
@@ -98,11 +98,11 @@ export const postgresqlLojaTemporalExerciseList = {
       ]
     },
     {
-      "slug": "parte-1-fundamentos-e-exploracao-da-base",
+      "slug": "100-questoes-diversas",
       "order": 2,
-      "title": "Parte 1: FUNDAMENTOS E EXPLORAÇÃO DA BASE",
-      "summary": "Explore tabelas, categorias, produtos, marcas, vendas e volume histórico da base temporal.",
-      "level": "Básico prático",
+      "title": "Lista 2: 100 questões diversas",
+      "summary": "Resolva uma lista unificada com exploração da base, ranges, snapshots, funções de janela, vendas, junções temporais e auditoria.",
+      "level": "Intermediário a avançado",
       "exercises": [
         {
           "number": 1,
@@ -203,16 +203,7 @@ export const postgresqlLojaTemporalExerciseList = {
           "number": 20,
           "question": "Confirme se todos os produtos possuem exatamente a quantidade de versões definida em lab_config.num_months.",
           "answer": "SELECT p.product_id, p.sku, count(pp.*) AS versoes, cfg.num_months AS esperado\nFROM product p\nCROSS JOIN lab_config cfg\nLEFT JOIN product_price pp USING (product_id)\nGROUP BY p.product_id, p.sku, cfg.num_months\nHAVING count(pp.*) <> cfg.num_months\nORDER BY p.product_id;\n-- Resultado esperado: zero linhas na carga original."
-        }
-      ]
-    },
-    {
-      "slug": "parte-2-tipos-range-e-operadores-temporais",
-      "order": 3,
-      "title": "Parte 2: TIPOS RANGE E OPERADORES TEMPORAIS",
-      "summary": "Pratique tipos range, operadores temporais, contenção, adjacência, sobreposição, interseção e lacunas.",
-      "level": "Básico prático",
-      "exercises": [
+        },
         {
           "number": 21,
           "question": "Para o produto 42, exiba valid_at, lower(valid_at), upper(valid_at) e a duração em dias de cada período.",
@@ -312,16 +303,7 @@ export const postgresqlLojaTemporalExerciseList = {
           "number": 40,
           "question": "Detecte lacunas entre períodos consecutivos de cada produto usando LEAD. O resultado esperado é vazio.",
           "answer": "WITH linha AS (\n    SELECT\n        product_id,\n        valid_at,\n        upper(valid_at) AS fim_atual,\n        lead(lower(valid_at)) OVER (\n            PARTITION BY product_id ORDER BY lower(valid_at)\n        ) AS proximo_inicio\n    FROM product_price\n)\nSELECT *\nFROM linha\nWHERE proximo_inicio IS NOT NULL\n  AND fim_atual <> proximo_inicio\nORDER BY product_id, fim_atual;\n-- Resultado esperado: zero linhas."
-        }
-      ]
-    },
-    {
-      "slug": "parte-3-snapshots-e-agregacoes-temporais",
-      "order": 4,
-      "title": "Parte 3: SNAPSHOTS E AGREGAÇÕES TEMPORAIS",
-      "summary": "Monte snapshots por data, agregações por categoria e leituras históricas do catálogo.",
-      "level": "Intermediário",
-      "exercises": [
+        },
         {
           "number": 41,
           "question": "Gere um snapshot do catálogo em 01/01/2022 e conte quantos produtos possuem preço.",
@@ -421,16 +403,7 @@ export const postgresqlLojaTemporalExerciseList = {
           "number": 60,
           "question": "Para cada mês, conte quantos produtos aumentaram, diminuíram ou mantiveram o preço em relação ao mês anterior.",
           "answer": "WITH mudancas AS (\n    SELECT lower(valid_at) AS mes, price,\n           lag(price) OVER (PARTITION BY product_id ORDER BY lower(valid_at)) AS anterior\n    FROM product_price\n)\nSELECT mes,\n       count(*) FILTER (WHERE price > anterior) AS aumentaram,\n       count(*) FILTER (WHERE price < anterior) AS diminuiram,\n       count(*) FILTER (WHERE price = anterior) AS mantiveram\nFROM mudancas\nWHERE anterior IS NOT NULL\nGROUP BY mes\nORDER BY mes;"
-        }
-      ]
-    },
-    {
-      "slug": "parte-4-evolucao-de-precos-e-funcoes-de-janela",
-      "order": 5,
-      "title": "Parte 4: EVOLUÇÃO DE PREÇOS E FUNÇÕES DE JANELA",
-      "summary": "Analise evolução de preços com LAG, LEAD, variação percentual, sequências e mudanças acumuladas.",
-      "level": "Intermediário",
-      "exercises": [
+        },
         {
           "number": 61,
           "question": "Mostre a linha do tempo do produto 100 com o preço anterior usando LAG.",
@@ -530,16 +503,7 @@ export const postgresqlLojaTemporalExerciseList = {
           "number": 80,
           "question": "Liste os produtos que tiveram pelo menos dez quedas mensais de preço.",
           "answer": "WITH x AS (\n    SELECT product_id, price,\n           lag(price) OVER (PARTITION BY product_id ORDER BY lower(valid_at)) AS anterior\n    FROM product_price\n)\nSELECT p.sku, count(*) FILTER (WHERE x.price < x.anterior) AS quedas\nFROM x\nJOIN product p USING (product_id)\nGROUP BY p.product_id, p.sku\nHAVING count(*) FILTER (WHERE x.price < x.anterior) >= 10\nORDER BY quedas DESC, p.sku;"
-        }
-      ]
-    },
-    {
-      "slug": "parte-5-vendas-e-juncoes-temporais",
-      "order": 6,
-      "title": "Parte 5: VENDAS E JUNÇÕES TEMPORAIS",
-      "summary": "Cruze vendas com preços vigentes no tempo, compare valores históricos e calcule receita por recorte.",
-      "level": "Intermediário",
-      "exercises": [
+        },
         {
           "number": 81,
           "question": "Verifique se o list_price de todas as vendas corresponde ao preço válido na data da venda. Mostre apenas divergências.",
@@ -639,283 +603,6 @@ export const postgresqlLojaTemporalExerciseList = {
           "number": 100,
           "question": "Calcule a receita obtida durante cada versão de preço.",
           "answer": "SELECT pp.product_id, pp.valid_at, pp.price,\n       coalesce(round(sum(s.quantity * s.unit_price), 2), 0) AS receita\nFROM product_price pp\nLEFT JOIN sales s\n  ON s.product_id = pp.product_id\n AND pp.valid_at @> s.sold_at\nGROUP BY pp.product_id, pp.valid_at, pp.price\nORDER BY pp.product_id, lower(pp.valid_at);"
-        },
-        {
-          "number": 101,
-          "question": "Liste os produtos sem vendas e seus preços atuais.",
-          "answer": "SELECT p.sku, p.name, pp.price, pp.valid_at\nFROM product p\nLEFT JOIN sales s USING (product_id)\nLEFT JOIN product_price pp\n  ON pp.product_id = p.product_id\n AND pp.valid_at @> CURRENT_DATE\nWHERE s.sale_id IS NULL\nORDER BY p.sku;"
-        },
-        {
-          "number": 102,
-          "question": "Calcule, para cada produto, uma correlação entre preço médio mensal e quantidade mensal vendida.",
-          "answer": "WITH meses AS (\n    SELECT pp.product_id, lower(pp.valid_at) AS mes, pp.price,\n           coalesce(sum(s.quantity), 0) AS quantidade\n    FROM product_price pp\n    LEFT JOIN sales s\n      ON s.product_id = pp.product_id\n     AND pp.valid_at @> s.sold_at\n    GROUP BY pp.product_id, pp.valid_at, pp.price\n)\nSELECT p.sku,\n       round(corr(m.price::double precision, m.quantidade::double precision)::numeric, 4) AS correlacao\nFROM meses m\nJOIN product p USING (product_id)\nGROUP BY p.product_id, p.sku\nHAVING count(*) FILTER (WHERE quantidade > 0) >= 2\nORDER BY correlacao NULLS LAST;"
-        },
-        {
-          "number": 103,
-          "question": "Compare a quantidade vendida nos 30 dias anteriores e posteriores ao maior aumento de preço de cada produto.",
-          "answer": "WITH mudancas AS (\n    SELECT product_id, lower(valid_at) AS data_aumento, price,\n           lag(price) OVER (PARTITION BY product_id ORDER BY lower(valid_at)) AS anterior\n    FROM product_price\n), maiores AS (\n    SELECT *, row_number() OVER (\n        PARTITION BY product_id\n        ORDER BY 100 * (price - anterior) / NULLIF(anterior, 0) DESC NULLS LAST\n    ) AS rn\n    FROM mudancas\n), vendas_janela AS (\n    SELECT m.product_id, m.data_aumento,\n           sum(s.quantity) FILTER (\n               WHERE s.sold_at >= m.data_aumento - 30 AND s.sold_at < m.data_aumento\n           ) AS qtd_antes,\n           sum(s.quantity) FILTER (\n               WHERE s.sold_at >= m.data_aumento AND s.sold_at < m.data_aumento + 30\n           ) AS qtd_depois\n    FROM maiores m\n    LEFT JOIN sales s\n      ON s.product_id = m.product_id\n     AND s.sold_at >= m.data_aumento - 30\n     AND s.sold_at <  m.data_aumento + 30\n    WHERE m.rn = 1\n    GROUP BY m.product_id, m.data_aumento\n)\nSELECT p.sku, v.data_aumento,\n       coalesce(v.qtd_antes, 0) AS qtd_30d_antes,\n       coalesce(v.qtd_depois, 0) AS qtd_30d_depois,\n       coalesce(v.qtd_depois, 0) - coalesce(v.qtd_antes, 0) AS diferenca\nFROM vendas_janela v\nJOIN product p USING (product_id)\nORDER BY diferenca, p.sku;"
-        },
-        {
-          "number": 104,
-          "question": "Calcule a receita móvel de três meses para cada categoria.",
-          "answer": "WITH mensal AS (\n    SELECT c.name AS categoria,\n           date_trunc('month', s.sold_at)::date AS mes,\n           sum(s.quantity * s.unit_price) AS receita\n    FROM sales s\n    JOIN product p USING (product_id)\n    JOIN category c USING (category_id)\n    GROUP BY c.name, mes\n)\nSELECT categoria, mes, round(receita, 2) AS receita,\n       round(sum(receita) OVER (\n           PARTITION BY categoria ORDER BY mes\n           ROWS BETWEEN 2 PRECEDING AND CURRENT ROW\n       ), 2) AS receita_movel_3m\nFROM mensal\nORDER BY categoria, mes;"
-        },
-        {
-          "number": 105,
-          "question": "Calcule o crescimento anual da receita por categoria usando LAG.",
-          "answer": "WITH anual AS (\n    SELECT c.name AS categoria,\n           extract(year FROM s.sold_at)::integer AS ano,\n           sum(s.quantity * s.unit_price) AS receita\n    FROM sales s\n    JOIN product p USING (product_id)\n    JOIN category c USING (category_id)\n    GROUP BY c.name, ano\n), x AS (\n    SELECT *, lag(receita) OVER (PARTITION BY categoria ORDER BY ano) AS receita_anterior\n    FROM anual\n)\nSELECT categoria, ano, round(receita, 2) AS receita,\n       round(100 * (receita - receita_anterior) / NULLIF(receita_anterior, 0), 2) AS crescimento_percentual\nFROM x\nORDER BY categoria, ano;"
-        }
-      ]
-    },
-    {
-      "slug": "parte-6-integridade-auditoria-e-depuracao",
-      "order": 7,
-      "title": "Parte 6: INTEGRIDADE, AUDITORIA E DEPURAÇÃO",
-      "summary": "Teste integridade temporal, auditoria, transações, correções retroativas e depuração segura.",
-      "level": "Avançado prático",
-      "exercises": [
-        {
-          "number": 106,
-          "question": "Consulte o catálogo do PostgreSQL e identifique a chave temporal WITHOUT OVERLAPS de product_price.",
-          "answer": "SELECT conname, contype, conperiod, pg_get_constraintdef(oid) AS definicao\nFROM pg_constraint\nWHERE conrelid = 'temporal_lab.product_price'::regclass\n  AND conperiod\nORDER BY conname;"
-        },
-        {
-          "number": 107,
-          "question": "Consulte o catálogo e identifique a chave estrangeira temporal PERIOD da tabela sales.",
-          "answer": "SELECT conname, contype, conperiod, pg_get_constraintdef(oid) AS definicao\nFROM pg_constraint\nWHERE conrelid = 'temporal_lab.sales'::regclass\n  AND contype = 'f'\n  AND conperiod;"
-        },
-        {
-          "number": 108,
-          "question": "Liste todos os índices das tabelas product_price e sales e suas definições.",
-          "answer": "SELECT tablename, indexname, indexdef\nFROM pg_indexes\nWHERE schemaname = 'temporal_lab'\n  AND tablename IN ('product_price', 'sales')\nORDER BY tablename, indexname;"
-        },
-        {
-          "number": 109,
-          "question": "Liste todas as constraints de product_price e sales com suas definições.",
-          "answer": "SELECT conrelid::regclass AS tabela, conname, contype,\n       pg_get_constraintdef(oid) AS definicao\nFROM pg_constraint\nWHERE conrelid IN (\n    'temporal_lab.product_price'::regclass,\n    'temporal_lab.sales'::regclass\n)\nORDER BY tabela::text, conname;"
-        },
-        {
-          "number": 110,
-          "question": "Tente inserir um preço sobreposto para o produto 42 e capture o erro sem interromper o restante do script.",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO product_price (product_id, price, valid_at, source)\n    VALUES (42, 999.90, daterange(DATE '2024-07-10', DATE '2024-07-25', '[)'), 'teste');\nEXCEPTION\n    WHEN exclusion_violation OR unique_violation THEN\n        RAISE NOTICE 'Sobreposição rejeitada: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 111,
-          "question": "Tente inserir uma venda fora da cobertura temporal de preços e capture o erro de chave estrangeira.",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO sales (\n        sale_id, product_id, sold_at, sale_period, quantity,\n        list_price, discount_percent, unit_price, channel, region\n    ) VALUES (\n        999999991, 42, DATE '2035-01-10',\n        daterange(DATE '2035-01-10', DATE '2035-01-11', '[)'),\n        1, 100, 0, 100, 'SITE', 'NORTE'\n    );\nEXCEPTION\n    WHEN foreign_key_violation THEN\n        RAISE NOTICE 'Venda sem cobertura rejeitada: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 112,
-          "question": "Tente inserir um range vazio em product_price e capture o erro da constraint.",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO product_price (product_id, price, valid_at, source)\n    VALUES (42, 100, 'empty'::daterange, 'teste');\nEXCEPTION\n    WHEN check_violation THEN\n        RAISE NOTICE 'Range vazio rejeitado: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 113,
-          "question": "Tente inserir um range sem limite inferior e capture o erro da constraint que exige períodos finitos no formato [).",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO product_price (product_id, price, valid_at, source)\n    VALUES (42, 100, daterange(NULL, DATE '2030-02-01', '()'), 'teste');\nEXCEPTION\n    WHEN check_violation THEN\n        RAISE NOTICE 'Range sem limite inferior rejeitado: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 114,
-          "question": "Tente inserir um preço igual a zero e capture o erro da constraint.",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO product_price (product_id, price, valid_at, source)\n    VALUES (42, 0, daterange(DATE '2030-01-01', DATE '2030-02-01', '[)'), 'teste');\nEXCEPTION\n    WHEN check_violation THEN\n        RAISE NOTICE 'Preço inválido rejeitado: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 115,
-          "question": "Tente inserir uma venda com canal inválido e capture o erro da constraint.",
-          "answer": "DO $$\nBEGIN\n    INSERT INTO sales (\n        sale_id, product_id, sold_at, sale_period, quantity,\n        list_price, discount_percent, unit_price, channel, region\n    ) VALUES (\n        999999992, 42, DATE '2024-07-15',\n        daterange(DATE '2024-07-15', DATE '2024-07-16', '[)'),\n        1, 100, 0, 100, 'CHAT', 'NORTE'\n    );\nEXCEPTION\n    WHEN check_violation THEN\n        RAISE NOTICE 'Canal inválido rejeitado: %', SQLERRM;\nEND;\n$$;"
-        },
-        {
-          "number": 116,
-          "question": "Atualize temporariamente um preço do produto 200 em 3%, consulte a auditoria e desfaça a alteração.",
-          "answer": "BEGIN;\nUPDATE product_price\nSET price = round(price * 1.03, 2), source = 'teste_auditoria_update'\nWHERE product_id = 200\n  AND valid_at @> DATE '2027-03-10';\n\nSELECT *\nFROM product_price_audit\nWHERE product_id = 200\nORDER BY audit_id DESC\nLIMIT 5;\nROLLBACK;"
-        },
-        {
-          "number": 117,
-          "question": "Crie temporariamente um produto sem vendas, insira e exclua um preço, consulte a auditoria e execute ROLLBACK.",
-          "answer": "BEGIN;\nINSERT INTO product (product_id, sku, name, category_id, brand)\nVALUES (9000001, 'TMP-9000001', 'Produto temporário 1', 1, 'Teste');\nINSERT INTO product_price (product_id, price, valid_at, source)\nVALUES (9000001, 100, daterange(DATE '2030-01-01', DATE '2030-02-01', '[)'), 'teste_delete');\nDELETE FROM product_price WHERE product_id = 9000001;\nSELECT * FROM product_price_audit WHERE product_id = 9000001 ORDER BY audit_id;\nROLLBACK;"
-        },
-        {
-          "number": 118,
-          "question": "Insira temporariamente um novo período futuro para o produto 200, consulte a auditoria e execute ROLLBACK.",
-          "answer": "BEGIN;\nINSERT INTO product_price (product_id, price, valid_at, source)\nVALUES (200, 500, daterange(DATE '2028-01-01', DATE '2028-02-01', '[)'), 'teste_insert');\nSELECT * FROM product_price_audit WHERE product_id = 200 ORDER BY audit_id DESC LIMIT 5;\nROLLBACK;"
-        },
-        {
-          "number": 119,
-          "question": "Em um produto temporário sem vendas, divida atomicamente um período mensal em dois subperíodos e valide o resultado.",
-          "answer": "BEGIN;\nINSERT INTO product (product_id, sku, name, category_id, brand)\nVALUES (9000002, 'TMP-9000002', 'Produto temporário 2', 1, 'Teste');\nINSERT INTO product_price (product_id, price, valid_at, source)\nVALUES (9000002, 100, daterange(DATE '2030-03-01', DATE '2030-04-01', '[)'), 'original');\n\nWITH removido AS (\n    DELETE FROM product_price\n    WHERE product_id = 9000002\n      AND valid_at = daterange(DATE '2030-03-01', DATE '2030-04-01', '[)')\n    RETURNING product_id, price\n)\nINSERT INTO product_price (product_id, price, valid_at, source)\nSELECT product_id, price,\n       daterange(DATE '2030-03-01', DATE '2030-03-15', '[)'), 'divisao'\nFROM removido\nUNION ALL\nSELECT product_id, round(price * 1.08, 2),\n       daterange(DATE '2030-03-15', DATE '2030-04-01', '[)'), 'divisao'\nFROM removido;\n\nSELECT * FROM product_price WHERE product_id = 9000002 ORDER BY lower(valid_at);\nROLLBACK;"
-        },
-        {
-          "number": 120,
-          "question": "Em um produto temporário, una dois períodos adjacentes de mesmo preço em um único período.",
-          "answer": "BEGIN;\nINSERT INTO product (product_id, sku, name, category_id, brand)\nVALUES (9000003, 'TMP-9000003', 'Produto temporário 3', 1, 'Teste');\nINSERT INTO product_price (product_id, price, valid_at, source) VALUES\n(9000003, 100, daterange(DATE '2030-05-01', DATE '2030-06-01', '[)'), 'parte_1'),\n(9000003, 100, daterange(DATE '2030-06-01', DATE '2030-07-01', '[)'), 'parte_2');\n\nWITH removidos AS (\n    DELETE FROM product_price\n    WHERE product_id = 9000003\n    RETURNING product_id, price, valid_at\n), resumo AS (\n    SELECT product_id, min(price) AS price,\n           min(lower(valid_at)) AS inicio,\n           max(upper(valid_at)) AS fim\n    FROM removidos\n    GROUP BY product_id\n)\nINSERT INTO product_price (product_id, price, valid_at, source)\nSELECT product_id, price, daterange(inicio, fim, '[)'), 'coalescido'\nFROM resumo;\n\nSELECT * FROM product_price WHERE product_id = 9000003;\nROLLBACK;"
-        },
-        {
-          "number": 121,
-          "question": "Depure uma consulta que usa apenas product_id para juntar sales e product_price, causando duplicação. Escreva a junção temporal correta.",
-          "answer": "-- Incorreto: JOIN product_price pp ON pp.product_id = s.product_id\n-- Correto: incluir o predicado temporal.\nSELECT s.sale_id, s.sold_at, s.product_id, pp.price\nFROM sales s\nJOIN product_price pp\n  ON pp.product_id = s.product_id\n AND pp.valid_at @> s.sold_at;"
-        },
-        {
-          "number": 122,
-          "question": "Explique por que períodos fechados nos dois extremos podem causar dupla validade na fronteira e apresente a construção recomendada.",
-          "answer": "-- Dois períodos [01/01, 01/02] e [01/02, 01/03] conteriam 01/02,\n-- criando dupla validade na fronteira. O padrão recomendado é [):\nSELECT daterange(DATE '2025-01-01', DATE '2025-02-01', '[)') AS periodo_correto;"
-        },
-        {
-          "number": 123,
-          "question": "Corrija uma consulta que usa BETWEEN para procurar uma data em valid_at, lembrando que valid_at é daterange.",
-          "answer": "-- Incorreto: DATE '2024-07-15' BETWEEN lower(valid_at) AND upper(valid_at)\n-- A forma própria para daterange respeita inclusividade/exclusividade:\nSELECT product_id, price, valid_at\nFROM product_price\nWHERE DATE '2024-07-15' <@ valid_at;"
-        },
-        {
-          "number": 124,
-          "question": "Demonstre, em dados temporários, por que alterar valid_at para um intervalo sobreposto é rejeitado.",
-          "answer": "BEGIN;\nINSERT INTO product (product_id, sku, name, category_id, brand)\nVALUES (9000004, 'TMP-9000004', 'Produto temporário 4', 1, 'Teste');\nINSERT INTO product_price (product_id, price, valid_at, source) VALUES\n(9000004, 100, daterange(DATE '2031-01-01', DATE '2031-02-01', '[)'), 'teste'),\n(9000004, 110, daterange(DATE '2031-02-01', DATE '2031-03-01', '[)'), 'teste');\nDO $$\nBEGIN\n    UPDATE product_price\n    SET valid_at = daterange(DATE '2031-01-15', DATE '2031-02-15', '[)')\n    WHERE product_id = 9000004\n      AND lower(valid_at) = DATE '2031-02-01';\nEXCEPTION\n    WHEN exclusion_violation OR unique_violation THEN\n        RAISE NOTICE 'Atualização sobreposta rejeitada: %', SQLERRM;\nEND;\n$$;\nROLLBACK;"
-        },
-        {
-          "number": 125,
-          "question": "Responda: qual é a diferença entre tempo de validade e tempo do sistema neste laboratório?",
-          "answer": "-- Tempo de validade: quando o preço é considerado verdadeiro no domínio do negócio;\n-- no laboratório, é representado por product_price.valid_at.\n-- Tempo do sistema: quando a alteração foi registrada no banco;\n-- no laboratório, é emulado por product_price_audit.changed_at,\n-- acompanhado de operação, usuário e transaction_id."
-        }
-      ]
-    },
-    {
-      "slug": "parte-7-desempenho-catalogos-e-reutilizacao",
-      "order": 8,
-      "title": "Parte 7: DESEMPENHO, CATÁLOGOS E REUTILIZAÇÃO",
-      "summary": "Investigue desempenho, índices, catálogos do PostgreSQL e reutilização com views e funções.",
-      "level": "Avançado prático",
-      "exercises": [
-        {
-          "number": 126,
-          "question": "Execute EXPLAIN (ANALYZE, BUFFERS) para buscar o preço do produto 500 em 10/10/2026.",
-          "answer": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT price, valid_at\nFROM product_price\nWHERE product_id = 500\n  AND valid_at @> DATE '2026-10-10';"
-        },
-        {
-          "number": 127,
-          "question": "Execute EXPLAIN (ANALYZE, BUFFERS) para gerar o snapshot completo de preços em 10/10/2026.",
-          "answer": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT product_id, price, valid_at\nFROM product_price\nWHERE valid_at @> DATE '2026-10-10';"
-        },
-        {
-          "number": 128,
-          "question": "Compare os planos de uma busca temporal com e sem filtro por product_id e descreva a diferença esperada.",
-          "answer": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT price\nFROM product_price\nWHERE product_id = 500\n  AND valid_at @> DATE '2026-10-10';\n\nEXPLAIN (ANALYZE, BUFFERS)\nSELECT product_id, price\nFROM product_price\nWHERE valid_at @> DATE '2026-10-10';\n-- Com product_id, o índice temporal composto pode restringir fortemente a busca.\n-- Sem product_id, a consulta precisa localizar todos os ranges que contêm a data."
-        },
-        {
-          "number": 129,
-          "question": "Informe o tamanho de cada índice do schema temporal_lab.",
-          "answer": "SELECT schemaname, tablename, indexname,\n       pg_size_pretty(pg_relation_size((quote_ident(schemaname) || '.' || quote_ident(indexname))::regclass)) AS tamanho\nFROM pg_indexes\nWHERE schemaname = 'temporal_lab'\nORDER BY pg_relation_size((quote_ident(schemaname) || '.' || quote_ident(indexname))::regclass) DESC;"
-        },
-        {
-          "number": 130,
-          "question": "Informe o tamanho total, da tabela e dos índices para product_price e sales.",
-          "answer": "SELECT relname AS tabela,\n       pg_size_pretty(pg_relation_size(relid)) AS tamanho_tabela,\n       pg_size_pretty(pg_indexes_size(relid)) AS tamanho_indices,\n       pg_size_pretty(pg_total_relation_size(relid)) AS tamanho_total\nFROM pg_catalog.pg_statio_user_tables\nWHERE schemaname = 'temporal_lab'\n  AND relname IN ('product_price', 'sales')\nORDER BY pg_total_relation_size(relid) DESC;"
-        },
-        {
-          "number": 131,
-          "question": "Consulte pg_stat_user_tables para examinar leituras sequenciais e por índice das tabelas do laboratório.",
-          "answer": "SELECT relname, seq_scan, seq_tup_read, idx_scan, idx_tup_fetch,\n       n_live_tup, n_dead_tup, last_analyze, last_autoanalyze\nFROM pg_stat_user_tables\nWHERE schemaname = 'temporal_lab'\nORDER BY relname;"
-        },
-        {
-          "number": 132,
-          "question": "Execute ANALYZE nas principais tabelas e consulte a data da última análise registrada nas estatísticas.",
-          "answer": "ANALYZE temporal_lab.product;\nANALYZE temporal_lab.product_price;\nANALYZE temporal_lab.sales;\n\nSELECT relname, last_analyze, last_autoanalyze\nFROM pg_stat_user_tables\nWHERE schemaname = 'temporal_lab'\n  AND relname IN ('product', 'product_price', 'sales')\nORDER BY relname;"
-        },
-        {
-          "number": 133,
-          "question": "Crie temporariamente um índice funcional em lower(valid_at), teste uma consulta e remova tudo com ROLLBACK.",
-          "answer": "BEGIN;\nCREATE INDEX idx_product_price_start_test\n    ON product_price (lower(valid_at));\nANALYZE product_price;\nEXPLAIN (ANALYZE, BUFFERS)\nSELECT product_id, price\nFROM product_price\nWHERE lower(valid_at) = DATE '2025-01-01';\nROLLBACK;"
-        },
-        {
-          "number": 134,
-          "question": "Crie temporariamente uma materialized view de receita mensal, indexe a coluna mês e consulte um intervalo.",
-          "answer": "BEGIN;\nCREATE MATERIALIZED VIEW mv_monthly_revenue_test AS\nSELECT date_trunc('month', sold_at)::date AS mes,\n       sum(quantity * unit_price) AS receita\nFROM sales\nGROUP BY mes;\nCREATE UNIQUE INDEX ON mv_monthly_revenue_test (mes);\nANALYZE mv_monthly_revenue_test;\nSELECT mes, round(receita, 2) AS receita\nFROM mv_monthly_revenue_test\nWHERE mes >= DATE '2025-01-01'\n  AND mes <  DATE '2026-01-01'\nORDER BY mes;\nROLLBACK;"
-        },
-        {
-          "number": 135,
-          "question": "Use a view v_current_product_price para listar os 20 preços atuais mais altos.",
-          "answer": "SELECT sku, name, category, brand, price, valid_at\nFROM v_current_product_price\nORDER BY price DESC\nLIMIT 20;"
-        },
-        {
-          "number": 136,
-          "question": "Use a view v_sales_enriched para calcular receita por categoria e canal.",
-          "answer": "SELECT category, channel,\n       sum(quantity) AS unidades,\n       round(sum(total_value), 2) AS receita\nFROM v_sales_enriched\nGROUP BY category, channel\nORDER BY category, receita DESC;"
-        },
-        {
-          "number": 137,
-          "question": "Crie e execute uma prepared statement que receba product_id e data para localizar um preço.",
-          "answer": "PREPARE buscar_preco(bigint, date) AS\nSELECT price, valid_at\nFROM product_price\nWHERE product_id = $1\n  AND valid_at @> $2;\n\nEXECUTE buscar_preco(42, DATE '2024-07-15');\nDEALLOCATE buscar_preco;"
-        },
-        {
-          "number": 138,
-          "question": "Crie temporariamente uma função SQL get_product_price(sku, data) e teste-a.",
-          "answer": "BEGIN;\nCREATE OR REPLACE FUNCTION get_product_price(p_sku text, p_data date)\nRETURNS numeric\nLANGUAGE sql\nSTABLE\nAS $$\n    SELECT pp.price\n    FROM product p\n    JOIN product_price pp USING (product_id)\n    WHERE p.sku = p_sku\n      AND pp.valid_at @> p_data\n$$;\nSELECT get_product_price('SKU-000042', DATE '2024-07-15');\nROLLBACK;"
-        },
-        {
-          "number": 139,
-          "question": "Crie temporariamente uma função SQL que devolva toda a linha do tempo de um SKU.",
-          "answer": "BEGIN;\nCREATE OR REPLACE FUNCTION get_product_timeline(p_sku text)\nRETURNS TABLE (\n    sku text,\n    preco numeric,\n    periodo daterange\n)\nLANGUAGE sql\nSTABLE\nAS $$\n    SELECT p.sku::text, pp.price, pp.valid_at\n    FROM product p\n    JOIN product_price pp USING (product_id)\n    WHERE p.sku = p_sku\n    ORDER BY lower(pp.valid_at)\n$$;\nSELECT * FROM get_product_timeline('SKU-000100');\nROLLBACK;"
-        },
-        {
-          "number": 140,
-          "question": "Obtenha o plano de uma consulta temporal no formato JSON.",
-          "answer": "EXPLAIN (ANALYZE, FORMAT JSON)\nSELECT price, valid_at\nFROM product_price\nWHERE product_id = 500\n  AND valid_at @> DATE '2026-10-10';"
-        }
-      ]
-    },
-    {
-      "slug": "parte-8-desafios-avancados-e-projeto-final",
-      "order": 9,
-      "title": "Parte 8: DESAFIOS AVANÇADOS E PROJETO FINAL",
-      "summary": "Resolva desafios avançados e tarefas de projeto final usando consultas temporais completas.",
-      "level": "Avançado prático",
-      "exercises": [
-        {
-          "number": 141,
-          "question": "Faça coalescência temporal: una logicamente períodos consecutivos com o mesmo preço.",
-          "answer": "WITH x AS (\n    SELECT product_id, price, valid_at,\n           lag(price) OVER (PARTITION BY product_id ORDER BY lower(valid_at)) AS anterior\n    FROM product_price\n), ilhas AS (\n    SELECT *, sum(CASE WHEN price IS DISTINCT FROM anterior THEN 1 ELSE 0 END) OVER (\n        PARTITION BY product_id ORDER BY lower(valid_at)\n    ) AS grupo\n    FROM x\n)\nSELECT product_id, price,\n       daterange(min(lower(valid_at)), max(upper(valid_at)), '[)') AS periodo_coalescido,\n       count(*) AS periodos_originais\nFROM ilhas\nGROUP BY product_id, price, grupo\nORDER BY product_id, lower(daterange(min(lower(valid_at)), max(upper(valid_at)), '[)'));"
-        },
-        {
-          "number": 142,
-          "question": "Encontre, para cada produto, a maior sequência de meses em que o preço ficou acima da própria média histórica.",
-          "answer": "WITH x AS (\n    SELECT product_id, lower(valid_at) AS mes, price,\n           avg(price) OVER (PARTITION BY product_id) AS media_historica\n    FROM product_price\n), marcas AS (\n    SELECT *, CASE WHEN price > media_historica THEN 1 ELSE 0 END AS acima\n    FROM x\n), ilhas AS (\n    SELECT *, sum(CASE WHEN acima = 0 THEN 1 ELSE 0 END) OVER (\n        PARTITION BY product_id ORDER BY mes\n    ) AS grupo\n    FROM marcas\n), seq AS (\n    SELECT product_id, grupo, min(mes) AS inicio, max(mes) AS fim,\n           count(*) FILTER (WHERE acima = 1) AS meses_acima\n    FROM ilhas\n    GROUP BY product_id, grupo\n), r AS (\n    SELECT *, row_number() OVER (PARTITION BY product_id ORDER BY meses_acima DESC, inicio) AS rn\n    FROM seq\n)\nSELECT p.sku, r.inicio, r.fim, r.meses_acima\nFROM r\nJOIN product p USING (product_id)\nWHERE rn = 1\nORDER BY meses_acima DESC, p.sku;"
-        },
-        {
-          "number": 143,
-          "question": "Calcule as lacunas de cobertura como diferença entre o período esperado e o datemultirange agregado de cada produto.",
-          "answer": "WITH cobertura AS (\n    SELECT pp.product_id,\n           range_agg(pp.valid_at ORDER BY lower(pp.valid_at)) AS periodos,\n           datemultirange(daterange(cfg.start_date,\n               (cfg.start_date + make_interval(months => cfg.num_months))::date,\n               '[)')) AS esperado\n    FROM product_price pp\n    CROSS JOIN lab_config cfg\n    GROUP BY pp.product_id, cfg.start_date, cfg.num_months\n)\nSELECT p.sku, c.esperado - c.periodos AS lacunas\nFROM cobertura c\nJOIN product p USING (product_id)\nWHERE NOT isempty(c.esperado - c.periodos)\nORDER BY p.sku;\n-- Resultado esperado na carga original: zero linhas."
-        },
-        {
-          "number": 144,
-          "question": "Crie um painel de qualidade temporal com quantidade de produtos, períodos, sobreposições, lacunas, ranges vazios e formatos inválidos.",
-          "answer": "WITH sobreposicoes AS (\n    SELECT count(*) AS qtd\n    FROM product_price a\n    JOIN product_price b\n      ON b.product_id = a.product_id\n     AND lower(b.valid_at) > lower(a.valid_at)\n     AND b.valid_at && a.valid_at\n), lacunas AS (\n    SELECT count(*) AS qtd\n    FROM (\n        SELECT product_id, upper(valid_at) AS fim,\n               lead(lower(valid_at)) OVER (\n                   PARTITION BY product_id ORDER BY lower(valid_at)\n               ) AS proximo_inicio\n        FROM product_price\n    ) x\n    WHERE proximo_inicio IS NOT NULL AND fim <> proximo_inicio\n)\nSELECT\n    (SELECT count(*) FROM product) AS produtos,\n    (SELECT count(*) FROM product_price) AS periodos,\n    (SELECT qtd FROM sobreposicoes) AS sobreposicoes,\n    (SELECT qtd FROM lacunas) AS lacunas,\n    (SELECT count(*) FROM product_price WHERE isempty(valid_at)) AS ranges_vazios,\n    (SELECT count(*) FROM product_price\n     WHERE NOT lower_inc(valid_at) OR upper_inc(valid_at)\n        OR lower_inf(valid_at) OR upper_inf(valid_at)) AS formatos_invalidos;"
-        },
-        {
-          "number": 145,
-          "question": "Divida os produtos em quartis pelo preço inicial e compare o crescimento médio até o preço final.",
-          "answer": "WITH extremos AS (\n    SELECT DISTINCT product_id,\n           first_value(price) OVER w AS inicial,\n           last_value(price) OVER w AS final\n    FROM product_price\n    WINDOW w AS (\n        PARTITION BY product_id ORDER BY lower(valid_at)\n        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING\n    )\n), quartis AS (\n    SELECT *, ntile(4) OVER (ORDER BY inicial) AS quartil_preco_inicial\n    FROM extremos\n)\nSELECT quartil_preco_inicial,\n       count(*) AS produtos,\n       round(avg(inicial), 2) AS preco_inicial_medio,\n       round(avg(final), 2) AS preco_final_medio,\n       round(avg(100 * (final - inicial) / NULLIF(inicial, 0)), 2) AS crescimento_medio_percentual\nFROM quartis\nGROUP BY quartil_preco_inicial\nORDER BY quartil_preco_inicial;"
-        },
-        {
-          "number": 146,
-          "question": "Compare, por mês, o preço médio simples do catálogo com o preço médio ponderado pelas unidades vendidas.",
-          "answer": "WITH catalogo AS (\n    SELECT lower(valid_at) AS mes, avg(price) AS preco_medio_catalogo\n    FROM product_price\n    GROUP BY lower(valid_at)\n), vendido AS (\n    SELECT date_trunc('month', sold_at)::date AS mes,\n           sum(quantity * unit_price) / NULLIF(sum(quantity), 0) AS preco_medio_ponderado\n    FROM sales\n    GROUP BY mes\n)\nSELECT c.mes,\n       round(c.preco_medio_catalogo, 2) AS media_catalogo,\n       round(v.preco_medio_ponderado, 2) AS media_ponderada_vendas,\n       round(v.preco_medio_ponderado - c.preco_medio_catalogo, 2) AS diferenca\nFROM catalogo c\nJOIN vendido v USING (mes)\nORDER BY c.mes;"
-        },
-        {
-          "number": 147,
-          "question": "Identifique a melhor região e o melhor canal de cada mês pela receita.",
-          "answer": "WITH regioes AS (\n    SELECT date_trunc('month', sold_at)::date AS mes, region,\n           sum(quantity * unit_price) AS receita,\n           row_number() OVER (\n               PARTITION BY date_trunc('month', sold_at)::date\n               ORDER BY sum(quantity * unit_price) DESC\n           ) AS rn\n    FROM sales\n    GROUP BY mes, region\n), canais AS (\n    SELECT date_trunc('month', sold_at)::date AS mes, channel,\n           sum(quantity * unit_price) AS receita,\n           row_number() OVER (\n               PARTITION BY date_trunc('month', sold_at)::date\n               ORDER BY sum(quantity * unit_price) DESC\n           ) AS rn\n    FROM sales\n    GROUP BY mes, channel\n)\nSELECT r.mes, r.region AS melhor_regiao, round(r.receita, 2) AS receita_regiao,\n       c.channel AS melhor_canal, round(c.receita, 2) AS receita_canal\nFROM regioes r\nJOIN canais c USING (mes)\nWHERE r.rn = 1 AND c.rn = 1\nORDER BY r.mes;"
-        },
-        {
-          "number": 148,
-          "question": "Detecte variações mensais anômalas de preço usando z-score por produto.",
-          "answer": "WITH retornos AS (\n    SELECT product_id, lower(valid_at) AS mes,\n           100.0 * (price - lag(price) OVER (\n               PARTITION BY product_id ORDER BY lower(valid_at)\n           )) / NULLIF(lag(price) OVER (\n               PARTITION BY product_id ORDER BY lower(valid_at)\n           ), 0) AS retorno\n    FROM product_price\n), estat AS (\n    SELECT *,\n           avg(retorno) OVER (PARTITION BY product_id) AS media,\n           stddev_samp(retorno) OVER (PARTITION BY product_id) AS desvio\n    FROM retornos\n)\nSELECT p.sku, e.mes, round(e.retorno::numeric, 2) AS retorno_percentual,\n       round(((e.retorno - e.media) / NULLIF(e.desvio, 0))::numeric, 2) AS z_score\nFROM estat e\nJOIN product p USING (product_id)\nWHERE abs((e.retorno - e.media) / NULLIF(e.desvio, 0)) >= 3\nORDER BY abs((e.retorno - e.media) / NULLIF(e.desvio, 0)) DESC;"
-        },
-        {
-          "number": 149,
-          "question": "Projete o próximo preço de cada produto aplicando a média das seis últimas variações percentuais ao último preço.",
-          "answer": "WITH retornos AS (\n    SELECT product_id, lower(valid_at) AS mes, price,\n           100.0 * (price - lag(price) OVER (\n               PARTITION BY product_id ORDER BY lower(valid_at)\n           )) / NULLIF(lag(price) OVER (\n               PARTITION BY product_id ORDER BY lower(valid_at)\n           ), 0) AS retorno,\n           row_number() OVER (\n               PARTITION BY product_id ORDER BY lower(valid_at) DESC\n           ) AS rn_desc\n    FROM product_price\n), resumo AS (\n    SELECT product_id,\n           max(price) FILTER (WHERE rn_desc = 1) AS ultimo_preco,\n           avg(retorno) FILTER (WHERE rn_desc BETWEEN 1 AND 6) AS media_retorno_6m\n    FROM retornos\n    GROUP BY product_id\n)\nSELECT p.sku, r.ultimo_preco,\n       round(r.media_retorno_6m::numeric, 4) AS media_retorno_6m,\n       round((r.ultimo_preco * (1 + r.media_retorno_6m / 100.0))::numeric, 2) AS preco_projetado\nFROM resumo r\nJOIN product p USING (product_id)\nORDER BY p.sku;"
-        },
-        {
-          "number": 150,
-          "question": "Produza um relatório executivo mensal com receita, unidades, preço médio vendido, desconto médio, variação mensal, variação anual, melhor região e melhor canal.",
-          "answer": "WITH mensal AS (\n    SELECT date_trunc('month', sold_at)::date AS mes,\n           sum(quantity * unit_price) AS receita,\n           sum(quantity) AS unidades,\n           sum(quantity * unit_price) / NULLIF(sum(quantity), 0) AS preco_medio_vendido,\n           avg(discount_percent) AS desconto_medio\n    FROM sales\n    GROUP BY mes\n), evolucao AS (\n    SELECT *,\n           lag(receita, 1) OVER (ORDER BY mes) AS receita_mes_anterior,\n           lag(receita, 12) OVER (ORDER BY mes) AS receita_ano_anterior\n    FROM mensal\n), regioes AS (\n    SELECT date_trunc('month', sold_at)::date AS mes, region,\n           sum(quantity * unit_price) AS receita,\n           row_number() OVER (\n               PARTITION BY date_trunc('month', sold_at)::date\n               ORDER BY sum(quantity * unit_price) DESC\n           ) AS rn\n    FROM sales\n    GROUP BY mes, region\n), canais AS (\n    SELECT date_trunc('month', sold_at)::date AS mes, channel,\n           sum(quantity * unit_price) AS receita,\n           row_number() OVER (\n               PARTITION BY date_trunc('month', sold_at)::date\n               ORDER BY sum(quantity * unit_price) DESC\n           ) AS rn\n    FROM sales\n    GROUP BY mes, channel\n)\nSELECT e.mes,\n       round(e.receita, 2) AS receita,\n       e.unidades,\n       round(e.preco_medio_vendido, 2) AS preco_medio_vendido,\n       round(e.desconto_medio, 2) AS desconto_medio,\n       round(100 * (e.receita - e.receita_mes_anterior) / NULLIF(e.receita_mes_anterior, 0), 2) AS variacao_mensal_percentual,\n       round(100 * (e.receita - e.receita_ano_anterior) / NULLIF(e.receita_ano_anterior, 0), 2) AS variacao_anual_percentual,\n       r.region AS melhor_regiao,\n       c.channel AS melhor_canal\nFROM evolucao e\nJOIN regioes r ON r.mes = e.mes AND r.rn = 1\nJOIN canais c ON c.mes = e.mes AND c.rn = 1\nORDER BY e.mes;"
         }
       ]
     }
