@@ -1,5 +1,6 @@
 import { postgresqlConsultaExerciseList } from "./postgresqlConsultaExercises.js";
 import { postgresqlClinicaVeterinariaExerciseList } from "./postgresqlClinicaVeterinariaExercises.js";
+import { postgresqlLojaTemporalExerciseList } from "./postgresqlLojaTemporalExercises.js";
 
 const basicPostgresqlExerciseBlocks = [
   {
@@ -2410,6 +2411,7 @@ export const postgresqlExerciseLists = [
   postgresqlConsultaExerciseList,
   merPostgresqlExerciseList,
   postgresqlClinicaVeterinariaExerciseList,
+  postgresqlLojaTemporalExerciseList,
 ];
 
 export const postgresqlExerciseBlocks = basicPostgresqlExerciseBlocks;
