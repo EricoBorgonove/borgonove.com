@@ -331,6 +331,20 @@ export default function Navbar() {
           "postgres postgresql banco dados database sql ddl dml dql select insert update delete joins indices transacoes backup psql",
       },
       {
+        title: t("subjects.items.python.title"),
+        subtitle: subjectLabel,
+        path: "/disciplinas/python",
+        keywords:
+          "python programação programacao lógica logica poo oop classes objetos funções funcoes terminal exercícios exercicios",
+      },
+      {
+        title: isEn ? "Parking System" : "Sistema de Estacionamento",
+        subtitle: t("subjects.items.python.title"),
+        path: "/disciplinas/python/estacionamento",
+        keywords:
+          "python estacionamento parking poo oop classe objeto veiculo veículo placa entrada saida saída datetime ceil dicionario menu terminal",
+      },
+      {
         title: isEn ? "PostgreSQL Support Material" : "PostgreSQL: Material de apoio",
         subtitle: t("subjects.items.postgresql.title"),
         path: "/disciplinas/postgresql/material-apoio",

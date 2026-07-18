@@ -47,6 +47,10 @@ const disciplinas = [
     href: "/disciplinas/postgresql",
   },
   {
+    id: "python",
+    href: "/disciplinas/python",
+  },
+  {
     id: "python-pandas",
     href: "/disciplinas/python-pandas",
   },

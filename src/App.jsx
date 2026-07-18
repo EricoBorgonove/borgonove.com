@@ -44,6 +44,8 @@ import PostgresqlExercicios from "./pages/PostgresqlExercicios";
 import PostgresqlTabelaDetalhe from "./pages/PostgresqlTabelaDetalhe";
 import PostgresqlTabelas from "./pages/PostgresqlTabelas";
 import PostgresqlTopico from "./pages/PostgresqlTopico";
+import Python from "./pages/Python";
+import PythonEstacionamento from "./pages/PythonEstacionamento";
 import PythonMatplotlib from "./pages/PythonMatplotlib";
 import PythonPandasCsvExcel from "./pages/PythonPandasCsvExcel";
 import PythonPandasExercicioPratico from "./pages/PythonPandasExercicioPratico";
@@ -165,6 +167,8 @@ export default function App() {
           <Route path="/disciplinas/postgresql/tabelas/:tableSlug" element={<PostgresqlTabelaDetalhe />} />
           <Route path="/disciplinas/postgresql/:topicSlug" element={<PostgresqlTopico />} />
           <Route path="/disciplinas/protocolo-http" element={<ProtocoloHttp />} />
+          <Route path="/disciplinas/python" element={<Python />} />
+          <Route path="/disciplinas/python/estacionamento" element={<PythonEstacionamento />} />
           <Route path="/disciplinas/python-pandas/listas-exercicios" element={<PythonPandasExerciciosLinks />} />
           <Route path="/disciplinas/python-pandas/listas-exercicios/:exerciseSlug" element={<PythonPandasExercicioPratico />} />
           <Route path="/disciplinas/python-pandas/prova" element={<PythonPandasProva />} />

@@ -239,6 +239,10 @@
         "title": "PostgreSQL",
         "description": "Banco de dados relacional, comandos SQL por categoria, consultas, relacionamentos, transações, segurança e backup."
       },
+      "python": {
+        "title": "Python",
+        "description": "Lógica, funções, estruturas de dados, orientação a objetos e sistemas práticos de terminal."
+      },
       "python-pandas": {
         "title": "Python Pandas",
         "description": "Guia de referência com tabelas para carregar, limpar, transformar, agregar e exportar dados."

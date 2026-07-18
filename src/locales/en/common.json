@@ -239,6 +239,10 @@
         "title": "PostgreSQL",
         "description": "Relational databases, SQL commands by category, queries, relationships, transactions, security, and backup."
       },
+      "python": {
+        "title": "Python",
+        "description": "Logic, functions, data structures, object-oriented programming, and practical terminal systems."
+      },
       "python-pandas": {
         "title": "Python Pandas",
         "description": "Reference guide with tables for loading, cleaning, transforming, aggregating and exporting data."
