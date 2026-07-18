@@ -2,13 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
+import { postgresqlLojaTemporalExerciseList } from "../data/postgresqlLojaTemporalExercises";
 
 const navItems = [
   ["introducao", "Introdução"],
   ["tipos-tempo", "Tipos de tempo"],
   ["intervalos", "Intervalos"],
   ["modelo-dados", "Modelo de dados"],
-  ["tabelas", "Tabelas"],
+  ["loja-temporal", "Exercícios Loja"],
   ["consultas-sql", "Consultas SQL"],
   ["integridade-temporal", "Integridade temporal"],
   ["auditoria", "Auditoria"],
@@ -66,98 +67,6 @@ const operators = [
   [">>", "O primeiro intervalo está totalmente à direita", "periodo_a >> periodo_b"],
   ["*", "Interseção entre intervalos", "periodo_a * periodo_b"],
   ["+", "União entre intervalos compatíveis", "periodo_a + periodo_b"],
-];
-
-const labConfigCards = [
-  ["2.000", "produtos gerados"],
-  ["72", "meses de histórico"],
-  ["144.000", "versões de preço"],
-  ["250.000", "vendas simuladas"],
-];
-
-const tableSections = [
-  {
-    id: "lab_config",
-    title: "lab_config",
-    description: "Controla a massa de testes. Em vez de escrever milhares de linhas manualmente, o script lê essa configuração e gera produtos, versões mensais de preço e vendas.",
-    fields: [
-      ["id", "boolean", "Garante uma única configuração"],
-      ["num_products", "integer", "Quantidade de produtos"],
-      ["num_months", "integer", "Quantidade de meses de histórico"],
-      ["num_sales", "integer", "Quantidade de vendas"],
-      ["start_date", "date", "Data inicial da carga"],
-    ],
-  },
-  {
-    id: "category",
-    title: "category",
-    description: "Armazena categorias como Informática, Telefonia, Áudio, Vídeo, Games, Fotografia, Redes e Armazenamento. Uma categoria pode classificar muitos produtos.",
-    fields: [
-      ["category_id", "smallint", "Identificador"],
-      ["name", "text", "Nome único da categoria"],
-    ],
-  },
-  {
-    id: "product",
-    title: "product",
-    description: "Guarda os dados estáveis do produto. O preço não fica aqui porque ele varia ao longo do tempo e precisa ser historizado em product_price.",
-    fields: [
-      ["product_id", "bigint", "Identificador"],
-      ["sku", "varchar(20)", "Código comercial"],
-      ["name", "text", "Nome"],
-      ["category_id", "smallint", "Categoria"],
-      ["brand", "text", "Marca"],
-      ["active", "boolean", "Situação"],
-      ["created_at", "timestamptz", "Data de cadastro"],
-    ],
-  },
-  {
-    id: "product_price",
-    title: "product_price",
-    description: "É a tabela temporal principal do laboratório. Cada linha representa o preço de um produto em um período de validade.",
-    fields: [
-      ["product_id", "bigint", "Produto relacionado"],
-      ["price", "numeric(12,2)", "Preço do período"],
-      ["valid_at", "daterange", "Período de validade"],
-      ["source", "text", "Origem do dado"],
-      ["recorded_at", "timestamptz", "Momento do registro"],
-    ],
-  },
-  {
-    id: "sales",
-    title: "sales",
-    description: "Registra as vendas e permite cruzar cada venda com o preço válido na data em que ocorreu.",
-    fields: [
-      ["sale_id", "bigint", "Identificador"],
-      ["product_id", "bigint", "Produto vendido"],
-      ["sold_at", "date", "Data da venda"],
-      ["sale_period", "daterange", "Intervalo da venda"],
-      ["quantity", "smallint", "Quantidade"],
-      ["list_price", "numeric", "Preço de tabela"],
-      ["discount_percent", "numeric", "Desconto"],
-      ["unit_price", "numeric", "Preço final"],
-      ["channel", "text", "SITE, APP, LOJA ou MARKETPLACE"],
-      ["region", "text", "Região brasileira"],
-      ["created_at", "timestamptz", "Registro"],
-    ],
-  },
-  {
-    id: "product_price_audit",
-    title: "product_price_audit",
-    description: "Registra alterações realizadas em preços: inserção, atualização e exclusão, incluindo usuário, transação e valores antigos ou novos.",
-    fields: [
-      ["audit_id", "bigint", "Identificador"],
-      ["operation", "text", "Inserção, atualização ou exclusão"],
-      ["product_id", "bigint", "Produto alterado"],
-      ["old_price", "numeric", "Preço anterior"],
-      ["new_price", "numeric", "Novo preço"],
-      ["old_valid_at", "daterange", "Período anterior"],
-      ["new_valid_at", "daterange", "Novo período"],
-      ["changed_at", "timestamptz", "Momento da alteração"],
-      ["changed_by", "text", "Usuário"],
-      ["transaction_id", "xid8", "Transação"],
-    ],
-  },
 ];
 
 const revenueBars = [
@@ -297,6 +206,92 @@ function ErDiagram() {
         <p>product 1 -&gt; N sales</p>
         <p>product_price -&gt; product_price_audit</p>
         <p>lab_config controla a geração dos dados</p>
+      </div>
+    </div>
+  );
+}
+
+function LojaTemporalExercises() {
+  const totalExercises = postgresqlLojaTemporalExerciseList.blocks.reduce(
+    (total, block) => total + block.exercises.length,
+    0
+  );
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-5">
+          <p className="text-3xl font-black text-cyan-100">
+            {postgresqlLojaTemporalExerciseList.blocks.length}
+          </p>
+          <p className="mt-2 text-sm text-slate-400">blocos de prática</p>
+        </div>
+        <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-5">
+          <p className="text-3xl font-black text-cyan-100">{totalExercises}</p>
+          <p className="mt-2 text-sm text-slate-400">questões da Loja Temporal</p>
+        </div>
+        <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-5">
+          <p className="text-3xl font-black text-cyan-100">loja+n</p>
+          <p className="mt-2 text-sm text-slate-400">padrão da senha das respostas</p>
+        </div>
+      </div>
+
+      <div className="glass rounded-2xl p-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-100">Lista Loja Temporal</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-400">
+              {postgresqlLojaTemporalExerciseList.summary}
+            </p>
+          </div>
+          <Link
+            to="/disciplinas/postgresql/exercicios/loja-temporal"
+            className="inline-flex min-h-11 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300"
+          >
+            Abrir com respostas
+          </Link>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        {postgresqlLojaTemporalExerciseList.blocks.map((block, blockIndex) => (
+          <details
+            key={block.slug}
+            className="glass rounded-2xl p-5"
+            open={blockIndex === 0}
+          >
+            <summary className="cursor-pointer list-none">
+              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                    {block.exercises.length} exercícios
+                  </p>
+                  <h3 className="text-2xl font-semibold text-slate-100">{block.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{block.summary}</p>
+                </div>
+                <span className="rounded-lg border border-slate-700 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
+                  {block.level}
+                </span>
+              </div>
+            </summary>
+
+            <ol className="mt-5 grid gap-3">
+              {block.exercises.map((exercise) => (
+                <li
+                  key={`${block.slug}-${exercise.number}`}
+                  className="rounded-xl border border-slate-800 bg-slate-950/50 p-4"
+                >
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-300">
+                    Questão {String(exercise.number).padStart(2, "0")}
+                  </p>
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-slate-300">
+                    {exercise.question}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </details>
+        ))}
       </div>
     </div>
   );
@@ -617,33 +612,8 @@ export default function PostgresqlBancosTemporais() {
               <ErDiagram />
             </Section>
 
-            <Section id="tabelas" title="Tabelas do laboratório" eyebrow="Tabelas">
-              <div className="mb-6 grid gap-4 md:grid-cols-4">
-                {labConfigCards.map(([value, label]) => (
-                  <div key={label} className="rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-5">
-                    <p className="text-3xl font-black text-cyan-100">{value}</p>
-                    <p className="mt-2 text-sm text-slate-400">{label}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="space-y-6">
-                {tableSections.map((table) => (
-                  <article key={table.id} className="glass rounded-2xl p-6">
-                    <h3 className="mb-3 text-2xl font-semibold text-slate-100">{table.title}</h3>
-                    <p className="mb-5 text-sm leading-relaxed text-slate-300">{table.description}</p>
-                    <FieldTable rows={table.fields} />
-                  </article>
-                ))}
-              </div>
-
-              <div className="mt-6 space-y-6">
-                <CodeBlock language="sql" label="Configuração da massa">
-                  {"INSERT INTO lab_config (\n    num_products,\n    num_months,\n    num_sales,\n    start_date\n)\nVALUES (\n    2000,\n    72,\n    250000,\n    DATE '2022-01-01'\n);"}
-                </CodeBlock>
-                <CodeBlock language="sql" label="Tabela temporal simplificada">
-                  {"CREATE TABLE product_price (\n    product_id bigint NOT NULL,\n    price numeric(12,2) NOT NULL,\n    valid_at daterange NOT NULL,\n    source text NOT NULL DEFAULT 'carga_sintetica',\n    recorded_at timestamptz DEFAULT clock_timestamp()\n);"}
-                </CodeBlock>
-              </div>
+            <Section id="loja-temporal" title="Exercícios da Loja Temporal" eyebrow="Prática guiada">
+              <LojaTemporalExercises />
             </Section>
 
             <Section id="consultas-sql" title="Consultas SQL temporais" eyebrow="Consultas SQL">
