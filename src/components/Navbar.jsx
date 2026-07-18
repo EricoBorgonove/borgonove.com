@@ -338,6 +338,13 @@ export default function Navbar() {
           "postgres postgresql material apoio tipos dados restricoes modificadores create table primary key foreign key not null unique default check",
       },
       {
+        title: isEn ? "Temporal Databases" : "Bancos Temporais",
+        subtitle: t("subjects.items.postgresql.title"),
+        path: "/disciplinas/postgresql/bancos-temporais",
+        keywords:
+          "postgres postgresql bancos temporais temporal database daterange range ranges valid_at tempo validade sistema bitemporal auditoria snapshots histórico historico without overlaps period",
+      },
+      {
         title: isEn ? "PostgreSQL Exercises" : "PostgreSQL: Exercícios",
         subtitle: t("subjects.items.postgresql.title"),
         path: "/disciplinas/postgresql/exercicios",

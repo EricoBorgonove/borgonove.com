@@ -37,6 +37,7 @@ import ModelagemDados from "./pages/ModelagemDados";
 import NotFound from "./pages/NotFound";
 import Pomodoro from "./pages/Pomodoro";
 import Postgresql from "./pages/Postgresql";
+import PostgresqlBancosTemporais from "./pages/PostgresqlBancosTemporais";
 import PostgresqlExercicioBlocos from "./pages/PostgresqlExercicioBlocos";
 import PostgresqlExercicioLista from "./pages/PostgresqlExercicioLista";
 import PostgresqlExercicios from "./pages/PostgresqlExercicios";
@@ -154,6 +155,7 @@ export default function App() {
           <Route path="/disciplinas/git-github" element={<GitGithub />} />
           <Route path="/disciplinas/modelagem-dados" element={<ModelagemDados />} />
           <Route path="/disciplinas/postgresql" element={<Postgresql />} />
+          <Route path="/disciplinas/postgresql/bancos-temporais" element={<PostgresqlBancosTemporais />} />
           <Route path="/disciplinas/postgresql/exercicios" element={<PostgresqlExercicios />} />
           <Route path="/disciplinas/postgresql/exercicios/:listSlug" element={<PostgresqlExercicioBlocos />} />
           <Route path="/disciplinas/postgresql/exercicios/:listSlug/:exerciseSlug" element={<PostgresqlExercicioLista />} />

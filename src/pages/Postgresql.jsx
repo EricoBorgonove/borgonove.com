@@ -68,7 +68,7 @@ export default function Postgresql() {
       </div>
 
       <div className="mb-8">
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           <Link to="/disciplinas/postgresql/material-apoio" className="group block">
             <article className="glass theme-hover-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
@@ -83,6 +83,25 @@ export default function Postgresql() {
                 </div>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
                   Abrir material
+                  <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </article>
+          </Link>
+          <Link to="/disciplinas/postgresql/bancos-temporais" className="group block">
+            <article className="glass theme-hover-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+              <div className="flex h-full flex-col gap-5 md:justify-between">
+                <div>
+                  <span className="mb-4 inline-flex rounded-lg border border-orange-300/30 bg-orange-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-100">
+                    Conteúdo temporal
+                  </span>
+                  <h2 className="mb-2 text-2xl font-semibold text-slate-100">Bancos Temporais</h2>
+                  <p className="max-w-3xl text-sm leading-relaxed text-slate-400">
+                    Entenda tempo de validade, tempo de sistema, ranges, snapshots, auditoria, integridade temporal e consultas históricas.
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
+                  Abrir conteúdo
                   <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
                 </span>
               </div>
