@@ -13,6 +13,7 @@ dist
 dist-ssr
 *.local
 *.zip
+docs
 
 # Large generated classroom datasets
 public/datasets/python-pandas/dataset_instagram-scraper_2026-04-26_02-02-07-106.csv
