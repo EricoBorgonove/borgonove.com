@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 
@@ -299,12 +300,12 @@ export default function GitGithub() {
   const modulos = isEn ? MODULOS_EN : MODULOS_PT;
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{txt.back}</BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -312,17 +313,17 @@ export default function GitGithub() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">{txt.subtitle}</p>
+      </PageTitle>
+      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-lg font-semibold text-cyan-300 mb-2">{txt.objectiveTitle}</h2>
         <p className="text-sm text-slate-300 leading-relaxed">{txt.objective}</p>
-      </div>
+      </Panel>
 
       <div className="space-y-5">
         {modulos.map((modulo) => (
-          <details key={modulo.titulo} className="glass rounded-2xl p-6">
+          <Panel as="details" layout="plain" key={modulo.titulo}>
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
               {modulo.titulo}
             </summary>
@@ -342,9 +343,9 @@ export default function GitGithub() {
                 {modulo.comandos.join("\n")}
               </pre>
             </div>
-          </details>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

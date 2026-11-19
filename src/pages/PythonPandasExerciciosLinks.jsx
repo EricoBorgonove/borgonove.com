@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -123,14 +124,14 @@ export default function PythonPandasExerciciosLinks() {
   const allExerciseLinks = [...exerciseLinks, ...practicalLinks];
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -138,14 +139,14 @@ export default function PythonPandasExerciciosLinks() {
           />
         </svg>
         <span>{pick(txt.title, isEn)}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.description, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
       <div className="grid md:grid-cols-2 gap-8">
         {allExerciseLinks.map((item) => item.requiresLogin ? (
-          <button
+          <Button variant="custom"
             key={item.id}
             type="button"
             onClick={() => {
@@ -154,7 +155,7 @@ export default function PythonPandasExerciciosLinks() {
             }}
             className="block text-left"
           >
-            <article className="relative overflow-hidden glass theme-hover-border p-8 rounded-2xl h-full transition duration-300 hover:-translate-y-2">
+            <Panel as="article" layout="plain" className="relative overflow-hidden theme-hover-border h-full transition duration-300 hover:-translate-y-2">
               <p className="text-sm font-semibold text-cyan-300 mb-3">
                 {pick(item.meta, isEn)}
               </p>
@@ -168,11 +169,11 @@ export default function PythonPandasExerciciosLinks() {
                 {pick(txt.access, isEn)}
                 <span aria-hidden="true">→</span>
               </span>
-            </article>
-          </button>
+            </Panel>
+          </Button>
         ) : (
           <Link key={item.id} to={item.href} className="block">
-            <article className="relative overflow-hidden glass theme-hover-border p-8 rounded-2xl h-full transition duration-300 hover:-translate-y-2">
+            <Panel as="article" layout="plain" className="relative overflow-hidden theme-hover-border h-full transition duration-300 hover:-translate-y-2">
               <p className="text-sm font-semibold text-cyan-300 mb-3">
                 {pick(item.meta, isEn)}
               </p>
@@ -186,7 +187,7 @@ export default function PythonPandasExerciciosLinks() {
                 {pick(txt.open, isEn)}
                 <span aria-hidden="true">→</span>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
       </div>
@@ -203,14 +204,14 @@ export default function PythonPandasExerciciosLinks() {
                   {pick(txt.restrictedAccess, isEn)}
                 </h2>
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 aria-label={pick(txt.cancel, isEn)}
               >
                 ×
-              </button>
+              </Button>
             </div>
 
             <form
@@ -237,14 +238,14 @@ export default function PythonPandasExerciciosLinks() {
                 <span className="mb-2 block text-sm font-semibold text-slate-300">
                   {pick(txt.studentName, isEn)}
                 </span>
-                <input
+                <Input
                   type="text"
                   value={loginAluno}
                   onChange={(event) => {
                     setLoginAluno(event.target.value);
                     setShowError(false);
                   }}
-                  className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
                   autoComplete="username"
                 />
               </label>
@@ -252,14 +253,14 @@ export default function PythonPandasExerciciosLinks() {
                 <span className="mb-2 block text-sm font-semibold text-slate-300">
                   {pick(txt.password, isEn)}
                 </span>
-                <input
+                <Input
                   type="password"
                   value={senha}
                   onChange={(event) => {
                     setSenha(event.target.value);
                     setShowError(false);
                   }}
-                  className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
                   autoComplete="current-password"
                 />
               </label>
@@ -271,24 +272,24 @@ export default function PythonPandasExerciciosLinks() {
               )}
 
               <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                <button
+                <Button variant="secondary"
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                  className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 >
                   {pick(txt.cancel, isEn)}
-                </button>
-                <button
+                </Button>
+                <Button variant="primary"
                   type="submit"
-                  className="rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                  className="text-slate-950 transition"
                 >
                   {pick(txt.enter, isEn)}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

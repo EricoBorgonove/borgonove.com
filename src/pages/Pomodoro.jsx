@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -109,11 +110,11 @@ export default function Pomodoro() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -121,37 +122,37 @@ export default function Pomodoro() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.focusMinutes}</span>
-            <input
+            <Input
               type="number"
               min="1"
               value={focusMinutes}
               onChange={(event) => setFocusMinutes(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.breakMinutes}</span>
-            <input
+            <Input
               type="number"
               min="1"
               value={breakMinutes}
               onChange={(event) => setBreakMinutes(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
         </div>
 
         <div className="flex flex-wrap gap-3 mt-4 text-sm">
-          <button type="button" onClick={() => applyPreset(25, 5)} className="border border-slate-700 px-3 py-1.5 rounded-lg hover:border-cyan-400 transition">{txt.presetDefault}</button>
-          <button type="button" onClick={() => applyPreset(50, 10)} className="border border-slate-700 px-3 py-1.5 rounded-lg hover:border-cyan-400 transition">{txt.presetDeep}</button>
-          <button type="button" onClick={() => applyPreset(15, 3)} className="border border-slate-700 px-3 py-1.5 rounded-lg hover:border-cyan-400 transition">{txt.presetShort}</button>
-          <button type="button" onClick={syncManualMinutes} className="border border-slate-700 px-3 py-1.5 rounded-lg hover:border-cyan-400 transition">{txt.applyManual}</button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(25, 5)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetDefault}</Button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(50, 10)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetDeep}</Button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(15, 3)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetShort}</Button>
+          <Button variant="secondary" type="button" onClick={syncManualMinutes} className="border border-slate-700 hover:border-cyan-400 transition">{txt.applyManual}</Button>
         </div>
 
         <div className="mt-8 text-center">
@@ -167,22 +168,22 @@ export default function Pomodoro() {
         </div>
 
         <div className="flex justify-center flex-wrap gap-3 mt-6">
-          <button
+          <Button variant="primary"
             type="button"
             onClick={() => setRunning((prev) => !prev)}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-6 py-2.5 rounded-xl font-semibold transition"
+            className="text-slate-900 transition"
           >
             {running ? txt.pause : txt.start}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             type="button"
             onClick={resetTimer}
-            className="border border-slate-700 text-slate-200 px-6 py-2.5 rounded-xl hover:border-cyan-400 transition"
+            className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
             {txt.reset}
-          </button>
+          </Button>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

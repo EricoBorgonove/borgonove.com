@@ -1,3 +1,4 @@
+import { Input, PageTemplate, PageTitle, Panel, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -45,11 +46,11 @@ export default function GeradorQrCode() {
   }, [size, text]);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -57,35 +58,35 @@ export default function GeradorQrCode() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <div className="glass rounded-2xl p-8">
+        <Panel as="div" layout="plain">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.textOrLink}</span>
-            <textarea
+            <Textarea
               rows={6}
               value={text}
               onChange={(event) => setText(event.target.value)}
               placeholder={txt.textPlaceholder}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block mt-4">
             <span className="block text-sm text-slate-300 mb-2">{txt.size}</span>
-            <input
+            <Input
               type="number"
               min="120"
               max="800"
               value={size}
               onChange={(event) => setSize(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
-        </div>
+        </Panel>
 
-        <div className="glass rounded-2xl p-8 flex flex-col items-center justify-center">
+        <Panel as="div" layout="plain" className="flex flex-col items-center justify-center">
           {qrUrl ? (
             <>
               <img src={qrUrl} alt={txt.alt} className="rounded-xl bg-white p-3" />
@@ -100,8 +101,8 @@ export default function GeradorQrCode() {
           ) : (
             <p className="text-slate-400">{txt.empty}</p>
           )}
-        </div>
+        </Panel>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { PageTemplate, Panel } from "./ui/Patterns";
 import { Navigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAdminAuth } from "../hooks/useAdminAuth";
@@ -10,11 +11,11 @@ export default function RequireAdmin({ children }) {
 
   if (isLoading) {
     return (
-      <section className="min-h-[70vh] px-6 py-24 max-w-4xl mx-auto flex items-center justify-center">
-        <div className="glass rounded-2xl px-6 py-4 text-sm text-slate-300">
+      <PageTemplate className="flex items-center justify-center">
+        <Panel as="div" layout="plain" className="text-sm text-slate-300">
           {isEn ? "Loading protected access..." : "Carregando acesso protegido..."}
-        </div>
-      </section>
+        </Panel>
+      </PageTemplate>
     );
   }
 

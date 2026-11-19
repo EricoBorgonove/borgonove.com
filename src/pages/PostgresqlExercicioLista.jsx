@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -700,7 +701,7 @@ export default function PostgresqlExercicioLista() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo={`/disciplinas/postgresql/exercicios/${list.slug}`}
@@ -719,12 +720,12 @@ export default function PostgresqlExercicioLista() {
             {hideBlockOrder ? list.title : `Lista ${list.title} · Bloco ${block.order} de ${list.blocks.length}`}
           </span>
         </div>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">{block.title}</h1>
+        <PageTitle className="mb-4">{block.title}</PageTitle>
         <p className="text-lg leading-relaxed text-slate-400">{block.summary}</p>
       </div>
 
       {list.files && (
-        <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain" className="mb-8">
           <h2 className="mb-4 text-xl font-semibold text-cyan-300">Arquivos para download</h2>
           <div className="flex flex-wrap gap-3">
             {list.files.map((file) => (
@@ -739,7 +740,7 @@ export default function PostgresqlExercicioLista() {
               </a>
             ))}
           </div>
-        </div>
+        </Panel>
       )}
 
       <ol className={`grid gap-4 ${hasDiagrams ? "" : "md:grid-cols-2"}`}>
@@ -748,9 +749,9 @@ export default function PostgresqlExercicioLista() {
           const number = getPostgresqlExerciseNumber(exercise, index + 1);
 
           return (
-          <li
+          <Panel as="li" layout="plain"
             key={`${block.slug}-${number}`}
-            className="glass rounded-2xl p-5 text-sm leading-relaxed text-slate-300"
+            className="text-sm leading-relaxed text-slate-300"
           >
             <div className="mb-3 flex items-center justify-between gap-3">
               <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
@@ -758,48 +759,48 @@ export default function PostgresqlExercicioLista() {
               </span>
               <div className="flex shrink-0 items-center gap-2">
                 {exercise.diagram && (
-                  <button
+                  <Button variant="secondary"
                     type="button"
                     onClick={() => setSelectedDiagram({ exercise, question, number })}
-                    className="postgres-mer-button rounded-lg border px-3 py-1 text-xs font-semibold transition"
+                    className="postgres-mer-button border transition"
                   >
                     MER
-                  </button>
+                  </Button>
                 )}
-                <button
+                <Button variant="secondary"
                   type="button"
                   onClick={() => openAnswer({ exercise, question, number, index })}
-                  className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
+                  className="border border-cyan-400/30 text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
                 >
                   Resposta
-                </button>
+                </Button>
               </div>
             </div>
             <p>{question}</p>
-          </li>
+          </Panel>
           );
         })}
       </ol>
 
       <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label="Navegação entre blocos de exercícios">
         {previousBlock ? (
-          <Link
+          <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/exercicios/${list.slug}/${previousBlock.slug}`}
-            className="glass theme-hover-border rounded-2xl p-5 transition hover:-translate-y-1"
+            className="theme-hover-border transition hover:-translate-y-1"
           >
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Anterior</p>
             <p className="font-semibold text-cyan-200">← {previousBlock.title}</p>
-          </Link>
+          </Panel>
         ) : <div />}
 
         {nextBlock && (
-          <Link
+          <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/exercicios/${list.slug}/${nextBlock.slug}`}
-            className="glass theme-hover-border rounded-2xl p-5 text-right transition hover:-translate-y-1"
+            className="theme-hover-border text-right transition hover:-translate-y-1"
           >
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Próximo</p>
             <p className="font-semibold text-cyan-200">{nextBlock.title} →</p>
-          </Link>
+          </Panel>
         )}
       </nav>
 
@@ -810,7 +811,7 @@ export default function PostgresqlExercicioLista() {
           aria-modal="true"
           aria-labelledby="postgresql-answer-title"
         >
-          <div className="glass max-h-[86vh] w-full max-w-3xl overflow-y-auto rounded-2xl p-6 shadow-2xl md:p-8">
+          <Panel as="div" layout="plain" className="max-h-[86vh] w-full max-w-3xl overflow-y-auto shadow-2xl">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
@@ -820,13 +821,13 @@ export default function PostgresqlExercicioLista() {
                   Resposta comentada
                 </h2>
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={closeAnswer}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
+                className="border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
               >
                 Fechar
-              </button>
+              </Button>
             </div>
 
             <div className="mb-5 rounded-xl border border-slate-800 bg-slate-950/60 p-4">
@@ -845,7 +846,7 @@ export default function PostgresqlExercicioLista() {
                   Senha da resposta
                 </label>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <input
+                  <Input
                     id="postgresql-answer-password"
                     type="password"
                     value={answerPassword}
@@ -853,17 +854,17 @@ export default function PostgresqlExercicioLista() {
                       setAnswerPassword(event.target.value);
                       setAnswerPasswordError(false);
                     }}
-                    className="min-h-11 flex-1 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                    className="min-h-11 flex-1 border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                     placeholder="Digite a senha"
                     autoComplete="off"
                     autoFocus
                   />
-                  <button
+                  <Button variant="secondary"
                     type="submit"
-                    className="min-h-11 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300"
+                    className="min-h-11 border border-cyan-400/30 text-cyan-100 transition hover:border-cyan-300"
                   >
                     Liberar resposta
-                  </button>
+                  </Button>
                 </div>
                 <p className="mt-3 text-xs leading-relaxed text-slate-400">
                   Use o padrão informado pelo professor: prefixo da lista mais o número da questão.
@@ -879,7 +880,7 @@ export default function PostgresqlExercicioLista() {
                 {getPostgresqlExerciseAnswer(block.slug, selectedExercise.index, selectedExercise.exercise)}
               </pre>
             )}
-          </div>
+          </Panel>
         </div>
       )}
 
@@ -890,7 +891,7 @@ export default function PostgresqlExercicioLista() {
           aria-modal="true"
           aria-labelledby="postgresql-mer-title"
         >
-          <div className="glass max-h-[92vh] w-full max-w-7xl overflow-y-auto rounded-2xl p-5 shadow-2xl md:p-7">
+          <Panel as="div" layout="plain" className="max-h-[92vh] w-full max-w-7xl overflow-y-auto shadow-2xl">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">
@@ -900,13 +901,13 @@ export default function PostgresqlExercicioLista() {
                   Diagrama MER
                 </h2>
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={() => setSelectedDiagram(null)}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-200 transition hover:border-amber-300 hover:text-amber-100"
+                className="border border-slate-700 text-slate-200 transition hover:border-amber-300 hover:text-amber-100"
               >
                 Fechar
-              </button>
+              </Button>
             </div>
 
             <div className="mb-4 rounded-xl border border-slate-800 bg-slate-950/60 p-4">
@@ -914,9 +915,9 @@ export default function PostgresqlExercicioLista() {
             </div>
 
             <MerDiagram diagram={selectedDiagram.exercise.diagram} />
-          </div>
+          </Panel>
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

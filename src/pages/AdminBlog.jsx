@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Select, Textarea } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -249,7 +250,7 @@ export default function AdminBlog() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-6 text-sm text-slate-400 flex flex-wrap gap-2">
         <Link to="/admin" className="hover:text-cyan-200 transition">
           {txt.breadcrumbAdmin}
@@ -258,9 +259,9 @@ export default function AdminBlog() {
         <span className="text-cyan-300">{txt.breadcrumbBlog}</span>
       </div>
 
-      <div className="glass rounded-[32px] p-8 md:p-10">
-        <h1 className="text-3xl md:text-4xl font-black text-white">{txt.title}</h1>
-        <p className="text-slate-300 mt-3">{txt.description}</p>
+      <Panel as="div" layout="plain">
+        <PageHeader><PageTitle className="text-white">{txt.title}</PageTitle>
+        <PageDescription className="mt-3">{txt.description}</PageDescription></PageHeader>
 
         {error && (
           <p className="mt-5 rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
@@ -275,16 +276,16 @@ export default function AdminBlog() {
         )}
 
         <div className="mt-8 grid gap-6 xl:grid-cols-[360px_minmax(0,1fr)]">
-          <aside className="admin-panel rounded-2xl p-5">
+          <Panel as="aside" layout="plain">
             <div className="flex items-center justify-between gap-3">
               <h2 className="text-lg font-semibold text-cyan-300">{txt.listTitle}</h2>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={resetForm}
-                className="rounded-lg border border-cyan-400/30 px-3 py-2 text-xs font-semibold text-cyan-300 transition hover:border-cyan-300 hover:bg-cyan-500/10"
+                className="border border-cyan-400/30 text-cyan-300 transition hover:border-cyan-300"
               >
                 {txt.newPost}
-              </button>
+              </Button>
             </div>
 
             <div className="mt-4 space-y-3 max-h-[560px] overflow-y-auto pr-1">
@@ -308,46 +309,46 @@ export default function AdminBlog() {
                     </span>
 
                     <div className="flex gap-2">
-                      <button
+                      <Button variant="secondary"
                         type="button"
                         onClick={() => editPost(post)}
-                        className="rounded-lg border border-slate-600 px-2.5 py-1.5 text-xs text-slate-200 hover:border-cyan-400"
+                        className="border border-slate-600 text-slate-200 hover:border-cyan-400"
                       >
                         {txt.edit}
-                      </button>
-                      <button
+                      </Button>
+                      <Button variant="custom"
                         type="button"
                         onClick={() => removePost(post.id)}
                         className="rounded-lg border border-rose-500/40 px-2.5 py-1.5 text-xs text-rose-200 hover:bg-rose-500/10"
                       >
                         {txt.delete}
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
-          </aside>
+          </Panel>
 
-          <form onSubmit={savePost} className="admin-panel rounded-2xl p-5 space-y-4">
+          <Panel as="form" layout="plain" onSubmit={savePost} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formTitlePt}</span>
-                <input
+                <Input
                   type="text"
                   value={form.title_pt}
                   onChange={(event) => setForm((prev) => ({ ...prev, title_pt: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
 
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formTitleEn}</span>
-                <input
+                <Input
                   type="text"
                   value={form.title_en}
                   onChange={(event) => setForm((prev) => ({ ...prev, title_en: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
             </div>
@@ -355,23 +356,23 @@ export default function AdminBlog() {
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formSlug}</span>
-                <input
+                <Input
                   type="text"
                   value={form.slug}
                   onChange={(event) => setForm((prev) => ({ ...prev, slug: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
 
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formCover}</span>
-                <input
+                <Input
                   type="url"
                   value={form.cover_image_url}
                   onChange={(event) =>
                     setForm((prev) => ({ ...prev, cover_image_url: event.target.value }))
                   }
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
             </div>
@@ -379,21 +380,21 @@ export default function AdminBlog() {
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formExcerptPt}</span>
-                <textarea
+                <Textarea
                   rows="3"
                   value={form.excerpt_pt}
                   onChange={(event) => setForm((prev) => ({ ...prev, excerpt_pt: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
 
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formExcerptEn}</span>
-                <textarea
+                <Textarea
                   rows="3"
                   value={form.excerpt_en}
                   onChange={(event) => setForm((prev) => ({ ...prev, excerpt_en: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
             </div>
@@ -401,21 +402,21 @@ export default function AdminBlog() {
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formContentPt}</span>
-                <textarea
+                <Textarea
                   rows="10"
                   value={form.content_pt}
                   onChange={(event) => setForm((prev) => ({ ...prev, content_pt: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
 
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formContentEn}</span>
-                <textarea
+                <Textarea
                   rows="10"
                   value={form.content_en}
                   onChange={(event) => setForm((prev) => ({ ...prev, content_en: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
             </div>
@@ -423,37 +424,37 @@ export default function AdminBlog() {
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formStatus}</span>
-                <select
+                <Select
                   value={form.status}
                   onChange={(event) => setForm((prev) => ({ ...prev, status: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 >
                   <option value="draft">{txt.statusDraft}</option>
                   <option value="published">{txt.statusPublished}</option>
-                </select>
+                </Select>
               </label>
 
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.formPublishedAt}</span>
-                <input
+                <Input
                   type="datetime-local"
                   value={form.published_at}
                   onChange={(event) => setForm((prev) => ({ ...prev, published_at: event.target.value }))}
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 />
               </label>
             </div>
 
-            <button
+            <Button variant="primary"
               type="submit"
               disabled={saving}
-              className="rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:opacity-60 disabled:hover:bg-cyan-500"
+              className="text-slate-950 transition disabled:opacity-60 disabled:hover:bg-cyan-500"
             >
               {saving ? txt.saving : txt.save}
-            </button>
-          </form>
+            </Button>
+          </Panel>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

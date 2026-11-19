@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Navigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -32,7 +33,7 @@ export default function PythonPandasExercicioPratico() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas/listas-exercicios" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
@@ -40,11 +41,11 @@ export default function PythonPandasExercicioPratico() {
       </div>
 
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-        <div>
+        <PageHeader>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
             {localizedExercise.format}
           </p>
-          <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+          <PageTitle className="mb-4 flex items-center gap-3">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
               <path
                 fill="currentColor"
@@ -52,14 +53,14 @@ export default function PythonPandasExercicioPratico() {
               />
             </svg>
             <span>{localizedExercise.title}</span>
-          </h1>
-          <p className="text-slate-400 text-lg max-w-4xl">
+          </PageTitle>
+          <PageDescription className="max-w-4xl">
             {localizedExercise.description}
-          </p>
-          <p className="mt-4 text-sm text-slate-500">
+          </PageDescription>
+          <PageDescription className="mt-4 text-sm">
             {pick(txt.file, isEn)} <code className="text-slate-300">{localizedExercise.file}</code>
-          </p>
-        </div>
+          </PageDescription>
+        </PageHeader>
         <a
           href={localizedExercise.download}
           download
@@ -71,7 +72,7 @@ export default function PythonPandasExercicioPratico() {
       </div>
 
       {localizedExercise.supportFiles && (
-        <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+        <Panel as="div" layout="plain" className="mb-8">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.supportMaterials, isEn)}</h2>
           <div className="flex flex-wrap gap-3">
             {localizedExercise.supportFiles.map((file) => (
@@ -86,10 +87,10 @@ export default function PythonPandasExercicioPratico() {
               </a>
             ))}
           </div>
-        </div>
+        </Panel>
       )}
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.structure, isEn)}</h2>
         <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
           {localizedExercise.structure.map((item) => (
@@ -99,20 +100,20 @@ export default function PythonPandasExercicioPratico() {
             </li>
           ))}
         </ul>
-      </div>
+      </Panel>
 
       {localizedExercise.setupCode && (
-        <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+        <Panel as="div" layout="plain" className="mb-8">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.initialSetup, isEn)}</h2>
           <CodeBlock>{localizedExercise.setupCode}</CodeBlock>
-        </div>
+        </Panel>
       )}
 
       <div className="space-y-8">
         {localizedExercise.blocks.map((block, blockIndex) => {
           const firstNumber = blockStartNumbers[blockIndex];
           return (
-            <article key={block.title} className="glass rounded-2xl p-6 md:p-8">
+            <Panel as="article" layout="plain" key={block.title}>
               <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{block.title}</h2>
               <ol className="grid gap-3 md:grid-cols-2">
                 {block.exercises.map((item, index) => (
@@ -122,10 +123,10 @@ export default function PythonPandasExercicioPratico() {
                   </li>
                 ))}
               </ol>
-            </article>
+            </Panel>
           );
         })}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

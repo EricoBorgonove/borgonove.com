@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Select, Table, TableContainer } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -100,8 +101,8 @@ function Section({ id, title, eyebrow, children }) {
 
 function FieldTable({ rows }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="w-full min-w-[620px] border-collapse text-left text-sm">
+    <TableContainer className="rounded-2xl border border-slate-800">
+      <Table className="w-full min-w-[620px] border-collapse text-left text-sm">
         <thead className="bg-slate-950/70 text-cyan-200">
           <tr>
             <th className="px-4 py-3 font-semibold">Campo</th>
@@ -118,19 +119,19 @@ function FieldTable({ rows }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
 function TimelineGraphic({ selectedMonth, onSelectMonth }) {
   return (
-    <div className="glass rounded-2xl p-5 md:p-6">
+    <Panel as="div" layout="plain">
       <div className="grid gap-3 md:grid-cols-4">
         {priceTimeline.map((item) => {
           const active = item.month === selectedMonth;
           return (
-            <button
+            <Button variant="custom"
               key={item.month}
               type="button"
               onClick={() => onSelectMonth(item.month)}
@@ -145,7 +146,7 @@ function TimelineGraphic({ selectedMonth, onSelectMonth }) {
               </span>
               <span className="mt-2 block text-xl font-black">{item.price}</span>
               <span className="mt-2 block text-xs text-slate-400">{item.range}</span>
-            </button>
+            </Button>
           );
         })}
       </div>
@@ -153,7 +154,7 @@ function TimelineGraphic({ selectedMonth, onSelectMonth }) {
         Em {selectedMonth}, o preço válido do Notebook é{" "}
         <strong>{priceTimeline.find((item) => item.month === selectedMonth)?.price}</strong>.
       </div>
-    </div>
+    </Panel>
   );
 }
 
@@ -172,7 +173,7 @@ function TemporalDiagram() {
                 <span
                   key={`${row}-${cell}`}
                   className={`rounded-lg px-3 py-2 text-xs ${
-                    cell <= index ? "bg-cyan-500/20 text-cyan-100" : "bg-slate-900 text-slate-500"
+                    cell <= index ? "bg-cyan-500/20 text-cyan-100" : "bg-slate-900 text-slate-400"
                   }`}
                 >
                   validade {cell + 1}
@@ -192,7 +193,7 @@ function TemporalDiagram() {
 function ErDiagram() {
   const boxes = ["lab_config", "category", "product", "product_price", "sales", "product_price_audit"];
   return (
-    <div className="glass rounded-2xl p-6">
+    <Panel as="div" layout="plain">
       <div className="grid gap-4 md:grid-cols-3">
         {boxes.map((box) => (
           <div key={box} className="rounded-xl border border-cyan-400/20 bg-slate-950/60 p-4">
@@ -207,7 +208,7 @@ function ErDiagram() {
         <p>product_price -&gt; product_price_audit</p>
         <p>lab_config controla a geração dos dados</p>
       </div>
-    </div>
+    </Panel>
   );
 }
 
@@ -236,7 +237,7 @@ function LojaTemporalExercises() {
         </div>
       </div>
 
-      <div className="glass rounded-2xl p-6">
+      <Panel as="div" layout="plain">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-2xl font-semibold text-slate-100">Lista Loja Temporal</h3>
@@ -251,13 +252,13 @@ function LojaTemporalExercises() {
             Abrir com respostas
           </Link>
         </div>
-      </div>
+      </Panel>
 
       <div className="space-y-4">
         {postgresqlLojaTemporalExerciseList.blocks.map((block, blockIndex) => (
-          <details
+          <Panel as="details" layout="plain"
             key={block.slug}
-            className="glass rounded-2xl p-5"
+
             open={blockIndex === 0}
           >
             <summary className="cursor-pointer list-none">
@@ -290,7 +291,7 @@ function LojaTemporalExercises() {
                 </li>
               ))}
             </ol>
-          </details>
+          </Panel>
         ))}
       </div>
     </div>
@@ -342,7 +343,7 @@ export default function PostgresqlBancosTemporais() {
   }, []);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24">
+    <PageTemplate>
       <div className="mx-auto max-w-7xl">
         <BackButton
           fallbackTo="/disciplinas/postgresql"
@@ -366,9 +367,9 @@ export default function PostgresqlBancosTemporais() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
               Material de apoio PostgreSQL
             </p>
-            <h1 className="mb-5 text-4xl font-black text-slate-100 md:text-6xl">
+            <PageTitle className="mb-5 text-slate-100">
               Bancos de Dados Temporais
-            </h1>
+            </PageTitle>
             <p className="mb-5 text-xl leading-relaxed text-cyan-100">
               Aprenda a armazenar, consultar e analisar informações que mudam ao longo do tempo usando PostgreSQL.
             </p>
@@ -376,25 +377,25 @@ export default function PostgresqlBancosTemporais() {
               Em bancos tradicionais, uma atualização normalmente substitui o valor anterior. Em bancos temporais, cada versão pode ser associada ao período em que foi válida, permitindo reconstruir o passado e acompanhar todas as alterações realizadas.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <button
+              <Button variant="primary"
                 type="button"
                 onClick={() => scrollToSection("introducao")}
-                className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                className="text-slate-950 transition"
               >
                 Começar a aprender
-              </button>
-              <button
+              </Button>
+              <Button variant="secondary"
                 type="button"
                 onClick={() => scrollToSection("consultas-sql")}
-                className="rounded-xl border border-cyan-400/40 px-5 py-3 text-sm font-bold text-cyan-100 transition hover:border-cyan-300"
+                className="border border-cyan-400/40 text-cyan-100 transition hover:border-cyan-300"
               >
                 Ver exemplos SQL
-              </button>
+              </Button>
             </div>
             <p className="mt-5 text-sm text-slate-500">Leitura estimada: 35 a 45 minutos</p>
           </div>
 
-          <div className="glass rounded-2xl p-6">
+          <Panel as="div" layout="plain">
             <div className="mx-auto mb-6 grid aspect-square max-w-[260px] place-items-center rounded-full border border-cyan-400/25 bg-cyan-500/10">
               <div className="grid h-40 w-40 place-items-center rounded-full border-4 border-cyan-300/70">
                 <div className="h-24 w-28 rounded-2xl border-2 border-cyan-100/80 bg-slate-950/70 p-3">
@@ -408,27 +409,27 @@ export default function PostgresqlBancosTemporais() {
               <p className="font-semibold text-cyan-100">Linha do tempo dos dados</p>
               <p>Versões antigas deixam de ser “perdidas” e passam a ser parte explícita do modelo.</p>
             </div>
-          </div>
+          </Panel>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[260px_1fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="glass rounded-2xl p-4">
-              <button
+            <Panel as="div" layout="plain">
+              <Button variant="secondary"
                 type="button"
                 onClick={() => setIsIndexOpen((value) => !value)}
-                className="flex w-full items-center justify-between rounded-xl border border-slate-800 px-4 py-3 text-left text-sm font-semibold text-cyan-100 lg:hidden"
+                className="flex w-full items-center justify-between border border-slate-800 text-left text-cyan-100 lg:hidden"
               >
                 Navegação interna
                 <span>{isIndexOpen ? "Fechar" : "Abrir"}</span>
-              </button>
+              </Button>
               <nav className={`${isIndexOpen ? "mt-3 block" : "hidden"} lg:block`} aria-label="Navegação interna">
                 <p className="mb-3 hidden text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 lg:block">
                   Nesta página
                 </p>
                 <div className="space-y-1">
                   {navItems.map(([id, label]) => (
-                    <button
+                    <Button variant="custom"
                       key={id}
                       type="button"
                       onClick={() => {
@@ -442,17 +443,17 @@ export default function PostgresqlBancosTemporais() {
                       }`}
                     >
                       {label}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </nav>
-            </div>
+            </Panel>
           </aside>
 
-          <main>
+          <div className="min-w-0">
             <Section id="introducao" title="O problema dos bancos tradicionais" eyebrow="Introdução">
               <div className="grid gap-5 lg:grid-cols-2">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <p className="mb-4 text-slate-300">
                     Em um banco tradicional, um `UPDATE` substitui o valor anterior. Se nada registrar o histórico, o passado deixa de estar disponível para consulta.
                   </p>
@@ -469,8 +470,8 @@ export default function PostgresqlBancosTemporais() {
                       <p className="text-2xl font-black text-cyan-100">R$ 120,00</p>
                     </div>
                   </div>
-                </div>
-                <div className="glass rounded-2xl p-6">
+                </Panel>
+                <Panel as="div" layout="plain">
                   <h3 className="mb-4 text-xl font-semibold text-slate-100">Perguntas que ficam difíceis</h3>
                   <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
                     {[
@@ -485,7 +486,7 @@ export default function PostgresqlBancosTemporais() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Panel>
               </div>
 
               <div className="mt-6 grid gap-5 md:grid-cols-2">
@@ -506,15 +507,15 @@ export default function PostgresqlBancosTemporais() {
 
             <Section id="tipos-tempo" title="O que é um banco temporal" eyebrow="Tipos de tempo">
               <div className="space-y-6">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <p className="mb-5 text-base leading-relaxed text-slate-300">
                     Um banco temporal armazena diferentes versões de uma informação ao longo do tempo. Ele pode preservar valor atual, valores anteriores, data inicial e final de validade, momento do registro, usuário responsável e histórico de correções.
                   </p>
                   <TimelineGraphic selectedMonth={selectedMonth} onSelectMonth={setSelectedMonth} />
-                </div>
+                </Panel>
 
                 <div className="grid gap-5 md:grid-cols-2">
-                  <div className="glass rounded-2xl p-6">
+                  <Panel as="div" layout="plain">
                     <h3 className="mb-3 text-2xl font-semibold text-cyan-100">Tempo de validade</h3>
                     <p className="mb-4 text-sm leading-relaxed text-slate-300">
                       Representa quando a informação era verdadeira no mundo real. Ele responde: “Em qual período esta informação era verdadeira?”
@@ -526,8 +527,8 @@ export default function PostgresqlBancosTemporais() {
                         ["Notebook", "R$ 3.150,00", "01/03/2026 a 01/04/2026"],
                       ]}
                     />
-                  </div>
-                  <div className="glass rounded-2xl p-6">
+                  </Panel>
+                  <Panel as="div" layout="plain">
                     <h3 className="mb-3 text-2xl font-semibold text-orange-100">Tempo de sistema</h3>
                     <p className="mb-4 text-sm leading-relaxed text-slate-300">
                       Registra quando uma informação foi inserida, corrigida ou removida no banco. Exemplo: o preço de R$ 3.000 era válido em janeiro, mas em março foi descoberta uma correção para R$ 2.950.
@@ -536,22 +537,22 @@ export default function PostgresqlBancosTemporais() {
                       <p className="rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-3">Data de validade: janeiro</p>
                       <p className="rounded-xl border border-orange-300/30 bg-orange-400/10 p-3">Data de registro da correção: março</p>
                     </div>
-                  </div>
+                  </Panel>
                 </div>
 
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-slate-100">Bancos bitemporais</h3>
                   <p className="mb-5 text-sm leading-relaxed text-slate-300">
                     Bancos bitemporais combinam tempo de validade e tempo de sistema. Eles respondem tanto o que era verdadeiro no mundo real quanto o que o sistema acreditava saber em determinada data.
                   </p>
                   <TemporalDiagram />
-                </div>
+                </Panel>
               </div>
             </Section>
 
             <Section id="intervalos" title="Intervalos temporais" eyebrow="Ranges">
               <div className="grid gap-5 lg:grid-cols-2">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <p className="mb-4 text-slate-300">
                     O intervalo <code className="text-cyan-200">[2026-01-01, 2026-02-01)</code> inclui o primeiro dia e exclui o limite final. Esse formato é comum porque períodos consecutivos encostam sem se sobrepor.
                   </p>
@@ -568,17 +569,17 @@ export default function PostgresqlBancosTemporais() {
                       </div>
                     ))}
                   </div>
-                </div>
-                <div className="glass rounded-2xl p-6">
+                </Panel>
+                <Panel as="div" layout="plain">
                   <label htmlFor="range-date" className="mb-3 block text-sm font-semibold text-cyan-100">
                     Teste uma data
                   </label>
-                  <input
+                  <Input
                     id="range-date"
                     type="date"
                     value={rangeDate}
                     onChange={(event) => setRangeDate(event.target.value)}
-                    className="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                    className="w-full border text-slate-100 outline-none focus:border-cyan-300"
                   />
                   <div className="mt-4 rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-4 text-sm text-cyan-50">
                     {intervalMatch ? (
@@ -590,7 +591,7 @@ export default function PostgresqlBancosTemporais() {
                       "A data escolhida não está nos intervalos de exemplo."
                     )}
                   </div>
-                </div>
+                </Panel>
               </div>
 
               <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -618,7 +619,7 @@ export default function PostgresqlBancosTemporais() {
 
             <Section id="consultas-sql" title="Consultas SQL temporais" eyebrow="Consultas SQL">
               <div className="space-y-8">
-                <article className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Operadores temporais</h3>
                   <FieldTable rows={operators.map(([operator, meaning, example]) => [operator, meaning, example])} />
                   <div className="mt-6 grid gap-5 lg:grid-cols-2">
@@ -629,9 +630,9 @@ export default function PostgresqlBancosTemporais() {
                       {"SELECT daterange(\n    DATE '2026-01-01',\n    DATE '2026-03-01',\n    '[)'\n) && daterange(\n    DATE '2026-02-01',\n    DATE '2026-04-01',\n    '[)'\n);"}
                     </CodeBlock>
                   </div>
-                </article>
+                </Panel>
 
-                <article className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Preço válido em uma data</h3>
                   <CodeBlock language="sql" label="Consulta pontual">
                     {"SELECT\n    product_id,\n    price,\n    valid_at\nFROM product_price\nWHERE product_id = 10\n  AND valid_at @> DATE '2026-06-15';"}
@@ -639,9 +640,9 @@ export default function PostgresqlBancosTemporais() {
                   <p className="mt-4 text-sm leading-relaxed text-slate-300">
                     O filtro localiza o produto e usa <code className="text-cyan-200">@&gt;</code> para perguntar qual intervalo contém a data pesquisada.
                   </p>
-                </article>
+                </Panel>
 
-                <article className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Snapshot histórico</h3>
                   <CodeBlock language="sql" label="Snapshot">
                     {"SELECT\n    p.product_id,\n    p.name,\n    pp.price,\n    pp.valid_at\nFROM product p\nJOIN product_price pp\n  ON pp.product_id = p.product_id\nWHERE pp.valid_at @> DATE '2025-12-15';"}
@@ -650,18 +651,18 @@ export default function PostgresqlBancosTemporais() {
                     <label htmlFor="snapshot-date" className="mb-3 block text-sm font-semibold text-cyan-100">
                       Data do snapshot demonstrativo
                     </label>
-                    <select
+                    <Select
                       id="snapshot-date"
                       value={snapshotDate}
                       onChange={(event) => setSnapshotDate(event.target.value)}
-                      className="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-100 outline-none focus:border-cyan-300"
+                      className="w-full border text-slate-100 outline-none focus:border-cyan-300"
                     >
                       {Object.keys(snapshotRows).map((date) => (
                         <option key={date} value={date}>{date}</option>
                       ))}
-                    </select>
-                    <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-800">
-                      <table className="w-full min-w-[520px] text-left text-sm">
+                    </Select>
+                    <TableContainer className="mt-4  rounded-2xl border border-slate-800">
+                      <Table className="w-full min-w-[520px] text-left text-sm">
                         <thead className="bg-slate-950/70 text-cyan-200">
                           <tr>
                             <th className="px-4 py-3">Produto</th>
@@ -678,12 +679,12 @@ export default function PostgresqlBancosTemporais() {
                             </tr>
                           ))}
                         </tbody>
-                      </table>
-                    </div>
+                      </Table>
+                    </TableContainer>
                   </div>
-                </article>
+                </Panel>
 
-                <article className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Histórico completo e comparação</h3>
                   <div className="grid gap-5 lg:grid-cols-2">
                     <CodeBlock language="sql" label="Histórico">
@@ -696,9 +697,9 @@ export default function PostgresqlBancosTemporais() {
                   <p className="mt-4 text-sm leading-relaxed text-slate-300">
                     <code className="text-cyan-200">lower()</code> obtém o início, <code className="text-cyan-200">upper()</code> obtém o fim, e funções de janela comparam cada linha com períodos anteriores sem perder detalhe.
                   </p>
-                </article>
+                </Panel>
 
-                <article className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Junção temporal e receita histórica</h3>
                   <div className="grid gap-5 lg:grid-cols-2">
                     <CodeBlock language="sql" label="Venda + preço histórico">
@@ -716,13 +717,13 @@ export default function PostgresqlBancosTemporais() {
                       </div>
                     ))}
                   </div>
-                </article>
+                </Panel>
               </div>
             </Section>
 
             <Section id="integridade-temporal" title="Integridade temporal" eyebrow="Regras de consistência">
               <div className="space-y-6">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <h3 className="mb-3 text-2xl font-semibold text-cyan-100">Impedindo sobreposição de preços</h3>
                   <p className="mb-4 text-sm leading-relaxed text-slate-300">
                     Se um produto tiver preço A em [01/01/2026, 01/03/2026) e preço B em [01/02/2026, 01/04/2026), fevereiro teria dois preços válidos. A restrição temporal impede esse conflito.
@@ -738,9 +739,9 @@ export default function PostgresqlBancosTemporais() {
                   <p className="mt-4 rounded-xl border border-orange-300/30 bg-orange-400/10 p-4 text-sm text-orange-50">
                     Atenção: recursos como <code>WITHOUT OVERLAPS</code> e chave estrangeira temporal dependem da versão do PostgreSQL. Verifique a compatibilidade do servidor usado em aula.
                   </p>
-                </div>
+                </Panel>
 
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <h3 className="mb-3 text-2xl font-semibold text-cyan-100">Chave estrangeira temporal</h3>
                   <p className="mb-4 text-sm leading-relaxed text-slate-300">
                     Uma venda realizada em 15 de junho somente é válida se existir um período de preço que cubra 15 de junho.
@@ -751,29 +752,29 @@ export default function PostgresqlBancosTemporais() {
                   <div className="mt-5 rounded-2xl border border-cyan-400/25 bg-cyan-500/10 p-5 text-sm text-cyan-50">
                     Preço: [01/06, 01/07) | Venda: 15/06 | Resultado: venda contida no período do preço.
                   </div>
-                </div>
+                </Panel>
 
                 <div className="grid gap-5 lg:grid-cols-2">
-                  <div className="glass rounded-2xl p-6">
+                  <Panel as="div" layout="plain">
                     <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Identificando lacunas</h3>
                     <CodeBlock language="sql" label="LEAD">
                       {"WITH periodos AS (\n    SELECT\n        product_id,\n        valid_at,\n        LEAD(valid_at) OVER (\n            PARTITION BY product_id\n            ORDER BY lower(valid_at)\n        ) AS proximo_periodo\n    FROM product_price\n)\nSELECT\n    product_id,\n    upper(valid_at) AS fim_atual,\n    lower(proximo_periodo) AS inicio_proximo\nFROM periodos\nWHERE proximo_periodo IS NOT NULL\n  AND upper(valid_at) < lower(proximo_periodo);"}
                     </CodeBlock>
-                  </div>
-                  <div className="glass rounded-2xl p-6">
+                  </Panel>
+                  <Panel as="div" layout="plain">
                     <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Identificando sobreposições</h3>
                     <CodeBlock language="sql" label="Self join">
                       {"SELECT\n    a.product_id,\n    a.valid_at AS periodo_a,\n    b.valid_at AS periodo_b\nFROM product_price a\nJOIN product_price b\n  ON a.product_id = b.product_id\n AND a.ctid < b.ctid\n AND a.valid_at && b.valid_at;"}
                     </CodeBlock>
                     <p className="mt-4 text-sm text-slate-300">Com a restrição correta, a consulta deve retornar zero registros.</p>
-                  </div>
+                  </Panel>
                 </div>
               </div>
             </Section>
 
             <Section id="auditoria" title="Auditoria e correção retroativa" eyebrow="Auditoria">
               <div className="space-y-6">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <p className="mb-5 text-sm leading-relaxed text-slate-300">
                     A auditoria responde quem alterou, quando alterou, qual era o valor anterior e qual passou a ser o valor novo. Operações podem ser registradas como I, U e D: inserção, atualização e exclusão.
                   </p>
@@ -784,7 +785,7 @@ export default function PostgresqlBancosTemporais() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </Panel>
 
                 <div className="grid gap-5 lg:grid-cols-2">
                   <CodeBlock language="sql" label="Trigger de auditoria">
@@ -795,7 +796,7 @@ export default function PostgresqlBancosTemporais() {
                   </CodeBlock>
                 </div>
 
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <h3 className="mb-4 text-2xl font-semibold text-cyan-100">Correção retroativa</h3>
                   <ol className="mb-5 grid gap-3 text-sm text-slate-300 md:grid-cols-5">
                     {["localizar o período", "preservar o histórico", "ajustar ou dividir", "inserir a versão correta", "registrar auditoria"].map((item, index) => (
@@ -808,13 +809,13 @@ export default function PostgresqlBancosTemporais() {
                   <CodeBlock language="sql" label="Transação">
                     {"BEGIN;\n\nUPDATE product_price\nSET price = 2950.00,\n    source = 'correcao_retroativa'\nWHERE product_id = 10\n  AND valid_at @> DATE '2026-01-15';\n\nCOMMIT;"}
                   </CodeBlock>
-                </div>
+                </Panel>
               </div>
             </Section>
 
             <Section id="desempenho" title="Desempenho e índices" eyebrow="Performance">
               <div className="grid gap-5 lg:grid-cols-2">
-                <div className="glass rounded-2xl p-6">
+                <Panel as="div" layout="plain">
                   <h3 className="mb-3 text-2xl font-semibold text-cyan-100">Índices para ranges</h3>
                   <p className="mb-4 text-sm leading-relaxed text-slate-300">
                     Consultas com operadores como <code>@&gt;</code> e <code>&&</code> podem se beneficiar de índices GiST ou SP-GiST, dependendo do tipo e do padrão de consulta.
@@ -822,8 +823,8 @@ export default function PostgresqlBancosTemporais() {
                   <CodeBlock language="sql" label="Índice GiST">
                     {"CREATE INDEX idx_product_price_valid_at\nON product_price\nUSING gist (valid_at);"}
                   </CodeBlock>
-                </div>
-                <div className="glass rounded-2xl p-6">
+                </Panel>
+                <Panel as="div" layout="plain">
                   <h3 className="mb-3 text-2xl font-semibold text-cyan-100">EXPLAIN ANALYZE</h3>
                   <p className="mb-4 text-sm leading-relaxed text-slate-300">
                     Use planos de execução para conferir se o índice foi usado e quanto tempo a consulta levou. Em produção, tenha cuidado porque `ANALYZE` executa a consulta.
@@ -831,7 +832,7 @@ export default function PostgresqlBancosTemporais() {
                   <CodeBlock language="sql" label="Plano">
                     {"EXPLAIN (ANALYZE, BUFFERS)\nSELECT price, valid_at\nFROM product_price\nWHERE product_id = 10\n  AND valid_at @> DATE '2026-06-15';"}
                   </CodeBlock>
-                </div>
+                </Panel>
               </div>
             </Section>
 
@@ -845,10 +846,10 @@ export default function PostgresqlBancosTemporais() {
                   ["Financeiro", "Taxas, limites, carteiras, contratos e reprocessamento histórico."],
                   ["Jurídico", "Vigência de normas, contratos, versões de cláusulas e evidências."],
                 ].map(([title, text]) => (
-                  <article key={title} className="glass rounded-2xl p-5">
+                  <Panel as="article" layout="plain" key={title}>
                     <h3 className="mb-2 text-xl font-semibold text-cyan-100">{title}</h3>
                     <p className="text-sm leading-relaxed text-slate-400">{text}</p>
-                  </article>
+                  </Panel>
                 ))}
               </div>
             </Section>
@@ -876,30 +877,30 @@ export default function PostgresqlBancosTemporais() {
             <Section id="exercicios" title="Exercícios para praticar" eyebrow="Prática">
               <div className="grid gap-5 md:grid-cols-2">
                 <Link to="/disciplinas/postgresql/exercicios/loja-temporal" className="group block">
-                  <article className="glass theme-hover-border h-full rounded-2xl p-6 transition hover:-translate-y-1">
+                  <Panel as="article" layout="plain" className="theme-hover-border h-full transition hover:-translate-y-1">
                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">Laboratório</p>
                     <h3 className="mb-3 text-2xl font-semibold text-slate-100">Loja Temporal</h3>
                     <p className="mb-5 text-sm leading-relaxed text-slate-400">
                       Pratique ranges, snapshots, integridade temporal, auditoria e consultas históricas com preços e vendas.
                     </p>
                     <span className="text-sm font-semibold text-cyan-200">Abrir exercícios →</span>
-                  </article>
+                  </Panel>
                 </Link>
                 <Link to="/disciplinas/postgresql/exercicios/frota-temporal" className="group block">
-                  <article className="glass theme-hover-border h-full rounded-2xl p-6 transition hover:-translate-y-1">
+                  <Panel as="article" layout="plain" className="theme-hover-border h-full transition hover:-translate-y-1">
                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">Laboratório</p>
                     <h3 className="mb-3 text-2xl font-semibold text-slate-100">Frota Temporal</h3>
                     <p className="mb-5 text-sm leading-relaxed text-slate-400">
                       Aplique os mesmos conceitos em veículos, motoristas, alocações, viagens, manutenção e abastecimento.
                     </p>
                     <span className="text-sm font-semibold text-cyan-200">Abrir exercícios →</span>
-                  </article>
+                  </Panel>
                 </Link>
               </div>
             </Section>
-          </main>
+          </div>
         </div>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

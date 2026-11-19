@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -176,7 +177,7 @@ export default function PostgresqlTopico() {
   const nextTopic = postgresqlTopics[currentIndex + 1];
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/postgresql"
@@ -195,7 +196,7 @@ export default function PostgresqlTopico() {
             Assunto {topic.order} de {postgresqlTopics.length}
           </span>
         </div>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">{topic.title}</h1>
+        <PageTitle className="mb-4">{topic.title}</PageTitle>
         <p className="text-lg leading-relaxed text-slate-400">{topic.introduction}</p>
       </div>
 
@@ -204,17 +205,17 @@ export default function PostgresqlTopico() {
           <h2 className="mb-5 text-2xl font-semibold text-cyan-300">Conceitos principais</h2>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {topic.concepts.map(([name, description]) => (
-              <article key={name} className="glass rounded-2xl p-5">
+              <Panel as="article" layout="plain" key={name}>
                 <h3 className="mb-2 text-base font-semibold text-slate-100">{name}</h3>
                 <p className="text-sm leading-relaxed text-slate-400">{description}</p>
-              </article>
+              </Panel>
             ))}
           </div>
         </div>
       )}
 
       {topic.notes && (
-        <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain" className="mb-8">
           <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Pontos importantes</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
             {topic.notes.map((note) => (
@@ -224,10 +225,10 @@ export default function PostgresqlTopico() {
               </li>
             ))}
           </ul>
-        </div>
+        </Panel>
       )}
 
-      <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-2xl font-semibold text-cyan-300">Índice de comandos</h2>
           <span className="rounded-lg border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-200">
@@ -239,22 +240,22 @@ export default function PostgresqlTopico() {
             Buscar comando
           </label>
           {query.trim() && (
-            <button
+            <Button variant="secondary"
               type="button"
               onClick={() => setQuery("")}
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
+              className="inline-flex items-center justify-center border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
             >
               Limpar busca
-            </button>
+            </Button>
           )}
         </div>
-        <input
+        <Input
           id="busca-comandos-postgresql"
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Ex.: SELECT, CHECK, índice, permissão..."
-          className="mb-5 w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
+          className="mb-5 w-full border text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
         />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filteredCommands.map((item, index) => (
@@ -268,7 +269,7 @@ export default function PostgresqlTopico() {
             </a>
           ))}
         </div>
-      </div>
+      </Panel>
 
       <div>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
@@ -292,10 +293,10 @@ export default function PostgresqlTopico() {
         {filteredCommands.length > 0 ? (
           <div className="space-y-5">
           {filteredCommands.map((item, index) => (
-            <article
+            <Panel as="article" layout="plain"
               key={`${item.command}-${index}`}
               id={`comando-${index + 1}`}
-              className="glass scroll-mt-24 rounded-2xl p-6 md:p-8"
+              className="scroll-mt-24"
             >
               <div className="mb-4">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
@@ -328,40 +329,40 @@ export default function PostgresqlTopico() {
               <CodeBlock language={item.language || "sql"} label={item.language === "bash" ? "Terminal" : "SQL"}>
                 {item.example}
               </CodeBlock>
-            </article>
+            </Panel>
           ))}
           </div>
         ) : (
-          <div className="glass rounded-2xl p-6 text-center md:p-8">
+          <Panel as="div" layout="plain" className="text-center">
             <h2 className="mb-2 text-2xl font-semibold text-slate-100">Nenhum comando encontrado</h2>
             <p className="text-sm leading-relaxed text-slate-400">
               Tente procurar pelo nome do comando, pela finalidade dele ou por alguma palavra que apareça no exemplo.
             </p>
-          </div>
+          </Panel>
         )}
       </div>
 
       <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label="Navegação entre assuntos">
         {previousTopic ? (
-          <Link
+          <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/${previousTopic.slug}`}
-            className="glass theme-hover-border rounded-2xl p-5 transition hover:-translate-y-1"
+            className="theme-hover-border transition hover:-translate-y-1"
           >
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Anterior</p>
             <p className="font-semibold text-cyan-200">← {previousTopic.title}</p>
-          </Link>
+          </Panel>
         ) : <div />}
 
         {nextTopic && (
-          <Link
+          <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/${nextTopic.slug}`}
-            className="glass theme-hover-border rounded-2xl p-5 text-right transition hover:-translate-y-1"
+            className="theme-hover-border text-right transition hover:-translate-y-1"
           >
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Próximo</p>
             <p className="font-semibold text-cyan-200">{nextTopic.title} →</p>
-          </Link>
+          </Panel>
         )}
       </nav>
-    </section>
+    </PageTemplate>
   );
 }

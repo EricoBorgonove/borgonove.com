@@ -1,3 +1,4 @@
+import { Panel } from "./ui/Patterns";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logo from "../assets/images/logo.png";
@@ -121,7 +122,7 @@ export default function Footer() {
     <footer className="site-footer border-t border-slate-800 bg-slate-950/70">
       {showContactBanner && (
         <div className="max-w-6xl mx-auto px-6 pt-8">
-          <div className="glass rounded-2xl p-6 md:p-7 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <Panel as="div" layout="plain" className="rounded-2xl p-6 md:p-7 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="text-lg md:text-xl font-semibold">{t("footer.ctaTitle")}</h3>
               <p className="text-slate-400 text-sm mt-1">
@@ -134,7 +135,7 @@ export default function Footer() {
             >
               {t("footer.ctaButton")}
             </Link>
-          </div>
+          </Panel>
         </div>
       )}
 

@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
@@ -35,8 +36,8 @@ plt.show()`;
 
 function DataTable({ section }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
+    <TableContainer className="rounded-2xl border border-slate-800">
+      <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
         <thead className="bg-slate-900/90">
           <tr>
             {section.columns.map((column) => (
@@ -63,8 +64,8 @@ function DataTable({ section }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
@@ -105,14 +106,14 @@ export default function PythonMatplotlib() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -120,20 +121,20 @@ export default function PythonMatplotlib() {
           />
         </svg>
         <span>Python Matplotlib</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.subtitle, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whatIs, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
           {pick(txt.whatIsText, isEn)}{" "}
           <code className="text-cyan-300">pyplot</code>, {pick(txt.pyplotEnd, isEn)}
         </p>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.install, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
           {pick(txt.installText, isEn)}
@@ -141,9 +142,9 @@ export default function PythonMatplotlib() {
         <CodeBlock language="bash">{`pip install matplotlib
 # ou
 conda install matplotlib`}</CodeBlock>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.anatomy, isEn)}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
@@ -159,9 +160,9 @@ conda install matplotlib`}</CodeBlock>
             </p>
           </article>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{pick(txt.quickNav, isEn)}</h2>
         <div className="grid gap-3 md:grid-cols-3">
           {sections.map((section, index) => (
@@ -174,21 +175,21 @@ conda install matplotlib`}</CodeBlock>
             </a>
           ))}
         </div>
-      </div>
+      </Panel>
 
       <div className="space-y-8">
         {sections.map((section, index) => (
-          <article key={section.id} id={section.id} className="glass rounded-2xl p-6 md:p-8 scroll-mt-24">
+          <Panel as="article" layout="plain" key={section.id} id={section.id} className="scroll-mt-24">
             <h2 className="text-2xl font-semibold text-cyan-300 mb-5">
               {index + 1}. {section.title}
             </h2>
             <p className="text-sm text-slate-400 leading-relaxed mb-5">{section.description}</p>
             <DataTable section={section} />
-          </article>
+          </Panel>
         ))}
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 my-8">
+      <Panel as="div" layout="plain" className="my-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">
           {pick(txt.completeExample, isEn)}
         </h2>
@@ -196,9 +197,9 @@ conda install matplotlib`}</CodeBlock>
           {pick(txt.completeText, isEn)}
         </p>
         <CodeBlock>{isEn ? matplotlibCompleteExampleEn : matplotlibCompleteExample}</CodeBlock>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.tips, isEn)}</h2>
         <div className="grid gap-4 md:grid-cols-3">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
@@ -224,7 +225,7 @@ conda install matplotlib`}</CodeBlock>
             </p>
           </article>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

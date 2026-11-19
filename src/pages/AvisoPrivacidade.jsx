@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import { useTranslation } from "react-i18next";
 import { translatePtToEnWithMap } from "../utils/ptEnTranslate";
@@ -78,17 +79,17 @@ export default function AvisoPrivacidade() {
   const tx = (value) => (isEn ? translatePtToEnWithMap(value, privacyEnMap) : value);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">
         {tx("Voltar para início")}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4">{tx("Aviso de Privacidade")}</h1>
-      <p className="text-slate-400 text-sm mb-8">
+      <PageHeader><PageTitle className="mb-4">{tx("Aviso de Privacidade")}</PageTitle>
+      <PageDescription className="text-sm">
         {isEn ? "Last updated: February 16, 2026." : "Última atualização: 16 de fevereiro de 2026."}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 space-y-6">
+      <Panel as="div" layout="plain" className="space-y-6">
         <p className="text-slate-300 leading-relaxed text-justify">
           {tx(
             "A Borgonove.Tech respeita sua privacidade e trata dados pessoais com responsabilidade, transparência e segurança, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD)."
@@ -107,7 +108,7 @@ export default function AvisoPrivacidade() {
             </ul>
           </article>
         ))}
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

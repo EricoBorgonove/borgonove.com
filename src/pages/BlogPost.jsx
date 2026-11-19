@@ -1,3 +1,4 @@
+import { PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -106,7 +107,7 @@ export default function BlogPost() {
     .filter(Boolean);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-4xl mx-auto">
+    <PageTemplate>
       <Link
         to="/blog"
         className="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 transition"
@@ -115,7 +116,7 @@ export default function BlogPost() {
         <span>{txt.back}</span>
       </Link>
 
-      {loading && <div className="glass rounded-2xl p-6 mt-6 text-sm text-slate-300">{txt.loading}</div>}
+      {loading && <Panel as="div" layout="plain" className="mt-6 text-sm text-slate-300">{txt.loading}</Panel>}
 
       {!loading && error && (
         <div className="rounded-2xl border border-rose-400/30 bg-rose-500/10 p-6 mt-6 text-sm text-rose-200">
@@ -124,13 +125,13 @@ export default function BlogPost() {
       )}
 
       {!loading && !error && post && (
-        <article className="glass rounded-3xl p-8 md:p-10 mt-6">
+        <Panel as="article" layout="plain" className="mt-6">
           <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/90">
             {formatDate(post.published_at || post.created_at, locale)}
           </p>
-          <h1 className="text-3xl md:text-4xl font-black text-white mt-4 leading-tight">
+          <PageTitle className="text-white mt-4">
             {pickLocalized(post, "title", isEn)}
-          </h1>
+          </PageTitle>
           {pickLocalized(post, "excerpt", isEn) && (
             <p className="text-slate-300 text-lg mt-4 leading-relaxed">
               {pickLocalized(post, "excerpt", isEn)}
@@ -142,8 +143,8 @@ export default function BlogPost() {
               <p key={`${post.id}-paragraph-${index}`}>{paragraph}</p>
             ))}
           </div>
-        </article>
+        </Panel>
       )}
-    </section>
+    </PageTemplate>
   );
 }

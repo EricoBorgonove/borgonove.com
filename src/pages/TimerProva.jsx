@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -132,11 +133,11 @@ export default function TimerProva() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -144,62 +145,62 @@ export default function TimerProva() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <p className="text-slate-400 mb-6">{txt.subtitle}</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.hours}</span>
-            <input
+            <Input
               type="number"
               min="0"
               value={horaDuracao}
               onChange={(event) => setHoraDuracao(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.minutes}</span>
-            <input
+            <Input
               type="number"
               min="0"
               max="59"
               value={minutoDuracao}
               onChange={(event) => setMinutoDuracao(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
-          <button
+          <Button variant="primary"
             type="button"
             onClick={iniciarTimer}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-3 rounded-xl font-semibold transition"
+            className="text-slate-900 transition"
           >
             {txt.start}
-          </button>
+          </Button>
 
-          <button
+          <Button variant="secondary"
             type="button"
             onClick={limparTimer}
-            className="border border-slate-700 text-slate-200 px-5 py-3 rounded-xl hover:border-cyan-400 transition"
+            className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
             {txt.clear}
-          </button>
+          </Button>
         </div>
 
         {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
-      </div>
+      </Panel>
 
       <div className="grid md:grid-cols-2 gap-6 mt-8">
-        <article className="glass rounded-2xl p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.currentTime}</h2>
           <p className="text-4xl md:text-5xl font-black text-cyan-300">{formatHoraAtual(now, locale)}</p>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.remainingTime}</h2>
           <p className="text-4xl md:text-5xl font-black text-cyan-300">
             {formatDuracao(segundosRestantes)}
@@ -207,42 +208,42 @@ export default function TimerProva() {
           {provaEmAndamento && <p className="text-emerald-300 text-sm mt-3">{txt.running}</p>}
           {provaFinalizada && <p className="text-red-400 text-sm mt-3">{txt.ended}</p>}
           {!endAt && <p className="text-slate-400 text-sm mt-3">{txt.configureStart}</p>}
-        </article>
+        </Panel>
       </div>
 
       <div className="mt-5 flex justify-end">
-        <button
+        <Button variant="secondary"
           type="button"
           onClick={() => setRelogiosEmTelaCheia(true)}
-          className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition"
+          className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
         >
           {txt.expand}
-        </button>
+        </Button>
       </div>
 
       {relogiosEmTelaCheia && (
         <div className="fixed inset-0 z-[90] bg-slate-950/95 backdrop-blur-sm p-4 md:p-8">
-          <button
+          <Button variant="secondary"
             type="button"
             onClick={() => setRelogiosEmTelaCheia(false)}
-            className="absolute top-4 right-4 h-9 w-9 rounded-full border border-slate-600 text-slate-200 text-lg leading-none inline-flex items-center justify-center hover:border-cyan-400 transition"
+            className="absolute top-4 right-4 h-9 w-9 border border-slate-600 text-slate-200 leading-none inline-flex items-center justify-center hover:border-cyan-400 transition"
             aria-label={txt.exitFullscreen}
             title={txt.exit}
           >
             ×
-          </button>
+          </Button>
 
           <div className="h-full grid md:grid-cols-2 gap-6 pt-8">
-            <article className="glass rounded-2xl p-8 md:p-10 flex flex-col justify-center items-center text-center">
+            <Panel as="article" layout="plain" className="flex flex-col justify-center items-center text-center">
               <h2 className="text-xs md:text-sm uppercase tracking-wider text-slate-400 mb-4">
                 {txt.currentTime}
               </h2>
               <p className="text-5xl md:text-7xl lg:text-8xl font-black text-cyan-300">
                 {formatHoraAtual(now, locale)}
               </p>
-            </article>
+            </Panel>
 
-            <article className="glass rounded-2xl p-8 md:p-10 flex flex-col justify-center items-center text-center">
+            <Panel as="article" layout="plain" className="flex flex-col justify-center items-center text-center">
               <h2 className="text-xs md:text-sm uppercase tracking-wider text-slate-400 mb-4">
                 {txt.remainingTime}
               </h2>
@@ -252,7 +253,7 @@ export default function TimerProva() {
               {provaEmAndamento && <p className="text-emerald-300 text-sm mt-4">{txt.running}</p>}
               {provaFinalizada && <p className="text-red-400 text-sm mt-4">{txt.ended}</p>}
               {!endAt && <p className="text-slate-400 text-sm mt-4">{txt.configureStart}</p>}
-            </article>
+            </Panel>
           </div>
 
           <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 opacity-90">
@@ -261,6 +262,6 @@ export default function TimerProva() {
           </div>
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

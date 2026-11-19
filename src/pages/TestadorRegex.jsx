@@ -1,6 +1,8 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Select, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
+import Dialog from "../components/ui/Dialog";
 
 const REGEX_TEMPLATES = [
   {
@@ -384,11 +386,11 @@ export default function TestadorRegex() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -396,21 +398,21 @@ export default function TestadorRegex() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <h2 className="text-xl font-bold mb-4">{txt.byType}</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.pickType}</span>
-            <select
+            <Select
               value={templateSelecionado}
               onChange={(event) => {
                 const template = REGEX_TEMPLATES.find((item) => item.id === event.target.value);
                 setTemplateSelecionado(event.target.value);
                 if (template) aplicarTemplate(template);
               }}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             >
               <option value="">{txt.selectType}</option>
               {REGEX_TEMPLATES.map((item) => (
@@ -418,17 +420,17 @@ export default function TestadorRegex() {
                   {getTemplateLabel(item)}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.describeNeed}</span>
-            <input
+            <Input
               type="text"
               value={tipoDesejado}
               onChange={(event) => setTipoDesejado(event.target.value)}
               placeholder={txt.describePlaceholder}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
         </div>
@@ -438,14 +440,14 @@ export default function TestadorRegex() {
             <p className="text-sm text-slate-400 mb-2">{txt.suggestions}</p>
             <div className="flex flex-wrap gap-2">
               {sugestoes.map((template) => (
-                <button
+                <Button variant="secondary"
                   key={template.id}
                   type="button"
                   onClick={() => aplicarTemplate(template)}
-                  className="text-sm border border-slate-700 px-3 py-1.5 rounded-lg hover:border-cyan-400 transition"
+                  className="border border-slate-700 hover:border-cyan-400 transition"
                 >
                   {getTemplateLabel(template)}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -454,62 +456,62 @@ export default function TestadorRegex() {
         <div className="grid md:grid-cols-2 gap-4 mt-6">
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{txt.regexInput}</span>
-            <input
+            <Input
               type="text"
               value={pattern}
               onChange={(event) => setPattern(event.target.value)}
               placeholder="\\bpalavra\\b"
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <div className="flex items-center justify-between mb-2">
               <span className="block text-sm text-slate-300">{txt.flags}</span>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={() => setShowFlagsModal(true)}
-                className="h-6 w-6 rounded-full border border-slate-600 text-slate-300 text-xs inline-flex items-center justify-center hover:border-cyan-400 hover:text-cyan-300 transition"
+                className="shrink-0 border border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-300 transition"
                 aria-label={txt.flagsHelpLabel}
                 title={txt.flagsHelpTitle}
               >
                 ?
-              </button>
+              </Button>
             </div>
-            <input
+            <Input
               type="text"
               value={flags}
               onChange={(event) => setFlags(event.target.value)}
               placeholder="gim"
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <div className="flex items-end">
-            <button
+            <Button variant="secondary"
               type="button"
               onClick={copiarRegex}
               disabled={!pattern}
-              className="w-full border border-slate-700 text-slate-200 px-4 py-3 rounded-xl hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {txt.copyRegex}
-            </button>
+            </Button>
           </div>
 
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{txt.testText}</span>
-            <textarea
+            <Textarea
               rows={8}
               value={text}
               onChange={(event) => setText(event.target.value)}
               placeholder={txt.testTextPlaceholder}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
         </div>
-      </div>
+      </Panel>
 
-      <article className="glass rounded-2xl p-8 mt-8">
+      <Panel as="article" layout="plain" className="mt-8">
         <h2 className="text-xl font-bold mb-4">{txt.result}</h2>
 
         {resultado.valid === null ? (
@@ -522,7 +524,7 @@ export default function TestadorRegex() {
           <div className="space-y-3">
             <p className="text-slate-300 text-sm">{txt.matchesFound}: {resultado.matches.length}</p>
             {resultado.matches.map((item, index) => (
-              <div key={`${item.index}-${index}`} className="glass rounded-xl p-4 text-sm">
+              <Panel as="div" layout="plain" key={`${item.index}-${index}`} className="text-sm">
                 <p>
                   <span className="text-slate-400">{txt.value}:</span>{" "}
                   <span className="text-cyan-200">{item.value}</span>
@@ -534,38 +536,17 @@ export default function TestadorRegex() {
                   <span className="text-slate-400">{txt.groups}:</span>{" "}
                   {item.groups.length > 0 ? item.groups.join(" | ") : "-"}
                 </p>
-              </div>
+              </Panel>
             ))}
           </div>
         )}
-      </article>
+      </Panel>
 
-      {showFlagsModal && (
-        <div
-          className="fixed inset-0 z-[90] bg-black/45 p-4 flex items-center justify-center"
-          onClick={() => setShowFlagsModal(false)}
-        >
-          <div
-            className="w-full max-w-xl rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold">{txt.flagsModalTitle}</h3>
-              <button
-                type="button"
-                onClick={() => setShowFlagsModal(false)}
-                className="h-8 w-8 rounded-full border border-slate-600 text-slate-200 inline-flex items-center justify-center hover:border-cyan-400 transition"
-                aria-label={txt.close}
-              >
-                ×
-              </button>
-            </div>
-            <pre className="whitespace-pre-wrap text-sm leading-relaxed text-slate-200 font-sans bg-slate-800/60 border border-slate-700 rounded-xl p-4">
-              {flagsHelpText}
-            </pre>
-          </div>
-        </div>
-      )}
-    </section>
+      <Dialog open={showFlagsModal} onClose={() => setShowFlagsModal(false)} title={txt.flagsModalTitle} closeLabel={txt.close}>
+        <pre className="ui-dialog-text whitespace-pre-wrap text-sm leading-relaxed font-sans">
+          {flagsHelpText}
+        </pre>
+      </Dialog>
+    </PageTemplate>
   );
 }

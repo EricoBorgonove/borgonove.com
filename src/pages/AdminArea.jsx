@@ -1,3 +1,4 @@
+import { Button, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { useAdminAuth } from "../hooks/useAdminAuth";
@@ -64,15 +65,15 @@ export default function AdminArea() {
   const items = isEn ? cards.en : cards.pt;
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
-      <div className="glass rounded-[32px] p-8 md:p-12 overflow-hidden relative">
+    <PageTemplate>
+      <Panel as="div" layout="plain" className="overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_32%)]" />
 
         <div className="relative">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.eyebrow}</p>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{txt.title}</h1>
+              <PageTitle className="text-white mb-4">{txt.title}</PageTitle>
               <p className="text-slate-300 text-lg leading-relaxed">{txt.description}</p>
               {adminUser?.username && (
                 <p className="mt-3 text-sm text-cyan-200/90">
@@ -82,28 +83,28 @@ export default function AdminArea() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={() => navigate("/")}
-                className="rounded-xl border border-slate-700 px-5 py-3 text-sm font-medium text-slate-200 transition hover:border-cyan-400"
+                className="border border-slate-700 text-slate-200 transition hover:border-cyan-400"
               >
                 {txt.backToSite}
-              </button>
-              <button
+              </Button>
+              <Button variant="primary"
                 type="button"
                 onClick={handleLogout}
-                className="rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                className="text-slate-950 transition"
               >
                 {txt.logout}
-              </button>
+              </Button>
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 mt-10">
             {items.map((item) => (
-              <article
+              <Panel as="article" layout="plain"
                 key={item.title}
-                className="admin-panel rounded-2xl p-5"
+
               >
                 <h2 className="text-lg font-semibold text-cyan-300 mb-2">{item.title}</h2>
                 <p className="text-sm leading-6 text-slate-300">{item.description}</p>
@@ -115,11 +116,11 @@ export default function AdminArea() {
                     {item.cta}
                   </Link>
                 )}
-              </article>
+              </Panel>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

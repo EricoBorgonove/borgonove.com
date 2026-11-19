@@ -1,4 +1,7 @@
+import { Button } from "./ui/Patterns";
 import { useState } from "react";
+import ScrollRegion from "./ui/ScrollRegion";
+import { useTranslation } from "react-i18next";
 
 const languageLabels = {
   bash: "Terminal",
@@ -8,6 +11,7 @@ const languageLabels = {
 };
 
 export default function CodeBlock({ children, language = "python", label }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const code = String(children ?? "");
   const languageLabel = label || languageLabels[language] || language;
@@ -28,7 +32,7 @@ export default function CodeBlock({ children, language = "python", label }) {
         <span className="text-xs font-semibold uppercase tracking-[0.18em]">
           {languageLabel}
         </span>
-        <button
+        <Button variant="custom"
           type="button"
           onClick={handleCopy}
           className="code-copy-button inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition"
@@ -41,11 +45,11 @@ export default function CodeBlock({ children, language = "python", label }) {
             />
           </svg>
           {copied ? "Copiado" : "Copiar"}
-        </button>
+        </Button>
       </div>
-      <pre className="code-block-pre max-w-full overflow-x-auto px-4 py-4 text-sm leading-7">
+      <ScrollRegion as="pre" aria-label={t("common.ui.codeRegion", { language: languageLabel })} className="code-block-pre max-w-full overflow-x-auto px-4 py-4 text-sm leading-7">
         <code className={`language-${language}`}>{code}</code>
-      </pre>
+      </ScrollRegion>
     </div>
   );
 }

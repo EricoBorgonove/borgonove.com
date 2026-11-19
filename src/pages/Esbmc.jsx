@@ -1,3 +1,4 @@
+import { Button, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -631,8 +632,8 @@ function BulletGrid({ items }) {
 
 function DataTable({ table }) {
   return (
-    <div className="mt-5 overflow-x-auto rounded-2xl border border-slate-700/70">
-      <table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
+    <TableContainer className="mt-5  rounded-2xl border border-slate-700/70">
+      <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
         <thead className="bg-slate-950/50">
           <tr>
             {table.headers.map((header) => (
@@ -653,8 +654,8 @@ function DataTable({ table }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
@@ -666,7 +667,7 @@ export default function Esbmc() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para Disciplinas
@@ -678,7 +679,7 @@ export default function Esbmc() {
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
             Verificação formal de software
           </p>
-          <h1 className="text-4xl md:text-6xl font-black mb-5">ESBMC</h1>
+          <PageTitle className="mb-5">ESBMC</PageTitle>
           <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">
             Efficient SMT-Based Context-Bounded Model Checker
           </p>
@@ -701,7 +702,7 @@ export default function Esbmc() {
           </div>
         </div>
 
-        <div className="glass rounded-2xl p-6">
+        <Panel as="div" layout="plain">
           <p className="text-sm text-slate-400 mb-4">Fluxo conceitual</p>
           <div className="space-y-3">
             {flow.map((item, index) => (
@@ -715,18 +716,18 @@ export default function Esbmc() {
               </div>
             ))}
           </div>
-        </div>
+        </Panel>
       </div>
 
       <div className="grid lg:grid-cols-[300px_1fr] gap-8 items-start">
-        <aside className="lg:sticky lg:top-24 glass rounded-2xl p-4">
+        <Panel as="aside" layout="plain" className="lg:sticky lg:top-24">
           <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Módulos da disciplina</p>
           <div className="space-y-2">
             {modules.map((module) => {
               const isActive = activeModule.id === module.id;
 
               return (
-                <button
+                <Button variant="custom"
                   key={module.id}
                   type="button"
                   onClick={() => setActiveModuleId(module.id)}
@@ -740,14 +741,14 @@ export default function Esbmc() {
                     {module.eyebrow}
                   </span>
                   <span className="mt-1 block text-sm font-semibold">{module.title}</span>
-                </button>
+                </Button>
               );
             })}
           </div>
-        </aside>
+        </Panel>
 
-        <main className="space-y-6">
-          <article className="glass rounded-2xl p-6 md:p-8">
+        <div className="min-w-0 space-y-6">
+          <Panel as="article" layout="plain">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
               {activeModule.eyebrow}
             </p>
@@ -755,22 +756,22 @@ export default function Esbmc() {
               {activeModule.title}
             </h2>
             <p className="text-slate-300 leading-relaxed text-justify text-lg">{activeModule.summary}</p>
-          </article>
+          </Panel>
 
           {activeModule.id === "erros" ? (
             <div className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 {errorExamples.map((example) => (
-                  <article key={example.title} className="glass rounded-2xl p-5">
+                  <Panel as="article" layout="plain" key={example.title}>
                     <h3 className="text-lg font-semibold text-cyan-300 mb-2">{example.title}</h3>
                     <p className="text-sm text-slate-300 leading-relaxed text-justify mb-4">{example.description}</p>
                     <CodeBlock language="c" label="Código C">
                       {example.code}
                     </CodeBlock>
-                  </article>
+                  </Panel>
                 ))}
               </div>
-              <article className="glass rounded-2xl p-6 md:p-7">
+              <Panel as="article" layout="plain">
                 <h3 className="text-xl font-bold text-cyan-300 mb-4">6.7 Erros em programas concorrentes</h3>
                 <p className="text-slate-300 leading-relaxed text-justify mb-4">
                   O ESBMC também é relevante para programas com múltiplas threads. Fontes oficiais e acadêmicas descrevem o ESBMC como ferramenta voltada à verificação de programas single-threaded e multi-threaded.
@@ -782,12 +783,12 @@ export default function Esbmc() {
                   Segundo o README oficial, programas concorrentes com pthread podem ser analisados explorando interleavings. Entre as propriedades citadas estão deadlock, data races, violações de atomicidade e ordem de aquisição de locks.
                 </p>
                 <BulletGrid items={concurrentErrors} />
-              </article>
+              </Panel>
             </div>
           ) : activeModule.id === "exemplos-praticos" ? (
             <div className="space-y-5">
               {practicalExamples.map((example) => (
-                <article key={example.title} className="glass rounded-2xl p-6 md:p-7">
+                <Panel as="article" layout="plain" key={example.title}>
                   <h3 className="text-xl font-bold text-cyan-300 mb-5">{example.title}</h3>
                   <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5">
                     <div>
@@ -815,13 +816,13 @@ export default function Esbmc() {
                       </div>
                     </div>
                   </div>
-                </article>
+                </Panel>
               ))}
             </div>
           ) : (
             <div className="space-y-6">
               {activeModule.sections.map((section) => (
-                <article key={section.title} className="glass rounded-2xl p-6 md:p-7">
+                <Panel as="article" layout="plain" key={section.title}>
                   <h3 className="text-xl font-bold text-cyan-300 mb-4">{section.title}</h3>
                   <Paragraphs items={section.paragraphs} />
                   {section.bullets && <BulletGrid items={section.bullets} />}
@@ -833,12 +834,12 @@ export default function Esbmc() {
                       </CodeBlock>
                     </div>
                   )}
-                </article>
+                </Panel>
               ))}
             </div>
           )}
-        </main>
+        </div>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

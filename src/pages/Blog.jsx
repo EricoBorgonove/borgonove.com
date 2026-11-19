@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -98,12 +99,12 @@ export default function Blog() {
   }, [txt.error]);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-black mb-4 text-white">{txt.title}</h1>
-      <p className="text-slate-300 text-lg mb-10 max-w-3xl">{txt.subtitle}</p>
+    <PageTemplate>
+      <PageHeader><PageTitle className="mb-4 text-white">{txt.title}</PageTitle>
+      <PageDescription className="max-w-3xl">{txt.subtitle}</PageDescription></PageHeader>
 
       {loading && (
-        <div className="glass rounded-2xl p-6 text-sm text-slate-300">{txt.loading}</div>
+        <Panel as="div" layout="plain" className="text-sm text-slate-300">{txt.loading}</Panel>
       )}
 
       {!loading && error && (
@@ -113,13 +114,13 @@ export default function Blog() {
       )}
 
       {!loading && !error && posts.length === 0 && (
-        <div className="glass rounded-2xl p-6 text-sm text-slate-300">{txt.empty}</div>
+        <Panel as="div" layout="plain" className="text-sm text-slate-300">{txt.empty}</Panel>
       )}
 
       {!loading && !error && posts.length > 0 && (
         <div className="grid gap-6 md:grid-cols-2">
           {posts.map((post) => (
-            <article key={post.id} className="admin-panel rounded-2xl p-6 flex flex-col">
+            <Panel as="article" layout="plain" key={post.id} className="flex flex-col">
               <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/90">
                 {formatDate(post.published_at || post.created_at, locale)}
               </p>
@@ -135,10 +136,10 @@ export default function Blog() {
               >
                 {txt.readMore}
               </Link>
-            </article>
+            </Panel>
           ))}
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

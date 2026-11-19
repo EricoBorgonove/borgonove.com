@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -40,14 +41,14 @@ export default function AnaliseDados() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {txt.back}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -55,8 +56,8 @@ export default function AnaliseDados() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">{txt.description}</p>
+      </PageTitle>
+      <PageDescription>{txt.description}</PageDescription></PageHeader>
 
       <div className="grid gap-6 md:grid-cols-2">
         {colecoesOrdenadas.map((colecao) => (
@@ -65,7 +66,7 @@ export default function AnaliseDados() {
             to={`/disciplinas/analise-dados/${colecao.slug}`}
             className="block"
           >
-            <article className="glass theme-hover-border rounded-2xl p-8 h-full transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border h-full transition duration-300 hover:-translate-y-1">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h2 className="text-xl font-semibold text-cyan-300">
                   {getCollectionTitle(colecao, isEn)}
@@ -86,10 +87,10 @@ export default function AnaliseDados() {
                   />
                 </svg>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

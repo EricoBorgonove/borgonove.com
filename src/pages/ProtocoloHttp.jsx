@@ -1,6 +1,8 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table } from "../components/ui/Patterns";
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
+import ScrollRegion from "../components/ui/ScrollRegion";
 import httpCycleImage from "../assets/images/http-cycle-diagram.svg";
 import httpStatusImage from "../assets/images/http-status-map.svg";
 
@@ -986,14 +988,14 @@ export default function ProtocoloHttp() {
   const txt = isEn ? CONTENT.en : CONTENT.pt;
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {txt.back}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -1001,16 +1003,16 @@ export default function ProtocoloHttp() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <p className="text-slate-400 text-lg mb-8">{txt.subtitle}</p>
+      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-lg font-semibold text-cyan-300 mb-2">{txt.introTitle}</h2>
         <p className="text-sm text-slate-300 leading-relaxed text-justify">{txt.intro}</p>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-lg font-semibold text-cyan-300 mb-3">{txt.objectiveTitle}</h2>
         <p className="text-sm text-slate-400 mb-4 text-justify">{txt.objectiveSubtitle}</p>
         <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
@@ -1020,20 +1022,20 @@ export default function ProtocoloHttp() {
             </li>
           ))}
         </ul>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <img
           src={httpCycleImage}
           alt={isEn ? "HTTP request and response cycle diagram" : "Diagrama do ciclo de requisição e resposta HTTP"}
           className="w-full rounded-xl border border-slate-700/80"
         />
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.flowTitle}</h2>
         <p className="text-sm text-slate-400 mb-5 text-justify">{txt.flowSubtitle}</p>
-        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
+        <ScrollRegion aria-label={txt.flowTitle} className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
           {txt.flow.map((item, index) => (
             <Fragment key={item}>
               <article className="min-w-[220px] md:w-[220px] bg-slate-900/40 rounded-xl border border-slate-800 px-4 py-3">
@@ -1059,10 +1061,10 @@ export default function ProtocoloHttp() {
               )}
             </Fragment>
           ))}
-        </div>
-      </div>
+        </ScrollRegion>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.laneTitle}</h2>
         <p className="text-sm text-slate-400 mb-6">{txt.laneSubtitle}</p>
         <div className="grid lg:grid-cols-2 gap-5">
@@ -1108,9 +1110,9 @@ export default function ProtocoloHttp() {
             </div>
           </article>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.decisionTitle}</h2>
         <p className="text-sm text-slate-400 mb-5">{txt.decisionSubtitle}</p>
 
@@ -1152,9 +1154,9 @@ export default function ProtocoloHttp() {
             </article>
           </div>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.checkpointsTitle}</h2>
         <p className="text-sm text-slate-400 mb-5 text-justify">{txt.checkpointsSubtitle}</p>
         <div className="grid md:grid-cols-2 gap-4">
@@ -1170,12 +1172,12 @@ export default function ProtocoloHttp() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8 overflow-x-auto">
+      <Panel as="div" layout="plain" className="mb-8 overflow-x-auto">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.verbsTitle}</h2>
         <p className="text-sm text-slate-400 mb-5 text-justify">{txt.verbsSubtitle}</p>
-        <table className="w-full min-w-[760px] text-sm">
+        <Table className="w-full min-w-[760px] text-sm">
           <thead>
             <tr className="text-left text-slate-200 border-b border-slate-700">
               <th className="py-2 pr-3">Method</th>
@@ -1198,10 +1200,10 @@ export default function ProtocoloHttp() {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+        </Table>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.statusTitle}</h2>
         <p className="text-sm text-slate-400 mb-5">{txt.statusSubtitle}</p>
         <img
@@ -1287,9 +1289,9 @@ export default function ProtocoloHttp() {
             </details>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.seoTitle}</h2>
         <p className="text-sm text-slate-400 mb-4 text-justify">{txt.seoSubtitle}</p>
         <ul className="space-y-2 list-disc list-inside">
@@ -1299,9 +1301,9 @@ export default function ProtocoloHttp() {
             </li>
           ))}
         </ul>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.practicalTitle}</h2>
         <p className="text-sm text-slate-400 mb-5">{txt.practicalSubtitle}</p>
         <div className="grid lg:grid-cols-2 gap-4">
@@ -1318,7 +1320,7 @@ export default function ProtocoloHttp() {
             </pre>
           </article>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

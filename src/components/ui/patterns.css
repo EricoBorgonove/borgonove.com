@@ -1,0 +1,90 @@
+:root {
+  --ui-surface: rgba(15, 23, 42, .8);
+  --ui-text: #f1f5f9;
+  --ui-muted: #a8b6ca;
+  --ui-border: #405169;
+  --ui-accent: #67e8f9;
+  --ui-input: #0f172a;
+}
+body.light-theme {
+  --ui-surface: rgba(255, 255, 255, .92);
+  --ui-text: #0f172a;
+  --ui-muted: #475569;
+  --ui-border: #94a3b8;
+  --ui-accent: #0e7490;
+  --ui-input: #fff;
+}
+.ui-page { width: 100%; max-width: 1152px; margin-inline: auto; padding: 48px 24px 80px; min-height: 70vh; color: var(--ui-text); }
+.ui-page--wide { max-width: 1280px; }
+.ui-page--landing { max-width: none; padding: 0; }
+:where(.ui-page .grid, .ui-page .grid > *) { min-width: 0; }
+.ui-scroll-region:focus-visible { outline: 3px solid var(--ui-accent); outline-offset: -3px; }
+.ui-page-title, .ui-page-header h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; font-weight: 900; overflow-wrap: anywhere; }
+.ui-page--landing .ui-page-title { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+.ui-section > header h2, .ui-panel > h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.35; }
+.ui-card :is(h2, h3), .ui-empty h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+.ui-breadcrumbs { margin-bottom: 24px; font-size: .875rem; color: var(--ui-muted); }
+.ui-breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 8px; }
+.ui-breadcrumbs li + li::before { content: "/"; margin-right: 8px; }
+.ui-breadcrumbs a:hover { color: var(--ui-accent); text-decoration: underline; }
+.ui-page-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+.ui-content-header { max-width: 68ch; margin-bottom: 40px; }
+.ui-content-header .ui-page-title { margin-bottom: 0; }
+.ui-content-header .ui-description { margin-bottom: 0; }
+.ui-eyebrow { color: var(--ui-accent); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
+.ui-description { max-width: 68ch; color: var(--ui-muted); font-size: 1.125rem; line-height: 1.7; margin-top: 16px; }
+.ui-stack { display: grid; gap: 32px; }
+.ui-section { display: grid; gap: 20px; }
+.ui-section > header { display: grid; gap: 8px; }
+.ui-muted { color: var(--ui-muted); line-height: 1.65; }
+.ui-panel, .ui-card { background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 16px; min-width: 0; }
+:where(.ui-panel) { padding: 24px; }
+.ui-card { padding: 24px; }
+.ui-table-container { width: 100%; min-width: 0; overflow-x: auto; }
+.ui-table { width: 100%; border-collapse: collapse; }
+.ui-panel--stack { display: grid; align-content: start; gap: 20px; }
+.ui-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.ui-card { display: flex; flex-direction: column; align-items: start; gap: 16px; transition: border-color .2s, transform .2s; }
+a.ui-card:hover { border-color: var(--ui-accent); transform: translateY(-3px); }
+.ui-card-action { color: var(--ui-accent); font-weight: 600; margin-top: auto; padding-top: 8px; }
+.ui-card--unavailable { border-style: dashed; }
+.ui-badge { display: inline-flex; width: fit-content; border: 1px solid var(--ui-border); border-radius: 999px; padding: 4px 10px; font-size: .75rem; font-weight: 600; }
+.ui-badge--success { color: var(--ui-accent); }
+.ui-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.ui-button { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; border-radius: 10px; padding: 10px 18px; font-size: .875rem; font-weight: 700; border: 1px solid transparent; }
+.ui-button--primary { background: #67e8f9; color: #083344; }
+.ui-button--primary:hover { background: #a5f3fc; }
+.ui-button--secondary { border-color: var(--ui-border); color: var(--ui-text); background: var(--ui-surface); }
+.ui-button--secondary:hover { border-color: var(--ui-accent); }
+.ui-button:disabled { opacity: .5; cursor: not-allowed; }
+.ui-page :is(a, button, input, textarea, select, summary):focus-visible, .ui-button:focus-visible, .ui-action:focus-visible, .ui-input:focus-visible { outline: 3px solid var(--ui-accent); outline-offset: 4px; }
+.ui-field { display: grid; gap: 8px; }
+.ui-field label { font-size: .875rem; font-weight: 600; }
+.ui-input:where(:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):not([type="color"])) { width: 100%; min-height: 44px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--ui-border); background: var(--ui-input); color: var(--ui-text); }
+.ui-input--leading-icon { padding-left: 2.75rem !important; }
+.ui-input--trailing-icon { padding-right: 2.75rem !important; }
+.ui-field input[aria-invalid="true"] { border-color: #fb7185; }
+.ui-field p { font-size: .875rem; }
+.ui-field-error { color: #fda4af; }
+body.light-theme .ui-field-error { color: #be123c; }
+.ui-notice { padding: 16px; border: 1px solid var(--ui-accent); border-radius: 10px; line-height: 1.6; }
+.ui-notice--error { border-color: #fb7185; }
+.ui-empty { display: grid; justify-items: start; gap: 12px; border: 1px dashed var(--ui-border); border-radius: 16px; padding: 32px; }
+.ui-demo-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ui-prose { display: grid; gap: 16px; line-height: 1.8; max-width: 70ch; }
+.ui-dialog { width: min(40rem, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow-y: auto; border: 1px solid var(--ui-border); border-radius: 16px; background: var(--ui-input); color: var(--ui-text); }
+.ui-dialog::backdrop { background: rgb(0 0 0 / .6); }
+.ui-dialog-content { padding: 24px; min-width: 0; }
+.ui-dialog-header { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.ui-dialog-header h2 { font-size: 1.25rem; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
+.ui-dialog-header button { flex-shrink: 0; }
+.ui-dialog-text { padding: 16px; border: 1px solid var(--ui-border); border-radius: 12px; background: var(--ui-surface); color: var(--ui-text); }
+.ui-dialog :focus-visible { outline: 3px solid var(--ui-accent); outline-offset: 3px; }
+@media (max-width: 900px) { .ui-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .ui-page { padding: 32px 20px 56px; }
+  .ui-page--landing { padding: 0; }
+  .ui-page-header { flex-direction: column; }
+  .ui-card-grid, .ui-demo-columns { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .ui-card { transition: none; } a.ui-card:hover { transform: none; } }

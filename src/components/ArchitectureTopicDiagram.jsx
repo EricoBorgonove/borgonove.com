@@ -1,3 +1,4 @@
+import { Panel } from "./ui/Patterns";
 const toneClasses = {
   cyan: "border-cyan-400/35 bg-cyan-500/10 text-cyan-100",
   emerald: "border-emerald-400/35 bg-emerald-500/10 text-emerald-100",
@@ -15,7 +16,7 @@ export default function ArchitectureTopicDiagram({ diagram }) {
   }
 
   return (
-    <section className="glass rounded-[28px] p-6 md:p-8">
+    <Panel as="section" layout="plain">
       <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{diagram.eyebrow}</p>
       <h3 className="text-2xl md:text-3xl font-black text-white mb-3">{diagram.title}</h3>
       <p className="text-slate-300 leading-7 mb-8 max-w-3xl">{diagram.description}</p>
@@ -62,6 +63,6 @@ export default function ArchitectureTopicDiagram({ diagram }) {
       <div className="mt-8 rounded-[22px] border border-white/10 bg-slate-950/35 px-5 py-4 text-sm text-slate-300 leading-7">
         {diagram.footer}
       </div>
-    </section>
+    </Panel>
   );
 }

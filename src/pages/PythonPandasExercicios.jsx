@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
@@ -200,14 +201,14 @@ export default function PythonPandasExercicios() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -215,28 +216,28 @@ export default function PythonPandasExercicios() {
           />
         </svg>
         <span>{pick(txt.title, isEn)}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.subtitle, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 mb-8">
         {localizedDatasets.map((dataset, index) => (
-          <a
+          <Panel as="a" layout="plain"
             key={dataset.id}
             href={`#${dataset.id}`}
-            className="glass rounded-2xl p-5 theme-hover-border transition hover:-translate-y-1"
+            className="rounded-2xl p-5 theme-hover-border transition hover:-translate-y-1"
           >
             <p className="text-sm font-semibold text-cyan-300 mb-2">Dataset {index + 1}</p>
             <h2 className="text-lg font-bold text-slate-100 mb-2">{dataset.title.replace(/^Dataset \d+ — /, "")}</h2>
             <p className="text-sm text-slate-400 leading-relaxed">{dataset.description}</p>
-          </a>
+          </Panel>
         ))}
       </div>
 
       <div className="space-y-8">
         {localizedDatasets.map((dataset) => (
-          <article key={dataset.id} id={dataset.id} className="glass rounded-2xl p-6 md:p-8 scroll-mt-24">
+          <Panel as="article" layout="plain" key={dataset.id} id={dataset.id} className="scroll-mt-24">
             <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div>
                 <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{dataset.title}</h2>
@@ -329,9 +330,9 @@ export default function PythonPandasExercicios() {
                 </div>
               </details>
             )}
-          </article>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

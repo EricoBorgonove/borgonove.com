@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 
 const blocks = [
@@ -85,7 +86,7 @@ const blocks = [
 
 export default function AlgoritmosLinguagemNatural() {
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/algoritmos"
@@ -95,39 +96,39 @@ export default function AlgoritmosLinguagemNatural() {
         </BackButton>
       </div>
 
-      <div className="mb-10">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Lista introdutória
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">
+        <PageTitle className="mb-4">
           Algoritmos em Linguagem Natural
-        </h1>
-        <p className="max-w-4xl text-lg leading-relaxed text-slate-400">
+        </PageTitle>
+        <PageDescription className="max-w-4xl">
           Escreva cada solução como uma sequência de passos claros e ordenados, sem utilizar uma linguagem de programação. Considere o início, o fim, os materiais necessários, as decisões e as repetições de cada processo.
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {blocks.map((block, index) => (
-          <a
+          <Panel as="a" layout="plain"
             key={block.title}
             href={`#bloco-${index + 1}`}
-            className="glass theme-hover-border rounded-2xl p-5 transition hover:-translate-y-1"
+            className="theme-hover-border rounded-2xl p-5 transition hover:-translate-y-1"
           >
             <p className="mb-2 text-sm font-semibold text-cyan-300">Bloco {index + 1}</p>
             <p className="text-sm font-semibold text-slate-200">
               {block.title.replace(/^Bloco \d+ — /, "")}
             </p>
-          </a>
+          </Panel>
         ))}
       </div>
 
       <div className="space-y-8">
         {blocks.map((block, blockIndex) => (
-          <article
+          <Panel as="article" layout="plain"
             key={block.title}
             id={`bloco-${blockIndex + 1}`}
-            className="glass scroll-mt-24 rounded-2xl p-6 md:p-8"
+            className="scroll-mt-24"
           >
             <h2 className="mb-3 text-2xl font-semibold text-cyan-300">{block.title}</h2>
             <p className="mb-6 text-sm leading-relaxed text-slate-400">{block.description}</p>
@@ -147,9 +148,9 @@ export default function AlgoritmosLinguagemNatural() {
                 );
               })}
             </ol>
-          </article>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

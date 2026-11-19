@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 
 const esbmcCommandTable = {
@@ -73,8 +74,8 @@ const workCommandTable = {
 
 function CommandTable({ table }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-700/70">
-      <table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
+    <TableContainer className="rounded-2xl border border-slate-700/70">
+      <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
         <thead className="bg-slate-950/50">
           <tr>
             {table.headers.map((header) => (
@@ -95,32 +96,32 @@ function CommandTable({ table }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
 export default function EsbmcTabelasComandos() {
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para ESBMC
         </BackButton>
       </div>
 
-      <header className="mb-10">
+      <PageHeader>
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
           Referência operacional
         </p>
-        <h1 className="text-4xl md:text-5xl font-black mb-5">Tabelas de comandos</h1>
-        <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-4xl">
+        <PageTitle className="mb-5">Tabelas de comandos</PageTitle>
+        <PageDescription className="text-justify max-w-4xl">
           Abaixo está uma tabela completa de comandos do ESBMC, com finalidade, explicação e exemplo de uso. A documentação oficial apresenta exemplos como <code className="text-cyan-200">esbmc file.c --memory-leak-check</code>, e o repositório oficial informa que o ESBMC utiliza BMC incremental e k-induction com solvers SMT.
-        </p>
-      </header>
+        </PageDescription>
+      </PageHeader>
 
       <div className="space-y-6">
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">Exemplo oficial com BMC incremental</h2>
           <p className="text-slate-300 leading-relaxed text-justify mb-5">
             O README oficial utiliza o comando abaixo como exemplo de verificação de programa C com a estratégia de BMC incremental. Essa opção aumenta progressivamente os limites da análise e é uma das estratégias implementadas pelo ESBMC com base em SMT.
@@ -128,14 +129,14 @@ export default function EsbmcTabelasComandos() {
           <div className="rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
             <p className="font-mono text-sm text-cyan-100">esbmc file.c --incremental-bmc</p>
           </div>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-5">Tabela de comandos do ESBMC</h2>
           <CommandTable table={esbmcCommandTable} />
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">
             Tabela de comandos mais importantes para o trabalho
           </h2>
@@ -143,8 +144,8 @@ export default function EsbmcTabelasComandos() {
             Esta tabela relaciona situações comuns do projeto com o comando recomendado e a interpretação que pode ser registrada na análise.
           </p>
           <CommandTable table={workCommandTable} />
-        </article>
+        </Panel>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -124,11 +125,11 @@ export default function BuscaCep() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -136,10 +137,10 @@ export default function BuscaCep() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
       <div className="grid lg:grid-cols-5 gap-8">
-        <article className="glass rounded-2xl p-8 lg:col-span-2">
+        <Panel as="article" layout="plain" className="lg:col-span-2">
           <p className="text-slate-400 text-sm mb-6">{txt.subtitle}</p>
 
           <form onSubmit={handleBuscar} className="space-y-4">
@@ -147,7 +148,7 @@ export default function BuscaCep() {
               CEP
             </label>
             <div className="relative">
-              <input
+              <Input
                 id="cep"
                 name="cep"
                 type="text"
@@ -157,7 +158,7 @@ export default function BuscaCep() {
                 value={cep}
                 onChange={(event) => setCep(maskCep(event.target.value))}
                 placeholder="00000-000"
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl pl-4 pr-11 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                className="ui-input--trailing-icon w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
               />
               <svg
                 viewBox="0 0 24 24"
@@ -172,20 +173,20 @@ export default function BuscaCep() {
             </div>
 
             <div className="flex gap-3">
-              <button
+              <Button variant="primary"
                 type="submit"
-                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition disabled:opacity-60"
+                className="text-slate-900 transition disabled:opacity-60"
                 disabled={status.state === "loading"}
               >
                 {txt.search}
-              </button>
-              <button
+              </Button>
+              <Button variant="secondary"
                 type="button"
                 onClick={handleLimpar}
-                className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition"
+                className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
                 {txt.clear}
-              </button>
+              </Button>
             </div>
           </form>
 
@@ -202,9 +203,9 @@ export default function BuscaCep() {
               {status.message}
             </p>
           )}
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-8 lg:col-span-3">
+        <Panel as="article" layout="plain" className="lg:col-span-3">
           <h2 className="text-2xl font-bold mb-6">{txt.result}</h2>
 
           {!resultado && status.state !== "loading" && (
@@ -215,57 +216,57 @@ export default function BuscaCep() {
 
           {resultado && (
             <div className="grid sm:grid-cols-2 gap-4 text-sm">
-              <div className="glass rounded-xl p-4">
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">CEP</p>
                 <p className="font-semibold text-slate-100">{resultado.cep}</p>
-              </div>
-              <div className="glass rounded-xl p-4">
+              </Panel>
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">{txt.street}</p>
                 <p className="font-semibold text-slate-100">{resultado.logradouro || txt.notInformed}</p>
-              </div>
-              <div className="glass rounded-xl p-4">
+              </Panel>
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">{txt.district}</p>
                 <p className="font-semibold text-slate-100">{resultado.bairro || txt.notInformed}</p>
-              </div>
-              <div className="glass rounded-xl p-4">
+              </Panel>
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">{txt.city}</p>
                 <p className="font-semibold text-slate-100">{resultado.localidade}</p>
-              </div>
-              <div className="glass rounded-xl p-4">
+              </Panel>
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">{txt.stateCode}</p>
                 <p className="font-semibold text-slate-100">{resultado.uf}</p>
-              </div>
-              <div className="glass rounded-xl p-4">
+              </Panel>
+              <Panel as="div" layout="plain">
                 <p className="text-slate-400">{txt.state}</p>
                 <p className="font-semibold text-slate-100">{resultado.estado || txt.notInformed}</p>
-              </div>
-              <div className="glass rounded-xl p-4 sm:col-span-2">
+              </Panel>
+              <Panel as="div" layout="plain" className="sm:col-span-2">
                 <p className="text-slate-400">{txt.complement}</p>
                 <p className="font-semibold text-slate-100">{resultado.complemento || txt.notInformed}</p>
-              </div>
+              </Panel>
             </div>
           )}
-        </article>
+        </Panel>
       </div>
 
-      <article className="glass rounded-2xl p-8 mt-8">
+      <Panel as="article" layout="plain" className="mt-8">
         <div className="flex items-center justify-between gap-4 mb-5">
           <h2 className="text-2xl font-bold">{txt.searchedZips}</h2>
-          <button
+          <Button variant="secondary"
             type="button"
             onClick={() => setHistorico([])}
             disabled={historico.length === 0}
-            className="border border-slate-700 text-slate-200 px-4 py-2 rounded-xl hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {txt.clearTable}
-          </button>
+          </Button>
         </div>
 
         {historico.length === 0 ? (
           <p className="text-slate-400">{txt.noHistory}</p>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <TableContainer>
+            <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
                   <th className="py-3 pr-4">CEP</th>
@@ -286,10 +287,10 @@ export default function BuscaCep() {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </Table>
+          </TableContainer>
         )}
-      </article>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

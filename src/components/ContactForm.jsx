@@ -1,3 +1,4 @@
+import { Button, Input, Panel, Textarea } from "./ui/Patterns";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -99,13 +100,13 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="max-w-4xl mx-auto glass p-10 rounded-2xl" onSubmit={handleSubmit}>
+    <Panel as="form" layout="plain" className="max-w-4xl mx-auto" onSubmit={handleSubmit}>
       <div className="grid md:grid-cols-2 gap-6">
         <div className="text-left">
           <label htmlFor="nome" className="block text-sm text-slate-300 mb-2">
             {t("contactForm.name")}
           </label>
-          <input
+          <Input
             id="nome"
             name="nome"
             type="text"
@@ -119,7 +120,7 @@ export default function ContactForm() {
           <label htmlFor="email" className="block text-sm text-slate-300 mb-2">
             {t("contactForm.email")}
           </label>
-          <input
+          <Input
             id="email"
             name="email"
             type="email"
@@ -134,7 +135,7 @@ export default function ContactForm() {
         <label htmlFor="mensagem" className="block text-sm text-slate-300 mb-2">
           {t("contactForm.message")}
         </label>
-        <textarea
+        <Textarea
           id="mensagem"
           name="mensagem"
           rows="6"
@@ -146,17 +147,17 @@ export default function ContactForm() {
 
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
-        <input id="website" name="website" type="text" tabIndex="-1" autoComplete="off" />
+        <Input id="website" name="website" type="text" tabIndex="-1" autoComplete="off" />
       </div>
 
       <div className="mt-8 flex flex-col items-center gap-3">
-        <button
+        <Button variant="custom"
           type="submit"
           disabled={status.state === "loading"}
           className="bg-gradient-to-r from-cyan-400 to-blue-500 px-10 py-4 rounded-xl font-semibold text-slate-900 hover:scale-105 transition disabled:opacity-60 disabled:hover:scale-100"
         >
           {t("contactForm.submit")}
-        </button>
+        </Button>
         {status.message && (
           <p
             className={`text-sm ${
@@ -167,6 +168,6 @@ export default function ContactForm() {
           </p>
         )}
       </div>
-    </form>
+    </Panel>
   );
 }

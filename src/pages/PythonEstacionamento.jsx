@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useState } from "react";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
@@ -299,7 +300,7 @@ export default function PythonEstacionamento() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/python"
@@ -309,20 +310,20 @@ export default function PythonEstacionamento() {
         </BackButton>
       </div>
 
-      <div className="mb-10 max-w-4xl">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Programação Orientada a Objetos
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">
+        <PageTitle className="mb-4">
           Sistema de Estacionamento
-        </h1>
-        <p className="text-lg leading-relaxed text-slate-400">
+        </PageTitle>
+        <PageDescription>
           Desenvolva, utilizando Python e Programação Orientada a Objetos, um sistema para controlar a entrada e a saída de veículos de um estacionamento.
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
       <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Enunciado</h2>
           <p className="mb-6 leading-relaxed text-slate-300">
             O estacionamento possui uma quantidade limitada de vagas e cobra um valor por hora de permanência. O programa deverá permitir:
@@ -337,9 +338,9 @@ export default function PythonEstacionamento() {
               </li>
             ))}
           </ol>
-        </article>
+        </Panel>
 
-        <aside className="glass rounded-2xl p-6">
+        <Panel as="aside" layout="plain">
           <h2 className="mb-4 text-xl font-semibold text-cyan-300">Regras</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
             {rules.map((rule) => (
@@ -348,10 +349,10 @@ export default function PythonEstacionamento() {
               </li>
             ))}
           </ul>
-        </aside>
+        </Panel>
       </div>
 
-      <div className="glass mt-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Exemplo de cobrança</h2>
         <p className="mb-4 leading-relaxed text-slate-300">
           Um veículo permaneceu por 1 hora e 20 minutos. Como qualquer período iniciado é considerado uma hora completa, serão cobradas 2 horas:
@@ -359,9 +360,9 @@ export default function PythonEstacionamento() {
         <div className="rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-5 text-2xl font-black text-cyan-100">
           2 × R$ 8,00 = R$ 16,00
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass mt-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Resposta e explicação</h2>
         {!unlocked ? (
           <form onSubmit={handleSubmit} className="max-w-xl">
@@ -369,7 +370,7 @@ export default function PythonEstacionamento() {
               Senha da resposta
             </label>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <input
+              <Input
                 id="senha-estacionamento"
                 type="password"
                 value={password}
@@ -377,16 +378,16 @@ export default function PythonEstacionamento() {
                   setPassword(event.target.value);
                   setError(false);
                 }}
-                className="min-h-11 flex-1 rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                className="min-h-11 flex-1 border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
                 placeholder="Digite a senha"
                 autoComplete="off"
               />
-              <button
+              <Button variant="secondary"
                 type="submit"
-                className="min-h-11 rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300"
+                className="min-h-11 border border-cyan-400/30 text-cyan-100 transition hover:border-cyan-300"
               >
                 Liberar
-              </button>
+              </Button>
             </div>
             {error && (
               <p className="mt-3 text-sm font-semibold text-rose-300">
@@ -474,7 +475,7 @@ Vagas disponíveis: 9`}
             </div>
           </div>
         )}
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

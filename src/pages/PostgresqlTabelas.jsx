@@ -1,10 +1,11 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import { postgresqlTables } from "../data/postgresqlTables";
 
 export default function PostgresqlTabelas() {
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/postgresql"
@@ -14,15 +15,15 @@ export default function PostgresqlTabelas() {
         </BackButton>
       </div>
 
-      <div className="mb-10 max-w-4xl">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Material de apoio
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">PostgreSQL: Material de apoio</h1>
-        <p className="text-lg leading-relaxed text-slate-400">
+        <PageTitle className="mb-4">PostgreSQL: Material de apoio</PageTitle>
+        <PageDescription>
           Use estes materiais como consulta durante os exercícios. Quando bater dúvida sobre tipo de dado, constraint, operador ou função, volte aqui e compare com o que você está escrevendo no SQL.
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
       <div className="grid gap-5 md:grid-cols-2">
         {postgresqlTables.map((table) => (
@@ -31,7 +32,7 @@ export default function PostgresqlTabelas() {
             to={`/disciplinas/postgresql/material-apoio/${table.slug}`}
             className="group block"
           >
-            <article className="glass theme-hover-border flex h-full flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border flex h-full flex-col transition duration-300 hover:-translate-y-1">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
                   {table.category}
@@ -48,10 +49,10 @@ export default function PostgresqlTabelas() {
                 Abrir material
                 <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

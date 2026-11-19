@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import { useTranslation } from "react-i18next";
 import { translatePtToEnWithMap } from "../utils/ptEnTranslate";
@@ -383,22 +384,22 @@ export default function RoadmapJavaScript() {
   const tx = (value) => (isEn ? translatePtToEnWithMap(value, roadmapJavaScriptEnMap) : value);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/roadmaps" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">
         {t("roadmapPages.common.backToRoadmaps")}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path fill="currentColor" d="M4 4h16v16H4V4Zm2 2v12h12V6H6Zm4.2 8.8c0 1.2-.7 2.2-2.2 2.2-1 0-1.7-.4-2.1-1.2l1.4-.8c.2.4.3.7.7.7s.5-.2.5-.8V9h1.7v5.8Zm3.8 2.2c-1.4 0-2.3-.7-2.8-1.6l1.4-.8c.4.6.8.9 1.4.9s1-.3 1-.7c0-.5-.4-.7-1.2-1.1l-.4-.2c-1.2-.5-2-1.2-2-2.5 0-1.2 1-2.2 2.5-2.2 1.1 0 1.9.4 2.4 1.4l-1.3.8c-.3-.5-.6-.7-1.1-.7-.5 0-.8.3-.8.7 0 .5.3.6 1.1 1l.4.2c1.4.6 2.2 1.2 2.2 2.6 0 1.5-1.2 2.3-2.8 2.3Z" />
         </svg>
         <span>{t("roadmapPages.javascript.title")}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">
+      </PageTitle>
+      <PageDescription>
         {t("roadmapPages.javascript.subtitle")}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
             <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm1.1-7.8-.9.9A1.9 1.9 0 0 0 13 11h-2v-.5a3 3 0 0 1 .88-2.12l1.24-1.24A1.5 1.5 0 1 0 10 6H8a3.5 3.5 0 1 1 6.1 2.2Z" />
@@ -411,11 +412,11 @@ export default function RoadmapJavaScript() {
           <li className="text-justify">{t("roadmapPages.javascript.howToUse.2")}</li>
           <li className="text-justify">{t("roadmapPages.javascript.howToUse.3")}</li>
         </ol>
-      </div>
+      </Panel>
 
       <div className="space-y-5 mb-10">
         {fases.map((fase) => (
-          <details key={fase.titulo} className="glass rounded-2xl p-6 md:p-8">
+          <Panel as="details" layout="plain" key={fase.titulo}>
             <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
               <div className="flex flex-wrap items-center gap-3">
                 <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
@@ -453,11 +454,11 @@ export default function RoadmapJavaScript() {
                 <span className="font-semibold text-cyan-300">{t("roadmapPages.common.deliverable")}:</span> {tx(fase.entregavel)}
               </p>
             </div>
-          </details>
+          </Panel>
         ))}
       </div>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="details" layout="plain" className="mb-8">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -480,9 +481,9 @@ export default function RoadmapJavaScript() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="details" layout="plain" className="mb-8">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -508,9 +509,9 @@ export default function RoadmapJavaScript() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="details" layout="plain" className="mb-8">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -530,10 +531,10 @@ export default function RoadmapJavaScript() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
-        <details className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="details" layout="plain">
           <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -550,9 +551,9 @@ export default function RoadmapJavaScript() {
               </article>
             ))}
           </div>
-        </details>
+        </Panel>
 
-        <details className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="details" layout="plain">
           <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -568,10 +569,10 @@ export default function RoadmapJavaScript() {
               </li>
             ))}
           </ul>
-        </details>
+        </Panel>
       </div>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="details" layout="plain" className="mb-8">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -588,10 +589,10 @@ export default function RoadmapJavaScript() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
-        <details className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="details" layout="plain">
           <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -607,10 +608,10 @@ export default function RoadmapJavaScript() {
               </li>
             ))}
           </ul>
-        </details>
+        </Panel>
       </div>
 
-      <details className="glass rounded-2xl p-6 md:p-8">
+      <Panel as="details" layout="plain">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -635,7 +636,7 @@ export default function RoadmapJavaScript() {
             </article>
           ))}
         </div>
-      </details>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

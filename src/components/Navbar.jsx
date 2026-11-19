@@ -1,3 +1,4 @@
+import { Button, Input, Panel, Select } from "./ui/Patterns";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -41,7 +42,7 @@ function ThemeToggle({ theme, onToggle, labels, className = "" }) {
   const isDark = theme === "dark";
 
   return (
-    <button
+    <Button variant="custom"
       type="button"
       onClick={onToggle}
       className={`relative inline-flex h-9 w-[78px] items-center rounded-full border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 ${
@@ -78,7 +79,7 @@ function ThemeToggle({ theme, onToggle, labels, className = "" }) {
         aria-hidden="true"
       />
       <span className="sr-only">{isDark ? labels.darkActive : labels.lightActive}</span>
-    </button>
+    </Button>
   );
 }
 
@@ -86,7 +87,7 @@ function LanguageToggle({ currentLanguage, onChange, label }) {
   return (
     <label className="inline-flex items-center gap-2">
       <span className="sr-only">{label}</span>
-      <select
+      <Select
         aria-label={label}
         value={currentLanguage}
         onChange={(event) => onChange(event.target.value)}
@@ -94,7 +95,7 @@ function LanguageToggle({ currentLanguage, onChange, label }) {
       >
         <option value="pt">PT</option>
         <option value="en">EN</option>
-      </select>
+      </Select>
     </label>
   );
 }
@@ -572,7 +573,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50">
-      <div className="glass rounded-2xl px-4 sm:px-6 xl:px-7 py-3 xl:py-4 flex items-center justify-between gap-3">
+      <Panel as="div" layout="plain" className="rounded-2xl px-4 sm:px-6 xl:px-7 py-3 xl:py-4 flex items-center justify-between gap-3">
         <Link to="/" className="inline-flex items-center gap-3 min-w-0 shrink-0">
           <img
             src={theme === "light" ? logoB9 : logo}
@@ -607,14 +608,14 @@ export default function Navbar() {
 
         <div ref={searchContainerRef} className="hidden xl:flex shrink-0 items-center gap-2 2xl:gap-3 relative">
           {!searchOpen && (
-            <button
+            <Button variant="custom"
               type="button"
               className="border border-slate-700 text-slate-200 px-3 py-2 rounded-xl hover:border-cyan-400 transition whitespace-nowrap"
               aria-label={t("navbar.search.open")}
               onClick={() => setSearchOpen(true)}
             >
               {t("navbar.search.open")}
-            </button>
+            </Button>
           )}
 
           {searchOpen && (
@@ -629,7 +630,7 @@ export default function Navbar() {
                   d="M10.5 3a7.5 7.5 0 1 1-4.7 13.34l-2.57 2.57a1 1 0 1 1-1.42-1.42l2.57-2.57A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"
                 />
               </svg>
-              <input
+              <Input
                 ref={searchInputRef}
                 type="search"
                 placeholder={t("navbar.search.placeholder")}
@@ -639,11 +640,11 @@ export default function Navbar() {
               />
 
               {query.trim() && (
-                <div className="absolute top-full mt-2 left-0 w-full glass rounded-xl p-2 z-50">
+                <Panel as="div" layout="plain" className="absolute top-full mt-2 left-0 w-full  rounded-xl p-2 z-50">
                   {searchResults.length > 0 ? (
                     <div className="space-y-1">
                       {searchResults.map((item) => (
-                        <button
+                        <Button variant="custom"
                           key={`${item.path}-${item.title}`}
                           type="button"
                           className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800/70 transition"
@@ -651,13 +652,13 @@ export default function Navbar() {
                         >
                           <p className="text-sm text-slate-100">{item.title}</p>
                           <p className="text-xs text-slate-400">{item.subtitle}</p>
-                        </button>
+                        </Button>
                       ))}
                     </div>
                   ) : (
                     <p className="px-3 py-2 text-sm text-slate-400">{t("navbar.search.none")}</p>
                   )}
-                </div>
+                </Panel>
               )}
             </form>
           )}
@@ -698,18 +699,18 @@ export default function Navbar() {
           <ThemeToggle theme={theme} onToggle={toggleTheme} labels={themeLabels} />
         </div>
 
-        <button
+        <Button variant="custom"
           type="button"
           className="xl:hidden text-2xl shrink-0"
           aria-label={t("navbar.menuOpen")}
           onClick={() => setOpen((prev) => !prev)}
         >
           ☰
-        </button>
-      </div>
+        </Button>
+      </Panel>
 
       {open && (
-        <div className="glass rounded-2xl mt-3 px-6 py-6 xl:hidden">
+        <Panel as="div" layout="plain" className="rounded-2xl mt-3 px-6 py-6 xl:hidden">
           <span className="block py-2 text-cyan-300" title={t("navbar.adminArea")}>
             {t("navbar.me")}
           </span>
@@ -761,13 +762,13 @@ export default function Navbar() {
             <ThemeToggle theme={theme} onToggle={toggleTheme} labels={themeLabels} />
           </div>
           <div ref={mobileSearchContainerRef}>
-            <button
+            <Button variant="custom"
               type="button"
               className="mt-4 w-full border border-slate-700 text-slate-200 px-3 py-2 rounded-xl"
               onClick={() => setSearchOpen((prev) => !prev)}
             >
               {t("navbar.search.open")}
-            </button>
+            </Button>
             {searchOpen && (
               <form onSubmit={handleSearchSubmit} className="relative mt-3">
                 <svg
@@ -780,7 +781,7 @@ export default function Navbar() {
                     d="M10.5 3a7.5 7.5 0 1 1-4.7 13.34l-2.57 2.57a1 1 0 1 1-1.42-1.42l2.57-2.57A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"
                   />
                 </svg>
-                <input
+                <Input
                   type="search"
                   placeholder={t("navbar.search.placeholder")}
                   value={query}
@@ -788,11 +789,11 @@ export default function Navbar() {
                   className="w-full bg-slate-900/70 border border-slate-700 rounded-xl pl-11 pr-4 py-2 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400"
                 />
                 {query.trim() && (
-                  <div className="mt-2 glass rounded-xl p-2">
+                  <Panel as="div" layout="plain" className="mt-2  rounded-xl p-2">
                     {searchResults.length > 0 ? (
                       <div className="space-y-1">
                         {searchResults.map((item) => (
-                          <button
+                          <Button variant="custom"
                             key={`mobile-${item.path}-${item.title}`}
                             type="button"
                             className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800/70 transition"
@@ -800,18 +801,18 @@ export default function Navbar() {
                           >
                             <p className="text-sm text-slate-100">{item.title}</p>
                             <p className="text-xs text-slate-400">{item.subtitle}</p>
-                          </button>
+                          </Button>
                         ))}
                       </div>
                     ) : (
                       <p className="px-3 py-2 text-sm text-slate-400">{t("navbar.search.none")}</p>
                     )}
-                  </div>
+                  </Panel>
                 )}
               </form>
             )}
           </div>
-        </div>
+        </Panel>
       )}
     </header>
   );

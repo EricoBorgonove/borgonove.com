@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { CardGrid, ContentCard, PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
 const disciplinas = [
@@ -68,8 +68,8 @@ export default function Disciplinas() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+    <PageTemplate>
+      <PageHeader><PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -77,47 +77,20 @@ export default function Disciplinas() {
           />
         </svg>
         <span>{t("subjects.title")}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">
+      </PageTitle>
+      <PageDescription>
         {t("subjects.description")}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {disciplinasOrdenadas.map((disciplina) => {
-          const isActive = Boolean(disciplina.href);
-          const card = (
-            <article
-              className={`relative overflow-hidden glass theme-hover-border p-8 rounded-2xl h-full transition duration-300 ${
-                isActive ? "hover:-translate-y-2" : "opacity-95"
-              }`}
-            >
-              {!isActive && (
-                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 backdrop-blur-[1px]">
-                  <span className="text-sky-100 text-sm md:text-base font-bold uppercase tracking-[0.2em]">
-                    {t("common.comingSoon")}
-                  </span>
-                </div>
-              )}
-              <h2 className="text-lg font-semibold text-cyan-400 mb-2">
-                {t(`subjects.items.${disciplina.id}.title`)}
-              </h2>
-              <p className="text-slate-400 text-sm">
-                {t(`subjects.items.${disciplina.id}.description`)}
-              </p>
-            </article>
-          );
-
-          if (!disciplina.href) {
-            return <div key={disciplina.id}>{card}</div>;
-          }
-
-          return (
-            <Link key={disciplina.id} to={disciplina.href} className="block">
-              {card}
-            </Link>
-          );
-        })}
-      </div>
-    </section>
+      <CardGrid>
+        {disciplinasOrdenadas.map((disciplina) => (
+          <ContentCard key={disciplina.id} to={disciplina.href} headingAs="h2"
+            title={t(`subjects.items.${disciplina.id}.title`)}
+            description={t(`subjects.items.${disciplina.id}.description`)}
+            action={i18n.resolvedLanguage?.startsWith("en") ? "Open subject" : "Abrir disciplina"}
+            unavailable={!disciplina.href} unavailableLabel={t("common.comingSoon")} />
+        ))}
+      </CardGrid>
+    </PageTemplate>
   );
 }
