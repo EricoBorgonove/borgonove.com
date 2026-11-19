@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import RequireAdmin from "./components/RequireAdmin";
 import ScrollToTop from "./components/ScrollToTop";
 import MainLayout from "./layout/MainLayout";
@@ -75,6 +76,8 @@ import TimerProva from "./pages/TimerProva";
 import Utilidades from "./pages/Utilidades";
 import ValidadorCpfCnpj from "./pages/ValidadorCpfCnpj";
 
+const ProgramacaoDiscursiva = lazy(() => import("./pages/ProgramacaoDiscursiva"));
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -147,6 +150,7 @@ export default function App() {
           <Route path="/disciplinas/afd" element={<Afd />} />
           <Route path="/disciplinas/algoritmos" element={<Algoritmos />} />
           <Route path="/disciplinas/algoritmos/linguagem-natural" element={<AlgoritmosLinguagemNatural />} />
+          <Route path="/disciplinas/algoritmos/programacao-discursiva" element={<Suspense fallback={<p role="status">Carregando… / Loading…</p>}><ProgramacaoDiscursiva /></Suspense>} />
           <Route path="/disciplinas/analise-dados" element={<AnaliseDados />} />
           <Route path="/disciplinas/analise-dados/:listaSlug" element={<AnaliseDadosLista />} />
           <Route path="/disciplinas/arquitetura-software" element={<ArquiteturaSoftwareAulas />} />

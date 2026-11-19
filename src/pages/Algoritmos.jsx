@@ -129,6 +129,16 @@ export default function Algoritmos() {
         </span>
       </Panel>
 
+      <Panel as={Link} layout="plain"
+        to="/disciplinas/algoritmos/programacao-discursiva"
+        className="theme-hover-border mb-8 block transition hover:-translate-y-1"
+      >
+        <p className="mb-2 text-sm font-semibold text-cyan-300">{uiText("600 questões · 12 blocos · 50 questões por bloco")}</p>
+        <h2 className="mb-2 text-2xl font-semibold text-slate-100">{uiText("Banco de questões discursivas de programação")}</h2>
+        <p className="mb-5 text-sm leading-relaxed text-slate-400">{uiText("Contextos, enunciados e exemplos para praticar pseudocódigo ou VUALG.")}</p>
+        <span className="text-sm font-semibold text-cyan-200">{uiText(txt.naturalAction)} →</span>
+      </Panel>
+
       <Panel as="div" layout="plain" className="mb-8">
         <label htmlFor="busca-listas" className="block text-sm text-slate-300 mb-3">{uiText(txt.searchLabel)}</label>
         <div className="relative">
