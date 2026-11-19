@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 
@@ -85,27 +86,21 @@ const blocks = [
 ];
 
 export default function AlgoritmosLinguagemNatural() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/algoritmos"
           className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2"
-        >
-          Voltar para Algoritmos
-        </BackButton>
+        >{uiText("Voltar para Algoritmos")}</BackButton>
       </div>
 
       <PageHeader>
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-          Lista introdutória
-        </p>
-        <PageTitle className="mb-4">
-          Algoritmos em Linguagem Natural
-        </PageTitle>
-        <PageDescription className="max-w-4xl">
-          Escreva cada solução como uma sequência de passos claros e ordenados, sem utilizar uma linguagem de programação. Considere o início, o fim, os materiais necessários, as decisões e as repetições de cada processo.
-        </PageDescription>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Lista introdutória")}</p>
+        <PageTitle className="mb-4">{uiText("Algoritmos em Linguagem Natural")}</PageTitle>
+        <PageDescription className="max-w-4xl">{uiText("Escreva cada solução como uma sequência de passos claros e ordenados, sem utilizar uma linguagem de programação. Considere o início, o fim, os materiais necessários, as decisões e as repetições de cada processo.")}</PageDescription>
       </PageHeader>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -115,9 +110,9 @@ export default function AlgoritmosLinguagemNatural() {
             href={`#bloco-${index + 1}`}
             className="theme-hover-border rounded-2xl p-5 transition hover:-translate-y-1"
           >
-            <p className="mb-2 text-sm font-semibold text-cyan-300">Bloco {index + 1}</p>
+            <p className="mb-2 text-sm font-semibold text-cyan-300">{uiText("Bloco ")}{uiText(index + 1)}</p>
             <p className="text-sm font-semibold text-slate-200">
-              {block.title.replace(/^Bloco \d+ — /, "")}
+              {uiText(block.title).replace(/^(Bloco|Block) \d+ — /, "")}
             </p>
           </Panel>
         ))}
@@ -130,11 +125,11 @@ export default function AlgoritmosLinguagemNatural() {
             id={`bloco-${blockIndex + 1}`}
             className="scroll-mt-24"
           >
-            <h2 className="mb-3 text-2xl font-semibold text-cyan-300">{block.title}</h2>
-            <p className="mb-6 text-sm leading-relaxed text-slate-400">{block.description}</p>
+            <h2 className="mb-3 text-2xl font-semibold text-cyan-300">{uiText(block.title)}</h2>
+            <p className="mb-6 text-sm leading-relaxed text-slate-400">{uiText(block.description)}</p>
 
             <ol className="grid gap-3 md:grid-cols-2">
-              {block.exercises.map((exercise, exerciseIndex) => {
+              {uiText(block.exercises.map((exercise, exerciseIndex) => {
                 const questionNumber = blockIndex * 10 + exerciseIndex + 1;
 
                 return (
@@ -142,11 +137,11 @@ export default function AlgoritmosLinguagemNatural() {
                     key={exercise}
                     className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm leading-relaxed text-slate-300"
                   >
-                    <span className="font-semibold text-cyan-300">{questionNumber}. </span>
-                    {exercise}
+                    <span className="font-semibold text-cyan-300">{uiText(questionNumber)}. </span>
+                    {uiText(exercise)}
                   </li>
                 );
-              })}
+              }))}
             </ol>
           </Panel>
         ))}

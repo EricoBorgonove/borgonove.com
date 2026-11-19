@@ -1,3 +1,5 @@
+import { translateContent } from "./contentTranslation";
+
 export function copy(pt, en) {
   return { pt, en };
 }
@@ -25,7 +27,8 @@ export function localize(value, isEn) {
   }
 
   if (isEn && typeof value === "string") {
-    return pandasTextMap[value] || value;
+    const translated = translateContent(value, "en");
+    return translated !== value ? translated : pandasTextMap[value] || value;
   }
 
   return value;

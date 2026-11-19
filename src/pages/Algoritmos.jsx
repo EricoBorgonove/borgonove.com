@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -38,6 +39,8 @@ function getQuestionText(questao, isEn) {
 }
 
 export default function Algoritmos() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -93,7 +96,7 @@ export default function Algoritmos() {
   return (
     <PageTemplate>
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{txt.back}</BackButton>
+        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText(txt.back)}</BackButton>
       </div>
 
       <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
@@ -103,10 +106,10 @@ export default function Algoritmos() {
             d="M3 5a2 2 0 0 1 2-2h4v2H5v14h4v2H5a2 2 0 0 1-2-2V5Zm16 14h-4v2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4v2h4v14ZM9.7 15.3a1 1 0 0 1 0-1.4L11.6 12 9.7 10.1a1 1 0 1 1 1.4-1.4l2.6 2.6a1 1 0 0 1 0 1.4l-2.6 2.6a1 1 0 0 1-1.4 0Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
       <PageDescription>
-        {txt.description}
+        {uiText(txt.description)}
       </PageDescription></PageHeader>
 
       <Panel as={Link} layout="plain"
@@ -114,20 +117,20 @@ export default function Algoritmos() {
         className="theme-hover-border mb-8 block transition hover:-translate-y-1"
       >
         <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">
-          {isEn ? "Introductory list" : "Lista introdutória"}
+          {uiText(isEn ? "Introductory list" : "Lista introdutória")}
         </p>
-        <h2 className="mb-2 text-2xl font-semibold text-slate-100">{txt.naturalTitle}</h2>
+        <h2 className="mb-2 text-2xl font-semibold text-slate-100">{uiText(txt.naturalTitle)}</h2>
         <p className="mb-5 max-w-3xl text-sm leading-relaxed text-slate-400">
-          {txt.naturalDescription}
+          {uiText(txt.naturalDescription)}
         </p>
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
-          {txt.naturalAction}
+          {uiText(txt.naturalAction)}
           <span aria-hidden="true">→</span>
         </span>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <label htmlFor="busca-listas" className="block text-sm text-slate-300 mb-3">{txt.searchLabel}</label>
+        <label htmlFor="busca-listas" className="block text-sm text-slate-300 mb-3">{uiText(txt.searchLabel)}</label>
         <div className="relative">
           <svg
             viewBox="0 0 24 24"
@@ -144,7 +147,7 @@ export default function Algoritmos() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder={txt.searchPlaceholder}
+            placeholder={uiText(txt.searchPlaceholder)}
             className="ui-input--leading-icon w-full border text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </div>
@@ -152,7 +155,7 @@ export default function Algoritmos() {
 
       <Panel as="details" layout="plain" className="mb-10">
         <summary className="cursor-pointer text-xl font-semibold text-cyan-300 px-6 md:px-8 py-5">
-          {txt.topics}
+          {uiText(txt.topics)}
         </summary>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm px-6 md:px-8 pb-6 md:pb-8">
           {listas.map((lista) => (
@@ -161,7 +164,7 @@ export default function Algoritmos() {
               href={`#${slugify(getListTitle(lista, isEn))}`}
               className="bg-slate-900/60 rounded-xl px-4 py-3 hover:bg-slate-800/80 transition"
             >
-              {getListTitle(lista, isEn)}
+              {uiText(getListTitle(lista, isEn))}
             </a>
           ))}
         </div>
@@ -176,9 +179,9 @@ export default function Algoritmos() {
             open={Boolean(query.trim())}
           >
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
-              {getListTitle(lista, isEn)}
+              {uiText(getListTitle(lista, isEn))}
             </summary>
-            <p className="mt-3 text-xs text-slate-400">{txt.type}: {getListType(lista, isEn)}</p>
+            <p className="mt-3 text-xs text-slate-400">{uiText(txt.type)}: {uiText(getListType(lista, isEn))}</p>
             <ol className="mt-5 space-y-2 text-sm text-slate-300 list-decimal list-inside">
               {lista.questoes.map((questao) => (
                 <li
@@ -186,7 +189,7 @@ export default function Algoritmos() {
                   value={questao.id}
                   className="text-justify marker:font-bold marker:text-cyan-300"
                 >
-                  {getQuestionText(questao, isEn)}
+                  {uiText(getQuestionText(questao, isEn))}
                 </li>
               ))}
             </ol>
@@ -195,7 +198,7 @@ export default function Algoritmos() {
       </div>
 
       {filteredListas.length === 0 && (
-        <p className="text-sm text-slate-400 mt-6">{txt.noResults}</p>
+        <p className="text-sm text-slate-400 mt-6">{uiText(txt.noResults)}</p>
       )}
     </PageTemplate>
   );

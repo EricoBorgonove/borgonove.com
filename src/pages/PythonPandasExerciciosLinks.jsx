@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -91,6 +92,8 @@ const exerciseLinks = [
 ];
 
 export default function PythonPandasExerciciosLinks() {
+  const { text: uiText } = useContentTranslation();
+
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -127,7 +130,7 @@ export default function PythonPandasExerciciosLinks() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -138,14 +141,14 @@ export default function PythonPandasExerciciosLinks() {
             d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h14V5H5Zm0 6v8h14v-8H5Zm2 2h4v2H7v-2Zm0 3h7v2H7v-2Zm6-3h4v2h-4v-2Z"
           />
         </svg>
-        <span>{pick(txt.title, isEn)}</span>
+        <span>{uiText(pick(txt.title, isEn))}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.description, isEn)}
+        {uiText(pick(txt.description, isEn))}
       </PageDescription></PageHeader>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {allExerciseLinks.map((item) => item.requiresLogin ? (
+        {uiText(allExerciseLinks.map((item) => item.requiresLogin ? (
           <Button variant="custom"
             key={item.id}
             type="button"
@@ -157,16 +160,16 @@ export default function PythonPandasExerciciosLinks() {
           >
             <Panel as="article" layout="plain" className="relative overflow-hidden theme-hover-border h-full transition duration-300 hover:-translate-y-2">
               <p className="text-sm font-semibold text-cyan-300 mb-3">
-                {pick(item.meta, isEn)}
+                {uiText(pick(item.meta, isEn))}
               </p>
               <h2 className="text-xl font-semibold text-cyan-400 mb-3">
-                {pick(item.title, isEn)}
+                {uiText(pick(item.title, isEn))}
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                {pick(item.description, isEn)}
+                {uiText(pick(item.description, isEn))}
               </p>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
-                {pick(txt.access, isEn)}
+                {uiText(pick(txt.access, isEn))}
                 <span aria-hidden="true">→</span>
               </span>
             </Panel>
@@ -175,21 +178,21 @@ export default function PythonPandasExerciciosLinks() {
           <Link key={item.id} to={item.href} className="block">
             <Panel as="article" layout="plain" className="relative overflow-hidden theme-hover-border h-full transition duration-300 hover:-translate-y-2">
               <p className="text-sm font-semibold text-cyan-300 mb-3">
-                {pick(item.meta, isEn)}
+                {uiText(pick(item.meta, isEn))}
               </p>
               <h2 className="text-xl font-semibold text-cyan-400 mb-3">
-                {pick(item.title, isEn)}
+                {uiText(pick(item.title, isEn))}
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                {pick(item.description, isEn)}
+                {uiText(pick(item.description, isEn))}
               </p>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
-                {pick(txt.open, isEn)}
+                {uiText(pick(txt.open, isEn))}
                 <span aria-hidden="true">→</span>
               </span>
             </Panel>
           </Link>
-        ))}
+        )))}
       </div>
 
       {isModalOpen && (
@@ -197,18 +200,16 @@ export default function PythonPandasExerciciosLinks() {
           <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-950 p-6 shadow-2xl shadow-cyan-950/30">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  Prova Pandas
-                </p>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Prova Pandas")}</p>
                 <h2 className="text-2xl font-semibold text-slate-100">
-                  {pick(txt.restrictedAccess, isEn)}
+                  {uiText(pick(txt.restrictedAccess, isEn))}
                 </h2>
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={() => setIsModalOpen(false)}
                 className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                aria-label={pick(txt.cancel, isEn)}
+                aria-label={uiText(pick(txt.cancel, isEn))}
               >
                 ×
               </Button>
@@ -236,7 +237,7 @@ export default function PythonPandasExerciciosLinks() {
             >
               <label className="block">
                 <span className="mb-2 block text-sm font-semibold text-slate-300">
-                  {pick(txt.studentName, isEn)}
+                  {uiText(pick(txt.studentName, isEn))}
                 </span>
                 <Input
                   type="text"
@@ -251,7 +252,7 @@ export default function PythonPandasExerciciosLinks() {
               </label>
               <label className="block">
                 <span className="mb-2 block text-sm font-semibold text-slate-300">
-                  {pick(txt.password, isEn)}
+                  {uiText(pick(txt.password, isEn))}
                 </span>
                 <Input
                   type="password"
@@ -267,7 +268,7 @@ export default function PythonPandasExerciciosLinks() {
 
               {showError && (
                 <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-200">
-                  {pick(txt.incorrect, isEn)}
+                  {uiText(pick(txt.incorrect, isEn))}
                 </p>
               )}
 
@@ -277,13 +278,13 @@ export default function PythonPandasExerciciosLinks() {
                   onClick={() => setIsModalOpen(false)}
                   className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 >
-                  {pick(txt.cancel, isEn)}
+                  {uiText(pick(txt.cancel, isEn))}
                 </Button>
                 <Button variant="primary"
                   type="submit"
                   className="text-slate-950 transition"
                 >
-                  {pick(txt.enter, isEn)}
+                  {uiText(pick(txt.enter, isEn))}
                 </Button>
               </div>
             </form>

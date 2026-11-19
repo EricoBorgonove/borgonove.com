@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -182,6 +183,8 @@ with pd.ExcelWriter("dataset_analytics_empresa.xlsx") as writer:
 ];
 
 export default function PythonPandasExercicios() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const localizedDatasets = localize(datasets, isEn);
@@ -204,7 +207,7 @@ export default function PythonPandasExercicios() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -215,10 +218,10 @@ export default function PythonPandasExercicios() {
             d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h14V5H5Zm0 6v8h14v-8H5Zm2 2h4v2H7v-2Zm0 3h7v2H7v-2Zm6-3h4v2h-4v-2Z"
           />
         </svg>
-        <span>{pick(txt.title, isEn)}</span>
+        <span>{uiText(pick(txt.title, isEn))}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 mb-8">
@@ -228,9 +231,9 @@ export default function PythonPandasExercicios() {
             href={`#${dataset.id}`}
             className="rounded-2xl p-5 theme-hover-border transition hover:-translate-y-1"
           >
-            <p className="text-sm font-semibold text-cyan-300 mb-2">Dataset {index + 1}</p>
-            <h2 className="text-lg font-bold text-slate-100 mb-2">{dataset.title.replace(/^Dataset \d+ — /, "")}</h2>
-            <p className="text-sm text-slate-400 leading-relaxed">{dataset.description}</p>
+            <p className="text-sm font-semibold text-cyan-300 mb-2">{uiText("Dataset ")}{uiText(index + 1)}</p>
+            <h2 className="text-lg font-bold text-slate-100 mb-2">{uiText(dataset.title.replace(/^Dataset \d+ — /, ""))}</h2>
+            <p className="text-sm text-slate-400 leading-relaxed">{uiText(dataset.description)}</p>
           </Panel>
         ))}
       </div>
@@ -240,10 +243,10 @@ export default function PythonPandasExercicios() {
           <Panel as="article" layout="plain" key={dataset.id} id={dataset.id} className="scroll-mt-24">
             <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div>
-                <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{dataset.title}</h2>
-                <p className="text-sm text-slate-400 leading-relaxed max-w-3xl">{dataset.description}</p>
+                <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(dataset.title)}</h2>
+                <p className="text-sm text-slate-400 leading-relaxed max-w-3xl">{uiText(dataset.description)}</p>
                 <p className="mt-3 text-sm text-slate-500">
-                  {pick(txt.file, isEn)} <code className="text-slate-300">{dataset.file}</code>
+                  {uiText(pick(txt.file, isEn))} <code className="text-slate-300">{dataset.file}</code>
                 </p>
               </div>
               <a
@@ -251,43 +254,43 @@ export default function PythonPandasExercicios() {
                 download
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
               >
-                {pick(txt.download, isEn)}
+                {uiText(pick(txt.download, isEn))}
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
 
             {dataset.exerciseBlocks ? (
               <div className="space-y-5">
-                {dataset.exerciseBlocks.map((block) => {
+                {uiText(dataset.exerciseBlocks.map((block) => {
                   const firstNumber = Number(block.range.split("–")[0]);
                   return (
                     <div key={block.title} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
                       <h3 className="text-lg font-semibold text-slate-100 mb-2">
-                        {block.title} <span className="text-sm font-medium text-cyan-300">({block.range})</span>
+                        {uiText(block.title)} <span className="text-sm font-medium text-cyan-300">({uiText(block.range)})</span>
                       </h3>
                       {block.helper && (
                         <p className="mb-4 rounded-xl border border-cyan-400/20 bg-cyan-500/10 px-4 py-3 text-sm text-cyan-100">
-                          {pick(txt.formula, isEn)} <code>{block.helper}</code>
+                          {uiText(pick(txt.formula, isEn))} <code>{block.helper}</code>
                         </p>
                       )}
                       <ol className="grid gap-3 md:grid-cols-2">
                         {block.exercises.map((exercise, index) => (
                           <li key={exercise} className="rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-                            <span className="font-semibold text-cyan-300">{firstNumber + index}. </span>
-                            {exercise}
+                            <span className="font-semibold text-cyan-300">{uiText(firstNumber + index)}. </span>
+                            {uiText(exercise)}
                           </li>
                         ))}
                       </ol>
                     </div>
                   );
-                })}
+                }))}
               </div>
             ) : (
               <ol className="grid gap-3 md:grid-cols-2">
                 {dataset.exercises.map((exercise, index) => (
                   <li key={exercise} className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-                    <span className="font-semibold text-cyan-300">{index + 1}. </span>
-                    {exercise}
+                    <span className="font-semibold text-cyan-300">{uiText(index + 1)}. </span>
+                    {uiText(exercise)}
                   </li>
                 ))}
               </ol>
@@ -296,23 +299,23 @@ export default function PythonPandasExercicios() {
             {dataset.sheetStructure && (
               <div className="mt-6 grid gap-4 lg:grid-cols-2">
                 <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                  <h3 className="text-lg font-semibold text-slate-100 mb-4">{pick(txt.excelStructure, isEn)}</h3>
+                  <h3 className="text-lg font-semibold text-slate-100 mb-4">{uiText(pick(txt.excelStructure, isEn))}</h3>
                   <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
                     {dataset.sheetStructure.map((item) => (
                       <li key={item} className="flex gap-2">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                        <span>{item}</span>
+                        <span>{uiText(item)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                  <h3 className="text-lg font-semibold text-slate-100 mb-4">{pick(txt.includedComplexity, isEn)}</h3>
+                  <h3 className="text-lg font-semibold text-slate-100 mb-4">{uiText(pick(txt.includedComplexity, isEn))}</h3>
                   <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
                     {dataset.complexity.map((item) => (
                       <li key={item} className="flex gap-2">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                        <span>{item}</span>
+                        <span>{uiText(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -323,7 +326,7 @@ export default function PythonPandasExercicios() {
             {dataset.generationCode && (
               <details className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
                 <summary className="cursor-pointer text-lg font-semibold text-slate-100">
-                  {pick(txt.referenceCode, isEn)}
+                  {uiText(pick(txt.referenceCode, isEn))}
                 </summary>
                 <div className="mt-4">
                   <CodeBlock>{dataset.generationCode}</CodeBlock>

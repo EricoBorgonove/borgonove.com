@@ -101,6 +101,12 @@
     <script>
       (function () {
         var lang = (navigator.language || "").toLowerCase();
+        try {
+          var selectedLanguage = window.localStorage.getItem("site-language");
+          if (selectedLanguage) lang = selectedLanguage.toLowerCase();
+        } catch (error) {
+          // Browser language remains the fallback when storage is unavailable.
+        }
         var isEnglish = lang.indexOf("en") === 0;
         if (!isEnglish) return;
 

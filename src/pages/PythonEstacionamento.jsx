@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useState } from "react";
 import BackButton from "../components/BackButton";
@@ -283,6 +284,8 @@ const concepts = [
 ];
 
 export default function PythonEstacionamento() {
+  const { text: uiText } = useContentTranslation();
+
   const [password, setPassword] = useState("");
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState(false);
@@ -305,47 +308,36 @@ export default function PythonEstacionamento() {
         <BackButton
           fallbackTo="/disciplinas/python"
           className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2"
-        >
-          Voltar para Python
-        </BackButton>
+        >{uiText("Voltar para Python")}</BackButton>
       </div>
 
       <PageHeader>
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-          Programação Orientada a Objetos
-        </p>
-        <PageTitle className="mb-4">
-          Sistema de Estacionamento
-        </PageTitle>
-        <PageDescription>
-          Desenvolva, utilizando Python e Programação Orientada a Objetos, um sistema para controlar a entrada e a saída de veículos de um estacionamento.
-        </PageDescription>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Programação Orientada a Objetos")}</p>
+        <PageTitle className="mb-4">{uiText("Sistema de Estacionamento")}</PageTitle>
+        <PageDescription>{uiText("Desenvolva, utilizando Python e Programação Orientada a Objetos, um sistema para controlar a entrada e a saída de veículos de um estacionamento.")}</PageDescription>
       </PageHeader>
 
       <div className="grid gap-5 lg:grid-cols-[1fr_320px]">
         <Panel as="article" layout="plain">
-          <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Enunciado</h2>
-          <p className="mb-6 leading-relaxed text-slate-300">
-            O estacionamento possui uma quantidade limitada de vagas e cobra um valor por hora de permanência. O programa deverá permitir:
-          </p>
+          <h2 className="mb-4 text-2xl font-semibold text-cyan-300">{uiText("Enunciado")}</h2>
+          <p className="mb-6 leading-relaxed text-slate-300">{uiText("O estacionamento possui uma quantidade limitada de vagas e cobra um valor por hora de permanência. O programa deverá permitir:")}</p>
           <ol className="grid gap-3 md:grid-cols-2">
             {requirements.map((item, index) => (
               <li key={item} className="rounded-xl border border-slate-800 bg-slate-950/50 p-4 text-sm text-slate-300">
-                <span className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">
-                  Requisito {String(index + 1).padStart(2, "0")}
+                <span className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">{uiText("Requisito ")}{uiText(String(index + 1).padStart(2, "0"))}
                 </span>
-                {item}
+                {uiText(item)}
               </li>
             ))}
           </ol>
         </Panel>
 
         <Panel as="aside" layout="plain">
-          <h2 className="mb-4 text-xl font-semibold text-cyan-300">Regras</h2>
+          <h2 className="mb-4 text-xl font-semibold text-cyan-300">{uiText("Regras")}</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
             {rules.map((rule) => (
               <li key={rule} className="rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-3">
-                {rule}
+                {uiText(rule)}
               </li>
             ))}
           </ul>
@@ -353,22 +345,16 @@ export default function PythonEstacionamento() {
       </div>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Exemplo de cobrança</h2>
-        <p className="mb-4 leading-relaxed text-slate-300">
-          Um veículo permaneceu por 1 hora e 20 minutos. Como qualquer período iniciado é considerado uma hora completa, serão cobradas 2 horas:
-        </p>
-        <div className="rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-5 text-2xl font-black text-cyan-100">
-          2 × R$ 8,00 = R$ 16,00
-        </div>
+        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">{uiText("Exemplo de cobrança")}</h2>
+        <p className="mb-4 leading-relaxed text-slate-300">{uiText("Um veículo permaneceu por 1 hora e 20 minutos. Como qualquer período iniciado é considerado uma hora completa, serão cobradas 2 horas:")}</p>
+        <div className="rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-5 text-2xl font-black text-cyan-100">{uiText("2 × R$ 8,00 = R$ 16,00")}</div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Resposta e explicação</h2>
+        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">{uiText("Resposta e explicação")}</h2>
         {!unlocked ? (
           <form onSubmit={handleSubmit} className="max-w-xl">
-            <label htmlFor="senha-estacionamento" className="mb-2 block text-sm font-semibold text-cyan-100">
-              Senha da resposta
-            </label>
+            <label htmlFor="senha-estacionamento" className="mb-2 block text-sm font-semibold text-cyan-100">{uiText("Senha da resposta")}</label>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Input
                 id="senha-estacionamento"
@@ -379,26 +365,22 @@ export default function PythonEstacionamento() {
                   setError(false);
                 }}
                 className="min-h-11 flex-1 border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
-                placeholder="Digite a senha"
+                placeholder={uiText("Digite a senha")}
                 autoComplete="off"
               />
               <Button variant="secondary"
                 type="submit"
                 className="min-h-11 border border-cyan-400/30 text-cyan-100 transition hover:border-cyan-300"
-              >
-                Liberar
-              </Button>
+              >{uiText("Liberar")}</Button>
             </div>
             {error && (
-              <p className="mt-3 text-sm font-semibold text-rose-300">
-                Senha incorreta.
-              </p>
+              <p className="mt-3 text-sm font-semibold text-rose-300">{uiText("Senha incorreta.")}</p>
             )}
           </form>
         ) : (
           <div className="space-y-8">
             <div>
-              <h3 className="mb-4 text-xl font-semibold text-slate-100">Código sugerido</h3>
+              <h3 className="mb-4 text-xl font-semibold text-slate-100">{uiText("Código sugerido")}</h3>
               <CodeBlock language="python" label="Python">
                 {solutionCode}
               </CodeBlock>
@@ -406,44 +388,40 @@ export default function PythonEstacionamento() {
 
             <div className="grid gap-5 md:grid-cols-2">
               <article className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
-                <h3 className="mb-3 text-xl font-semibold text-cyan-100">Classe Veiculo</h3>
-                <p className="text-sm leading-relaxed text-slate-300">
-                  Representa cada veículo que entra no estacionamento. Ela guarda placa, modelo, tipo e horário de entrada. O horário é registrado automaticamente com <code className="text-cyan-200">datetime.now()</code>. O método <code className="text-cyan-200">calcular_tempo_permanencia()</code> usa <code className="text-cyan-200">ceil()</code> para arredondar a cobrança para cima.
-                </p>
+                <h3 className="mb-3 text-xl font-semibold text-cyan-100">{uiText("Classe Veiculo")}</h3>
+                <p className="text-sm leading-relaxed text-slate-300">{uiText("Representa cada veículo que entra no estacionamento. Ela guarda placa, modelo, tipo e horário de entrada. O horário é registrado automaticamente com ")}<code className="text-cyan-200">datetime.now()</code>{uiText(". O método ")}<code className="text-cyan-200">calcular_tempo_permanencia()</code>{uiText(" usa ")}<code className="text-cyan-200">ceil()</code>{uiText(" para arredondar a cobrança para cima.")}</p>
               </article>
               <article className="rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
-                <h3 className="mb-3 text-xl font-semibold text-cyan-100">Classe Estacionamento</h3>
-                <p className="text-sm leading-relaxed text-slate-300">
-                  Controla capacidade, valor por hora, entradas, saídas, vagas disponíveis, listagem e pesquisa. Os veículos ficam em um dicionário, usando a placa como chave para facilitar a busca.
-                </p>
+                <h3 className="mb-3 text-xl font-semibold text-cyan-100">{uiText("Classe Estacionamento")}</h3>
+                <p className="text-sm leading-relaxed text-slate-300">{uiText("Controla capacidade, valor por hora, entradas, saídas, vagas disponíveis, listagem e pesquisa. Os veículos ficam em um dicionário, usando a placa como chave para facilitar a busca.")}</p>
               </article>
             </div>
 
             <div>
-              <h3 className="mb-4 text-xl font-semibold text-slate-100">Fluxo da saída</h3>
+              <h3 className="mb-4 text-xl font-semibold text-slate-100">{uiText("Fluxo da saída")}</h3>
               <ol className="grid gap-3 md:grid-cols-5">
                 {["Pesquisa a placa", "Calcula o tempo", "Calcula o valor", "Mostra comprovante", "Remove o veículo"].map((step, index) => (
                   <li key={step} className="rounded-xl border border-slate-800 bg-slate-950/50 p-4 text-sm text-slate-300">
-                    <span className="mb-2 block text-lg font-black text-cyan-200">{index + 1}</span>
-                    {step}
+                    <span className="mb-2 block text-lg font-black text-cyan-200">{uiText(index + 1)}</span>
+                    {uiText(step)}
                   </li>
                 ))}
               </ol>
             </div>
 
             <div>
-              <h3 className="mb-4 text-xl font-semibold text-slate-100">Conceitos utilizados</h3>
+              <h3 className="mb-4 text-xl font-semibold text-slate-100">{uiText("Conceitos utilizados")}</h3>
               <div className="flex flex-wrap gap-2">
                 {concepts.map((concept) => (
                   <span key={concept} className="rounded-lg border border-cyan-400/20 bg-cyan-500/10 px-3 py-2 text-sm text-cyan-100">
-                    {concept}
+                    {uiText(concept)}
                   </span>
                 ))}
               </div>
             </div>
 
             <div>
-              <h3 className="mb-4 text-xl font-semibold text-slate-100">Exemplo de execução</h3>
+              <h3 className="mb-4 text-xl font-semibold text-slate-100">{uiText("Exemplo de execução")}</h3>
               <CodeBlock language="text" label="Terminal">
                 {`=============================================
        SISTEMA DE ESTACIONAMENTO

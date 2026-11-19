@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,6 +23,8 @@ function formatInOffset(date, offsetHours) {
 }
 
 export default function ConversorDataHora() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const locale = isEn ? "en-US" : "pt-BR";
@@ -77,7 +80,7 @@ export default function ConversorDataHora() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -87,13 +90,13 @@ export default function ConversorDataHora() {
             d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5a1 1 0 0 0-2 0v6a1 1 0 0 0 .3.7l3.5 3.5a1 1 0 1 0 1.4-1.4L13 12.6V7Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-6">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.source}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.source)}</span>
             <Input
               type="datetime-local"
               value={dateInput}
@@ -103,7 +106,7 @@ export default function ConversorDataHora() {
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.targetOffset}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.targetOffset)}</span>
             <Input
               type="number"
               min="-12"
@@ -119,24 +122,24 @@ export default function ConversorDataHora() {
         {resultado ? (
           <div className="grid md:grid-cols-2 gap-4 mt-8 text-sm">
             <Panel as="div" layout="plain">
-              <p className="text-slate-400">{txt.localTime}</p>
-              <p className="text-slate-100 font-semibold mt-1">{resultado.local}</p>
+              <p className="text-slate-400">{uiText(txt.localTime)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.local)}</p>
             </Panel>
             <Panel as="div" layout="plain">
-              <p className="text-slate-400">{txt.utcTime}</p>
-              <p className="text-slate-100 font-semibold mt-1">{resultado.utc}</p>
+              <p className="text-slate-400">{uiText(txt.utcTime)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.utc)}</p>
             </Panel>
             <Panel as="div" layout="plain" className="md:col-span-2">
-              <p className="text-slate-400">{txt.targetZoneTime}</p>
-              <p className="text-slate-100 font-semibold mt-1">{resultado.custom}</p>
+              <p className="text-slate-400">{uiText(txt.targetZoneTime)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.custom)}</p>
             </Panel>
             <Panel as="div" layout="plain" className="md:col-span-2">
-              <p className="text-slate-400">{txt.timestamp}</p>
-              <p className="text-slate-100 font-semibold mt-1 break-all">{resultado.timestamp}</p>
+              <p className="text-slate-400">{uiText(txt.timestamp)}</p>
+              <p className="text-slate-100 font-semibold mt-1 break-all">{uiText(resultado.timestamp)}</p>
             </Panel>
           </div>
         ) : (
-          <p className="mt-6 text-slate-400">{txt.invalid}</p>
+          <p className="mt-6 text-slate-400">{uiText(txt.invalid)}</p>
         )}
       </Panel>
     </PageTemplate>

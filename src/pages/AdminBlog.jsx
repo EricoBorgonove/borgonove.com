@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Select, Textarea } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -41,6 +42,8 @@ async function parseJsonSafe(response) {
 }
 
 export default function AdminBlog() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const navigate = useNavigate();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
@@ -253,48 +256,48 @@ export default function AdminBlog() {
     <PageTemplate width="wide">
       <div className="mb-6 text-sm text-slate-400 flex flex-wrap gap-2">
         <Link to="/admin" className="hover:text-cyan-200 transition">
-          {txt.breadcrumbAdmin}
+          {uiText(txt.breadcrumbAdmin)}
         </Link>
         <span>/</span>
-        <span className="text-cyan-300">{txt.breadcrumbBlog}</span>
+        <span className="text-cyan-300">{uiText(txt.breadcrumbBlog)}</span>
       </div>
 
       <Panel as="div" layout="plain">
-        <PageHeader><PageTitle className="text-white">{txt.title}</PageTitle>
-        <PageDescription className="mt-3">{txt.description}</PageDescription></PageHeader>
+        <PageHeader><PageTitle className="text-white">{uiText(txt.title)}</PageTitle>
+        <PageDescription className="mt-3">{uiText(txt.description)}</PageDescription></PageHeader>
 
         {error && (
           <p className="mt-5 rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
-            {error}
+            {uiMessage(error)}
           </p>
         )}
 
         {notice && (
           <p className="mt-5 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
-            {notice}
+            {uiMessage(notice)}
           </p>
         )}
 
         <div className="mt-8 grid gap-6 xl:grid-cols-[360px_minmax(0,1fr)]">
           <Panel as="aside" layout="plain">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="text-lg font-semibold text-cyan-300">{txt.listTitle}</h2>
+              <h2 className="text-lg font-semibold text-cyan-300">{uiText(txt.listTitle)}</h2>
               <Button variant="secondary"
                 type="button"
                 onClick={resetForm}
                 className="border border-cyan-400/30 text-cyan-300 transition hover:border-cyan-300"
               >
-                {txt.newPost}
+                {uiText(txt.newPost)}
               </Button>
             </div>
 
             <div className="mt-4 space-y-3 max-h-[560px] overflow-y-auto pr-1">
-              {loading && <p className="text-sm text-slate-400">{txt.listLoading}</p>}
-              {!loading && posts.length === 0 && <p className="text-sm text-slate-400">{txt.listEmpty}</p>}
+              {loading && <p className="text-sm text-slate-400">{uiText(txt.listLoading)}</p>}
+              {!loading && posts.length === 0 && <p className="text-sm text-slate-400">{uiText(txt.listEmpty)}</p>}
               {posts.map((post) => (
                 <article key={post.id} className="rounded-xl border border-slate-700/80 bg-slate-900/35 p-4">
                   <p className="text-sm font-semibold text-white line-clamp-2">
-                    {post.title_pt || post.title_en || post.slug}
+                    {isEn ? post.title_en || post.title_pt || post.slug : post.title_pt || post.title_en || post.slug}
                   </p>
                   <p className="text-xs text-slate-400 mt-1">{post.slug}</p>
                   <div className="mt-3 flex items-center justify-between gap-2">
@@ -305,7 +308,7 @@ export default function AdminBlog() {
                           : "bg-amber-500/15 text-amber-300 border border-amber-400/30"
                       }`}
                     >
-                      {post.status === "published" ? txt.statusPublished : txt.statusDraft}
+                      {uiText(post.status === "published" ? txt.statusPublished : txt.statusDraft)}
                     </span>
 
                     <div className="flex gap-2">
@@ -314,14 +317,14 @@ export default function AdminBlog() {
                         onClick={() => editPost(post)}
                         className="border border-slate-600 text-slate-200 hover:border-cyan-400"
                       >
-                        {txt.edit}
+                        {uiText(txt.edit)}
                       </Button>
                       <Button variant="custom"
                         type="button"
                         onClick={() => removePost(post.id)}
                         className="rounded-lg border border-rose-500/40 px-2.5 py-1.5 text-xs text-rose-200 hover:bg-rose-500/10"
                       >
-                        {txt.delete}
+                        {uiText(txt.delete)}
                       </Button>
                     </div>
                   </div>
@@ -333,7 +336,7 @@ export default function AdminBlog() {
           <Panel as="form" layout="plain" onSubmit={savePost} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formTitlePt}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formTitlePt)}</span>
                 <Input
                   type="text"
                   value={form.title_pt}
@@ -343,7 +346,7 @@ export default function AdminBlog() {
               </label>
 
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formTitleEn}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formTitleEn)}</span>
                 <Input
                   type="text"
                   value={form.title_en}
@@ -355,7 +358,7 @@ export default function AdminBlog() {
 
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formSlug}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formSlug)}</span>
                 <Input
                   type="text"
                   value={form.slug}
@@ -365,7 +368,7 @@ export default function AdminBlog() {
               </label>
 
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formCover}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formCover)}</span>
                 <Input
                   type="url"
                   value={form.cover_image_url}
@@ -379,7 +382,7 @@ export default function AdminBlog() {
 
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formExcerptPt}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formExcerptPt)}</span>
                 <Textarea
                   rows="3"
                   value={form.excerpt_pt}
@@ -389,7 +392,7 @@ export default function AdminBlog() {
               </label>
 
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formExcerptEn}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formExcerptEn)}</span>
                 <Textarea
                   rows="3"
                   value={form.excerpt_en}
@@ -401,7 +404,7 @@ export default function AdminBlog() {
 
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formContentPt}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formContentPt)}</span>
                 <Textarea
                   rows="10"
                   value={form.content_pt}
@@ -411,7 +414,7 @@ export default function AdminBlog() {
               </label>
 
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formContentEn}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formContentEn)}</span>
                 <Textarea
                   rows="10"
                   value={form.content_en}
@@ -423,19 +426,19 @@ export default function AdminBlog() {
 
             <div className="grid gap-4 md:grid-cols-2">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formStatus}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formStatus)}</span>
                 <Select
                   value={form.status}
                   onChange={(event) => setForm((prev) => ({ ...prev, status: event.target.value }))}
                   className="w-full border text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
                 >
-                  <option value="draft">{txt.statusDraft}</option>
-                  <option value="published">{txt.statusPublished}</option>
+                  <option value="draft">{uiText(txt.statusDraft)}</option>
+                  <option value="published">{uiText(txt.statusPublished)}</option>
                 </Select>
               </label>
 
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.formPublishedAt}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.formPublishedAt)}</span>
                 <Input
                   type="datetime-local"
                   value={form.published_at}
@@ -450,7 +453,7 @@ export default function AdminBlog() {
               disabled={saving}
               className="text-slate-950 transition disabled:opacity-60 disabled:hover:bg-cyan-500"
             >
-              {saving ? txt.saving : txt.save}
+              {uiText(saving ? txt.saving : txt.save)}
             </Button>
           </Panel>
         </div>

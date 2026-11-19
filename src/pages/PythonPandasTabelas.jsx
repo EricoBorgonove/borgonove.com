@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -14,6 +15,8 @@ const guideItems = [
 ];
 
 function DataTable({ section }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-800">
       <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
@@ -21,7 +24,7 @@ function DataTable({ section }) {
           <tr>
             {section.columns.map((column) => (
               <th key={column.key} className="px-4 py-3 font-semibold text-slate-100">
-                {column.label}
+                {uiText(column.label)}
               </th>
             ))}
           </tr>
@@ -31,13 +34,13 @@ function DataTable({ section }) {
             <tr key={`${section.id}-${rowIndex}`} className="border-t border-slate-800">
               {section.columns.map((column, columnIndex) => (
                 <td key={`${section.id}-${rowIndex}-${column.key}`} className="px-4 py-3 text-slate-300 align-top">
-                  {columnIndex === 0 || column.key === "example" ? (
+                  {uiText(columnIndex === 0 || column.key === "example" ? (
                     <code className={columnIndex === 0 ? "font-semibold text-cyan-300" : "text-slate-200"}>
                       {item[column.key]}
                     </code>
                   ) : (
                     item[column.key]
-                  )}
+                  ))}
                 </td>
               ))}
             </tr>
@@ -49,6 +52,8 @@ function DataTable({ section }) {
 }
 
 export default function PythonPandasTabelas() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const sections = localize(pandasCheatSheetSections, isEn);
@@ -75,7 +80,7 @@ export default function PythonPandasTabelas() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -86,10 +91,10 @@ export default function PythonPandasTabelas() {
             d="M4 5a2 2 0 0 1 2-2h14v4H4V5Zm0 6h7v10H6a2 2 0 0 1-2-2v-8Zm9 0h7v8a2 2 0 0 1-2 2h-5V11Zm2 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2h-2Zm-8 0a1 1 0 1 0 0 2h1.5a1 1 0 1 0 0-2H7Zm0 4a1 1 0 1 0 0 2h1.5a1 1 0 1 0 0-2H7Z"
           />
         </svg>
-        <span>{pick(txt.title, isEn)}</span>
+        <span>{uiText(pick(txt.title, isEn))}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <div className="mb-8">
@@ -97,24 +102,24 @@ export default function PythonPandasTabelas() {
           to="/disciplinas/python-pandas/csv-excel"
           className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
         >
-          {pick(txt.csvExcel, isEn)}
+          {uiText(pick(txt.csvExcel, isEn))}
           <span aria-hidden="true">→</span>
         </Link>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.howToUse, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.howToUse, isEn))}</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {guideItems.map((item) => (
             <p key={item.pt} className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-              {pick(item, isEn)}
+              {uiText(pick(item, isEn))}
             </p>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{pick(txt.quickNav, isEn)}</h2>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.quickNav, isEn))}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {sections.map((section, index) => (
             <a
@@ -122,22 +127,21 @@ export default function PythonPandasTabelas() {
               href={`#${section.id}`}
               className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-200 hover:border-cyan-400 transition"
             >
-              {index + 1}. {section.title}
+              {uiText(index + 1)}. {uiText(section.title)}
             </a>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{pick(txt.advancedTopics, isEn)}</h2>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.advancedTopics, isEn))}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {advancedSections.map((section, index) => (
             <a
               key={section.id}
               href={`#${section.id}`}
               className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-200 hover:border-cyan-400 transition"
-            >
-              A{index + 1}. {section.title}
+            >{uiText("A")}{uiText(index + 1)}. {uiText(section.title)}
             </a>
           ))}
         </div>
@@ -147,9 +151,9 @@ export default function PythonPandasTabelas() {
         {sections.map((section, index) => (
           <Panel as="article" layout="plain" key={section.id} id={section.id} className="scroll-mt-24">
             <h2 className="text-2xl font-semibold text-cyan-300 mb-5">
-              {index + 1}. {section.title}
+              {uiText(index + 1)}. {uiText(section.title)}
             </h2>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">{section.description}</p>
+            <p className="text-sm text-slate-400 leading-relaxed mb-5">{uiText(section.description)}</p>
 
             <DataTable section={section} />
           </Panel>
@@ -157,26 +161,25 @@ export default function PythonPandasTabelas() {
       </div>
 
       <div className="mt-10 mb-8">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-3">{pick(txt.advancedTables, isEn)}</h2>
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-3">{uiText(pick(txt.advancedTables, isEn))}</h2>
         <p className="text-slate-400 text-lg">
-          {pick(txt.advancedSubtitle, isEn)}
+          {uiText(pick(txt.advancedSubtitle, isEn))}
         </p>
       </div>
 
       <div className="space-y-8">
         {advancedSections.map((section, index) => (
           <Panel as="article" layout="plain" key={section.id} id={section.id} className="scroll-mt-24">
-            <h2 className="text-2xl font-semibold text-cyan-300 mb-5">
-              A{index + 1}. {section.title}
+            <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText("A")}{uiText(index + 1)}. {uiText(section.title)}
             </h2>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">{section.description}</p>
+            <p className="text-sm text-slate-400 leading-relaxed mb-5">{uiText(section.description)}</p>
 
             {section.notes && (
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 mb-5">
                 {section.notes.map((note) => (
                   <article key={note.title} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                    <h3 className="text-lg font-semibold text-slate-100 mb-2">{note.title}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">{note.text}</p>
+                    <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(note.title)}</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed">{uiText(note.text)}</p>
                   </article>
                 ))}
               </div>

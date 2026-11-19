@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 
@@ -73,6 +74,8 @@ const workCommandTable = {
 };
 
 function CommandTable({ table }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-700/70">
       <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
@@ -80,7 +83,7 @@ function CommandTable({ table }) {
           <tr>
             {table.headers.map((header) => (
               <th key={header} scope="col" className="px-4 py-3 font-semibold text-cyan-200">
-                {header}
+                {uiText(header)}
               </th>
             ))}
           </tr>
@@ -90,7 +93,7 @@ function CommandTable({ table }) {
             <tr key={row.join("|")}>
               {row.map((cell, index) => (
                 <td key={`${row[0]}-${cell}-${index}`} className="px-4 py-3 text-slate-300 align-top">
-                  {cell}
+                  {uiText(cell)}
                 </td>
               ))}
             </tr>
@@ -102,47 +105,37 @@ function CommandTable({ table }) {
 }
 
 export default function EsbmcTabelasComandos() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <PageTemplate width="wide">
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          Voltar para ESBMC
-        </BackButton>
+        <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText("Voltar para ESBMC")}</BackButton>
       </div>
 
       <PageHeader>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
-          Referência operacional
-        </p>
-        <PageTitle className="mb-5">Tabelas de comandos</PageTitle>
-        <PageDescription className="text-justify max-w-4xl">
-          Abaixo está uma tabela completa de comandos do ESBMC, com finalidade, explicação e exemplo de uso. A documentação oficial apresenta exemplos como <code className="text-cyan-200">esbmc file.c --memory-leak-check</code>, e o repositório oficial informa que o ESBMC utiliza BMC incremental e k-induction com solvers SMT.
-        </PageDescription>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">{uiText("Referência operacional")}</p>
+        <PageTitle className="mb-5">{uiText("Tabelas de comandos")}</PageTitle>
+        <PageDescription className="text-justify max-w-4xl">{uiText("Abaixo está uma tabela completa de comandos do ESBMC, com finalidade, explicação e exemplo de uso. A documentação oficial apresenta exemplos como ")}<code className="text-cyan-200">esbmc file.c --memory-leak-check</code>{uiText(", e o repositório oficial informa que o ESBMC utiliza BMC incremental e k-induction com solvers SMT.")}</PageDescription>
       </PageHeader>
 
       <div className="space-y-6">
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">Exemplo oficial com BMC incremental</h2>
-          <p className="text-slate-300 leading-relaxed text-justify mb-5">
-            O README oficial utiliza o comando abaixo como exemplo de verificação de programa C com a estratégia de BMC incremental. Essa opção aumenta progressivamente os limites da análise e é uma das estratégias implementadas pelo ESBMC com base em SMT.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Exemplo oficial com BMC incremental")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O README oficial utiliza o comando abaixo como exemplo de verificação de programa C com a estratégia de BMC incremental. Essa opção aumenta progressivamente os limites da análise e é uma das estratégias implementadas pelo ESBMC com base em SMT.")}</p>
           <div className="rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-            <p className="font-mono text-sm text-cyan-100">esbmc file.c --incremental-bmc</p>
+            <p className="font-mono text-sm text-cyan-100">{uiText("esbmc file.c --incremental-bmc")}</p>
           </div>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-5">Tabela de comandos do ESBMC</h2>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-5">{uiText("Tabela de comandos do ESBMC")}</h2>
           <CommandTable table={esbmcCommandTable} />
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-            Tabela de comandos mais importantes para o trabalho
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-justify mb-5">
-            Esta tabela relaciona situações comuns do projeto com o comando recomendado e a interpretação que pode ser registrada na análise.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Tabela de comandos mais importantes para o trabalho")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Esta tabela relaciona situações comuns do projeto com o comando recomendado e a interpretação que pode ser registrada na análise.")}</p>
           <CommandTable table={workCommandTable} />
         </Panel>
       </div>

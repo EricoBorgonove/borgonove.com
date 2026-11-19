@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,6 +25,8 @@ function formatDuracao(totalSeconds) {
 }
 
 export default function TimerProva() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const locale = isEn ? "en-US" : "pt-BR";
@@ -134,7 +137,7 @@ export default function TimerProva() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -144,15 +147,15 @@ export default function TimerProva() {
             d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5a1 1 0 0 0-2 0v5.59l-2.3 2.3a1 1 0 1 0 1.42 1.41l2.59-2.58A1 1 0 0 0 13 13V7Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
-        <p className="text-slate-400 mb-6">{txt.subtitle}</p>
+        <p className="text-slate-400 mb-6">{uiText(txt.subtitle)}</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.hours}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.hours)}</span>
             <Input
               type="number"
               min="0"
@@ -163,7 +166,7 @@ export default function TimerProva() {
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.minutes}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.minutes)}</span>
             <Input
               type="number"
               min="0"
@@ -179,7 +182,7 @@ export default function TimerProva() {
             onClick={iniciarTimer}
             className="text-slate-900 transition"
           >
-            {txt.start}
+            {uiText(txt.start)}
           </Button>
 
           <Button variant="secondary"
@@ -187,27 +190,27 @@ export default function TimerProva() {
             onClick={limparTimer}
             className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
-            {txt.clear}
+            {uiText(txt.clear)}
           </Button>
         </div>
 
-        {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
+        {erro && <p className="text-red-400 text-sm mt-4">{uiMessage(erro)}</p>}
       </Panel>
 
       <div className="grid md:grid-cols-2 gap-6 mt-8">
         <Panel as="article" layout="plain">
-          <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.currentTime}</h2>
-          <p className="text-4xl md:text-5xl font-black text-cyan-300">{formatHoraAtual(now, locale)}</p>
+          <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{uiText(txt.currentTime)}</h2>
+          <p className="text-4xl md:text-5xl font-black text-cyan-300">{uiText(formatHoraAtual(now, locale))}</p>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.remainingTime}</h2>
+          <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{uiText(txt.remainingTime)}</h2>
           <p className="text-4xl md:text-5xl font-black text-cyan-300">
-            {formatDuracao(segundosRestantes)}
+            {uiText(formatDuracao(segundosRestantes))}
           </p>
-          {provaEmAndamento && <p className="text-emerald-300 text-sm mt-3">{txt.running}</p>}
-          {provaFinalizada && <p className="text-red-400 text-sm mt-3">{txt.ended}</p>}
-          {!endAt && <p className="text-slate-400 text-sm mt-3">{txt.configureStart}</p>}
+          {provaEmAndamento && <p className="text-emerald-300 text-sm mt-3">{uiText(txt.running)}</p>}
+          {provaFinalizada && <p className="text-red-400 text-sm mt-3">{uiText(txt.ended)}</p>}
+          {!endAt && <p className="text-slate-400 text-sm mt-3">{uiText(txt.configureStart)}</p>}
         </Panel>
       </div>
 
@@ -217,7 +220,7 @@ export default function TimerProva() {
           onClick={() => setRelogiosEmTelaCheia(true)}
           className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
         >
-          {txt.expand}
+          {uiText(txt.expand)}
         </Button>
       </div>
 
@@ -227,8 +230,8 @@ export default function TimerProva() {
             type="button"
             onClick={() => setRelogiosEmTelaCheia(false)}
             className="absolute top-4 right-4 h-9 w-9 border border-slate-600 text-slate-200 leading-none inline-flex items-center justify-center hover:border-cyan-400 transition"
-            aria-label={txt.exitFullscreen}
-            title={txt.exit}
+            aria-label={uiText(txt.exitFullscreen)}
+            title={uiText(txt.exit)}
           >
             ×
           </Button>
@@ -236,29 +239,29 @@ export default function TimerProva() {
           <div className="h-full grid md:grid-cols-2 gap-6 pt-8">
             <Panel as="article" layout="plain" className="flex flex-col justify-center items-center text-center">
               <h2 className="text-xs md:text-sm uppercase tracking-wider text-slate-400 mb-4">
-                {txt.currentTime}
+                {uiText(txt.currentTime)}
               </h2>
               <p className="text-5xl md:text-7xl lg:text-8xl font-black text-cyan-300">
-                {formatHoraAtual(now, locale)}
+                {uiText(formatHoraAtual(now, locale))}
               </p>
             </Panel>
 
             <Panel as="article" layout="plain" className="flex flex-col justify-center items-center text-center">
               <h2 className="text-xs md:text-sm uppercase tracking-wider text-slate-400 mb-4">
-                {txt.remainingTime}
+                {uiText(txt.remainingTime)}
               </h2>
               <p className="text-5xl md:text-7xl lg:text-8xl font-black text-cyan-300">
-                {formatDuracao(segundosRestantes)}
+                {uiText(formatDuracao(segundosRestantes))}
               </p>
-              {provaEmAndamento && <p className="text-emerald-300 text-sm mt-4">{txt.running}</p>}
-              {provaFinalizada && <p className="text-red-400 text-sm mt-4">{txt.ended}</p>}
-              {!endAt && <p className="text-slate-400 text-sm mt-4">{txt.configureStart}</p>}
+              {provaEmAndamento && <p className="text-emerald-300 text-sm mt-4">{uiText(txt.running)}</p>}
+              {provaFinalizada && <p className="text-red-400 text-sm mt-4">{uiText(txt.ended)}</p>}
+              {!endAt && <p className="text-slate-400 text-sm mt-4">{uiText(txt.configureStart)}</p>}
             </Panel>
           </div>
 
           <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 opacity-90">
-            <img src={logo} alt="Borgonove Tech" className="h-6 md:h-7 w-auto footer-logo-dark" />
-            <img src={logoB9} alt="Borgonove Tech" className="h-6 md:h-7 w-auto footer-logo-light" />
+            <img src={logo} alt={uiText("Borgonove Tech")} className="h-6 md:h-7 w-auto footer-logo-dark" />
+            <img src={logoB9} alt={uiText("Borgonove Tech")} className="h-6 md:h-7 w-auto footer-logo-light" />
           </div>
         </div>
       )}

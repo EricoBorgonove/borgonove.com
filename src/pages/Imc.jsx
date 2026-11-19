@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -54,6 +55,8 @@ function classificarImc(imc) {
 }
 
 export default function Imc() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -145,7 +148,7 @@ export default function Imc() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -155,18 +158,18 @@ export default function Imc() {
             d="M12 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm-8 16a8 8 0 1 1 16 0v2H4v-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <p className="text-slate-400 mb-8">
-          {txt.desc}
+          {uiText(txt.desc)}
         </p>
 
         <div className="grid lg:grid-cols-3 gap-8 items-end">
           <div>
             <label htmlFor="altura" className="block text-sm text-slate-300 mb-2">
-              {txt.height}: <span className="font-semibold text-slate-100">{altura.toFixed(2)} m</span>
+              {uiText(txt.height)}: <span className="font-semibold text-slate-100">{uiText(altura.toFixed(2))}{uiText(" m")}</span>
             </label>
             <Input
               id="altura"
@@ -182,7 +185,7 @@ export default function Imc() {
 
           <div>
             <label htmlFor="peso" className="block text-sm text-slate-300 mb-2">
-              {txt.weight}: <span className="font-semibold text-slate-100">{peso.toFixed(1)} kg</span>
+              {uiText(txt.weight)}: <span className="font-semibold text-slate-100">{uiText(peso.toFixed(1))}{uiText(" kg")}</span>
             </label>
             <Input
               id="peso"
@@ -202,7 +205,7 @@ export default function Imc() {
               onClick={calcular}
               className="text-slate-900 transition"
             >
-              {txt.calculate}
+              {uiText(txt.calculate)}
             </Button>
             <Button variant="secondary"
               type="button"
@@ -210,38 +213,38 @@ export default function Imc() {
               disabled={historico.length === 0}
               className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {txt.clearTable}
+              {uiText(txt.clearTable)}
             </Button>
           </div>
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-bold mb-5">{txt.history}</h2>
+        <h2 className="text-2xl font-bold mb-5">{uiText(txt.history)}</h2>
         {historico.length === 0 ? (
-          <p className="text-slate-400">{txt.noCalc}</p>
+          <p className="text-slate-400">{uiText(txt.noCalc)}</p>
         ) : (
           <TableContainer>
             <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
-                  <th className="py-3 pr-4">{txt.weight}</th>
-                  <th className="py-3 pr-4">{txt.height}</th>
-                  <th className="py-3 pr-4">IMC</th>
-                  <th className="py-3 pr-4">{txt.range}</th>
-                  <th className="py-3">{txt.status}</th>
+                  <th className="py-3 pr-4">{uiText(txt.weight)}</th>
+                  <th className="py-3 pr-4">{uiText(txt.height)}</th>
+                  <th className="py-3 pr-4">{uiText("IMC")}</th>
+                  <th className="py-3 pr-4">{uiText(txt.range)}</th>
+                  <th className="py-3">{uiText(txt.status)}</th>
                 </tr>
               </thead>
               <tbody>
                 {historico.map((item) => (
                   <tr key={item.id} className="border-b border-slate-800/70">
-                    <td className="py-3 pr-4 text-slate-100 font-semibold">{item.peso} kg</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.altura} m</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.imc}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.faixa}</td>
+                    <td className="py-3 pr-4 text-slate-100 font-semibold">{uiText(item.peso)}{uiText(" kg")}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.altura)}{uiText(" m")}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.imc)}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.faixa)}</td>
                     <td className="py-3">
                       <span className={`inline-flex px-2.5 py-1 rounded-lg text-xs font-semibold ${item.tagClass}`}>
-                        {item.situacaoLabel}
+                        {uiText(item.situacaoLabel)}
                       </span>
                     </td>
                   </tr>

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -46,6 +47,8 @@ function sortearDoPool(pool, quantidade) {
 }
 
 export default function SorteioNumeros() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -223,7 +226,7 @@ export default function SorteioNumeros() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -233,15 +236,15 @@ export default function SorteioNumeros() {
             d="M4 4h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm1 2v5h14V6H5Zm1 10h12a2 2 0 0 1 2 2v2H4v-2a2 2 0 0 1 2-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
-        <p className="text-slate-400 mb-6">{txt.subtitle}</p>
+        <p className="text-slate-400 mb-6">{uiText(txt.subtitle)}</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.min}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.min)}</span>
             <Input
               type="number"
               value={minimo}
@@ -251,7 +254,7 @@ export default function SorteioNumeros() {
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.max}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.max)}</span>
             <Input
               type="number"
               value={maximo}
@@ -261,7 +264,7 @@ export default function SorteioNumeros() {
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.quantity}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.quantity)}</span>
             <Input
               type="number"
               value={quantidade}
@@ -277,7 +280,7 @@ export default function SorteioNumeros() {
               onChange={(event) => setSemRepeticao(event.target.checked)}
               className="h-4 w-4 accent-cyan-400"
             />
-            {txt.noRepeat}
+            {uiText(txt.noRepeat)}
           </label>
         </div>
 
@@ -287,7 +290,7 @@ export default function SorteioNumeros() {
             onClick={sortear}
             className="text-slate-900 transition"
           >
-            {txt.draw}
+            {uiText(txt.draw)}
           </Button>
           <Button variant="secondary"
             type="button"
@@ -295,29 +298,29 @@ export default function SorteioNumeros() {
             disabled={!sequencia || sequencia.poolRestante.length === 0}
             className="border border-cyan-600/70 text-cyan-300 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {txt.continueNoRepeat}
+            {uiText(txt.continueNoRepeat)}
           </Button>
           <Button variant="secondary"
             type="button"
             onClick={limparTudo}
             className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
-            {txt.clear}
+            {uiText(txt.clear)}
           </Button>
         </div>
 
-        {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
+        {erro && <p className="text-red-400 text-sm mt-4">{uiMessage(erro)}</p>}
         {sequencia && (
           <p className="text-slate-400 text-sm mt-4">
-            {txt.activeSequence} <strong>{sequencia.min}</strong> a <strong>{sequencia.max}</strong>. {txt.remaining}: <strong>{sequencia.poolRestante.length}</strong>.
+            {uiText(txt.activeSequence)} <strong>{uiText(sequencia.min)}</strong>{uiText(" a ")}<strong>{uiText(sequencia.max)}</strong>. {uiText(txt.remaining)}: <strong>{uiText(sequencia.poolRestante.length)}</strong>.
           </p>
         )}
       </Panel>
 
       <Panel as="article" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-bold mb-5">{txt.currentResult}</h2>
+        <h2 className="text-2xl font-bold mb-5">{uiText(txt.currentResult)}</h2>
         {resultado.length === 0 ? (
-          <p className="text-slate-400">{txt.noDrawYet}</p>
+          <p className="text-slate-400">{uiText(txt.noDrawYet)}</p>
         ) : (
           <div className="flex flex-wrap gap-3">
             {resultado.map((numero, index) => (
@@ -325,7 +328,7 @@ export default function SorteioNumeros() {
                 key={`${numero}-${index}`}
                 className="inline-flex items-center justify-center h-12 min-w-12 px-3 rounded-xl bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 font-bold text-lg"
               >
-                {numero}
+                {uiText(numero)}
               </span>
             ))}
           </div>
@@ -333,27 +336,27 @@ export default function SorteioNumeros() {
       </Panel>
 
       <Panel as="article" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-bold mb-5">{txt.history}</h2>
+        <h2 className="text-2xl font-bold mb-5">{uiText(txt.history)}</h2>
         {historico.length === 0 ? (
-          <p className="text-slate-400">{txt.noHistory}</p>
+          <p className="text-slate-400">{uiText(txt.noHistory)}</p>
         ) : (
           <TableContainer>
             <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
-                  <th className="py-3 pr-4">{txt.interval}</th>
-                  <th className="py-3 pr-4">{txt.quantity}</th>
-                  <th className="py-3 pr-4">{txt.mode}</th>
-                  <th className="py-3">{txt.numbers}</th>
+                  <th className="py-3 pr-4">{uiText(txt.interval)}</th>
+                  <th className="py-3 pr-4">{uiText(txt.quantity)}</th>
+                  <th className="py-3 pr-4">{uiText(txt.mode)}</th>
+                  <th className="py-3">{uiText(txt.numbers)}</th>
                 </tr>
               </thead>
               <tbody>
                 {historico.map((item) => (
                   <tr key={item.id} className="border-b border-slate-800/70">
-                    <td className="py-3 pr-4 text-slate-100">{item.intervalo}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.quantidade}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.repeticao}</td>
-                    <td className="py-3 text-slate-300">{item.numeros}</td>
+                    <td className="py-3 pr-4 text-slate-100">{uiText(item.intervalo)}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.quantidade)}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.repeticao)}</td>
+                    <td className="py-3 text-slate-300">{uiText(item.numeros)}</td>
                   </tr>
                 ))}
               </tbody>

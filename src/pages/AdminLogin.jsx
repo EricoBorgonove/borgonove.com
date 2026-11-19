@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -5,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useAdminAuth } from "../hooks/useAdminAuth";
 
 export default function AdminLogin() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const { signIn, isAuthenticated, isLoading } = useAdminAuth();
   const navigate = useNavigate();
@@ -72,19 +75,19 @@ export default function AdminLogin() {
           className="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 transition"
         >
           <span aria-hidden="true">←</span>
-          <span>{txt.back}</span>
+          <span>{uiText(txt.back)}</span>
         </Link>
 
         <Panel as="div" layout="plain" className="mt-6 border border-cyan-400/10 shadow-[0_24px_80px_rgba(6,182,212,0.12)]">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.eyebrow}</p>
-          <PageHeader><PageTitle className="text-white mb-4">{txt.title}</PageTitle>
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{uiText(txt.eyebrow)}</p>
+          <PageHeader><PageTitle className="text-white mb-4">{uiText(txt.title)}</PageTitle>
           <PageDescription>
-            {isLoading ? txt.loading : txt.description}
+            {uiText(isLoading ? txt.loading : txt.description)}
           </PageDescription></PageHeader>
 
           <form className="space-y-5" onSubmit={handleSubmit}>
             <label className="block">
-              <span className="block text-sm text-slate-300 mb-2">{txt.username}</span>
+              <span className="block text-sm text-slate-300 mb-2">{uiText(txt.username)}</span>
               <Input
                 type="text"
                 value={username}
@@ -96,7 +99,7 @@ export default function AdminLogin() {
             </label>
 
             <label className="block">
-              <span className="block text-sm text-slate-300 mb-2">{txt.password}</span>
+              <span className="block text-sm text-slate-300 mb-2">{uiText(txt.password)}</span>
               <Input
                 type="password"
                 value={password}
@@ -109,7 +112,7 @@ export default function AdminLogin() {
 
             {error && (
               <p className="rounded-xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
-                {error}
+                {uiMessage(error)}
               </p>
             )}
 
@@ -118,7 +121,7 @@ export default function AdminLogin() {
               disabled={isLoading || isSubmitting}
               className="w-full text-slate-950 transition"
             >
-              {isSubmitting ? (isEn ? "Authenticating..." : "Autenticando...") : txt.submit}
+              {uiText(isSubmitting ? (isEn ? "Authenticating..." : "Autenticando...") : txt.submit)}
             </Button>
           </form>
         </Panel>

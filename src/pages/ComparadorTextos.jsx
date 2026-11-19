@@ -1,9 +1,12 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageTemplate, PageTitle, Panel, Table, TableContainer, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 
 export default function ComparadorTextos() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -61,7 +64,7 @@ export default function ComparadorTextos() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -71,45 +74,45 @@ export default function ComparadorTextos() {
             d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-7l-1 1h-1l-1-1H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v12h6.8l1.2 1 1.2-1H20V6H4Zm3 2h4v2H7V8Zm0 4h10v2H7v-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <div className="grid lg:grid-cols-2 gap-6">
         <Panel as="label" layout="plain" className="block">
-          <span className="block text-sm text-slate-300 mb-2">{txt.textA}</span>
+          <span className="block text-sm text-slate-300 mb-2">{uiText(txt.textA)}</span>
           <Textarea rows={12} value={textoA} onChange={(event) => setTextoA(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
         </Panel>
 
         <Panel as="label" layout="plain" className="block">
-          <span className="block text-sm text-slate-300 mb-2">{txt.textB}</span>
+          <span className="block text-sm text-slate-300 mb-2">{uiText(txt.textB)}</span>
           <Textarea rows={12} value={textoB} onChange={(event) => setTextoB(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
         </Panel>
       </div>
 
       <Panel as="article" layout="plain" className="mt-8">
-        <h2 className="text-xl font-bold mb-3">{txt.summary}</h2>
+        <h2 className="text-xl font-bold mb-3">{uiText(txt.summary)}</h2>
         <p className="text-slate-300 text-sm">
-          {txt.total}: {analise.total} | {txt.equal}: <span className="text-emerald-300">{analise.iguais}</span> |
-          {txt.different}: <span className="text-red-400">{analise.diferentes}</span>
+          {uiText(txt.total)}: {uiText(analise.total)} | {uiText(txt.equal)}: <span className="text-emerald-300">{uiText(analise.iguais)}</span> |
+          {uiText(txt.different)}: <span className="text-red-400">{uiText(analise.diferentes)}</span>
         </p>
       </Panel>
 
       <Panel as="article" layout="plain" className="mt-6">
-        <h2 className="text-xl font-bold mb-4">{txt.differences}</h2>
+        <h2 className="text-xl font-bold mb-4">{uiText(txt.differences)}</h2>
 
         <TableContainer>
           <Table className="w-full text-sm">
             <thead>
               <tr className="text-left text-slate-400 border-b border-slate-700">
-                <th className="py-3 pr-4">{txt.line}</th>
-                <th className="py-3 pr-4">{txt.textA}</th>
-                <th className="py-3">{txt.textB}</th>
+                <th className="py-3 pr-4">{uiText(txt.line)}</th>
+                <th className="py-3 pr-4">{uiText(txt.textA)}</th>
+                <th className="py-3">{uiText(txt.textB)}</th>
               </tr>
             </thead>
             <tbody>
               {analise.linhas.map((linha) => (
                 <tr key={linha.index} className={`border-b border-slate-800/70 ${linha.same ? "" : "bg-red-500/10"}`}>
-                  <td className="py-3 pr-4 text-slate-300">{linha.index}</td>
+                  <td className="py-3 pr-4 text-slate-300">{uiText(linha.index)}</td>
                   <td className="py-3 pr-4 text-slate-200 whitespace-pre-wrap">{linha.a || "-"}</td>
                   <td className="py-3 text-slate-200 whitespace-pre-wrap">{linha.b || "-"}</td>
                 </tr>

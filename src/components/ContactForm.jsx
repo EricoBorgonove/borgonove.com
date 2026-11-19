@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, Panel, Textarea } from "./ui/Patterns";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,8 @@ import { useTranslation } from "react-i18next";
 const CHALLENGE_COOKIE_REGEX = /document\.cookie\s*=\s*["']([^"']+)["']/i;
 
 export default function ContactForm() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { t } = useTranslation();
   const [status, setStatus] = useState({ state: "idle", message: "" });
 
@@ -104,28 +107,28 @@ export default function ContactForm() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="text-left">
           <label htmlFor="nome" className="block text-sm text-slate-300 mb-2">
-            {t("contactForm.name")}
+            {uiText(t("contactForm.name"))}
           </label>
           <Input
             id="nome"
             name="nome"
             type="text"
             required
-            placeholder={t("contactForm.placeholderName")}
+            placeholder={uiText(t("contactForm.placeholderName"))}
             className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </div>
 
         <div className="text-left">
           <label htmlFor="email" className="block text-sm text-slate-300 mb-2">
-            {t("contactForm.email")}
+            {uiText(t("contactForm.email"))}
           </label>
           <Input
             id="email"
             name="email"
             type="email"
             required
-            placeholder={t("contactForm.placeholderEmail")}
+            placeholder={uiText(t("contactForm.placeholderEmail"))}
             className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </div>
@@ -133,20 +136,20 @@ export default function ContactForm() {
 
       <div className="mt-6 text-left">
         <label htmlFor="mensagem" className="block text-sm text-slate-300 mb-2">
-          {t("contactForm.message")}
+          {uiText(t("contactForm.message"))}
         </label>
         <Textarea
           id="mensagem"
           name="mensagem"
           rows="6"
           required
-          placeholder={t("contactForm.placeholderMessage")}
+          placeholder={uiText(t("contactForm.placeholderMessage"))}
           className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
         />
       </div>
 
       <div className="hidden" aria-hidden="true">
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">{uiText("Website")}</label>
         <Input id="website" name="website" type="text" tabIndex="-1" autoComplete="off" />
       </div>
 
@@ -156,7 +159,7 @@ export default function ContactForm() {
           disabled={status.state === "loading"}
           className="bg-gradient-to-r from-cyan-400 to-blue-500 px-10 py-4 rounded-xl font-semibold text-slate-900 hover:scale-105 transition disabled:opacity-60 disabled:hover:scale-100"
         >
-          {t("contactForm.submit")}
+          {uiText(t("contactForm.submit"))}
         </Button>
         {status.message && (
           <p
@@ -164,7 +167,7 @@ export default function ContactForm() {
               status.state === "error" ? "text-red-400" : "text-emerald-300"
             }`}
           >
-            {status.message}
+            {uiMessage(status.message)}
           </p>
         )}
       </div>

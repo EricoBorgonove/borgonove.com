@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageTemplate, PageTitle, Panel, Select, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,8 @@ import BackButton from "../components/BackButton";
 import { calculateInterest, MAX_INTEREST_PERIODS } from "../utils/calculateInterest";
 
 export default function CalculadoraJuros() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -52,7 +55,7 @@ export default function CalculadoraJuros() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -62,31 +65,31 @@ export default function CalculadoraJuros() {
             d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14l-4-3-4 3-4-3-4 3V5Zm2 0v10.1l2-1.5 4 3 4-3 2 1.5V5H6Zm3 2h6v2H9V7Zm0 4h6v2H9v-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-4 gap-4">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.capital}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.capital)}</span>
             <Input type="number" value={capital} placeholder="1000" onChange={(event) => setCapital(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.rate}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.rate)}</span>
             <Input type="number" step="0.01" value={taxa} placeholder="2" onChange={(event) => setTaxa(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.periods}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.periods)}</span>
             <Input type="number" min="1" max={MAX_INTEREST_PERIODS} step="1" value={periodos} placeholder="12" onChange={(event) => setPeriodos(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.type}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.type)}</span>
             <Select value={tipo} onChange={(event) => setTipo(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400">
-              <option value="compostos">{txt.compound}</option>
-              <option value="simples">{txt.simple}</option>
+              <option value="compostos">{uiText(txt.compound)}</option>
+              <option value="simples">{uiText(txt.simple)}</option>
             </Select>
           </label>
         </div>
@@ -95,12 +98,12 @@ export default function CalculadoraJuros() {
           <>
             <div className="grid md:grid-cols-2 gap-4 mt-8">
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.finalAmount}</p>
-                <p className="text-2xl font-black text-cyan-300">R$ {resultado.montanteFinal.toFixed(2)}</p>
+                <p className="text-slate-400">{uiText(txt.finalAmount)}</p>
+                <p className="text-2xl font-black text-cyan-300">{uiText("R$ ")}{uiText(resultado.montanteFinal.toFixed(2))}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.totalInterest}</p>
-                <p className="text-2xl font-black text-cyan-300">R$ {resultado.jurosTotal.toFixed(2)}</p>
+                <p className="text-slate-400">{uiText(txt.totalInterest)}</p>
+                <p className="text-2xl font-black text-cyan-300">{uiText("R$ ")}{uiText(resultado.jurosTotal.toFixed(2))}</p>
               </Panel>
             </div>
 
@@ -108,17 +111,17 @@ export default function CalculadoraJuros() {
               <Table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-slate-400 border-b border-slate-700">
-                    <th className="py-3 pr-4">{txt.period}</th>
-                    <th className="py-3 pr-4">{txt.amount}</th>
-                    <th className="py-3">{txt.accumulatedInterest}</th>
+                    <th className="py-3 pr-4">{uiText(txt.period)}</th>
+                    <th className="py-3 pr-4">{uiText(txt.amount)}</th>
+                    <th className="py-3">{uiText(txt.accumulatedInterest)}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {resultado.linhas.map((linha) => (
                     <tr key={linha.periodo} className="border-b border-slate-800/70">
-                      <td className="py-3 pr-4 text-slate-200">{linha.periodo}</td>
-                      <td className="py-3 pr-4 text-slate-200">R$ {linha.montante.toFixed(2)}</td>
-                      <td className="py-3 text-slate-300">R$ {linha.jurosAcumulado.toFixed(2)}</td>
+                      <td className="py-3 pr-4 text-slate-200">{uiText(linha.periodo)}</td>
+                      <td className="py-3 pr-4 text-slate-200">{uiText("R$ ")}{uiText(linha.montante.toFixed(2))}</td>
+                      <td className="py-3 text-slate-300">{uiText("R$ ")}{uiText(linha.jurosAcumulado.toFixed(2))}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -126,7 +129,7 @@ export default function CalculadoraJuros() {
             </TableContainer>
           </>
         ) : (
-          <p className="mt-6 text-slate-400">{txt.fillValid}</p>
+          <p className="mt-6 text-slate-400">{uiText(txt.fillValid)}</p>
         )}
       </Panel>
     </PageTemplate>

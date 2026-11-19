@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -34,6 +35,8 @@ async function parseJsonSafe(response) {
 }
 
 export default function BlogPost() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { slug } = useParams();
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
@@ -113,21 +116,21 @@ export default function BlogPost() {
         className="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 transition"
       >
         <span aria-hidden="true">←</span>
-        <span>{txt.back}</span>
+        <span>{uiText(txt.back)}</span>
       </Link>
 
-      {loading && <Panel as="div" layout="plain" className="mt-6 text-sm text-slate-300">{txt.loading}</Panel>}
+      {loading && <Panel as="div" layout="plain" className="mt-6 text-sm text-slate-300">{uiText(txt.loading)}</Panel>}
 
       {!loading && error && (
         <div className="rounded-2xl border border-rose-400/30 bg-rose-500/10 p-6 mt-6 text-sm text-rose-200">
-          {error}
+          {uiMessage(error)}
         </div>
       )}
 
       {!loading && !error && post && (
         <Panel as="article" layout="plain" className="mt-6">
           <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/90">
-            {formatDate(post.published_at || post.created_at, locale)}
+            {uiText(formatDate(post.published_at || post.created_at, locale))}
           </p>
           <PageTitle className="text-white mt-4">
             {pickLocalized(post, "title", isEn)}
@@ -140,7 +143,7 @@ export default function BlogPost() {
 
           <div className="mt-8 space-y-5 text-slate-200 leading-relaxed">
             {paragraphs.map((paragraph, index) => (
-              <p key={`${post.id}-paragraph-${index}`}>{paragraph}</p>
+              <p key={`${post.id}-paragraph-${index}`}>{uiText(paragraph)}</p>
             ))}
           </div>
         </Panel>

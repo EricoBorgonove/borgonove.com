@@ -1,0 +1,44 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="520" rx="24" fill="#0B1225"/>
+  <rect x="70" y="130" width="320" height="260" rx="16" fill="#111C34" stroke="#2E4E8A"/>
+  <text x="230" y="180" fill="#8EE6FF" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" font-weight="700">CLIENTE</text>
+  <rect x="135" y="215" width="190" height="48" rx="10" fill="#0E172C" stroke="#3E5FA0"/>
+  <text x="230" y="246" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">Navegador / App</text>
+  <rect x="135" y="278" width="190" height="70" rx="10" fill="#0E172C" stroke="#3E5FA0"/>
+  <text x="230" y="305" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Ação:</text>
+  <text x="230" y="328" fill="#9FC0E7" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">clique / envio / fetch()</text>
+
+  <rect x="810" y="130" width="320" height="260" rx="16" fill="#111C34" stroke="#2E4E8A"/>
+  <text x="970" y="180" fill="#8EE6FF" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" font-weight="700">SERVIDOR</text>
+  <rect x="875" y="215" width="190" height="48" rx="10" fill="#0E172C" stroke="#3E5FA0"/>
+  <text x="970" y="246" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">API / Backend</text>
+  <rect x="875" y="278" width="190" height="70" rx="10" fill="#0E172C" stroke="#3E5FA0"/>
+  <text x="970" y="305" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Processo:</text>
+  <text x="970" y="328" fill="#9FC0E7" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">autent. + regras + dados</text>
+
+  <rect x="445" y="88" width="310" height="120" rx="16" fill="#10203E" stroke="#00C2FF"/>
+  <text x="600" y="124" fill="#8EE6FF" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="700">REQUISIÇÃO HTTP</text>
+  <text x="470" y="154" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="14">Método: GET / POST / PUT / PATCH / DELETE</text>
+  <text x="470" y="176" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="13">Cabeçalhos: Authorization, Content-Type...</text>
+  <text x="470" y="198" fill="#D7ECFF" font-family="Arial, sans-serif" font-size="14">Corpo: JSON (opcional)</text>
+
+  <rect x="445" y="308" width="310" height="120" rx="16" fill="#152A1F" stroke="#33D17A"/>
+  <text x="600" y="344" fill="#8EF1B7" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="700">RESPOSTA HTTP</text>
+  <text x="470" y="374" fill="#D7FEE6" font-family="Arial, sans-serif" font-size="14">Código: 2xx / 4xx / 5xx</text>
+  <text x="470" y="396" fill="#D7FEE6" font-family="Arial, sans-serif" font-size="13">Cabeçalhos: cache, content-type, cors...</text>
+  <text x="470" y="418" fill="#D7FEE6" font-family="Arial, sans-serif" font-size="14">Corpo: dados ou detalhes do erro</text>
+
+  <path d="M400 235H440" stroke="#57D7FF" stroke-width="5" stroke-linecap="round"/>
+  <path d="M437 226L455 235L437 244" stroke="#57D7FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M760 361H800" stroke="#63E29C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M797 352L815 361L797 370" stroke="#63E29C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M760 140H800" stroke="#57D7FF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M797 131L815 140L797 149" stroke="#57D7FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M400 381H440" stroke="#63E29C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M437 372L455 381L437 390" stroke="#63E29C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="600" y="485" fill="#96A8C7" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">
+    Cliente envia requisição -> Servidor processa -> Servidor responde -> Cliente atualiza a interface
+  </text>
+</svg>

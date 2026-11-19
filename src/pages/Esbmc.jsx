@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
@@ -611,19 +612,23 @@ const flow = [
 ];
 
 function Paragraphs({ items }) {
+  const { text: uiText } = useContentTranslation();
+
   return items?.map((paragraph) => (
     <p key={paragraph} className="text-slate-300 leading-relaxed text-justify mb-4">
-      {paragraph}
+      {uiText(paragraph)}
     </p>
   ));
 }
 
 function BulletGrid({ items }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <ul className="grid sm:grid-cols-2 gap-3">
       {items.map((item) => (
         <li key={item} className="rounded-xl border border-slate-700/70 bg-slate-950/30 px-4 py-3 text-sm text-slate-300">
-          {item}
+          {uiText(item)}
         </li>
       ))}
     </ul>
@@ -631,6 +636,8 @@ function BulletGrid({ items }) {
 }
 
 function DataTable({ table }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="mt-5  rounded-2xl border border-slate-700/70">
       <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
@@ -638,7 +645,7 @@ function DataTable({ table }) {
           <tr>
             {table.headers.map((header) => (
               <th key={header} scope="col" className="px-4 py-3 font-semibold text-cyan-200">
-                {header}
+                {uiText(header)}
               </th>
             ))}
           </tr>
@@ -648,7 +655,7 @@ function DataTable({ table }) {
             <tr key={row.join("|")}>
               {row.map((cell, index) => (
                 <td key={`${row[0]}-${cell}-${index}`} className="px-4 py-3 text-slate-300 align-top">
-                  {cell}
+                  {uiText(cell)}
                 </td>
               ))}
             </tr>
@@ -660,6 +667,8 @@ function DataTable({ table }) {
 }
 
 export default function Esbmc() {
+  const { text: uiText } = useContentTranslation();
+
   const [activeModuleId, setActiveModuleId] = useState(modules[0].id);
   const activeModule = useMemo(
     () => modules.find((module) => module.id === activeModuleId) ?? modules[0],
@@ -669,49 +678,37 @@ export default function Esbmc() {
   return (
     <PageTemplate width="wide">
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          Voltar para Disciplinas
-        </BackButton>
+        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText("Voltar para Disciplinas")}</BackButton>
       </div>
 
       <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-8 items-center mb-10">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
-            Verificação formal de software
-          </p>
-          <PageTitle className="mb-5">ESBMC</PageTitle>
-          <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">
-            Efficient SMT-Based Context-Bounded Model Checker
-          </p>
-          <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-3xl">
-            Disciplina completa sobre verificação formal com ESBMC, organizada em módulos de estudo para preservar o conteúdo conceitual, exemplos em C e interpretação dos resultados.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">{uiText("Verificação formal de software")}</p>
+          <PageTitle className="mb-5">{uiText("ESBMC")}</PageTitle>
+          <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">{uiText("Efficient SMT-Based Context-Bounded Model Checker")}</p>
+          <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-3xl">{uiText("Disciplina completa sobre verificação formal com ESBMC, organizada em módulos de estudo para preservar o conteúdo conceitual, exemplos em C e interpretação dos resultados.")}</p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/disciplinas/esbmc/instalacao"
               className="inline-flex items-center justify-center rounded-xl border border-emerald-300/40 bg-emerald-400/15 px-4 py-3 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-400/25"
-            >
-              Instalação Windows/Linux/macOS
-            </Link>
+            >{uiText("Instalação Windows/Linux/macOS")}</Link>
             <Link
               to="/disciplinas/esbmc/tabelas-comandos"
               className="inline-flex items-center justify-center rounded-xl border border-cyan-300/40 bg-cyan-400/15 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25"
-            >
-              Tabelas de comandos
-            </Link>
+            >{uiText("Tabelas de comandos")}</Link>
           </div>
         </div>
 
         <Panel as="div" layout="plain">
-          <p className="text-sm text-slate-400 mb-4">Fluxo conceitual</p>
+          <p className="text-sm text-slate-400 mb-4">{uiText("Fluxo conceitual")}</p>
           <div className="space-y-3">
             {flow.map((item, index) => (
               <div key={item} className="flex items-center gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-400/10 text-sm font-bold text-cyan-100">
-                  {index + 1}
+                  {uiText(index + 1)}
                 </span>
                 <div className="flex-1 rounded-xl border border-slate-700/70 bg-slate-950/40 px-4 py-3 text-sm text-slate-200">
-                  {item}
+                  {uiText(item)}
                 </div>
               </div>
             ))}
@@ -721,9 +718,9 @@ export default function Esbmc() {
 
       <div className="grid lg:grid-cols-[300px_1fr] gap-8 items-start">
         <Panel as="aside" layout="plain" className="lg:sticky lg:top-24">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Módulos da disciplina</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">{uiText("Módulos da disciplina")}</p>
           <div className="space-y-2">
-            {modules.map((module) => {
+            {uiText(modules.map((module) => {
               const isActive = activeModule.id === module.id;
 
               return (
@@ -738,33 +735,33 @@ export default function Esbmc() {
                   }`}
                 >
                   <span className="block text-[11px] uppercase tracking-[0.18em] text-slate-400">
-                    {module.eyebrow}
+                    {uiText(module.eyebrow)}
                   </span>
-                  <span className="mt-1 block text-sm font-semibold">{module.title}</span>
+                  <span className="mt-1 block text-sm font-semibold">{uiText(module.title)}</span>
                 </Button>
               );
-            })}
+            }))}
           </div>
         </Panel>
 
         <div className="min-w-0 space-y-6">
           <Panel as="article" layout="plain">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
-              {activeModule.eyebrow}
+              {uiText(activeModule.eyebrow)}
             </p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              {activeModule.title}
+              {uiText(activeModule.title)}
             </h2>
-            <p className="text-slate-300 leading-relaxed text-justify text-lg">{activeModule.summary}</p>
+            <p className="text-slate-300 leading-relaxed text-justify text-lg">{uiText(activeModule.summary)}</p>
           </Panel>
 
-          {activeModule.id === "erros" ? (
+          {uiText(activeModule.id === "erros" ? (
             <div className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 {errorExamples.map((example) => (
                   <Panel as="article" layout="plain" key={example.title}>
-                    <h3 className="text-lg font-semibold text-cyan-300 mb-2">{example.title}</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed text-justify mb-4">{example.description}</p>
+                    <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(example.title)}</h3>
+                    <p className="text-sm text-slate-300 leading-relaxed text-justify mb-4">{uiText(example.description)}</p>
                     <CodeBlock language="c" label="Código C">
                       {example.code}
                     </CodeBlock>
@@ -772,16 +769,10 @@ export default function Esbmc() {
                 ))}
               </div>
               <Panel as="article" layout="plain">
-                <h3 className="text-xl font-bold text-cyan-300 mb-4">6.7 Erros em programas concorrentes</h3>
-                <p className="text-slate-300 leading-relaxed text-justify mb-4">
-                  O ESBMC também é relevante para programas com múltiplas threads. Fontes oficiais e acadêmicas descrevem o ESBMC como ferramenta voltada à verificação de programas single-threaded e multi-threaded.
-                </p>
-                <p className="text-slate-300 leading-relaxed text-justify mb-4">
-                  Em programas concorrentes, a dificuldade está no fato de que diferentes ordens de execução entre threads podem produzir comportamentos distintos. Uma execução comum pode não revelar o problema, mas uma interleaving diferente pode levar a inconsistência.
-                </p>
-                <p className="text-slate-300 leading-relaxed text-justify mb-4">
-                  Segundo o README oficial, programas concorrentes com pthread podem ser analisados explorando interleavings. Entre as propriedades citadas estão deadlock, data races, violações de atomicidade e ordem de aquisição de locks.
-                </p>
+                <h3 className="text-xl font-bold text-cyan-300 mb-4">{uiText("6.7 Erros em programas concorrentes")}</h3>
+                <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("O ESBMC também é relevante para programas com múltiplas threads. Fontes oficiais e acadêmicas descrevem o ESBMC como ferramenta voltada à verificação de programas single-threaded e multi-threaded.")}</p>
+                <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("Em programas concorrentes, a dificuldade está no fato de que diferentes ordens de execução entre threads podem produzir comportamentos distintos. Uma execução comum pode não revelar o problema, mas uma interleaving diferente pode levar a inconsistência.")}</p>
+                <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("Segundo o README oficial, programas concorrentes com pthread podem ser analisados explorando interleavings. Entre as propriedades citadas estão deadlock, data races, violações de atomicidade e ordem de aquisição de locks.")}</p>
                 <BulletGrid items={concurrentErrors} />
               </Panel>
             </div>
@@ -789,11 +780,11 @@ export default function Esbmc() {
             <div className="space-y-5">
               {practicalExamples.map((example) => (
                 <Panel as="article" layout="plain" key={example.title}>
-                  <h3 className="text-xl font-bold text-cyan-300 mb-5">{example.title}</h3>
+                  <h3 className="text-xl font-bold text-cyan-300 mb-5">{uiText(example.title)}</h3>
                   <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5">
                     <div>
                       <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-3">
-                        {example.codeTitle}
+                        {uiText(example.codeTitle)}
                       </p>
                       <CodeBlock language="c" label="Código C">
                         {example.code}
@@ -801,15 +792,15 @@ export default function Esbmc() {
                     </div>
                     <div className="space-y-4">
                       <div className="rounded-xl border border-slate-700/70 bg-slate-950/30 p-4">
-                        <h4 className="text-sm font-semibold text-cyan-200 mb-2">Análise</h4>
-                        <p className="text-sm text-slate-300 leading-relaxed text-justify">{example.analysis}</p>
+                        <h4 className="text-sm font-semibold text-cyan-200 mb-2">{uiText("Análise")}</h4>
+                        <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(example.analysis)}</p>
                       </div>
                       <div className="rounded-xl border border-slate-700/70 bg-slate-950/30 p-4">
-                        <h4 className="text-sm font-semibold text-cyan-200 mb-2">Objetivo do teste</h4>
-                        <p className="text-sm text-slate-300 leading-relaxed text-justify">{example.objective}</p>
+                        <h4 className="text-sm font-semibold text-cyan-200 mb-2">{uiText("Objetivo do teste")}</h4>
+                        <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(example.objective)}</p>
                       </div>
                       <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-4">
-                        <h4 className="text-sm font-semibold text-emerald-100 mb-2">Resultado esperado</h4>
+                        <h4 className="text-sm font-semibold text-emerald-100 mb-2">{uiText("Resultado esperado")}</h4>
                         <CodeBlock language="text" label="Saída esperada">
                           {example.expected}
                         </CodeBlock>
@@ -823,13 +814,13 @@ export default function Esbmc() {
             <div className="space-y-6">
               {activeModule.sections.map((section) => (
                 <Panel as="article" layout="plain" key={section.title}>
-                  <h3 className="text-xl font-bold text-cyan-300 mb-4">{section.title}</h3>
+                  <h3 className="text-xl font-bold text-cyan-300 mb-4">{uiText(section.title)}</h3>
                   <Paragraphs items={section.paragraphs} />
                   {section.bullets && <BulletGrid items={section.bullets} />}
                   {section.table && <DataTable table={section.table} />}
                   {section.code && (
                     <div className="mt-5">
-                      <CodeBlock language={section.code.language} label={section.code.label}>
+                      <CodeBlock language={section.code.language} label={uiText(section.code.label)}>
                         {section.code.value}
                       </CodeBlock>
                     </div>
@@ -837,7 +828,7 @@ export default function Esbmc() {
                 </Panel>
               ))}
             </div>
-          )}
+          ))}
         </div>
       </div>
     </PageTemplate>

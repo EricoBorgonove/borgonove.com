@@ -1,8 +1,11 @@
+import { useContentTranslation } from "../../hooks/useContentTranslation";
 import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "./Patterns";
 
 export default function Dialog({ open, onClose, title, closeLabel = "Fechar", children }) {
+  const { text: uiText } = useContentTranslation();
+
   const ref = useRef(null);
   const titleId = useId();
 
@@ -29,8 +32,8 @@ export default function Dialog({ open, onClose, title, closeLabel = "Fechar", ch
     }}>
     <div className="ui-dialog-content">
       <header className="ui-dialog-header">
-        <h2 id={titleId}>{title}</h2>
-        <Button variant="secondary" onClick={onClose} aria-label={closeLabel}>{closeLabel}</Button>
+        <h2 id={titleId}>{uiText(title)}</h2>
+        <Button variant="secondary" onClick={onClose} aria-label={uiText(closeLabel)}>{uiText(closeLabel)}</Button>
       </header>
       {children}
     </div>

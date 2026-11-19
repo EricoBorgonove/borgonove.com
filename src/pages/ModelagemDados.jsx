@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Select } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,6 +24,8 @@ function getExerciseDescription(item, isEn) {
 }
 
 export default function ModelagemDados() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const sortLocale = isEn ? "en-US" : "pt-BR";
@@ -136,7 +139,7 @@ export default function ModelagemDados() {
   return (
     <PageTemplate>
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{txt.back}</BackButton>
+        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText(txt.back)}</BackButton>
       </div>
 
       <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
@@ -146,24 +149,24 @@ export default function ModelagemDados() {
             d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v1H3V6Zm0 3h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Zm4 2a1 1 0 0 0 0 2h10a1 1 0 1 0 0-2H7Zm0 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H7Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
-      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.subtitle)}</PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.briefTitle}</h2>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{uiText(txt.briefTitle)}</h2>
         <p className="text-slate-300 text-sm leading-relaxed text-justify">
-          {txt.briefText}
+          {uiText(txt.briefText)}
         </p>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
         <p className="text-xs text-slate-400 mb-4">
-          {txt.totalLoaded}: {exercicios.length}
+          {uiText(txt.totalLoaded)}: {uiText(exercicios.length)}
         </p>
         <div className="grid md:grid-cols-12 gap-3">
           <label className="block md:col-span-5">
-            <span className="block text-sm text-slate-300 mb-2">{txt.searchTitleOrText}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.searchTitleOrText)}</span>
             <Input
               type="search"
               value={query}
@@ -171,13 +174,13 @@ export default function ModelagemDados() {
                 setQuery(event.target.value);
                 setCurrentPage(1);
               }}
-              placeholder={txt.searchPlaceholder}
+              placeholder={uiText(txt.searchPlaceholder)}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block md:col-span-2">
-            <span className="block text-sm text-slate-300 mb-2">{txt.searchById}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.searchById)}</span>
             <Input
               type="number"
               min="1"
@@ -186,13 +189,13 @@ export default function ModelagemDados() {
                 setIdQuery(event.target.value);
                 setCurrentPage(1);
               }}
-              placeholder={txt.typeExample}
+              placeholder={uiText(txt.typeExample)}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block md:col-span-3">
-            <span className="block text-sm text-slate-300 mb-2">{txt.sortBy}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.sortBy)}</span>
             <Select
               value={orderBy}
               onChange={(event) => {
@@ -201,15 +204,15 @@ export default function ModelagemDados() {
               }}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             >
-              <option value="id-asc">{txt.idAsc}</option>
-              <option value="id-desc">{txt.idDesc}</option>
-              <option value="titulo-asc">{txt.titleAsc}</option>
-              <option value="titulo-desc">{txt.titleDesc}</option>
+              <option value="id-asc">{uiText(txt.idAsc)}</option>
+              <option value="id-desc">{uiText(txt.idDesc)}</option>
+              <option value="titulo-asc">{uiText(txt.titleAsc)}</option>
+              <option value="titulo-desc">{uiText(txt.titleDesc)}</option>
             </Select>
           </label>
 
           <label className="block md:col-span-2">
-            <span className="block text-sm text-slate-300 mb-2">{txt.perPage}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.perPage)}</span>
             <Select
               value={perPage}
               onChange={(event) => {
@@ -233,17 +236,17 @@ export default function ModelagemDados() {
             <Panel as="article" layout="plain" key={item.id}>
               <div className="flex items-center gap-3 mb-3">
                 <span className="inline-flex items-center justify-center min-w-10 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500 text-slate-950">
-                  #{item.id}
+                  #{uiText(item.id)}
                 </span>
-                <h3 className="text-lg font-semibold text-cyan-300">{getExerciseTitle(item, isEn)}</h3>
+                <h3 className="text-lg font-semibold text-cyan-300">{uiText(getExerciseTitle(item, isEn))}</h3>
               </div>
-              <p className="text-sm text-slate-300 leading-relaxed text-justify">{getExerciseDescription(item, isEn)}</p>
+              <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(getExerciseDescription(item, isEn))}</p>
             </Panel>
           ))}
         </div>
       ) : (
         <Panel as="div" layout="plain" className="text-center text-slate-400">
-          {txt.noResult}
+          {uiText(txt.noResult)}
         </Panel>
       )}
 
@@ -254,7 +257,7 @@ export default function ModelagemDados() {
           disabled={safePage === 1}
           className="border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
         >
-          {txt.previous}
+          {uiText(txt.previous)}
         </Button>
 
         {renderPages().map((page) => (
@@ -268,7 +271,7 @@ export default function ModelagemDados() {
                 : "border-slate-700 text-slate-200 hover:border-cyan-400"
             }`}
           >
-            {page}
+            {uiText(page)}
           </Button>
         ))}
 
@@ -278,7 +281,7 @@ export default function ModelagemDados() {
           disabled={safePage === totalPages}
           className="border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
         >
-          {txt.next}
+          {uiText(txt.next)}
         </Button>
       </div>
     </PageTemplate>

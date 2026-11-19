@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Panel } from "./ui/Patterns";
 const toneClasses = {
   cyan: "border-cyan-400/35 bg-cyan-500/10 text-cyan-100",
@@ -11,24 +12,26 @@ function getToneClass(tone) {
 }
 
 export default function ArchitectureTopicDiagram({ diagram }) {
+  const { text: uiText } = useContentTranslation();
+
   if (!diagram) {
     return null;
   }
 
   return (
     <Panel as="section" layout="plain">
-      <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{diagram.eyebrow}</p>
-      <h3 className="text-2xl md:text-3xl font-black text-white mb-3">{diagram.title}</h3>
-      <p className="text-slate-300 leading-7 mb-8 max-w-3xl">{diagram.description}</p>
+      <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{uiText(diagram.eyebrow)}</p>
+      <h3 className="text-2xl md:text-3xl font-black text-white mb-3">{uiText(diagram.title)}</h3>
+      <p className="text-slate-300 leading-7 mb-8 max-w-3xl">{uiText(diagram.description)}</p>
 
       <div className="grid gap-4 lg:grid-cols-3 items-start">
         {diagram.columns.map((column, index) => (
           <div key={column.title} className="relative">
             <article className={`rounded-[24px] border p-5 h-full ${getToneClass(column.tone)}`}>
               <div className="flex items-center justify-between gap-4 mb-4">
-                <h4 className="text-lg font-black">{column.title}</h4>
+                <h4 className="text-lg font-black">{uiText(column.title)}</h4>
                 <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-current/25 bg-black/10 text-sm font-black">
-                  {index + 1}
+                  {uiText(index + 1)}
                 </span>
               </div>
 
@@ -38,7 +41,7 @@ export default function ArchitectureTopicDiagram({ diagram }) {
                     key={item}
                     className="rounded-2xl border border-white/10 bg-black/10 px-4 py-3 text-sm leading-6"
                   >
-                    {item}
+                    {uiText(item)}
                   </div>
                 ))}
               </div>
@@ -61,7 +64,7 @@ export default function ArchitectureTopicDiagram({ diagram }) {
       </div>
 
       <div className="mt-8 rounded-[22px] border border-white/10 bg-slate-950/35 px-5 py-4 text-sm text-slate-300 leading-7">
-        {diagram.footer}
+        {uiText(diagram.footer)}
       </div>
     </Panel>
   );

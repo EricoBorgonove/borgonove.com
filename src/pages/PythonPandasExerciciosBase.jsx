@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -127,6 +128,8 @@ df_csv_grande.to_csv("vendas_grandes.csv", index=False)`,
 ];
 
 export default function PythonPandasExerciciosBase() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const localizedBlocks = localize(blocks, isEn);
@@ -146,7 +149,7 @@ export default function PythonPandasExerciciosBase() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -157,10 +160,10 @@ export default function PythonPandasExerciciosBase() {
             d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h14V5H5Zm0 6v8h14v-8H5Zm2 2h3v2H7v-2Zm0 3h7v2H7v-2Zm8-3h2v2h-2v-2Z"
           />
         </svg>
-        <span>{pick(txt.title, isEn)}</span>
+        <span>{uiText(pick(txt.title, isEn))}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <div className="grid gap-4 md:grid-cols-3 mb-8">
@@ -170,9 +173,9 @@ export default function PythonPandasExerciciosBase() {
             href={`#${block.id}`}
             className="rounded-2xl p-5 theme-hover-border transition hover:-translate-y-1"
           >
-            <p className="text-sm font-semibold text-cyan-300 mb-2">{pick(txt.block, isEn)} {index + 1}</p>
-            <h2 className="text-lg font-bold text-slate-100 mb-2">{block.title.replace(/^(Bloco|Block) \d+ — /i, "")}</h2>
-            <p className="text-sm text-slate-400 leading-relaxed">{block.description}</p>
+            <p className="text-sm font-semibold text-cyan-300 mb-2">{uiText(pick(txt.block, isEn))} {uiText(index + 1)}</p>
+            <h2 className="text-lg font-bold text-slate-100 mb-2">{uiText(block.title.replace(/^(Bloco|Block) \d+ — /i, ""))}</h2>
+            <p className="text-sm text-slate-400 leading-relaxed">{uiText(block.description)}</p>
           </Panel>
         ))}
       </div>
@@ -180,16 +183,16 @@ export default function PythonPandasExerciciosBase() {
       <div className="space-y-8">
         {localizedBlocks.map((block) => (
           <Panel as="article" layout="plain" key={block.id} id={block.id} className="scroll-mt-24">
-            <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{block.title}</h2>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">{block.description}</p>
+            <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(block.title)}</h2>
+            <p className="text-sm text-slate-400 leading-relaxed mb-5">{uiText(block.description)}</p>
 
             <div className="mb-6 grid gap-5 lg:grid-cols-2">
               <div>
-                <h3 className="text-lg font-semibold text-slate-100 mb-3">{pick(txt.baseCode, isEn)}</h3>
+                <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(pick(txt.baseCode, isEn))}</h3>
                 <CodeBlock>{block.baseCode}</CodeBlock>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-100 mb-3">{pick(txt.supportCode, isEn)}</h3>
+                <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(pick(txt.supportCode, isEn))}</h3>
                 <CodeBlock>{block.extraCode}</CodeBlock>
               </div>
             </div>
@@ -197,8 +200,8 @@ export default function PythonPandasExerciciosBase() {
             <ol className="grid gap-3 md:grid-cols-2">
               {block.exercises.map((exercise, index) => (
                 <li key={exercise} className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-                  <span className="font-semibold text-cyan-300">{index + 1}. </span>
-                  {exercise}
+                  <span className="font-semibold text-cyan-300">{uiText(index + 1)}. </span>
+                  {uiText(exercise)}
                 </li>
               ))}
             </ol>

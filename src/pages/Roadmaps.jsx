@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { CardGrid, ContentCard, PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
@@ -105,6 +106,8 @@ const roadmaps = [
 ];
 
 export default function Roadmaps() {
+  const { text: uiText } = useContentTranslation();
+
   const { t, i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.startsWith("en") ? "en-US" : "pt-BR";
 
@@ -118,19 +121,19 @@ export default function Roadmaps() {
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path fill="currentColor" d="M3 6a3 3 0 0 1 3-3h3a3 3 0 0 1 0 6H6v6h3a3 3 0 1 1 0 6H6a3 3 0 0 1-3-3V6Zm12-3h3a3 3 0 1 1 0 6h-3v2h-2V6a3 3 0 0 1 3-3Zm0 4h3a1 1 0 1 0 0-2h-3a1 1 0 0 0 0 2Zm-2 6h2v2h3a1 1 0 1 1 0 2h-3a3 3 0 0 1-3-3v-1h1Z" />
         </svg>
-        <span>{t("roadmaps.title")}</span>
+        <span>{uiText(t("roadmaps.title"))}</span>
       </PageTitle>
       <PageDescription>
-        {t("roadmaps.description")}
+        {uiText(t("roadmaps.description"))}
       </PageDescription></PageHeader>
 
       <CardGrid>
         {roadmapsOrdenados.map((item) => (
           <ContentCard key={item.id} to={item.href} headingAs="h2"
-            title={<span className="flex items-center gap-2"><span aria-hidden="true">{item.icon}</span>{t(`roadmaps.items.${item.id}.title`)}</span>}
-            description={t(`roadmaps.items.${item.id}.description`)}
-            action={i18n.resolvedLanguage?.startsWith("en") ? "Open roadmap" : "Abrir roadmap"}
-            unavailable={item.emBreve || !item.href} unavailableLabel={t("common.comingSoon")} />
+            title={<span className="flex items-center gap-2"><span aria-hidden="true">{uiText(item.icon)}</span>{uiText(t(`roadmaps.items.${item.id}.title`))}</span>}
+            description={uiText(t(`roadmaps.items.${item.id}.description`))}
+            action={uiText(i18n.resolvedLanguage?.startsWith("en") ? "Open roadmap" : "Abrir roadmap")}
+            unavailable={item.emBreve || !item.href} unavailableLabel={uiText(t("common.comingSoon"))} />
         ))}
       </CardGrid>
     </PageTemplate>

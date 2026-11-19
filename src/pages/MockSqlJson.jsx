@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Select } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -348,6 +349,8 @@ function waitForNextTick() {
 }
 
 export default function MockSqlJson() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -565,7 +568,7 @@ export default function MockSqlJson() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -575,13 +578,13 @@ export default function MockSqlJson() {
             d="M4 3h16a2 2 0 0 1 2 2v4H2V5a2 2 0 0 1 2-2Zm-2 8h20v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8Zm4 2a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6Zm0 4a1 1 0 0 0 0 2h7a1 1 0 1 0 0-2H6Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.recordsAmount}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.recordsAmount)}</span>
             <Input
               type="number"
               min="1"
@@ -594,11 +597,11 @@ export default function MockSqlJson() {
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.tableName}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.tableName)}</span>
             <Input
               type="text"
               value={tableName}
-              placeholder="tabela_mock"
+              placeholder={uiText("tabela_mock")}
               onChange={(event) => setTableName(event.target.value)}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
@@ -606,7 +609,7 @@ export default function MockSqlJson() {
         </div>
 
         <div className="mt-6">
-          <p className="text-sm text-slate-300 mb-2">{txt.fieldSelectionMode}</p>
+          <p className="text-sm text-slate-300 mb-2">{uiText(txt.fieldSelectionMode)}</p>
           <div className="flex flex-wrap gap-3">
             <Button variant="custom"
               type="button"
@@ -615,7 +618,7 @@ export default function MockSqlJson() {
                 modoCampos === "lista" ? "bg-cyan-500 text-slate-900 border-cyan-400" : "border-slate-700 text-slate-200 hover:border-cyan-400"
               }`}
             >
-              {txt.listMode}
+              {uiText(txt.listMode)}
             </Button>
             <Button variant="custom"
               type="button"
@@ -624,7 +627,7 @@ export default function MockSqlJson() {
                 modoCampos === "manual" ? "bg-cyan-500 text-slate-900 border-cyan-400" : "border-slate-700 text-slate-200 hover:border-cyan-400"
               }`}
             >
-              {txt.manualMode}
+              {uiText(txt.manualMode)}
             </Button>
           </div>
         </div>
@@ -632,8 +635,8 @@ export default function MockSqlJson() {
         {modoCampos === "lista" ? (
           <div className="mt-6">
             <div className="flex items-center justify-between mb-3">
-              <p className="text-sm text-slate-300">{txt.availableTypes} ({DATA_TYPES.length})</p>
-              <p className="text-xs text-slate-400">{txt.selected}: {selectedTypeIds.length}</p>
+              <p className="text-sm text-slate-300">{uiText(txt.availableTypes)} ({uiText(DATA_TYPES.length)})</p>
+              <p className="text-xs text-slate-400">{uiText(txt.selected)}: {uiText(selectedTypeIds.length)}</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {DATA_TYPES.map((type) => (
@@ -644,7 +647,7 @@ export default function MockSqlJson() {
                     onChange={() => toggleType(type.id)}
                     className="h-4 w-4 accent-cyan-400"
                   />
-                  {getTypeLabel(type)}
+                  {uiText(getTypeLabel(type))}
                 </label>
               ))}
             </div>
@@ -652,7 +655,7 @@ export default function MockSqlJson() {
         ) : (
           <div className="mt-6">
             <label className="block max-w-xs">
-              <span className="block text-sm text-slate-300 mb-2">{txt.fieldsAmount}</span>
+              <span className="block text-sm text-slate-300 mb-2">{uiText(txt.fieldsAmount)}</span>
               <Input
                 type="number"
                 min={MANUAL_FIELD_MIN}
@@ -670,7 +673,7 @@ export default function MockSqlJson() {
                     type="text"
                     value={field.name}
                     onChange={(event) => updateManualField(index, { name: event.target.value })}
-                    placeholder={`${txt.fieldNamePlaceholder} ${index + 1}`}
+                    placeholder={uiText("{{0}} {{1}}", [txt.fieldNamePlaceholder, index + 1])}
                     className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
                   />
                   <Select
@@ -680,7 +683,7 @@ export default function MockSqlJson() {
                   >
                     {DATA_TYPES.map((type) => (
                       <option key={`manual-type-${type.id}`} value={type.id}>
-                        {getTypeLabel(type)}
+                        {uiText(getTypeLabel(type))}
                       </option>
                     ))}
                   </Select>
@@ -697,7 +700,7 @@ export default function MockSqlJson() {
             disabled={isGenerating}
             className="text-slate-900 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {isGenerating ? txt.generating : txt.generateData}
+            {uiText(isGenerating ? txt.generating : txt.generateData)}
           </Button>
           <Button variant="secondary"
             type="button"
@@ -705,7 +708,7 @@ export default function MockSqlJson() {
             disabled={isGenerating}
             className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {txt.clear}
+            {uiText(txt.clear)}
           </Button>
         </div>
 
@@ -714,59 +717,59 @@ export default function MockSqlJson() {
             <div className="h-2 rounded-full bg-slate-800 overflow-hidden">
               <div className="h-full bg-cyan-400 transition-all" style={{ width: `${progress}%` }} />
             </div>
-            <p className="text-xs text-slate-300 mt-2">{txt.generatingRecords}: {progress}%</p>
+            <p className="text-xs text-slate-300 mt-2">{uiText(txt.generatingRecords)}: {uiText(progress)}%</p>
           </div>
         )}
 
-        {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
+        {erro && <p className="text-red-400 text-sm mt-4">{uiMessage(erro)}</p>}
       </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-8">
         <Panel as="article" layout="plain">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-xl font-bold">JSON</h2>
+            <h2 className="text-xl font-bold">{uiText("JSON")}</h2>
             <Button variant="secondary"
               type="button"
               disabled={data.length === 0}
               onClick={copyFullJson}
               className="border border-slate-700 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {txt.copyFull}
+              {uiText(txt.copyFull)}
             </Button>
           </div>
           {data.length > 0 ? (
             <>
               <p className="text-xs text-slate-400 mb-2">
-                {txt.previewShowing} {Math.min(PREVIEW_ROWS, data.length)} {txt.of} {data.length} {txt.records}.
+                {uiText(txt.previewShowing)} {uiText(Math.min(PREVIEW_ROWS, data.length))} {uiText(txt.of)} {uiText(data.length)} {uiText(txt.records)}.
               </p>
               <pre className="bg-slate-900/70 border border-slate-700 rounded-xl p-4 text-xs text-slate-200 overflow-auto max-h-[420px]">{jsonOutput}</pre>
             </>
           ) : (
-            <p className="text-slate-400 text-sm">{txt.generateToViewJson}</p>
+            <p className="text-slate-400 text-sm">{uiText(txt.generateToViewJson)}</p>
           )}
         </Panel>
 
         <Panel as="article" layout="plain">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-xl font-bold">SQL</h2>
+            <h2 className="text-xl font-bold">{uiText("SQL")}</h2>
             <Button variant="secondary"
               type="button"
               disabled={data.length === 0}
               onClick={copyFullSql}
               className="border border-slate-700 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {txt.copyFull}
+              {uiText(txt.copyFull)}
             </Button>
           </div>
           {data.length > 0 ? (
             <>
               <p className="text-xs text-slate-400 mb-2">
-                {txt.previewShowing} {Math.min(PREVIEW_ROWS, data.length)} {txt.of} {data.length} {txt.records}.
+                {uiText(txt.previewShowing)} {uiText(Math.min(PREVIEW_ROWS, data.length))} {uiText(txt.of)} {uiText(data.length)} {uiText(txt.records)}.
               </p>
               <pre className="bg-slate-900/70 border border-slate-700 rounded-xl p-4 text-xs text-slate-200 overflow-auto max-h-[420px]">{sqlOutput}</pre>
             </>
           ) : (
-            <p className="text-slate-400 text-sm">{txt.generateToViewSql}</p>
+            <p className="text-slate-400 text-sm">{uiText(txt.generateToViewSql)}</p>
           )}
         </Panel>
       </div>

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -20,6 +21,8 @@ const commandRows = [
 ];
 
 function ComparisonTable({ rows, columns }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-800">
       <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
@@ -27,7 +30,7 @@ function ComparisonTable({ rows, columns }) {
           <tr>
             {columns.map((column) => (
               <th key={column.key} className="px-4 py-3 font-semibold text-slate-100">
-                {column.label}
+                {uiText(column.label)}
               </th>
             ))}
           </tr>
@@ -37,13 +40,13 @@ function ComparisonTable({ rows, columns }) {
             <tr key={row[columns[0].key]} className="border-t border-slate-800">
               {columns.map((column, index) => (
                 <td key={column.key} className="px-4 py-3 text-slate-300 align-top">
-                  {index === 0 ? (
-                    <span className="font-semibold text-cyan-300">{row[column.key]}</span>
+                  {uiText(index === 0 ? (
+                    <span className="font-semibold text-cyan-300">{uiText(row[column.key])}</span>
                   ) : column.code ? (
                     <code className="text-slate-200">{row[column.key]}</code>
                   ) : (
                     row[column.key]
-                  )}
+                  ))}
                 </td>
               ))}
             </tr>
@@ -55,6 +58,8 @@ function ComparisonTable({ rows, columns }) {
 }
 
 export default function PythonPandasCsvExcel() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const rows = {
@@ -110,7 +115,7 @@ export default function PythonPandasCsvExcel() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas/tabelas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -121,21 +126,21 @@ export default function PythonPandasCsvExcel() {
             d="M4 4h7v2H6v12h5v2H4V4Zm9 0h7v16h-7v-2h5V6h-5V4ZM8 9h4v2H8V9Zm0 4h4v2H8v-2Zm6-4h2v2h-2V9Zm0 4h2v2h-2v-2Z"
           />
         </svg>
-        <span>CSV x Excel no Pandas</span>
+        <span>{uiText("CSV x Excel no Pandas")}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.practicalAnswer, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.practicalAnswer, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
-          {pick(txt.practicalText, isEn)}
+          {uiText(pick(txt.practicalText, isEn))}
         </p>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.structureTitle, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(pick(txt.structureTitle, isEn))}</h2>
         <ComparisonTable
           rows={rows.structure}
           columns={[
@@ -148,30 +153,30 @@ export default function PythonPandasCsvExcel() {
 
       <div className="grid gap-8 lg:grid-cols-2 mb-8">
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.csvPandas, isEn)}</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.csvPandas, isEn))}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">
-            {pick(txt.csvText, isEn)}
+            {uiText(pick(txt.csvText, isEn))}
           </p>
           <div className="space-y-3 text-sm text-slate-300">
-            <p><span className="font-semibold text-cyan-300">{pick(txt.advantage, isEn)}</span> {pick(txt.csvAdvantage, isEn)}</p>
-            <p><span className="font-semibold text-cyan-300">{pick(txt.attention, isEn)}</span> {pick(txt.csvAttention, isEn)} <code className="text-slate-200">sep=';'</code>.</p>
+            <p><span className="font-semibold text-cyan-300">{uiText(pick(txt.advantage, isEn))}</span> {uiText(pick(txt.csvAdvantage, isEn))}</p>
+            <p><span className="font-semibold text-cyan-300">{uiText(pick(txt.attention, isEn))}</span> {uiText(pick(txt.csvAttention, isEn))} <code className="text-slate-200">sep=';'</code>.</p>
           </div>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Excel no Pandas</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Excel no Pandas")}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">
-            {pick(txt.excelText, isEn)}
+            {uiText(pick(txt.excelText, isEn))}
           </p>
           <div className="space-y-3 text-sm text-slate-300">
-            <p><span className="font-semibold text-cyan-300">{pick(txt.advantage, isEn)}</span> {pick(txt.excelAdvantage, isEn)} <code className="text-slate-200">sheet_name</code>.</p>
-            <p><span className="font-semibold text-cyan-300">{pick(txt.attention, isEn)}</span> {pick(txt.excelAttention, isEn)} <code className="text-slate-200">openpyxl</code>, {pick(txt.excelAttentionEnd, isEn)}</p>
+            <p><span className="font-semibold text-cyan-300">{uiText(pick(txt.advantage, isEn))}</span> {uiText(pick(txt.excelAdvantage, isEn))} <code className="text-slate-200">sheet_name</code>.</p>
+            <p><span className="font-semibold text-cyan-300">{uiText(pick(txt.attention, isEn))}</span> {uiText(pick(txt.excelAttention, isEn))} <code className="text-slate-200">openpyxl</code>, {uiText(pick(txt.excelAttentionEnd, isEn))}</p>
           </div>
         </Panel>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.commandsTitle, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(pick(txt.commandsTitle, isEn))}</h2>
         <ComparisonTable
           rows={rows.commands}
           columns={[
@@ -184,28 +189,28 @@ export default function PythonPandasCsvExcel() {
 
       <div className="grid gap-8 lg:grid-cols-2 mb-8">
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whenCsv, isEn)}</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.whenCsv, isEn))}</h2>
           <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
-            {txt.csvWhen.map((item) => <li key={item.pt}>{pick(item, isEn)}</li>)}
+            {txt.csvWhen.map((item) => <li key={item.pt}>{uiText(pick(item, isEn))}</li>)}
           </ul>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whenExcel, isEn)}</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.whenExcel, isEn))}</h2>
           <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
-            {txt.excelWhen.map((item) => <li key={item.pt}>{pick(item, isEn)}</li>)}
+            {txt.excelWhen.map((item) => <li key={item.pt}>{uiText(pick(item, isEn))}</li>)}
           </ul>
         </Panel>
       </div>
 
       <Panel as="div" layout="plain">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.trap, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.trap, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
-          {pick(txt.trapText, isEn)}
+          {uiText(pick(txt.trapText, isEn))}
         </p>
         <p className="text-sm text-slate-300 leading-relaxed">
-          {pick(txt.proTip, isEn)}{" "}
-          <code className="text-cyan-300">df.to_parquet()</code>. {pick(txt.proTipEnd, isEn)}
+          {uiText(pick(txt.proTip, isEn))}{" "}
+          <code className="text-cyan-300">df.to_parquet()</code>. {uiText(pick(txt.proTipEnd, isEn))}
         </p>
       </Panel>
     </PageTemplate>

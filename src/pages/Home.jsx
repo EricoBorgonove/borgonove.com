@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -121,6 +122,8 @@ const servicos = [
 ];
 
 export default function Home() {
+  const { text: uiText } = useContentTranslation();
+
   const { t } = useTranslation();
   const projectItems = t("home.projects.items", { returnObjects: true });
 
@@ -129,15 +132,15 @@ export default function Home() {
       <section id="inicio" className="min-h-screen flex items-center justify-center text-center px-6">
         <div className="max-w-4xl">
           <PageTitle>
-            {t("home.hero.titleBefore")}{" "}
+            {uiText(t("home.hero.titleBefore"))}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              {t("home.hero.titleHighlight")}
+              {uiText(t("home.hero.titleHighlight"))}
             </span>{" "}
-            {t("home.hero.titleAfter")}
+            {uiText(t("home.hero.titleAfter"))}
           </PageTitle>
 
           <p className="mt-8 text-lg text-slate-400 max-w-2xl mx-auto">
-            {t("home.hero.description")}
+            {uiText(t("home.hero.description"))}
           </p>
 
           <div className="mt-10 flex justify-center gap-6">
@@ -145,14 +148,14 @@ export default function Home() {
               href="#projetos"
               className="bg-white text-slate-900 px-8 py-3 rounded-xl font-semibold hover:scale-105 transition"
             >
-              {t("home.hero.projects")}
+              {uiText(t("home.hero.projects"))}
             </a>
 
             <Link
               to="/contato"
               className="border border-slate-600 px-8 py-3 rounded-xl hover:border-cyan-400 transition"
             >
-              {t("home.hero.contact")}
+              {uiText(t("home.hero.contact"))}
             </Link>
           </div>
         </div>
@@ -168,32 +171,32 @@ export default function Home() {
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6">{t("home.about.title")}</h2>
+            <h2 className="text-4xl font-bold mb-6">{uiText(t("home.about.title"))}</h2>
             <p className="text-slate-400 leading-relaxed text-lg text-justify sobre-descricao">
-              {t("home.about.description")}
+              {uiText(t("home.about.description"))}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">+100</h3>
-              <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.projects")}</p>
+              <p className="text-slate-400 text-sm mt-2">{uiText(t("home.about.stats.projects"))}</p>
             </Panel>
             <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">+800</h3>
-              <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.students")}</p>
+              <p className="text-slate-400 text-sm mt-2">{uiText(t("home.about.stats.students"))}</p>
             </Panel>
             <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">
-                {t("home.about.stats.strategy").split(" ")[0]}
+                {uiText(t("home.about.stats.strategy").split(" ")[0])}
               </h3>
-              <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.strategy")}</p>
+              <p className="text-slate-400 text-sm mt-2">{uiText(t("home.about.stats.strategy"))}</p>
             </Panel>
             <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">
-                {t("home.about.stats.performance").split(" ")[0]}
+                {uiText(t("home.about.stats.performance").split(" ")[0])}
               </h3>
-              <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.performance")}</p>
+              <p className="text-slate-400 text-sm mt-2">{uiText(t("home.about.stats.performance"))}</p>
             </Panel>
           </div>
         </div>
@@ -203,10 +206,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-black leading-tight">
-              {t("home.solutions.title")}
+              {uiText(t("home.solutions.title"))}
             </h2>
             <p className="text-slate-400 text-lg mt-8 text-justify">
-              {t("home.solutions.description")}
+              {uiText(t("home.solutions.description"))}
             </p>
           </div>
 
@@ -217,10 +220,10 @@ export default function Home() {
                 className="h-full flex flex-col transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
               >
                 <div className="h-16 w-16 rounded-full bg-slate-800/70 border border-slate-700 text-cyan-300 flex items-center justify-center">
-                  {item.icon}
+                  {uiText(item.icon)}
                 </div>
-                <h3 className="text-2xl font-bold mt-6 mb-3">{t(`home.solutions.items.${item.key}.title`)}</h3>
-                <p className="text-slate-400 text-justify">{t(`home.solutions.items.${item.key}.description`)}</p>
+                <h3 className="text-2xl font-bold mt-6 mb-3">{uiText(t(`home.solutions.items.${item.key}.title`))}</h3>
+                <p className="text-slate-400 text-justify">{uiText(t(`home.solutions.items.${item.key}.description`))}</p>
               </Panel>
             ))}
           </div>
@@ -229,7 +232,7 @@ export default function Home() {
 
       <section id="servicos" className="py-16 px-6 bg-slate-900">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-16">{t("home.services.title")}</h2>
+          <h2 className="text-4xl font-bold mb-16">{uiText(t("home.services.title"))}</h2>
 
           <div className="grid md:grid-cols-3 gap-10">
             {servicos.map((item) => (
@@ -238,10 +241,10 @@ export default function Home() {
                 className="h-full transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
               >
                 <h3 className="text-xl font-semibold mb-4 text-cyan-400 inline-flex items-center justify-center gap-2">
-                  <span className="text-cyan-300 [&_svg]:h-5 [&_svg]:w-5">{item.icon}</span>
-                  <span>{t(`home.services.items.${item.key}.title`)}</span>
+                  <span className="text-cyan-300 [&_svg]:h-5 [&_svg]:w-5">{uiText(item.icon)}</span>
+                  <span>{uiText(t(`home.services.items.${item.key}.title`))}</span>
                 </h3>
-                <p className="text-slate-400 text-sm">{t(`home.services.items.${item.key}.description`)}</p>
+                <p className="text-slate-400 text-sm">{uiText(t(`home.services.items.${item.key}.description`))}</p>
               </Panel>
             ))}
           </div>
@@ -258,9 +261,9 @@ export default function Home() {
 
         <div className="relative z-20 px-6 max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">{t("home.projects.title")}</h2>
+            <h2 className="text-4xl font-bold">{uiText(t("home.projects.title"))}</h2>
             <p className="text-slate-400 mt-4">
-              {t("home.projects.description")}
+              {uiText(t("home.projects.description"))}
             </p>
           </div>
 
@@ -270,9 +273,9 @@ export default function Home() {
                   key={title}
                   className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-3">{title}</h3>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-3">{uiText(title)}</h3>
                   <p className="text-slate-400 text-sm">
-                    {t("home.projects.cardDescription")}
+                    {uiText(t("home.projects.cardDescription"))}
                   </p>
                 </Panel>
               ))}

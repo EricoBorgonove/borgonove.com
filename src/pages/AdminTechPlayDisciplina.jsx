@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,6 +23,8 @@ function shuffleArray(items) {
 }
 
 export default function AdminTechPlayDisciplina() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const { disciplinaSlug } = useParams();
   const disciplina = getTechPlayDisciplina(disciplinaSlug);
@@ -125,58 +128,58 @@ export default function AdminTechPlayDisciplina() {
     <PageTemplate>
       <div className="flex flex-wrap items-center gap-3 text-sm text-cyan-300 mb-6">
         <Link to="/admin" className="hover:text-cyan-200 transition">
-          {txt.adminArea}
+          {uiText(txt.adminArea)}
         </Link>
         <span className="text-slate-500">/</span>
         <Link to="/admin/techplay/disciplinas" className="hover:text-cyan-200 transition">
-          {txt.disciplines}
+          {uiText(txt.disciplines)}
         </Link>
         <span className="text-slate-500">/</span>
-        <span className="text-slate-300">{getTechPlayDisciplinaTitle(disciplina, isEn)}</span>
+        <span className="text-slate-300">{uiText(getTechPlayDisciplinaTitle(disciplina, isEn))}</span>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.discipline}</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{uiText(txt.discipline)}</p>
         <PageHeader><PageTitle className="text-white mb-4">
-          {getTechPlayDisciplinaTitle(disciplina, isEn)}
+          {uiText(getTechPlayDisciplinaTitle(disciplina, isEn))}
         </PageTitle>
         <PageDescription className="max-w-3xl">
-          {getTechPlayDisciplinaSummary(disciplina, isEn)}
+          {uiText(getTechPlayDisciplinaSummary(disciplina, isEn))}
         </PageDescription></PageHeader>
 
         <div className="admin-chip mt-8 inline-flex items-center gap-3 rounded-2xl px-5 py-4">
-          <span className="text-sm text-slate-400">{txt.registeredTopics}</span>
-          <span className="text-2xl font-black text-cyan-300">{disciplina.temas.length}</span>
+          <span className="text-sm text-slate-400">{uiText(txt.registeredTopics)}</span>
+          <span className="text-2xl font-black text-cyan-300">{uiText(disciplina.temas.length)}</span>
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.teamDraw}</p>
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{txt.drawTitle}</h2>
-          <p className="text-slate-300 text-lg leading-relaxed mb-8">{txt.drawDescription}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{uiText(txt.teamDraw)}</p>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{uiText(txt.drawTitle)}</h2>
+          <p className="text-slate-300 text-lg leading-relaxed mb-8">{uiText(txt.drawDescription)}</p>
         </div>
 
         <Panel as="div" layout="plain" className="max-w-4xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-5">
             <div>
-              <h3 className="text-2xl font-black text-white mb-2">{txt.teamsTitle}</h3>
-              <p className="text-sm text-slate-300">{txt.teamsDescription}</p>
+              <h3 className="text-2xl font-black text-white mb-2">{uiText(txt.teamsTitle)}</h3>
+              <p className="text-sm text-slate-300">{uiText(txt.teamsDescription)}</p>
             </div>
             <div className="admin-chip rounded-2xl px-4 py-3">
-              <p className="text-xs text-slate-400">{txt.teamsEntered}</p>
-              <p className="text-xl font-black text-cyan-300">{equipes.length}</p>
+              <p className="text-xs text-slate-400">{uiText(txt.teamsEntered)}</p>
+              <p className="text-xl font-black text-cyan-300">{uiText(equipes.length)}</p>
             </div>
           </div>
 
           <label className="block text-sm text-slate-300 mb-3" htmlFor="equipes-sorteio">
-            {txt.teamsList}
+            {uiText(txt.teamsList)}
           </label>
           <Textarea
             id="equipes-sorteio"
             value={equipesInput}
             onChange={(event) => setEquipesInput(event.target.value)}
-            placeholder={txt.teamPlaceholder}
+            placeholder={uiText(txt.teamPlaceholder)}
             className="min-h-[220px] w-full border text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
 
@@ -186,20 +189,20 @@ export default function AdminTechPlayDisciplina() {
               onClick={handleSortear}
               className="text-slate-950 transition"
             >
-              {txt.drawAction}
+              {uiText(txt.drawAction)}
             </Button>
             <Button variant="secondary"
               type="button"
               onClick={handleReset}
               className="border border-slate-700 text-slate-200 transition hover:border-cyan-400"
             >
-              {txt.clear}
+              {uiText(txt.clear)}
             </Button>
           </div>
 
           {erroSorteio && (
             <p className="mt-5 rounded-2xl border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
-              {erroSorteio}
+              {uiText(erroSorteio)}
             </p>
           )}
         </Panel>
@@ -214,7 +217,7 @@ export default function AdminTechPlayDisciplina() {
             <div className="flex flex-col gap-4 md:flex-row md:items-start">
               <div className="shrink-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/15 text-lg font-black text-cyan-300">
-                  {index + 1}
+                  {uiText(index + 1)}
                 </div>
               </div>
 
@@ -222,19 +225,19 @@ export default function AdminTechPlayDisciplina() {
                 <div className="mb-3 flex flex-wrap items-center gap-3">
                   {equipesPorTema[index] ? (
                     <span className="inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
-                      {txt.teamAssigned}: {equipesPorTema[index]}
+                      {uiText(txt.teamAssigned)}: {uiText(equipesPorTema[index])}
                     </span>
                   ) : (
                     <span className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                      {txt.noTeam}
+                      {uiText(txt.noTeam)}
                     </span>
                   )}
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-3">
-                  {getTechPlayTemaTitle(tema, isEn)}
+                  {uiText(getTechPlayTemaTitle(tema, isEn))}
                 </h2>
                 <p className="text-slate-300 leading-7">
-                  {getTechPlayTemaDescription(tema, isEn)}
+                  {uiText(getTechPlayTemaDescription(tema, isEn))}
                 </p>
               </div>
             </div>

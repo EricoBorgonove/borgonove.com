@@ -1,7 +1,10 @@
+import { useContentTranslation } from "../../hooks/useContentTranslation";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function ScrollRegion({ as: element = "div", children, className = "", "aria-label": label, tabIndex, ...props }) {
+  const { text: uiText } = useContentTranslation();
+
   const { t } = useTranslation();
   const Container = element;
   const ref = useRef(null);
@@ -35,7 +38,7 @@ export default function ScrollRegion({ as: element = "div", children, className 
 
   return <Container {...props} ref={ref} className={`ui-scroll-region ${className}`}
     tabIndex={tabIndex ?? (scrollable ? 0 : undefined)}
-    role={scrollable ? "region" : undefined} aria-label={scrollable ? label || t("common.ui.scrollContent") : undefined}>
+    role={scrollable ? "region" : undefined} aria-label={uiText(scrollable ? label || t("common.ui.scrollContent") : undefined)}>
     {children}
   </Container>;
 }

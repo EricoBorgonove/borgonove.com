@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -86,6 +87,8 @@ print("\\nFinal Report:")
 print(report)`;
 
 export default function PythonPandas() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = {
@@ -145,7 +148,7 @@ export default function PythonPandas() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -156,10 +159,10 @@ export default function PythonPandas() {
             d="M12 2.5c-4.6 0-4.3 2-4.3 2v2.1h4.4v.7H5.9S3 6.9 3 11.6s2.5 4.5 2.5 4.5h1.5v-2.2s-.1-2.5 2.5-2.5h4.4s2.4 0 2.4-2.3V4.9s.4-2.4-4.3-2.4Zm-2.5 1.4a.8.8 0 1 1 0 1.7.8.8 0 0 1 0-1.7Zm7.5 3.9v2.1s.1 2.5-2.5 2.5h-4.4s-2.4 0-2.4 2.3v4.2s-.4 2.4 4.3 2.4 4.3-2 4.3-2v-2.1h-4.4v-.7h6.2s2.9.4 2.9-4.3-2.5-4.5-2.5-4.5H17Zm-2.5 10.6a.8.8 0 1 1 0 1.7.8.8 0 0 1 0-1.7Z"
           />
         </svg>
-        <span>Python Pandas</span>
+        <span>{uiText("Python Pandas")}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.description, isEn)}
+        {uiText(pick(txt.description, isEn))}
       </PageDescription></PageHeader>
 
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
@@ -168,78 +171,72 @@ export default function PythonPandas() {
             to="/disciplinas/python-pandas/tabelas"
             className="inline-flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
           >
-            {pick(txt.tables, isEn)}
+            {uiText(pick(txt.tables, isEn))}
             <span aria-hidden="true">→</span>
           </Link>
           <Link
             to="/disciplinas/python-pandas/listas-exercicios"
             className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
           >
-            {pick(txt.exercises, isEn)}
+            {uiText(pick(txt.exercises, isEn))}
             <span aria-hidden="true">→</span>
           </Link>
           <Link
             to="/disciplinas/python-pandas/matplotlib"
             className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
-          >
-            Matplotlib
-            <span aria-hidden="true">→</span>
+          >{uiText("Matplotlib")}<span aria-hidden="true">→</span>
           </Link>
           <Link
             to="/disciplinas/python-pandas/seaborn"
             className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
-          >
-            Seaborn
-            <span aria-hidden="true">→</span>
+          >{uiText("Seaborn")}<span aria-hidden="true">→</span>
           </Link>
         </div>
         <Link
           to="/roadmaps/python-pandas"
           className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
-        >
-          Roadmap
-          <span aria-hidden="true">→</span>
+        >{uiText("Roadmap")}<span aria-hidden="true">→</span>
         </Link>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whatIs, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.whatIs, isEn))}</h2>
         <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
           <p>
-            {pick(txt.whatIsText, isEn)}
+            {uiText(pick(txt.whatIsText, isEn))}
           </p>
           <div className="grid gap-4 md:grid-cols-2">
             <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <h3 className="text-lg font-semibold text-slate-100 mb-2">Series</h3>
-              <p>{pick(txt.seriesText, isEn)}</p>
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText("Series")}</h3>
+              <p>{uiText(pick(txt.seriesText, isEn))}</p>
             </article>
             <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <h3 className="text-lg font-semibold text-slate-100 mb-2">DataFrame</h3>
-              <p>{pick(txt.dataFrameText, isEn)}</p>
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText("DataFrame")}</h3>
+              <p>{uiText(pick(txt.dataFrameText, isEn))}</p>
             </article>
           </div>
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.install, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.install, isEn))}</h2>
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-3">{pick(txt.vsCodeTerminal, isEn)}</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(pick(txt.vsCodeTerminal, isEn))}</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              {pick(txt.pipText, isEn)}
+              {uiText(pick(txt.pipText, isEn))}
             </p>
             <CodeBlock language="bash">pip install pandas</CodeBlock>
             <p className="text-sm text-slate-400 leading-relaxed mt-4">
-              {pick(txt.tip, isEn)} <code className="text-cyan-300">numpy</code> {isEn ? "and" : "e"}{" "}
-              <code className="text-cyan-300">openpyxl</code> {pick(txt.tipEnd, isEn)}
+              {uiText(pick(txt.tip, isEn))} <code className="text-cyan-300">numpy</code> {uiText(isEn ? "and" : "e")}{" "}
+              <code className="text-cyan-300">openpyxl</code> {uiText(pick(txt.tipEnd, isEn))}
             </p>
           </article>
 
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-3">{pick(txt.anaconda, isEn)}</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(pick(txt.anaconda, isEn))}</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              {pick(txt.condaText, isEn)}
+              {uiText(pick(txt.condaText, isEn))}
             </p>
             <CodeBlock language="bash">conda install pandas</CodeBlock>
           </article>
@@ -247,23 +244,23 @@ export default function PythonPandas() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.useTitle, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.useTitle, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">
-          {pick(txt.useText, isEn)}
+          {uiText(pick(txt.useText, isEn))}
         </p>
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-3">{pick(txt.pyFiles, isEn)}</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(pick(txt.pyFiles, isEn))}</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              {pick(txt.pyFilesText, isEn)} <code className="text-cyan-300">print()</code> {pick(txt.pyFilesTextEnd, isEn)}
+              {uiText(pick(txt.pyFilesText, isEn))} <code className="text-cyan-300">print()</code> {uiText(pick(txt.pyFilesTextEnd, isEn))}
             </p>
             <CodeBlock>{isEn ? vscodeExampleEn : vscodeExample}</CodeBlock>
           </article>
 
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-3">No Jupyter Notebook / Anaconda (.ipynb)</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText("No Jupyter Notebook / Anaconda (.ipynb)")}</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              {pick(txt.notebookText, isEn)}
+              {uiText(pick(txt.notebookText, isEn))}
             </p>
             <CodeBlock>{isEn ? jupyterExampleEn : jupyterExample}</CodeBlock>
           </article>
@@ -271,21 +268,21 @@ export default function PythonPandas() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.integrated, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.integrated, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">
-          {pick(txt.integratedText, isEn)}
+          {uiText(pick(txt.integratedText, isEn))}
         </p>
         <CodeBlock>{isEn ? integratedExampleEn : integratedExample}</CodeBlock>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.workflow, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.workflow, isEn))}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <p className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-            {pick(txt.workflowExplore, isEn)}
+            {uiText(pick(txt.workflowExplore, isEn))}
           </p>
           <p className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-            {pick(txt.workflowAutomate, isEn)}
+            {uiText(pick(txt.workflowAutomate, isEn))}
           </p>
         </div>
       </Panel>

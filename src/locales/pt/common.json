@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "me": "Me",
+    "me": "Perfil",
     "roadmaps": "Roadmaps",
     "blog": "Blog",
     "utilities": "Utilidades",
@@ -145,6 +145,9 @@
   "common": {
     "comingSoon": "Em breve!",
     "ui": {
+      "loadingTranslations": "Carregando traduções…",
+      "translationError": "Não foi possível carregar o conteúdo em inglês.",
+      "retryTranslations": "Recarregar página",
       "scrollContent": "Conteúdo com rolagem",
       "scrollTable": "Tabela com rolagem",
       "codeRegion": "Código {{language}}"
@@ -262,7 +265,7 @@
     "title": "Utilidades",
     "categories": {
       "dev-tools": {
-        "title": "Dev Tools",
+        "title": "Ferramentas de desenvolvimento",
         "description": "Recursos técnicos para desenvolvimento e testes.",
         "items": {
           "comparador-textos": {
