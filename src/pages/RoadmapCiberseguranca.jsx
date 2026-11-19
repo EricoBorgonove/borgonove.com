@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Select } from "../components/ui/Patterns";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { translatePtToEnWithMap } from "../utils/ptEnTranslate";
@@ -460,12 +461,12 @@ export default function RoadmapCiberseguranca() {
   }, [perfilSelecionado]);
 
   return (
-    <section ref={sectionRef} className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate ref={sectionRef}>
       <BackButton fallbackTo="/roadmaps" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">
         {t("roadmapPages.common.backToRoadmaps")}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -473,33 +474,33 @@ export default function RoadmapCiberseguranca() {
           />
         </svg>
         <span>{t("roadmapPages.ciber.title")}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">
+      </PageTitle>
+      <PageDescription>
         {t("roadmapPages.ciber.subtitle")}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <label htmlFor="perfil-roadmap" className="block text-sm text-slate-300 mb-2">
           {t("roadmapPages.ciber.filterLabel")}
         </label>
-        <select
+        <Select
           id="perfil-roadmap"
           value={perfilSelecionado}
           onChange={(event) => setPerfilSelecionado(event.target.value)}
-          className="w-full md:max-w-md bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+          className="w-full md:max-w-md border text-slate-100 focus:outline-none focus:border-cyan-400"
         >
           {perfilOpcoes.map((perfil) => (
             <option key={perfil.id} value={perfil.id}>
               {t(`roadmapPages.ciber.profiles.${perfil.id}`)}
             </option>
           ))}
-        </select>
+        </Select>
         <p className="text-xs text-slate-400 mt-2">
           {t("roadmapPages.ciber.filterHelp")}
         </p>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
             <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm1.1-7.8-.9.9A1.9 1.9 0 0 0 13 11h-2v-.5a3 3 0 0 1 .88-2.12l1.24-1.24A1.5 1.5 0 1 0 10 6H8a3.5 3.5 0 1 1 6.1 2.2Z" />
@@ -514,13 +515,13 @@ export default function RoadmapCiberseguranca() {
             <li className="text-justify">{t("roadmapPages.ciber.howToUse.3")}</li>
           </ol>
         </div>
-      </div>
+      </Panel>
 
       <div className="space-y-5 mb-10">
         {fases.map((fase, index) => (
-          <details
+          <Panel as="details" layout="plain"
             key={fase.titulo}
-            className="glass rounded-2xl p-6 md:p-8"
+
             data-roadmap-detail="true"
             data-roadmap-key={`fase-${index + 1}`}
           >
@@ -576,11 +577,11 @@ export default function RoadmapCiberseguranca() {
                 </>
               )}
             </div>
-          </details>
+          </Panel>
         ))}
       </div>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-sprint90">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-sprint90">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -606,9 +607,9 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-matriz">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-matriz">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -631,9 +632,9 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-stack">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-stack">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -650,9 +651,9 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-labs">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-labs">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -675,9 +676,9 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-dominios">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-dominios">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -698,10 +699,10 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
-        <details className="glass rounded-2xl p-6 md:p-8" data-roadmap-detail="true" data-roadmap-key="section-especializacoes">
+        <Panel as="details" layout="plain" data-roadmap-detail="true" data-roadmap-key="section-especializacoes">
           <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -726,9 +727,9 @@ export default function RoadmapCiberseguranca() {
               </div>
             ))}
           </div>
-        </details>
+        </Panel>
 
-        <details className="glass rounded-2xl p-6 md:p-8" data-roadmap-detail="true" data-roadmap-key="section-plano">
+        <Panel as="details" layout="plain" data-roadmap-detail="true" data-roadmap-key="section-plano">
           <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -755,10 +756,10 @@ export default function RoadmapCiberseguranca() {
               ))}
             </ul>
           </div>
-        </details>
+        </Panel>
       </div>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-cert-trilha">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-cert-trilha">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -775,9 +776,9 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mb-8" data-roadmap-detail="true" data-roadmap-key="section-marcos">
+      <Panel as="details" layout="plain" className="mb-8" data-roadmap-detail="true" data-roadmap-key="section-marcos">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -795,9 +796,9 @@ export default function RoadmapCiberseguranca() {
             ))}
           </ul>
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8" data-roadmap-detail="true" data-roadmap-key="section-portfolio">
+      <Panel as="details" layout="plain" data-roadmap-detail="true" data-roadmap-key="section-portfolio">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -815,9 +816,9 @@ export default function RoadmapCiberseguranca() {
             ))}
           </ul>
         </div>
-      </details>
+      </Panel>
 
-      <details className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="details" layout="plain" className="mt-8">
         <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
           <h2 className="text-xl font-semibold text-cyan-300 flex items-center gap-2">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -842,7 +843,7 @@ export default function RoadmapCiberseguranca() {
             </article>
           ))}
         </div>
-      </details>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

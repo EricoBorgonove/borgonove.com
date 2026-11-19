@@ -1,3 +1,4 @@
+import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -121,7 +122,7 @@ export default function AdminTechPlayDisciplina() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="flex flex-wrap items-center gap-3 text-sm text-cyan-300 mb-6">
         <Link to="/admin" className="hover:text-cyan-200 transition">
           {txt.adminArea}
@@ -134,29 +135,29 @@ export default function AdminTechPlayDisciplina() {
         <span className="text-slate-300">{getTechPlayDisciplinaTitle(disciplina, isEn)}</span>
       </div>
 
-      <div className="glass rounded-[32px] p-8 md:p-10 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.discipline}</p>
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
+        <PageHeader><PageTitle className="text-white mb-4">
           {getTechPlayDisciplinaTitle(disciplina, isEn)}
-        </h1>
-        <p className="text-slate-300 text-lg leading-relaxed max-w-3xl">
+        </PageTitle>
+        <PageDescription className="max-w-3xl">
           {getTechPlayDisciplinaSummary(disciplina, isEn)}
-        </p>
+        </PageDescription></PageHeader>
 
         <div className="admin-chip mt-8 inline-flex items-center gap-3 rounded-2xl px-5 py-4">
           <span className="text-sm text-slate-400">{txt.registeredTopics}</span>
           <span className="text-2xl font-black text-cyan-300">{disciplina.temas.length}</span>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-[32px] p-8 md:p-10 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.teamDraw}</p>
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">{txt.drawTitle}</h2>
           <p className="text-slate-300 text-lg leading-relaxed mb-8">{txt.drawDescription}</p>
         </div>
 
-        <div className="admin-panel rounded-[28px] max-w-4xl p-6 md:p-7">
+        <Panel as="div" layout="plain" className="max-w-4xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-5">
             <div>
               <h3 className="text-2xl font-black text-white mb-2">{txt.teamsTitle}</h3>
@@ -171,29 +172,29 @@ export default function AdminTechPlayDisciplina() {
           <label className="block text-sm text-slate-300 mb-3" htmlFor="equipes-sorteio">
             {txt.teamsList}
           </label>
-          <textarea
+          <Textarea
             id="equipes-sorteio"
             value={equipesInput}
             onChange={(event) => setEquipesInput(event.target.value)}
             placeholder={txt.teamPlaceholder}
-            className="min-h-[220px] w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-4 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+            className="min-h-[220px] w-full border text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <button
+            <Button variant="primary"
               type="button"
               onClick={handleSortear}
-              className="rounded-2xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+              className="text-slate-950 transition"
             >
               {txt.drawAction}
-            </button>
-            <button
+            </Button>
+            <Button variant="secondary"
               type="button"
               onClick={handleReset}
-              className="rounded-2xl border border-slate-700 px-5 py-3 text-sm font-medium text-slate-200 transition hover:border-cyan-400"
+              className="border border-slate-700 text-slate-200 transition hover:border-cyan-400"
             >
               {txt.clear}
-            </button>
+            </Button>
           </div>
 
           {erroSorteio && (
@@ -201,14 +202,14 @@ export default function AdminTechPlayDisciplina() {
               {erroSorteio}
             </p>
           )}
-        </div>
-      </div>
+        </Panel>
+      </Panel>
 
       <div className="grid gap-4">
         {disciplina.temas.map((tema, index) => (
-          <article
+          <Panel as="article" layout="plain"
             key={getTechPlayTemaTitle(tema, isEn)}
-            className="glass rounded-[24px] border border-white/5 p-6 md:p-7"
+            className="border border-white/5"
           >
             <div className="flex flex-col gap-4 md:flex-row md:items-start">
               <div className="shrink-0">
@@ -237,9 +238,9 @@ export default function AdminTechPlayDisciplina() {
                 </p>
               </div>
             </div>
-          </article>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

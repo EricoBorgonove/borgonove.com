@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { copy, localize, pick } from "../utils/pandasLocale";
@@ -153,7 +154,7 @@ export default function RoadmapPythonPandas() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8 flex flex-wrap gap-4">
         <Link
           to="/disciplinas/python-pandas"
@@ -181,7 +182,7 @@ export default function RoadmapPythonPandas() {
         </Link>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -189,14 +190,14 @@ export default function RoadmapPythonPandas() {
           />
         </svg>
         <span>{pick(txt.title, isEn)}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.subtitle, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
       <div className="grid gap-6 lg:grid-cols-2 mb-8">
         {weeks.map((semana, index) => (
-          <article key={semana.titulo} className="glass rounded-2xl p-6 md:p-8">
+          <Panel as="article" layout="plain" key={semana.titulo}>
             <div className="mb-5 flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/15 text-lg font-black text-cyan-300">
                 {index + 1}
@@ -222,11 +223,11 @@ export default function RoadmapPythonPandas() {
                 </div>
               ))}
             </div>
-          </article>
+          </Panel>
         ))}
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.finalExercise, isEn)}</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {finalProject.map((item, index) => (
@@ -236,12 +237,12 @@ export default function RoadmapPythonPandas() {
             </p>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.competencies, isEn)}</h2>
-        <div className="overflow-x-auto rounded-2xl border border-slate-800">
-          <table className="min-w-[680px] w-full text-left text-sm bg-slate-950/70">
+        <TableContainer className="rounded-2xl border border-slate-800">
+          <Table className="min-w-[680px] w-full text-left text-sm bg-slate-950/70">
             <thead className="bg-slate-900/90">
               <tr>
                 <th className="px-4 py-3 font-semibold text-slate-100">{pick(txt.level, isEn)}</th>
@@ -256,12 +257,12 @@ export default function RoadmapPythonPandas() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </Table>
+        </TableContainer>
         <p className="mt-5 text-sm text-slate-400">
           {pick(txt.ready, isEn)}
         </p>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

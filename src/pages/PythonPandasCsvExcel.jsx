@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import { copy, localize, pick } from "../utils/pandasLocale";
@@ -20,8 +21,8 @@ const commandRows = [
 
 function ComparisonTable({ rows, columns }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
+    <TableContainer className="rounded-2xl border border-slate-800">
+      <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
         <thead className="bg-slate-900/90">
           <tr>
             {columns.map((column) => (
@@ -48,8 +49,8 @@ function ComparisonTable({ rows, columns }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
@@ -106,14 +107,14 @@ export default function PythonPandasCsvExcel() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas/tabelas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -121,19 +122,19 @@ export default function PythonPandasCsvExcel() {
           />
         </svg>
         <span>CSV x Excel no Pandas</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.subtitle, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.practicalAnswer, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
           {pick(txt.practicalText, isEn)}
         </p>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.structureTitle, isEn)}</h2>
         <ComparisonTable
           rows={rows.structure}
@@ -143,10 +144,10 @@ export default function PythonPandasCsvExcel() {
             { key: "excel", label: "Excel (.xlsx, .xls)" },
           ]}
         />
-      </div>
+      </Panel>
 
       <div className="grid gap-8 lg:grid-cols-2 mb-8">
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.csvPandas, isEn)}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">
             {pick(txt.csvText, isEn)}
@@ -155,9 +156,9 @@ export default function PythonPandasCsvExcel() {
             <p><span className="font-semibold text-cyan-300">{pick(txt.advantage, isEn)}</span> {pick(txt.csvAdvantage, isEn)}</p>
             <p><span className="font-semibold text-cyan-300">{pick(txt.attention, isEn)}</span> {pick(txt.csvAttention, isEn)} <code className="text-slate-200">sep=';'</code>.</p>
           </div>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Excel no Pandas</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">
             {pick(txt.excelText, isEn)}
@@ -166,10 +167,10 @@ export default function PythonPandasCsvExcel() {
             <p><span className="font-semibold text-cyan-300">{pick(txt.advantage, isEn)}</span> {pick(txt.excelAdvantage, isEn)} <code className="text-slate-200">sheet_name</code>.</p>
             <p><span className="font-semibold text-cyan-300">{pick(txt.attention, isEn)}</span> {pick(txt.excelAttention, isEn)} <code className="text-slate-200">openpyxl</code>, {pick(txt.excelAttentionEnd, isEn)}</p>
           </div>
-        </article>
+        </Panel>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.commandsTitle, isEn)}</h2>
         <ComparisonTable
           rows={rows.commands}
@@ -179,25 +180,25 @@ export default function PythonPandasCsvExcel() {
             { key: "excel", label: pick(txt.noExcel, isEn), code: true },
           ]}
         />
-      </div>
+      </Panel>
 
       <div className="grid gap-8 lg:grid-cols-2 mb-8">
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whenCsv, isEn)}</h2>
           <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
             {txt.csvWhen.map((item) => <li key={item.pt}>{pick(item, isEn)}</li>)}
           </ul>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whenExcel, isEn)}</h2>
           <ul className="space-y-3 text-sm text-slate-300 leading-relaxed">
             {txt.excelWhen.map((item) => <li key={item.pt}>{pick(item, isEn)}</li>)}
           </ul>
-        </article>
+        </Panel>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.trap, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
           {pick(txt.trapText, isEn)}
@@ -206,7 +207,7 @@ export default function PythonPandasCsvExcel() {
           {pick(txt.proTip, isEn)}{" "}
           <code className="text-cyan-300">df.to_parquet()</code>. {pick(txt.proTipEnd, isEn)}
         </p>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

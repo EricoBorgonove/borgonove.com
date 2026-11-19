@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -308,11 +309,11 @@ export default function SorteioInstagram() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -320,51 +321,51 @@ export default function SorteioInstagram() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
       {!isAdminAutorizado ? (
-        <form onSubmit={autenticarAdmin} className="glass rounded-2xl p-8 max-w-xl">
+        <Panel as="form" layout="plain" onSubmit={autenticarAdmin} className="max-w-xl">
           <h2 className="text-2xl font-bold mb-2">{txt.protectedAccess}</h2>
           <p className="text-slate-400 text-sm mb-6">{txt.protectedDesc}</p>
           <div className="space-y-4">
             <label className="block">
               <span className="block text-sm text-slate-300 mb-2">{txt.user}</span>
-              <input
+              <Input
                 type="text"
                 value={loginUser}
                 onChange={(event) => setLoginUser(event.target.value)}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
               />
             </label>
             <label className="block">
               <span className="block text-sm text-slate-300 mb-2">{txt.password}</span>
-              <input
+              <Input
                 type="password"
                 value={loginPass}
                 onChange={(event) => setLoginPass(event.target.value)}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
               />
             </label>
           </div>
-          <button
+          <Button variant="primary"
             type="submit"
-            className="mt-6 bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition"
+            className="mt-6 text-slate-900 transition"
           >
             {txt.enter}
-          </button>
+          </Button>
           {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
-        </form>
+        </Panel>
       ) : (
         <>
-          <div className="glass rounded-2xl p-8">
+          <Panel as="div" layout="plain">
             <div className="flex justify-end mb-4">
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={sairAdmin}
-                className="border border-slate-700 text-slate-200 px-4 py-2 rounded-xl hover:border-cyan-400 transition text-sm"
+                className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
                 {txt.logout}
-              </button>
+              </Button>
             </div>
 
             <p className="text-slate-400 mb-6">{txt.apiDesc}</p>
@@ -372,36 +373,36 @@ export default function SorteioInstagram() {
             <div className="space-y-4">
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.token}</span>
-                <input
+                <Input
                   type="password"
                   value={accessToken}
                   onChange={(event) => setAccessToken(event.target.value)}
                   placeholder="EAAB..."
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
                 />
               </label>
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.userId}</span>
-                <input
+                <Input
                   type="text"
                   value={igUserId}
                   onChange={(event) => setIgUserId(event.target.value)}
                   placeholder="1784..."
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
                 />
               </label>
               <label className="block">
                 <span className="block text-sm text-slate-300 mb-2">{txt.postLink}</span>
-                <input
+                <Input
                   type="url"
                   value={linkPost}
                   onChange={(event) => setLinkPost(event.target.value)}
                   placeholder="https://www.instagram.com/p/..."
-                  className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                  className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
                 />
               </label>
               <label className="inline-flex items-center gap-2 text-slate-300">
-                <input
+                <Input
                   type="checkbox"
                   checked={semDuplicidadeUsuario}
                   onChange={(event) => setSemDuplicidadeUsuario(event.target.checked)}
@@ -412,39 +413,39 @@ export default function SorteioInstagram() {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-6">
-              <button
+              <Button variant="primary"
                 type="button"
                 onClick={buscarComentariosViaLink}
                 disabled={statusBusca === "loading"}
-                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition disabled:opacity-60"
+                className="text-slate-900 transition disabled:opacity-60"
               >
                 {statusBusca === "loading" ? txt.searching : txt.searchComments}
-              </button>
-              <button
+              </Button>
+              <Button variant="secondary"
                 type="button"
                 onClick={sortear}
                 disabled={sorteando || participantes.length === 0}
-                className="border border-cyan-600/70 text-cyan-300 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="border border-cyan-600/70 text-cyan-300 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sorteando ? txt.drawing : txt.startDraw}
-              </button>
-              <button
+              </Button>
+              <Button variant="secondary"
                 type="button"
                 onClick={resetar}
-                className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition"
+                className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
                 {txt.reset}
-              </button>
+              </Button>
             </div>
 
             {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
             <p className="text-slate-400 text-sm mt-4">
               {txt.validParticipants}: <strong className="text-slate-200">{participantes.length}</strong>
             </p>
-          </div>
+          </Panel>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <article className="glass rounded-2xl p-8">
+            <Panel as="article" layout="plain">
               <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.loadingDraw}</h2>
               {sorteando ? (
                 <div>
@@ -459,9 +460,9 @@ export default function SorteioInstagram() {
               ) : (
                 <p className="text-slate-400">{txt.loadAndStart}</p>
               )}
-            </article>
+            </Panel>
 
-            <article className="glass rounded-2xl p-8">
+            <Panel as="article" layout="plain">
               <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.winner}</h2>
               {!vencedor ? (
                 <p className="text-slate-400">{txt.noWinner}</p>
@@ -483,10 +484,10 @@ export default function SorteioInstagram() {
                   )}
                 </div>
               )}
-            </article>
+            </Panel>
           </div>
         </>
       )}
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -102,11 +103,11 @@ export default function ValidadorCpfCnpj() {
   }, [txt.enterDoc, txt.invalidCnpj, txt.invalidCpf, txt.invalidLength, txt.validCnpj, txt.validCpf, valor]);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-4xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -114,17 +115,17 @@ export default function ValidadorCpfCnpj() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <label className="block">
           <span className="block text-sm text-slate-300 mb-2">{txt.label}</span>
-          <input
+          <Input
             type="text"
             value={valor}
             onChange={(event) => setValor(event.target.value)}
             placeholder={txt.placeholder}
-            className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+            className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </label>
 
@@ -142,7 +143,7 @@ export default function ValidadorCpfCnpj() {
             {resultado.texto}
           </p>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Button, Panel } from "./ui/Patterns";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -24,7 +25,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-4xl z-[70]">
-      <div className="glass rounded-2xl px-5 py-4 md:px-6 md:py-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <Panel as="div" layout="plain" className="rounded-2xl px-5 py-4 md:px-6 md:py-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-slate-200 leading-relaxed">
           {t("cookieBanner.text")}{" "}
           <Link
@@ -35,14 +36,14 @@ export default function CookieBanner() {
           </Link>
           .
         </p>
-        <button
+        <Button variant="custom"
           type="button"
           onClick={handleAccept}
           className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-4 py-2 rounded-xl font-semibold transition"
         >
           {t("cookieBanner.accept")}
-        </button>
-      </div>
+        </Button>
+      </Panel>
     </div>
   );
 }

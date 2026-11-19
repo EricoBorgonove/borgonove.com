@@ -1,3 +1,4 @@
+import { PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -10,11 +11,11 @@ export default function NotFound() {
   const tx = (value) => (isEn ? translatePtToEnWithMap(value, notFoundEnMap) : value);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div className="text-center lg:text-left">
           <p className="text-cyan-300 text-sm uppercase tracking-[0.25em] mb-4">{tx("Erro 404")}</p>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">{tx("Página não encontrada")}</h1>
+          <PageTitle className="mb-4">{tx("Página não encontrada")}</PageTitle>
           <p className="text-slate-400 mb-8 leading-relaxed">
             {tx("O endereço acessado não existe ou foi movido. Use uma das opções abaixo para continuar navegando.")}
           </p>
@@ -35,7 +36,7 @@ export default function NotFound() {
           </div>
         </div>
 
-        <div className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain">
           <h2 className="text-xl font-semibold text-cyan-300 mb-4">{tx("Caminhos úteis")}</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
@@ -54,8 +55,8 @@ export default function NotFound() {
               </Link>
             ))}
           </div>
-        </div>
+        </Panel>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import ContactForm from "../components/ContactForm";
 import { useTranslation } from "react-i18next";
 
@@ -5,9 +6,9 @@ export default function Contato() {
   const { t } = useTranslation();
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 text-left">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center justify-start gap-3 text-left">
+    <PageTemplate className="text-left">
+      <PageHeader className="mx-auto">
+        <PageTitle className="mb-6 flex items-center justify-start gap-3 text-left">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
             <path
               fill="currentColor"
@@ -15,13 +16,13 @@ export default function Contato() {
             />
           </svg>
           <span>{t("contactPage.title")}</span>
-        </h1>
-        <p className="text-slate-400 mb-12">
+        </PageTitle>
+        <PageDescription>
           {t("contactPage.description")}
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
       <ContactForm />
-    </section>
+    </PageTemplate>
   );
 }

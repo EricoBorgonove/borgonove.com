@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -141,14 +142,14 @@ export default function PythonPandas() {
   };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {pick(txt.back, isEn)}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -156,10 +157,10 @@ export default function PythonPandas() {
           />
         </svg>
         <span>Python Pandas</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">
+      </PageTitle>
+      <PageDescription>
         {pick(txt.description, isEn)}
-      </p>
+      </PageDescription></PageHeader>
 
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-3">
@@ -201,7 +202,7 @@ export default function PythonPandas() {
         </Link>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whatIs, isEn)}</h2>
         <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
           <p>
@@ -218,9 +219,9 @@ export default function PythonPandas() {
             </article>
           </div>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.install, isEn)}</h2>
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
@@ -243,9 +244,9 @@ export default function PythonPandas() {
             <CodeBlock language="bash">conda install pandas</CodeBlock>
           </article>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.useTitle, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">
           {pick(txt.useText, isEn)}
@@ -267,17 +268,17 @@ export default function PythonPandas() {
             <CodeBlock>{isEn ? jupyterExampleEn : jupyterExample}</CodeBlock>
           </article>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.integrated, isEn)}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">
           {pick(txt.integratedText, isEn)}
         </p>
         <CodeBlock>{isEn ? integratedExampleEn : integratedExample}</CodeBlock>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.workflow, isEn)}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <p className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
@@ -287,7 +288,7 @@ export default function PythonPandas() {
             {pick(txt.workflowAutomate, isEn)}
           </p>
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

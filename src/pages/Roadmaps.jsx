@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { CardGrid, ContentCard, PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
 const roadmaps = [
@@ -113,54 +113,26 @@ export default function Roadmaps() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+    <PageTemplate>
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path fill="currentColor" d="M3 6a3 3 0 0 1 3-3h3a3 3 0 0 1 0 6H6v6h3a3 3 0 1 1 0 6H6a3 3 0 0 1-3-3V6Zm12-3h3a3 3 0 1 1 0 6h-3v2h-2V6a3 3 0 0 1 3-3Zm0 4h3a1 1 0 1 0 0-2h-3a1 1 0 0 0 0 2Zm-2 6h2v2h3a1 1 0 1 1 0 2h-3a3 3 0 0 1-3-3v-1h1Z" />
         </svg>
         <span>{t("roadmaps.title")}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-10">
+      </PageTitle>
+      <PageDescription>
         {t("roadmaps.description")}
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {roadmapsOrdenados.map((item) => {
-          const isActive = !item.emBreve && Boolean(item.href);
-          const card = (
-            <article
-              className={`relative overflow-hidden glass theme-hover-border p-6 rounded-2xl h-full transition duration-300 ${
-                isActive ? "hover:-translate-y-2 cursor-pointer" : "opacity-95"
-              }`}
-            >
-              {!isActive && (
-                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 backdrop-blur-[1px]">
-                  <span className="text-sky-100 text-sm md:text-base font-bold uppercase tracking-[0.2em]">
-                    {t("common.comingSoon")}
-                  </span>
-                </div>
-              )}
-              <h2 className="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
-                <span className="text-cyan-300">{item.icon}</span>
-                <span>{t(`roadmaps.items.${item.id}.title`)}</span>
-              </h2>
-              <p className="text-slate-300 text-sm leading-relaxed text-justify">
-                {t(`roadmaps.items.${item.id}.description`)}
-              </p>
-            </article>
-          );
-
-          if (!isActive) {
-            return <div key={item.id}>{card}</div>;
-          }
-
-          return (
-            <Link key={item.id} to={item.href} className="block">
-              {card}
-            </Link>
-          );
-        })}
-      </div>
-    </section>
+      <CardGrid>
+        {roadmapsOrdenados.map((item) => (
+          <ContentCard key={item.id} to={item.href} headingAs="h2"
+            title={<span className="flex items-center gap-2"><span aria-hidden="true">{item.icon}</span>{t(`roadmaps.items.${item.id}.title`)}</span>}
+            description={t(`roadmaps.items.${item.id}.description`)}
+            action={i18n.resolvedLanguage?.startsWith("en") ? "Open roadmap" : "Abrir roadmap"}
+            unavailable={item.emBreve || !item.href} unavailableLabel={t("common.comingSoon")} />
+        ))}
+      </CardGrid>
+    </PageTemplate>
   );
 }

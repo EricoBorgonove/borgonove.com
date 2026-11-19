@@ -66,6 +66,10 @@ npm run preview
 
 ## Rotas principais
 
+Laboratório visual dos componentes compartilhados: `/laboratorio-ui` (catálogo, conteúdo e formulário).
+
+Os padrões de apresentação ficam em `src/components/ui/Patterns.jsx` e `patterns.css`. Execute `npm test` para verificar os contratos dos componentes.
+
 - `/` — Home
 - `/disciplinas` — Lista de disciplinas
 - `/disciplinas/algoritmos` — Listas de exercícios de algoritmos

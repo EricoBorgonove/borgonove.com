@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -47,7 +48,7 @@ export default function Postgresql() {
   const hasSearch = query.trim().length > 0;
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas"
@@ -57,20 +58,20 @@ export default function Postgresql() {
         </BackButton>
       </div>
 
-      <div className="mb-10 max-w-4xl">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Banco de dados relacional
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">PostgreSQL</h1>
-        <p className="text-lg leading-relaxed text-slate-400">
+        <PageTitle className="mb-4">PostgreSQL</PageTitle>
+        <PageDescription>
           Nesta disciplina, você vai entender o PostgreSQL por partes: primeiro os conceitos, depois os comandos, os exemplos e a prática. Escolha um assunto e estude como se estivéssemos organizando a aula passo a passo.
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
       <div className="mb-8">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           <Link to="/disciplinas/postgresql/material-apoio" className="group block">
-            <article className="glass theme-hover-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border transition duration-300 hover:-translate-y-1">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
                   <span className="mb-4 inline-flex rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
@@ -86,10 +87,10 @@ export default function Postgresql() {
                   <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
                 </span>
               </div>
-            </article>
+            </Panel>
           </Link>
           <Link to="/disciplinas/postgresql/bancos-temporais" className="group block">
-            <article className="glass theme-hover-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border transition duration-300 hover:-translate-y-1">
               <div className="flex h-full flex-col gap-5 md:justify-between">
                 <div>
                   <span className="mb-4 inline-flex rounded-lg border border-orange-300/30 bg-orange-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-100">
@@ -105,10 +106,10 @@ export default function Postgresql() {
                   <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
                 </span>
               </div>
-            </article>
+            </Panel>
           </Link>
           <Link to="/disciplinas/postgresql/exercicios" className="group block">
-            <article className="glass theme-hover-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border transition duration-300 hover:-translate-y-1">
               <div className="flex h-full flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
                   <span className="mb-4 inline-flex rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
@@ -124,35 +125,35 @@ export default function Postgresql() {
                   <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
                 </span>
               </div>
-            </article>
+            </Panel>
           </Link>
         </div>
       </div>
 
-      <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <label htmlFor="busca-postgresql-assuntos" className="text-xl font-semibold text-cyan-300">
             O que você quer estudar agora?
           </label>
           {hasSearch && (
-            <button
+            <Button variant="secondary"
               type="button"
               onClick={() => setQuery("")}
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
+              className="inline-flex items-center justify-center border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
             >
               Limpar busca
-            </button>
+            </Button>
           )}
         </div>
-        <input
+        <Input
           id="busca-postgresql-assuntos"
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Ex.: create table, join, permissões, backup..."
-          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
+          className="w-full border text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
         />
-      </div>
+      </Panel>
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {hasSearch && filteredExerciseBlocks.map((block) => (
@@ -161,7 +162,7 @@ export default function Postgresql() {
             to={`/disciplinas/postgresql/exercicios/${block.list.slug}/${block.slug}`}
             className="group block"
           >
-            <article className="glass theme-hover-border flex h-full flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border flex h-full flex-col transition duration-300 hover:-translate-y-1">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
                   Exercícios
@@ -178,7 +179,7 @@ export default function Postgresql() {
                 Abrir exercícios
                 <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
         {filteredTopics.map((topic) => (
@@ -187,7 +188,7 @@ export default function Postgresql() {
             to={`/disciplinas/postgresql/${topic.slug}`}
             className="group block"
           >
-            <article className="glass theme-hover-border flex h-full flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border flex h-full flex-col transition duration-300 hover:-translate-y-1">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
                   {topic.category}
@@ -204,19 +205,19 @@ export default function Postgresql() {
                 Abrir assunto
                 <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
       </div>
 
       {filteredTopics.length === 0 && filteredExerciseBlocks.length === 0 && (
-        <div className="glass mt-8 rounded-2xl p-6 text-center md:p-8">
+        <Panel as="div" layout="plain" className="mt-8 text-center">
           <h2 className="mb-2 text-2xl font-semibold text-slate-100">Nenhum assunto encontrado</h2>
           <p className="text-sm leading-relaxed text-slate-400">
             Tente buscar pelo nome de um comando, por uma categoria ou pela finalidade do que você quer fazer no banco.
           </p>
-        </div>
+        </Panel>
       )}
-    </section>
+    </PageTemplate>
   );
 }

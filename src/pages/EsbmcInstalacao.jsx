@@ -1,3 +1,4 @@
+import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
@@ -120,8 +121,8 @@ const basicCommands = [
 
 function DependencyTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-700/70">
-      <table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
+    <TableContainer className="rounded-2xl border border-slate-700/70">
+      <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
         <thead className="bg-slate-950/50">
           <tr>
             <th className="px-4 py-3 font-semibold text-cyan-200">Pacote</th>
@@ -140,17 +141,17 @@ function DependencyTable() {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
 function SectionCard({ title, children }) {
   return (
-    <article className="glass min-w-0 overflow-hidden rounded-2xl p-6 md:p-8">
+    <Panel as="article" layout="plain" className="min-w-0 overflow-hidden">
       <h2 className="text-2xl font-bold text-cyan-300 mb-4">{title}</h2>
       {children}
-    </article>
+    </Panel>
   );
 }
 
@@ -462,25 +463,25 @@ export default function EsbmcInstalacao() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para ESBMC
         </BackButton>
       </div>
 
-      <header className="mb-10">
+      <PageHeader>
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
           Guia operacional
         </p>
-        <h1 className="text-4xl md:text-5xl font-black mb-5">Instalação Windows/Linux/macOS</h1>
-        <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-4xl">
+        <PageTitle className="mb-5">Instalação Windows/Linux/macOS</PageTitle>
+        <PageDescription className="text-justify max-w-4xl">
           Guia baseado na documentação oficial do ESBMC, organizado por subtelas para separar instalação rápida, configuração por sistema operacional, build avançado e validação do ambiente.
-        </p>
-      </header>
+        </PageDescription>
+      </PageHeader>
 
       <div className="grid min-w-0 lg:grid-cols-[300px_minmax(0,1fr)] gap-8 items-start">
-        <aside className="lg:sticky lg:top-24 glass rounded-2xl p-4">
+        <Panel as="aside" layout="plain" className="lg:sticky lg:top-24">
           <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
             Subtelas de instalação
           </p>
@@ -489,7 +490,7 @@ export default function EsbmcInstalacao() {
               const isActive = tab.id === activeTab.id;
 
               return (
-                <button
+                <Button variant="custom"
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTabId(tab.id)}
@@ -503,21 +504,21 @@ export default function EsbmcInstalacao() {
                   <span className="mt-1 block text-xs leading-relaxed text-slate-400">
                     {tab.description}
                   </span>
-                </button>
+                </Button>
               );
             })}
           </div>
-        </aside>
+        </Panel>
 
         <main className="min-w-0 space-y-6">
-          <article className="glass min-w-0 overflow-hidden rounded-2xl p-6 md:p-8">
+          <Panel as="article" layout="plain" className="min-w-0 overflow-hidden">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
               {activeTab.label}
             </p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
               {activeTab.description}
             </h2>
-          </article>
+          </Panel>
 
           {activeTab.id === "visao-geral" && <OverviewTab />}
           {activeTab.id === "windows" && <WindowsTab />}
@@ -527,6 +528,6 @@ export default function EsbmcInstalacao() {
           {activeTab.id === "validacao" && <ValidationTab />}
         </main>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

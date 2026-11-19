@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
@@ -1341,14 +1342,14 @@ export default function Docker() {
       };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {txt.back}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9 text-cyan-300">
           <path
             fill="currentColor"
@@ -1356,16 +1357,16 @@ export default function Docker() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">{txt.subtitle}</p>
+      </PageTitle>
+      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr] mb-8">
-        <div className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.goalTitle}</h2>
           <p className="text-sm text-slate-300 leading-relaxed">{txt.goal}</p>
-        </div>
+        </Panel>
 
-        <div className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.officialDocs}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-4">{txt.docsText}</p>
           <div className="flex flex-wrap gap-3">
@@ -1402,10 +1403,10 @@ export default function Docker() {
               {txt.settingsDocs}
             </a>
           </div>
-        </div>
+        </Panel>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.fundamentalsTitle}</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {DOCKER_CONCEPTS.map((concept) => (
@@ -1415,9 +1416,9 @@ export default function Docker() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.desktopSettingsTitle}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.desktopSettingsText}</p>
         <div className="grid gap-4 md:grid-cols-2">
@@ -1428,10 +1429,10 @@ export default function Docker() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
       <div className="grid gap-6 lg:grid-cols-2 mb-8">
-        <div className="glass rounded-2xl p-6">
+        <Panel as="div" layout="plain">
           <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.dockerfileTitle}</h2>
           <CodeBlock language="dockerfile" label="Dockerfile">
             {DOCKERFILE_EXAMPLE}
@@ -1446,8 +1447,8 @@ export default function Docker() {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="glass rounded-2xl p-6">
+        </Panel>
+        <Panel as="div" layout="plain">
           <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.composeTitle}</h2>
           <CodeBlock language="yaml" label="compose.yaml">
             {COMPOSE_EXAMPLE}
@@ -1462,12 +1463,12 @@ export default function Docker() {
               </li>
             ))}
           </ul>
-        </div>
+        </Panel>
       </div>
 
       <div className="space-y-5">
         {sections.map((section) => (
-          <details key={section.title} className="glass rounded-2xl p-6">
+          <Panel as="details" layout="plain" key={section.title}>
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
               {section.title}
             </summary>
@@ -1507,9 +1508,9 @@ export default function Docker() {
                 </article>
               ))}
             </div>
-          </details>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

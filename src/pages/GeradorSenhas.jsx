@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -133,11 +134,11 @@ export default function GeradorSenhas() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -145,50 +146,50 @@ export default function GeradorSenhas() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-6">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.length}</span>
-            <input
+            <Input
               type="number"
               min="4"
               max="64"
               value={length}
               onChange={(event) => setLength(event.target.value)}
               placeholder="12"
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <div className="grid grid-cols-2 gap-3 text-sm text-slate-300">
             <label className="inline-flex items-center gap-2">
-              <input type="checkbox" checked={useUpper} onChange={(event) => setUseUpper(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
+              <Input type="checkbox" checked={useUpper} onChange={(event) => setUseUpper(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
               {txt.upper}
             </label>
             <label className="inline-flex items-center gap-2">
-              <input type="checkbox" checked={useLower} onChange={(event) => setUseLower(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
+              <Input type="checkbox" checked={useLower} onChange={(event) => setUseLower(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
               {txt.lower}
             </label>
             <label className="inline-flex items-center gap-2">
-              <input type="checkbox" checked={useNumbers} onChange={(event) => setUseNumbers(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
+              <Input type="checkbox" checked={useNumbers} onChange={(event) => setUseNumbers(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
               {txt.numbers}
             </label>
             <label className="inline-flex items-center gap-2">
-              <input type="checkbox" checked={useSymbols} onChange={(event) => setUseSymbols(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
+              <Input type="checkbox" checked={useSymbols} onChange={(event) => setUseSymbols(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
               {txt.symbols}
             </label>
           </div>
         </div>
 
         <div className="flex flex-wrap gap-3 mt-6">
-          <button type="button" onClick={generatePassword} className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition">
+          <Button variant="primary" type="button" onClick={generatePassword} className="text-slate-900 transition">
             {txt.generate}
-          </button>
-          <button type="button" onClick={copyPassword} className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition">
+          </Button>
+          <Button variant="secondary" type="button" onClick={copyPassword} className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition">
             {txt.copy}
-          </button>
+          </Button>
         </div>
 
         <div className="mt-6">
@@ -203,7 +204,7 @@ export default function GeradorSenhas() {
           )}
           {message && <p className="text-sm mt-2 text-slate-300">{message}</p>}
         </div>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

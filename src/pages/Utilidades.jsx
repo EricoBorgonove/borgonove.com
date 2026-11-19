@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { CardGrid, ContentCard, PageTemplate, PageTitle, Section } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
 const categorias = [
@@ -106,8 +106,8 @@ export default function Utilidades() {
     );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+    <PageTemplate>
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -115,41 +115,23 @@ export default function Utilidades() {
           />
         </svg>
         <span>{t("utilities.title")}</span>
-      </h1>
+      </PageTitle>
 
       <div className="space-y-10">
         {categoriasOrdenadas.map((categoria) => (
-          <section key={categoria.id}>
-            <header className="mb-5">
-              <h2 className="text-2xl font-bold text-cyan-300">
-                {t(`utilities.categories.${categoria.id}.title`)}
-              </h2>
-              <p className="text-slate-400 text-sm mt-1">
-                {t(`utilities.categories.${categoria.id}.description`)}
-              </p>
-            </header>
-
-            <div className="grid md:grid-cols-2 gap-8">
+          <Section key={categoria.id} title={t(`utilities.categories.${categoria.id}.title`)}
+            description={t(`utilities.categories.${categoria.id}.description`)}>
+            <CardGrid>
               {categoria.items.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="glass theme-hover-border rounded-2xl p-8 transition duration-300 hover:-translate-y-2 block"
-                >
-                  <article>
-                    <h3 className="text-2xl font-bold mb-3 text-cyan-400">
-                      {t(`utilities.categories.${categoria.id}.items.${item.id}.title`)}
-                    </h3>
-                    <p className="text-slate-400">
-                      {t(`utilities.categories.${categoria.id}.items.${item.id}.description`)}
-                    </p>
-                  </article>
-                </Link>
+                <ContentCard key={item.to} to={item.to}
+                  title={t(`utilities.categories.${categoria.id}.items.${item.id}.title`)}
+                  description={t(`utilities.categories.${categoria.id}.items.${item.id}.description`)}
+                  action={i18n.resolvedLanguage?.startsWith("en") ? "Open tool" : "Abrir ferramenta"} />
               ))}
-            </div>
-          </section>
+            </CardGrid>
+          </Section>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -1605,10 +1606,10 @@ df["zona_longitude"].value_counts()`],
     codes: [`def classificar_quadrante(linha):
     lat = linha["reclat"]
     lon = linha["reclong"]
-    
+
     if pd.isna(lat) or pd.isna(lon):
         return "sem coordenada"
-    
+
     if lat >= 0 and lon >= 0:
         return "Nordeste"
     elif lat >= 0 and lon < 0:
@@ -1752,8 +1753,8 @@ function AnswerContent({ answer }) {
       ))}
 
       {answer.table && (
-        <div className="overflow-x-auto rounded-2xl border border-slate-800">
-          <table className="min-w-full divide-y divide-slate-800 text-sm">
+        <TableContainer className="rounded-2xl border border-slate-800">
+          <Table className="min-w-full divide-y divide-slate-800 text-sm">
             <tbody className="divide-y divide-slate-800 text-slate-300">
               {answer.table.map((row) => (
                 <tr key={row.join("-")}>
@@ -1765,8 +1766,8 @@ function AnswerContent({ answer }) {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </Table>
+        </TableContainer>
       )}
 
       {answer.expected && (
@@ -1875,7 +1876,7 @@ export default function PythonPandasProva() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas/listas-exercicios" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para Exercícios de Pandas
@@ -1886,7 +1887,7 @@ export default function PythonPandasProva() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Avaliação prática
         </p>
-        <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+        <PageTitle className="mb-4 flex items-center gap-3">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
             <path
               fill="currentColor"
@@ -1894,7 +1895,7 @@ export default function PythonPandasProva() {
             />
           </svg>
           <span>Prova Final de Pandas</span>
-        </h1>
+        </PageTitle>
         <div className="mb-5 inline-flex max-w-full rounded-2xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-200">
           {welcomeMessage}
         </div>
@@ -1904,7 +1905,7 @@ export default function PythonPandasProva() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Enunciado</h2>
           <div className="space-y-4 text-sm leading-relaxed text-slate-300">
             <p>
@@ -1914,9 +1915,9 @@ export default function PythonPandasProva() {
               A NASA informa que o dataset contém dados da The Meteoritical Society e disponibiliza campos como tipo do meteorito, massa, ano, coordenadas, latitude, longitude e informações de localização.
             </p>
           </div>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Fonte sugerida</h2>
           <p className="mb-4 text-sm leading-relaxed text-slate-300">
             Dataset Meteorite Landings, disponível no portal de dados abertos da NASA.
@@ -1928,18 +1929,18 @@ export default function PythonPandasProva() {
             Abrir dataset
             <span aria-hidden="true">→</span>
           </a>
-        </article>
+        </Panel>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Código inicial sugerido</h2>
         <CodeBlock>{starterCode}</CodeBlock>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Critérios de avaliação</h2>
-        <div className="overflow-x-auto rounded-2xl border border-slate-800">
-          <table className="min-w-full divide-y divide-slate-800 text-sm">
+        <TableContainer className="rounded-2xl border border-slate-800">
+          <Table className="min-w-full divide-y divide-slate-800 text-sm">
             <thead className="bg-slate-950/70 text-left text-slate-300">
               <tr>
                 <th className="px-4 py-3 font-semibold">Critério</th>
@@ -1954,13 +1955,13 @@ export default function PythonPandasProva() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
-      </div>
+          </Table>
+        </TableContainer>
+      </Panel>
 
       <div className="mt-8 space-y-8">
         {allExamParts.map((part, partIndex) => (
-          <article key={part.title} className="glass rounded-2xl p-6 md:p-8">
+          <Panel as="article" layout="plain" key={part.title}>
             <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{part.title}</h2>
             <ol className="grid gap-3 md:grid-cols-2">
               {part.questions.map((question, index) => {
@@ -1968,46 +1969,46 @@ export default function PythonPandasProva() {
 
                 return (
                 <li key={question} className="text-sm leading-relaxed text-slate-300">
-                  <button
+                  <Button variant="secondary"
                     type="button"
                     onClick={() => openPasswordModal(questionNumber)}
-                    className="exam-question-button h-full w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-left transition hover:border-cyan-400/60 hover:bg-cyan-500/10 hover:text-slate-100"
+                    className="exam-question-button h-full w-full border border-slate-800 bg-slate-950/60 text-left transition hover:border-cyan-400/60 hover:text-slate-100"
                   >
                     <span className="font-semibold text-cyan-300">{questionNumber}. </span>
                     {question}
-                  </button>
+                  </Button>
                 </li>
                 );
               })}
             </ol>
-          </article>
+          </Panel>
         ))}
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Desafio extra</h2>
         <p className="mb-5 text-sm leading-relaxed text-slate-300">
           Além das questões da prova, você pode conquistar até 1 ponto extra criando uma análise geográfica simples com latitude e longitude. Procure identificar regiões do mundo com maior concentração de registros e explique o que essa distribuição pode indicar.
         </p>
         <CodeBlock>{geoCode}</CodeBlock>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Código consolidado de limpeza</h2>
         <p className="mb-5 text-sm leading-relaxed text-slate-300">
           Acesse aqui o bloco completo de preparação dos dados, separado dos gabaritos das questões. Use a senha de limpeza para visualizar o código.
         </p>
-        <button
+        <Button variant="primary"
           type="button"
           onClick={openCleaningPasswordModal}
-          className="inline-flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+          className="inline-flex items-center gap-2 text-slate-950 transition"
         >
           Abrir limpeza
           <span aria-hidden="true">→</span>
-        </button>
-      </div>
+        </Button>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Orientações para entrega</h2>
         <p className="mb-4 text-sm leading-relaxed text-slate-300">
           Entregue um notebook .ipynb contendo:
@@ -2020,7 +2021,7 @@ export default function PythonPandasProva() {
             </li>
           ))}
         </ul>
-      </div>
+      </Panel>
 
       {passwordQuestion !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 px-4 py-6 backdrop-blur-sm">
@@ -2041,14 +2042,14 @@ export default function PythonPandasProva() {
                   </p>
                 )}
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={closePasswordModal}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 aria-label="Fechar"
               >
                 ×
-              </button>
+              </Button>
             </div>
 
             <div className="min-h-0 overflow-y-auto p-5 md:p-6">
@@ -2074,14 +2075,14 @@ export default function PythonPandasProva() {
                       <span className="mb-2 block text-sm font-semibold text-slate-300">
                         Senha da questão
                       </span>
-                      <input
+                      <Input
                         type="password"
                         value={questionPassword}
                         onChange={(event) => {
                           setQuestionPassword(event.target.value);
                           setPasswordError(false);
                         }}
-                        className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
+                        className="w-full border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
                         autoComplete="off"
                         autoFocus
                       />
@@ -2094,19 +2095,19 @@ export default function PythonPandasProva() {
                     )}
 
                     <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                      <button
+                      <Button variant="secondary"
                         type="button"
                         onClick={closePasswordModal}
-                        className="rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                        className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                       >
                         Cancelar
-                      </button>
-                      <button
+                      </Button>
+                      <Button variant="primary"
                         type="submit"
-                        className="rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                        className="text-slate-950 transition"
                       >
                         Abrir gabarito
-                      </button>
+                      </Button>
                     </div>
                   </form>
                 </>
@@ -2128,14 +2129,14 @@ export default function PythonPandasProva() {
                   Limpeza consolidada
                 </h2>
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={closeCleaningPasswordModal}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 aria-label="Fechar"
               >
                 ×
-              </button>
+              </Button>
             </div>
 
             <form className="space-y-4" onSubmit={handleCleaningPasswordSubmit}>
@@ -2143,14 +2144,14 @@ export default function PythonPandasProva() {
                 <span className="mb-2 block text-sm font-semibold text-slate-300">
                   Senha da limpeza
                 </span>
-                <input
+                <Input
                   type="password"
                   value={cleaningPassword}
                   onChange={(event) => {
                     setCleaningPassword(event.target.value);
                     setCleaningPasswordError(false);
                   }}
-                  className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
+                  className="w-full border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400"
                   autoComplete="off"
                   autoFocus
                 />
@@ -2163,19 +2164,19 @@ export default function PythonPandasProva() {
               )}
 
               <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                <button
+                <Button variant="secondary"
                   type="button"
                   onClick={closeCleaningPasswordModal}
-                  className="rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                  className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 >
                   Cancelar
-                </button>
-                <button
+                </Button>
+                <Button variant="primary"
                   type="submit"
-                  className="rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                  className="text-slate-950 transition"
                 >
                   Abrir limpeza
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -2197,14 +2198,14 @@ export default function PythonPandasProva() {
                   Use este bloco como preparação do dataset antes das análises.
                 </p>
               </div>
-              <button
+              <Button variant="secondary"
                 type="button"
                 onClick={closeCleaningAnswerModal}
-                className="rounded-xl border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                 aria-label="Fechar limpeza"
               >
                 ×
-              </button>
+              </Button>
             </div>
 
             <div className="min-h-0 overflow-y-auto p-5 md:p-6">
@@ -2213,6 +2214,6 @@ export default function PythonPandasProva() {
           </div>
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

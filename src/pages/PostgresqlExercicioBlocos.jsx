@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link, Navigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import { findPostgresqlExerciseList } from "../data/postgresqlExercises";
@@ -12,7 +13,7 @@ export default function PostgresqlExercicioBlocos() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/postgresql/exercicios"
@@ -22,16 +23,16 @@ export default function PostgresqlExercicioBlocos() {
         </BackButton>
       </div>
 
-      <div className="mb-10 max-w-4xl">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Trilha de exercícios
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">{list.title}</h1>
-        <p className="text-lg leading-relaxed text-slate-400">{list.summary}</p>
-      </div>
+        <PageTitle className="mb-4">{list.title}</PageTitle>
+        <PageDescription>{list.summary}</PageDescription>
+      </PageHeader>
 
       {list.files && (
-        <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain" className="mb-8">
           <h2 className="mb-4 text-xl font-semibold text-cyan-300">Arquivos para download</h2>
           <div className="flex flex-wrap gap-3">
             {list.files.map((file) => (
@@ -46,7 +47,7 @@ export default function PostgresqlExercicioBlocos() {
               </a>
             ))}
           </div>
-        </div>
+        </Panel>
       )}
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -56,7 +57,7 @@ export default function PostgresqlExercicioBlocos() {
             to={`/disciplinas/postgresql/exercicios/${list.slug}/${block.slug}`}
             className="group block"
           >
-            <article className="glass theme-hover-border flex h-full flex-col rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <Panel as="article" layout="plain" className="theme-hover-border flex h-full flex-col transition duration-300 hover:-translate-y-1">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
                   Tipo: {block.level}
@@ -79,10 +80,10 @@ export default function PostgresqlExercicioBlocos() {
                 Abrir exercícios
                 <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
               </span>
-            </article>
+            </Panel>
           </Link>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

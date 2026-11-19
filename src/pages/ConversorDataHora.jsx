@@ -1,3 +1,4 @@
+import { Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -75,11 +76,11 @@ export default function ConversorDataHora() {
   }, [dateInput, locale, targetOffset]);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-5xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -87,57 +88,57 @@ export default function ConversorDataHora() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-6">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.source}</span>
-            <input
+            <Input
               type="datetime-local"
               value={dateInput}
               onChange={(event) => setDateInput(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.targetOffset}</span>
-            <input
+            <Input
               type="number"
               min="-12"
               max="14"
               value={targetOffset}
               onChange={(event) => setTargetOffset(event.target.value)}
               placeholder="-3"
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
         </div>
 
         {resultado ? (
           <div className="grid md:grid-cols-2 gap-4 mt-8 text-sm">
-            <div className="glass rounded-xl p-4">
+            <Panel as="div" layout="plain">
               <p className="text-slate-400">{txt.localTime}</p>
               <p className="text-slate-100 font-semibold mt-1">{resultado.local}</p>
-            </div>
-            <div className="glass rounded-xl p-4">
+            </Panel>
+            <Panel as="div" layout="plain">
               <p className="text-slate-400">{txt.utcTime}</p>
               <p className="text-slate-100 font-semibold mt-1">{resultado.utc}</p>
-            </div>
-            <div className="glass rounded-xl p-4 md:col-span-2">
+            </Panel>
+            <Panel as="div" layout="plain" className="md:col-span-2">
               <p className="text-slate-400">{txt.targetZoneTime}</p>
               <p className="text-slate-100 font-semibold mt-1">{resultado.custom}</p>
-            </div>
-            <div className="glass rounded-xl p-4 md:col-span-2">
+            </Panel>
+            <Panel as="div" layout="plain" className="md:col-span-2">
               <p className="text-slate-400">{txt.timestamp}</p>
               <p className="text-slate-100 font-semibold mt-1 break-all">{resultado.timestamp}</p>
-            </div>
+            </Panel>
           </div>
         ) : (
           <p className="mt-6 text-slate-400">{txt.invalid}</p>
         )}
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

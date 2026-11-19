@@ -1,3 +1,4 @@
+import { PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import sobreBg from "../assets/images/innovalabs-software-developer-6521720.jpg";
@@ -124,16 +125,16 @@ export default function Home() {
   const projectItems = t("home.projects.items", { returnObjects: true });
 
   return (
-    <>
+    <PageTemplate as="div" width="landing">
       <section id="inicio" className="min-h-screen flex items-center justify-center text-center px-6">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-black leading-tight">
+          <PageTitle>
             {t("home.hero.titleBefore")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               {t("home.hero.titleHighlight")}
             </span>{" "}
             {t("home.hero.titleAfter")}
-          </h1>
+          </PageTitle>
 
           <p className="mt-8 text-lg text-slate-400 max-w-2xl mx-auto">
             {t("home.hero.description")}
@@ -174,26 +175,26 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="glass p-8 rounded-2xl hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
+            <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">+100</h3>
               <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.projects")}</p>
-            </div>
-            <div className="glass p-8 rounded-2xl hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
+            </Panel>
+            <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">+800</h3>
               <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.students")}</p>
-            </div>
-            <div className="glass p-8 rounded-2xl hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
+            </Panel>
+            <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">
                 {t("home.about.stats.strategy").split(" ")[0]}
               </h3>
               <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.strategy")}</p>
-            </div>
-            <div className="glass p-8 rounded-2xl hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
+            </Panel>
+            <Panel as="div" layout="plain" className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300">
               <h3 className="text-3xl font-bold text-cyan-400">
                 {t("home.about.stats.performance").split(" ")[0]}
               </h3>
               <p className="text-slate-400 text-sm mt-2">{t("home.about.stats.performance")}</p>
-            </div>
+            </Panel>
           </div>
         </div>
       </section>
@@ -211,16 +212,16 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 gap-6">
             {diferenciais.map((item) => (
-              <article
+              <Panel as="article" layout="plain"
                 key={item.key}
-                className="glass rounded-2xl p-7 h-full flex flex-col transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
+                className="h-full flex flex-col transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
               >
                 <div className="h-16 w-16 rounded-full bg-slate-800/70 border border-slate-700 text-cyan-300 flex items-center justify-center">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-bold mt-6 mb-3">{t(`home.solutions.items.${item.key}.title`)}</h3>
                 <p className="text-slate-400 text-justify">{t(`home.solutions.items.${item.key}.description`)}</p>
-              </article>
+              </Panel>
             ))}
           </div>
         </div>
@@ -232,16 +233,16 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {servicos.map((item) => (
-              <article
+              <Panel as="article" layout="plain"
                 key={item.key}
-                className="glass p-10 rounded-2xl h-full transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
+                className="h-full transition duration-300 hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card"
               >
                 <h3 className="text-xl font-semibold mb-4 text-cyan-400 inline-flex items-center justify-center gap-2">
                   <span className="text-cyan-300 [&_svg]:h-5 [&_svg]:w-5">{item.icon}</span>
                   <span>{t(`home.services.items.${item.key}.title`)}</span>
                 </h3>
                 <p className="text-slate-400 text-sm">{t(`home.services.items.${item.key}.description`)}</p>
-              </article>
+              </Panel>
             ))}
           </div>
         </div>
@@ -265,20 +266,20 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {projectItems.map((title) => (
-                <article
+                <Panel as="article" layout="plain"
                   key={title}
-                  className="glass p-8 rounded-2xl hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300"
+                  className="hover:-translate-y-2 hover:!border-cyan-400/40 home-hover-card transition duration-300"
                 >
                   <h3 className="text-lg font-semibold text-cyan-400 mb-3">{title}</h3>
                   <p className="text-slate-400 text-sm">
                     {t("home.projects.cardDescription")}
                   </p>
-                </article>
+                </Panel>
               ))}
           </div>
         </div>
       </section>
 
-    </>
+    </PageTemplate>
   );
 }

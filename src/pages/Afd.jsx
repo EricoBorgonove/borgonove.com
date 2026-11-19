@@ -1,3 +1,4 @@
+import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import BackButton from "../components/BackButton";
 
@@ -114,27 +115,27 @@ export default function Afd() {
     subdisciplines[0];
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para Disciplinas
         </BackButton>
       </div>
 
-      <header className="mb-10">
+      <PageHeader>
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
           Autômatos Finitos Determinísticos
         </p>
-        <h1 className="text-4xl md:text-5xl font-black mb-5">AFD</h1>
-        <p className="text-xl md:text-2xl text-cyan-200 font-semibold mb-4">
+        <PageTitle className="mb-5">AFD</PageTitle>
+        <PageDescription className="text-xl md:text-2xl text-cyan-200 font-semibold">
           {selectedSubdiscipline.title}
-        </p>
+        </PageDescription>
         <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-4xl">
           Esta matéria reúne subdisciplinas de estudo sobre Autômatos Finitos Determinísticos. O objetivo é aprender a ler o diagrama formalmente, interpretar estados de aceitação e traduzir caminhos aceitos para Expressões Regulares.
         </p>
-      </header>
+      </PageHeader>
 
-      <div className="glass rounded-2xl p-4 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
           Subdisciplinas
         </p>
@@ -143,7 +144,7 @@ export default function Afd() {
             const isActive = subdiscipline.id === activeSubdiscipline;
 
             return (
-              <button
+              <Button variant="custom"
                 key={subdiscipline.id}
                 type="button"
                 onClick={() => setActiveSubdiscipline(subdiscipline.id)}
@@ -157,16 +158,16 @@ export default function Afd() {
                 <span className="mt-1 block text-xs leading-relaxed text-slate-400">
                   {subdiscipline.description}
                 </span>
-              </button>
+              </Button>
             );
           })}
         </div>
-      </div>
+      </Panel>
 
       <div className="space-y-6">
         {activeSubdiscipline === "afd-er" ? (
           <>
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">
             1. Identifique o ponto de partida e a chegada
           </h2>
@@ -176,17 +177,17 @@ export default function Afd() {
           <p className="text-slate-300 leading-relaxed text-justify">
             Quando houver mais de um estado final, cada caminho aceito deve ser considerado. Na expressão regular, esses caminhos são combinados com o operador de escolha, representado pelo sinal de soma. Em outras palavras, se um autômato aceita por dois caminhos diferentes, a expressão final deve contemplar as duas possibilidades.
           </p>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">
             2. Aprenda os três movimentos básicos
           </h2>
           <p className="text-slate-300 leading-relaxed text-justify mb-5">
             A maior parte dos autômatos pode ser interpretada a partir de três estruturas simples: sequência, escolha e repetição. Ao reconhecer essas peças no desenho, a tradução para Expressão Regular fica muito mais segura.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-slate-700/70">
-            <table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
+          <TableContainer className="rounded-2xl border border-slate-700/70">
+            <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
               <thead className="bg-slate-950/50">
                 <tr>
                   <th className="px-4 py-3 font-semibold text-cyan-200">Estrutura</th>
@@ -205,11 +206,11 @@ export default function Afd() {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
-        </article>
+            </Table>
+          </TableContainer>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">
             3. Use a técnica da simplificação
           </h2>
@@ -231,9 +232,9 @@ export default function Afd() {
               Se o caminho chega ao estado q por a, permanece nele repetindo b e sai por c, então o trecho inteiro pode ser representado por <span className="font-mono text-cyan-100">ab*c</span>.
             </p>
           </div>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">
             4. Checklist para não se perder
           </h2>
@@ -245,18 +246,18 @@ export default function Afd() {
               </div>
             ))}
           </div>
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="article" layout="plain">
           <h2 className="text-2xl font-bold text-cyan-300 mb-4">Resumo visual</h2>
           <p className="text-slate-300 leading-relaxed text-justify">
             Ao transformar um AFD em uma Expressão Regular, leia o desenho como se estivesse contando a história dos caminhos aceitos: eu começo no estado inicial, posso escolher entre determinados símbolos, talvez repita um trecho algumas vezes, passo pelos estados necessários e termino em um estado de aceitação. A expressão regular é a forma algébrica dessa história.
           </p>
-        </article>
+        </Panel>
           </>
         ) : (
           <>
-            <article className="glass rounded-2xl p-6 md:p-8">
+            <Panel as="article" layout="plain">
               <h2 className="text-2xl font-bold text-cyan-300 mb-4">
                 Quando o AFD aceita a cadeia vazia?
               </h2>
@@ -266,11 +267,11 @@ export default function Afd() {
               <p className="text-slate-300 leading-relaxed text-justify">
                 Existem duas formas principais de representar essa situação: deixar que o asterisco represente a repetição zero vezes ou somar explicitamente a cadeia vazia à expressão. A escolha depende da estrutura do autômato.
               </p>
-            </article>
+            </Panel>
 
             <div className="grid lg:grid-cols-3 gap-5">
               {epsilonCases.map((item) => (
-                <article key={item.title} className="glass rounded-2xl p-6">
+                <Panel as="article" layout="plain" key={item.title}>
                   <p className="text-sm font-semibold text-emerald-300 mb-2">{item.subtitle}</p>
                   <h2 className="text-xl font-bold text-cyan-300 mb-4">{item.title}</h2>
                   <p className="text-sm text-slate-300 leading-relaxed text-justify mb-5">
@@ -285,11 +286,11 @@ export default function Afd() {
                       {item.translation}
                     </p>
                   </div>
-                </article>
+                </Panel>
               ))}
             </div>
 
-            <article className="glass rounded-2xl p-6 md:p-8">
+            <Panel as="article" layout="plain">
               <h2 className="text-2xl font-bold text-cyan-300 mb-4">
                 Como identificar no desenho?
               </h2>
@@ -299,17 +300,17 @@ export default function Afd() {
               <p className="text-slate-300 leading-relaxed text-justify">
                 Se a expressão final não permite gerar vazio, mas o estado inicial do autômato é final, então a expressão está incompleta. Em geral, isso é corrigido com um asterisco envolvendo o trecho adequado ou com uma soma explícita usando ϵ.
               </p>
-            </article>
+            </Panel>
 
-            <article className="glass rounded-2xl p-6 md:p-8">
+            <Panel as="article" layout="plain">
               <h2 className="text-2xl font-bold text-cyan-300 mb-4">Dica de ouro</h2>
               <p className="text-slate-300 leading-relaxed text-justify">
                 Ao finalizar uma Expressão Regular, faça sempre a pergunta: “se eu não ler nenhum símbolo, essa expressão ainda pode aceitar?”. Se a resposta for não, mas o estado inicial do AFD for final, revise a expressão. Provavelmente está faltando um <span className="font-mono text-cyan-100">ϵ</span>, um <span className="font-mono text-cyan-100">+</span> com alternativa vazia ou um <span className="font-mono text-cyan-100">*</span> aplicado ao bloco correto.
               </p>
-            </article>
+            </Panel>
           </>
         )}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

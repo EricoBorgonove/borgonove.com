@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Select } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -133,12 +134,12 @@ export default function ModelagemDados() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{txt.back}</BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -146,24 +147,24 @@ export default function ModelagemDados() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">{txt.subtitle}</p>
+      </PageTitle>
+      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.briefTitle}</h2>
         <p className="text-slate-300 text-sm leading-relaxed text-justify">
           {txt.briefText}
         </p>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <p className="text-xs text-slate-400 mb-4">
           {txt.totalLoaded}: {exercicios.length}
         </p>
         <div className="grid md:grid-cols-12 gap-3">
           <label className="block md:col-span-5">
             <span className="block text-sm text-slate-300 mb-2">{txt.searchTitleOrText}</span>
-            <input
+            <Input
               type="search"
               value={query}
               onChange={(event) => {
@@ -171,13 +172,13 @@ export default function ModelagemDados() {
                 setCurrentPage(1);
               }}
               placeholder={txt.searchPlaceholder}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{txt.searchById}</span>
-            <input
+            <Input
               type="number"
               min="1"
               value={idQuery}
@@ -186,50 +187,50 @@ export default function ModelagemDados() {
                 setCurrentPage(1);
               }}
               placeholder={txt.typeExample}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block md:col-span-3">
             <span className="block text-sm text-slate-300 mb-2">{txt.sortBy}</span>
-            <select
+            <Select
               value={orderBy}
               onChange={(event) => {
                 setOrderBy(event.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             >
               <option value="id-asc">{txt.idAsc}</option>
               <option value="id-desc">{txt.idDesc}</option>
               <option value="titulo-asc">{txt.titleAsc}</option>
               <option value="titulo-desc">{txt.titleDesc}</option>
-            </select>
+            </Select>
           </label>
 
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{txt.perPage}</span>
-            <select
+            <Select
               value={perPage}
               onChange={(event) => {
                 setPerPage(Number(event.target.value));
                 setCurrentPage(1);
               }}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             >
               <option value={10}>10</option>
               <option value={15}>15</option>
               <option value={25}>25</option>
               <option value={50}>50</option>
-            </select>
+            </Select>
           </label>
         </div>
-      </div>
+      </Panel>
 
       {pageItems.length > 0 ? (
         <div className="space-y-4">
           {pageItems.map((item) => (
-            <article key={item.id} className="glass rounded-2xl p-6">
+            <Panel as="article" layout="plain" key={item.id}>
               <div className="flex items-center gap-3 mb-3">
                 <span className="inline-flex items-center justify-center min-w-10 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500 text-slate-950">
                   #{item.id}
@@ -237,27 +238,27 @@ export default function ModelagemDados() {
                 <h3 className="text-lg font-semibold text-cyan-300">{getExerciseTitle(item, isEn)}</h3>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed text-justify">{getExerciseDescription(item, isEn)}</p>
-            </article>
+            </Panel>
           ))}
         </div>
       ) : (
-        <div className="glass rounded-2xl p-10 text-center text-slate-400">
+        <Panel as="div" layout="plain" className="text-center text-slate-400">
           {txt.noResult}
-        </div>
+        </Panel>
       )}
 
       <div className="mt-8 flex items-center justify-center gap-2 flex-wrap">
-        <button
+        <Button variant="secondary"
           type="button"
           onClick={() => handlePageChange(safePage - 1)}
           disabled={safePage === 1}
-          className="px-3 py-2 rounded-lg border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
+          className="border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
         >
           {txt.previous}
-        </button>
+        </Button>
 
         {renderPages().map((page) => (
-          <button
+          <Button variant="custom"
             key={`page-${page}`}
             type="button"
             onClick={() => handlePageChange(page)}
@@ -268,18 +269,18 @@ export default function ModelagemDados() {
             }`}
           >
             {page}
-          </button>
+          </Button>
         ))}
 
-        <button
+        <Button variant="secondary"
           type="button"
           onClick={() => handlePageChange(safePage + 1)}
           disabled={safePage === totalPages}
-          className="px-3 py-2 rounded-lg border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
+          className="border border-slate-700 text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed hover:border-cyan-400 transition"
         >
           {txt.next}
-        </button>
+        </Button>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

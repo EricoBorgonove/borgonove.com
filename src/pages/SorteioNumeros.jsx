@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -221,11 +222,11 @@ export default function SorteioNumeros() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -233,44 +234,44 @@ export default function SorteioNumeros() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <p className="text-slate-400 mb-6">{txt.subtitle}</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.min}</span>
-            <input
+            <Input
               type="number"
               value={minimo}
               onChange={(event) => setMinimo(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.max}</span>
-            <input
+            <Input
               type="number"
               value={maximo}
               onChange={(event) => setMaximo(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.quantity}</span>
-            <input
+            <Input
               type="number"
               value={quantidade}
               onChange={(event) => setQuantidade(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="flex items-center gap-2 text-slate-300 mt-8 sm:mt-0">
-            <input
+            <Input
               type="checkbox"
               checked={semRepeticao}
               onChange={(event) => setSemRepeticao(event.target.checked)}
@@ -281,28 +282,28 @@ export default function SorteioNumeros() {
         </div>
 
         <div className="flex flex-wrap gap-3 mt-6">
-          <button
+          <Button variant="primary"
             type="button"
             onClick={sortear}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition"
+            className="text-slate-900 transition"
           >
             {txt.draw}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             type="button"
             onClick={continuarSorteioSequencial}
             disabled={!sequencia || sequencia.poolRestante.length === 0}
-            className="border border-cyan-600/70 text-cyan-300 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="border border-cyan-600/70 text-cyan-300 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {txt.continueNoRepeat}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             type="button"
             onClick={limparTudo}
-            className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition"
+            className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
             {txt.clear}
-          </button>
+          </Button>
         </div>
 
         {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
@@ -311,9 +312,9 @@ export default function SorteioNumeros() {
             {txt.activeSequence} <strong>{sequencia.min}</strong> a <strong>{sequencia.max}</strong>. {txt.remaining}: <strong>{sequencia.poolRestante.length}</strong>.
           </p>
         )}
-      </div>
+      </Panel>
 
-      <article className="glass rounded-2xl p-8 mt-8">
+      <Panel as="article" layout="plain" className="mt-8">
         <h2 className="text-2xl font-bold mb-5">{txt.currentResult}</h2>
         {resultado.length === 0 ? (
           <p className="text-slate-400">{txt.noDrawYet}</p>
@@ -329,15 +330,15 @@ export default function SorteioNumeros() {
             ))}
           </div>
         )}
-      </article>
+      </Panel>
 
-      <article className="glass rounded-2xl p-8 mt-8">
+      <Panel as="article" layout="plain" className="mt-8">
         <h2 className="text-2xl font-bold mb-5">{txt.history}</h2>
         {historico.length === 0 ? (
           <p className="text-slate-400">{txt.noHistory}</p>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <TableContainer>
+            <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
                   <th className="py-3 pr-4">{txt.interval}</th>
@@ -356,10 +357,10 @@ export default function SorteioNumeros() {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </Table>
+          </TableContainer>
         )}
-      </article>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

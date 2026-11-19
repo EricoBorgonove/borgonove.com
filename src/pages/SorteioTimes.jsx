@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -99,11 +100,11 @@ export default function SorteioTimes() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -111,60 +112,60 @@ export default function SorteioTimes() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-3 gap-6">
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{txt.participants}</span>
-            <textarea
+            <Textarea
               rows={9}
               value={nomesInput}
               onChange={(event) => setNomesInput(event.target.value)}
               placeholder={"Ana\nBruno\nCarlos\nDaniela"}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <div>
             <label className="block">
               <span className="block text-sm text-slate-300 mb-2">{txt.teamsAmount}</span>
-              <input
+              <Input
                 type="number"
                 min="2"
                 value={quantidadeTimes}
                 onChange={(event) => setQuantidadeTimes(event.target.value)}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
               />
             </label>
-            <button
+            <Button variant="primary"
               type="button"
               onClick={sortearTimes}
-              className="mt-4 w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition"
+              className="mt-4 w-full text-slate-900 transition"
             >
               {txt.drawTeams}
-            </button>
+            </Button>
             <p className="text-sm text-slate-400 mt-3">{txt.participantsCount}: {participantes.length}</p>
           </div>
         </div>
 
         {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
-      </div>
+      </Panel>
 
       {times.length > 0 && (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {times.map((time) => (
-            <article key={time.nome} className="glass rounded-2xl p-6">
+            <Panel as="article" layout="plain" key={time.nome}>
               <h2 className="text-xl font-bold text-cyan-300 mb-4">{time.nome}</h2>
               <ul className="space-y-2 text-slate-300 text-sm">
                 {time.membros.map((membro) => (
                   <li key={`${time.nome}-${membro}`}>{membro}</li>
                 ))}
               </ul>
-            </article>
+            </Panel>
           ))}
         </div>
       )}
-    </section>
+    </PageTemplate>
   );
 }

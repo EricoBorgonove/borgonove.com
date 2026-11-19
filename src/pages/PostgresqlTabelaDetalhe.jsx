@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
@@ -201,8 +202,8 @@ function LevelBadge({ level }) {
 
 function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="min-w-[980px] w-full text-left text-sm bg-slate-950/70">
+    <TableContainer className="rounded-2xl border border-slate-800">
+      <Table className="min-w-[980px] w-full text-left text-sm bg-slate-950/70">
         <thead className="bg-slate-900/90">
           <tr>
             {columns.map((column) => (
@@ -230,10 +231,10 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
                       <code className="whitespace-pre-wrap text-slate-200">
                         <HighlightText value={row[column.key]} query={query} />
                       </code>
-                      <button
+                      <Button variant="secondary"
                         type="button"
                         onClick={() => onCopyExample(row[column.key], rowKey)}
-                        className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
+                        className="inline-flex h-8 w-8 shrink-0 items-center justify-center border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                         aria-label={
                           copiedKey === rowKey
                             ? `Exemplo copiado: ${row[column.key]}`
@@ -242,7 +243,7 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
                         title={copiedKey === rowKey ? "Copiado" : "Copiar exemplo"}
                       >
                         {copiedKey === rowKey ? <CheckIcon /> : <ClipboardIcon />}
-                      </button>
+                      </Button>
                     </div>
                   ) : columnIndex === 0 ? (
                     <div className="min-w-[180px]">
@@ -267,8 +268,8 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
             );
           })}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
@@ -330,7 +331,7 @@ export default function PostgresqlTabelaDetalhe() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas/postgresql/material-apoio"
@@ -349,11 +350,11 @@ export default function PostgresqlTabelaDetalhe() {
             Material {String(table.order).padStart(2, "0")}
           </span>
         </div>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">{table.title}</h1>
+        <PageTitle className="mb-4">{table.title}</PageTitle>
         <p className="text-lg leading-relaxed text-slate-400">{table.summary}</p>
       </div>
 
-      <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Como usar este material</h2>
         <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
           {table.notes.map((note) => (
@@ -363,9 +364,9 @@ export default function PostgresqlTabelaDetalhe() {
             </li>
           ))}
         </ul>
-      </div>
+      </Panel>
 
-      <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
             <label htmlFor="busca-tabela-postgresql" className="text-xl font-semibold text-cyan-300">
@@ -373,26 +374,26 @@ export default function PostgresqlTabelaDetalhe() {
             </label>
           </div>
           {hasSearch && (
-            <button
+            <Button variant="secondary"
               type="button"
               onClick={() => setQuery("")}
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
+              className="inline-flex items-center justify-center border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
             >
               Limpar busca
-            </button>
+            </Button>
           )}
         </div>
-        <input
+        <Input
           id="busca-tabela-postgresql"
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Ex.: json, null, primary key, date, between..."
-          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
+          className="w-full border text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
         />
-      </div>
+      </Panel>
 
-      <div className="glass mb-8 rounded-2xl p-6 md:p-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="mb-4 text-xl font-semibold text-cyan-300">Navegação rápida</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filteredSections.map((section, index) => (
@@ -406,12 +407,12 @@ export default function PostgresqlTabelaDetalhe() {
             </a>
           ))}
         </div>
-      </div>
+      </Panel>
 
       {filteredSections.length > 0 ? (
         <div className="space-y-8">
           {filteredSections.map((section, index) => (
-          <article key={section.title} id={slugify(section.title)} className="glass rounded-2xl p-6 md:p-8">
+          <Panel as="article" layout="plain" key={section.title} id={slugify(section.title)}>
             <div className="mb-5">
               <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
                 Seção {String(index + 1).padStart(2, "0")}
@@ -427,17 +428,17 @@ export default function PostgresqlTabelaDetalhe() {
               onCopyExample={handleCopyExample}
               query={query}
             />
-          </article>
+          </Panel>
           ))}
         </div>
       ) : (
-        <div className="glass rounded-2xl p-6 text-center md:p-8">
+        <Panel as="div" layout="plain" className="text-center">
           <h2 className="mb-2 text-2xl font-semibold text-slate-100">Nenhum item encontrado</h2>
           <p className="text-sm leading-relaxed text-slate-400">
             Tente buscar por outro termo, como o nome do comando, tipo, categoria ou parte do exemplo.
           </p>
-        </div>
+        </Panel>
       )}
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Button, Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -64,7 +65,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="max-w-xl mx-auto">
         <Link
           to="/"
@@ -74,35 +75,35 @@ export default function AdminLogin() {
           <span>{txt.back}</span>
         </Link>
 
-        <div className="glass rounded-[28px] p-8 md:p-10 mt-6 border border-cyan-400/10 shadow-[0_24px_80px_rgba(6,182,212,0.12)]">
+        <Panel as="div" layout="plain" className="mt-6 border border-cyan-400/10 shadow-[0_24px_80px_rgba(6,182,212,0.12)]">
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.eyebrow}</p>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{txt.title}</h1>
-          <p className="text-slate-300 leading-relaxed mb-8">
+          <PageHeader><PageTitle className="text-white mb-4">{txt.title}</PageTitle>
+          <PageDescription>
             {isLoading ? txt.loading : txt.description}
-          </p>
+          </PageDescription></PageHeader>
 
           <form className="space-y-5" onSubmit={handleSubmit}>
             <label className="block">
               <span className="block text-sm text-slate-300 mb-2">{txt.username}</span>
-              <input
+              <Input
                 type="text"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
                 autoComplete="username"
                 disabled={isLoading || isSubmitting}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
               />
             </label>
 
             <label className="block">
               <span className="block text-sm text-slate-300 mb-2">{txt.password}</span>
-              <input
+              <Input
                 type="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 autoComplete="current-password"
                 disabled={isLoading || isSubmitting}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
               />
             </label>
 
@@ -112,16 +113,16 @@ export default function AdminLogin() {
               </p>
             )}
 
-            <button
+            <Button variant="primary"
               type="submit"
               disabled={isLoading || isSubmitting}
-              className="w-full rounded-xl bg-cyan-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400"
+              className="w-full text-slate-950 transition"
             >
               {isSubmitting ? (isEn ? "Authenticating..." : "Autenticando...") : txt.submit}
-            </button>
+            </Button>
           </form>
-        </div>
+        </Panel>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -143,11 +144,11 @@ export default function Imc() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -155,9 +156,9 @@ export default function Imc() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <p className="text-slate-400 mb-8">
           {txt.desc}
         </p>
@@ -167,7 +168,7 @@ export default function Imc() {
             <label htmlFor="altura" className="block text-sm text-slate-300 mb-2">
               {txt.height}: <span className="font-semibold text-slate-100">{altura.toFixed(2)} m</span>
             </label>
-            <input
+            <Input
               id="altura"
               type="range"
               min="0.9"
@@ -183,7 +184,7 @@ export default function Imc() {
             <label htmlFor="peso" className="block text-sm text-slate-300 mb-2">
               {txt.weight}: <span className="font-semibold text-slate-100">{peso.toFixed(1)} kg</span>
             </label>
-            <input
+            <Input
               id="peso"
               type="range"
               min="20"
@@ -196,32 +197,32 @@ export default function Imc() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <button
+            <Button variant="primary"
               type="button"
               onClick={calcular}
-              className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition"
+              className="text-slate-900 transition"
             >
               {txt.calculate}
-            </button>
-            <button
+            </Button>
+            <Button variant="secondary"
               type="button"
               onClick={limparTabela}
               disabled={historico.length === 0}
-              className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {txt.clearTable}
-            </button>
+            </Button>
           </div>
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-8 mt-8">
+      <Panel as="div" layout="plain" className="mt-8">
         <h2 className="text-2xl font-bold mb-5">{txt.history}</h2>
         {historico.length === 0 ? (
           <p className="text-slate-400">{txt.noCalc}</p>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <TableContainer>
+            <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
                   <th className="py-3 pr-4">{txt.weight}</th>
@@ -246,10 +247,10 @@ export default function Imc() {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </Table>
+          </TableContainer>
         )}
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
@@ -32,7 +33,7 @@ export default function AdminTechPlayDisciplinas() {
       };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="flex items-center gap-3 text-sm text-cyan-300 mb-6">
         <Link to="/admin" className="hover:text-cyan-200 transition">
           {txt.adminArea}
@@ -41,17 +42,17 @@ export default function AdminTechPlayDisciplinas() {
         <span className="text-slate-300">{txt.disciplines}</span>
       </div>
 
-      <div className="max-w-3xl mb-10">
+      <PageHeader>
         <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.techPlay}</p>
-        <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{txt.title}</h1>
-        <p className="text-slate-300 text-lg leading-relaxed">{txt.description}</p>
-      </div>
+        <PageTitle className="text-white mb-4">{txt.title}</PageTitle>
+        <PageDescription>{txt.description}</PageDescription>
+      </PageHeader>
 
       <div className="grid gap-5 md:grid-cols-2">
         {techPlayDisciplinas.map((disciplina, index) => (
-          <article
+          <Panel as="article" layout="plain"
             key={disciplina.slug}
-            className="glass admin-panel-soft rounded-[28px] p-6 md:p-7"
+            className="admin-panel-soft"
           >
             <p className="text-xs uppercase tracking-[0.25em] text-cyan-300/80 mb-3">
               {txt.disciplineLabel} {index + 1}
@@ -76,9 +77,9 @@ export default function AdminTechPlayDisciplinas() {
                 {txt.viewDiscipline}
               </Link>
             </div>
-          </article>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

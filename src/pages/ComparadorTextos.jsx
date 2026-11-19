@@ -1,3 +1,4 @@
+import { PageTemplate, PageTitle, Panel, Table, TableContainer, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -59,11 +60,11 @@ export default function ComparadorTextos() {
   }, [textoA, textoB]);
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -71,33 +72,33 @@ export default function ComparadorTextos() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
       <div className="grid lg:grid-cols-2 gap-6">
-        <label className="glass rounded-2xl p-6 block">
+        <Panel as="label" layout="plain" className="block">
           <span className="block text-sm text-slate-300 mb-2">{txt.textA}</span>
-          <textarea rows={12} value={textoA} onChange={(event) => setTextoA(event.target.value)} className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400" />
-        </label>
+          <Textarea rows={12} value={textoA} onChange={(event) => setTextoA(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
+        </Panel>
 
-        <label className="glass rounded-2xl p-6 block">
+        <Panel as="label" layout="plain" className="block">
           <span className="block text-sm text-slate-300 mb-2">{txt.textB}</span>
-          <textarea rows={12} value={textoB} onChange={(event) => setTextoB(event.target.value)} className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400" />
-        </label>
+          <Textarea rows={12} value={textoB} onChange={(event) => setTextoB(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
+        </Panel>
       </div>
 
-      <article className="glass rounded-2xl p-6 mt-8">
+      <Panel as="article" layout="plain" className="mt-8">
         <h2 className="text-xl font-bold mb-3">{txt.summary}</h2>
         <p className="text-slate-300 text-sm">
           {txt.total}: {analise.total} | {txt.equal}: <span className="text-emerald-300">{analise.iguais}</span> |
           {txt.different}: <span className="text-red-400">{analise.diferentes}</span>
         </p>
-      </article>
+      </Panel>
 
-      <article className="glass rounded-2xl p-6 mt-6">
+      <Panel as="article" layout="plain" className="mt-6">
         <h2 className="text-xl font-bold mb-4">{txt.differences}</h2>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+        <TableContainer>
+          <Table className="w-full text-sm">
             <thead>
               <tr className="text-left text-slate-400 border-b border-slate-700">
                 <th className="py-3 pr-4">{txt.line}</th>
@@ -114,9 +115,9 @@ export default function ComparadorTextos() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
-      </article>
-    </section>
+          </Table>
+        </TableContainer>
+      </Panel>
+    </PageTemplate>
   );
 }

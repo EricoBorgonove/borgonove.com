@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { CardGrid, ContentCard, PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 
 const modules = [
@@ -13,7 +13,7 @@ const modules = [
 
 export default function Python() {
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton
           fallbackTo="/disciplinas"
@@ -23,33 +23,22 @@ export default function Python() {
         </BackButton>
       </div>
 
-      <div className="mb-10 max-w-4xl">
+      <PageHeader>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
           Linguagem de programação
         </p>
-        <h1 className="mb-4 text-4xl font-black md:text-5xl">Python</h1>
-        <p className="text-lg leading-relaxed text-slate-400">
+        <PageTitle className="mb-4">Python</PageTitle>
+        <PageDescription>
           Exercícios práticos para consolidar lógica, funções, estruturas de dados, orientação a objetos e pequenos sistemas de terminal.
-        </p>
-      </div>
+        </PageDescription>
+      </PageHeader>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <CardGrid>
         {modules.map((module) => (
-          <Link key={module.href} to={module.href} className="group block">
-            <article className="glass theme-hover-border h-full rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
-              <span className="mb-4 inline-flex rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
-                {module.tag}
-              </span>
-              <h2 className="mb-3 text-2xl font-semibold text-slate-100">{module.title}</h2>
-              <p className="mb-6 text-sm leading-relaxed text-slate-400">{module.description}</p>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
-                Abrir exercício
-                <span aria-hidden="true" className="transition group-hover:translate-x-1">→</span>
-              </span>
-            </article>
-          </Link>
+          <ContentCard key={module.href} to={module.href} title={module.title} headingAs="h2"
+            description={module.description} badge={module.tag} action="Abrir exercício" />
         ))}
-      </div>
-    </section>
+      </CardGrid>
+    </PageTemplate>
   );
 }

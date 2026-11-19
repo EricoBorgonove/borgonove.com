@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RequireAdmin from "./components/RequireAdmin";
 import ScrollToTop from "./components/ScrollToTop";
 import MainLayout from "./layout/MainLayout";
+import LaboratorioUi from "./pages/LaboratorioUi";
 import AdminArea from "./pages/AdminArea";
 import AdminBlog from "./pages/AdminBlog";
 import AdminLogin from "./pages/AdminLogin";
@@ -81,6 +82,8 @@ export default function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/laboratorio-ui" element={<LaboratorioUi />} />
+          <Route path="/laboratorio-ui/:example" element={<LaboratorioUi />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route
             path="/admin"

@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 import {
@@ -39,14 +40,14 @@ export default function TailwindCssTabelas() {
   );
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/tailwind-css" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {txt.back}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -54,10 +55,10 @@ export default function TailwindCssTabelas() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">{txt.description}</p>
+      </PageTitle>
+      <PageDescription>{txt.description}</PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.quickNav}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {sortedSections.map((section, index) => (
@@ -70,19 +71,19 @@ export default function TailwindCssTabelas() {
             </a>
           ))}
         </div>
-      </div>
+      </Panel>
 
       <div className="space-y-8">
         {sortedSections.map((section, index) => (
-          <article key={section.id} id={section.id} className="glass rounded-2xl p-6 md:p-8">
+          <Panel as="article" layout="plain" key={section.id} id={section.id}>
             <h2 className="text-2xl font-semibold text-cyan-300 mb-5">
               {index + 1}. {getSectionBaseTitle(section, isEn)}
             </h2>
             <p className="text-sm text-slate-400 leading-relaxed mb-5">
               {getText(section, "description", isEn)}
             </p>
-            <div className="overflow-x-auto rounded-2xl border border-slate-800">
-              <table className="min-w-[620px] w-full text-left text-sm bg-slate-950/70">
+            <TableContainer className="rounded-2xl border border-slate-800">
+              <Table className="min-w-[620px] w-full text-left text-sm bg-slate-950/70">
                 <thead className="bg-slate-900/90">
                   <tr>
                     {section.columns.map((column) => (
@@ -111,8 +112,8 @@ export default function TailwindCssTabelas() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
-            </div>
+              </Table>
+            </TableContainer>
 
             {section.example && (
               <div className="mt-5">
@@ -129,9 +130,9 @@ export default function TailwindCssTabelas() {
                 </pre>
               </div>
             )}
-          </article>
+          </Panel>
         ))}
       </div>
-    </section>
+    </PageTemplate>
   );
 }

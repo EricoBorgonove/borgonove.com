@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -182,14 +183,14 @@ export default function TailwindCss() {
       };
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           {txt.back}
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -197,11 +198,11 @@ export default function TailwindCss() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8">{txt.description}</p>
+      </PageTitle>
+      <PageDescription>{txt.description}</PageDescription></PageHeader>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] mb-8">
-        <div className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.roadmapTitle}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.roadmapText}</p>
           <ol className="space-y-3 text-sm text-slate-300 list-decimal list-inside">
@@ -211,9 +212,9 @@ export default function TailwindCss() {
               </li>
             ))}
           </ol>
-        </div>
+        </Panel>
 
-        <div className="glass rounded-2xl p-6 md:p-8">
+        <Panel as="div" layout="plain">
           <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.supportTitle}</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.supportText}</p>
           <div className="space-y-4">
@@ -244,10 +245,10 @@ export default function TailwindCss() {
               </article>
             ))}
           </div>
-        </div>
+        </Panel>
       </div>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.goalsTitle}</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {tailwindDisciplineGoals.map((item) => (
@@ -257,9 +258,9 @@ export default function TailwindCss() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.stagesTitle}</h2>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {tailwindStudyStages.map((item) => (
@@ -269,9 +270,9 @@ export default function TailwindCss() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{txt.outcomesTitle}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {tailwindLearningOutcomes.map((item, index) => (
@@ -280,9 +281,9 @@ export default function TailwindCss() {
             </article>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{txt.patternsTitle}</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {tailwindQuickPatterns.map((item) => (
@@ -297,15 +298,15 @@ export default function TailwindCss() {
             </div>
           ))}
         </div>
-      </div>
+      </Panel>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.installTitle}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">{txt.installText}</p>
         <pre className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-4 text-sm text-slate-200">
           <code>{tailwindInstallFlow}</code>
         </pre>
-      </div>
-    </section>
+      </Panel>
+    </PageTemplate>
   );
 }

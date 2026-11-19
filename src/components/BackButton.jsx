@@ -1,3 +1,4 @@
+import { Button } from "./ui/Patterns";
 import { useNavigate } from "react-router-dom";
 
 export default function BackButton({
@@ -17,7 +18,7 @@ export default function BackButton({
   }
 
   return (
-    <button type="button" onClick={handleBack} className={className}>
+    <Button variant="custom" type="button" onClick={handleBack} className={className}>
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[1em] w-[1em] shrink-0">
         <path
           fill="currentColor"
@@ -25,6 +26,6 @@ export default function BackButton({
         />
       </svg>
       {children}
-    </button>
+    </Button>
   );
 }

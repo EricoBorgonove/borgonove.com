@@ -1,3 +1,4 @@
+import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import CodeBlock from "../components/CodeBlock";
 import { seabornChartSections } from "../data/seabornCheatSheet";
@@ -65,10 +66,10 @@ const variableExamples = [
 
 function Section({ id, title, children }) {
   return (
-    <article id={id} className="glass rounded-2xl p-6 md:p-8 scroll-mt-24">
+    <Panel as="article" layout="plain" id={id} className="scroll-mt-24">
       <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{title}</h2>
       {children}
-    </article>
+    </Panel>
   );
 }
 
@@ -96,8 +97,8 @@ function TextList({ items }) {
 
 function DataTable({ section }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
+    <TableContainer className="rounded-2xl border border-slate-800">
+      <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
         <thead className="bg-slate-900/90">
           <tr>
             {section.columns.map((column) => (
@@ -124,21 +125,21 @@ function DataTable({ section }) {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+      </Table>
+    </TableContainer>
   );
 }
 
 export default function PythonSeaborn() {
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-7xl mx-auto">
+    <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
           Voltar para Python Pandas
         </BackButton>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-4 flex items-center gap-3">
+      <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -146,21 +147,21 @@ export default function PythonSeaborn() {
           />
         </svg>
         <span>Python Seaborn</span>
-      </h1>
-      <p className="text-slate-400 text-lg mb-8 max-w-5xl">
+      </PageTitle>
+      <PageDescription className="max-w-5xl">
         Aula prática para criar gráficos estatísticos em Python e escolher a visualização adequada conforme o tipo de variável e a pergunta de análise.
-      </p>
+      </PageDescription></PageHeader>
 
-      <div className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Objetivo da aula</h2>
         <p className="text-sm text-slate-300 leading-relaxed max-w-5xl">
           Ensinar como utilizar a biblioteca Seaborn para criar gráficos estatísticos em Python, explorando padrões,
           distribuições, comparações, relações entre variáveis, correlações e problemas de qualidade dos dados em diferentes
           tipos de datasets. Ao final, o aluno deve saber escolher o gráfico adequado conforme o tipo de variável e a pergunta de análise.
         </p>
-      </div>
+      </Panel>
 
-      <nav className="glass rounded-2xl p-6 md:p-8 mb-8">
+      <Panel as="nav" layout="plain" className="rounded-2xl p-6 md:p-8 mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">Navegação rápida</h2>
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {quickLinks.map(([id, label], index) => (
@@ -173,7 +174,7 @@ export default function PythonSeaborn() {
             </a>
           ))}
         </div>
-      </nav>
+      </Panel>
 
       <div className="space-y-8">
         <Section id="o-que-e" title="1. O que é Seaborn?">
@@ -252,8 +253,8 @@ df.columns`}</CodeBlock>
         </Section>
 
         <Section id="escolha-grafico" title="6. Escolhendo o gráfico correto">
-          <div className="overflow-x-auto rounded-2xl border border-slate-800">
-            <table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
+          <TableContainer className="rounded-2xl border border-slate-800">
+            <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
               <thead className="bg-slate-900/90">
                 <tr>
                   <th className="px-4 py-3 font-semibold text-slate-100">Pergunta de análise</th>
@@ -268,8 +269,8 @@ df.columns`}</CodeBlock>
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </Table>
+          </TableContainer>
         </Section>
 
         <Section id="categoricas" title="7. Gráficos para variáveis categóricas">
@@ -569,6 +570,6 @@ plt.show()`}</CodeBlock>
           </div>
         </Section>
       </div>
-    </section>
+    </PageTemplate>
   );
 }

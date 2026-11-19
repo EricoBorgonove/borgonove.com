@@ -1,3 +1,4 @@
+import { Button, Input, PageTemplate, PageTitle, Panel, Select } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -563,11 +564,11 @@ export default function MockSqlJson() {
   }
 
   return (
-    <section className="min-h-[70vh] px-6 py-24 max-w-6xl mx-auto">
+    <PageTemplate>
       <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
       </BackButton>
 
-      <h1 className="text-4xl md:text-5xl font-black mb-6 flex items-center gap-3">
+      <PageTitle className="mb-6 flex items-center gap-3">
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
           <path
             fill="currentColor"
@@ -575,31 +576,31 @@ export default function MockSqlJson() {
           />
         </svg>
         <span>{txt.title}</span>
-      </h1>
+      </PageTitle>
 
-      <div className="glass rounded-2xl p-8">
+      <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.recordsAmount}</span>
-            <input
+            <Input
               type="number"
               min="1"
               max={MAX_ROWS}
               placeholder="10"
               value={quantidade}
               onChange={(event) => setQuantidade(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.tableName}</span>
-            <input
+            <Input
               type="text"
               value={tableName}
               placeholder="tabela_mock"
               onChange={(event) => setTableName(event.target.value)}
-              className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+              className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
         </div>
@@ -607,7 +608,7 @@ export default function MockSqlJson() {
         <div className="mt-6">
           <p className="text-sm text-slate-300 mb-2">{txt.fieldSelectionMode}</p>
           <div className="flex flex-wrap gap-3">
-            <button
+            <Button variant="custom"
               type="button"
               onClick={() => setModoCampos("lista")}
               className={`px-4 py-2 rounded-xl border transition ${
@@ -615,8 +616,8 @@ export default function MockSqlJson() {
               }`}
             >
               {txt.listMode}
-            </button>
-            <button
+            </Button>
+            <Button variant="custom"
               type="button"
               onClick={() => setModoCampos("manual")}
               className={`px-4 py-2 rounded-xl border transition ${
@@ -624,7 +625,7 @@ export default function MockSqlJson() {
               }`}
             >
               {txt.manualMode}
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -637,7 +638,7 @@ export default function MockSqlJson() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {DATA_TYPES.map((type) => (
                 <label key={type.id} className="inline-flex items-center gap-2 text-sm text-slate-300 bg-slate-900/40 border border-slate-700 rounded-lg px-3 py-2">
-                  <input
+                  <Input
                     type="checkbox"
                     checked={selectedTypeIds.includes(type.id)}
                     onChange={() => toggleType(type.id)}
@@ -652,37 +653,37 @@ export default function MockSqlJson() {
           <div className="mt-6">
             <label className="block max-w-xs">
               <span className="block text-sm text-slate-300 mb-2">{txt.fieldsAmount}</span>
-              <input
+              <Input
                 type="number"
                 min={MANUAL_FIELD_MIN}
                 max={MANUAL_FIELD_MAX}
                 value={manualCount}
                 onChange={(event) => setManualCount(event.target.value)}
-                className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
               />
             </label>
 
             <div className="mt-4 space-y-3">
               {manualFields.map((field, index) => (
                 <div key={`manual-${index}`} className="grid md:grid-cols-2 gap-3">
-                  <input
+                  <Input
                     type="text"
                     value={field.name}
                     onChange={(event) => updateManualField(index, { name: event.target.value })}
                     placeholder={`${txt.fieldNamePlaceholder} ${index + 1}`}
-                    className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                    className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
                   />
-                  <select
+                  <Select
                     value={field.typeId}
                     onChange={(event) => updateManualField(index, { typeId: event.target.value })}
-                    className="w-full bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-400"
+                    className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
                   >
                     {DATA_TYPES.map((type) => (
                       <option key={`manual-type-${type.id}`} value={type.id}>
                         {getTypeLabel(type)}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </div>
               ))}
             </div>
@@ -690,22 +691,22 @@ export default function MockSqlJson() {
         )}
 
         <div className="flex flex-wrap gap-3 mt-6">
-          <button
+          <Button variant="primary"
             type="button"
             onClick={gerarDados}
             disabled={isGenerating}
-            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition disabled:opacity-60 disabled:cursor-not-allowed"
+            className="text-slate-900 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isGenerating ? txt.generating : txt.generateData}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             type="button"
             onClick={limparTudo}
             disabled={isGenerating}
-            className="border border-slate-700 text-slate-200 px-5 py-2.5 rounded-xl hover:border-cyan-400 transition disabled:opacity-60 disabled:cursor-not-allowed"
+            className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {txt.clear}
-          </button>
+          </Button>
         </div>
 
         {isGenerating && (
@@ -718,20 +719,20 @@ export default function MockSqlJson() {
         )}
 
         {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
-      </div>
+      </Panel>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-8">
-        <article className="glass rounded-2xl p-6">
+        <Panel as="article" layout="plain">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-bold">JSON</h2>
-            <button
+            <Button variant="secondary"
               type="button"
               disabled={data.length === 0}
               onClick={copyFullJson}
-              className="text-sm border border-slate-700 px-3 py-1 rounded-lg hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border border-slate-700 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {txt.copyFull}
-            </button>
+            </Button>
           </div>
           {data.length > 0 ? (
             <>
@@ -743,19 +744,19 @@ export default function MockSqlJson() {
           ) : (
             <p className="text-slate-400 text-sm">{txt.generateToViewJson}</p>
           )}
-        </article>
+        </Panel>
 
-        <article className="glass rounded-2xl p-6">
+        <Panel as="article" layout="plain">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-bold">SQL</h2>
-            <button
+            <Button variant="secondary"
               type="button"
               disabled={data.length === 0}
               onClick={copyFullSql}
-              className="text-sm border border-slate-700 px-3 py-1 rounded-lg hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border border-slate-700 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {txt.copyFull}
-            </button>
+            </Button>
           </div>
           {data.length > 0 ? (
             <>
@@ -767,8 +768,8 @@ export default function MockSqlJson() {
           ) : (
             <p className="text-slate-400 text-sm">{txt.generateToViewSql}</p>
           )}
-        </article>
+        </Panel>
       </div>
-    </section>
+    </PageTemplate>
   );
 }
