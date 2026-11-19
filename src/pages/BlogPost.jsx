@@ -143,7 +143,7 @@ export default function BlogPost() {
 
           <div className="mt-8 space-y-5 text-slate-200 leading-relaxed">
             {paragraphs.map((paragraph, index) => (
-              <p key={`${post.id}-paragraph-${index}`}>{uiText(paragraph)}</p>
+              <p key={`${post.id}-paragraph-${index}`}>{paragraph}</p>
             ))}
           </div>
         </Panel>

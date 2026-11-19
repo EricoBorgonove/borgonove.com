@@ -460,10 +460,11 @@ export default function TestadorRegex() {
           <label className="block md:col-span-2">
             <span className="block text-sm text-slate-300 mb-2">{uiText(txt.regexInput)}</span>
             <Input
+              id="regex-pattern"
               type="text"
               value={pattern}
               onChange={(event) => setPattern(event.target.value)}
-              placeholder={uiText("\\\\bpalavra\\\\b")}
+              placeholder={isEn ? "\\bword\\b" : "\\bpalavra\\b"}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
@@ -530,14 +531,14 @@ export default function TestadorRegex() {
               <Panel as="div" layout="plain" key={`${item.index}-${index}`} className="text-sm">
                 <p>
                   <span className="text-slate-400">{uiText(txt.value)}:</span>{" "}
-                  <span className="text-cyan-200">{uiText(item.value)}</span>
+                  <span className="text-cyan-200">{item.value}</span>
                 </p>
                 <p>
                   <span className="text-slate-400">{uiText(txt.index)}:</span> {uiText(item.index)}
                 </p>
                 <p>
                   <span className="text-slate-400">{uiText(txt.groups)}:</span>{" "}
-                  {uiText(item.groups.length > 0 ? item.groups.join(" | ") : "-")}
+                  {item.groups.length > 0 ? item.groups.join(" | ") : "-"}
                 </p>
               </Panel>
             ))}

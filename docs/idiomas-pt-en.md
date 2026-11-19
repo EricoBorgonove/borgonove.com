@@ -31,3 +31,5 @@ Executar `npm test`, `npm run lint`, `npm run build` e `npm run test:browser`.
 A auditoria em inglês percorreu 74 amostras de rotas. A única ocorrência final identificada como português fora dos blocos de código foi `Produto`, um identificador de coluna que deve ser preservado. Para conteúdo protegido, a prova Pandas foi verificada em um contexto de teste com a autorização local da prova; a validação real de usuários e posts MySQL continua dependendo do backend configurado.
 
 Os testes de navegador incluem cabeçalhos PT/EN, troca de idioma sem perder o formulário, preservação dos exemplos SQL, busca em inglês, carregamento sob demanda, recuperação de falha, diagramas localizados, 404, mensagens de erro após a troca de idioma e layout inglês no celular.
+
+A revisão independente acrescentou regressões para preservar resultados e grupos de regex, nomes de equipes e conteúdo editorial dos campos explícitos do backend. A busca de tópicos PostgreSQL também considera as descrições localizadas. Resultados numéricos e de datas permanecem intactos; no histórico de IMC apenas os rótulos de apresentação acompanham o idioma atual.

@@ -47,7 +47,7 @@ export function translateContent(value, language, substitutions) {
   const trimmed = value.trim();
   let result = value;
   if (language?.startsWith("en") && trimmed) {
-    let translated = englishContent[trimmed] || lowercase.get(trimmed.toLocaleLowerCase("pt-BR"));
+    let translated = Object.hasOwn(englishContent, trimmed) ? englishContent[trimmed] : lowercase.get(trimmed.toLocaleLowerCase("pt-BR"));
     if (!translated) for (const template of templates) {
       const match = trimmed.match(template.pattern);
       if (!match) continue;

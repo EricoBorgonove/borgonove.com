@@ -123,19 +123,19 @@ export default function ConversorDataHora() {
           <div className="grid md:grid-cols-2 gap-4 mt-8 text-sm">
             <Panel as="div" layout="plain">
               <p className="text-slate-400">{uiText(txt.localTime)}</p>
-              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.local)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{resultado.local}</p>
             </Panel>
             <Panel as="div" layout="plain">
               <p className="text-slate-400">{uiText(txt.utcTime)}</p>
-              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.utc)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{resultado.utc}</p>
             </Panel>
             <Panel as="div" layout="plain" className="md:col-span-2">
               <p className="text-slate-400">{uiText(txt.targetZoneTime)}</p>
-              <p className="text-slate-100 font-semibold mt-1">{uiText(resultado.custom)}</p>
+              <p className="text-slate-100 font-semibold mt-1">{resultado.custom}</p>
             </Panel>
             <Panel as="div" layout="plain" className="md:col-span-2">
               <p className="text-slate-400">{uiText(txt.timestamp)}</p>
-              <p className="text-slate-100 font-semibold mt-1 break-all">{uiText(resultado.timestamp)}</p>
+              <p className="text-slate-100 font-semibold mt-1 break-all">{resultado.timestamp}</p>
             </Panel>
           </div>
         ) : (

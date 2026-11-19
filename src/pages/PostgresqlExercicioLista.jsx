@@ -564,7 +564,7 @@ function MerDiagram({ diagram }) {
                         fontSize="15"
                         fontWeight={isPrimary ? "800" : "600"}
                       >
-                        {uiText(parsedField.name)}
+                        {parsedField.name}
                       </text>
                       {isPrimary && (
                         <line

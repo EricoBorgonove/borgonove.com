@@ -21,6 +21,7 @@ test("tradução preserva valores interpolados, React e código técnico", () =>
   assert.equal(translateContent("SELECT * FROM tabela;", "en"), "SELECT * FROM tabela;");
   assert.equal(translateContent("/disciplinas/python", "en"), "/disciplinas/python");
   assert.equal(translateContent(42, "en"), 42);
+  for (const name of ["constructor", "__proto__", "toString"]) assert.equal(translateContent(name, "en"), name);
 });
 test("catálogo não tem entradas vazias e preserva os marcadores de interpolação", () => {
   for (const [pt, en] of Object.entries(catalog)) {

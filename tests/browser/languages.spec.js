@@ -146,3 +146,69 @@ test("conteúdo inglês mantém o layout no celular", async ({ page }) => {
     expect(clipped, route).toEqual([]);
   }
 });
+
+test("resultados de regex preservam o texto pesquisado e seus grupos", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("site-language", "en");
+    localStorage.setItem("borgonove_cookie_consent", "accepted");
+  });
+  await page.goto("/utilidades/testador-regex");
+  await expect(page.locator('main[aria-busy="false"]')).toBeVisible({ timeout: 15000 });
+  await page.locator('main input[type="text"]').nth(1).fill("(.+)");
+  await page.locator("main textarea").fill("Copiar");
+  const result = page.locator("main article").last();
+  await expect(result.locator("span.text-cyan-200")).toHaveText("Copiar");
+  await expect(result).toContainText("Groups: Copiar");
+});
+
+test("nomes de equipes do painel não são traduzidos", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("site-language", "en");
+    localStorage.setItem("borgonove_cookie_consent", "accepted");
+  });
+  await page.route("**/api/admin/session.php", (route) => route.fulfill({ json: { ok: true, authenticated: true, user: { username: "teste" } } }));
+  await page.goto("/admin/techplay/disciplinas/arquitetura-software");
+  await page.locator("#equipes-sorteio").fill("Copiar");
+  await page.getByRole("button", { name: "Draw teams into topics", exact: true }).click();
+  await expect(page.getByText("Team: Copiar", { exact: true })).toBeVisible();
+});
+
+test("conteúdo editorial usa exatamente o campo inglês cadastrado", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("site-language", "en");
+    localStorage.setItem("borgonove_cookie_consent", "accepted");
+  });
+  await page.route("**/api/blog/posts.php?slug=*", (route) => route.fulfill({ json: { ok: true, post: { id: 1, slug: "teste", title_pt: "Post de teste", title_en: "Test post", excerpt_pt: "", excerpt_en: "", content_pt: "Outro conteúdo", content_en: "Copiar\n\nNome" } } }));
+  await page.goto("/blog/teste");
+  await expect(page.getByRole("heading", { name: "Test post", exact: true })).toBeVisible();
+  await expect(page.getByText("Copiar", { exact: true })).toBeVisible();
+  await expect(page.getByText("Nome", { exact: true })).toBeVisible();
+});
+
+test("busca de comandos considera a descrição em inglês", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("site-language", "en");
+    localStorage.setItem("borgonove_cookie_consent", "accepted");
+  });
+  await page.goto("/disciplinas/postgresql/o-que-e-postgresql");
+  await expect(page.locator('main[aria-busy="false"]')).toBeVisible({ timeout: 15000 });
+  await page.locator("#busca-comandos-postgresql").fill("connected");
+  await expect(page.getByText(/^1\/9/)).toBeVisible();
+  await expect(page.getByText("No commands found", { exact: true })).not.toBeVisible();
+});
+
+test("histórico do IMC acompanha o idioma sem recalcular nem perder os valores", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("site-language", "en");
+    localStorage.setItem("borgonove_cookie_consent", "accepted");
+  });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/utilidades/imc");
+  await page.getByRole("button", { name: "Calculate", exact: true }).click();
+  await expect(page.locator("tbody tr")).toContainText("Normal weight");
+  await expect(page.locator("tbody tr")).toContainText("18.5 to 24.99");
+  await page.locator("select[aria-label]").first().selectOption("pt");
+  await expect(page.locator("tbody tr")).toContainText("Peso normal");
+  await expect(page.locator("tbody tr")).toContainText("18.5 a 24.99");
+  await expect(page.locator("tbody tr")).toHaveCount(1);
+});

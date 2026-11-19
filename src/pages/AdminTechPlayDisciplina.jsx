@@ -225,7 +225,7 @@ export default function AdminTechPlayDisciplina() {
                 <div className="mb-3 flex flex-wrap items-center gap-3">
                   {equipesPorTema[index] ? (
                     <span className="inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
-                      {uiText(txt.teamAssigned)}: {uiText(equipesPorTema[index])}
+                      {uiText(txt.teamAssigned)}: {equipesPorTema[index]}
                     </span>
                   ) : (
                     <span className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">

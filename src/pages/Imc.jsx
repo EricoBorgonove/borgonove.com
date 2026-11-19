@@ -104,6 +104,15 @@ export default function Imc() {
   const [altura, setAltura] = useState(1.7);
   const [peso, setPeso] = useState(70);
   const [historico, setHistorico] = useState([]);
+  const situacoes = {
+    underweightSevere: txt.severe,
+    underweight: txt.under,
+    normal: txt.normal,
+    overweight: txt.over,
+    obesity1: txt.ob1,
+    obesity2: txt.ob2,
+    obesity3: txt.ob3,
+  };
 
   const imcAtual = useMemo(() => {
     if (!altura || altura <= 0) {
@@ -119,15 +128,6 @@ export default function Imc() {
 
     const imc = Number(imcAtual.toFixed(2));
     const classificacao = classificarImc(imc);
-    const situacoes = {
-      underweightSevere: txt.severe,
-      underweight: txt.under,
-      normal: txt.normal,
-      overweight: txt.over,
-      obesity1: txt.ob1,
-      obesity2: txt.ob2,
-      obesity3: txt.ob3,
-    };
 
     setHistorico((prev) => [
       {
@@ -241,10 +241,10 @@ export default function Imc() {
                     <td className="py-3 pr-4 text-slate-100 font-semibold">{uiText(item.peso)}{uiText(" kg")}</td>
                     <td className="py-3 pr-4 text-slate-300">{uiText(item.altura)}{uiText(" m")}</td>
                     <td className="py-3 pr-4 text-slate-300">{uiText(item.imc)}</td>
-                    <td className="py-3 pr-4 text-slate-300">{uiText(item.faixa)}</td>
+                    <td className="py-3 pr-4 text-slate-300">{isEn ? item.faixa.replace(" a ", " to ") : item.faixa}</td>
                     <td className="py-3">
                       <span className={`inline-flex px-2.5 py-1 rounded-lg text-xs font-semibold ${item.tagClass}`}>
-                        {uiText(item.situacaoLabel)}
+                        {uiText(situacoes[item.situacao])}
                       </span>
                     </td>
                   </tr>

@@ -164,12 +164,12 @@ export default function PostgresqlTopico() {
 
     return topic.commands.filter((item) => {
       const commandText = normalizeText(
-        `${item.command} ${item.description} ${item.usage || ""} ${item.example || ""} ${topic.category}`
+        `${item.command} ${uiText(item.description)} ${uiText(item.usage || "")} ${item.example || ""} ${uiText(topic.category)}`
       );
 
       return commandText.includes(normalizedQuery);
     });
-  }, [normalizedQuery, topic]);
+  }, [normalizedQuery, topic, uiText]);
 
   if (!topic) {
     return <Navigate to="/disciplinas/postgresql" replace />;
