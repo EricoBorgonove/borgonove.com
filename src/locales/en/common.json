@@ -143,7 +143,12 @@
     "accept": "Accept"
   },
   "common": {
-    "comingSoon": "Coming soon!"
+    "comingSoon": "Coming soon!",
+    "ui": {
+      "scrollContent": "Scrollable content",
+      "scrollTable": "Scrollable table",
+      "codeRegion": "Code {{language}}"
+    }
   },
   "roadmaps": {
     "title": "Roadmaps",

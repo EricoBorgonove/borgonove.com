@@ -55,6 +55,24 @@ npm install
 npm run dev
 ```
 
+Para as APIs PHP locais, em outro terminal:
+
+```bash
+npm run dev:api
+```
+
+O Vite encaminha `/api` para `127.0.0.1:8080`. Para blog e administração, copie `public/api/db-config.php.example` para `public/api/db-config.php` e preencha os dados do seu MySQL. O arquivo final com credenciais é ignorado pelo Git. Sem esses dados, a conexão com o banco não funciona; não use credenciais fictícias em produção.
+
+Verificação dos componentes e regressões de interface:
+
+```bash
+npm test
+npx playwright install chromium
+npm run test:browser
+```
+
+Os testes de navegador cobrem os cortes mobile da revisão, os temas claro/escuro, validação da calculadora, teclado, foco e fechamento do modal. Não gravam dados no backend.
+
 Build de produção:
 
 ```bash

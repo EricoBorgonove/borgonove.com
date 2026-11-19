@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "php -S 127.0.0.1:8080 -t public",
     "build": "vite build && node scripts/ensure-cpanel-dist.mjs",
     "lint": "eslint .",
     "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
     "preview": "vite preview",
     "i18n:seed-en": "node scripts/add-en-fields.mjs"
   },
@@ -20,7 +22,9 @@
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.65.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",

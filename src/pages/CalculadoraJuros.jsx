@@ -2,6 +2,7 @@ import { Input, PageTemplate, PageTitle, Panel, Select, Table, TableContainer } 
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
+import { calculateInterest, MAX_INTEREST_PERIODS } from "../utils/calculateInterest";
 
 export default function CalculadoraJuros() {
   const { i18n } = useTranslation();
@@ -21,7 +22,7 @@ export default function CalculadoraJuros() {
         period: "Period",
         amount: "Amount",
         accumulatedInterest: "Accumulated interest",
-        fillValid: "Fill in valid values to calculate."
+        fillValid: "Enter finite values and a whole number of periods between 1 and 1200."
       }
     : {
         title: "Calculadora de Juros",
@@ -37,7 +38,7 @@ export default function CalculadoraJuros() {
         period: "Período",
         amount: "Montante",
         accumulatedInterest: "Juros acumulado",
-        fillValid: "Preencha valores válidos para calcular."
+        fillValid: "Informe valores finitos e uma quantidade inteira de períodos entre 1 e 1200."
       };
 
   const [capital, setCapital] = useState("");
@@ -45,39 +46,9 @@ export default function CalculadoraJuros() {
   const [periodos, setPeriodos] = useState("");
   const [tipo, setTipo] = useState("compostos");
 
-  const resultado = useMemo(() => {
-    const c = Number(capital);
-    const i = Number(taxa) / 100;
-    const n = Number(periodos);
-
-    if (c <= 0 || i < 0 || n <= 0 || Number.isNaN(c) || Number.isNaN(i) || Number.isNaN(n)) {
-      return null;
-    }
-
-    const linhas = [];
-    let montante = c;
-
-    for (let p = 1; p <= n; p += 1) {
-      if (tipo === "simples") {
-        montante = c * (1 + i * p);
-      } else {
-        montante = c * (1 + i) ** p;
-      }
-
-      linhas.push({
-        periodo: p,
-        montante,
-        jurosAcumulado: montante - c,
-      });
-    }
-
-    const final = linhas[linhas.length - 1];
-    return {
-      montanteFinal: final.montante,
-      jurosTotal: final.jurosAcumulado,
-      linhas,
-    };
-  }, [capital, taxa, periodos, tipo]);
+  const resultado = useMemo(() => calculateInterest({
+    capital, rate: taxa, periods: periodos, type: tipo,
+  }), [capital, taxa, periodos, tipo]);
 
   return (
     <PageTemplate>
@@ -108,7 +79,7 @@ export default function CalculadoraJuros() {
 
           <label className="block">
             <span className="block text-sm text-slate-300 mb-2">{txt.periods}</span>
-            <Input type="number" value={periodos} placeholder="12" onChange={(event) => setPeriodos(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
+            <Input type="number" min="1" max={MAX_INTEREST_PERIODS} step="1" value={periodos} placeholder="12" onChange={(event) => setPeriodos(event.target.value)} className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400" />
           </label>
 
           <label className="block">

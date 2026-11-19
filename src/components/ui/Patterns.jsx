@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useId } from "react";
 import "./patterns.css";
+import ScrollRegion from "./ScrollRegion";
+import { useTranslation } from "react-i18next";
 
 export function PageTemplate({ eyebrow, title, description, breadcrumbs = [], actions, children, className = "", width = "default", as: container = "section", ...props }) {
   const Container = container;
@@ -81,7 +83,8 @@ export function Table({ className = "", children, ...props }) {
 }
 
 export function TableContainer({ className = "", children, ...props }) {
-  return <div className={`ui-table-container ${className}`} {...props}>{children}</div>;
+  const { t } = useTranslation();
+  return <ScrollRegion aria-label={t("common.ui.scrollTable")} className={`ui-table-container ${className}`} {...props}>{children}</ScrollRegion>;
 }
 
 export function Notice({ children, tone = "info" }) {

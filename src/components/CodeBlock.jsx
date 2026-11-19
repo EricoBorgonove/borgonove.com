@@ -1,5 +1,7 @@
 import { Button } from "./ui/Patterns";
 import { useState } from "react";
+import ScrollRegion from "./ui/ScrollRegion";
+import { useTranslation } from "react-i18next";
 
 const languageLabels = {
   bash: "Terminal",
@@ -9,6 +11,7 @@ const languageLabels = {
 };
 
 export default function CodeBlock({ children, language = "python", label }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const code = String(children ?? "");
   const languageLabel = label || languageLabels[language] || language;
@@ -44,9 +47,9 @@ export default function CodeBlock({ children, language = "python", label }) {
           {copied ? "Copiado" : "Copiar"}
         </Button>
       </div>
-      <pre className="code-block-pre max-w-full overflow-x-auto px-4 py-4 text-sm leading-7">
+      <ScrollRegion as="pre" aria-label={t("common.ui.codeRegion", { language: languageLabel })} className="code-block-pre max-w-full overflow-x-auto px-4 py-4 text-sm leading-7">
         <code className={`language-${language}`}>{code}</code>
-      </pre>
+      </ScrollRegion>
     </div>
   );
 }

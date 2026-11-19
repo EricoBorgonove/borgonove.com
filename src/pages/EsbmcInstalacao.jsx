@@ -510,7 +510,7 @@ export default function EsbmcInstalacao() {
           </div>
         </Panel>
 
-        <main className="min-w-0 space-y-6">
+        <div className="min-w-0 space-y-6">
           <Panel as="article" layout="plain" className="min-w-0 overflow-hidden">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
               {activeTab.label}
@@ -526,7 +526,7 @@ export default function EsbmcInstalacao() {
           {activeTab.id === "macos" && <MacosTab />}
           {activeTab.id === "build" && <BuildTab />}
           {activeTab.id === "validacao" && <ValidationTab />}
-        </main>
+        </div>
       </div>
     </PageTemplate>
   );

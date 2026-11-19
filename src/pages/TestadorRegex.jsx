@@ -2,6 +2,7 @@ import { Button, Input, PageTemplate, PageTitle, Panel, Select, Textarea } from 
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
+import Dialog from "../components/ui/Dialog";
 
 const REGEX_TEMPLATES = [
   {
@@ -470,7 +471,7 @@ export default function TestadorRegex() {
               <Button variant="secondary"
                 type="button"
                 onClick={() => setShowFlagsModal(true)}
-                className="h-6 w-6 border border-slate-600 text-slate-300 inline-flex items-center justify-center hover:border-cyan-400 hover:text-cyan-300 transition"
+                className="shrink-0 border border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-300 transition"
                 aria-label={txt.flagsHelpLabel}
                 title={txt.flagsHelpTitle}
               >
@@ -541,32 +542,11 @@ export default function TestadorRegex() {
         )}
       </Panel>
 
-      {showFlagsModal && (
-        <div
-          className="fixed inset-0 z-[90] bg-black/45 p-4 flex items-center justify-center"
-          onClick={() => setShowFlagsModal(false)}
-        >
-          <div
-            className="w-full max-w-xl rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold">{txt.flagsModalTitle}</h3>
-              <Button variant="secondary"
-                type="button"
-                onClick={() => setShowFlagsModal(false)}
-                className="h-8 w-8 border border-slate-600 text-slate-200 inline-flex items-center justify-center hover:border-cyan-400 transition"
-                aria-label={txt.close}
-              >
-                ×
-              </Button>
-            </div>
-            <pre className="whitespace-pre-wrap text-sm leading-relaxed text-slate-200 font-sans bg-slate-800/60 border border-slate-700 rounded-xl p-4">
-              {flagsHelpText}
-            </pre>
-          </div>
-        </div>
-      )}
+      <Dialog open={showFlagsModal} onClose={() => setShowFlagsModal(false)} title={txt.flagsModalTitle} closeLabel={txt.close}>
+        <pre className="ui-dialog-text whitespace-pre-wrap text-sm leading-relaxed font-sans">
+          {flagsHelpText}
+        </pre>
+      </Dialog>
     </PageTemplate>
   );
 }

@@ -17,6 +17,8 @@ body.light-theme {
 .ui-page { width: 100%; max-width: 1152px; margin-inline: auto; padding: 48px 24px 80px; min-height: 70vh; color: var(--ui-text); }
 .ui-page--wide { max-width: 1280px; }
 .ui-page--landing { max-width: none; padding: 0; }
+:where(.ui-page .grid, .ui-page .grid > *) { min-width: 0; }
+.ui-scroll-region:focus-visible { outline: 3px solid var(--ui-accent); outline-offset: -3px; }
 .ui-page-title, .ui-page-header h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; font-weight: 900; overflow-wrap: anywhere; }
 .ui-page--landing .ui-page-title { font-size: clamp(2.5rem, 6vw, 4.5rem); }
 .ui-section > header h2, .ui-panel > h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.35; }
@@ -70,6 +72,14 @@ body.light-theme .ui-field-error { color: #be123c; }
 .ui-empty { display: grid; justify-items: start; gap: 12px; border: 1px dashed var(--ui-border); border-radius: 16px; padding: 32px; }
 .ui-demo-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .ui-prose { display: grid; gap: 16px; line-height: 1.8; max-width: 70ch; }
+.ui-dialog { width: min(40rem, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow-y: auto; border: 1px solid var(--ui-border); border-radius: 16px; background: var(--ui-input); color: var(--ui-text); }
+.ui-dialog::backdrop { background: rgb(0 0 0 / .6); }
+.ui-dialog-content { padding: 24px; min-width: 0; }
+.ui-dialog-header { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.ui-dialog-header h2 { font-size: 1.25rem; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
+.ui-dialog-header button { flex-shrink: 0; }
+.ui-dialog-text { padding: 16px; border: 1px solid var(--ui-border); border-radius: 12px; background: var(--ui-surface); color: var(--ui-text); }
+.ui-dialog :focus-visible { outline: 3px solid var(--ui-accent); outline-offset: 3px; }
 @media (max-width: 900px) { .ui-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
   .ui-page { padding: 32px 20px 56px; }

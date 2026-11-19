@@ -2,6 +2,7 @@ import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table } fr
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
+import ScrollRegion from "../components/ui/ScrollRegion";
 import httpCycleImage from "../assets/images/http-cycle-diagram.svg";
 import httpStatusImage from "../assets/images/http-status-map.svg";
 
@@ -1034,7 +1035,7 @@ export default function ProtocoloHttp() {
       <Panel as="div" layout="plain" className="mb-8">
         <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.flowTitle}</h2>
         <p className="text-sm text-slate-400 mb-5 text-justify">{txt.flowSubtitle}</p>
-        <div className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
+        <ScrollRegion aria-label={txt.flowTitle} className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
           {txt.flow.map((item, index) => (
             <Fragment key={item}>
               <article className="min-w-[220px] md:w-[220px] bg-slate-900/40 rounded-xl border border-slate-800 px-4 py-3">
@@ -1060,7 +1061,7 @@ export default function ProtocoloHttp() {
               )}
             </Fragment>
           ))}
-        </div>
+        </ScrollRegion>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">

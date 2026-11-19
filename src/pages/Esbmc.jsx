@@ -747,7 +747,7 @@ export default function Esbmc() {
           </div>
         </Panel>
 
-        <main className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <Panel as="article" layout="plain">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
               {activeModule.eyebrow}
@@ -838,7 +838,7 @@ export default function Esbmc() {
               ))}
             </div>
           )}
-        </main>
+        </div>
       </div>
     </PageTemplate>
   );
