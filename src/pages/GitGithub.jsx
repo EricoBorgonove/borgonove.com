@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -275,6 +276,8 @@ const MODULOS_EN = [
 ];
 
 export default function GitGithub() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -302,7 +305,7 @@ export default function GitGithub() {
   return (
     <PageTemplate>
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{txt.back}</BackButton>
+        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText(txt.back)}</BackButton>
       </div>
 
       <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
@@ -312,33 +315,33 @@ export default function GitGithub() {
             d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.8-.25.8-.56v-2.18c-3.26.72-3.95-1.4-3.95-1.4-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.26 3.4.96.1-.75.4-1.26.73-1.55-2.6-.3-5.34-1.3-5.34-5.8 0-1.28.46-2.33 1.2-3.15-.12-.3-.52-1.52.12-3.17 0 0 .98-.31 3.2 1.2a11.08 11.08 0 0 1 5.83 0c2.22-1.51 3.2-1.2 3.2-1.2.64 1.65.24 2.87.12 3.17.75.82 1.2 1.87 1.2 3.15 0 4.5-2.75 5.5-5.36 5.79.41.36.78 1.08.78 2.18v3.23c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
-      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.subtitle)}</PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-lg font-semibold text-cyan-300 mb-2">{txt.objectiveTitle}</h2>
-        <p className="text-sm text-slate-300 leading-relaxed">{txt.objective}</p>
+        <h2 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(txt.objectiveTitle)}</h2>
+        <p className="text-sm text-slate-300 leading-relaxed">{uiText(txt.objective)}</p>
       </Panel>
 
       <div className="space-y-5">
         {modulos.map((modulo) => (
           <Panel as="details" layout="plain" key={modulo.titulo}>
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
-              {modulo.titulo}
+              {uiText(modulo.titulo)}
             </summary>
-            <p className="mt-3 text-sm text-slate-300">{modulo.descricao}</p>
+            <p className="mt-3 text-sm text-slate-300">{uiText(modulo.descricao)}</p>
 
             <ol className="mt-4 space-y-2 text-sm text-slate-300 list-decimal list-inside">
               {modulo.passos.map((passo) => (
                 <li key={passo} className="text-justify">
-                  {passo}
+                  {uiText(passo)}
                 </li>
               ))}
             </ol>
 
             <div className="mt-4">
-              <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">{txt.commands}</p>
+              <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">{uiText(txt.commands)}</p>
               <pre className="bg-slate-900/70 border border-slate-700 rounded-xl p-4 text-xs text-slate-200 overflow-auto">
                 {modulo.comandos.join("\n")}
               </pre>

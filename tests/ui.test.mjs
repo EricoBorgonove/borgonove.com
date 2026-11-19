@@ -13,7 +13,8 @@ before(async () => {
     appType: "custom",
     optimizeDeps: { noDiscovery: true, entries: [], include: [] },
   });
-  await server.ssrLoadModule("/src/i18n.js");
+  const { default: locale } = await server.ssrLoadModule("/src/i18n.js");
+  await locale.changeLanguage("pt");
   ui = await server.ssrLoadModule("/src/components/ui/Patterns.jsx");
 });
 after(async () => { await server?.close(); });

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -35,6 +36,8 @@ plt.tight_layout()
 plt.show()`;
 
 function DataTable({ section }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-800">
       <Table className="min-w-[760px] w-full text-left text-sm bg-slate-950/70">
@@ -42,7 +45,7 @@ function DataTable({ section }) {
           <tr>
             {section.columns.map((column) => (
               <th key={column.key} className="px-4 py-3 font-semibold text-slate-100">
-                {column.label}
+                {uiText(column.label)}
               </th>
             ))}
           </tr>
@@ -52,13 +55,13 @@ function DataTable({ section }) {
             <tr key={`${section.id}-${rowIndex}`} className="border-t border-slate-800">
               {section.columns.map((column, columnIndex) => (
                 <td key={`${section.id}-${rowIndex}-${column.key}`} className="px-4 py-3 text-slate-300 align-top">
-                  {columnIndex === 0 || column.key === "example" ? (
+                  {uiText(columnIndex === 0 || column.key === "example" ? (
                     <code className={columnIndex === 0 ? "font-semibold text-cyan-300" : "text-slate-200"}>
                       {item[column.key]}
                     </code>
                   ) : (
                     item[column.key]
-                  )}
+                  ))}
                 </td>
               ))}
             </tr>
@@ -70,6 +73,8 @@ function DataTable({ section }) {
 }
 
 export default function PythonMatplotlib() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const sections = localize(matplotlibChartSections, isEn);
@@ -109,7 +114,7 @@ export default function PythonMatplotlib() {
     <PageTemplate width="wide">
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/python-pandas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {pick(txt.back, isEn)}
+          {uiText(pick(txt.back, isEn))}
         </BackButton>
       </div>
 
@@ -120,24 +125,24 @@ export default function PythonMatplotlib() {
             d="M4 19h16v2H4a2 2 0 0 1-2-2V3h2v16Zm3-2H5V9h2v8Zm4 0H9V5h2v12Zm4 0h-2v-6h2v6Zm4 0h-2V7h2v10Zm-8.2-5.4 3.3-3.3 2 2L21 5.4 19.6 4l-3.5 3.5-2-2L9.4 10.2 7.7 8.5 6.3 9.9l3.1 3.1 1.4-1.4Z"
           />
         </svg>
-        <span>Python Matplotlib</span>
+        <span>{uiText("Python Matplotlib")}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.whatIs, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.whatIs, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed">
-          {pick(txt.whatIsText, isEn)}{" "}
-          <code className="text-cyan-300">pyplot</code>, {pick(txt.pyplotEnd, isEn)}
+          {uiText(pick(txt.whatIsText, isEn))}{" "}
+          <code className="text-cyan-300">pyplot</code>, {uiText(pick(txt.pyplotEnd, isEn))}
         </p>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.install, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.install, isEn))}</h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-4">
-          {pick(txt.installText, isEn)}
+          {uiText(pick(txt.installText, isEn))}
         </p>
         <CodeBlock language="bash">{`pip install matplotlib
 # ou
@@ -145,25 +150,25 @@ conda install matplotlib`}</CodeBlock>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.anatomy, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.anatomy, isEn))}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">Figure</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText("Figure")}</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              {pick(txt.figure, isEn)}
+              {uiText(pick(txt.figure, isEn))}
             </p>
           </article>
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">Axes</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText("Axes")}</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              {pick(txt.axes, isEn)}
+              {uiText(pick(txt.axes, isEn))}
             </p>
           </article>
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{pick(txt.quickNav, isEn)}</h2>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.quickNav, isEn))}</h2>
         <div className="grid gap-3 md:grid-cols-3">
           {sections.map((section, index) => (
             <a
@@ -171,7 +176,7 @@ conda install matplotlib`}</CodeBlock>
               href={`#${section.id}`}
               className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-200 hover:border-cyan-400 transition"
             >
-              {index + 1}. {section.title}
+              {uiText(index + 1)}. {uiText(section.title)}
             </a>
           ))}
         </div>
@@ -181,9 +186,9 @@ conda install matplotlib`}</CodeBlock>
         {sections.map((section, index) => (
           <Panel as="article" layout="plain" key={section.id} id={section.id} className="scroll-mt-24">
             <h2 className="text-2xl font-semibold text-cyan-300 mb-5">
-              {index + 1}. {section.title}
+              {uiText(index + 1)}. {uiText(section.title)}
             </h2>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">{section.description}</p>
+            <p className="text-sm text-slate-400 leading-relaxed mb-5">{uiText(section.description)}</p>
             <DataTable section={section} />
           </Panel>
         ))}
@@ -191,36 +196,35 @@ conda install matplotlib`}</CodeBlock>
 
       <Panel as="div" layout="plain" className="my-8">
         <h2 className="text-2xl font-semibold text-cyan-300 mb-4">
-          {pick(txt.completeExample, isEn)}
+          {uiText(pick(txt.completeExample, isEn))}
         </h2>
         <p className="text-sm text-slate-300 leading-relaxed mb-5">
-          {pick(txt.completeText, isEn)}
+          {uiText(pick(txt.completeText, isEn))}
         </p>
         <CodeBlock>{isEn ? matplotlibCompleteExampleEn : matplotlibCompleteExample}</CodeBlock>
       </Panel>
 
       <Panel as="div" layout="plain">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.tips, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.tips, isEn))}</h2>
         <div className="grid gap-4 md:grid-cols-3">
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">{pick(txt.readyStyles, isEn)}</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              Use <code className="text-cyan-300">plt.style.use('ggplot')</code> ou{" "}
-              <code className="text-cyan-300">plt.style.use('seaborn-v0_8')</code> {pick(txt.readyStylesText, isEn)}
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(pick(txt.readyStyles, isEn))}</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">{uiText("Use ")}<code className="text-cyan-300">plt.style.use('ggplot')</code>{uiText(" ou")}{" "}
+              <code className="text-cyan-300">plt.style.use('seaborn-v0_8')</code> {uiText(pick(txt.readyStylesText, isEn))}
             </p>
           </article>
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">{pick(txt.oo, isEn)}</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(pick(txt.oo, isEn))}</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              {pick(txt.ooText, isEn)} <code className="text-cyan-300">fig, ax = plt.subplots()</code>. {pick(txt.ooTextEnd, isEn)}{" "}
+              {uiText(pick(txt.ooText, isEn))} <code className="text-cyan-300">fig, ax = plt.subplots()</code>. {uiText(pick(txt.ooTextEnd, isEn))}{" "}
               <code className="text-cyan-300">plt.plot()</code>.
             </p>
           </article>
           <article className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-            <h3 className="text-lg font-semibold text-slate-100 mb-2">{pick(txt.colors, isEn)}</h3>
+            <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(pick(txt.colors, isEn))}</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              {pick(txt.colorsText, isEn)} <code className="text-cyan-300">'red'</code>, {pick(txt.colorsTextMid, isEn)}{" "}
-              <code className="text-cyan-300">'#FF5733'</code>, {pick(txt.colorsTextEnd, isEn)}{" "}
+              {uiText(pick(txt.colorsText, isEn))} <code className="text-cyan-300">'red'</code>, {uiText(pick(txt.colorsTextMid, isEn))}{" "}
+              <code className="text-cyan-300">'#FF5733'</code>, {uiText(pick(txt.colorsTextEnd, isEn))}{" "}
               <code className="text-cyan-300">'0.5'</code>.
             </p>
           </article>

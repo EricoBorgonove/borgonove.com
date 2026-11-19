@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, Panel, Select } from "./ui/Patterns";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -39,6 +40,8 @@ function getInitialTheme() {
 }
 
 function ThemeToggle({ theme, onToggle, labels, className = "" }) {
+  const { text: uiText } = useContentTranslation();
+
   const isDark = theme === "dark";
 
   return (
@@ -48,8 +51,8 @@ function ThemeToggle({ theme, onToggle, labels, className = "" }) {
       className={`relative inline-flex h-9 w-[78px] items-center rounded-full border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 ${
         isDark ? "bg-black border-black" : "bg-orange-500 border-orange-500"
       } ${className}`}
-      aria-label={isDark ? labels.toLight : labels.toDark}
-      title={isDark ? labels.light : labels.dark}
+      aria-label={uiText(isDark ? labels.toLight : labels.toDark)}
+      title={uiText(isDark ? labels.light : labels.dark)}
     >
       <span
         className={`absolute text-white transition-all duration-300 ${
@@ -78,29 +81,33 @@ function ThemeToggle({ theme, onToggle, labels, className = "" }) {
         }`}
         aria-hidden="true"
       />
-      <span className="sr-only">{isDark ? labels.darkActive : labels.lightActive}</span>
+      <span className="sr-only">{uiText(isDark ? labels.darkActive : labels.lightActive)}</span>
     </Button>
   );
 }
 
 function LanguageToggle({ currentLanguage, onChange, label }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <label className="inline-flex items-center gap-2">
-      <span className="sr-only">{label}</span>
+      <span className="sr-only">{uiText(label)}</span>
       <Select
-        aria-label={label}
+        aria-label={uiText(label)}
         value={currentLanguage}
         onChange={(event) => onChange(event.target.value)}
         className="h-9 bg-slate-900/70 border border-slate-700 rounded-xl px-3 text-sm text-slate-100 focus:outline-none focus:border-cyan-400"
       >
-        <option value="pt">PT</option>
-        <option value="en">EN</option>
+        <option value="pt">{uiText("PT")}</option>
+        <option value="en">{uiText("EN")}</option>
       </Select>
     </label>
   );
 }
 
 export default function Navbar() {
+  const { text: uiText } = useContentTranslation();
+
   const { t, i18n } = useTranslation();
   const { isAuthenticated } = useAdminAuth();
   const [open, setOpen] = useState(false);
@@ -577,32 +584,32 @@ export default function Navbar() {
         <Link to="/" className="inline-flex items-center gap-3 min-w-0 shrink-0">
           <img
             src={theme === "light" ? logoB9 : logo}
-            alt="Borgonove Tech"
+            alt={uiText("Borgonove Tech")}
             className="h-5 sm:h-6 xl:h-7 w-auto max-w-[140px] sm:max-w-[170px] xl:max-w-[190px] object-contain"
           />
-          <span className="sr-only">Borgonove.tech</span>
+          <span className="sr-only">{uiText("Borgonove.tech")}</span>
         </Link>
 
         <nav className="hidden xl:flex flex-1 min-w-0 justify-center gap-5 2xl:gap-8 text-sm font-medium">
           <span
             className="text-cyan-300 whitespace-nowrap"
-            title={t("navbar.adminArea")}
+            title={uiText(t("navbar.adminArea"))}
           >
-            {t("navbar.me")}
+            {uiText(t("navbar.me"))}
           </span>
           {sectionItems.map((item) => (
             <Link key={item.href} to={item.href} className="menu-link whitespace-nowrap">
-              {t("navbar.roadmaps")}
+              {uiText(t("navbar.roadmaps"))}
             </Link>
           ))}
           <Link to="/blog" className="menu-link whitespace-nowrap">
-            {t("navbar.blog")}
+            {uiText(t("navbar.blog"))}
           </Link>
           <Link to="/utilidades" className="menu-link whitespace-nowrap">
-            {t("navbar.utilities")}
+            {uiText(t("navbar.utilities"))}
           </Link>
           <Link to="/disciplinas" className="menu-link whitespace-nowrap">
-            {t("navbar.subjects")}
+            {uiText(t("navbar.subjects"))}
           </Link>
         </nav>
 
@@ -611,10 +618,10 @@ export default function Navbar() {
             <Button variant="custom"
               type="button"
               className="border border-slate-700 text-slate-200 px-3 py-2 rounded-xl hover:border-cyan-400 transition whitespace-nowrap"
-              aria-label={t("navbar.search.open")}
+              aria-label={uiText(t("navbar.search.open"))}
               onClick={() => setSearchOpen(true)}
             >
-              {t("navbar.search.open")}
+              {uiText(t("navbar.search.open"))}
             </Button>
           )}
 
@@ -633,7 +640,7 @@ export default function Navbar() {
               <Input
                 ref={searchInputRef}
                 type="search"
-                placeholder={t("navbar.search.placeholder")}
+                placeholder={uiText(t("navbar.search.placeholder"))}
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 className="w-full bg-slate-900/70 border border-slate-700 rounded-xl pl-11 pr-4 py-2 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400"
@@ -650,13 +657,13 @@ export default function Navbar() {
                           className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800/70 transition"
                           onClick={() => handleNavigate(item.path)}
                         >
-                          <p className="text-sm text-slate-100">{item.title}</p>
-                          <p className="text-xs text-slate-400">{item.subtitle}</p>
+                          <p className="text-sm text-slate-100">{uiText(item.title)}</p>
+                          <p className="text-xs text-slate-400">{uiText(item.subtitle)}</p>
                         </Button>
                       ))}
                     </div>
                   ) : (
-                    <p className="px-3 py-2 text-sm text-slate-400">{t("navbar.search.none")}</p>
+                    <p className="px-3 py-2 text-sm text-slate-400">{uiText(t("navbar.search.none"))}</p>
                   )}
                 </Panel>
               )}
@@ -668,14 +675,14 @@ export default function Navbar() {
               to="/contato"
               className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-4 2xl:px-5 py-2 rounded-xl font-semibold transition whitespace-nowrap"
             >
-              {t("navbar.contact")}
+              {uiText(t("navbar.contact"))}
             </Link>
           )}
 
           <LanguageToggle
             currentLanguage={currentLanguage}
             onChange={handleLanguageChange}
-            label={t("navbar.language")}
+            label={uiText(t("navbar.language"))}
           />
 
           <Link
@@ -685,8 +692,8 @@ export default function Navbar() {
                 ? "bg-cyan-500/15 border-cyan-400 text-cyan-300"
                 : "text-slate-300 hover:border-cyan-400 hover:text-cyan-300"
             }`}
-            title={t("navbar.adminArea")}
-            aria-label={t("navbar.adminArea")}
+            title={uiText(t("navbar.adminArea"))}
+            aria-label={uiText(t("navbar.adminArea"))}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
               <path
@@ -702,7 +709,7 @@ export default function Navbar() {
         <Button variant="custom"
           type="button"
           className="xl:hidden text-2xl shrink-0"
-          aria-label={t("navbar.menuOpen")}
+          aria-label={uiText(t("navbar.menuOpen"))}
           onClick={() => setOpen((prev) => !prev)}
         >
           ☰
@@ -711,29 +718,29 @@ export default function Navbar() {
 
       {open && (
         <Panel as="div" layout="plain" className="rounded-2xl mt-3 px-6 py-6 xl:hidden">
-          <span className="block py-2 text-cyan-300" title={t("navbar.adminArea")}>
-            {t("navbar.me")}
+          <span className="block py-2 text-cyan-300" title={uiText(t("navbar.adminArea"))}>
+            {uiText(t("navbar.me"))}
           </span>
           {sectionItems.map((item) => (
             <Link key={item.href} to={item.href} className="block py-2" onClick={handleCloseMobileMenu}>
-              {t("navbar.roadmaps")}
+              {uiText(t("navbar.roadmaps"))}
             </Link>
           ))}
           <Link to="/blog" className="block py-2" onClick={handleCloseMobileMenu}>
-            {t("navbar.blog")}
+            {uiText(t("navbar.blog"))}
           </Link>
           <Link to="/utilidades" className="block py-2" onClick={handleCloseMobileMenu}>
-            {t("navbar.utilities")}
+            {uiText(t("navbar.utilities"))}
           </Link>
           <Link to="/disciplinas" className="block py-2" onClick={handleCloseMobileMenu}>
-            {t("navbar.subjects")}
+            {uiText(t("navbar.subjects"))}
           </Link>
           <Link
             to="/contato"
             onClick={handleCloseMobileMenu}
             className="mt-2 block w-full bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-4 py-2 rounded-xl font-semibold text-center transition"
           >
-            {t("navbar.talkToUs")}
+            {uiText(t("navbar.talkToUs"))}
           </Link>
           <Link
             to="/admin"
@@ -743,7 +750,7 @@ export default function Navbar() {
                 ? "border-cyan-400 bg-cyan-500/10 text-cyan-300"
                 : "border-slate-700 text-slate-200 hover:border-cyan-400"
             }`}
-            title={t("navbar.adminArea")}
+            title={uiText(t("navbar.adminArea"))}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
               <path
@@ -751,13 +758,13 @@ export default function Navbar() {
                 d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm0 2.1 6 2.25V11c0 4.1-2.6 8.1-6 9.6-3.4-1.5-6-5.5-6-9.6V6.35L12 4.1ZM9 11a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Z"
               />
             </svg>
-            <span>{t("navbar.adminArea")}</span>
+            <span>{uiText(t("navbar.adminArea"))}</span>
           </Link>
           <div className="mt-2 flex items-center justify-center gap-2">
             <LanguageToggle
               currentLanguage={currentLanguage}
               onChange={handleLanguageChange}
-              label={t("navbar.language")}
+              label={uiText(t("navbar.language"))}
             />
             <ThemeToggle theme={theme} onToggle={toggleTheme} labels={themeLabels} />
           </div>
@@ -767,7 +774,7 @@ export default function Navbar() {
               className="mt-4 w-full border border-slate-700 text-slate-200 px-3 py-2 rounded-xl"
               onClick={() => setSearchOpen((prev) => !prev)}
             >
-              {t("navbar.search.open")}
+              {uiText(t("navbar.search.open"))}
             </Button>
             {searchOpen && (
               <form onSubmit={handleSearchSubmit} className="relative mt-3">
@@ -783,7 +790,7 @@ export default function Navbar() {
                 </svg>
                 <Input
                   type="search"
-                  placeholder={t("navbar.search.placeholder")}
+                  placeholder={uiText(t("navbar.search.placeholder"))}
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   className="w-full bg-slate-900/70 border border-slate-700 rounded-xl pl-11 pr-4 py-2 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-cyan-400"
@@ -799,13 +806,13 @@ export default function Navbar() {
                             className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-800/70 transition"
                             onClick={() => handleNavigate(item.path)}
                           >
-                            <p className="text-sm text-slate-100">{item.title}</p>
-                            <p className="text-xs text-slate-400">{item.subtitle}</p>
+                            <p className="text-sm text-slate-100">{uiText(item.title)}</p>
+                            <p className="text-xs text-slate-400">{uiText(item.subtitle)}</p>
                           </Button>
                         ))}
                       </div>
                     ) : (
-                      <p className="px-3 py-2 text-sm text-slate-400">{t("navbar.search.none")}</p>
+                      <p className="px-3 py-2 text-sm text-slate-400">{uiText(t("navbar.search.none"))}</p>
                     )}
                   </Panel>
                 )}

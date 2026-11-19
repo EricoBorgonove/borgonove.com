@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
@@ -51,8 +52,10 @@ function getHighlightBounds(value, query) {
   };
 }
 
-function HighlightText({ value, query }) {
-  const text = String(value);
+function HighlightText({ value, query, translate = true }) {
+  const { text: uiText } = useContentTranslation();
+
+  const text = translate ? uiText(String(value)) : String(value);
   const bounds = getHighlightBounds(text, query);
 
   if (!bounds) {
@@ -187,6 +190,8 @@ function isExamImportant(row) {
 }
 
 function LevelBadge({ level }) {
+  const { text: uiText } = useContentTranslation();
+
   const classes = {
     Básico: "postgres-level-basic",
     Intermediário: "postgres-level-intermediate",
@@ -195,12 +200,14 @@ function LevelBadge({ level }) {
 
   return (
     <span className={`postgres-level-badge ${classes[level] || classes.Básico}`}>
-      {level}
+      {uiText(level)}
     </span>
   );
 }
 
 function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-800">
       <Table className="min-w-[980px] w-full text-left text-sm bg-slate-950/70">
@@ -208,13 +215,13 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
           <tr>
             {columns.map((column) => (
               <th key={column.key} className="px-4 py-3 font-semibold text-slate-100">
-                {column.label}
+                {uiText(column.label)}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {section.rows.map((row, rowIndex) => {
+          {uiText(section.rows.map((row, rowIndex) => {
             const rowKey = `${section.title}-${row.name}-${rowIndex}`;
             const level = getRowLevel(row);
             const examImportant = isExamImportant(row);
@@ -226,21 +233,21 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
                   key={`${section.title}-${row.name}-${column.key}`}
                   className="px-4 py-3 align-top text-slate-300"
                 >
-                  {column.key === "example" ? (
+                  {uiText(column.key === "example" ? (
                     <div className="flex min-w-[220px] items-start justify-between gap-3">
                       <code className="whitespace-pre-wrap text-slate-200">
-                        <HighlightText value={row[column.key]} query={query} />
+                        <HighlightText value={row[column.key]} query={query} translate={false} />
                       </code>
                       <Button variant="secondary"
                         type="button"
                         onClick={() => onCopyExample(row[column.key], rowKey)}
                         className="inline-flex h-8 w-8 shrink-0 items-center justify-center border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
                         aria-label={
-                          copiedKey === rowKey
+                          uiText(copiedKey === rowKey
                             ? `Exemplo copiado: ${row[column.key]}`
-                            : `Copiar exemplo: ${row[column.key]}`
+                            : `Copiar exemplo: ${row[column.key]}`)
                         }
-                        title={copiedKey === rowKey ? "Copiado" : "Copiar exemplo"}
+                        title={uiText(copiedKey === rowKey ? "Copiado" : "Copiar exemplo")}
                       >
                         {copiedKey === rowKey ? <CheckIcon /> : <ClipboardIcon />}
                       </Button>
@@ -253,20 +260,18 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
                       <div className="mt-2 flex flex-wrap gap-2">
                         <LevelBadge level={level} />
                         {examImportant && (
-                          <span className="rounded-md border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 text-[11px] font-semibold text-cyan-200">
-                            Essencial
-                          </span>
+                          <span className="rounded-md border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 text-[11px] font-semibold text-cyan-200">{uiText("Essencial")}</span>
                         )}
                       </div>
                     </div>
                   ) : (
                     <HighlightText value={row[column.key]} query={query} />
-                  )}
+                  ))}
                 </td>
               ))}
             </tr>
             );
-          })}
+          }))}
         </tbody>
       </Table>
     </TableContainer>
@@ -274,6 +279,8 @@ function ReferenceTable({ columns, section, copiedKey, onCopyExample, query }) {
 }
 
 export default function PostgresqlTabelaDetalhe() {
+  const { text: uiText } = useContentTranslation();
+
   const { tableSlug } = useParams();
   const table = findPostgresqlTable(tableSlug);
   const [query, setQuery] = useState("");
@@ -291,9 +298,9 @@ export default function PostgresqlTabelaDetalhe() {
 
     return table.sections
       .map((section) => {
-        const sectionText = normalizeText(`${section.title} ${section.description}`);
+        const sectionText = normalizeText(`${uiText(section.title)} ${uiText(section.description)}`);
         const rows = section.rows.filter((row) => {
-          const rowText = normalizeText(Object.values(row).join(" "));
+          const rowText = normalizeText(Object.values(row).map((value) => uiText(value)).join(" "));
 
           return sectionText.includes(normalizedQuery) || rowText.includes(normalizedQuery);
         });
@@ -301,7 +308,7 @@ export default function PostgresqlTabelaDetalhe() {
         return { ...section, rows };
       })
       .filter((section) => section.rows.length > 0);
-  }, [normalizedQuery, table]);
+  }, [normalizedQuery, table, uiText]);
 
   if (!table) {
     return <Navigate to="/disciplinas/postgresql/material-apoio" replace />;
@@ -336,31 +343,28 @@ export default function PostgresqlTabelaDetalhe() {
         <BackButton
           fallbackTo="/disciplinas/postgresql/material-apoio"
           className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2"
-        >
-          Voltar para Material de apoio
-        </BackButton>
+        >{uiText("Voltar para Material de apoio")}</BackButton>
       </div>
 
       <div className="mb-8 max-w-4xl">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
-            {table.category}
+            {uiText(table.category)}
           </span>
-          <span className="text-sm font-semibold text-slate-500">
-            Material {String(table.order).padStart(2, "0")}
+          <span className="text-sm font-semibold text-slate-500">{uiText("Material ")}{uiText(String(table.order).padStart(2, "0"))}
           </span>
         </div>
-        <PageTitle className="mb-4">{table.title}</PageTitle>
-        <p className="text-lg leading-relaxed text-slate-400">{table.summary}</p>
+        <PageTitle className="mb-4">{uiText(table.title)}</PageTitle>
+        <p className="text-lg leading-relaxed text-slate-400">{uiText(table.summary)}</p>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Como usar este material</h2>
+        <h2 className="mb-4 text-2xl font-semibold text-cyan-300">{uiText("Como usar este material")}</h2>
         <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
           {table.notes.map((note) => (
             <li key={note} className="flex gap-3">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-              <span>{note}</span>
+              <span>{uiText(note)}</span>
             </li>
           ))}
         </ul>
@@ -369,18 +373,14 @@ export default function PostgresqlTabelaDetalhe() {
       <Panel as="div" layout="plain" className="mb-8">
         <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <label htmlFor="busca-tabela-postgresql" className="text-xl font-semibold text-cyan-300">
-              Buscar neste material
-            </label>
+            <label htmlFor="busca-tabela-postgresql" className="text-xl font-semibold text-cyan-300">{uiText("Buscar neste material")}</label>
           </div>
           {hasSearch && (
             <Button variant="secondary"
               type="button"
               onClick={() => setQuery("")}
               className="inline-flex items-center justify-center border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
-            >
-              Limpar busca
-            </Button>
+            >{uiText("Limpar busca")}</Button>
           )}
         </div>
         <Input
@@ -388,13 +388,13 @@ export default function PostgresqlTabelaDetalhe() {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Ex.: json, null, primary key, date, between..."
+          placeholder={uiText("Ex.: json, null, primary key, date, between...")}
           className="w-full border text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
         />
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="mb-4 text-xl font-semibold text-cyan-300">Navegação rápida</h2>
+        <h2 className="mb-4 text-xl font-semibold text-cyan-300">{uiText("Navegação rápida")}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {filteredSections.map((section, index) => (
             <a
@@ -402,8 +402,8 @@ export default function PostgresqlTabelaDetalhe() {
               href={`#${slugify(section.title)}`}
               className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-200"
             >
-              <span className="mr-2 text-cyan-300">{String(index + 1).padStart(2, "0")}</span>
-              {section.title}
+              <span className="mr-2 text-cyan-300">{uiText(String(index + 1).padStart(2, "0"))}</span>
+              {uiText(section.title)}
             </a>
           ))}
         </div>
@@ -414,11 +414,10 @@ export default function PostgresqlTabelaDetalhe() {
           {filteredSections.map((section, index) => (
           <Panel as="article" layout="plain" key={section.title} id={slugify(section.title)}>
             <div className="mb-5">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                Seção {String(index + 1).padStart(2, "0")}
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">{uiText("Seção ")}{uiText(String(index + 1).padStart(2, "0"))}
               </p>
-              <h2 className="mb-2 text-2xl font-semibold text-slate-100">{section.title}</h2>
-              <p className="text-sm leading-relaxed text-slate-400">{section.description}</p>
+              <h2 className="mb-2 text-2xl font-semibold text-slate-100">{uiText(section.title)}</h2>
+              <p className="text-sm leading-relaxed text-slate-400">{uiText(section.description)}</p>
             </div>
 
             <ReferenceTable
@@ -433,10 +432,8 @@ export default function PostgresqlTabelaDetalhe() {
         </div>
       ) : (
         <Panel as="div" layout="plain" className="text-center">
-          <h2 className="mb-2 text-2xl font-semibold text-slate-100">Nenhum item encontrado</h2>
-          <p className="text-sm leading-relaxed text-slate-400">
-            Tente buscar por outro termo, como o nome do comando, tipo, categoria ou parte do exemplo.
-          </p>
+          <h2 className="mb-2 text-2xl font-semibold text-slate-100">{uiText("Nenhum item encontrado")}</h2>
+          <p className="text-sm leading-relaxed text-slate-400">{uiText("Tente buscar por outro termo, como o nome do comando, tipo, categoria ou parte do exemplo.")}</p>
         </Panel>
       )}
     </PageTemplate>

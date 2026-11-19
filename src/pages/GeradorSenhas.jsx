@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -41,6 +42,8 @@ function calcularForca(password) {
 }
 
 export default function GeradorSenhas() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -135,7 +138,7 @@ export default function GeradorSenhas() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -145,13 +148,13 @@ export default function GeradorSenhas() {
             d="M20 10h-1.1a6.9 6.9 0 0 0-1.08-2.6l.78-.78a1 1 0 1 0-1.42-1.42l-.78.78A6.9 6.9 0 0 0 13.8 4.9V3.8a1 1 0 1 0-2 0v1.1A6.9 6.9 0 0 0 9.2 6l-.78-.78A1 1 0 1 0 7 6.64l.78.78A6.9 6.9 0 0 0 6.7 10H5.6a1 1 0 1 0 0 2h1.1c.2.94.57 1.82 1.08 2.6l-.78.78A1 1 0 0 0 8.42 16.8l.78-.78c.78.51 1.66.88 2.6 1.08v1.1a1 1 0 1 0 2 0v-1.1c.94-.2 1.82-.57 2.6-1.08l.78.78a1 1 0 0 0 1.42-1.42l-.78-.78c.51-.78.88-1.66 1.08-2.6H20a1 1 0 1 0 0-2Zm-7.2 3.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-6">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.length}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.length)}</span>
             <Input
               type="number"
               min="4"
@@ -166,43 +169,43 @@ export default function GeradorSenhas() {
           <div className="grid grid-cols-2 gap-3 text-sm text-slate-300">
             <label className="inline-flex items-center gap-2">
               <Input type="checkbox" checked={useUpper} onChange={(event) => setUseUpper(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
-              {txt.upper}
+              {uiText(txt.upper)}
             </label>
             <label className="inline-flex items-center gap-2">
               <Input type="checkbox" checked={useLower} onChange={(event) => setUseLower(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
-              {txt.lower}
+              {uiText(txt.lower)}
             </label>
             <label className="inline-flex items-center gap-2">
               <Input type="checkbox" checked={useNumbers} onChange={(event) => setUseNumbers(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
-              {txt.numbers}
+              {uiText(txt.numbers)}
             </label>
             <label className="inline-flex items-center gap-2">
               <Input type="checkbox" checked={useSymbols} onChange={(event) => setUseSymbols(event.target.checked)} className="h-4 w-4 accent-cyan-400" />
-              {txt.symbols}
+              {uiText(txt.symbols)}
             </label>
           </div>
         </div>
 
         <div className="flex flex-wrap gap-3 mt-6">
           <Button variant="primary" type="button" onClick={generatePassword} className="text-slate-900 transition">
-            {txt.generate}
+            {uiText(txt.generate)}
           </Button>
           <Button variant="secondary" type="button" onClick={copyPassword} className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition">
-            {txt.copy}
+            {uiText(txt.copy)}
           </Button>
         </div>
 
         <div className="mt-6">
-          <p className="text-sm text-slate-400 mb-2">{txt.generated}</p>
+          <p className="text-sm text-slate-400 mb-2">{uiText(txt.generated)}</p>
           <p className="bg-slate-900/70 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 break-all min-h-12">
-            {password || txt.clickGenerate}
+            {password || uiText(txt.clickGenerate)}
           </p>
           {password && (
             <p className={`text-sm mt-3 ${strength.className}`}>
-              {txt.strength}: {strength.level === "weak" ? txt.strengthWeak : strength.level === "medium" ? txt.strengthMedium : txt.strengthStrong}
+              {uiText(txt.strength)}: {uiText(strength.level === "weak" ? txt.strengthWeak : strength.level === "medium" ? txt.strengthMedium : txt.strengthStrong)}
             </p>
           )}
-          {message && <p className="text-sm mt-2 text-slate-300">{message}</p>}
+          {message && <p className="text-sm mt-2 text-slate-300">{uiMessage(message)}</p>}
         </div>
       </Panel>
     </PageTemplate>

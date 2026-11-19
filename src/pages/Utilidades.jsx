@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { CardGrid, ContentCard, PageTemplate, PageTitle, Section } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
@@ -85,6 +86,8 @@ const categorias = [
 ];
 
 export default function Utilidades() {
+  const { text: uiText } = useContentTranslation();
+
   const { t, i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.startsWith("en") ? "en-US" : "pt-BR";
 
@@ -114,19 +117,19 @@ export default function Utilidades() {
             d="M10.59 3.41a2 2 0 0 1 2.82 0l7.18 7.18a2 2 0 0 1 0 2.82l-7.18 7.18a2 2 0 0 1-2.82 0L3.4 13.41a2 2 0 0 1 0-2.82l7.18-7.18Zm1.41 2L5.23 12 12 18.77 18.77 12 12 5.23ZM11 8h2v5h-2V8Zm0 6h2v2h-2v-2Z"
           />
         </svg>
-        <span>{t("utilities.title")}</span>
+        <span>{uiText(t("utilities.title"))}</span>
       </PageTitle>
 
       <div className="space-y-10">
         {categoriasOrdenadas.map((categoria) => (
-          <Section key={categoria.id} title={t(`utilities.categories.${categoria.id}.title`)}
-            description={t(`utilities.categories.${categoria.id}.description`)}>
+          <Section key={categoria.id} title={uiText(t(`utilities.categories.${categoria.id}.title`))}
+            description={uiText(t(`utilities.categories.${categoria.id}.description`))}>
             <CardGrid>
               {categoria.items.map((item) => (
                 <ContentCard key={item.to} to={item.to}
-                  title={t(`utilities.categories.${categoria.id}.items.${item.id}.title`)}
-                  description={t(`utilities.categories.${categoria.id}.items.${item.id}.description`)}
-                  action={i18n.resolvedLanguage?.startsWith("en") ? "Open tool" : "Abrir ferramenta"} />
+                  title={uiText(t(`utilities.categories.${categoria.id}.items.${item.id}.title`))}
+                  description={uiText(t(`utilities.categories.${categoria.id}.items.${item.id}.description`))}
+                  action={uiText(i18n.resolvedLanguage?.startsWith("en") ? "Open tool" : "Abrir ferramenta")} />
               ))}
             </CardGrid>
           </Section>

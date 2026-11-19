@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import { useTranslation } from "react-i18next";
@@ -383,6 +384,8 @@ const referenciaMateriais = [
 ];
 
 export default function RoadmapLogicaProgramacao() {
+  const { text: uiText } = useContentTranslation();
+
   const { t, i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const tx = (value) => (isEn ? translatePtToEnWithMap(value, roadmapLogicEnMap) : value);
@@ -390,7 +393,7 @@ export default function RoadmapLogicaProgramacao() {
   return (
     <PageTemplate>
       <BackButton fallbackTo="/roadmaps" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">
-        {t("roadmapPages.common.backToRoadmaps")}
+        {uiText(t("roadmapPages.common.backToRoadmaps"))}
       </BackButton>
 
       <PageHeader><PageTitle className="mb-4 flex items-center gap-3">
@@ -400,11 +403,11 @@ export default function RoadmapLogicaProgramacao() {
             d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v12h10V6H7Zm2 2h6v2H9V8Zm0 4h6v2H9v-2Z"
           />
         </svg>
-        <span>{t("roadmapPages.logic.title")}</span>
+        <span>{uiText(t("roadmapPages.logic.title"))}</span>
       </PageTitle>
 
       <PageDescription>
-        {t("roadmapPages.logic.subtitle")}
+        {uiText(t("roadmapPages.logic.subtitle"))}
       </PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
@@ -412,13 +415,13 @@ export default function RoadmapLogicaProgramacao() {
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
             <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h-2v-2h2v2Zm1.1-7.8-.9.9A1.9 1.9 0 0 0 13 11h-2v-.5a3 3 0 0 1 .88-2.12l1.24-1.24A1.5 1.5 0 1 0 10 6H8a3.5 3.5 0 1 1 6.1 2.2Z" />
           </svg>
-          <span>{t("roadmapPages.common.howToUseRoadmap")}</span>
+          <span>{uiText(t("roadmapPages.common.howToUseRoadmap"))}</span>
         </h2>
         <ol className="space-y-2 text-sm text-slate-300 list-decimal list-inside mt-4">
-          <li className="text-justify">{t("roadmapPages.logic.howToUse.0")}</li>
-          <li className="text-justify">{t("roadmapPages.logic.howToUse.1")}</li>
-          <li className="text-justify">{t("roadmapPages.logic.howToUse.2")}</li>
-          <li className="text-justify">{t("roadmapPages.logic.howToUse.3")}</li>
+          <li className="text-justify">{uiText(t("roadmapPages.logic.howToUse.0"))}</li>
+          <li className="text-justify">{uiText(t("roadmapPages.logic.howToUse.1"))}</li>
+          <li className="text-justify">{uiText(t("roadmapPages.logic.howToUse.2"))}</li>
+          <li className="text-justify">{uiText(t("roadmapPages.logic.howToUse.3"))}</li>
         </ol>
       </Panel>
 
@@ -431,35 +434,35 @@ export default function RoadmapLogicaProgramacao() {
                   <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
                     <path fill="currentColor" d="M11 2h2v4h-2V2Zm7.07 2.93 1.41 1.41-2.83 2.83-1.41-1.41 2.83-2.83ZM20 11h2v2h-2v-2ZM4 11h2v2H4v-2Zm2.34-4.66 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83ZM12 7a5 5 0 1 0 5 5h-5V7Z" />
                   </svg>
-                  <span>{tx(fase.titulo)}</span>
+                  <span>{uiText(tx(fase.titulo))}</span>
                 </h2>
                 <span className="text-xs font-semibold px-3 py-1 rounded-full border border-slate-600 text-slate-300">
-                  {tx(fase.duracao)}
+                  {uiText(tx(fase.duracao))}
                 </span>
               </div>
             </summary>
 
             <div className="mt-5">
-              <h3 className="text-sm uppercase tracking-wide text-slate-400 mb-2">{t("roadmapPages.common.topics")}</h3>
+              <h3 className="text-sm uppercase tracking-wide text-slate-400 mb-2">{uiText(t("roadmapPages.common.topics"))}</h3>
               <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside mb-5">
                 {fase.topicos.map((topico) => (
                   <li key={topico} className="text-justify">
-                    {tx(topico)}
+                    {uiText(tx(topico))}
                   </li>
                 ))}
               </ul>
 
-              <h3 className="text-sm uppercase tracking-wide text-slate-400 mb-2">{t("roadmapPages.common.practices")}</h3>
+              <h3 className="text-sm uppercase tracking-wide text-slate-400 mb-2">{uiText(t("roadmapPages.common.practices"))}</h3>
               <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside mb-5">
                 {fase.praticas.map((pratica) => (
                   <li key={pratica} className="text-justify">
-                    {tx(pratica)}
+                    {uiText(tx(pratica))}
                   </li>
                 ))}
               </ul>
 
               <p className="text-sm text-slate-200">
-                <span className="font-semibold text-cyan-300">{t("roadmapPages.common.deliverable")}:</span> {tx(fase.entregavel)}
+                <span className="font-semibold text-cyan-300">{uiText(t("roadmapPages.common.deliverable"))}:</span> {uiText(tx(fase.entregavel))}
               </p>
             </div>
           </Panel>
@@ -472,17 +475,17 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M3 6a3 3 0 0 1 3-3h3a3 3 0 0 1 0 6H6v6h3a3 3 0 1 1 0 6H6a3 3 0 0 1-3-3V6Zm12-3h3a3 3 0 1 1 0 6h-3v2h-2V6a3 3 0 0 1 3-3Zm0 4h3a1 1 0 1 0 0-2h-3a1 1 0 0 0 0 2Zm-2 6h2v2h3a1 1 0 1 1 0 2h-3a3 3 0 0 1-3-3v-1h1Z" />
             </svg>
-            <span>{t("roadmapPages.logic.competencyMatrix")}</span>
+            <span>{uiText(t("roadmapPages.logic.competencyMatrix"))}</span>
           </h2>
         </summary>
         <div className="mt-4 grid md:grid-cols-2 gap-4">
           {matrizCompetencias.map((bloco) => (
             <article key={bloco.eixo} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-              <h3 className="font-semibold text-slate-100 mb-2">{tx(bloco.eixo)}</h3>
+              <h3 className="font-semibold text-slate-100 mb-2">{uiText(tx(bloco.eixo))}</h3>
               <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
                 {bloco.itens.map((item) => (
                   <li key={item} className="text-justify">
-                    {tx(item)}
+                    {uiText(tx(item))}
                   </li>
                 ))}
               </ul>
@@ -497,20 +500,20 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M4 6a2 2 0 0 1 2-2h2V2h2v2h4V2h2v2h2a2 2 0 0 1 2 2v3H4V6Zm0 5h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7Zm3 2v2h2v-2H7Zm4 0v2h2v-2h-2Zm4 0v2h2v-2h-2Z" />
             </svg>
-            <span>{t("roadmapPages.common.intensive90Days")}</span>
+            <span>{uiText(t("roadmapPages.common.intensive90Days"))}</span>
           </h2>
         </summary>
         <div className="mt-4 grid md:grid-cols-2 gap-4">
           {plano90Dias.map((bloco) => (
             <article key={bloco.periodo} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-cyan-300 mb-1">
-                {tx(bloco.periodo)}
+                {uiText(tx(bloco.periodo))}
               </p>
-              <h3 className="text-base font-semibold text-slate-100 mb-2">{tx(bloco.foco)}</h3>
+              <h3 className="text-base font-semibold text-slate-100 mb-2">{uiText(tx(bloco.foco))}</h3>
               <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
                 {bloco.entregas.map((item) => (
                   <li key={item} className="text-justify">
-                    {tx(item)}
+                    {uiText(tx(item))}
                   </li>
                 ))}
               </ul>
@@ -525,17 +528,17 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M12 3 2 7l10 4 8-3.2V17h2V7L12 3Zm-6 8v4.5c0 1.8 2.7 3.5 6 3.5s6-1.7 6-3.5V11l-6 2.4L6 11Z" />
             </svg>
-            <span>{t("roadmapPages.logic.goalTracks")}</span>
+            <span>{uiText(t("roadmapPages.logic.goalTracks"))}</span>
           </h2>
         </summary>
         <div className="space-y-4 mt-4">
           {trilhasObjetivo.map((trilha) => (
             <article key={trilha.nome} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-              <h3 className="font-semibold text-slate-100">{tx(trilha.nome)}</h3>
-              <p className="text-sm text-slate-300 mt-1 text-justify">{tx(trilha.foco)}</p>
+              <h3 className="font-semibold text-slate-100">{uiText(tx(trilha.nome))}</h3>
+              <p className="text-sm text-slate-300 mt-1 text-justify">{uiText(tx(trilha.foco))}</p>
               <p className="text-xs text-slate-400 mt-2">
-                <span className="font-semibold text-slate-300">{tx("Próximos passos:")}</span>{" "}
-                {tx(trilha.proximosPassos)}
+                <span className="font-semibold text-slate-300">{uiText(tx("Próximos passos:"))}</span>{" "}
+                {uiText(tx(trilha.proximosPassos))}
               </p>
             </article>
           ))}
@@ -548,17 +551,17 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M4 5a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v2H4V5Zm0 4h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Zm3 3h10v2H7v-2Zm0 4h6v2H7v-2Z" />
             </svg>
-            <span>{t("roadmapPages.logic.progressiveChallenges")}</span>
+            <span>{uiText(t("roadmapPages.logic.progressiveChallenges"))}</span>
           </h2>
         </summary>
         <div className="mt-4 grid md:grid-cols-3 gap-4">
           {desafiosProgressivos.map((bloco) => (
             <article key={bloco.nivel} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-              <h3 className="font-semibold text-slate-100 mb-2">{tx(bloco.nivel)}</h3>
+              <h3 className="font-semibold text-slate-100 mb-2">{uiText(tx(bloco.nivel))}</h3>
               <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
                 {bloco.itens.map((item) => (
                   <li key={item} className="text-justify">
-                    {tx(item)}
+                    {uiText(tx(item))}
                   </li>
                 ))}
               </ul>
@@ -574,13 +577,13 @@ export default function RoadmapLogicaProgramacao() {
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
                 <path fill="currentColor" d="M12 3a9 9 0 1 0 9 9h-9V3Zm-1 0v10h10a10 10 0 1 1-10-10Z" />
               </svg>
-              <span>{t("roadmapPages.logic.highConsistencyRoutine")}</span>
+              <span>{uiText(t("roadmapPages.logic.highConsistencyRoutine"))}</span>
             </h2>
           </summary>
           <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside mt-4">
             {rotinaEstudo.map((item) => (
               <li key={item} className="text-justify">
-                {tx(item)}
+                {uiText(tx(item))}
               </li>
             ))}
           </ul>
@@ -592,13 +595,13 @@ export default function RoadmapLogicaProgramacao() {
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
                 <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.3 13.3-1.4 1.4L12 13.8l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4L12 11l2.9-2.9 1.4 1.4-2.9 2.9 2.9 2.9Z" />
               </svg>
-              <span>{t("roadmapPages.common.commonMistakesToAvoid")}</span>
+              <span>{uiText(t("roadmapPages.common.commonMistakesToAvoid"))}</span>
             </h2>
           </summary>
           <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside mt-4">
             {errosComuns.map((item) => (
               <li key={item} className="text-justify">
-                {tx(item)}
+                {uiText(tx(item))}
               </li>
             ))}
           </ul>
@@ -611,16 +614,16 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M4 5a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v2H4V5Zm0 4h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Zm4 3a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H8Zm0 4a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2H8Z" />
             </svg>
-            <span>{t("roadmapPages.logic.portfolioProjectsExtended")}</span>
+            <span>{uiText(t("roadmapPages.logic.portfolioProjectsExtended"))}</span>
           </h2>
         </summary>
         <div className="space-y-4 mt-4">
           {projetosPortfolio.map((item) => (
             <article key={item.nome} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-              <h3 className="font-semibold text-slate-100">{tx(item.nome)}</h3>
-              <p className="text-sm text-slate-300 mt-1 text-justify">{tx(item.escopo)}</p>
+              <h3 className="font-semibold text-slate-100">{uiText(tx(item.nome))}</h3>
+              <p className="text-sm text-slate-300 mt-1 text-justify">{uiText(tx(item.escopo))}</p>
               <p className="text-xs text-slate-400 mt-2">
-                <span className="font-semibold text-slate-300">{tx("Competências:")}</span> {tx(item.competencias)}
+                <span className="font-semibold text-slate-300">{uiText(tx("Competências:"))}</span> {uiText(tx(item.competencias))}
               </p>
             </article>
           ))}
@@ -634,17 +637,17 @@ export default function RoadmapLogicaProgramacao() {
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
                 <path fill="currentColor" d="M12 3c-4.97 0-9 1.34-9 3v12c0 1.66 4.03 3 9 3s9-1.34 9-3V6c0-1.66-4.03-3-9-3Zm0 2c4.25 0 7 .99 7 1s-2.75 1-7 1-7-.99-7-1 2.75-1 7-1Zm0 5c2.9 0 5.45-.46 7-1.18V12c0 .01-2.75 1-7 1s-7-.99-7-1V8.82C6.55 9.54 9.1 10 12 10Zm0 5c2.9 0 5.45-.46 7-1.18V18c0 .01-2.75 1-7 1s-7-.99-7-1v-4.18C6.55 14.54 9.1 15 12 15Z" />
               </svg>
-              <span>{t("roadmapPages.logic.continuousPracticeLibrary")}</span>
+              <span>{uiText(t("roadmapPages.logic.continuousPracticeLibrary"))}</span>
             </h2>
           </summary>
           <div className="space-y-4 mt-4">
             {bibliotecaPratica.map((bloco) => (
               <article key={bloco.categoria} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-                <h3 className="font-semibold text-slate-100 mb-2">{tx(bloco.categoria)}</h3>
+                <h3 className="font-semibold text-slate-100 mb-2">{uiText(tx(bloco.categoria))}</h3>
                 <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
                   {bloco.itens.map((item) => (
                     <li key={item} className="text-justify">
-                      {tx(item)}
+                      {uiText(tx(item))}
                     </li>
                   ))}
                 </ul>
@@ -659,13 +662,13 @@ export default function RoadmapLogicaProgramacao() {
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
                 <path fill="currentColor" d="M12 2 1 7l11 5 9-4.09V17h2V7L12 2Zm-7 9v4.5C5 18.54 8.58 21 12 21s7-2.46 7-5.5V11l-7 3-7-3Z" />
               </svg>
-              <span>{t("roadmapPages.logic.levelProgressCriteria")}</span>
+              <span>{uiText(t("roadmapPages.logic.levelProgressCriteria"))}</span>
             </h2>
           </summary>
           <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside mt-4">
             {criteriosEvolucao.map((item) => (
               <li key={item} className="text-justify">
-                {tx(item)}
+                {uiText(tx(item))}
               </li>
             ))}
           </ul>
@@ -678,21 +681,21 @@ export default function RoadmapLogicaProgramacao() {
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
               <path fill="currentColor" d="M12 4a8 8 0 0 1 8 8v7a1 1 0 1 1-2 0v-7a6 6 0 1 0-12 0v7a1 1 0 1 1-2 0v-7a8 8 0 0 1 8-8Zm-1 8h2v6h-2v-6Zm0-4h2v2h-2V8Z" />
             </svg>
-            <span>{t("roadmapPages.common.baseReferencesUsed")}</span>
+            <span>{uiText(t("roadmapPages.common.baseReferencesUsed"))}</span>
           </h2>
         </summary>
         <div className="space-y-4 mt-4">
           {referenciaMateriais.map((item) => (
             <article key={item.url} className="rounded-xl border border-slate-700/70 bg-slate-900/45 p-4">
-              <h3 className="font-semibold text-slate-100">{tx(item.nome)}</h3>
-              <p className="text-sm text-slate-300 mt-1">{tx(item.tipo)}</p>
+              <h3 className="font-semibold text-slate-100">{uiText(tx(item.nome))}</h3>
+              <p className="text-sm text-slate-300 mt-1">{uiText(tx(item.tipo))}</p>
               <a
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-cyan-300 hover:text-cyan-200 underline mt-2 inline-block"
               >
-                {t("roadmapPages.common.openReference")}
+                {uiText(t("roadmapPages.common.openReference"))}
               </a>
             </article>
           ))}

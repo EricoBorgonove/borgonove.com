@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "me": "Me",
+    "me": "Profile",
     "roadmaps": "Roadmaps",
     "blog": "Blog",
     "utilities": "Utilities",
@@ -145,6 +145,9 @@
   "common": {
     "comingSoon": "Coming soon!",
     "ui": {
+      "loadingTranslations": "Loading translations…",
+      "translationError": "Could not load the English content.",
+      "retryTranslations": "Reload page",
       "scrollContent": "Scrollable content",
       "scrollTable": "Scrollable table",
       "codeRegion": "Code {{language}}"

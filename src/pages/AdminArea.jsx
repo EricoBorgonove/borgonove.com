@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
@@ -35,6 +36,8 @@ const cards = {
 };
 
 export default function AdminArea() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const { signOut, adminUser } = useAdminAuth();
   const navigate = useNavigate();
@@ -70,14 +73,14 @@ export default function AdminArea() {
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_32%)]" />
 
         <div className="relative">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{txt.eyebrow}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-300/80 mb-4">{uiText(txt.eyebrow)}</p>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
-              <PageTitle className="text-white mb-4">{txt.title}</PageTitle>
-              <p className="text-slate-300 text-lg leading-relaxed">{txt.description}</p>
+              <PageTitle className="text-white mb-4">{uiText(txt.title)}</PageTitle>
+              <p className="text-slate-300 text-lg leading-relaxed">{uiText(txt.description)}</p>
               {adminUser?.username && (
                 <p className="mt-3 text-sm text-cyan-200/90">
-                  {txt.signedAs}: <span className="font-semibold">{adminUser.username}</span>
+                  {uiText(txt.signedAs)}: <span className="font-semibold">{adminUser.username}</span>
                 </p>
               )}
             </div>
@@ -88,14 +91,14 @@ export default function AdminArea() {
                 onClick={() => navigate("/")}
                 className="border border-slate-700 text-slate-200 transition hover:border-cyan-400"
               >
-                {txt.backToSite}
+                {uiText(txt.backToSite)}
               </Button>
               <Button variant="primary"
                 type="button"
                 onClick={handleLogout}
                 className="text-slate-950 transition"
               >
-                {txt.logout}
+                {uiText(txt.logout)}
               </Button>
             </div>
           </div>
@@ -106,14 +109,14 @@ export default function AdminArea() {
                 key={item.title}
 
               >
-                <h2 className="text-lg font-semibold text-cyan-300 mb-2">{item.title}</h2>
-                <p className="text-sm leading-6 text-slate-300">{item.description}</p>
+                <h2 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(item.title)}</h2>
+                <p className="text-sm leading-6 text-slate-300">{uiText(item.description)}</p>
                 {item.to && item.cta && (
                   <Link
                     to={item.to}
                     className="mt-5 inline-flex items-center justify-center rounded-xl border border-cyan-400/30 px-4 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-300 hover:bg-cyan-500/10"
                   >
-                    {item.cta}
+                    {uiText(item.cta)}
                   </Link>
                 )}
               </Panel>

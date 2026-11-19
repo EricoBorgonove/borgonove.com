@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Panel } from "./ui/Patterns";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -112,6 +113,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { text: uiText } = useContentTranslation();
+
   const { t } = useTranslation();
   const location = useLocation();
   const showContactBanner = location.pathname !== "/contato";
@@ -124,16 +127,16 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-6 pt-8">
           <Panel as="div" layout="plain" className="rounded-2xl p-6 md:p-7 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <h3 className="text-lg md:text-xl font-semibold">{t("footer.ctaTitle")}</h3>
+              <h3 className="text-lg md:text-xl font-semibold">{uiText(t("footer.ctaTitle"))}</h3>
               <p className="text-slate-400 text-sm mt-1">
-                {t("footer.ctaText")}
+                {uiText(t("footer.ctaText"))}
               </p>
             </div>
             <Link
               to="/contato"
               className="footer-cta-link bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition text-center"
             >
-              {t("footer.ctaButton")}
+              {uiText(t("footer.ctaButton"))}
             </Link>
           </Panel>
         </div>
@@ -142,11 +145,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4 justify-items-center md:justify-items-stretch text-center md:text-left">
         <div className="max-w-[220px] mx-auto md:mx-0">
           <div className="flex items-center gap-3 mb-3">
-            <img src={logo} alt="Borgonove Tech" className="h-8 w-auto footer-logo-dark" />
-            <img src={logoB9} alt="Borgonove Tech" className="h-8 w-auto footer-logo-light" />
+            <img src={logo} alt={uiText("Borgonove Tech")} className="h-8 w-auto footer-logo-dark" />
+            <img src={logoB9} alt={uiText("Borgonove Tech")} className="h-8 w-auto footer-logo-light" />
           </div>
           <p className="text-slate-400 text-sm leading-relaxed text-justify">
-            {t("footer.description")}
+            {uiText(t("footer.description"))}
           </p>
           <div className="flex items-center justify-center gap-4 mt-5">
             {socialLinks.map((item) => (
@@ -156,30 +159,28 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 className="text-slate-300 hover:text-cyan-400 transition"
-                aria-label={item.label}
-                title={item.label}
+                aria-label={uiText(item.label)}
+                title={uiText(item.label)}
               >
-                {item.icon}
+                {uiText(item.icon)}
               </a>
             ))}
           </div>
           <div className="mt-4 text-center">
             <Link to="/aviso-de-privacidade" className="text-xs text-slate-500 hover:text-cyan-300 transition">
-              {t("footer.privacyNotice")}
+              {uiText(t("footer.privacyNotice"))}
             </Link>
           </div>
         </div>
 
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{t("footer.contact")}</h4>
+          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{uiText(t("footer.contact"))}</h4>
           <div className="space-y-3 text-sm">
             <a
               className="flex items-center justify-center md:justify-start gap-2 text-slate-200 hover:text-cyan-400"
               href="mailto:contato@borgonove.com"
             >
-              <IconMail />
-              contato@borgonove.com
-            </a>
+              <IconMail />{uiText("contato@borgonove.com")}</a>
             <a
               className="flex items-center justify-center md:justify-start gap-2 text-slate-200 hover:text-cyan-400"
               href="tel:+5592982553114"
@@ -188,43 +189,41 @@ export default function Footer() {
               +55 (92) 98255-3114
             </a>
             <p className="flex items-center justify-center md:justify-start gap-2 text-slate-400">
-              <IconMapPin />
-              Manaus - AM
-            </p>
+              <IconMapPin />{uiText("Manaus - AM")}</p>
           </div>
         </div>
 
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{t("footer.education")}</h4>
+          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{uiText(t("footer.education"))}</h4>
           <ul className="space-y-2 text-sm text-slate-300">
             {educationItems.map((item) => (
               <li key={item} className="flex items-center justify-center md:justify-start gap-2">
                 <IconChevronRight />
-                <span>{item}</span>
+                <span>{uiText(item)}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{t("footer.services")}</h4>
+          <h4 className="text-sm uppercase tracking-wider text-slate-400 mb-4">{uiText(t("footer.services"))}</h4>
           <ul className="space-y-2 text-sm text-slate-300">
             {serviceItems.map((item) => (
               <li key={item} className="flex items-center justify-center md:justify-start gap-2">
                 <IconChevronRight />
-                <span>{item}</span>
+                <span>{uiText(item)}</span>
               </li>
             ))}
           </ul>
           <div className="mt-4 text-xs text-slate-500">
-            <p>{t("footer.support")}</p>
-            <p>{t("footer.supportHours")}</p>
+            <p>{uiText(t("footer.support"))}</p>
+            <p>{uiText(t("footer.supportHours"))}</p>
           </div>
         </div>
       </div>
 
       <div className="py-3 text-center text-xs text-slate-600 flex flex-col items-center gap-1">
-        <p>© 2026 Borgonove.tech</p>
+        <p>{uiText("© 2026 Borgonove.tech")}</p>
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -17,6 +18,8 @@ function getCollectionBadge(item, isEn) {
 }
 
 export default function AnaliseDados() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const sortLocale = isEn ? "en-US" : "pt-BR";
@@ -44,7 +47,7 @@ export default function AnaliseDados() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {txt.back}
+          {uiText(txt.back)}
         </BackButton>
       </div>
 
@@ -55,9 +58,9 @@ export default function AnaliseDados() {
             d="M4 5a2 2 0 0 1 2-2h1.5a2 2 0 0 1 1.88 1.32L9.72 5H18a2 2 0 0 1 2 2v1H4V5Zm0 4h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9Zm3 2a1 1 0 0 0 0 2h1v3a1 1 0 1 0 2 0v-3h1a1 1 0 1 0 0-2H7Zm7 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1Zm3 1a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0v-3a1 1 0 0 0-1-1Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
-      <PageDescription>{txt.description}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.description)}</PageDescription></PageHeader>
 
       <div className="grid gap-6 md:grid-cols-2">
         {colecoesOrdenadas.map((colecao) => (
@@ -69,17 +72,17 @@ export default function AnaliseDados() {
             <Panel as="article" layout="plain" className="theme-hover-border h-full transition duration-300 hover:-translate-y-1">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h2 className="text-xl font-semibold text-cyan-300">
-                  {getCollectionTitle(colecao, isEn)}
+                  {uiText(getCollectionTitle(colecao, isEn))}
                 </h2>
                 <span className="inline-flex items-center rounded-full bg-cyan-400 px-3 py-1 text-xs font-bold text-slate-950">
-                  {getCollectionBadge(colecao, isEn)}
+                  {uiText(getCollectionBadge(colecao, isEn))}
                 </span>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                {getCollectionDescription(colecao, isEn)}
+                {uiText(getCollectionDescription(colecao, isEn))}
               </p>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200">
-                {txt.openList}
+                {uiText(txt.openList)}
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
                   <path
                     fill="currentColor"

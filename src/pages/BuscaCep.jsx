@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -16,6 +17,8 @@ function maskCep(value) {
 }
 
 export default function BuscaCep() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -126,7 +129,7 @@ export default function BuscaCep() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -136,17 +139,15 @@ export default function BuscaCep() {
             d="M10.5 3a7.5 7.5 0 1 1-4.7 13.34l-2.57 2.57a1 1 0 1 1-1.42-1.42l2.57-2.57A7.5 7.5 0 0 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <div className="grid lg:grid-cols-5 gap-8">
         <Panel as="article" layout="plain" className="lg:col-span-2">
-          <p className="text-slate-400 text-sm mb-6">{txt.subtitle}</p>
+          <p className="text-slate-400 text-sm mb-6">{uiText(txt.subtitle)}</p>
 
           <form onSubmit={handleBuscar} className="space-y-4">
-            <label htmlFor="cep" className="block text-sm text-slate-300">
-              CEP
-            </label>
+            <label htmlFor="cep" className="block text-sm text-slate-300">{uiText("CEP")}</label>
             <div className="relative">
               <Input
                 id="cep"
@@ -178,14 +179,14 @@ export default function BuscaCep() {
                 className="text-slate-900 transition disabled:opacity-60"
                 disabled={status.state === "loading"}
               >
-                {txt.search}
+                {uiText(txt.search)}
               </Button>
               <Button variant="secondary"
                 type="button"
                 onClick={handleLimpar}
                 className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
-                {txt.clear}
+                {uiText(txt.clear)}
               </Button>
             </div>
           </form>
@@ -200,49 +201,49 @@ export default function BuscaCep() {
                     : "text-slate-400"
               }`}
             >
-              {status.message}
+              {uiMessage(status.message)}
             </p>
           )}
         </Panel>
 
         <Panel as="article" layout="plain" className="lg:col-span-3">
-          <h2 className="text-2xl font-bold mb-6">{txt.result}</h2>
+          <h2 className="text-2xl font-bold mb-6">{uiText(txt.result)}</h2>
 
           {!resultado && status.state !== "loading" && (
-            <p className="text-slate-400">{txt.noQuery}</p>
+            <p className="text-slate-400">{uiText(txt.noQuery)}</p>
           )}
 
-          {status.state === "loading" && <p className="text-slate-400">{txt.loadingAddress}</p>}
+          {status.state === "loading" && <p className="text-slate-400">{uiText(txt.loadingAddress)}</p>}
 
           {resultado && (
             <div className="grid sm:grid-cols-2 gap-4 text-sm">
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">CEP</p>
-                <p className="font-semibold text-slate-100">{resultado.cep}</p>
+                <p className="text-slate-400">{uiText("CEP")}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.cep)}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.street}</p>
-                <p className="font-semibold text-slate-100">{resultado.logradouro || txt.notInformed}</p>
+                <p className="text-slate-400">{uiText(txt.street)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.logradouro || txt.notInformed)}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.district}</p>
-                <p className="font-semibold text-slate-100">{resultado.bairro || txt.notInformed}</p>
+                <p className="text-slate-400">{uiText(txt.district)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.bairro || txt.notInformed)}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.city}</p>
-                <p className="font-semibold text-slate-100">{resultado.localidade}</p>
+                <p className="text-slate-400">{uiText(txt.city)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.localidade)}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.stateCode}</p>
-                <p className="font-semibold text-slate-100">{resultado.uf}</p>
+                <p className="text-slate-400">{uiText(txt.stateCode)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.uf)}</p>
               </Panel>
               <Panel as="div" layout="plain">
-                <p className="text-slate-400">{txt.state}</p>
-                <p className="font-semibold text-slate-100">{resultado.estado || txt.notInformed}</p>
+                <p className="text-slate-400">{uiText(txt.state)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.estado || txt.notInformed)}</p>
               </Panel>
               <Panel as="div" layout="plain" className="sm:col-span-2">
-                <p className="text-slate-400">{txt.complement}</p>
-                <p className="font-semibold text-slate-100">{resultado.complemento || txt.notInformed}</p>
+                <p className="text-slate-400">{uiText(txt.complement)}</p>
+                <p className="font-semibold text-slate-100">{uiText(resultado.complemento || txt.notInformed)}</p>
               </Panel>
             </div>
           )}
@@ -251,39 +252,39 @@ export default function BuscaCep() {
 
       <Panel as="article" layout="plain" className="mt-8">
         <div className="flex items-center justify-between gap-4 mb-5">
-          <h2 className="text-2xl font-bold">{txt.searchedZips}</h2>
+          <h2 className="text-2xl font-bold">{uiText(txt.searchedZips)}</h2>
           <Button variant="secondary"
             type="button"
             onClick={() => setHistorico([])}
             disabled={historico.length === 0}
             className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {txt.clearTable}
+            {uiText(txt.clearTable)}
           </Button>
         </div>
 
         {historico.length === 0 ? (
-          <p className="text-slate-400">{txt.noHistory}</p>
+          <p className="text-slate-400">{uiText(txt.noHistory)}</p>
         ) : (
           <TableContainer>
             <Table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-slate-400 border-b border-slate-700">
-                  <th className="py-3 pr-4">CEP</th>
-                  <th className="py-3 pr-4">{txt.street}</th>
-                  <th className="py-3 pr-4">{txt.district}</th>
-                  <th className="py-3 pr-4">{txt.city}</th>
-                  <th className="py-3">{txt.stateCode}</th>
+                  <th className="py-3 pr-4">{uiText("CEP")}</th>
+                  <th className="py-3 pr-4">{uiText(txt.street)}</th>
+                  <th className="py-3 pr-4">{uiText(txt.district)}</th>
+                  <th className="py-3 pr-4">{uiText(txt.city)}</th>
+                  <th className="py-3">{uiText(txt.stateCode)}</th>
                 </tr>
               </thead>
               <tbody>
                 {historico.map((item) => (
                   <tr key={item.cep} className="border-b border-slate-800/70">
-                    <td className="py-3 pr-4 text-slate-100 font-semibold">{item.cep}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.logradouro || "-"}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.bairro || "-"}</td>
-                    <td className="py-3 pr-4 text-slate-300">{item.localidade || "-"}</td>
-                    <td className="py-3 text-slate-300">{item.uf || "-"}</td>
+                    <td className="py-3 pr-4 text-slate-100 font-semibold">{uiText(item.cep)}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.logradouro || "-")}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.bairro || "-")}</td>
+                    <td className="py-3 pr-4 text-slate-300">{uiText(item.localidade || "-")}</td>
+                    <td className="py-3 text-slate-300">{uiText(item.uf || "-")}</td>
                   </tr>
                 ))}
               </tbody>

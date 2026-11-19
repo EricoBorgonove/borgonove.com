@@ -88,6 +88,8 @@ Laboratório visual dos componentes compartilhados: `/laboratorio-ui` (catálogo
 
 Os padrões de apresentação ficam em `src/components/ui/Patterns.jsx` e `patterns.css`. Execute `npm test` para verificar os contratos dos componentes.
 
+O seletor PT/EN também cobre aulas, exercícios e materiais estáticos. O catálogo inglês fica em `src/locales/en/content.json` e é carregado sob demanda. Para conteúdo novo, use `useContentTranslation` e mantenha comandos, datasets e nomes de arquivos intactos. As orientações completas estão em `docs/idiomas-pt-en.md`.
+
 - `/` — Home
 - `/disciplinas` — Lista de disciplinas
 - `/disciplinas/algoritmos` — Listas de exercícios de algoritmos

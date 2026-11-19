@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
@@ -47,6 +48,8 @@ function getDatasetExample(collection, isEn) {
 }
 
 export default function AnaliseDadosLista() {
+  const { text: uiText } = useContentTranslation();
+
   const { listaSlug } = useParams();
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
@@ -123,7 +126,7 @@ export default function AnaliseDadosLista() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas/analise-dados" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {txt.back}
+          {uiText(txt.back)}
         </BackButton>
       </div>
 
@@ -134,27 +137,27 @@ export default function AnaliseDadosLista() {
             d="M4 5a2 2 0 0 1 2-2h1.5a2 2 0 0 1 1.88 1.32L9.72 5H18a2 2 0 0 1 2 2v1H4V5Zm0 4h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9Zm3 2a1 1 0 0 0 0 2h1v3a1 1 0 1 0 2 0v-3h1a1 1 0 1 0 0-2H7Zm7 0a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1Zm3 1a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0v-3a1 1 0 0 0-1-1Z"
           />
         </svg>
-        <span>{getCollectionTitle(collection, isEn)}</span>
+        <span>{uiText(getCollectionTitle(collection, isEn))}</span>
       </PageTitle>
-      <PageDescription>{getCollectionDescription(collection, isEn)}</PageDescription></PageHeader>
+      <PageDescription>{uiText(getCollectionDescription(collection, isEn))}</PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.datasetTitle}</h2>
-        <p className="text-slate-300 text-sm leading-relaxed mb-4">{txt.datasetText}</p>
-        <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-3">{txt.datasetExampleLabel}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{uiText(txt.datasetTitle)}</h2>
+        <p className="text-slate-300 text-sm leading-relaxed mb-4">{uiText(txt.datasetText)}</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-3">{uiText(txt.datasetExampleLabel)}</p>
         <pre className="overflow-x-auto rounded-2xl bg-slate-950/80 border border-slate-800 px-4 py-4 text-sm text-slate-200">
           <code>{getDatasetExample(collection, isEn)}</code>
         </pre>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.introTitle}</h2>
-        <p className="text-slate-300 text-sm leading-relaxed text-justify">{txt.introText}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{uiText(txt.introTitle)}</h2>
+        <p className="text-slate-300 text-sm leading-relaxed text-justify">{uiText(txt.introText)}</p>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
         <label htmlFor="busca-analise-dados" className="block text-sm text-slate-300 mb-3">
-          {txt.searchLabel}
+          {uiText(txt.searchLabel)}
         </label>
         <div className="relative">
           <svg
@@ -172,7 +175,7 @@ export default function AnaliseDadosLista() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder={txt.searchPlaceholder}
+            placeholder={uiText(txt.searchPlaceholder)}
             className="w-full border pl-11 pr-4 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </div>
@@ -180,7 +183,7 @@ export default function AnaliseDadosLista() {
 
       <Panel as="details" layout="plain" className="mb-10">
         <summary className="cursor-pointer text-xl font-semibold text-cyan-300 px-6 md:px-8 py-5">
-          {txt.topics}
+          {uiText(txt.topics)}
         </summary>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm px-6 md:px-8 pb-6 md:pb-8">
           {collection.listas.map((lista) => (
@@ -189,7 +192,7 @@ export default function AnaliseDadosLista() {
               href={`#${slugify(getListTitle(lista, isEn))}`}
               className="bg-slate-900/60 rounded-xl px-4 py-3 hover:bg-slate-800/80 transition"
             >
-              {getListTitle(lista, isEn)}
+              {uiText(getListTitle(lista, isEn))}
             </a>
           ))}
         </div>
@@ -204,11 +207,11 @@ export default function AnaliseDadosLista() {
             open={Boolean(query.trim())}
           >
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
-              {getListTitle(lista, isEn)}
+              {uiText(getListTitle(lista, isEn))}
             </summary>
             <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-slate-400">
-              <span>{txt.type}: {getListType(lista, isEn)}</span>
-              <span>{isEn ? "Exercises" : "Exercícios"}: {lista.questoes.length}</span>
+              <span>{uiText(txt.type)}: {uiText(getListType(lista, isEn))}</span>
+              <span>{uiText(isEn ? "Exercises" : "Exercícios")}: {uiText(lista.questoes.length)}</span>
             </div>
             <ol className="mt-5 space-y-2 text-sm text-slate-300 list-decimal list-inside">
               {lista.questoes.map((questao) => (
@@ -217,7 +220,7 @@ export default function AnaliseDadosLista() {
                   value={questao.id}
                   className="text-justify marker:font-bold marker:text-cyan-300"
                 >
-                  {getQuestionText(questao, isEn)}
+                  {uiText(getQuestionText(questao, isEn))}
                 </li>
               ))}
             </ol>
@@ -226,7 +229,7 @@ export default function AnaliseDadosLista() {
       </div>
 
       {filteredListas.length === 0 && (
-        <p className="text-sm text-slate-400 mt-6">{txt.noResults}</p>
+        <p className="text-sm text-slate-400 mt-6">{uiText(txt.noResults)}</p>
       )}
     </PageTemplate>
   );

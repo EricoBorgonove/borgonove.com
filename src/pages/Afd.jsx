@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import BackButton from "../components/BackButton";
@@ -109,6 +110,8 @@ const epsilonCases = [
 ];
 
 export default function Afd() {
+  const { text: uiText } = useContentTranslation();
+
   const [activeSubdiscipline, setActiveSubdiscipline] = useState(subdisciplines[0].id);
   const selectedSubdiscipline =
     subdisciplines.find((subdiscipline) => subdiscipline.id === activeSubdiscipline) ??
@@ -117,30 +120,22 @@ export default function Afd() {
   return (
     <PageTemplate>
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          Voltar para Disciplinas
-        </BackButton>
+        <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText("Voltar para Disciplinas")}</BackButton>
       </div>
 
       <PageHeader>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
-          Autômatos Finitos Determinísticos
-        </p>
-        <PageTitle className="mb-5">AFD</PageTitle>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">{uiText("Autômatos Finitos Determinísticos")}</p>
+        <PageTitle className="mb-5">{uiText("AFD")}</PageTitle>
         <PageDescription className="text-xl md:text-2xl text-cyan-200 font-semibold">
-          {selectedSubdiscipline.title}
+          {uiText(selectedSubdiscipline.title)}
         </PageDescription>
-        <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-4xl">
-          Esta matéria reúne subdisciplinas de estudo sobre Autômatos Finitos Determinísticos. O objetivo é aprender a ler o diagrama formalmente, interpretar estados de aceitação e traduzir caminhos aceitos para Expressões Regulares.
-        </p>
+        <p className="text-slate-300 text-lg leading-relaxed text-justify max-w-4xl">{uiText("Esta matéria reúne subdisciplinas de estudo sobre Autômatos Finitos Determinísticos. O objetivo é aprender a ler o diagrama formalmente, interpretar estados de aceitação e traduzir caminhos aceitos para Expressões Regulares.")}</p>
       </PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
-          Subdisciplinas
-        </p>
+        <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">{uiText("Subdisciplinas")}</p>
         <div className="grid md:grid-cols-2 gap-3">
-          {subdisciplines.map((subdiscipline) => {
+          {uiText(subdisciplines.map((subdiscipline) => {
             const isActive = subdiscipline.id === activeSubdiscipline;
 
             return (
@@ -154,13 +149,13 @@ export default function Afd() {
                     : "border-slate-700/60 bg-slate-950/20 text-slate-300 hover:border-cyan-300/30 hover:bg-cyan-400/10"
                 }`}
               >
-                <span className="block text-sm font-semibold">{subdiscipline.label}</span>
+                <span className="block text-sm font-semibold">{uiText(subdiscipline.label)}</span>
                 <span className="mt-1 block text-xs leading-relaxed text-slate-400">
-                  {subdiscipline.description}
+                  {uiText(subdiscipline.description)}
                 </span>
               </Button>
             );
-          })}
+          }))}
         </div>
       </Panel>
 
@@ -168,41 +163,31 @@ export default function Afd() {
         {activeSubdiscipline === "afd-er" ? (
           <>
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-            1. Identifique o ponto de partida e a chegada
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-justify mb-4">
-            Todo AFD possui um estado inicial, indicado pela seta que chega de fora do diagrama, e um ou mais estados de aceitação, normalmente desenhados com círculo duplo. A expressão regular final precisa representar todos os caminhos que começam no estado inicial e terminam em algum estado de aceitação.
-          </p>
-          <p className="text-slate-300 leading-relaxed text-justify">
-            Quando houver mais de um estado final, cada caminho aceito deve ser considerado. Na expressão regular, esses caminhos são combinados com o operador de escolha, representado pelo sinal de soma. Em outras palavras, se um autômato aceita por dois caminhos diferentes, a expressão final deve contemplar as duas possibilidades.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("1. Identifique o ponto de partida e a chegada")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("Todo AFD possui um estado inicial, indicado pela seta que chega de fora do diagrama, e um ou mais estados de aceitação, normalmente desenhados com círculo duplo. A expressão regular final precisa representar todos os caminhos que começam no estado inicial e terminam em algum estado de aceitação.")}</p>
+          <p className="text-slate-300 leading-relaxed text-justify">{uiText("Quando houver mais de um estado final, cada caminho aceito deve ser considerado. Na expressão regular, esses caminhos são combinados com o operador de escolha, representado pelo sinal de soma. Em outras palavras, se um autômato aceita por dois caminhos diferentes, a expressão final deve contemplar as duas possibilidades.")}</p>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-            2. Aprenda os três movimentos básicos
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-justify mb-5">
-            A maior parte dos autômatos pode ser interpretada a partir de três estruturas simples: sequência, escolha e repetição. Ao reconhecer essas peças no desenho, a tradução para Expressão Regular fica muito mais segura.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("2. Aprenda os três movimentos básicos")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("A maior parte dos autômatos pode ser interpretada a partir de três estruturas simples: sequência, escolha e repetição. Ao reconhecer essas peças no desenho, a tradução para Expressão Regular fica muito mais segura.")}</p>
           <TableContainer className="rounded-2xl border border-slate-700/70">
             <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
               <thead className="bg-slate-950/50">
                 <tr>
-                  <th className="px-4 py-3 font-semibold text-cyan-200">Estrutura</th>
-                  <th className="px-4 py-3 font-semibold text-cyan-200">No desenho</th>
-                  <th className="px-4 py-3 font-semibold text-cyan-200">Na ER</th>
-                  <th className="px-4 py-3 font-semibold text-cyan-200">O que significa</th>
+                  <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("Estrutura")}</th>
+                  <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("No desenho")}</th>
+                  <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("Na ER")}</th>
+                  <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("O que significa")}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/80 bg-slate-950/20">
                 {basicMoves.map((move) => (
                   <tr key={move.structure}>
-                    <td className="px-4 py-3 text-slate-300 align-top font-semibold">{move.structure}</td>
-                    <td className="px-4 py-3 text-slate-300 align-top">{move.drawing}</td>
-                    <td className="px-4 py-3 text-cyan-100 align-top font-mono">{move.regex}</td>
-                    <td className="px-4 py-3 text-slate-300 align-top">{move.meaning}</td>
+                    <td className="px-4 py-3 text-slate-300 align-top font-semibold">{uiText(move.structure)}</td>
+                    <td className="px-4 py-3 text-slate-300 align-top">{uiText(move.drawing)}</td>
+                    <td className="px-4 py-3 text-cyan-100 align-top font-mono">{uiText(move.regex)}</td>
+                    <td className="px-4 py-3 text-slate-300 align-top">{uiText(move.meaning)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -211,79 +196,64 @@ export default function Afd() {
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-            3. Use a técnica da simplificação
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-justify mb-5">
-            Uma forma prática de transformar o autômato é imaginar que os estados intermediários serão removidos aos poucos. Para remover um estado q, observe como se chega nele, quais loops existem dentro dele e como se sai dele. A expressão que substitui esse estado é formada pela sequência entrada, loop e saída.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("3. Use a técnica da simplificação")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Uma forma prática de transformar o autômato é imaginar que os estados intermediários serão removidos aos poucos. Para remover um estado q, observe como se chega nele, quais loops existem dentro dele e como se sai dele. A expressão que substitui esse estado é formada pela sequência entrada, loop e saída.")}</p>
           <div className="grid md:grid-cols-4 gap-4">
             {simplificationSteps.map((step) => (
               <div key={step.label} className="rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-cyan-300 mb-2">{step.label}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed text-justify mb-3">{step.text}</p>
-                <p className="text-xs text-emerald-200">{step.example}</p>
+                <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(step.label)}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed text-justify mb-3">{uiText(step.text)}</p>
+                <p className="text-xs text-emerald-200">{uiText(step.example)}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 rounded-2xl border border-emerald-300/30 bg-emerald-400/10 p-5">
-            <p className="text-sm font-semibold text-emerald-100 mb-2">Exemplo de leitura</p>
-            <p className="text-slate-300 leading-relaxed text-justify">
-              Se o caminho chega ao estado q por a, permanece nele repetindo b e sai por c, então o trecho inteiro pode ser representado por <span className="font-mono text-cyan-100">ab*c</span>.
+            <p className="text-sm font-semibold text-emerald-100 mb-2">{uiText("Exemplo de leitura")}</p>
+            <p className="text-slate-300 leading-relaxed text-justify">{uiText("Se o caminho chega ao estado q por a, permanece nele repetindo b e sai por c, então o trecho inteiro pode ser representado por ")}<span className="font-mono text-cyan-100">{uiText("ab*c")}</span>.
             </p>
           </div>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-            4. Checklist para não se perder
-          </h2>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("4. Checklist para não se perder")}</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {checklist.map((item) => (
               <div key={item.title} className="rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-cyan-300 mb-2">{item.title}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed text-justify">{item.text}</p>
+                <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(item.title)}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(item.text)}</p>
               </div>
             ))}
           </div>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-bold text-cyan-300 mb-4">Resumo visual</h2>
-          <p className="text-slate-300 leading-relaxed text-justify">
-            Ao transformar um AFD em uma Expressão Regular, leia o desenho como se estivesse contando a história dos caminhos aceitos: eu começo no estado inicial, posso escolher entre determinados símbolos, talvez repita um trecho algumas vezes, passo pelos estados necessários e termino em um estado de aceitação. A expressão regular é a forma algébrica dessa história.
-          </p>
+          <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Resumo visual")}</h2>
+          <p className="text-slate-300 leading-relaxed text-justify">{uiText("Ao transformar um AFD em uma Expressão Regular, leia o desenho como se estivesse contando a história dos caminhos aceitos: eu começo no estado inicial, posso escolher entre determinados símbolos, talvez repita um trecho algumas vezes, passo pelos estados necessários e termino em um estado de aceitação. A expressão regular é a forma algébrica dessa história.")}</p>
         </Panel>
           </>
         ) : (
           <>
             <Panel as="article" layout="plain">
-              <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-                Quando o AFD aceita a cadeia vazia?
-              </h2>
-              <p className="text-slate-300 leading-relaxed text-justify mb-4">
-                Um autômato aceita a cadeia vazia quando o estado inicial também é um estado final. No desenho, isso aparece quando a seta de início aponta para uma bolinha com círculo duplo. Como nenhuma transição precisa ser percorrida para aceitar a entrada, a Expressão Regular final deve ser capaz de gerar ϵ.
-              </p>
-              <p className="text-slate-300 leading-relaxed text-justify">
-                Existem duas formas principais de representar essa situação: deixar que o asterisco represente a repetição zero vezes ou somar explicitamente a cadeia vazia à expressão. A escolha depende da estrutura do autômato.
-              </p>
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Quando o AFD aceita a cadeia vazia?")}</h2>
+              <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("Um autômato aceita a cadeia vazia quando o estado inicial também é um estado final. No desenho, isso aparece quando a seta de início aponta para uma bolinha com círculo duplo. Como nenhuma transição precisa ser percorrida para aceitar a entrada, a Expressão Regular final deve ser capaz de gerar ϵ.")}</p>
+              <p className="text-slate-300 leading-relaxed text-justify">{uiText("Existem duas formas principais de representar essa situação: deixar que o asterisco represente a repetição zero vezes ou somar explicitamente a cadeia vazia à expressão. A escolha depende da estrutura do autômato.")}</p>
             </Panel>
 
             <div className="grid lg:grid-cols-3 gap-5">
               {epsilonCases.map((item) => (
                 <Panel as="article" layout="plain" key={item.title}>
-                  <p className="text-sm font-semibold text-emerald-300 mb-2">{item.subtitle}</p>
-                  <h2 className="text-xl font-bold text-cyan-300 mb-4">{item.title}</h2>
+                  <p className="text-sm font-semibold text-emerald-300 mb-2">{uiText(item.subtitle)}</p>
+                  <h2 className="text-xl font-bold text-cyan-300 mb-4">{uiText(item.title)}</h2>
                   <p className="text-sm text-slate-300 leading-relaxed text-justify mb-5">
-                    {item.text}
+                    {uiText(item.text)}
                   </p>
                   <div className="rounded-2xl border border-slate-700/70 bg-slate-950/30 p-4">
                     <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-2">
-                      {item.exampleTitle}
+                      {uiText(item.exampleTitle)}
                     </p>
-                    <p className="font-mono text-2xl font-bold text-cyan-100 mb-3">{item.example}</p>
+                    <p className="font-mono text-2xl font-bold text-cyan-100 mb-3">{uiText(item.example)}</p>
                     <p className="text-sm text-slate-300 leading-relaxed text-justify">
-                      {item.translation}
+                      {uiText(item.translation)}
                     </p>
                   </div>
                 </Panel>
@@ -291,22 +261,14 @@ export default function Afd() {
             </div>
 
             <Panel as="article" layout="plain">
-              <h2 className="text-2xl font-bold text-cyan-300 mb-4">
-                Como identificar no desenho?
-              </h2>
-              <p className="text-slate-300 leading-relaxed text-justify mb-4">
-                Sempre que a seta de início apontar diretamente para um estado de aceitação, a Expressão Regular precisa aceitar a cadeia vazia. Isso significa que deve existir alguma forma de chegar ao resultado sem consumir símbolos.
-              </p>
-              <p className="text-slate-300 leading-relaxed text-justify">
-                Se a expressão final não permite gerar vazio, mas o estado inicial do autômato é final, então a expressão está incompleta. Em geral, isso é corrigido com um asterisco envolvendo o trecho adequado ou com uma soma explícita usando ϵ.
-              </p>
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Como identificar no desenho?")}</h2>
+              <p className="text-slate-300 leading-relaxed text-justify mb-4">{uiText("Sempre que a seta de início apontar diretamente para um estado de aceitação, a Expressão Regular precisa aceitar a cadeia vazia. Isso significa que deve existir alguma forma de chegar ao resultado sem consumir símbolos.")}</p>
+              <p className="text-slate-300 leading-relaxed text-justify">{uiText("Se a expressão final não permite gerar vazio, mas o estado inicial do autômato é final, então a expressão está incompleta. Em geral, isso é corrigido com um asterisco envolvendo o trecho adequado ou com uma soma explícita usando ϵ.")}</p>
             </Panel>
 
             <Panel as="article" layout="plain">
-              <h2 className="text-2xl font-bold text-cyan-300 mb-4">Dica de ouro</h2>
-              <p className="text-slate-300 leading-relaxed text-justify">
-                Ao finalizar uma Expressão Regular, faça sempre a pergunta: “se eu não ler nenhum símbolo, essa expressão ainda pode aceitar?”. Se a resposta for não, mas o estado inicial do AFD for final, revise a expressão. Provavelmente está faltando um <span className="font-mono text-cyan-100">ϵ</span>, um <span className="font-mono text-cyan-100">+</span> com alternativa vazia ou um <span className="font-mono text-cyan-100">*</span> aplicado ao bloco correto.
-              </p>
+              <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText("Dica de ouro")}</h2>
+              <p className="text-slate-300 leading-relaxed text-justify">{uiText("Ao finalizar uma Expressão Regular, faça sempre a pergunta: “se eu não ler nenhum símbolo, essa expressão ainda pode aceitar?”. Se a resposta for não, mas o estado inicial do AFD for final, revise a expressão. Provavelmente está faltando um ")}<span className="font-mono text-cyan-100">{uiText("ϵ")}</span>{uiText(", um ")}<span className="font-mono text-cyan-100">+</span>{uiText(" com alternativa vazia ou um ")}<span className="font-mono text-cyan-100">*</span>{uiText(" aplicado ao bloco correto.")}</p>
             </Panel>
           </>
         )}

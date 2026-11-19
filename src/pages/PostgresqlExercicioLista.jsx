@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -211,6 +212,8 @@ function getModelingExplanation(diagram) {
 }
 
 function ModelingExplanation({ diagram }) {
+  const { text: uiText } = useContentTranslation();
+
   const explanation = getModelingExplanation(diagram);
 
   if (!explanation) {
@@ -219,32 +222,26 @@ function ModelingExplanation({ diagram }) {
 
   return (
     <div className="mb-5 rounded-xl border border-cyan-400/20 bg-cyan-500/10 p-4">
-      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-200">
-        Modelagem que levou à estrutura
-      </h3>
+      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-cyan-200">{uiText("Modelagem que levou à estrutura")}</h3>
       <div className="grid gap-3 md:grid-cols-2">
         <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-            Entidades e chaves
-          </p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{uiText("Entidades e chaves")}</p>
           <ul className="space-y-2 text-sm leading-relaxed text-slate-300">
             {explanation.entityItems.map((item) => (
               <li key={item.title}>
-                <span className="font-semibold text-cyan-100">{item.title}: </span>
-                {item.text}
+                <span className="font-semibold text-cyan-100">{uiText(item.title)}: </span>
+                {uiText(item.text)}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-            Relacionamentos
-          </p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{uiText("Relacionamentos")}</p>
           <ul className="space-y-2 text-sm leading-relaxed text-slate-300">
             {explanation.relationshipItems.map((item) => (
               <li key={item.title}>
-                <span className="font-semibold text-cyan-100">{item.title}: </span>
-                {item.text}
+                <span className="font-semibold text-cyan-100">{uiText(item.title)}: </span>
+                {uiText(item.text)}
               </li>
             ))}
           </ul>
@@ -255,6 +252,8 @@ function ModelingExplanation({ diagram }) {
 }
 
 function MerDiagram({ diagram }) {
+  const { text: uiText } = useContentTranslation();
+
   if (!diagram) {
     return null;
   }
@@ -346,15 +345,13 @@ function MerDiagram({ diagram }) {
 
   return (
     <div className="mt-4 rounded-xl border border-cyan-400/25 bg-slate-950/70 p-4 shadow-inner">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
-        Diagrama MER
-      </p>
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">{uiText("Diagrama MER")}</p>
       <div className="rounded-xl border border-slate-700 bg-slate-950 p-2">
         <svg
           className="h-auto w-full"
           viewBox={`0 0 ${canvas.width} ${canvas.height}`}
           role="img"
-          aria-label="Diagrama MER com entidades, relacionamentos, cardinalidades e chaves"
+          aria-label={uiText("Diagrama MER com entidades, relacionamentos, cardinalidades e chaves")}
         >
           <rect width={canvas.width} height={canvas.height} rx="22" fill="#020617" />
           <g opacity="0.38">
@@ -427,7 +424,7 @@ function MerDiagram({ diagram }) {
                     fontWeight="900"
                     textAnchor="middle"
                   >
-                    {relationship.name}
+                    {uiText(relationship.name)}
                   </text>
                 </g>
               )}
@@ -483,14 +480,14 @@ function MerDiagram({ diagram }) {
                     fontWeight="800"
                     textAnchor="middle"
                   >
-                    {cardinality.label}
+                    {uiText(cardinality.label)}
                   </text>
                 </g>
               ))}
             </g>
           ))}
 
-          {!isLargeAssociativeDiagram && relationshipShapes.map((relationship) => (
+          {uiText(!isLargeAssociativeDiagram && relationshipShapes.map((relationship) => (
             <g key={`${relationship.name}-${relationship.from}-${relationship.to}`}>
               <polygon
                 points={`${relationship.center.x},${relationship.center.y - 48} ${relationship.center.x + 78},${relationship.center.y} ${relationship.center.x},${relationship.center.y + 48} ${relationship.center.x - 78},${relationship.center.y}`}
@@ -506,12 +503,12 @@ function MerDiagram({ diagram }) {
                 fontWeight="900"
                 textAnchor="middle"
               >
-                {relationship.name}
+                {uiText(relationship.name)}
               </text>
             </g>
-          ))}
+          )))}
 
-          {diagram.entities.map((entity) => {
+          {uiText(diagram.entities.map((entity) => {
             const position = entityPositions.get(entity.name);
             const entityHeight = getEntityHeight(entity);
 
@@ -551,9 +548,9 @@ function MerDiagram({ diagram }) {
                   fontWeight="900"
                   textAnchor="middle"
                 >
-                  {entity.name}
+                  {uiText(entity.name)}
                 </text>
-                {entity.fields.map((field, fieldIndex) => {
+                {uiText(entity.fields.map((field, fieldIndex) => {
                   const parsedField = parseMerField(field);
                   const fieldY = position.y + 66 + fieldIndex * 28;
                   const isPrimary = parsedField.badges.includes("PK");
@@ -579,7 +576,7 @@ function MerDiagram({ diagram }) {
                           strokeWidth="2"
                         />
                       )}
-                      {parsedField.badges.map((badge, badgeIndex) => {
+                      {uiText(parsedField.badges.map((badge, badgeIndex) => {
                         const badgeWidth = badge === "UNIQUE" ? 58 : 30;
                         const badgeX = position.x + entityWidth - 16 - badgeWidth - badgeIndex * (badge === "UNIQUE" ? 64 : 36);
                         const badgeColor = badge === "PK" ? "#0e7490" : badge === "FK" ? "#92400e" : "#047857";
@@ -602,29 +599,27 @@ function MerDiagram({ diagram }) {
                               fontWeight="900"
                               textAnchor="middle"
                             >
-                              {badge}
+                              {uiText(badge)}
                             </text>
                           </g>
                         );
-                      })}
+                      }))}
                     </g>
                   );
-                })}
+                }))}
               </g>
             );
-          })}
+          }))}
         </svg>
       </div>
       {relationshipDescriptions.length > 0 && (
         <div className="mt-4 rounded-xl border border-slate-700 bg-slate-900/60 p-3">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-            Leitura dos relacionamentos
-          </p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">{uiText("Leitura dos relacionamentos")}</p>
           <div className="mb-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-300">
-            <span className="rounded-md border border-cyan-400/20 bg-cyan-500/10 px-2 py-1">PK = chave primária</span>
-            <span className="rounded-md border border-amber-400/20 bg-amber-500/10 px-2 py-1">FK = chave estrangeira</span>
-            <span className="rounded-md border border-emerald-400/20 bg-emerald-500/10 px-2 py-1">UNIQUE = valor não pode repetir</span>
-            <span className="rounded-md border border-slate-600 bg-slate-800/70 px-2 py-1">(mín,máx) = cardinalidade mínima e máxima</span>
+            <span className="rounded-md border border-cyan-400/20 bg-cyan-500/10 px-2 py-1">{uiText("PK = chave primária")}</span>
+            <span className="rounded-md border border-amber-400/20 bg-amber-500/10 px-2 py-1">{uiText("FK = chave estrangeira")}</span>
+            <span className="rounded-md border border-emerald-400/20 bg-emerald-500/10 px-2 py-1">{uiText("UNIQUE = valor não pode repetir")}</span>
+            <span className="rounded-md border border-slate-600 bg-slate-800/70 px-2 py-1">{uiText("(mín,máx) = cardinalidade mínima e máxima")}</span>
           </div>
           <ul className="space-y-2 text-xs leading-relaxed text-slate-300">
             {relationshipDescriptions.map((relationship) => (
@@ -632,9 +627,9 @@ function MerDiagram({ diagram }) {
                 <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-300" />
                 <span>
                   {relationship.title && (
-                    <span className="mb-0.5 block font-semibold text-cyan-100">{relationship.title}</span>
+                    <span className="mb-0.5 block font-semibold text-cyan-100">{uiText(relationship.title)}</span>
                   )}
-                  {relationship.text}
+                  {uiText(relationship.text)}
                 </span>
               </li>
             ))}
@@ -646,6 +641,8 @@ function MerDiagram({ diagram }) {
 }
 
 export default function PostgresqlExercicioLista() {
+  const { text: uiText } = useContentTranslation();
+
   const { listSlug, exerciseSlug } = useParams();
   const list = findPostgresqlExerciseList(listSlug);
   const block = findPostgresqlExerciseBlock(listSlug, exerciseSlug);
@@ -706,27 +703,26 @@ export default function PostgresqlExercicioLista() {
         <BackButton
           fallbackTo={`/disciplinas/postgresql/exercicios/${list.slug}`}
           className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2"
-        >
-          Voltar para Lista {list.title}
+        >{uiText("Voltar para Lista ")}{uiText(list.title)}
         </BackButton>
       </div>
 
       <div className="mb-10 max-w-4xl">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
-            {block.level}
+            {uiText(block.level)}
           </span>
           <span className="text-sm font-semibold text-slate-500">
-            {hideBlockOrder ? list.title : `Lista ${list.title} · Bloco ${block.order} de ${list.blocks.length}`}
+            {uiText(hideBlockOrder ? list.title : `Lista ${list.title} · Bloco ${block.order} de ${list.blocks.length}`)}
           </span>
         </div>
-        <PageTitle className="mb-4">{block.title}</PageTitle>
-        <p className="text-lg leading-relaxed text-slate-400">{block.summary}</p>
+        <PageTitle className="mb-4">{uiText(block.title)}</PageTitle>
+        <p className="text-lg leading-relaxed text-slate-400">{uiText(block.summary)}</p>
       </div>
 
       {list.files && (
         <Panel as="div" layout="plain" className="mb-8">
-          <h2 className="mb-4 text-xl font-semibold text-cyan-300">Arquivos para download</h2>
+          <h2 className="mb-4 text-xl font-semibold text-cyan-300">{uiText("Arquivos para download")}</h2>
           <div className="flex flex-wrap gap-3">
             {list.files.map((file) => (
               <a
@@ -735,7 +731,7 @@ export default function PostgresqlExercicioLista() {
                 download={file.fileName}
                 className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
               >
-                {file.label}
+                {uiText(file.label)}
                 <span aria-hidden="true">↓</span>
               </a>
             ))}
@@ -744,7 +740,7 @@ export default function PostgresqlExercicioLista() {
       )}
 
       <ol className={`grid gap-4 ${hasDiagrams ? "" : "md:grid-cols-2"}`}>
-        {block.exercises.map((exercise, index) => {
+        {uiText(block.exercises.map((exercise, index) => {
           const question = getPostgresqlExerciseQuestion(exercise);
           const number = getPostgresqlExerciseNumber(exercise, index + 1);
 
@@ -754,8 +750,7 @@ export default function PostgresqlExercicioLista() {
             className="text-sm leading-relaxed text-slate-300"
           >
             <div className="mb-3 flex items-center justify-between gap-3">
-              <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                Exercício {String(number).padStart(2, "0")}
+              <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">{uiText("Exercício ")}{uiText(String(number).padStart(2, "0"))}
               </span>
               <div className="flex shrink-0 items-center gap-2">
                 {exercise.diagram && (
@@ -763,33 +758,29 @@ export default function PostgresqlExercicioLista() {
                     type="button"
                     onClick={() => setSelectedDiagram({ exercise, question, number })}
                     className="postgres-mer-button border transition"
-                  >
-                    MER
-                  </Button>
+                  >{uiText("MER")}</Button>
                 )}
                 <Button variant="secondary"
                   type="button"
                   onClick={() => openAnswer({ exercise, question, number, index })}
                   className="border border-cyan-400/30 text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
-                >
-                  Resposta
-                </Button>
+                >{uiText("Resposta")}</Button>
               </div>
             </div>
-            <p>{question}</p>
+            <p>{uiText(question)}</p>
           </Panel>
           );
-        })}
+        }))}
       </ol>
 
-      <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label="Navegação entre blocos de exercícios">
+      <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label={uiText("Navegação entre blocos de exercícios")}>
         {previousBlock ? (
           <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/exercicios/${list.slug}/${previousBlock.slug}`}
             className="theme-hover-border transition hover:-translate-y-1"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Anterior</p>
-            <p className="font-semibold text-cyan-200">← {previousBlock.title}</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{uiText("Anterior")}</p>
+            <p className="font-semibold text-cyan-200">← {uiText(previousBlock.title)}</p>
           </Panel>
         ) : <div />}
 
@@ -798,8 +789,8 @@ export default function PostgresqlExercicioLista() {
             to={`/disciplinas/postgresql/exercicios/${list.slug}/${nextBlock.slug}`}
             className="theme-hover-border text-right transition hover:-translate-y-1"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Próximo</p>
-            <p className="font-semibold text-cyan-200">{nextBlock.title} →</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{uiText("Próximo")}</p>
+            <p className="font-semibold text-cyan-200">{uiText(nextBlock.title)} →</p>
           </Panel>
         )}
       </nav>
@@ -814,37 +805,28 @@ export default function PostgresqlExercicioLista() {
           <Panel as="div" layout="plain" className="max-h-[86vh] w-full max-w-3xl overflow-y-auto shadow-2xl">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                  Exercício {String(selectedExercise.number).padStart(2, "0")}
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">{uiText("Exercício ")}{uiText(String(selectedExercise.number).padStart(2, "0"))}
                 </p>
-                <h2 id="postgresql-answer-title" className="text-2xl font-semibold text-slate-100">
-                  Resposta comentada
-                </h2>
+                <h2 id="postgresql-answer-title" className="text-2xl font-semibold text-slate-100">{uiText("Resposta comentada")}</h2>
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={closeAnswer}
                 className="border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
-              >
-                Fechar
-              </Button>
+              >{uiText("Fechar")}</Button>
             </div>
 
             <div className="mb-5 rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-              <p className="text-sm leading-relaxed text-slate-300">{selectedExercise.question}</p>
+              <p className="text-sm leading-relaxed text-slate-300">{uiText(selectedExercise.question)}</p>
             </div>
 
-            <p className="mb-3 text-sm leading-relaxed text-slate-400">
-              Compare com a sua solução e observe principalmente a lógica usada, os filtros e os relacionamentos entre as tabelas.
-            </p>
+            <p className="mb-3 text-sm leading-relaxed text-slate-400">{uiText("Compare com a sua solução e observe principalmente a lógica usada, os filtros e os relacionamentos entre as tabelas.")}</p>
 
             <ModelingExplanation diagram={selectedExercise.exercise.diagram} />
 
             {requiresAnswerPassword && unlockedAnswerKey !== getAnswerKey(selectedExercise) ? (
               <form onSubmit={submitAnswerPassword} className="rounded-xl border border-cyan-400/20 bg-slate-950/70 p-4">
-                <label className="mb-2 block text-sm font-semibold text-cyan-100" htmlFor="postgresql-answer-password">
-                  Senha da resposta
-                </label>
+                <label className="mb-2 block text-sm font-semibold text-cyan-100" htmlFor="postgresql-answer-password">{uiText("Senha da resposta")}</label>
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Input
                     id="postgresql-answer-password"
@@ -855,24 +837,18 @@ export default function PostgresqlExercicioLista() {
                       setAnswerPasswordError(false);
                     }}
                     className="min-h-11 flex-1 border text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
-                    placeholder="Digite a senha"
+                    placeholder={uiText("Digite a senha")}
                     autoComplete="off"
                     autoFocus
                   />
                   <Button variant="secondary"
                     type="submit"
                     className="min-h-11 border border-cyan-400/30 text-cyan-100 transition hover:border-cyan-300"
-                  >
-                    Liberar resposta
-                  </Button>
+                  >{uiText("Liberar resposta")}</Button>
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-slate-400">
-                  Use o padrão informado pelo professor: prefixo da lista mais o número da questão.
-                </p>
+                <p className="mt-3 text-xs leading-relaxed text-slate-400">{uiText("Use o padrão informado pelo professor: prefixo da lista mais o número da questão.")}</p>
                 {answerPasswordError && (
-                  <p className="mt-3 text-sm font-semibold text-rose-300">
-                    Senha incorreta para esta questão.
-                  </p>
+                  <p className="mt-3 text-sm font-semibold text-rose-300">{uiText("Senha incorreta para esta questão.")}</p>
                 )}
               </form>
             ) : (
@@ -894,24 +870,19 @@ export default function PostgresqlExercicioLista() {
           <Panel as="div" layout="plain" className="max-h-[92vh] w-full max-w-7xl overflow-y-auto shadow-2xl">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">
-                  Exercício {String(selectedDiagram.number).padStart(2, "0")}
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">{uiText("Exercício ")}{uiText(String(selectedDiagram.number).padStart(2, "0"))}
                 </p>
-                <h2 id="postgresql-mer-title" className="text-2xl font-semibold text-slate-100">
-                  Diagrama MER
-                </h2>
+                <h2 id="postgresql-mer-title" className="text-2xl font-semibold text-slate-100">{uiText("Diagrama MER")}</h2>
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={() => setSelectedDiagram(null)}
                 className="border border-slate-700 text-slate-200 transition hover:border-amber-300 hover:text-amber-100"
-              >
-                Fechar
-              </Button>
+              >{uiText("Fechar")}</Button>
             </div>
 
             <div className="mb-4 rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-              <p className="text-sm leading-relaxed text-slate-300">{selectedDiagram.question}</p>
+              <p className="text-sm leading-relaxed text-slate-300">{uiText(selectedDiagram.question)}</p>
             </div>
 
             <MerDiagram diagram={selectedDiagram.exercise.diagram} />

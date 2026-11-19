@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -91,7 +92,7 @@ function getCommandCare(item) {
   return "Execute primeiro em um banco de estudos, confira o resultado e só depois adapte para uma base real.";
 }
 
-function getExampleReading(item) {
+function getExampleReading(item, translate) {
   const example = String(item.example || "");
   const lines = example.split("\n").map((line) => line.trim()).filter(Boolean);
   const firstLine = lines[0] || item.command;
@@ -111,19 +112,19 @@ function getExampleReading(item) {
   ].filter((clause) => example.toUpperCase().includes(clause));
 
   const clauseText = clauses.length
-    ? ` Repare nas partes usadas: ${clauses.join(", ")}.`
+    ? translate(" Repare nas partes usadas: {{0}}.", [clauses.join(", ")])
     : "";
 
-  return `Leia o exemplo por partes, começando por "${firstLine}". Primeiro encontre o objeto principal; depois observe as condições, colunas e opções aplicadas.${clauseText}`;
+  return translate('Leia o exemplo por partes, começando por "{{0}}". Primeiro encontre o objeto principal; depois observe as condições, colunas e opções aplicadas.{{1}}', [firstLine, clauseText]);
 }
 
-function getDetailedExplanation(item) {
+function getDetailedExplanation(item, translate) {
   const keyword = getPrimaryKeyword(item.command);
 
   return [
     {
       label: "Objetivo",
-      text: `${item.description} Neste ponto da aula, quero que você entenda não apenas o comando, mas a situação em que ele resolve um problema real no banco.`,
+      text: translate("{{0}} Neste ponto da aula, quero que você entenda não apenas o comando, mas a situação em que ele resolve um problema real no banco.", [translate(item.description)]),
     },
     {
       label: "Sintaxe mental",
@@ -136,7 +137,7 @@ function getDetailedExplanation(item) {
     },
     {
       label: "Leitura do exemplo",
-      text: getExampleReading(item),
+      text: getExampleReading(item, translate),
     },
     {
       label: "Cuidado",
@@ -146,6 +147,8 @@ function getDetailedExplanation(item) {
 }
 
 export default function PostgresqlTopico() {
+  const { text: uiText } = useContentTranslation();
+
   const { topicSlug } = useParams();
   const topic = findPostgresqlTopic(topicSlug);
   const [query, setQuery] = useState("");
@@ -161,12 +164,12 @@ export default function PostgresqlTopico() {
 
     return topic.commands.filter((item) => {
       const commandText = normalizeText(
-        `${item.command} ${item.description} ${item.usage || ""} ${item.example || ""} ${topic.category}`
+        `${item.command} ${uiText(item.description)} ${uiText(item.usage || "")} ${item.example || ""} ${uiText(topic.category)}`
       );
 
       return commandText.includes(normalizedQuery);
     });
-  }, [normalizedQuery, topic]);
+  }, [normalizedQuery, topic, uiText]);
 
   if (!topic) {
     return <Navigate to="/disciplinas/postgresql" replace />;
@@ -182,32 +185,29 @@ export default function PostgresqlTopico() {
         <BackButton
           fallbackTo="/disciplinas/postgresql"
           className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2"
-        >
-          Voltar para PostgreSQL
-        </BackButton>
+        >{uiText("Voltar para PostgreSQL")}</BackButton>
       </div>
 
       <div className="mb-10 max-w-4xl">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="rounded-lg border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200">
-            {topic.category}
+            {uiText(topic.category)}
           </span>
-          <span className="text-sm font-semibold text-slate-500">
-            Assunto {topic.order} de {postgresqlTopics.length}
+          <span className="text-sm font-semibold text-slate-500">{uiText("Assunto ")}{uiText(topic.order)}{uiText(" de ")}{uiText(postgresqlTopics.length)}
           </span>
         </div>
-        <PageTitle className="mb-4">{topic.title}</PageTitle>
-        <p className="text-lg leading-relaxed text-slate-400">{topic.introduction}</p>
+        <PageTitle className="mb-4">{uiText(topic.title)}</PageTitle>
+        <p className="text-lg leading-relaxed text-slate-400">{uiText(topic.introduction)}</p>
       </div>
 
       {topic.concepts && (
         <div className="mb-8">
-          <h2 className="mb-5 text-2xl font-semibold text-cyan-300">Conceitos principais</h2>
+          <h2 className="mb-5 text-2xl font-semibold text-cyan-300">{uiText("Conceitos principais")}</h2>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {topic.concepts.map(([name, description]) => (
               <Panel as="article" layout="plain" key={name}>
-                <h3 className="mb-2 text-base font-semibold text-slate-100">{name}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{description}</p>
+                <h3 className="mb-2 text-base font-semibold text-slate-100">{uiText(name)}</h3>
+                <p className="text-sm leading-relaxed text-slate-400">{uiText(description)}</p>
               </Panel>
             ))}
           </div>
@@ -216,12 +216,12 @@ export default function PostgresqlTopico() {
 
       {topic.notes && (
         <Panel as="div" layout="plain" className="mb-8">
-          <h2 className="mb-4 text-2xl font-semibold text-cyan-300">Pontos importantes</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-cyan-300">{uiText("Pontos importantes")}</h2>
           <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
             {topic.notes.map((note) => (
               <li key={note} className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                <span>{note}</span>
+                <span>{uiText(note)}</span>
               </li>
             ))}
           </ul>
@@ -230,23 +230,18 @@ export default function PostgresqlTopico() {
 
       <Panel as="div" layout="plain" className="mb-8">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-cyan-300">Índice de comandos</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300">{uiText("Índice de comandos")}</h2>
           <span className="rounded-lg border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-200">
-            {query.trim() ? `${filteredCommands.length}/${topic.commands.length}` : topic.commands.length} exemplos
-          </span>
+            {uiText(query.trim() ? `${filteredCommands.length}/${topic.commands.length}` : topic.commands.length)}{uiText(" exemplos")}</span>
         </div>
         <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <label htmlFor="busca-comandos-postgresql" className="text-xl font-semibold text-cyan-300">
-            Buscar comando
-          </label>
+          <label htmlFor="busca-comandos-postgresql" className="text-xl font-semibold text-cyan-300">{uiText("Buscar comando")}</label>
           {query.trim() && (
             <Button variant="secondary"
               type="button"
               onClick={() => setQuery("")}
               className="inline-flex items-center justify-center border border-slate-700 text-slate-200 transition hover:border-cyan-400 hover:text-cyan-100"
-            >
-              Limpar busca
-            </Button>
+            >{uiText("Limpar busca")}</Button>
           )}
         </div>
         <Input
@@ -254,7 +249,7 @@ export default function PostgresqlTopico() {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Ex.: SELECT, CHECK, índice, permissão..."
+          placeholder={uiText("Ex.: SELECT, CHECK, índice, permissão...")}
           className="mb-5 w-full border text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-cyan-400"
         />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -264,8 +259,8 @@ export default function PostgresqlTopico() {
               href={`#comando-${index + 1}`}
               className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-cyan-400/60 hover:text-cyan-200"
             >
-              <span className="mr-2 text-cyan-300">{String(index + 1).padStart(2, "0")}</span>
-              {item.command}
+              <span className="mr-2 text-cyan-300">{uiText(String(index + 1).padStart(2, "0"))}</span>
+              {uiText(item.command)}
             </a>
           ))}
         </div>
@@ -274,19 +269,15 @@ export default function PostgresqlTopico() {
       <div>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-semibold text-cyan-300">Comandos e exemplos</h2>
-            <p className="mt-2 text-sm text-slate-400">
-              Use os exemplos como ponto de partida. Primeiro rode em um banco de estudos; depois adapte nomes de tabelas e colunas ao seu próprio cenário.
-            </p>
+            <h2 className="text-2xl font-semibold text-cyan-300">{uiText("Comandos e exemplos")}</h2>
+            <p className="mt-2 text-sm text-slate-400">{uiText("Use os exemplos como ponto de partida. Primeiro rode em um banco de estudos; depois adapte nomes de tabelas e colunas ao seu próprio cenário.")}</p>
           </div>
           <a
             href={topic.officialUrl}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300"
-          >
-            Documentação oficial
-            <span aria-hidden="true">↗</span>
+          >{uiText("Documentação oficial")}<span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -300,33 +291,33 @@ export default function PostgresqlTopico() {
             >
               <div className="mb-4">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                  {String(index + 1).padStart(2, "0")}
+                  {uiText(String(index + 1).padStart(2, "0"))}
                 </p>
-                <h3 className="text-xl font-semibold text-slate-100">{item.command}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.description}</p>
+                <h3 className="text-xl font-semibold text-slate-100">{uiText(item.command)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{uiText(item.description)}</p>
                 {item.usage && (
                   <p className="mt-3 rounded-xl border border-cyan-400/15 bg-cyan-500/10 px-4 py-3 text-sm leading-relaxed text-slate-300">
-                    <span className="font-semibold text-cyan-200">Quando usar: </span>
-                    {item.usage}
+                    <span className="font-semibold text-cyan-200">{uiText("Quando usar: ")}</span>
+                    {uiText(item.usage)}
                   </p>
                 )}
               </div>
               <div className="mb-5 grid gap-3 lg:grid-cols-2">
-                {getDetailedExplanation(item).map((detail) => (
+                {getDetailedExplanation(item, uiText).map((detail) => (
                   <div
                     key={detail.label}
                     className="rounded-xl border border-slate-800 bg-slate-950/60 p-4"
                   >
                     <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-                      {detail.label}
+                      {uiText(detail.label)}
                     </p>
                     <p className={`text-sm leading-relaxed text-slate-300 ${detail.monospace ? "font-mono" : ""}`}>
-                      {detail.text}
+                      {uiText(detail.text)}
                     </p>
                   </div>
                 ))}
               </div>
-              <CodeBlock language={item.language || "sql"} label={item.language === "bash" ? "Terminal" : "SQL"}>
+              <CodeBlock language={item.language || "sql"} label={uiText(item.language === "bash" ? "Terminal" : "SQL")}>
                 {item.example}
               </CodeBlock>
             </Panel>
@@ -334,22 +325,20 @@ export default function PostgresqlTopico() {
           </div>
         ) : (
           <Panel as="div" layout="plain" className="text-center">
-            <h2 className="mb-2 text-2xl font-semibold text-slate-100">Nenhum comando encontrado</h2>
-            <p className="text-sm leading-relaxed text-slate-400">
-              Tente procurar pelo nome do comando, pela finalidade dele ou por alguma palavra que apareça no exemplo.
-            </p>
+            <h2 className="mb-2 text-2xl font-semibold text-slate-100">{uiText("Nenhum comando encontrado")}</h2>
+            <p className="text-sm leading-relaxed text-slate-400">{uiText("Tente procurar pelo nome do comando, pela finalidade dele ou por alguma palavra que apareça no exemplo.")}</p>
           </Panel>
         )}
       </div>
 
-      <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label="Navegação entre assuntos">
+      <nav className="mt-10 grid gap-4 sm:grid-cols-2" aria-label={uiText("Navegação entre assuntos")}>
         {previousTopic ? (
           <Panel as={Link} layout="plain"
             to={`/disciplinas/postgresql/${previousTopic.slug}`}
             className="theme-hover-border transition hover:-translate-y-1"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Anterior</p>
-            <p className="font-semibold text-cyan-200">← {previousTopic.title}</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{uiText("Anterior")}</p>
+            <p className="font-semibold text-cyan-200">← {uiText(previousTopic.title)}</p>
           </Panel>
         ) : <div />}
 
@@ -358,8 +347,8 @@ export default function PostgresqlTopico() {
             to={`/disciplinas/postgresql/${nextTopic.slug}`}
             className="theme-hover-border text-right transition hover:-translate-y-1"
           >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Próximo</p>
-            <p className="font-semibold text-cyan-200">{nextTopic.title} →</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{uiText("Próximo")}</p>
+            <p className="font-semibold text-cyan-200">{uiText(nextTopic.title)} →</p>
           </Panel>
         )}
       </nav>

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -53,6 +54,8 @@ function validarCnpj(cnpj) {
 }
 
 export default function ValidadorCpfCnpj() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -104,7 +107,7 @@ export default function ValidadorCpfCnpj() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -114,23 +117,23 @@ export default function ValidadorCpfCnpj() {
             d="M4 3h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6l-2 2h-1l-2-2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v12h6l1.5 1.5L13 17h7V5H4Zm3 3h10v2H7V8Zm0 4h6v2H7v-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <label className="block">
-          <span className="block text-sm text-slate-300 mb-2">{txt.label}</span>
+          <span className="block text-sm text-slate-300 mb-2">{uiText(txt.label)}</span>
           <Input
             type="text"
             value={valor}
             onChange={(event) => setValor(event.target.value)}
-            placeholder={txt.placeholder}
+            placeholder={uiText(txt.placeholder)}
             className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
           />
         </label>
 
         <div className="mt-6">
-          <p className="text-sm text-slate-400">{txt.identifiedType}: {resultado.tipo || "-"}</p>
+          <p className="text-sm text-slate-400">{uiText(txt.identifiedType)}: {uiText(resultado.tipo || "-")}</p>
           <p
             className={`mt-2 text-lg font-semibold ${
               resultado.valido === true
@@ -140,7 +143,7 @@ export default function ValidadorCpfCnpj() {
                   : "text-slate-300"
             }`}
           >
-            {resultado.texto}
+            {uiText(resultado.texto)}
           </p>
         </div>
       </Panel>

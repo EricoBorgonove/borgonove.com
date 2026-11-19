@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -133,6 +134,8 @@ const checklist = [
 ];
 
 export default function RoadmapPythonPandas() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const weeks = localize(semanas, isEn);
@@ -166,7 +169,7 @@ export default function RoadmapPythonPandas() {
               d="M10.7 5.3a1 1 0 0 1 0 1.4L6.42 11H20a1 1 0 1 1 0 2H6.41l4.3 4.3a1 1 0 1 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0Z"
             />
           </svg>
-          {pick(txt.backPandas, isEn)}
+          {uiText(pick(txt.backPandas, isEn))}
         </Link>
         <Link
           to="/roadmaps"
@@ -178,7 +181,7 @@ export default function RoadmapPythonPandas() {
               d="M10.7 5.3a1 1 0 0 1 0 1.4L6.42 11H20a1 1 0 1 1 0 2H6.41l4.3 4.3a1 1 0 1 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0Z"
             />
           </svg>
-          {pick(txt.backRoadmaps, isEn)}
+          {uiText(pick(txt.backRoadmaps, isEn))}
         </Link>
       </div>
 
@@ -189,10 +192,10 @@ export default function RoadmapPythonPandas() {
             d="M4 4h16v4H4V4Zm0 6h6v10H6a2 2 0 0 1-2-2v-8Zm8 0h8v8a2 2 0 0 1-2 2h-6V10Zm2 2v2h4v-2h-4Zm0 4v2h3v-2h-3ZM6 12v2h2v-2H6Zm0 4v2h2v-2H6Z"
           />
         </svg>
-        <span>{pick(txt.title, isEn)}</span>
+        <span>{uiText(pick(txt.title, isEn))}</span>
       </PageTitle>
       <PageDescription>
-        {pick(txt.subtitle, isEn)}
+        {uiText(pick(txt.subtitle, isEn))}
       </PageDescription></PageHeader>
 
       <div className="grid gap-6 lg:grid-cols-2 mb-8">
@@ -200,23 +203,23 @@ export default function RoadmapPythonPandas() {
           <Panel as="article" layout="plain" key={semana.titulo}>
             <div className="mb-5 flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/15 text-lg font-black text-cyan-300">
-                {index + 1}
+                {uiText(index + 1)}
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-cyan-300 mb-2">{semana.titulo}</h2>
-                <p className="text-sm text-slate-400 leading-relaxed">{semana.resumo}</p>
+                <h2 className="text-2xl font-semibold text-cyan-300 mb-2">{uiText(semana.titulo)}</h2>
+                <p className="text-sm text-slate-400 leading-relaxed">{uiText(semana.resumo)}</p>
               </div>
             </div>
 
             <div className="space-y-4">
               {semana.blocos.map((bloco) => (
                 <div key={bloco.titulo} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                  <h3 className="text-lg font-semibold text-slate-100 mb-3">{bloco.titulo}</h3>
+                  <h3 className="text-lg font-semibold text-slate-100 mb-3">{uiText(bloco.titulo)}</h3>
                   <ul className="space-y-2 text-sm text-slate-300 leading-relaxed">
                     {bloco.itens.map((item) => (
                       <li key={item} className="flex gap-2">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                        <span>{item}</span>
+                        <span>{uiText(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -228,39 +231,39 @@ export default function RoadmapPythonPandas() {
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{pick(txt.finalExercise, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(pick(txt.finalExercise, isEn))}</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {finalProject.map((item, index) => (
             <p key={item} className="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300 leading-relaxed">
-              <span className="font-semibold text-cyan-300">{index + 1}. </span>
-              {item}
+              <span className="font-semibold text-cyan-300">{uiText(index + 1)}. </span>
+              {uiText(item)}
             </p>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{pick(txt.competencies, isEn)}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(pick(txt.competencies, isEn))}</h2>
         <TableContainer className="rounded-2xl border border-slate-800">
           <Table className="min-w-[680px] w-full text-left text-sm bg-slate-950/70">
             <thead className="bg-slate-900/90">
               <tr>
-                <th className="px-4 py-3 font-semibold text-slate-100">{pick(txt.level, isEn)}</th>
-                <th className="px-4 py-3 font-semibold text-slate-100">{pick(txt.competency, isEn)}</th>
+                <th className="px-4 py-3 font-semibold text-slate-100">{uiText(pick(txt.level, isEn))}</th>
+                <th className="px-4 py-3 font-semibold text-slate-100">{uiText(pick(txt.competency, isEn))}</th>
               </tr>
             </thead>
             <tbody>
               {checklistItems.map((item) => (
                 <tr key={item.nivel} className="border-t border-slate-800">
-                  <td className="px-4 py-3 font-semibold text-cyan-300">{item.nivel}</td>
-                  <td className="px-4 py-3 text-slate-300">{item.competencia}</td>
+                  <td className="px-4 py-3 font-semibold text-cyan-300">{uiText(item.nivel)}</td>
+                  <td className="px-4 py-3 text-slate-300">{uiText(item.competencia)}</td>
                 </tr>
               ))}
             </tbody>
           </Table>
         </TableContainer>
         <p className="mt-5 text-sm text-slate-400">
-          {pick(txt.ready, isEn)}
+          {uiText(pick(txt.ready, isEn))}
         </p>
       </Panel>
     </PageTemplate>

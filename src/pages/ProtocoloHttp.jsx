@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table } from "../components/ui/Patterns";
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
@@ -5,6 +6,8 @@ import BackButton from "../components/BackButton";
 import ScrollRegion from "../components/ui/ScrollRegion";
 import httpCycleImage from "../assets/images/http-cycle-diagram.svg";
 import httpStatusImage from "../assets/images/http-status-map.svg";
+import httpCyclePtImage from "../assets/images/http-cycle-diagram.pt.svg";
+import httpStatusPtImage from "../assets/images/http-status-map.pt.svg";
 
 const CONTENT = {
   pt: {
@@ -983,6 +986,8 @@ function getStatusGuide(item, group, isEn) {
 }
 
 export default function ProtocoloHttp() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn ? CONTENT.en : CONTENT.pt;
@@ -991,7 +996,7 @@ export default function ProtocoloHttp() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {txt.back}
+          {uiText(txt.back)}
         </BackButton>
       </div>
 
@@ -1002,23 +1007,23 @@ export default function ProtocoloHttp() {
             d="M4 5a3 3 0 0 1 3-3h5v2H7a1 1 0 0 0-1 1v3h12V5a1 1 0 0 0-1-1h-5V2h5a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3h-2v2h2a3 3 0 0 1 3 3v1h-2v-1a1 1 0 0 0-1-1h-2v2h-2v-2h-4v2H8v-2H6a1 1 0 0 0-1 1v1H3v-1a3 3 0 0 1 3-3h2v-2H7a3 3 0 0 1-3-3V5Zm2 5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1H6Zm4 3v2h4v-2h-4Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
-      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.subtitle)}</PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-lg font-semibold text-cyan-300 mb-2">{txt.introTitle}</h2>
-        <p className="text-sm text-slate-300 leading-relaxed text-justify">{txt.intro}</p>
+        <h2 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(txt.introTitle)}</h2>
+        <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(txt.intro)}</p>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-lg font-semibold text-cyan-300 mb-3">{txt.objectiveTitle}</h2>
-        <p className="text-sm text-slate-400 mb-4 text-justify">{txt.objectiveSubtitle}</p>
+        <h2 className="text-lg font-semibold text-cyan-300 mb-3">{uiText(txt.objectiveTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-4 text-justify">{uiText(txt.objectiveSubtitle)}</p>
         <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside">
           {txt.objectives.map((objective) => (
             <li key={objective} className="text-justify">
-              {objective}
+              {uiText(objective)}
             </li>
           ))}
         </ul>
@@ -1026,23 +1031,23 @@ export default function ProtocoloHttp() {
 
       <Panel as="div" layout="plain" className="mb-8">
         <img
-          src={httpCycleImage}
-          alt={isEn ? "HTTP request and response cycle diagram" : "Diagrama do ciclo de requisição e resposta HTTP"}
+          src={isEn ? httpCycleImage : httpCyclePtImage}
+          alt={uiText(isEn ? "HTTP request and response cycle diagram" : "Diagrama do ciclo de requisição e resposta HTTP")}
           className="w-full rounded-xl border border-slate-700/80"
         />
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.flowTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5 text-justify">{txt.flowSubtitle}</p>
-        <ScrollRegion aria-label={txt.flowTitle} className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(txt.flowTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5 text-justify">{uiText(txt.flowSubtitle)}</p>
+        <ScrollRegion aria-label={uiText(txt.flowTitle)} className="flex flex-col md:flex-row md:items-stretch md:overflow-x-auto gap-2 md:gap-0">
           {txt.flow.map((item, index) => (
             <Fragment key={item}>
               <article className="min-w-[220px] md:w-[220px] bg-slate-900/40 rounded-xl border border-slate-800 px-4 py-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-cyan-300 mb-2">
-                  {isEn ? `Step ${index + 1}` : `Passo ${index + 1}`}
+                  {uiText(isEn ? `Step ${index + 1}` : `Passo ${index + 1}`)}
                 </p>
-                <p className="text-sm text-slate-200 leading-relaxed text-justify">{item}</p>
+                <p className="text-sm text-slate-200 leading-relaxed text-justify">{uiText(item)}</p>
               </article>
 
               {index < txt.flow.length - 1 && (
@@ -1065,17 +1070,17 @@ export default function ProtocoloHttp() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.laneTitle}</h2>
-        <p className="text-sm text-slate-400 mb-6">{txt.laneSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{uiText(txt.laneTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-6">{uiText(txt.laneSubtitle)}</p>
         <div className="grid lg:grid-cols-2 gap-5">
           <article className="rounded-2xl border border-cyan-700/40 bg-cyan-900/10 p-4">
-            <h3 className="text-sm font-semibold text-cyan-200 mb-3">{txt.requestLane.title}</h3>
+            <h3 className="text-sm font-semibold text-cyan-200 mb-3">{uiText(txt.requestLane.title)}</h3>
             <div className="space-y-2">
               {txt.requestLane.steps.map((step, index) => (
                 <div key={step}>
                   <div className="rounded-xl border border-cyan-800/40 bg-slate-950/35 px-3 py-3 text-sm text-slate-200 text-justify">
-                    <span className="text-cyan-300 font-semibold mr-2">{index + 1}.</span>
-                    {step}
+                    <span className="text-cyan-300 font-semibold mr-2">{uiText(index + 1)}.</span>
+                    {uiText(step)}
                   </div>
                   {index < txt.requestLane.steps.length - 1 && (
                     <div className="h-4 flex items-center justify-center text-cyan-400/70">
@@ -1090,13 +1095,13 @@ export default function ProtocoloHttp() {
           </article>
 
           <article className="rounded-2xl border border-emerald-700/40 bg-emerald-900/10 p-4">
-            <h3 className="text-sm font-semibold text-emerald-200 mb-3">{txt.responseLane.title}</h3>
+            <h3 className="text-sm font-semibold text-emerald-200 mb-3">{uiText(txt.responseLane.title)}</h3>
             <div className="space-y-2">
               {txt.responseLane.steps.map((step, index) => (
                 <div key={step}>
                   <div className="rounded-xl border border-emerald-800/40 bg-slate-950/35 px-3 py-3 text-sm text-slate-200 text-justify">
-                    <span className="text-emerald-300 font-semibold mr-2">{index + 1}.</span>
-                    {step}
+                    <span className="text-emerald-300 font-semibold mr-2">{uiText(index + 1)}.</span>
+                    {uiText(step)}
                   </div>
                   {index < txt.responseLane.steps.length - 1 && (
                     <div className="h-4 flex items-center justify-center text-emerald-400/70">
@@ -1113,13 +1118,13 @@ export default function ProtocoloHttp() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.decisionTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5">{txt.decisionSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{uiText(txt.decisionTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5">{uiText(txt.decisionSubtitle)}</p>
 
         <div className="rounded-2xl border border-slate-700/80 bg-slate-950/30 p-4 md:p-6">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center gap-2 md:gap-4">
             <div className="rounded-xl border border-cyan-700/40 bg-cyan-900/15 px-4 py-3 text-sm text-cyan-100 text-center">
-              {isEn ? "Validate request" : "Validar requisição"}
+              {uiText(isEn ? "Validate request" : "Validar requisição")}
             </div>
             <div className="text-cyan-400/80 self-center">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -1127,7 +1132,7 @@ export default function ProtocoloHttp() {
               </svg>
             </div>
             <div className="rounded-xl border border-violet-700/40 bg-violet-900/15 px-4 py-3 text-sm text-violet-100 text-center">
-              {isEn ? "Process business rules" : "Processar regra de negócio"}
+              {uiText(isEn ? "Process business rules" : "Processar regra de negócio")}
             </div>
             <div className="text-cyan-400/80 self-center">
               <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
@@ -1135,39 +1140,39 @@ export default function ProtocoloHttp() {
               </svg>
             </div>
             <div className="rounded-xl border border-emerald-700/40 bg-emerald-900/15 px-4 py-3 text-sm text-emerald-100 text-center">
-              {isEn ? "Return HTTP response" : "Retornar resposta HTTP"}
+              {uiText(isEn ? "Return HTTP response" : "Retornar resposta HTTP")}
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-3 mt-5">
             <article className="rounded-xl border border-emerald-700/40 bg-emerald-900/10 p-3">
-              <p className="text-sm font-semibold text-emerald-300">2xx</p>
-              <p className="text-xs text-slate-300 mt-1">{isEn ? "Success path" : "Caminho de sucesso"}</p>
+              <p className="text-sm font-semibold text-emerald-300">{uiText("2xx")}</p>
+              <p className="text-xs text-slate-300 mt-1">{uiText(isEn ? "Success path" : "Caminho de sucesso")}</p>
             </article>
             <article className="rounded-xl border border-orange-700/40 bg-orange-900/10 p-3">
-              <p className="text-sm font-semibold text-orange-300">4xx</p>
-              <p className="text-xs text-slate-300 mt-1">{isEn ? "Client/request issue" : "Problema de cliente/requisição"}</p>
+              <p className="text-sm font-semibold text-orange-300">{uiText("4xx")}</p>
+              <p className="text-xs text-slate-300 mt-1">{uiText(isEn ? "Client/request issue" : "Problema de cliente/requisição")}</p>
             </article>
             <article className="rounded-xl border border-rose-700/40 bg-rose-900/10 p-3">
-              <p className="text-sm font-semibold text-rose-300">5xx</p>
-              <p className="text-xs text-slate-300 mt-1">{isEn ? "Server/dependency issue" : "Problema interno/dependência"}</p>
+              <p className="text-sm font-semibold text-rose-300">{uiText("5xx")}</p>
+              <p className="text-xs text-slate-300 mt-1">{uiText(isEn ? "Server/dependency issue" : "Problema interno/dependência")}</p>
             </article>
           </div>
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.checkpointsTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5 text-justify">{txt.checkpointsSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(txt.checkpointsTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5 text-justify">{uiText(txt.checkpointsSubtitle)}</p>
         <div className="grid md:grid-cols-2 gap-4">
           {txt.checkpoints.map((checkpoint) => (
             <article key={checkpoint.stage} className="rounded-xl border border-slate-700/80 bg-slate-950/35 p-4">
-              <h3 className="text-sm font-semibold text-cyan-200 mb-2">{checkpoint.stage}</h3>
+              <h3 className="text-sm font-semibold text-cyan-200 mb-2">{uiText(checkpoint.stage)}</h3>
               <p className="text-xs text-slate-200">
-                <span className="text-emerald-300 font-semibold">OK:</span> {checkpoint.ok}
+                <span className="text-emerald-300 font-semibold">{uiText("OK:")}</span> {uiText(checkpoint.ok)}
               </p>
               <p className="text-xs text-slate-200 mt-1">
-                <span className="text-orange-300 font-semibold">{isEn ? "Fail:" : "Falha:"}</span> {checkpoint.fail}
+                <span className="text-orange-300 font-semibold">{uiText(isEn ? "Fail:" : "Falha:")}</span> {uiText(checkpoint.fail)}
               </p>
             </article>
           ))}
@@ -1175,28 +1180,28 @@ export default function ProtocoloHttp() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8 overflow-x-auto">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.verbsTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5 text-justify">{txt.verbsSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(txt.verbsTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5 text-justify">{uiText(txt.verbsSubtitle)}</p>
         <Table className="w-full min-w-[760px] text-sm">
           <thead>
             <tr className="text-left text-slate-200 border-b border-slate-700">
-              <th className="py-2 pr-3">Method</th>
-              <th className="py-2 pr-3">Safe</th>
-              <th className="py-2 pr-3">Idempotent</th>
-              <th className="py-2 pr-3">Body</th>
-              <th className="py-2 pr-3">{isEn ? "Main use" : "Uso principal"}</th>
-              <th className="py-2">{isEn ? "Common codes" : "Códigos comuns"}</th>
+              <th className="py-2 pr-3">{uiText("Método")}</th>
+              <th className="py-2 pr-3">{uiText("Seguro")}</th>
+              <th className="py-2 pr-3">{uiText("Idempotente")}</th>
+              <th className="py-2 pr-3">{uiText("Corpo")}</th>
+              <th className="py-2 pr-3">{uiText(isEn ? "Main use" : "Uso principal")}</th>
+              <th className="py-2">{uiText(isEn ? "Common codes" : "Códigos comuns")}</th>
             </tr>
           </thead>
           <tbody>
             {txt.verbs.map((verb) => (
               <tr key={verb.method} className="border-b border-slate-800/80 text-slate-300">
-                <td className="py-3 pr-3 font-semibold text-cyan-200">{verb.method}</td>
-                <td className="py-3 pr-3">{verb.safe}</td>
-                <td className="py-3 pr-3">{verb.idempotent}</td>
-                <td className="py-3 pr-3">{verb.body}</td>
-                <td className="py-3 pr-3">{verb.use}</td>
-                <td className="py-3">{verb.examples}</td>
+                <td className="py-3 pr-3 font-semibold text-cyan-200">{uiText(verb.method)}</td>
+                <td className="py-3 pr-3">{uiText(verb.safe)}</td>
+                <td className="py-3 pr-3">{uiText(verb.idempotent)}</td>
+                <td className="py-3 pr-3">{uiText(verb.body)}</td>
+                <td className="py-3 pr-3">{uiText(verb.use)}</td>
+                <td className="py-3">{uiText(verb.examples)}</td>
               </tr>
             ))}
           </tbody>
@@ -1204,11 +1209,11 @@ export default function ProtocoloHttp() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.statusTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5">{txt.statusSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{uiText(txt.statusTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5">{uiText(txt.statusSubtitle)}</p>
         <img
-          src={httpStatusImage}
-          alt={isEn ? "HTTP status code classes visual map" : "Mapa visual das classes de status code HTTP"}
+          src={isEn ? httpStatusImage : httpStatusPtImage}
+          alt={uiText(isEn ? "HTTP status code classes visual map" : "Mapa visual das classes de status code HTTP")}
           className="w-full rounded-xl border border-slate-700/80 mb-5"
         />
         <div className="grid md:grid-cols-5 gap-3 mb-6">
@@ -1217,16 +1222,16 @@ export default function ProtocoloHttp() {
               key={group.range}
               className={`rounded-xl border p-4 ${group.tone}`}
             >
-              <p className="text-2xl font-black">{group.range}</p>
-              <h3 className="font-semibold mt-1">{group.name}</h3>
-              <p className="text-xs mt-2 leading-relaxed text-justify">{group.desc}</p>
-              <p className="text-[11px] mt-3 opacity-90">{group.examples}</p>
+              <p className="text-2xl font-black">{uiText(group.range)}</p>
+              <h3 className="font-semibold mt-1">{uiText(group.name)}</h3>
+              <p className="text-xs mt-2 leading-relaxed text-justify">{uiText(group.desc)}</p>
+              <p className="text-[11px] mt-3 opacity-90">{uiText(group.examples)}</p>
             </article>
           ))}
         </div>
 
-        <h3 className="text-lg font-semibold text-cyan-300 mb-2">{txt.statusCatalogTitle}</h3>
-        <p className="text-sm text-slate-400 mb-5">{txt.statusCatalogSubtitle}</p>
+        <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(txt.statusCatalogTitle)}</h3>
+        <p className="text-sm text-slate-400 mb-5">{uiText(txt.statusCatalogSubtitle)}</p>
 
         <div className="space-y-3">
           {STATUS_CATALOG.map((catalog) => (
@@ -1234,10 +1239,10 @@ export default function ProtocoloHttp() {
               <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between gap-3">
                 <div>
                   <h3 className="text-sm font-semibold text-slate-100">
-                    {isEn ? catalog.labelEn : catalog.labelPt}
+                    {uiText(isEn ? catalog.labelEn : catalog.labelPt)}
                   </h3>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    {catalog.items.length} {isEn ? "status codes" : "status codes"}
+                    {uiText(catalog.items.length)} {uiText(isEn ? "status codes" : "status codes")}
                   </p>
                 </div>
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 text-slate-300">
@@ -1250,7 +1255,7 @@ export default function ProtocoloHttp() {
                   <details key={item.code} className="rounded-lg border border-slate-700/70 bg-slate-950/45 overflow-hidden">
                     <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden px-3 py-2 flex items-center justify-between gap-2">
                       <span className="text-xs text-cyan-200 font-semibold">
-                        {item.code} — {item.name}
+                        {uiText(item.code)} — {uiText(item.name)}
                       </span>
                       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 text-slate-400">
                         <path fill="currentColor" d="m12 14.6-6.3-6.3L7.1 6.9 12 11.8l4.9-4.9 1.4 1.4Z" />
@@ -1259,29 +1264,29 @@ export default function ProtocoloHttp() {
 
                     <div className="border-t border-slate-700/70 px-3 py-2">
                       <p className="text-xs text-slate-300 text-justify">
-                        {isEn ? item.en : item.pt}
+                        {uiText(isEn ? item.en : item.pt)}
                       </p>
 
-                      {(() => {
+                      {uiText((() => {
                         const guide = getStatusGuide(item, catalog.group, isEn);
                         return (
                           <>
                             <p className="text-xs text-slate-300 mt-2 text-justify">
                               <span className="font-semibold text-slate-100">
-                                {isEn ? "Common causes:" : "Causas comuns:"}
+                                {uiText(isEn ? "Common causes:" : "Causas comuns:")}
                               </span>{" "}
-                              {guide.causes}
+                              {uiText(guide.causes)}
                             </p>
                             <ul className="mt-2 space-y-1 list-disc list-inside">
                               {guide.actions.map((action) => (
                                 <li key={action} className="text-xs text-slate-300 text-justify">
-                                  {action}
+                                  {uiText(action)}
                                 </li>
                               ))}
                             </ul>
                           </>
                         );
-                      })()}
+                      })())}
                     </div>
                   </details>
                 ))}
@@ -1292,29 +1297,29 @@ export default function ProtocoloHttp() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{txt.seoTitle}</h2>
-        <p className="text-sm text-slate-400 mb-4 text-justify">{txt.seoSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-3">{uiText(txt.seoTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-4 text-justify">{uiText(txt.seoSubtitle)}</p>
         <ul className="space-y-2 list-disc list-inside">
           {txt.seoItems.map((item) => (
             <li key={item} className="text-sm text-slate-300 text-justify">
-              {item}
+              {uiText(item)}
             </li>
           ))}
         </ul>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{txt.practicalTitle}</h2>
-        <p className="text-sm text-slate-400 mb-5">{txt.practicalSubtitle}</p>
+        <h2 className="text-xl font-semibold text-cyan-300 mb-2">{uiText(txt.practicalTitle)}</h2>
+        <p className="text-sm text-slate-400 mb-5">{uiText(txt.practicalSubtitle)}</p>
         <div className="grid lg:grid-cols-2 gap-4">
           <article className="rounded-xl border border-sky-700/40 bg-slate-950/40 p-4">
-            <h3 className="text-sm font-semibold text-sky-300 mb-3">{txt.requestLabel}</h3>
+            <h3 className="text-sm font-semibold text-sky-300 mb-3">{uiText(txt.requestLabel)}</h3>
             <pre className="text-xs leading-relaxed text-slate-200 whitespace-pre-wrap break-words overflow-x-auto">
               {txt.requestExample}
             </pre>
           </article>
           <article className="rounded-xl border border-emerald-700/40 bg-slate-950/40 p-4">
-            <h3 className="text-sm font-semibold text-emerald-300 mb-3">{txt.responseLabel}</h3>
+            <h3 className="text-sm font-semibold text-emerald-300 mb-3">{uiText(txt.responseLabel)}</h3>
             <pre className="text-xs leading-relaxed text-slate-200 whitespace-pre-wrap break-words overflow-x-auto">
               {txt.responseExample}
             </pre>

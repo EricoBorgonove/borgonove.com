@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -102,6 +103,8 @@ async function buscarComentariosDoMedia({ accessToken, mediaId }) {
 }
 
 export default function SorteioInstagram() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -310,7 +313,7 @@ export default function SorteioInstagram() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -320,16 +323,16 @@ export default function SorteioInstagram() {
             d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       {!isAdminAutorizado ? (
         <Panel as="form" layout="plain" onSubmit={autenticarAdmin} className="max-w-xl">
-          <h2 className="text-2xl font-bold mb-2">{txt.protectedAccess}</h2>
-          <p className="text-slate-400 text-sm mb-6">{txt.protectedDesc}</p>
+          <h2 className="text-2xl font-bold mb-2">{uiText(txt.protectedAccess)}</h2>
+          <p className="text-slate-400 text-sm mb-6">{uiText(txt.protectedDesc)}</p>
           <div className="space-y-4">
             <label className="block">
-              <span className="block text-sm text-slate-300 mb-2">{txt.user}</span>
+              <span className="block text-sm text-slate-300 mb-2">{uiText(txt.user)}</span>
               <Input
                 type="text"
                 value={loginUser}
@@ -338,7 +341,7 @@ export default function SorteioInstagram() {
               />
             </label>
             <label className="block">
-              <span className="block text-sm text-slate-300 mb-2">{txt.password}</span>
+              <span className="block text-sm text-slate-300 mb-2">{uiText(txt.password)}</span>
               <Input
                 type="password"
                 value={loginPass}
@@ -351,9 +354,9 @@ export default function SorteioInstagram() {
             type="submit"
             className="mt-6 text-slate-900 transition"
           >
-            {txt.enter}
+            {uiText(txt.enter)}
           </Button>
-          {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
+          {erro && <p className="text-red-400 text-sm mt-4">{uiMessage(erro)}</p>}
         </Panel>
       ) : (
         <>
@@ -364,25 +367,25 @@ export default function SorteioInstagram() {
                 onClick={sairAdmin}
                 className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
-                {txt.logout}
+                {uiText(txt.logout)}
               </Button>
             </div>
 
-            <p className="text-slate-400 mb-6">{txt.apiDesc}</p>
+            <p className="text-slate-400 mb-6">{uiText(txt.apiDesc)}</p>
 
             <div className="space-y-4">
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.token}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.token)}</span>
                 <Input
                   type="password"
                   value={accessToken}
                   onChange={(event) => setAccessToken(event.target.value)}
-                  placeholder="EAAB..."
+                  placeholder={uiText("EAAB...")}
                   className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
                 />
               </label>
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.userId}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.userId)}</span>
                 <Input
                   type="text"
                   value={igUserId}
@@ -392,12 +395,12 @@ export default function SorteioInstagram() {
                 />
               </label>
               <label className="block">
-                <span className="block text-sm text-slate-300 mb-2">{txt.postLink}</span>
+                <span className="block text-sm text-slate-300 mb-2">{uiText(txt.postLink)}</span>
                 <Input
                   type="url"
                   value={linkPost}
                   onChange={(event) => setLinkPost(event.target.value)}
-                  placeholder="https://www.instagram.com/p/..."
+                  placeholder={uiText("https://www.instagram.com/p/...")}
                   className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
                 />
               </label>
@@ -408,7 +411,7 @@ export default function SorteioInstagram() {
                   onChange={(event) => setSemDuplicidadeUsuario(event.target.checked)}
                   className="h-4 w-4 accent-cyan-400"
                 />
-                {txt.oneCommentPerUser}
+                {uiText(txt.oneCommentPerUser)}
               </label>
             </div>
 
@@ -419,7 +422,7 @@ export default function SorteioInstagram() {
                 disabled={statusBusca === "loading"}
                 className="text-slate-900 transition disabled:opacity-60"
               >
-                {statusBusca === "loading" ? txt.searching : txt.searchComments}
+                {uiText(statusBusca === "loading" ? txt.searching : txt.searchComments)}
               </Button>
               <Button variant="secondary"
                 type="button"
@@ -427,45 +430,45 @@ export default function SorteioInstagram() {
                 disabled={sorteando || participantes.length === 0}
                 className="border border-cyan-600/70 text-cyan-300 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {sorteando ? txt.drawing : txt.startDraw}
+                {uiText(sorteando ? txt.drawing : txt.startDraw)}
               </Button>
               <Button variant="secondary"
                 type="button"
                 onClick={resetar}
                 className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
               >
-                {txt.reset}
+                {uiText(txt.reset)}
               </Button>
             </div>
 
-            {erro && <p className="text-red-400 text-sm mt-4">{erro}</p>}
+            {erro && <p className="text-red-400 text-sm mt-4">{uiMessage(erro)}</p>}
             <p className="text-slate-400 text-sm mt-4">
-              {txt.validParticipants}: <strong className="text-slate-200">{participantes.length}</strong>
+              {uiText(txt.validParticipants)}: <strong className="text-slate-200">{uiText(participantes.length)}</strong>
             </p>
           </Panel>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
             <Panel as="article" layout="plain">
-              <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.loadingDraw}</h2>
+              <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{uiText(txt.loadingDraw)}</h2>
               {sorteando ? (
                 <div>
                   <div className="inline-flex items-center gap-2 text-cyan-300">
                     <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 animate-pulse" />
-                    {txt.processingComments}
+                    {uiText(txt.processingComments)}
                   </div>
                   <p className="text-3xl md:text-4xl font-black text-cyan-200 mt-4 break-all">
-                    {candidatoAtual?.usuario || txt.selecting}
+                    {uiText(candidatoAtual?.usuario || txt.selecting)}
                   </p>
                 </div>
               ) : (
-                <p className="text-slate-400">{txt.loadAndStart}</p>
+                <p className="text-slate-400">{uiText(txt.loadAndStart)}</p>
               )}
             </Panel>
 
             <Panel as="article" layout="plain">
-              <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{txt.winner}</h2>
+              <h2 className="text-sm uppercase tracking-wider text-slate-400 mb-3">{uiText(txt.winner)}</h2>
               {!vencedor ? (
-                <p className="text-slate-400">{txt.noWinner}</p>
+                <p className="text-slate-400">{uiText(txt.noWinner)}</p>
               ) : (
                 <div>
                   <p className="text-3xl md:text-4xl font-black text-emerald-300 break-all">
@@ -479,7 +482,7 @@ export default function SorteioInstagram() {
                       rel="noreferrer"
                       className="inline-flex mt-4 text-cyan-300 hover:text-cyan-200"
                     >
-                      {txt.viewPost}
+                      {uiText(txt.viewPost)}
                     </a>
                   )}
                 </div>

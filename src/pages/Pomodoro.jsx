@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,6 +12,8 @@ function formatDuration(seconds) {
 }
 
 export default function Pomodoro() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -111,7 +114,7 @@ export default function Pomodoro() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -121,13 +124,13 @@ export default function Pomodoro() {
             d="M9 2h6a1 1 0 1 1 0 2h-1v1.1A8 8 0 1 1 10 5.1V4H9a1 1 0 1 1 0-2Zm3 5a1 1 0 0 0-1 1v4.6l3 1.8a1 1 0 1 0 1-1.72l-2-1.2V8a1 1 0 0 0-1-1Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.focusMinutes}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.focusMinutes)}</span>
             <Input
               type="number"
               min="1"
@@ -137,7 +140,7 @@ export default function Pomodoro() {
             />
           </label>
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.breakMinutes}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.breakMinutes)}</span>
             <Input
               type="number"
               min="1"
@@ -149,22 +152,22 @@ export default function Pomodoro() {
         </div>
 
         <div className="flex flex-wrap gap-3 mt-4 text-sm">
-          <Button variant="secondary" type="button" onClick={() => applyPreset(25, 5)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetDefault}</Button>
-          <Button variant="secondary" type="button" onClick={() => applyPreset(50, 10)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetDeep}</Button>
-          <Button variant="secondary" type="button" onClick={() => applyPreset(15, 3)} className="border border-slate-700 hover:border-cyan-400 transition">{txt.presetShort}</Button>
-          <Button variant="secondary" type="button" onClick={syncManualMinutes} className="border border-slate-700 hover:border-cyan-400 transition">{txt.applyManual}</Button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(25, 5)} className="border border-slate-700 hover:border-cyan-400 transition">{uiText(txt.presetDefault)}</Button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(50, 10)} className="border border-slate-700 hover:border-cyan-400 transition">{uiText(txt.presetDeep)}</Button>
+          <Button variant="secondary" type="button" onClick={() => applyPreset(15, 3)} className="border border-slate-700 hover:border-cyan-400 transition">{uiText(txt.presetShort)}</Button>
+          <Button variant="secondary" type="button" onClick={syncManualMinutes} className="border border-slate-700 hover:border-cyan-400 transition">{uiText(txt.applyManual)}</Button>
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm uppercase tracking-wider text-slate-400">{txt.currentMode}</p>
-          <p className="text-2xl font-bold text-cyan-300 mt-1">{mode === "focus" ? txt.focus : txt.break}</p>
-          <p className="text-6xl md:text-7xl font-black mt-4">{formatDuration(secondsLeft)}</p>
+          <p className="text-sm uppercase tracking-wider text-slate-400">{uiText(txt.currentMode)}</p>
+          <p className="text-2xl font-bold text-cyan-300 mt-1">{uiText(mode === "focus" ? txt.focus : txt.break)}</p>
+          <p className="text-6xl md:text-7xl font-black mt-4">{uiText(formatDuration(secondsLeft))}</p>
 
           <div className="w-full h-3 rounded-full bg-slate-800 mt-6 overflow-hidden">
             <div className="h-full bg-cyan-400 transition-all" style={{ width: `${progress}%` }} />
           </div>
 
-          <p className="text-slate-400 text-sm mt-3">{txt.finishedCycles}: {cycles}</p>
+          <p className="text-slate-400 text-sm mt-3">{uiText(txt.finishedCycles)}: {uiText(cycles)}</p>
         </div>
 
         <div className="flex justify-center flex-wrap gap-3 mt-6">
@@ -173,14 +176,14 @@ export default function Pomodoro() {
             onClick={() => setRunning((prev) => !prev)}
             className="text-slate-900 transition"
           >
-            {running ? txt.pause : txt.start}
+            {uiText(running ? txt.pause : txt.start)}
           </Button>
           <Button variant="secondary"
             type="button"
             onClick={resetTimer}
             className="border border-slate-700 text-slate-200 hover:border-cyan-400 transition"
           >
-            {txt.reset}
+            {uiText(txt.reset)}
           </Button>
         </div>
       </Panel>

@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -124,6 +125,8 @@ const tailwindTeachingApproach = [
 ];
 
 export default function TailwindCss() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -186,7 +189,7 @@ export default function TailwindCss() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {txt.back}
+          {uiText(txt.back)}
         </BackButton>
       </div>
 
@@ -197,49 +200,49 @@ export default function TailwindCss() {
             d="M4 5a2 2 0 0 1 2-2h14v4H4V5Zm0 6h7v10H6a2 2 0 0 1-2-2v-8Zm9 0h7v8a2 2 0 0 1-2 2h-5V11Zm2 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2h-2Zm-8 0a1 1 0 1 0 0 2h1.5a1 1 0 1 0 0-2H7Zm0 4a1 1 0 1 0 0 2h1.5a1 1 0 1 0 0-2H7Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
-      <PageDescription>{txt.description}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.description)}</PageDescription></PageHeader>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] mb-8">
         <Panel as="div" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.roadmapTitle}</h2>
-          <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.roadmapText}</p>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.roadmapTitle)}</h2>
+          <p className="text-sm text-slate-300 leading-relaxed mb-5">{uiText(txt.roadmapText)}</p>
           <ol className="space-y-3 text-sm text-slate-300 list-decimal list-inside">
             {tailwindTeachingApproach.map((item, index) => (
               <li key={`usage-${index}`} className="leading-relaxed">
-                {getText(item, "text", isEn)}
+                {uiText(getText(item, "text", isEn))}
               </li>
             ))}
           </ol>
         </Panel>
 
         <Panel as="div" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.supportTitle}</h2>
-          <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.supportText}</p>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.supportTitle)}</h2>
+          <p className="text-sm text-slate-300 leading-relaxed mb-5">{uiText(txt.supportText)}</p>
           <div className="space-y-4">
             <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <h3 className="text-lg font-semibold text-slate-100 mb-2">{txt.tablesTitle}</h3>
-              <p className="text-sm text-slate-400 mb-4">{txt.tablesText}</p>
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(txt.tablesTitle)}</h3>
+              <p className="text-sm text-slate-400 mb-4">{uiText(txt.tablesText)}</p>
               <Link
                 to="/disciplinas/tailwind-css/tabelas"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200"
               >
-                {txt.openTables}
+                {uiText(txt.openTables)}
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
             {tailwindDocsLinks.map((item) => (
               <article key={item.href} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                <h3 className="text-lg font-semibold text-slate-100 mb-2">{getText(item, "title", isEn)}</h3>
-                <p className="text-sm text-slate-400 mb-4">{getText(item, "description", isEn)}</p>
+                <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(getText(item, "title", isEn))}</h3>
+                <p className="text-sm text-slate-400 mb-4">{uiText(getText(item, "description", isEn))}</p>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200"
                 >
-                  {txt.docsVisit}
+                  {uiText(txt.docsVisit)}
                   <span aria-hidden="true">↗</span>
                 </a>
               </article>
@@ -249,42 +252,42 @@ export default function TailwindCss() {
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.goalsTitle}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(txt.goalsTitle)}</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {tailwindDisciplineGoals.map((item) => (
             <article key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <h3 className="text-lg font-semibold text-slate-100 mb-2">{getText(item, "title", isEn)}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{getText(item, "description", isEn)}</p>
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(getText(item, "title", isEn))}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{uiText(getText(item, "description", isEn))}</p>
             </article>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.stagesTitle}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(txt.stagesTitle)}</h2>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {tailwindStudyStages.map((item) => (
             <article key={item.title} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <h3 className="text-lg font-semibold text-slate-100 mb-2">{getText(item, "title", isEn)}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{getText(item, "description", isEn)}</p>
+              <h3 className="text-lg font-semibold text-slate-100 mb-2">{uiText(getText(item, "title", isEn))}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{uiText(getText(item, "description", isEn))}</p>
             </article>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{txt.outcomesTitle}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(txt.outcomesTitle)}</h2>
         <div className="grid gap-4 md:grid-cols-2">
           {tailwindLearningOutcomes.map((item, index) => (
             <article key={`check-${index}`} className="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-              <p className="text-sm text-slate-300 leading-relaxed">{getText(item, "text", isEn)}</p>
+              <p className="text-sm text-slate-300 leading-relaxed">{uiText(getText(item, "text", isEn))}</p>
             </article>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{txt.patternsTitle}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText(txt.patternsTitle)}</h2>
         <div className="grid gap-3 md:grid-cols-2">
           {tailwindQuickPatterns.map((item) => (
             <div
@@ -293,7 +296,7 @@ export default function TailwindCss() {
             >
               <code className="text-cyan-300 font-semibold">{item.pattern}</code>
               <span className="text-sm text-slate-300">
-                {isEn ? item.meaning_en || item.meaning : item.meaning}
+                {uiText(isEn ? item.meaning_en || item.meaning : item.meaning)}
               </span>
             </div>
           ))}
@@ -301,8 +304,8 @@ export default function TailwindCss() {
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.installTitle}</h2>
-        <p className="text-sm text-slate-300 leading-relaxed mb-4">{txt.installText}</p>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.installTitle)}</h2>
+        <p className="text-sm text-slate-300 leading-relaxed mb-4">{uiText(txt.installText)}</p>
         <pre className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-4 text-sm text-slate-200">
           <code>{tailwindInstallFlow}</code>
         </pre>

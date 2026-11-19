@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Select, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -234,6 +235,8 @@ function normalizeText(value) {
 }
 
 export default function TestadorRegex() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -387,7 +390,7 @@ export default function TestadorRegex() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -397,14 +400,14 @@ export default function TestadorRegex() {
             d="M4 3h16a2 2 0 0 1 2 2v3H2V5a2 2 0 0 1 2-2Zm-2 7h20v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9Zm4 2v2h3v-2H6Zm5 0v2h7v-2h-7Zm-5 4v2h5v-2H6Zm7 0v2h5v-2h-5Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <Panel as="div" layout="plain">
-        <h2 className="text-xl font-bold mb-4">{txt.byType}</h2>
+        <h2 className="text-xl font-bold mb-4">{uiText(txt.byType)}</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.pickType}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.pickType)}</span>
             <Select
               value={templateSelecionado}
               onChange={(event) => {
@@ -414,22 +417,22 @@ export default function TestadorRegex() {
               }}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             >
-              <option value="">{txt.selectType}</option>
+              <option value="">{uiText(txt.selectType)}</option>
               {REGEX_TEMPLATES.map((item) => (
                 <option key={item.id} value={item.id}>
-                  {getTemplateLabel(item)}
+                  {uiText(getTemplateLabel(item))}
                 </option>
               ))}
             </Select>
           </label>
 
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.describeNeed}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.describeNeed)}</span>
             <Input
               type="text"
               value={tipoDesejado}
               onChange={(event) => setTipoDesejado(event.target.value)}
-              placeholder={txt.describePlaceholder}
+              placeholder={uiText(txt.describePlaceholder)}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
@@ -437,7 +440,7 @@ export default function TestadorRegex() {
 
         {sugestoes.length > 0 && (
           <div className="mt-4">
-            <p className="text-sm text-slate-400 mb-2">{txt.suggestions}</p>
+            <p className="text-sm text-slate-400 mb-2">{uiText(txt.suggestions)}</p>
             <div className="flex flex-wrap gap-2">
               {sugestoes.map((template) => (
                 <Button variant="secondary"
@@ -446,7 +449,7 @@ export default function TestadorRegex() {
                   onClick={() => aplicarTemplate(template)}
                   className="border border-slate-700 hover:border-cyan-400 transition"
                 >
-                  {getTemplateLabel(template)}
+                  {uiText(getTemplateLabel(template))}
                 </Button>
               ))}
             </div>
@@ -455,25 +458,26 @@ export default function TestadorRegex() {
 
         <div className="grid md:grid-cols-2 gap-4 mt-6">
           <label className="block md:col-span-2">
-            <span className="block text-sm text-slate-300 mb-2">{txt.regexInput}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.regexInput)}</span>
             <Input
+              id="regex-pattern"
               type="text"
               value={pattern}
               onChange={(event) => setPattern(event.target.value)}
-              placeholder="\\bpalavra\\b"
+              placeholder={isEn ? "\\bword\\b" : "\\bpalavra\\b"}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block">
             <div className="flex items-center justify-between mb-2">
-              <span className="block text-sm text-slate-300">{txt.flags}</span>
+              <span className="block text-sm text-slate-300">{uiText(txt.flags)}</span>
               <Button variant="secondary"
                 type="button"
                 onClick={() => setShowFlagsModal(true)}
                 className="shrink-0 border border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-300 transition"
-                aria-label={txt.flagsHelpLabel}
-                title={txt.flagsHelpTitle}
+                aria-label={uiText(txt.flagsHelpLabel)}
+                title={uiText(txt.flagsHelpTitle)}
               >
                 ?
               </Button>
@@ -482,7 +486,7 @@ export default function TestadorRegex() {
               type="text"
               value={flags}
               onChange={(event) => setFlags(event.target.value)}
-              placeholder="gim"
+              placeholder={uiText("gim")}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
@@ -494,17 +498,17 @@ export default function TestadorRegex() {
               disabled={!pattern}
               className="w-full border border-slate-700 text-slate-200 hover:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {txt.copyRegex}
+              {uiText(txt.copyRegex)}
             </Button>
           </div>
 
           <label className="block md:col-span-2">
-            <span className="block text-sm text-slate-300 mb-2">{txt.testText}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.testText)}</span>
             <Textarea
               rows={8}
               value={text}
               onChange={(event) => setText(event.target.value)}
-              placeholder={txt.testTextPlaceholder}
+              placeholder={uiText(txt.testTextPlaceholder)}
               className="w-full border text-slate-100 focus:outline-none focus:border-cyan-400"
             />
           </label>
@@ -512,37 +516,37 @@ export default function TestadorRegex() {
       </Panel>
 
       <Panel as="article" layout="plain" className="mt-8">
-        <h2 className="text-xl font-bold mb-4">{txt.result}</h2>
+        <h2 className="text-xl font-bold mb-4">{uiText(txt.result)}</h2>
 
-        {resultado.valid === null ? (
-          <p className="text-slate-400">{txt.chooseToTest}</p>
+        {uiText(resultado.valid === null ? (
+          <p className="text-slate-400">{uiText(txt.chooseToTest)}</p>
         ) : !resultado.valid ? (
-          <p className="text-red-400">{txt.invalidRegex}: {resultado.message}</p>
+          <p className="text-red-400">{uiText(txt.invalidRegex)}: {uiText(resultado.message)}</p>
         ) : resultado.matches.length === 0 ? (
-          <p className="text-slate-400">{txt.noMatch}</p>
+          <p className="text-slate-400">{uiText(txt.noMatch)}</p>
         ) : (
           <div className="space-y-3">
-            <p className="text-slate-300 text-sm">{txt.matchesFound}: {resultado.matches.length}</p>
+            <p className="text-slate-300 text-sm">{uiText(txt.matchesFound)}: {uiText(resultado.matches.length)}</p>
             {resultado.matches.map((item, index) => (
               <Panel as="div" layout="plain" key={`${item.index}-${index}`} className="text-sm">
                 <p>
-                  <span className="text-slate-400">{txt.value}:</span>{" "}
+                  <span className="text-slate-400">{uiText(txt.value)}:</span>{" "}
                   <span className="text-cyan-200">{item.value}</span>
                 </p>
                 <p>
-                  <span className="text-slate-400">{txt.index}:</span> {item.index}
+                  <span className="text-slate-400">{uiText(txt.index)}:</span> {uiText(item.index)}
                 </p>
                 <p>
-                  <span className="text-slate-400">{txt.groups}:</span>{" "}
+                  <span className="text-slate-400">{uiText(txt.groups)}:</span>{" "}
                   {item.groups.length > 0 ? item.groups.join(" | ") : "-"}
                 </p>
               </Panel>
             ))}
           </div>
-        )}
+        ))}
       </Panel>
 
-      <Dialog open={showFlagsModal} onClose={() => setShowFlagsModal(false)} title={txt.flagsModalTitle} closeLabel={txt.close}>
+      <Dialog open={showFlagsModal} onClose={() => setShowFlagsModal(false)} title={uiText(txt.flagsModalTitle)} closeLabel={uiText(txt.close)}>
         <pre className="ui-dialog-text whitespace-pre-wrap text-sm leading-relaxed font-sans">
           {flagsHelpText}
         </pre>

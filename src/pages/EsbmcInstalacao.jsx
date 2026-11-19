@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, PageDescription, PageHeader, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import BackButton from "../components/BackButton";
@@ -120,14 +121,16 @@ const basicCommands = [
 ];
 
 function DependencyTable() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <TableContainer className="rounded-2xl border border-slate-700/70">
       <Table className="min-w-full divide-y divide-slate-700/70 text-left text-sm">
         <thead className="bg-slate-950/50">
           <tr>
-            <th className="px-4 py-3 font-semibold text-cyan-200">Pacote</th>
-            <th className="px-4 py-3 font-semibold text-cyan-200">Obrigatório</th>
-            <th className="px-4 py-3 font-semibold text-cyan-200">Versão mínima</th>
+            <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("Pacote")}</th>
+            <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("Obrigatório")}</th>
+            <th className="px-4 py-3 font-semibold text-cyan-200">{uiText("Versão mínima")}</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-800/80 bg-slate-950/20">
@@ -135,7 +138,7 @@ function DependencyTable() {
             <tr key={row[0]}>
               {row.map((cell) => (
                 <td key={`${row[0]}-${cell}`} className="px-4 py-3 text-slate-300 align-top">
-                  {cell}
+                  {uiText(cell)}
                 </td>
               ))}
             </tr>
@@ -147,21 +150,23 @@ function DependencyTable() {
 }
 
 function SectionCard({ title, children }) {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <Panel as="article" layout="plain" className="min-w-0 overflow-hidden">
-      <h2 className="text-2xl font-bold text-cyan-300 mb-4">{title}</h2>
+      <h2 className="text-2xl font-bold text-cyan-300 mb-4">{uiText(title)}</h2>
       {children}
     </Panel>
   );
 }
 
 function OverviewTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Links oficiais usados nesta orientação">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          A instalação deve ser feita a partir das fontes oficiais do projeto. Use os links abaixo para baixar binários, consultar o README e conferir o guia de compilação.
-        </p>
+      <SectionCard title={uiText("Links oficiais usados nesta orientação")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("A instalação deve ser feita a partir das fontes oficiais do projeto. Use os links abaixo para baixar binários, consultar o README e conferir o guia de compilação.")}</p>
         <div className="grid min-w-0 md:grid-cols-2 gap-4">
           {officialLinks.map((link) => (
             <a
@@ -171,32 +176,28 @@ function OverviewTab() {
               rel="noreferrer"
               className="min-w-0 rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5 transition hover:border-cyan-300/40 hover:bg-cyan-400/10"
             >
-              <span className="block text-lg font-semibold text-cyan-300 mb-2">{link.title}</span>
-              <span className="block text-sm text-slate-300 leading-relaxed text-justify">{link.description}</span>
-              <span className="mt-3 block break-all text-xs text-emerald-200">{link.url}</span>
+              <span className="block text-lg font-semibold text-cyan-300 mb-2">{uiText(link.title)}</span>
+              <span className="block text-sm text-slate-300 leading-relaxed text-justify">{uiText(link.description)}</span>
+              <span className="mt-3 block break-all text-xs text-emerald-200">{uiText(link.url)}</span>
             </a>
           ))}
         </div>
       </SectionCard>
 
-      <SectionCard title="Escolha do caminho de instalação">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          A documentação oficial apresenta caminhos diferentes conforme o sistema operacional e o nível de controle desejado. Para uso comum, prefira instalação por pacote ou binário. Para pesquisa, reprodução de ambiente ou ativação de solvers/frontends, use build por código-fonte.
-        </p>
+      <SectionCard title={uiText("Escolha do caminho de instalação")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("A documentação oficial apresenta caminhos diferentes conforme o sistema operacional e o nível de controle desejado. Para uso comum, prefira instalação por pacote ou binário. Para pesquisa, reprodução de ambiente ou ativação de solvers/frontends, use build por código-fonte.")}</p>
         <div className="grid min-w-0 md:grid-cols-2 gap-4">
           {installChoices.map((item) => (
             <div key={item.title} className="min-w-0 rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-              <h3 className="text-lg font-semibold text-cyan-300 mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-300 leading-relaxed text-justify">{item.text}</p>
+              <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(item.title)}</h3>
+              <p className="text-sm text-slate-300 leading-relaxed text-justify">{uiText(item.text)}</p>
             </div>
           ))}
         </div>
       </SectionCard>
 
-      <SectionCard title="Requisitos para compilação">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O guia oficial recomenda pelo menos 6 GB de RAM. Clang, Boost e CMake são requisitos principais. Os solvers são opcionais no build, mas necessários para verificar muitos programas; o guia recomenda incluir pelo menos Boolector.
-        </p>
+      <SectionCard title={uiText("Requisitos para compilação")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O guia oficial recomenda pelo menos 6 GB de RAM. Clang, Boost e CMake são requisitos principais. Os solvers são opcionais no build, mas necessários para verificar muitos programas; o guia recomenda incluir pelo menos Boolector.")}</p>
         <DependencyTable />
       </SectionCard>
     </div>
@@ -204,25 +205,24 @@ function OverviewTab() {
 }
 
 function WindowsTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Opção A: binário oficial para Windows">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O README oficial informa que há binários para Windows na página de releases. Esse é o caminho mais simples quando o objetivo é apenas executar a ferramenta. Link: <a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc/releases" target="_blank" rel="noreferrer">https://github.com/esbmc/esbmc/releases</a>.
+      <SectionCard title={uiText("Opção A: binário oficial para Windows")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O README oficial informa que há binários para Windows na página de releases. Esse é o caminho mais simples quando o objetivo é apenas executar a ferramenta. Link: ")}<a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc/releases" target="_blank" rel="noreferrer">{uiText("https://github.com/esbmc/esbmc/releases")}</a>.
         </p>
         <ol className="list-decimal list-inside space-y-3 text-sm text-slate-300">
-          <li>Acesse a página de releases do repositório oficial do ESBMC.</li>
-          <li>Baixe o pacote correspondente ao Windows.</li>
-          <li>Extraia em uma pasta fixa, por exemplo <code className="text-cyan-200">C:\Tools\esbmc</code>.</li>
-          <li>Adicione essa pasta ao <code className="text-cyan-200">PATH</code> do Windows.</li>
-          <li>Abra um novo terminal e execute <code className="text-cyan-200">esbmc --version</code>.</li>
+          <li>{uiText("Acesse a página de releases do repositório oficial do ESBMC.")}</li>
+          <li>{uiText("Baixe o pacote correspondente ao Windows.")}</li>
+          <li>{uiText("Extraia em uma pasta fixa, por exemplo ")}<code className="text-cyan-200">C:\Tools\esbmc</code>.</li>
+          <li>{uiText("Adicione essa pasta ao ")}<code className="text-cyan-200">PATH</code>{uiText(" do Windows.")}</li>
+          <li>{uiText("Abra um novo terminal e execute ")}<code className="text-cyan-200">esbmc --version</code>.</li>
         </ol>
       </SectionCard>
 
-      <SectionCard title="Opção B: WSL com Ubuntu">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O guia de build informa que o processo foi testado em Windows 10 com Ubuntu no WSL v1 ou v2. Essa opção é recomendada quando você quer usar os comandos Linux dentro do Windows.
-        </p>
+      <SectionCard title={uiText("Opção B: WSL com Ubuntu")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O guia de build informa que o processo foi testado em Windows 10 com Ubuntu no WSL v1 ou v2. Essa opção é recomendada quando você quer usar os comandos Linux dentro do Windows.")}</p>
         <CodeBlock language="bash" label="WSL / Ubuntu">
           {"sudo add-apt-repository ppa:esbmc/esbmc\nsudo apt update\nsudo apt install esbmc\nesbmc --version"}
         </CodeBlock>
@@ -232,27 +232,25 @@ function WindowsTab() {
 }
 
 function UbuntuTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Instalação oficial via PPA">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          No Ubuntu, a forma mais simples de instalar o ESBMC é pelo PPA oficial do projeto. A documentação recomenda esse caminho para usuários gerais e informa suporte ao Ubuntu 22.04 e 24.04. Link do PPA: <a className="text-cyan-200 hover:text-cyan-100" href="https://launchpad.net/~esbmc/+archive/ubuntu/esbmc" target="_blank" rel="noreferrer">https://launchpad.net/~esbmc/+archive/ubuntu/esbmc</a>.
+      <SectionCard title={uiText("Instalação oficial via PPA")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("No Ubuntu, a forma mais simples de instalar o ESBMC é pelo PPA oficial do projeto. A documentação recomenda esse caminho para usuários gerais e informa suporte ao Ubuntu 22.04 e 24.04. Link do PPA: ")}<a className="text-cyan-200 hover:text-cyan-100" href="https://launchpad.net/~esbmc/+archive/ubuntu/esbmc" target="_blank" rel="noreferrer">{uiText("https://launchpad.net/~esbmc/+archive/ubuntu/esbmc")}</a>.
         </p>
         <CodeBlock language="bash" label="Ubuntu 22.04 / 24.04">
           {"sudo add-apt-repository ppa:esbmc/esbmc\nsudo apt update\nsudo apt install esbmc"}
         </CodeBlock>
       </SectionCard>
 
-      <SectionCard title="Binário oficial para Ubuntu">
-        <p className="text-slate-300 leading-relaxed text-justify">
-          A documentação também informa que o binário mais recente para Ubuntu pode ser baixado pela página de releases do GitHub. Esse caminho é útil quando você não quer usar PPA nem compilar. Link: <a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc/releases" target="_blank" rel="noreferrer">https://github.com/esbmc/esbmc/releases</a>.
+      <SectionCard title={uiText("Binário oficial para Ubuntu")}>
+        <p className="text-slate-300 leading-relaxed text-justify">{uiText("A documentação também informa que o binário mais recente para Ubuntu pode ser baixado pela página de releases do GitHub. Esse caminho é útil quando você não quer usar PPA nem compilar. Link: ")}<a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc/releases" target="_blank" rel="noreferrer">{uiText("https://github.com/esbmc/esbmc/releases")}</a>.
         </p>
       </SectionCard>
 
-      <SectionCard title="Dependências para build no Linux">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Para compilar por código-fonte, instale as dependências básicas listadas no guia oficial.
-        </p>
+      <SectionCard title={uiText("Dependências para build no Linux")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Para compilar por código-fonte, instale as dependências básicas listadas no guia oficial.")}</p>
         <CodeBlock language="bash" label="Linux / Ubuntu">
           {"sudo apt-get update && sudo apt-get install build-essential git gperf libgmp-dev cmake bison curl flex g++-multilib linux-libc-dev libboost-all-dev libtinfo-dev ninja-build python3-setuptools unzip wget python3-pip openjdk-8-jre"}
         </CodeBlock>
@@ -262,21 +260,19 @@ function UbuntuTab() {
 }
 
 function MacosTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Preparar dependências com Homebrew">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          No macOS, o caminho mais completo é compilar a partir do código-fonte. Use Homebrew para instalar ferramentas e bibliotecas básicas, além de Python/PySMT.
-        </p>
+      <SectionCard title={uiText("Preparar dependências com Homebrew")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("No macOS, o caminho mais completo é compilar a partir do código-fonte. Use Homebrew para instalar ferramentas e bibliotecas básicas, além de Python/PySMT.")}</p>
         <CodeBlock language="bash" label="macOS / Homebrew">
           {"brew install gmp cmake boost ninja python3 wget automake flex bison z3\npip3 install PySMT"}
         </CodeBlock>
       </SectionCard>
 
-      <SectionCard title="Xcode, Command Line Tools e SDK">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O guia oficial orienta verificar se o SDK do Xcode está disponível. Se você não tiver o Xcode completo, use o sysroot das Command Line Tools no CMake.
-        </p>
+      <SectionCard title={uiText("Xcode, Command Line Tools e SDK")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O guia oficial orienta verificar se o SDK do Xcode está disponível. Se você não tiver o Xcode completo, use o sysroot das Command Line Tools no CMake.")}</p>
         <div className="grid min-w-0 lg:grid-cols-2 gap-5">
           <CodeBlock language="bash" label="Verificar SDK do Xcode">
             {"ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"}
@@ -287,19 +283,15 @@ function MacosTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Ajustes comuns no macOS">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Em alguns ambientes, variáveis antigas podem atrapalhar a busca por headers e SDKs. No projeto, remover essas variáveis ajudou a permitir que o compilador usasse os caminhos corretos do macOS/Xcode.
-        </p>
+      <SectionCard title={uiText("Ajustes comuns no macOS")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Em alguns ambientes, variáveis antigas podem atrapalhar a busca por headers e SDKs. No projeto, remover essas variáveis ajudou a permitir que o compilador usasse os caminhos corretos do macOS/Xcode.")}</p>
         <CodeBlock language="bash" label="Limpar variáveis de ambiente">
           {"unset C_INCLUDE_PATH\nunset CPLUS_INCLUDE_PATH\nunset CPATH\nunset SDKROOT"}
         </CodeBlock>
       </SectionCard>
 
-      <SectionCard title="Z3 instalado pelo Homebrew">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Quando o Z3 for instalado pelo Homebrew, o guia de build observa que pode ser necessário copiar o diretório do pacote para o workspace usado na compilação.
-        </p>
+      <SectionCard title={uiText("Z3 instalado pelo Homebrew")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Quando o Z3 for instalado pelo Homebrew, o guia de build observa que pode ser necessário copiar o diretório do pacote para o workspace usado na compilação.")}</p>
         <CodeBlock language="bash" label="Copiar Z3">
           {"cp -rp $(brew info z3 | egrep \"/usr[/a-zA-Z\\.0-9]+ \" -o) z3"}
         </CodeBlock>
@@ -309,21 +301,19 @@ function MacosTab() {
 }
 
 function BuildTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Clonar o código-fonte">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O código-fonte está disponível no repositório oficial do ESBMC no GitHub: <a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc" target="_blank" rel="noreferrer">https://github.com/esbmc/esbmc</a>. A documentação sugere organizar o projeto em uma pasta própria.
-        </p>
+      <SectionCard title={uiText("Clonar o código-fonte")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O código-fonte está disponível no repositório oficial do ESBMC no GitHub: ")}<a className="text-cyan-200 hover:text-cyan-100" href="https://github.com/esbmc/esbmc" target="_blank" rel="noreferrer">{uiText("https://github.com/esbmc/esbmc")}</a>{uiText(". A documentação sugere organizar o projeto em uma pasta própria.")}</p>
         <CodeBlock language="bash" label="Clonar repositório">
           {"mkdir ESBMC_Project\ncd ESBMC_Project\ngit clone https://github.com/esbmc/esbmc\ncd esbmc"}
         </CodeBlock>
       </SectionCard>
 
-      <SectionCard title="Preparar Clang">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O ESBMC usa Clang como frontend para C/C++/CHERI/CUDA. A documentação descreve build estático com Clang externo ou download automático de dependências.
-        </p>
+      <SectionCard title={uiText("Preparar Clang")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O ESBMC usa Clang como frontend para C/C++/CHERI/CUDA. A documentação descreve build estático com Clang externo ou download automático de dependências.")}</p>
         <div className="grid min-w-0 gap-5">
           <CodeBlock language="bash" label="Clang externo para build estático">
             {"wget https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz\ntar xfJ clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz\nESBMC_CLANG=$(echo -D{LLVM,Clang}_DIR=$PWD/clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04)\nESBMC_STATIC=ON"}
@@ -334,10 +324,8 @@ function BuildTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Solvers SMT opcionais">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          O guia lista Bitwuzla, Boolector, CVC4, CVC5, MathSAT, Yices 2 e Z3. Os solvers são opcionais para compilar, mas necessários para muitas verificações. A documentação recomenda incluir pelo menos Boolector.
-        </p>
+      <SectionCard title={uiText("Solvers SMT opcionais")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("O guia lista Bitwuzla, Boolector, CVC4, CVC5, MathSAT, Yices 2 e Z3. Os solvers são opcionais para compilar, mas necessários para muitas verificações. A documentação recomenda incluir pelo menos Boolector.")}</p>
         <div className="grid min-w-0 lg:grid-cols-2 gap-5">
           <CodeBlock language="bash" label="Z3 no macOS">
             {"brew install z3"}
@@ -348,9 +336,8 @@ function BuildTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Frontends opcionais">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Para Solidity, habilite o frontend com <code className="text-cyan-200">-DENABLE_SOLIDITY_FRONTEND=On</code>. Para Python, instale <code className="text-cyan-200">ast2json</code> e habilite <code className="text-cyan-200">-DENABLE_PYTHON_FRONTEND=On</code>.
+      <SectionCard title={uiText("Frontends opcionais")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Para Solidity, habilite o frontend com ")}<code className="text-cyan-200">-DENABLE_SOLIDITY_FRONTEND=On</code>{uiText(". Para Python, instale ")}<code className="text-cyan-200">ast2json</code>{uiText(" e habilite ")}<code className="text-cyan-200">-DENABLE_PYTHON_FRONTEND=On</code>.
         </p>
         <div className="grid min-w-0 lg:grid-cols-2 gap-5">
           <CodeBlock language="bash" label="Python frontend">
@@ -362,10 +349,8 @@ function BuildTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Configurar e compilar com CMake/Ninja">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Depois de instalar dependências, preparar Clang e escolher solvers, configure o ESBMC com CMake e compile com Ninja.
-        </p>
+      <SectionCard title={uiText("Configurar e compilar com CMake/Ninja")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Depois de instalar dependências, preparar Clang e escolher solvers, configure o ESBMC com CMake e compile com Ninja.")}</p>
         <CodeBlock language="bash" label="Build simplificado">
           {"cd ESBMC_Project/esbmc\nmkdir build\ncd build\ncmake .. -GNinja -DBUILD_TESTING=On -DENABLE_REGRESSION=On $ESBMC_CLANG -DBUILD_STATIC=${ESBMC_STATIC:-ON} -DCMAKE_INSTALL_PREFIX:PATH=$PWD/../../release\ncmake --build .\nninja install"}
         </CodeBlock>
@@ -375,12 +360,12 @@ function BuildTab() {
 }
 
 function ValidationTab() {
+  const { text: uiText } = useContentTranslation();
+
   return (
     <div className="space-y-6">
-      <SectionCard title="Validar a instalação">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Depois de instalar ou compilar, confira se o binário está acessível no terminal. Também registre a versão usada no trabalho.
-        </p>
+      <SectionCard title={uiText("Validar a instalação")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Depois de instalar ou compilar, confira se o binário está acessível no terminal. Também registre a versão usada no trabalho.")}</p>
         <div className="grid min-w-0 lg:grid-cols-2 gap-5">
           <CodeBlock language="bash" label="Verificar versão">
             {"esbmc --version"}
@@ -391,50 +376,42 @@ function ValidationTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Criar um primeiro arquivo de teste">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Para confirmar que a ferramenta está funcionando, crie um programa C simples com uma assertiva falsa. Esse exemplo deve produzir falha de verificação, pois a propriedade <code className="text-cyan-200">x &gt;= 0</code> não é satisfeita.
-        </p>
+      <SectionCard title={uiText("Criar um primeiro arquivo de teste")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Para confirmar que a ferramenta está funcionando, crie um programa C simples com uma assertiva falsa. Esse exemplo deve produzir falha de verificação, pois a propriedade ")}<code className="text-cyan-200">x &gt;= 0</code>{uiText(" não é satisfeita.")}</p>
         <CodeBlock language="bash" label="Criar arquivo assertiva.c">
           {"cat > assertiva.c <<'EOF'\n#include <assert.h>\n\nint main() {\n  int x = -1;\n  assert(x >= 0);\n  return 0;\n}\nEOF"}
         </CodeBlock>
       </SectionCard>
 
-      <SectionCard title="Executar a verificação">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Execute o ESBMC passando o arquivo C como argumento. Se o programa violar uma propriedade, a saída deve indicar falha e apresentar informações do contraexemplo.
-        </p>
+      <SectionCard title={uiText("Executar a verificação")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Execute o ESBMC passando o arquivo C como argumento. Se o programa violar uma propriedade, a saída deve indicar falha e apresentar informações do contraexemplo.")}</p>
         <CodeBlock language="bash" label="Rodar ESBMC">
           {"esbmc assertiva.c"}
         </CodeBlock>
         <div className="mt-5 rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-          <p className="text-sm font-semibold text-cyan-200 mb-2">Resultado esperado</p>
-          <p className="font-mono text-sm text-rose-200">VERIFICATION FAILED</p>
+          <p className="text-sm font-semibold text-cyan-200 mb-2">{uiText("Resultado esperado")}</p>
+          <p className="font-mono text-sm text-rose-200">{uiText("VERIFICATION FAILED")}</p>
         </div>
       </SectionCard>
 
-      <SectionCard title="Corrigir o arquivo e executar novamente">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Agora altere o valor da variável para satisfazer a assertiva. A verificação deve passar dentro dos limites analisados.
-        </p>
+      <SectionCard title={uiText("Corrigir o arquivo e executar novamente")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Agora altere o valor da variável para satisfazer a assertiva. A verificação deve passar dentro dos limites analisados.")}</p>
         <CodeBlock language="bash" label="Criar arquivo corrigido.c">
           {"cat > corrigido.c <<'EOF'\n#include <assert.h>\n\nint main() {\n  int x = 1;\n  assert(x >= 0);\n  return 0;\n}\nEOF\n\nesbmc corrigido.c"}
         </CodeBlock>
         <div className="mt-5 rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-          <p className="text-sm font-semibold text-cyan-200 mb-2">Resultado esperado</p>
-          <p className="font-mono text-sm text-emerald-200">VERIFICATION SUCCESSFUL</p>
+          <p className="text-sm font-semibold text-cyan-200 mb-2">{uiText("Resultado esperado")}</p>
+          <p className="font-mono text-sm text-emerald-200">{uiText("VERIFICATION SUCCESSFUL")}</p>
         </div>
       </SectionCard>
 
-      <SectionCard title="Comandos básicos de execução">
-        <p className="text-slate-300 leading-relaxed text-justify mb-6">
-          Com o ESBMC instalado, execute a ferramenta sobre arquivos C/C++ e adicione opções conforme a propriedade que deseja verificar.
-        </p>
+      <SectionCard title={uiText("Comandos básicos de execução")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-6">{uiText("Com o ESBMC instalado, execute a ferramenta sobre arquivos C/C++ e adicione opções conforme a propriedade que deseja verificar.")}</p>
         <div className="grid min-w-0 md:grid-cols-2 gap-5">
           {basicCommands.map((item) => (
             <div key={item.command} className="min-w-0 rounded-2xl border border-slate-700/70 bg-slate-950/30 p-5">
-              <h3 className="text-lg font-semibold text-cyan-300 mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-300 leading-relaxed text-justify mb-4">{item.description}</p>
+              <h3 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(item.title)}</h3>
+              <p className="text-sm text-slate-300 leading-relaxed text-justify mb-4">{uiText(item.description)}</p>
               <CodeBlock language="bash" label="Terminal">
                 {item.command}
               </CodeBlock>
@@ -443,10 +420,8 @@ function ValidationTab() {
         </div>
       </SectionCard>
 
-      <SectionCard title="Salvar a saída em arquivo">
-        <p className="text-slate-300 leading-relaxed text-justify mb-5">
-          Para usar a saída no relatório, redirecione o resultado para um arquivo de texto. Use <code className="text-cyan-200">--no-color</code> quando quiser evitar caracteres de cor no terminal.
-        </p>
+      <SectionCard title={uiText("Salvar a saída em arquivo")}>
+        <p className="text-slate-300 leading-relaxed text-justify mb-5">{uiText("Para usar a saída no relatório, redirecione o resultado para um arquivo de texto. Use ")}<code className="text-cyan-200">--no-color</code>{uiText(" quando quiser evitar caracteres de cor no terminal.")}</p>
         <CodeBlock language="bash" label="Salvar saída">
           {"esbmc assertiva.c --no-color > saida-esbmc.txt\nesbmc corrigido.c --no-color > saida-corrigido.txt"}
         </CodeBlock>
@@ -456,6 +431,8 @@ function ValidationTab() {
 }
 
 export default function EsbmcInstalacao() {
+  const { text: uiText } = useContentTranslation();
+
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
   const activeTab = useMemo(
     () => tabs.find((tab) => tab.id === activeTabId) ?? tabs[0],
@@ -465,28 +442,20 @@ export default function EsbmcInstalacao() {
   return (
     <PageTemplate width="wide">
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          Voltar para ESBMC
-        </BackButton>
+        <BackButton fallbackTo="/disciplinas/esbmc" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText("Voltar para ESBMC")}</BackButton>
       </div>
 
       <PageHeader>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">
-          Guia operacional
-        </p>
-        <PageTitle className="mb-5">Instalação Windows/Linux/macOS</PageTitle>
-        <PageDescription className="text-justify max-w-4xl">
-          Guia baseado na documentação oficial do ESBMC, organizado por subtelas para separar instalação rápida, configuração por sistema operacional, build avançado e validação do ambiente.
-        </PageDescription>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300 mb-3">{uiText("Guia operacional")}</p>
+        <PageTitle className="mb-5">{uiText("Instalação Windows/Linux/macOS")}</PageTitle>
+        <PageDescription className="text-justify max-w-4xl">{uiText("Guia baseado na documentação oficial do ESBMC, organizado por subtelas para separar instalação rápida, configuração por sistema operacional, build avançado e validação do ambiente.")}</PageDescription>
       </PageHeader>
 
       <div className="grid min-w-0 lg:grid-cols-[300px_minmax(0,1fr)] gap-8 items-start">
         <Panel as="aside" layout="plain" className="lg:sticky lg:top-24">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
-            Subtelas de instalação
-          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">{uiText("Subtelas de instalação")}</p>
           <div className="space-y-2">
-            {tabs.map((tab) => {
+            {uiText(tabs.map((tab) => {
               const isActive = tab.id === activeTab.id;
 
               return (
@@ -500,23 +469,23 @@ export default function EsbmcInstalacao() {
                       : "border-slate-700/60 bg-slate-950/20 text-slate-300 hover:border-cyan-300/30 hover:bg-cyan-400/10"
                   }`}
                 >
-                  <span className="block text-sm font-semibold">{tab.label}</span>
+                  <span className="block text-sm font-semibold">{uiText(tab.label)}</span>
                   <span className="mt-1 block text-xs leading-relaxed text-slate-400">
-                    {tab.description}
+                    {uiText(tab.description)}
                   </span>
                 </Button>
               );
-            })}
+            }))}
           </div>
         </Panel>
 
         <div className="min-w-0 space-y-6">
           <Panel as="article" layout="plain" className="min-w-0 overflow-hidden">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-3">
-              {activeTab.label}
+              {uiText(activeTab.label)}
             </p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-              {activeTab.description}
+              {uiText(activeTab.description)}
             </h2>
           </Panel>
 

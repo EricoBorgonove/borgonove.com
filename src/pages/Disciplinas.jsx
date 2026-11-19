@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { CardGrid, ContentCard, PageDescription, PageHeader, PageTemplate, PageTitle } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 
@@ -61,6 +62,8 @@ const disciplinas = [
 ];
 
 export default function Disciplinas() {
+  const { text: uiText } = useContentTranslation();
+
   const { t, i18n } = useTranslation();
   const locale = i18n.resolvedLanguage?.startsWith("en") ? "en-US" : "pt-BR";
   const disciplinasOrdenadas = [...disciplinas].sort((a, b) =>
@@ -76,19 +79,19 @@ export default function Disciplinas() {
             d="M12 3 2 7l10 4 8-3.2V17h2V7L12 3Zm-6 8v4.5c0 1.8 2.7 3.5 6 3.5s6-1.7 6-3.5V11l-6 2.4L6 11Z"
           />
         </svg>
-        <span>{t("subjects.title")}</span>
+        <span>{uiText(t("subjects.title"))}</span>
       </PageTitle>
       <PageDescription>
-        {t("subjects.description")}
+        {uiText(t("subjects.description"))}
       </PageDescription></PageHeader>
 
       <CardGrid>
         {disciplinasOrdenadas.map((disciplina) => (
           <ContentCard key={disciplina.id} to={disciplina.href} headingAs="h2"
-            title={t(`subjects.items.${disciplina.id}.title`)}
-            description={t(`subjects.items.${disciplina.id}.description`)}
-            action={i18n.resolvedLanguage?.startsWith("en") ? "Open subject" : "Abrir disciplina"}
-            unavailable={!disciplina.href} unavailableLabel={t("common.comingSoon")} />
+            title={uiText(t(`subjects.items.${disciplina.id}.title`))}
+            description={uiText(t(`subjects.items.${disciplina.id}.description`))}
+            action={uiText(i18n.resolvedLanguage?.startsWith("en") ? "Open subject" : "Abrir disciplina")}
+            unavailable={!disciplina.href} unavailableLabel={uiText(t("common.comingSoon"))} />
         ))}
       </CardGrid>
     </PageTemplate>

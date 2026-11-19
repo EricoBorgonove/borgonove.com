@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Button, Input, PageTemplate, PageTitle, Panel, Table, TableContainer } from "../components/ui/Patterns";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
@@ -1742,15 +1743,17 @@ const partStartNumbers = allExamParts.reduce((starts, part, index) => {
 }, []);
 
 function AnswerContent({ answer }) {
+  const { text: uiText } = useContentTranslation();
+
   if (!answer) return null;
 
   return (
     <div className="space-y-5">
-      {answer.intro && <p className="text-sm leading-relaxed text-slate-300">{answer.intro}</p>}
+      {answer.intro && <p className="text-sm leading-relaxed text-slate-300">{uiText(answer.intro)}</p>}
 
-      {answer.codes?.map((code, index) => (
+      {uiText(answer.codes?.map((code, index) => (
         <CodeBlock key={`${answer.title}-code-${index}`}>{code}</CodeBlock>
-      ))}
+      )))}
 
       {answer.table && (
         <TableContainer className="rounded-2xl border border-slate-800">
@@ -1760,7 +1763,7 @@ function AnswerContent({ answer }) {
                 <tr key={row.join("-")}>
                   {row.map((cell, index) => (
                     <td key={`${cell}-${index}`} className={`px-4 py-3 ${index === 0 ? "font-semibold text-cyan-200" : ""}`}>
-                      {cell}
+                      {uiText(cell)}
                     </td>
                   ))}
                 </tr>
@@ -1772,12 +1775,10 @@ function AnswerContent({ answer }) {
 
       {answer.expected && (
         <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-4">
-          <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
-            Resposta esperada
-          </h4>
+          <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">{uiText("Resposta esperada")}</h4>
           <div className="space-y-2 text-sm leading-relaxed text-slate-200">
             {answer.expected.map((item) => (
-              <p key={item}>{item}</p>
+              <p key={item}>{uiText(item)}</p>
             ))}
           </div>
         </div>
@@ -1787,16 +1788,16 @@ function AnswerContent({ answer }) {
 }
 
 function ExpectedAnswerHint({ answer }) {
+  const { text: uiText } = useContentTranslation();
+
   if (!answer?.expected) return null;
 
   return (
     <div className="mb-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/10 p-4">
-      <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
-        Resposta esperada
-      </h4>
+      <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">{uiText("Resposta esperada")}</h4>
       <div className="space-y-2 text-sm leading-relaxed text-slate-200">
         {answer.expected.map((item) => (
-          <p key={item}>{item}</p>
+          <p key={item}>{uiText(item)}</p>
         ))}
       </div>
     </div>
@@ -1804,6 +1805,8 @@ function ExpectedAnswerHint({ answer }) {
 }
 
 export default function PythonPandasProva() {
+  const { text: uiText } = useContentTranslation();
+
   const hasAccess = window.sessionStorage.getItem("pandasExamAccess") === "true";
   const studentName = window.sessionStorage.getItem("pandasExamStudentName") || "Aluno";
   const welcomeMessage = window.sessionStorage.getItem("pandasExamWelcome") || `Bem-vindo ${studentName}`;
@@ -1878,15 +1881,11 @@ export default function PythonPandasProva() {
   return (
     <PageTemplate width="wide">
       <div className="mb-8">
-        <BackButton fallbackTo="/disciplinas/python-pandas/listas-exercicios" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          Voltar para Exercícios de Pandas
-        </BackButton>
+        <BackButton fallbackTo="/disciplinas/python-pandas/listas-exercicios" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">{uiText("Voltar para Exercícios de Pandas")}</BackButton>
       </div>
 
       <div className="mb-10">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-          Avaliação prática
-        </p>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Avaliação prática")}</p>
         <PageTitle className="mb-4 flex items-center gap-3">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="h-8 w-8 text-cyan-300">
             <path
@@ -1894,64 +1893,54 @@ export default function PythonPandasProva() {
               d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v4h14V5H5Zm0 6v8h14v-8H5Zm2 2h4v2H7v-2Zm0 3h7v2H7v-2Zm6-3h4v2h-4v-2Z"
             />
           </svg>
-          <span>Prova Final de Pandas</span>
+          <span>{uiText("Prova Final de Pandas")}</span>
         </PageTitle>
         <div className="mb-5 inline-flex max-w-full rounded-2xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-200">
-          {welcomeMessage}
+          {uiText(welcomeMessage)}
         </div>
-        <p className="max-w-4xl text-lg leading-relaxed text-slate-400">
-          Análise exploratória completa com o dataset Meteorite Landings, disponível no portal de dados abertos da NASA.
-        </p>
+        <p className="max-w-4xl text-lg leading-relaxed text-slate-400">{uiText("Análise exploratória completa com o dataset Meteorite Landings, disponível no portal de dados abertos da NASA.")}</p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Enunciado</h2>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Enunciado")}</h2>
           <div className="space-y-4 text-sm leading-relaxed text-slate-300">
-            <p>
-              Você recebeu um dataset real contendo registros de meteoritos encontrados ou observados em queda na Terra. Sua tarefa é realizar uma análise exploratória completa, tratando problemas de qualidade dos dados, produzindo visualizações e extraindo conclusões relevantes.
-            </p>
-            <p>
-              A NASA informa que o dataset contém dados da The Meteoritical Society e disponibiliza campos como tipo do meteorito, massa, ano, coordenadas, latitude, longitude e informações de localização.
-            </p>
+            <p>{uiText("Você recebeu um dataset real contendo registros de meteoritos encontrados ou observados em queda na Terra. Sua tarefa é realizar uma análise exploratória completa, tratando problemas de qualidade dos dados, produzindo visualizações e extraindo conclusões relevantes.")}</p>
+            <p>{uiText("A NASA informa que o dataset contém dados da The Meteoritical Society e disponibiliza campos como tipo do meteorito, massa, ano, coordenadas, latitude, longitude e informações de localização.")}</p>
           </div>
         </Panel>
 
         <Panel as="article" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Fonte sugerida</h2>
-          <p className="mb-4 text-sm leading-relaxed text-slate-300">
-            Dataset Meteorite Landings, disponível no portal de dados abertos da NASA.
-          </p>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Fonte sugerida")}</h2>
+          <p className="mb-4 text-sm leading-relaxed text-slate-300">{uiText("Dataset Meteorite Landings, disponível no portal de dados abertos da NASA.")}</p>
           <a
             href="https://data.nasa.gov/dataset/meteorite-landings?utm_source=chatgpt.com"
             className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300 hover:text-cyan-100"
-          >
-            Abrir dataset
-            <span aria-hidden="true">→</span>
+          >{uiText("Abrir dataset")}<span aria-hidden="true">→</span>
           </a>
         </Panel>
       </div>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Código inicial sugerido</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Código inicial sugerido")}</h2>
         <CodeBlock>{starterCode}</CodeBlock>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Critérios de avaliação</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Critérios de avaliação")}</h2>
         <TableContainer className="rounded-2xl border border-slate-800">
           <Table className="min-w-full divide-y divide-slate-800 text-sm">
             <thead className="bg-slate-950/70 text-left text-slate-300">
               <tr>
-                <th className="px-4 py-3 font-semibold">Critério</th>
-                <th className="px-4 py-3 font-semibold">Pontuação</th>
+                <th className="px-4 py-3 font-semibold">{uiText("Critério")}</th>
+                <th className="px-4 py-3 font-semibold">{uiText("Pontuação")}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800 text-slate-300">
               {criteria.map(([criterion, score]) => (
                 <tr key={criterion} className={criterion === "Total" ? "exam-total-row bg-cyan-500/10 font-semibold text-cyan-100" : ""}>
-                  <td className="px-4 py-3">{criterion}</td>
-                  <td className="px-4 py-3">{score}</td>
+                  <td className="px-4 py-3">{uiText(criterion)}</td>
+                  <td className="px-4 py-3">{uiText(score)}</td>
                 </tr>
               ))}
             </tbody>
@@ -1962,9 +1951,9 @@ export default function PythonPandasProva() {
       <div className="mt-8 space-y-8">
         {allExamParts.map((part, partIndex) => (
           <Panel as="article" layout="plain" key={part.title}>
-            <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{part.title}</h2>
+            <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(part.title)}</h2>
             <ol className="grid gap-3 md:grid-cols-2">
-              {part.questions.map((question, index) => {
+              {uiText(part.questions.map((question, index) => {
                 const questionNumber = partStartNumbers[partIndex] + index;
 
                 return (
@@ -1974,50 +1963,42 @@ export default function PythonPandasProva() {
                     onClick={() => openPasswordModal(questionNumber)}
                     className="exam-question-button h-full w-full border border-slate-800 bg-slate-950/60 text-left transition hover:border-cyan-400/60 hover:text-slate-100"
                   >
-                    <span className="font-semibold text-cyan-300">{questionNumber}. </span>
-                    {question}
+                    <span className="font-semibold text-cyan-300">{uiText(questionNumber)}. </span>
+                    {uiText(question)}
                   </Button>
                 </li>
                 );
-              })}
+              }))}
             </ol>
           </Panel>
         ))}
       </div>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Desafio extra</h2>
-        <p className="mb-5 text-sm leading-relaxed text-slate-300">
-          Além das questões da prova, você pode conquistar até 1 ponto extra criando uma análise geográfica simples com latitude e longitude. Procure identificar regiões do mundo com maior concentração de registros e explique o que essa distribuição pode indicar.
-        </p>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Desafio extra")}</h2>
+        <p className="mb-5 text-sm leading-relaxed text-slate-300">{uiText("Além das questões da prova, você pode conquistar até 1 ponto extra criando uma análise geográfica simples com latitude e longitude. Procure identificar regiões do mundo com maior concentração de registros e explique o que essa distribuição pode indicar.")}</p>
         <CodeBlock>{geoCode}</CodeBlock>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Código consolidado de limpeza</h2>
-        <p className="mb-5 text-sm leading-relaxed text-slate-300">
-          Acesse aqui o bloco completo de preparação dos dados, separado dos gabaritos das questões. Use a senha de limpeza para visualizar o código.
-        </p>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Código consolidado de limpeza")}</h2>
+        <p className="mb-5 text-sm leading-relaxed text-slate-300">{uiText("Acesse aqui o bloco completo de preparação dos dados, separado dos gabaritos das questões. Use a senha de limpeza para visualizar o código.")}</p>
         <Button variant="primary"
           type="button"
           onClick={openCleaningPasswordModal}
           className="inline-flex items-center gap-2 text-slate-950 transition"
-        >
-          Abrir limpeza
-          <span aria-hidden="true">→</span>
+        >{uiText("Abrir limpeza")}<span aria-hidden="true">→</span>
         </Button>
       </Panel>
 
       <Panel as="div" layout="plain" className="mt-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Orientações para entrega</h2>
-        <p className="mb-4 text-sm leading-relaxed text-slate-300">
-          Entregue um notebook .ipynb contendo:
-        </p>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-4">{uiText("Orientações para entrega")}</h2>
+        <p className="mb-4 text-sm leading-relaxed text-slate-300">{uiText("Entregue um notebook .ipynb contendo:")}</p>
         <ul className="grid gap-3 md:grid-cols-2">
           {deliveryItems.map((item) => (
             <li key={item} className="flex gap-2 rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-300">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-              <span>{item}</span>
+              <span>{uiText(item)}</span>
             </li>
           ))}
         </ul>
@@ -2029,24 +2010,22 @@ export default function PythonPandasProva() {
             <div className="flex items-start justify-between gap-4 border-b border-slate-800 p-5 md:p-6">
               <div>
                 <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  {answerQuestion === passwordQuestion ? "Gabarito — Prova Final" : "Gabarito protegido"}
+                  {uiText(answerQuestion === passwordQuestion ? "Gabarito — Prova Final" : "Gabarito protegido")}
                 </p>
                 <h2 className="text-2xl font-semibold text-slate-100">
-                  {answerQuestion === passwordQuestion
+                  {uiText(answerQuestion === passwordQuestion
                     ? `Questão ${passwordQuestion}: ${answerGuide[passwordQuestion]?.title}`
-                    : `Questão ${passwordQuestion}`}
+                    : `Questão ${passwordQuestion}`)}
                 </h2>
                 {answerQuestion === passwordQuestion && (
-                  <p className="mt-2 text-sm text-slate-400">
-                    Dataset: Meteorite Landings — NASA
-                  </p>
+                  <p className="mt-2 text-sm text-slate-400">{uiText("Dataset: Meteorite Landings — NASA")}</p>
                 )}
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={closePasswordModal}
                 className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                aria-label="Fechar"
+                aria-label={uiText("Fechar")}
               >
                 ×
               </Button>
@@ -2056,9 +2035,7 @@ export default function PythonPandasProva() {
               {answerQuestion === passwordQuestion ? (
                 <>
                   <details className="mb-5 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-                    <summary className="cursor-pointer text-sm font-semibold text-cyan-200">
-                      0. Preparação inicial
-                    </summary>
+                    <summary className="cursor-pointer text-sm font-semibold text-cyan-200">{uiText("0. Preparação inicial")}</summary>
                     <div className="mt-4">
                       <CodeBlock>{preparationCode}</CodeBlock>
                     </div>
@@ -2072,9 +2049,7 @@ export default function PythonPandasProva() {
 
                   <form className="space-y-4" onSubmit={handlePasswordSubmit}>
                     <label className="block">
-                      <span className="mb-2 block text-sm font-semibold text-slate-300">
-                        Senha da questão
-                      </span>
+                      <span className="mb-2 block text-sm font-semibold text-slate-300">{uiText("Senha da questão")}</span>
                       <Input
                         type="password"
                         value={questionPassword}
@@ -2089,9 +2064,7 @@ export default function PythonPandasProva() {
                     </label>
 
                     {passwordError && (
-                      <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-200">
-                        Senha incorreta.
-                      </p>
+                      <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-200">{uiText("Senha incorreta.")}</p>
                     )}
 
                     <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
@@ -2099,15 +2072,11 @@ export default function PythonPandasProva() {
                         type="button"
                         onClick={closePasswordModal}
                         className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                      >
-                        Cancelar
-                      </Button>
+                      >{uiText("Cancelar")}</Button>
                       <Button variant="primary"
                         type="submit"
                         className="text-slate-950 transition"
-                      >
-                        Abrir gabarito
-                      </Button>
+                      >{uiText("Abrir gabarito")}</Button>
                     </div>
                   </form>
                 </>
@@ -2122,18 +2091,14 @@ export default function PythonPandasProva() {
           <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-950 p-6 shadow-2xl shadow-cyan-950/30">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  Gabarito protegido
-                </p>
-                <h2 className="text-2xl font-semibold text-slate-100">
-                  Limpeza consolidada
-                </h2>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Gabarito protegido")}</p>
+                <h2 className="text-2xl font-semibold text-slate-100">{uiText("Limpeza consolidada")}</h2>
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={closeCleaningPasswordModal}
                 className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                aria-label="Fechar"
+                aria-label={uiText("Fechar")}
               >
                 ×
               </Button>
@@ -2141,9 +2106,7 @@ export default function PythonPandasProva() {
 
             <form className="space-y-4" onSubmit={handleCleaningPasswordSubmit}>
               <label className="block">
-                <span className="mb-2 block text-sm font-semibold text-slate-300">
-                  Senha da limpeza
-                </span>
+                <span className="mb-2 block text-sm font-semibold text-slate-300">{uiText("Senha da limpeza")}</span>
                 <Input
                   type="password"
                   value={cleaningPassword}
@@ -2158,9 +2121,7 @@ export default function PythonPandasProva() {
               </label>
 
               {cleaningPasswordError && (
-                <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-200">
-                  Senha incorreta.
-                </p>
+                <p className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-200">{uiText("Senha incorreta.")}</p>
               )}
 
               <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
@@ -2168,15 +2129,11 @@ export default function PythonPandasProva() {
                   type="button"
                   onClick={closeCleaningPasswordModal}
                   className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                >
-                  Cancelar
-                </Button>
+                >{uiText("Cancelar")}</Button>
                 <Button variant="primary"
                   type="submit"
                   className="text-slate-950 transition"
-                >
-                  Abrir limpeza
-                </Button>
+                >{uiText("Abrir limpeza")}</Button>
               </div>
             </form>
           </div>
@@ -2188,21 +2145,15 @@ export default function PythonPandasProva() {
           <div className="flex max-h-full w-full max-w-5xl flex-col rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl shadow-cyan-950/30">
             <div className="flex items-start justify-between gap-4 border-b border-slate-800 p-5 md:p-6">
               <div>
-                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-                  Gabarito — Limpeza
-                </p>
-                <h2 className="text-2xl font-semibold text-slate-100">
-                  Código final consolidado de limpeza
-                </h2>
-                <p className="mt-2 text-sm text-slate-400">
-                  Use este bloco como preparação do dataset antes das análises.
-                </p>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{uiText("Gabarito — Limpeza")}</p>
+                <h2 className="text-2xl font-semibold text-slate-100">{uiText("Código final consolidado de limpeza")}</h2>
+                <p className="mt-2 text-sm text-slate-400">{uiText("Use este bloco como preparação do dataset antes das análises.")}</p>
               </div>
               <Button variant="secondary"
                 type="button"
                 onClick={closeCleaningAnswerModal}
                 className="border border-slate-700 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-100"
-                aria-label="Fechar limpeza"
+                aria-label={uiText("Fechar limpeza")}
               >
                 ×
               </Button>

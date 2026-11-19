@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -34,6 +35,8 @@ async function parseJsonSafe(response) {
 }
 
 export default function Blog() {
+  const { text: uiText, message: uiMessage } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const locale = isEn ? "en" : "pt";
@@ -100,21 +103,21 @@ export default function Blog() {
 
   return (
     <PageTemplate>
-      <PageHeader><PageTitle className="mb-4 text-white">{txt.title}</PageTitle>
-      <PageDescription className="max-w-3xl">{txt.subtitle}</PageDescription></PageHeader>
+      <PageHeader><PageTitle className="mb-4 text-white">{uiText(txt.title)}</PageTitle>
+      <PageDescription className="max-w-3xl">{uiText(txt.subtitle)}</PageDescription></PageHeader>
 
       {loading && (
-        <Panel as="div" layout="plain" className="text-sm text-slate-300">{txt.loading}</Panel>
+        <Panel as="div" layout="plain" className="text-sm text-slate-300">{uiText(txt.loading)}</Panel>
       )}
 
       {!loading && error && (
         <div className="rounded-2xl border border-rose-400/30 bg-rose-500/10 p-6 text-sm text-rose-200">
-          {error}
+          {uiMessage(error)}
         </div>
       )}
 
       {!loading && !error && posts.length === 0 && (
-        <Panel as="div" layout="plain" className="text-sm text-slate-300">{txt.empty}</Panel>
+        <Panel as="div" layout="plain" className="text-sm text-slate-300">{uiText(txt.empty)}</Panel>
       )}
 
       {!loading && !error && posts.length > 0 && (
@@ -122,7 +125,7 @@ export default function Blog() {
           {posts.map((post) => (
             <Panel as="article" layout="plain" key={post.id} className="flex flex-col">
               <p className="text-xs uppercase tracking-[0.22em] text-cyan-300/90">
-                {formatDate(post.published_at || post.created_at, locale)}
+                {uiText(formatDate(post.published_at || post.created_at, locale))}
               </p>
               <h2 className="text-2xl font-bold text-white mt-3 leading-tight">
                 {pickLocalized(post, "title", isEn)}
@@ -134,7 +137,7 @@ export default function Blog() {
                 to={`/blog/${post.slug}`}
                 className="mt-6 inline-flex items-center justify-center rounded-xl border border-cyan-400/30 px-4 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-300 hover:bg-cyan-500/10"
               >
-                {txt.readMore}
+                {uiText(txt.readMore)}
               </Link>
             </Panel>
           ))}

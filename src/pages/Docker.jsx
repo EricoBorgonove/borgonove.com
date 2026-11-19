@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
@@ -1282,6 +1283,8 @@ function getCommandTeachingNotes(command) {
 }
 
 export default function Docker() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const sections = COMMAND_SECTIONS_PT;
@@ -1345,7 +1348,7 @@ export default function Docker() {
     <PageTemplate>
       <div className="mb-8">
         <BackButton fallbackTo="/disciplinas" className="text-sm text-cyan-300 hover:text-cyan-200 inline-flex items-center gap-2">
-          {txt.back}
+          {uiText(txt.back)}
         </BackButton>
       </div>
 
@@ -1356,19 +1359,19 @@ export default function Docker() {
             d="M13 5h3v3h-3V5Zm-4 0h3v3H9V5ZM5 9h3v3H5V9Zm4 0h3v3H9V9Zm4 0h3v3h-3V9Zm4 0h3v3h-3V9ZM1 13h21.6c-.5 1.6-1.5 3-2.9 4.1-1.8 1.4-4.2 2.2-7.1 2.2H8.1C4.4 19.3 1.7 17 1 13Zm3.2-8h3v3h-3V5Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
-      <PageDescription>{txt.subtitle}</PageDescription></PageHeader>
+      <PageDescription>{uiText(txt.subtitle)}</PageDescription></PageHeader>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr] mb-8">
         <Panel as="div" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.goalTitle}</h2>
-          <p className="text-sm text-slate-300 leading-relaxed">{txt.goal}</p>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.goalTitle)}</h2>
+          <p className="text-sm text-slate-300 leading-relaxed">{uiText(txt.goal)}</p>
         </Panel>
 
         <Panel as="div" layout="plain">
-          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.officialDocs}</h2>
-          <p className="text-sm text-slate-300 leading-relaxed mb-4">{txt.docsText}</p>
+          <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.officialDocs)}</h2>
+          <p className="text-sm text-slate-300 leading-relaxed mb-4">{uiText(txt.docsText)}</p>
           <div className="flex flex-wrap gap-3">
             <a
               href="https://docs.docker.com/engine/install/ubuntu/"
@@ -1376,7 +1379,7 @@ export default function Docker() {
               rel="noreferrer"
               className="rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/10"
             >
-              {txt.ubuntuDocs}
+              {uiText(txt.ubuntuDocs)}
             </a>
             <a
               href="https://docs.docker.com/desktop/setup/install/linux/ubuntu/"
@@ -1384,7 +1387,7 @@ export default function Docker() {
               rel="noreferrer"
               className="rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/10"
             >
-              {txt.desktopUbuntuDocs}
+              {uiText(txt.desktopUbuntuDocs)}
             </a>
             <a
               href="https://docs.docker.com/installation/mac/"
@@ -1392,7 +1395,7 @@ export default function Docker() {
               rel="noreferrer"
               className="rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/10"
             >
-              {txt.macDocs}
+              {uiText(txt.macDocs)}
             </a>
             <a
               href="https://docs.docker.com/desktop/settings-and-maintenance/settings/"
@@ -1400,32 +1403,32 @@ export default function Docker() {
               rel="noreferrer"
               className="rounded-xl border border-cyan-400/30 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/10"
             >
-              {txt.settingsDocs}
+              {uiText(txt.settingsDocs)}
             </a>
           </div>
         </Panel>
       </div>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{txt.fundamentalsTitle}</h2>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-5">{uiText(txt.fundamentalsTitle)}</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {DOCKER_CONCEPTS.map((concept) => (
             <article key={concept.title} className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4">
-              <h3 className="text-sm font-semibold text-white mb-2">{concept.title}</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">{concept.description}</p>
+              <h3 className="text-sm font-semibold text-white mb-2">{uiText(concept.title)}</h3>
+              <p className="text-xs text-slate-300 leading-relaxed">{uiText(concept.description)}</p>
             </article>
           ))}
         </div>
       </Panel>
 
       <Panel as="div" layout="plain" className="mb-8">
-        <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{txt.desktopSettingsTitle}</h2>
-        <p className="text-sm text-slate-300 leading-relaxed mb-5">{txt.desktopSettingsText}</p>
+        <h2 className="text-2xl font-semibold text-cyan-300 mb-3">{uiText(txt.desktopSettingsTitle)}</h2>
+        <p className="text-sm text-slate-300 leading-relaxed mb-5">{uiText(txt.desktopSettingsText)}</p>
         <div className="grid gap-4 md:grid-cols-2">
           {DESKTOP_SETTINGS.map((setting) => (
             <article key={setting.title} className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4">
-              <h3 className="text-sm font-semibold text-white mb-2">{setting.title}</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">{setting.description}</p>
+              <h3 className="text-sm font-semibold text-white mb-2">{uiText(setting.title)}</h3>
+              <p className="text-sm text-slate-300 leading-relaxed">{uiText(setting.description)}</p>
             </article>
           ))}
         </div>
@@ -1433,33 +1436,33 @@ export default function Docker() {
 
       <div className="grid gap-6 lg:grid-cols-2 mb-8">
         <Panel as="div" layout="plain">
-          <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.dockerfileTitle}</h2>
+          <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(txt.dockerfileTitle)}</h2>
           <CodeBlock language="dockerfile" label="Dockerfile">
             {DOCKERFILE_EXAMPLE}
           </CodeBlock>
           <p className="mt-4 text-xs uppercase tracking-[0.2em] text-slate-500">
-            {txt.dockerfileNotesTitle}
+            {uiText(txt.dockerfileNotesTitle)}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
             {DOCKERFILE_NOTES.map((note) => (
               <li key={note} className="leading-relaxed">
-                {note}
+                {uiText(note)}
               </li>
             ))}
           </ul>
         </Panel>
         <Panel as="div" layout="plain">
-          <h2 className="text-xl font-semibold text-cyan-300 mb-4">{txt.composeTitle}</h2>
+          <h2 className="text-xl font-semibold text-cyan-300 mb-4">{uiText(txt.composeTitle)}</h2>
           <CodeBlock language="yaml" label="compose.yaml">
             {COMPOSE_EXAMPLE}
           </CodeBlock>
           <p className="mt-4 text-xs uppercase tracking-[0.2em] text-slate-500">
-            {txt.dockerfileNotesTitle}
+            {uiText(txt.dockerfileNotesTitle)}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
             {COMPOSE_NOTES.map((note) => (
               <li key={note} className="leading-relaxed">
-                {note}
+                {uiText(note)}
               </li>
             ))}
           </ul>
@@ -1470,37 +1473,37 @@ export default function Docker() {
         {sections.map((section) => (
           <Panel as="details" layout="plain" key={section.title}>
             <summary className="cursor-pointer text-lg font-semibold text-cyan-300">
-              {section.title}
+              {uiText(section.title)}
             </summary>
-            <p className="mt-3 text-sm text-slate-300 leading-relaxed">{section.description}</p>
+            <p className="mt-3 text-sm text-slate-300 leading-relaxed">{uiText(section.description)}</p>
 
             <div className="mt-5 space-y-4">
               {section.commands.map((item) => (
                 <article key={item.command} className="rounded-2xl border border-slate-800 bg-slate-950/50 p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-2">{txt.command}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-2">{uiText(txt.command)}</p>
                   <CodeBlock language="bash">{item.command}</CodeBlock>
                   <div className="mt-4 grid gap-3 md:grid-cols-2">
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-1">
-                        {txt.explanation}
+                        {uiText(txt.explanation)}
                       </p>
-                      <p className="text-sm text-slate-300 leading-relaxed">{item.explanation}</p>
+                      <p className="text-sm text-slate-300 leading-relaxed">{uiText(item.explanation)}</p>
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-1">
-                        {txt.example}
+                        {uiText(txt.example)}
                       </p>
-                      <p className="text-sm text-slate-300 leading-relaxed">{item.example}</p>
+                      <p className="text-sm text-slate-300 leading-relaxed">{uiText(item.example)}</p>
                     </div>
                   </div>
                   <div className="mt-4 rounded-2xl border border-cyan-400/10 bg-cyan-500/5 p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/80 mb-3">
-                      {txt.guidedReading}
+                      {uiText(txt.guidedReading)}
                     </p>
                     <ul className="space-y-2 text-sm text-slate-300">
                       {getCommandTeachingNotes(item.command).map((note) => (
                         <li key={note} className="leading-relaxed">
-                          {note}
+                          {uiText(note)}
                         </li>
                       ))}
                     </ul>

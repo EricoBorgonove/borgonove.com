@@ -1,3 +1,5 @@
+import { translateContent } from "./contentTranslation";
+
 const replacements = [
   ["Lista", "List"],
   ["Fundamentos", "Fundamentals"],
@@ -100,6 +102,8 @@ const sortedReplacements = [...replacements].sort((a, b) => b[0].length - a[0].l
 
 export function translatePtToEn(text) {
   if (!text) return "";
+  const fullTranslation = translateContent(text, "en");
+  if (fullTranslation !== text) return fullTranslation;
   if (cache.has(text)) return cache.get(text);
 
   let output = String(text);

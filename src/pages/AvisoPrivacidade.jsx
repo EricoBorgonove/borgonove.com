@@ -1,3 +1,4 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { PageDescription, PageHeader, PageTemplate, PageTitle, Panel } from "../components/ui/Patterns";
 import BackButton from "../components/BackButton";
 import { useTranslation } from "react-i18next";
@@ -74,6 +75,8 @@ const secoes = [
 ];
 
 export default function AvisoPrivacidade() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const tx = (value) => (isEn ? translatePtToEnWithMap(value, privacyEnMap) : value);
@@ -81,28 +84,28 @@ export default function AvisoPrivacidade() {
   return (
     <PageTemplate>
       <BackButton fallbackTo="/" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">
-        {tx("Voltar para início")}
+        {uiText(tx("Voltar para início"))}
       </BackButton>
 
-      <PageHeader><PageTitle className="mb-4">{tx("Aviso de Privacidade")}</PageTitle>
+      <PageHeader><PageTitle className="mb-4">{uiText(tx("Aviso de Privacidade"))}</PageTitle>
       <PageDescription className="text-sm">
-        {isEn ? "Last updated: February 16, 2026." : "Última atualização: 16 de fevereiro de 2026."}
+        {uiText(isEn ? "Last updated: February 16, 2026." : "Última atualização: 16 de fevereiro de 2026.")}
       </PageDescription></PageHeader>
 
       <Panel as="div" layout="plain" className="space-y-6">
         <p className="text-slate-300 leading-relaxed text-justify">
-          {tx(
+          {uiText(tx(
             "A Borgonove.Tech respeita sua privacidade e trata dados pessoais com responsabilidade, transparência e segurança, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD)."
-          )}
+          ))}
         </p>
 
         {secoes.map((secao) => (
           <article key={secao.titulo}>
-            <h2 className="text-lg font-semibold text-cyan-300 mb-2">{tx(secao.titulo)}</h2>
+            <h2 className="text-lg font-semibold text-cyan-300 mb-2">{uiText(tx(secao.titulo))}</h2>
             <ul className="space-y-1 text-sm text-slate-300 list-disc list-inside">
               {secao.itens.map((item) => (
                 <li key={item} className="text-justify">
-                  {tx(item)}
+                  {uiText(tx(item))}
                 </li>
               ))}
             </ul>

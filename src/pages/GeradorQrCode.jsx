@@ -1,9 +1,12 @@
+import { useContentTranslation } from "../hooks/useContentTranslation";
 import { Input, PageTemplate, PageTitle, Panel, Textarea } from "../components/ui/Patterns";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "../components/BackButton";
 
 export default function GeradorQrCode() {
+  const { text: uiText } = useContentTranslation();
+
   const { i18n } = useTranslation();
   const isEn = i18n.resolvedLanguage?.startsWith("en");
   const txt = isEn
@@ -47,7 +50,7 @@ export default function GeradorQrCode() {
 
   return (
     <PageTemplate>
-      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{txt.back}
+      <BackButton fallbackTo="/utilidades" className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 mb-6">{uiText(txt.back)}
       </BackButton>
 
       <PageTitle className="mb-6 flex items-center gap-3">
@@ -57,24 +60,24 @@ export default function GeradorQrCode() {
             d="M3 3h8v8H3V3Zm2 2v4h4V5H5Zm8-2h8v8h-8V3Zm2 2v4h4V5h-4ZM3 13h8v8H3v-8Zm2 2v4h4v-4H5Zm8 0h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-4 4h2v2h-2v-2Zm4 0h4v2h-4v-2Zm0-4h4v2h-4v-2Z"
           />
         </svg>
-        <span>{txt.title}</span>
+        <span>{uiText(txt.title)}</span>
       </PageTitle>
 
       <div className="grid lg:grid-cols-2 gap-8">
         <Panel as="div" layout="plain">
           <label className="block">
-            <span className="block text-sm text-slate-300 mb-2">{txt.textOrLink}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.textOrLink)}</span>
             <Textarea
               rows={6}
               value={text}
               onChange={(event) => setText(event.target.value)}
-              placeholder={txt.textPlaceholder}
+              placeholder={uiText(txt.textPlaceholder)}
               className="w-full border text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
             />
           </label>
 
           <label className="block mt-4">
-            <span className="block text-sm text-slate-300 mb-2">{txt.size}</span>
+            <span className="block text-sm text-slate-300 mb-2">{uiText(txt.size)}</span>
             <Input
               type="number"
               min="120"
@@ -89,17 +92,17 @@ export default function GeradorQrCode() {
         <Panel as="div" layout="plain" className="flex flex-col items-center justify-center">
           {qrUrl ? (
             <>
-              <img src={qrUrl} alt={txt.alt} className="rounded-xl bg-white p-3" />
+              <img src={qrUrl} alt={uiText(txt.alt)} className="rounded-xl bg-white p-3" />
               <a
                 href={qrUrl}
                 download="qrcode.png"
                 className="mt-5 bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-5 py-2.5 rounded-xl font-semibold transition"
               >
-                {txt.download}
+                {uiText(txt.download)}
               </a>
             </>
           ) : (
-            <p className="text-slate-400">{txt.empty}</p>
+            <p className="text-slate-400">{uiText(txt.empty)}</p>
           )}
         </Panel>
       </div>
